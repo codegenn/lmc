@@ -1,0 +1,93 @@
+%section.sec-product-detail.bg0.p-t-65.p-b-60.main-page
+  .container
+    .row
+      .col-md-6.col-lg-7.p-b-30
+        .p-l-25.p-r-30.p-lr-0-lg
+          .wrap-slick3.flex-sb.flex-w
+            .wrap-slick3-dots
+            .wrap-slick3-arrows.flex-sb-m.flex-w
+            .slick3.gallery-lb
+              - @product.product_images.each do |image|
+                .item-slick3{"data-thumb" => "images/product-detail-01.jpg"}
+                  .wrap-pic-w.pos-relative
+                    = cl_image_tag image.url
+                    %a.flex-c-m.size-108.how-pos1.bor0.fs-16.cl10.bg0.hov-btn3.trans-04{:href => "images/product-detail-01.jpg"}
+                    %i.fa.fa-expand
+      .col-md-6.col-lg-5.p-b-30
+        .p-r-50.p-t-5.p-lr-0-lg
+          %h4.mtext-105.cl2.js-name-detail.p-b-14
+            Lightweight Jacket
+          %span.mtext-106.cl2
+            $58.79
+          %p.stext-102.cl3.p-t-23
+            Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
+          /
+          .p-t-33
+            .flex-w.flex-r-m.p-b-10
+              .size-203.flex-c-m.respon6
+                Size
+              .size-204.respon6-next
+                .rs1-select2.bor8.bg0
+                  %select.js-select2{:name => "time"}
+                    %option Choose an option
+                    %option Size S
+                    %option Size M
+                    %option Size L
+                    %option Size XL
+                  .dropDownSelect2
+            .flex-w.flex-r-m.p-b-10
+              .size-203.flex-c-m.respon6
+                Color
+              .size-204.respon6-next
+                .rs1-select2.bor8.bg0
+                  %select.js-select2{:name => "time"}
+                    %option Choose an option
+                    %option Red
+                    %option Blue
+                    %option White
+                    %option Grey
+                  .dropDownSelect2
+            .flex-w.flex-r-m.p-b-10
+              .size-204.flex-w.flex-m.respon6-next
+                .wrap-num-product.flex-w.m-r-20.m-tb-10
+                  .btn-num-product-down.cl8.hov-btn3.trans-04.flex-c-m
+                    %i.fs-16.zmdi.zmdi-minus
+                  %input.mtext-104.cl3.txt-center.num-product{:name => "num-product", :type => "number", :value => "1"}/
+                  .btn-num-product-up.cl8.hov-btn3.trans-04.flex-c-m
+                    %i.fs-16.zmdi.zmdi-plus
+                %button.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04.js-addcart-detail
+                  Add to cart
+          /
+          .flex-w.flex-m.p-l-100.p-t-40.respon7
+            .flex-m.bor9.p-r-10.m-r-11
+              %a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.js-addwish-detail.tooltip100{"data-tooltip" => "Add to Wishlist", :href => "#"}
+                %i.zmdi.zmdi-favorite
+            %a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.m-r-8.tooltip100{"data-tooltip" => "Facebook", :href => "#"}
+              %i.fa.fa-facebook
+            %a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.m-r-8.tooltip100{"data-tooltip" => "Twitter", :href => "#"}
+              %i.fa.fa-twitter
+            %a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.m-r-8.tooltip100{"data-tooltip" => "Google Plus", :href => "#"}
+              %i.fa.fa-google-plus
+    .bor10.m-t-50.p-t-43.p-b-40
+      / Tab01
+      .tab01
+        %nav
+          #nav-tab.nav.nav-tabs{:role => "tablist"}
+            %a#nav-home-tab.nav-item.nav-link.active{"aria-controls" => "nav-home", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-home", :role => "tab"} Home
+            %a#nav-profile-tab.nav-item.nav-link{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-profile", :role => "tab"} Profile
+        #nav-tabContent.tab-content
+          #nav-home.tab-pane.fade.show.active{"aria-labelledby" => "nav-home-tab", :role => "tabpanel"}
+            .how-pos2.p-lr-15-md
+              = @product.description
+          #nav-profile.tab-pane.fade{"aria-labelledby" => "nav-profile-tab", :role => "tabpanel"}
+            .how-pos2.p-lr-15-md
+              = @product.description + "deawdawe"
+:javascript
+  $(document).ready(function() {
+    $(".js-select2").each(function(){
+      $(this).select2({
+          minimumResultsForSearch: 20,
+          dropdownParent: $(this).next('.dropDownSelect2')
+      });
+    })
+  });

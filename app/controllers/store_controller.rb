@@ -6,6 +6,6 @@ class StoreController < ApplicationController
   def about
   end
 
-  def lm_foundation
+  def find_us
   end
 end

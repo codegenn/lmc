@@ -12,6 +12,10 @@
  *
  *= require bootstrap
  *= require hamburgers
- *= require_tree .
+ *= require main
+ *= require icon-font.min
+ *= require material-design-iconic-font
+ *= require util
+ *= require select2
  *= require_self
  */

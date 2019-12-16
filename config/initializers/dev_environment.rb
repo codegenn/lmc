@@ -1,0 +1,4 @@
+unless Rails.env.production?
+  ENV['CLOUDINARY_API_KEY'] = '278515387894353'
+  ENV['CLOUDINARY_API_SECRET'] = 'TqI5HIAT97I5yIuf_eDW3MHaS00'
+end

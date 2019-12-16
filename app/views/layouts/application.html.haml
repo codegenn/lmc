@@ -4,8 +4,11 @@
     %title Lmcation
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     = csrf_meta_tags
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+    %script{:defer => "defer", :src => "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"}
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
+    %script{:src => "http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"}
   %body
     / Header
     %header
@@ -29,29 +32,29 @@
             .menu-desktop
               %ul.main-menu
                 %li.active-menu
-                  %a{:href => "index.html"} Home
+                  = link_to 'Home', store_path
                 %li
-                  %a{:href => "product.html"} Shop
+                  = link_to 'Shop', products_path
                   %ul.sub-menu
                     %li
-                      %a{:href => "index.html"} Active Wear
+                      = link_to 'Active Wear', products_path
                     %li
-                      %a{:href => "home-02.html"} Swim Separates
+                      = link_to 'Swim Separates', products_path
                     %li
-                      %a{:href => "home-03.html"} Lingeries
-                %li.label1{"data-label1" => "hot"}
-                  %a{:href => "shoping-cart.html"} Features
+                      = link_to 'Lingeries', products_path
                 %li
-                  %a{:href => "blog.html"} Blog
+                  = link_to 'LM Foundation', blogs_path
                 %li
-                  %a{:href => "about.html"} About
+                  = link_to 'About', store_about_path
                 %li
-                  %a{:href => "contact.html"} Contact
+                  = link_to 'Find Us', store_find_us_path
             / Logo desktop
-            %a.logo{:href => "#"}
+            = link_to store_path, class: 'logo' do
               = image_tag 'main-logo.jpg'
             / Icon header
             .wrap-icon-header.flex-w.flex-r-m
+              .icon-header-item.cl2.hov-cl1.trans-04.p-l-22.p-r-11.js-show-modal-search
+                %input.stext-111.cl2.plh3.size-116.search-string{:name => "search", :placeholder => "Keywords", :type => "text"}/
               .icon-header-item.cl2.hov-cl1.trans-04.p-l-22.p-r-11.js-show-modal-search
                 %i.zmdi.zmdi-search
               .icon-header-item.cl2.hov-cl1.trans-04.p-l-22.p-r-11.icon-header-noti.js-show-cart{"data-notify" => "2"}
@@ -62,7 +65,8 @@
       .wrap-header-mobile
         / Logo moblie
         .logo-mobile
-          %a{:href => "index.html"}= image_tag 'icons/mobile-logo.jpg'
+          = link_to store_path do
+            = image_tag 'icons/mobile-logo.jpg'
         / Icon header
         .wrap-icon-header.flex-w.flex-r-m.m-r-15
           .icon-header-item.cl2.hov-cl1.trans-04.p-r-11.js-show-modal-search
@@ -93,26 +97,24 @@
                 USD
         %ul.main-menu-m
           %li
-            %a{:href => "index.html"} Home
-            %ul.sub-menu-m
-              %li
-                %a{:href => "index.html"} Homepage 1
-              %li
-                %a{:href => "home-02.html"} Homepage 2
-              %li
-                %a{:href => "home-03.html"} Homepage 3
+            = link_to 'Home', store_path
             %span.arrow-main-menu-m
               %i.fa.fa-angle-right{"aria-hidden" => "true"}
           %li
-            %a{:href => "product.html"} Shop
+            = link_to 'Shop', products_path
+            %ul.sub-menu-m
+              %li
+                = link_to 'Active Wear', products_path
+              %li
+                = link_to 'Swim Separates', products_path
+              %li
+                = link_to 'Lingeries', products_path
           %li
-            %a.label1.rs1{"data-label1" => "hot", :href => "shoping-cart.html"} Features
+            = link_to 'LM Foundation', blogs_path
           %li
-            %a{:href => "blog.html"} Blog
+            = link_to 'About', store_about_path
           %li
-            %a{:href => "about.html"} About
-          %li
-            %a{:href => "contact.html"} Contact
+            = link_to 'Find Us', store_find_us_path
       / Modal Search
       .modal-search-header.flex-c-m.trans-04.js-hide-modal-search
         .container-search-header

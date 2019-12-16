@@ -47,4 +47,6 @@ end
 group :production do
   gem 'rails_12factor'
 end
-
+gem 'activeadmin'
+gem 'devise'
+gem 'cloudinary'
