@@ -1,15 +1,20 @@
 ActiveAdmin.register Product do
 
-  permit_params :title, :description, :short_description, :image_url, :price, product_images_attributes: [:id, :_destroy, :url]
+  permit_params :title, :description, :short_description, :image_url, :price, stocks_attributes: [:id, :_destroy, :size, :color], product_images_attributes: [:id, :_destroy, :url]
 
   form do |f|
-    f.inputs "Book Details" do
+    f.inputs "Product Details" do
       f.input :title
       f.input :short_description
       f.input :description
       f.input :price
       f.has_many :product_images, heading: false, allow_destroy: true do |image_form|
-        image_form.input :url, as: :file
+        cl_image_tag image_form.object.try(:url), width: 200
+        image_form.input :url, as: :file, hint: cl_image_tag(image_form.object.try(:url), width: 200)
+      end
+      f.has_many :stocks, heading: false, allow_destroy: true do |stocks_form|
+        stocks_form.input :size
+        stocks_form.input :color, as: :string
       end
     end
     f.actions
@@ -25,6 +30,10 @@ ActiveAdmin.register Product do
         row :product_image do |ad|
           cl_image_tag ad.url, :width => 400
         end
+      end
+      attributes_table_for product.stocks do
+        row :size
+        row :color
       end
     end
     active_admin_comments

@@ -17,5 +17,6 @@
  *= require material-design-iconic-font
  *= require util
  *= require select2
+ *= require slick
  *= require_self
  */

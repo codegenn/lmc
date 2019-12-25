@@ -2,25 +2,6 @@
 .sec-banner.bg0.p-t-80.p-b-50.main-page
   .container
     .flex-w.flex-sb-m.p-b-52
-      .flex-w.flex-l-m.filter-tope-group.m-tb-10
-        %button.stext-106.cl6.hov1.bor3.trans-04.m-r-32.m-tb-5.how-active1{"data-filter" => "*"}
-          All Products
-        %button.stext-106.cl6.hov1.bor3.trans-04.m-r-32.m-tb-5{"data-filter" => ".women"}
-          Active Wear
-        %button.stext-106.cl6.hov1.bor3.trans-04.m-r-32.m-tb-5{"data-filter" => ".men"}
-          Swim Separates
-        %button.stext-106.cl6.hov1.bor3.trans-04.m-r-32.m-tb-5{"data-filter" => ".bag"}
-          Lingeries
-      .flex-w.flex-c-m.m-tb-10
-        .flex-c-m.stext-106.cl6.size-104.bor4.pointer.hov-btn3.trans-04.m-r-8.m-tb-4.js-show-filter
-          %i.icon-filter.cl2.m-r-6.fs-15.trans-04.zmdi.zmdi-filter-list
-          %i.icon-close-filter.cl2.m-r-6.fs-15.trans-04.zmdi.zmdi-close.dis-none
-          Filter
-        .flex-c-m.stext-106.cl6.size-105.bor4.pointer.hov-btn3.trans-04.m-tb-4.js-show-search
-          %i.icon-search.cl2.m-r-6.fs-15.trans-04.zmdi.zmdi-search
-          %i.icon-close-search.cl2.m-r-6.fs-15.trans-04.zmdi.zmdi-close.dis-none
-          Search
-      / Search product
       .dis-none.panel-search.w-full.p-t-10.p-b-15
         .bor8.dis-flex.p-l-15
           %button.size-113.flex-c-m.fs-16.cl2.hov-cl1.trans-04
@@ -128,11 +109,9 @@
           .block2
             .block2-pic.hov-img0
               = cl_image_tag product.product_images.first.try(:url)
-              %a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1{:href => "#"}
-                Quick View
             .block2-txt.flex-w.flex-t.p-t-14
               .block2-txt-child1.flex-col-l
-                = link_to product_path(product.id), class: "stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" do
+                = link_to product_path(product.id), :"data-no-turbolink" => 'false', class: "stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" do
                   = product.title
                 %span.stext-105.cl3
                   = number_with_delimiter(product.price.to_i, :delimiter => ',')
@@ -140,7 +119,3 @@
                 %a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2{:href => "#"}
                   -#%img.icon-heart1.dis-block.trans-04{:alt => "ICON", :src => "images/icons/icon-heart-01.png"}/
                   -#%img.icon-heart2.dis-block.trans-04.ab-t-l{:alt => "ICON", :src => "images/icons/icon-heart-02.png"}/
-    / Load more
-    .flex-c-m.flex-w.w-full.p-t-45
-      %a.flex-c-m.stext-101.cl5.size-103.bg2.bor1.hov-btn1.p-lr-15.trans-04{:href => "#"}
-        Load More

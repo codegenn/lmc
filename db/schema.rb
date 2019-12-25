@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191212092833) do
+ActiveRecord::Schema.define(version: 20191216133602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,62 @@ ActiveRecord::Schema.define(version: 20191212092833) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "carts", force: :cascade do |t|
+    t.string   "code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string  "name"
+    t.integer "sort_order"
+    t.string  "measurement_image_url"
+  end
+
+  create_table "category_products", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "category_id"
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer  "stock_id"
+    t.integer  "cart_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "quantity",   default: 0
+    t.integer  "order_id"
+  end
+
+  add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id", using: :btree
+  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id", using: :btree
+  add_index "line_items", ["stock_id"], name: "index_line_items_on_stock_id", using: :btree
+
+  create_table "measurements", force: :cascade do |t|
+    t.integer "category_id"
+    t.string  "size"
+    t.string  "bust"
+    t.boolean "waist"
+    t.boolean "length"
+    t.boolean "sleeve_length"
+    t.boolean "sleeve_circumference"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "city"
+    t.string   "district"
+    t.string   "note"
+    t.text     "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+
   create_table "product_images", force: :cascade do |t|
     t.integer "product_id"
     t.string  "url"
@@ -57,5 +113,28 @@ ActiveRecord::Schema.define(version: 20191212092833) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "stocks", force: :cascade do |t|
+    t.integer "product_id"
+    t.string  "size"
+    t.string  "color"
+    t.boolean "in_stock"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "first_name",             default: "", null: false
+    t.string   "last_name",              default: "", null: false
+    t.integer  "phone",                               null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

@@ -6,12 +6,14 @@ class Product < ActiveRecord::Base
   # max_paginates_per 50
   # PAGINATION_OPTIONS = [9, 12 , 15, 18]
 
-  # has_many :category_books, dependent: :destroy
-  # has_many :categories, through: :category_books
+  has_many :category_products, dependent: :destroy
+  has_many :categories, through: :category_products
+  has_many :product_images
+  has_many :stocks
 
   validates :title, :description, :short_description, :price, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }
   validates :title, uniqueness: true
-  has_many :product_images
   accepts_nested_attributes_for :product_images, allow_destroy: true
+  accepts_nested_attributes_for :stocks, :allow_destroy => true
 end
