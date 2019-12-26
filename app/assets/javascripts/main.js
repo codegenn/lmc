@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function () {
     "use strict";
 
     /*[ Back to top ]
@@ -242,7 +242,4 @@ $(document).ready(function() {
     $('.js-hide-modal1').on('click',function(){
         $('.js-modal1').removeClass('show-modal1');
     });
-
-
-
-})(jQuery);
+});
