@@ -6,13 +6,13 @@ development:
   enhance_image_tag: true
   static_image_support: false
 production:
-  cloud_name: http-bookstore-ngocluong-herokuapp-com
+  cloud_name: dbysq36qu
   api_key: <%= ENV['CLOUDINARY_API_KEY'] %>
   api_secret: <%= ENV['CLOUDINARY_API_SECRET'] %>
   enhance_image_tag: true
   static_image_support: true
 test:
-  cloud_name: http-bookstore-ngocluong-herokuapp-com
+  cloud_name: dbysq36qu
   api_key: <%= ENV['CLOUDINARY_API_KEY'] %>
   api_secret: <%= ENV['CLOUDINARY_API_SECRET'] %>
   enhance_image_tag: true
