@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191216133602) do
+ActiveRecord::Schema.define(version: 20200101055004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(version: 20191216133602) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "blogs", force: :cascade do |t|
+    t.string   "author"
+    t.string   "title"
+    t.text     "short_description"
+    t.text     "content"
+    t.string   "image"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
   create_table "carts", force: :cascade do |t|
     t.string   "code"
     t.datetime "created_at"
@@ -54,6 +64,7 @@ ActiveRecord::Schema.define(version: 20191216133602) do
     t.string  "name"
     t.integer "sort_order"
     t.string  "measurement_image_url"
+    t.string  "image_url"
   end
 
   create_table "category_products", force: :cascade do |t|

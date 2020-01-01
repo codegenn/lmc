@@ -4,69 +4,26 @@
 .sec-banner.bg0.p-t-80.p-b-50
   .container
     .row
-      .col-sm-6.col-md-4.p-b-40
-        .blog-item
-          .hov-img0
-            = link_to blog_path(id: 1) do
-              = image_tag 'blog-01.jpg'
-          .p-t-15
-            .stext-107.flex-w.p-b-14
-              %span.m-r-3
-                %span.cl4
-                  By
-                %span.cl5
-                  NGOC LUONG
-              %span
-                %span.cl4
-                  on
-                %span.cl5
-                  July 22, 2017
-            %h4.p-b-12
-              = link_to blog_path(id: 1), class: ".mtext-101 cl2 hov-cl1 trans-04" do
-                8 Inspiring Ways to Wear Dresses in the Winter
-            %p.stext-108.cl6
-              Duis ut velit gravida nibh bibendum commodo. Suspendisse pellentesque mattis augue id euismod. Interdum et male-suada fames
-      .col-sm-6.col-md-4.p-b-40
-        .blog-item
-          .hov-img0
-            = link_to blog_path(id: 1) do
-              = image_tag 'blog-01.jpg'
-          .p-t-15
-            .stext-107.flex-w.p-b-14
-              %span.m-r-3
-                %span.cl4
-                  By
-                %span.cl5
-                  NGOC LUONG
-              %span
-                %span.cl4
-                  on
-                %span.cl5
-                  July 22, 2017
-            %h4.p-b-12
-              = link_to blog_path(id: 1), class: ".mtext-101 cl2 hov-cl1 trans-04" do
-                8 Inspiring Ways to Wear Dresses in the Winter
-            %p.stext-108.cl6
-              Duis ut velit gravida nibh bibendum commodo. Suspendisse pellentesque mattis augue id euismod. Interdum et male-suada fames
-      .col-sm-6.col-md-4.p-b-40
-        .blog-item
-          .hov-img0
-            = link_to blog_path(id: 1) do
-              = image_tag 'blog-01.jpg'
-          .p-t-15
-            .stext-107.flex-w.p-b-14
-              %span.m-r-3
-                %span.cl4
-                  By
-                %span.cl5
-                  NGOC LUONG
-              %span
-                %span.cl4
-                  on
-                %span.cl5
-                  July 22, 2017
-            %h4.p-b-12
-              = link_to blog_path(id: 1), class: ".mtext-101 cl2 hov-cl1 trans-04" do
-                8 Inspiring Ways to Wear Dresses in the Winter
-            %p.stext-108.cl6
-              Duis ut velit gravida nibh bibendum commodo. Suspendisse pellentesque mattis augue id euismod. Interdum et male-suada fames
+      - @blogs.each do |blog|
+        .col-sm-6.col-md-4.p-b-40
+          .blog-item
+            .hov-img0
+              = link_to blog_path(blog.id) do
+                = cl_image_tag blog.image
+            .p-t-15
+              .stext-107.flex-w.p-b-14
+                %span.m-r-3
+                  %span.cl4
+                    By
+                  %span.cl5
+                    = blog.author
+                %span
+                  %span.cl4
+                    on
+                  %span.cl5
+                    = blog.created_at
+              %h4.p-b-12
+                = link_to blog_path(id: 1), class: ".mtext-101 cl2 hov-cl1 trans-04" do
+                  = blog.title
+              %p.stext-108.cl6
+                = blog.short_description

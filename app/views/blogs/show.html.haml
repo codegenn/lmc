@@ -1,0 +1,21 @@
+%section.sec-product-detail.bg0.p-t-65.p-b-60.main-page
+  .container
+    .row
+      .col-md-8.col-lg-9.p-b-80.center-blog
+        .p-r-45.p-r-0-lg
+          /
+          .wrap-pic-w.how-pos5-parent
+            = cl_image_tag @blog.image
+            .p-t-32
+              %span.flex-w.flex-m.stext-111.cl2.p-b-19
+                %span
+                  %span.cl4 By
+                  = @blog.author
+                  %span.cl12.m-l-4.m-r-6 |
+                %span
+                  = @blog.created_at
+                  %span.cl12.m-l-4.m-r-6 |
+              %h4.ltext-109.cl2.p-b-28
+                = @blog.title
+              %p.stext-117.cl6.p-b-26
+                = @blog.content
