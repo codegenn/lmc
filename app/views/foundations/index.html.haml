@@ -1,0 +1,64 @@
+.main-page.bg-img1.txt-center.p-lr-15.p-tb-92.lm_foundation
+  %h2.ltext-105.cl0.txt-center
+    LM Foundation
+.sec-banner.bg0.p-t-80.p-b-50
+  .container
+    - if @cat
+      .row
+        - @blogs.each do |blog|
+          .col-sm-6.col-md-4.p-b-40
+            .blog-item
+              .hov-img0
+                = link_to foundation_path(blog.id) do
+                  = cl_image_tag blog.image
+              .p-t-15
+                .stext-107.flex-w.p-b-14
+                  %span.m-r-3
+                    %span.cl4
+                      By
+                    %span.cl5
+                      = blog.author
+                  %span
+                    %span.cl4
+                      on
+                    %span.cl5
+                      = blog.created_at
+                %h4.p-b-12
+                  = link_to foundation_path(id: 1), class: ".mtext-101 cl2 hov-cl1 trans-04" do
+                    = blog.title
+                %p.stext-108.cl6
+                  = blog.short_description
+    - else
+      - @blogs.each do |key, blogs|
+        .row
+          .col-sm-6.col-md-4.p-b-40
+            %h3.mtext-111.cl2.p-b-16
+              = key
+        .row
+          - blogs.each do |blog|
+            .col-sm-6.col-md-4.p-b-40
+              .blog-item
+                .hov-img0
+                  = link_to foundation_path(blog.id) do
+                    = cl_image_tag blog.image
+                .p-t-15
+                  .stext-107.flex-w.p-b-14
+                    %span.m-r-3
+                      %span.cl4
+                        By
+                      %span.cl5
+                        = blog.author
+                    %span
+                      %span.cl4
+                        on
+                      %span.cl5
+                        = blog.created_at
+                  %h4.p-b-12
+                    = link_to foundation_path(id: 1), class: ".mtext-101 cl2 hov-cl1 trans-04" do
+                      = blog.title
+                  %p.stext-108.cl6
+                    = blog.short_description
+        .row
+          .col-sm-12.col-md-12.p-b-40
+            %h3.mtext-111.cl2.p-b-16
+              = link_to 'See more', foundations_path(category: key), class: 'flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10'

@@ -340,7 +340,9 @@ iframe {border: none;}
 .p-t-77, .p-tb-77, .p-all-77 {padding-top: 77px;}
 .p-t-78, .p-tb-78, .p-all-78 {padding-top: 78px;}
 .p-t-79, .p-tb-79, .p-all-79 {padding-top: 79px;}
-.p-t-80, .p-tb-80, .p-all-80 {padding-top: 80px;}
+@media (min-width: 991px) {
+    .p-t-80, .p-tb-80, .p-all-80 {padding-top: 80px;}
+}
 .p-t-81, .p-tb-81, .p-all-81 {padding-top: 81px;}
 .p-t-82, .p-tb-82, .p-all-82 {padding-top: 82px;}
 .p-t-83, .p-tb-83, .p-all-83 {padding-top: 83px;}

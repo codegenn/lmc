@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'store/find_us'
   root 'store#index', as: 'store'
   resources :products, only: [:index, :show]
-  resources :blogs, only: [:index, :show]
+  resources :foundations, only: [:index, :show]
   resources :carts, only: [:show, :update]
   resources :line_items, only: [:create, :update, :destroy]
   resources :orders, only: [:index, :new, :create]

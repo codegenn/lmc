@@ -44,16 +44,6 @@ ActiveRecord::Schema.define(version: 20200101055004) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "blogs", force: :cascade do |t|
-    t.string   "author"
-    t.string   "title"
-    t.text     "short_description"
-    t.text     "content"
-    t.string   "image"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
-
   create_table "carts", force: :cascade do |t|
     t.string   "code"
     t.datetime "created_at"
@@ -70,6 +60,17 @@ ActiveRecord::Schema.define(version: 20200101055004) do
   create_table "category_products", force: :cascade do |t|
     t.integer "product_id"
     t.integer "category_id"
+  end
+
+  create_table "foundations", force: :cascade do |t|
+    t.string   "author"
+    t.string   "title"
+    t.text     "short_description"
+    t.text     "content"
+    t.string   "image"
+    t.string   "category"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "line_items", force: :cascade do |t|

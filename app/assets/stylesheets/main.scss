@@ -3335,16 +3335,18 @@ input.num-product::-webkit-inner-spin-button {
     padding: 20px;
   }
 }
-.main-page {
-  margin-top: 110px;
+@media (min-width: 991px) {
+  .main-page {
+    margin-top: 110px;
+  }
 }
+
 .about {
   background-image: image-url('bg-01.jpg');
-  margin-top: 120px;
 }
+
 .lm_foundation {
   background-image: image-url('bg-02.jpg');
-  margin-top: 120px;
 }
 .search-string {
   border: 1px solid #e6e6e6;
@@ -3364,4 +3366,14 @@ input.num-product::-webkit-inner-spin-button {
 .center-blog {
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (min-width: 991px) {
+  .about {
+    margin-top: 120px;
+  }
+
+  .lm_foundation {
+    margin-top: 120px;
+  }
 }
