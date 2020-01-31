@@ -8,19 +8,19 @@ class LineItemsController < ApplicationController
     @line_item = @cart.add_product(@stock)
 
     if @line_item.save
-      flash[:notice] = 'Add product to cart successfully'
+      flash[:success] = 'Add product to cart successfully'
     else
-      flash[:error] = @line_item.errors.full_messages.to_sentence
+      flash[:danger] = @line_item.errors.full_messages.to_sentence
     end
   end
 
   def update
     if @line_item.update(line_item_params)
-      notice = 'Update successfully'
+      flash[:success] = 'Update successfully'
     else
-      notice = @line_item.errors.full_messages.to_sentence
+      flash[:danger] = @line_item.errors.full_messages.to_sentence
     end
-    redirect_to cart_path(@line_item.cart.code), notice: notice
+    redirect_to cart_path(@line_item.cart.code)
   end
 
   def destroy

@@ -17,10 +17,10 @@ ActiveAdmin.register Category do
       row :name
       row :sort_order
       row :measurement_image do
-        image_tag category.measurement_image_url, class: 'my_image_size', width: 200
+        cl_image_tag category.measurement_image_url, class: 'my_image_size', width: 200
       end
       row :image_url do
-        image_tag category.image_url, class: 'my_image_size', width: 200
+        cl_image_tag category.image_url, class: 'my_image_size', width: 200
       end
     end
     active_admin_comments

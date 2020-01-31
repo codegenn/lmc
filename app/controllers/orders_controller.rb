@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
       session[:cart_code] = nil
       redirect_to products_path, notice: 'Thank you for your order'
     else
-      flash[:error] = @order.errors.full_messages.to_sentence
+      flash[:danger] = @order.errors.full_messages.to_sentence
       redirect_to cart_path(@cart.code)
     end
   end

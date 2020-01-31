@@ -1,6 +1,7 @@
 ActiveAdmin.register Product do
 
-  permit_params :title, :description, :short_description, :image_url, :price, :category_ids, stocks_attributes: [:id, :_destroy, :size, :color], product_images_attributes: [:id, :_destroy, :url]
+  permit_params :title, :description, :short_description, :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :price,
+                category_ids: [], stocks_attributes: [:id, :_destroy, :size, :color], product_images_attributes: [:id, :_destroy, :url]
 
   form do |f|
     f.inputs "Product Details" do
@@ -8,6 +9,9 @@ ActiveAdmin.register Product do
       f.input :short_description
       f.input :description
       f.input :price
+      f.input :is_best_seller
+      f.input :is_promotion
+      f.input :is_new_arrival
       f.input :categories, as: :check_boxes, collection: Category.all, multiple: true
       f.has_many :product_images, heading: false, allow_destroy: true do |image_form|
         cl_image_tag image_form.object.try(:url), width: 200
@@ -27,6 +31,9 @@ ActiveAdmin.register Product do
       row :short_description
       row :description
       row :price
+      row :is_best_seller
+      row :is_promotion
+      row :is_new_arrival
       attributes_table_for product.product_images do
         row :product_image do |ad|
           cl_image_tag ad.url, :width => 400

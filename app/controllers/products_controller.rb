@@ -1,9 +1,18 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show]
+  before_action :set_menu
 
   def index
-    # @products_data = Book::IndexCachier.fetch_products(page: params[:page], per_page: params[:per_page])
-    @products = Product.all
+    category = params[:category]
+    check = params[:check]
+    if category.present?
+      category = Category.find_by_id(category)
+      @products = category.products
+    elsif check.present?
+      @products = Product.send(check.to_sym)
+    else
+      @products = Product.all
+    end
   end
 
   def show
@@ -14,5 +23,9 @@ class ProductsController < ApplicationController
   private
   def set_product
     @product = Product.find_by_id(params[:id])
+  end
+
+  def set_menu
+    @menu = 'product'
   end
 end

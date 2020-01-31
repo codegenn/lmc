@@ -6,6 +6,10 @@ class Product < ActiveRecord::Base
   # max_paginates_per 50
   # PAGINATION_OPTIONS = [9, 12 , 15, 18]
 
+  scope :best_sellers, -> { where(is_best_seller: true) }
+  scope :promotion, -> { where(is_promotion: true) }
+  scope :new_arrivals, -> { where(is_new_arrival: true) }
+
   has_many :category_products, dependent: :destroy
   has_many :categories, through: :category_products
   has_many :product_images

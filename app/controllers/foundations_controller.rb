@@ -1,4 +1,6 @@
 class FoundationsController < ApplicationController
+  before_action :set_menu
+
   def index
     category = params[:category]
     if category.present?
@@ -12,5 +14,9 @@ class FoundationsController < ApplicationController
 
   def show
     @blog = Foundation.find_by_id(params[:id])
+  end
+
+  def set_menu
+    @menu = 'foundation'
   end
 end

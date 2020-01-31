@@ -33,9 +33,9 @@
             / Menu desktop
             .menu-desktop
               %ul.main-menu
-                %li.active-menu
+                %li{:class => ('active-menu' if @menu == 'store')}
                   = link_to 'Home', store_path
-                %li
+                %li{:class => ('active-menu' if @menu == 'product')}
                   = link_to 'Shop', products_path
                   %ul.sub-menu
                     %li
@@ -44,11 +44,11 @@
                       = link_to 'Swim Separates', products_path
                     %li
                       = link_to 'Lingeries', products_path
-                %li
+                %li{:class => ('active-menu' if @menu == 'foundation')}
                   = link_to 'LM Foundation', foundations_path
-                %li
+                %li{:class => ('active-menu' if @menu == 'about')}
                   = link_to 'About Us', store_about_path
-                %li
+                %li{:class => ('active-menu' if @menu == 'findus')}
                   = link_to 'Find Us', store_find_us_path
             / Logo desktop
             = link_to store_path, class: 'logo' do
