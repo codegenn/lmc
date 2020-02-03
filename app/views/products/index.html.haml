@@ -1,6 +1,9 @@
 / Banner
 .sec-banner.bg0.p-t-80.p-b-50.main-page
   .container
+    .alert
+      - flash.each do |key, value|
+        = content_tag :div, value, class: "alert alert-#{key}"
     .flex-w.flex-sb-m.p-b-52
       .dis-none.panel-search.w-full.p-t-10.p-b-15
         .bor8.dis-flex.p-l-15

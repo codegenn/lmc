@@ -25,7 +25,8 @@ class LineItemsController < ApplicationController
 
   def destroy
     LineItem.includes(:cart).where(carts: { code: session[:cart_code] }, line_items: { id: params[:id] }).destroy_all
-    redirect_to cart_path(@line_item.cart.code), notice: 'Remove successfully'
+    flash[:success] = 'Remove successfully'
+    redirect_to cart_path(@line_item.cart.code)
   end
 
   private
@@ -39,14 +40,16 @@ class LineItemsController < ApplicationController
 
   def validate_cart_session
     if !session[:cart_code].present?
-      redirect_to products_path, notice: 'Cart is not present'
+      flash[:danger] = 'Cart is not present'
+      redirect_to products_path
     end
   end
 
   def validate_stock_id
     @stock = Stock.where(size: params[:size], color: params[:color]).first
     unless @stock
-      redirect_to products_path, notice: 'Invalid Product'
+      flash[:danger] = 'Invalid Product'
+      redirect_to products_path
     end
   end
 end

@@ -8,11 +8,11 @@ class CartsController < ApplicationController
 
   def update
     if @cart.update(cart_params)
-      notice = 'Update successfully'
+      flash[:success] = 'Update successfully'
     else
-      notice = @cart.errors.full_messages.to_sentence
+      flash[:danger] = @cart.errors.full_messages.to_sentence
     end
-    redirect_to cart_path(@cart.code), notice: notice
+    redirect_to cart_path(@cart.code)
 
     @line_items = @cart.line_items.includes(:stock)
   end
@@ -32,9 +32,11 @@ class CartsController < ApplicationController
 
   def validate_cart_id
     if params[:cart] && params[:cart][:id] != session[:cart_code]
-      redirect_to products_path, notice: 'Invalid cart'
+      flash[:danger] = 'Invalid cart'
+      redirect_to products_path
     elsif params[:cart].nil? && params[:id] != session[:cart_code]
-      redirect_to products_path, notice: 'Invalid cart'
+      flash[:danger] = 'Invalid cart'
+      redirect_to products_path
     end
   end
 end

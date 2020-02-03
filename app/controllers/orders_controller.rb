@@ -13,7 +13,8 @@ class OrdersController < ApplicationController
     if @order.save
       Cart.find_by_code(session[:cart_code]).destroy
       session[:cart_code] = nil
-      redirect_to products_path, notice: 'Thank you for your order'
+      flash[:success] = 'Thank you for your order'
+      redirect_to products_path
     else
       flash[:danger] = @order.errors.full_messages.to_sentence
       redirect_to cart_path(@cart.code)
@@ -23,7 +24,8 @@ class OrdersController < ApplicationController
   private
   def authorize
     unless user_signed_in?
-      redirect_to books_path, notice: 'You need to sign in'
+      flash[:danger] = 'You need to sign in'
+      redirect_to books_path
     end
   end
 
