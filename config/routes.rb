@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   root 'store#index', as: 'store'
   resources :products, only: [:index, :show]
   resources :foundations, only: [:index, :show]
+  resources :jobs, only: [:index, :show]
+  resources :applications, only: [:create]
+  resources :partners, only: [:create]
+  resources :messages, only: [:create]
   resources :carts, only: [:show, :update]
   resources :line_items, only: [:create, :update, :destroy]
   resources :orders, only: [:index, :new, :create]

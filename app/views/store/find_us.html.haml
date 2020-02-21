@@ -5,16 +5,18 @@
   .container
     .flex-w.flex-tr
       .size-210.bor10.p-lr-70.p-t-55.p-b-70.p-lr-15-lg.w-full-md
-        %form
+        .alert
+          - flash.each do |key, value|
+            = content_tag :div, value, class: "alert alert-#{key}"
+        = form_for(Message.new) do |f|
           %h4.mtext-105.cl2.txt-center.p-b-30
             Send Us A Message
           .bor8.m-b-20.how-pos4-parent
-            %input.stext-111.cl2.plh3.size-116.p-l-62.p-r-30{:name => "email", :placeholder => "Your Email Address", :type => "text"}/
+            = f.text_field :email, autofocus: true, class: 'stext-111 cl2 plh3 size-116 p-l-62 p-r-30', :name => "email", :placeholder => "Your Email Address", :type => "text"
             = image_tag 'icons/icon-email.png', class: 'how-pos4 pointer-none'
           .bor8.m-b-30
-            %textarea.stext-111.cl2.plh3.size-120.p-lr-28.p-tb-25{:name => "msg", :placeholder => "How Can We Help?"}
-          %button.flex-c-m.stext-101.cl0.size-121.bg3.bor1.hov-btn3.p-lr-15.trans-04.pointer
-            Submit
+            = f.text_area :question, autofocus: true, class: 'stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25', :name => "question", :placeholder => "How Can We Help?"
+          = submit_tag 'Submit', class: 'flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer'
       .size-210.bor10.flex-w.flex-col-m.p-lr-93.p-tb-30.p-lr-15-lg.w-full-md
         .flex-w.w-full.p-b-42
           %span.fs-18.cl5.txt-center.size-211

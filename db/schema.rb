@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200131075833) do
+ActiveRecord::Schema.define(version: 20200218141205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,21 @@ ActiveRecord::Schema.define(version: 20200131075833) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "applications", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.string   "cv_file_name"
+    t.string   "cv_content_type"
+    t.integer  "cv_file_size",    limit: 8
+    t.datetime "cv_updated_at"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "job_id"
+  end
+
+  add_index "applications", ["job_id"], name: "index_applications_on_job_id", using: :btree
+
   create_table "carts", force: :cascade do |t|
     t.string   "code"
     t.datetime "created_at"
@@ -73,6 +88,14 @@ ActiveRecord::Schema.define(version: 20200131075833) do
     t.datetime "updated_at",        null: false
   end
 
+  create_table "jobs", force: :cascade do |t|
+    t.string   "title"
+    t.text     "short_description"
+    t.text     "content"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
   create_table "line_items", force: :cascade do |t|
     t.integer  "stock_id"
     t.integer  "cart_id"
@@ -96,6 +119,13 @@ ActiveRecord::Schema.define(version: 20200131075833) do
     t.boolean "sleeve_circumference"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string   "email"
+    t.string   "question"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "first_name"
@@ -111,6 +141,12 @@ ActiveRecord::Schema.define(version: 20200131075833) do
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+
+  create_table "partners", force: :cascade do |t|
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "product_images", force: :cascade do |t|
     t.integer "product_id"

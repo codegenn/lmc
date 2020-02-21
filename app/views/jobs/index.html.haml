@@ -1,0 +1,29 @@
+/ Banner
+.sec-banner.bg0.p-t-80.p-b-50.main-page
+  .container
+    .alert
+      - flash.each do |key, value|
+        = content_tag :div, value, class: "alert alert-#{key}"
+    .policy.partner
+      .col-md-12.col-xl-10.p-b-30.m-lr-auto.policy-box
+        %h4.ltext-107.txt-center
+          CONNECT WITH US (Partners)
+        %br
+        = form_for(Partner.new) do |f|
+          .bor8.m-b-20.how-pos4-parent
+            = f.text_field :email, autofocus: true, class: 'stext-111 cl2 plh3 size-116 p-l-62 p-r-30', :name => "email", :placeholder => "Your Email Address", :type => "text"
+            = image_tag 'icons/icon-email.png', class: 'how-pos4 pointer-none'
+          = submit_tag 'Connect With Us', class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
+  .container
+    .policy
+      .col-md-12.col-xl-12.p-b-30.policy-box
+        %h4.ltext-107.txt-center
+          WORK AT LM (Career & Volunteering)
+        %br
+        - @jobs.each do |job|
+          .job-p
+            %h4.ltext-108
+              = link_to job_path(job.id), class: ".mtext-101 cl2 hov-cl1 trans-04" do
+                = job.title
+            %p.stext-108.cl6
+              = job.short_description
