@@ -15,11 +15,11 @@
       .col-md-6.col-lg-5.p-b-30
         .p-r-50.p-t-5.p-lr-0-lg
           %h4.mtext-105.cl2.js-name-detail.p-b-14
-            Lightweight Jacket
+            = @product.title
           %span.mtext-106.cl2
-            $58.79
+            = number_with_delimiter(@product.price.to_i, :delimiter => '.')
           %p.stext-102.cl3.p-t-23
-            Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
+            = @product.description
           /
           = form_tag line_items_path, method: :post, remote: true do
             .p-t-33
@@ -61,7 +61,7 @@
               = @product.description
           #nav-profile.tab-pane.fade{"aria-labelledby" => "nav-profile-tab", :role => "tabpanel"}
             .how-pos2.p-lr-15-md
-              = @product.description + "deawdawe"
+              = cl_image_tag @category.measurement_image_url if @category
 :javascript
   $(document).ready(function() {
     $(".js-select2").each(function(){

@@ -11,6 +11,6 @@ class JobsController < ApplicationController
   end
 
   def set_menu
-    @menu = 'job'
+    @menu = 'joinus'
   end
 end

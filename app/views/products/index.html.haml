@@ -117,7 +117,7 @@
                 = link_to product_path(product.id), :"data-no-turbolink" => 'false', class: "stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" do
                   = product.title
                 %span.stext-105.cl3
-                  = number_with_delimiter(product.price.to_i, :delimiter => ',')
+                  = number_with_delimiter(product.price.to_i, :delimiter => '.')
               .block2-txt-child2.flex-r.p-t-3
                 %a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2{:href => "#"}
                   -#%img.icon-heart1.dis-block.trans-04{:alt => "ICON", :src => "images/icons/icon-heart-01.png"}/
