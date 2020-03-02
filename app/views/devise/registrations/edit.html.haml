@@ -1,0 +1,85 @@
+%section.sec-product-detail.bg0.p-t-65.p-b-60.main-page
+  .container
+    .bor10.m-t-50.p-t-43.p-b-40
+      / Tab01
+      .tab01
+        %nav
+          #nav-tab.nav.nav-tabs{:role => "tablist"}
+            %a#nav-home-tab.nav-item.nav-link.active{"aria-controls" => "nav-home", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-home", :role => "tab"}
+              = I18n.t("user.information")
+            %a#nav-profile-tab.nav-item.nav-link{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-profile", :role => "tab"}
+              = I18n.t("user.post_orders")
+        #nav-tabContent.tab-content
+          #nav-home.tab-pane.fade.show.active{"aria-labelledby" => "nav-home-tab", :role => "tabpanel"}
+            .how-pos2.p-lr-15-md
+              = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+                = devise_error_messages!
+                .form-group
+                  = f.label :email, class: 'col-sm-3 control-label'
+                  .col-sm-9
+                    = f.email_field :email, autofocus: true, class: 'form-control', value: current_user.email, disabled: "disabled"
+                  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                    %div
+                      Currently waiting confirmation for: #{resource.unconfirmed_email}
+                .form-group
+                  = f.label :first_name, class: 'col-sm-3 control-label'
+                  .col-sm-9
+                    = f.text_field :first_name, class: 'form-control', value: current_user.first_name
+                .form-group
+                  = f.label :last_name, class: 'col-sm-3 control-label'
+                  .col-sm-9
+                    = f.text_field :last_name, class: 'form-control', value: current_user.last_name
+                .form-group
+                  = f.label :phone, class: 'col-sm-3 control-label'
+                  .col-sm-9
+                    = f.text_field :phone, class: 'form-control', value: current_user.phone
+                .form-group
+                  = f.label :password, class: 'col-sm-3 control-label'
+                  .col-sm-9
+                    = f.password_field :password, autocomplete: 'off', class: 'form-control'
+                    %p.help-block leave blank if you don't want to change it
+                .form-group
+                  = f.label :password_confirmation, class: 'col-sm-3 control-label'
+                  .col-sm-9
+                    = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control'
+                .form-group
+                  = f.label :current_password, class: 'col-sm-3 control-label'
+                  .col-sm-9
+                    = f.password_field :current_password, autocomplete: 'off', class: 'form-control'
+                    %p.help-block we need your current password to confirm your changes
+                %center
+                  %div= f.submit 'Update', class: 'btn btn-primary'
+          #nav-profile.tab-pane.fade{"aria-labelledby" => "nav-profile-tab", :role => "tabpanel"}
+            .how-pos2.p-lr-15-md
+              - if @orders
+                #accordionExample.accordion
+                  - @orders.each do |order|
+                    .card
+                      #headingOne.card-header
+                        %h2.mb-0
+                          %button.btn.btn-link{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-target" => "#collapse#{order.id}", "data-toggle" => "collapse", :type => "button"}
+                            = "On #{order.created_at} - total: #{order.total_price}"
+                      .collapse{"aria-labelledby" => "headingOne", "data-parent" => "#accordionExample", id: "collapse#{order.id}"}
+                        .card-body
+                          .wrap-table-shopping-cart
+                            %table.table-shopping-cart
+                              %tr.table_head
+                                %th.column-1 Product
+                                %th.column-2
+                                %th.column-3 Price
+                                %th.column-4 Quantity
+                                %th.column-5 Total
+                              - order.line_items.includes(:stock).each do |line_item|
+                                %tr.table_row
+                                  %td.column-1
+                                    .how-itemcart1
+                                      = cl_image_tag line_item.stock.product.product_images.first.url
+                                  %td.column-2
+                                    = link_to product_path(line_item.stock.product.id), :"data-no-turbolink" => 'false', class: "stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" do
+                                      = line_item.stock.product.title
+                                  %td.column-3
+                                    = line_item.stock.product.price
+                                  %td.column-4
+                                    = line_item.quantity
+                                  %td.column-5
+                                    = line_item.total_price

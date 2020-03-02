@@ -51,3 +51,5 @@ gem 'cloudinary'
 gem "paperclip"
 
 ruby "2.6.0"
+gem 'globalize'
+gem "activeadmin-globalize"

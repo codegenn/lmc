@@ -14,7 +14,7 @@
                       %th.column-3 Price
                       %th.column-4 Quantity
                       %th.column-5 Total
-                    - @cart.line_items.each do |line_item|
+                    - @cart.line_items.includes(:stock).each do |line_item|
                       %tr.table_row
                         %td.column-1
                           = link_to line_item, method: :delete, noindex: true, id: 'delete', data: { confirm: 'Are you sure you want to delete this line item?' }, class: 'delete-item' do
@@ -45,21 +45,21 @@
                     = content_tag :div, value, class: "alert alert-#{key}"
                   .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
                     = f.label :first_name, class: 'col-sm-3 control-label'
-                    = f.text_field :first_name, autofocus: true, class: 'stext-111 cl2 plh3 size-126'
+                    = f.text_field :first_name, autofocus: true, required: true, class: 'stext-111 cl2 plh3 size-126', value: @order.first_name || current_user.try(:first_name)
                     = f.label :last_name, class: 'col-sm-3 control-label'
-                    = f.text_field :last_name, autofocus: true, class: 'stext-111 cl2 plh3 size-126'
+                    = f.text_field :last_name, required: true, class: 'stext-111 cl2 plh3 size-126', value: @order.last_name || current_user.try(:last_name)
                     = f.label :email, class: 'col-sm-3 control-label'
-                    = f.text_field :email, autofocus: true, class: 'stext-111 cl2 plh3 size-126'
+                    = f.text_field :email, required: true, class: 'stext-111 cl2 plh3 size-126', value: @order.email || current_user.try(:email)
                     = f.label :address, class: 'col-sm-3 control-label'
-                    = f.text_field :address, autofocus: true, class: 'stext-111 cl2 plh3 size-126'
+                    = f.text_field :address, required: true, class: 'stext-111 cl2 plh3 size-126', value: @order.address || current_user.try(:address)
                     = f.label :district, class: 'col-sm-3 control-label'
-                    = f.text_field :district, autofocus: true, class: 'stext-111 cl2 plh3 size-126'
+                    = f.text_field :district, required: true, class: 'stext-111 cl2 plh3 size-126', value: @order.district || current_user.try(:district)
                     = f.label :city, class: 'col-sm-3 control-label'
-                    = f.text_field :city, autofocus: true, class: 'stext-111 cl2 plh3 size-126'
+                    = f.text_field :city, required: true, class: 'stext-111 cl2 plh3 size-126', value: @order.city || current_user.try(:city)
                     = f.label :phone, class: 'col-sm-3 control-label'
-                    = f.text_field :phone, autofocus: true, class: 'stext-111 cl2 plh3 size-126'
+                    = f.text_field :phone, required: true, class: 'stext-111 cl2 plh3 size-126', value: @order.phone || current_user.try(:phone)
                     = f.label :note, class: 'col-sm-3 control-label'
-                    = f.text_field :note, autofocus: true, class: 'stext-111 cl2 plh3 size-126'
+                    = f.text_field :note, required: true, class: 'stext-111 cl2 plh3 size-126', value: @order.note
                     = f.hidden_field :id, { :value => @cart.code }
                     = submit_tag 'Proceed to Checkout', class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
           .col-sm-10.col-lg-7.col-xl-5.m-lr-auto.m-b-50

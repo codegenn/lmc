@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200218141205) do
+ActiveRecord::Schema.define(version: 20200227130752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(version: 20200218141205) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string  "name"
     t.integer "sort_order"
     t.string  "measurement_image_url"
     t.string  "image_url"
@@ -76,6 +75,17 @@ ActiveRecord::Schema.define(version: 20200218141205) do
     t.integer "product_id"
     t.integer "category_id"
   end
+
+  create_table "category_translations", force: :cascade do |t|
+    t.integer  "category_id", null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "name"
+  end
+
+  add_index "category_translations", ["category_id"], name: "index_category_translations_on_category_id", using: :btree
+  add_index "category_translations", ["locale"], name: "index_category_translations_on_locale", using: :btree
 
   create_table "foundations", force: :cascade do |t|
     t.string   "author"
@@ -153,16 +163,26 @@ ActiveRecord::Schema.define(version: 20200218141205) do
     t.string  "url"
   end
 
-  create_table "products", force: :cascade do |t|
+  create_table "product_translations", force: :cascade do |t|
+    t.integer  "product_id",        null: false
+    t.string   "locale",            null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "title"
     t.text     "short_description"
     t.text     "description"
+  end
+
+  add_index "product_translations", ["locale"], name: "index_product_translations_on_locale", using: :btree
+  add_index "product_translations", ["product_id"], name: "index_product_translations_on_product_id", using: :btree
+
+  create_table "products", force: :cascade do |t|
     t.float    "price"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_best_seller",    default: false
-    t.boolean  "is_promotion",      default: false
-    t.boolean  "is_new_arrival",    default: false
+    t.boolean  "is_best_seller", default: false
+    t.boolean  "is_promotion",   default: false
+    t.boolean  "is_new_arrival", default: false
   end
 
   create_table "stocks", force: :cascade do |t|

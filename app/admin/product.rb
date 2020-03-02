@@ -1,13 +1,27 @@
 ActiveAdmin.register Product do
 
-  permit_params :title, :description, :short_description, :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :price,
-                category_ids: [], stocks_attributes: [:id, :_destroy, :size, :color], product_images_attributes: [:id, :_destroy, :url]
+  permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :price,
+                category_ids: [], stocks_attributes: [:id, :_destroy, :size, :color], product_images_attributes: [:id, :_destroy, :url],
+                translations_attributes: [:id, :locale, :title, :description, :short_description, :_destroy]
+
+  index do
+    id_column
+    column :title
+    column :price
+    translation_status
+    actions
+  end
 
   form do |f|
     f.inputs "Product Details" do
-      f.input :title
-      f.input :short_description
-      f.input :description
+      f.inputs "Translated fields" do
+        f.translated_inputs 'ignored title', switch_locale: false do |t|
+          t.input :title
+          t.input :short_description
+          t.input :description
+        end
+      end
+
       f.input :price
       f.input :is_best_seller
       f.input :is_promotion

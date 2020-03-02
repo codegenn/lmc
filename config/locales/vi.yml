@@ -1,0 +1,95 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+vi:
+  hello: "Hello world"
+  page:
+    menu:
+      home: 'Trang chủ'
+      shop: 'Shop'
+      foundation: 'Nền Tảng'
+      about_us: 'Giới Thiệu'
+      find_us: 'Liên Hệ'
+      join_us: 'Hợp Tác'
+      help: 'Hỏi Đáp'
+      my_account: 'Tài Khoản'
+    index:
+      policy: 'Chính Sách'
+      best_seller: 'Hàng Bán '
+      promotion: 'Khuyến Mãi'
+      new_arrivals: 'Hàng Mới'
+      policy_content: '3 ngày đổi trả, miễn phí vận chuyển'
+    foundation:
+      inspiration: 'Cảm Hứng'
+      empowerment: 'Trao Quyền'
+      blog: 'Blog'
+      news: 'Tin Tức'
+    about_us:
+      vision: 'Tầm Nhìn'
+      vision_content:
+        content: 'LMcation muốn truyền cảm hứng và trao quyền cho cộng đồng phụ nữ để họ làm nên điều khác biệt, bất kể ngoại hình hay màu da.'
+      mission: 'Sứ Mệnh'
+      mission_content:
+        content: 'Với sứ mệnh tôn vinh sự gợi cảm và quyến rũ từ nét đẹp cơ thể tự nhiên, sản phẩm của LMcation được tạo ra bằng nhiệt huyết và niềm đam mê từ những người phụ nữ của chúng tôi dành cho toàn cộng đồng phái đẹp. Thiết kế sang trọng, giá cả phải chăng và dành cho những người phụ nữ năng động.'
+      value: 'Giá Trị'
+      value_content:
+        content1: 'LMcation tin vào vẻ đẹp tự nhiên của người phụ nữ, vào sức mạnh của cộng đồng phái đẹp, và khả năng thay đổi làm nên điều khác biệt.'
+        content2: 'Chúng tôi là ai, làm nên điều khác biệt gì và cách chúng tôi làm việc thế nào được thể hiện rõ trong bốn giá trị cốt lõi bên dưới, là kim chỉ nam cho tất cả hoạt động của LMcation.'
+        content3: 'Tự tin hình thể: Chúng tôi thách thức tiêu chuẩn sắc đẹp phi thực tế của xã hội và tin vào vẻ đẹp tự nhiên của người phụ nữ, bất kể ngoại hình hay màu da. Sự quyến rũ không chỉ dành cho những cô gái có thân hình nóng bỏng, mà dành cho tất cả người phụ nữ của chúng ta.'
+        content4: 'Trao quyền: "Phía sau thành công của một người phụ nữ là một cộng đồng phụ nữ thành công luôn hỗ trợ cho nhau". Chúng tôi tin rằng phụ nữ sẽ mạnh mẽ hơn, bản lĩnh hơn khi là một cộng đồng hỗ trợ và phát triển cùng nhau.'
+        content5: 'Bản lĩnh: Chúng tôi dám chấp nhận rủi ro để thực hiện đúng và có trách nhiệm những điều mình đã cam kết trong mục tiêu, ý tưởng của mình. Thay đổi là một cơ hội và chúng tôi sẽ không ngừng học hỏi và thay đổi để cải thiện sản phẩm ngày càng chất lượng hơn.'
+        content6: 'Chi phí sản phẩm: Chúng tôi quản lý chi phí chặt chẽ và luôn chọn những chất liệu bền vững với giá thành tốt nhất. Bằng cách lược bỏ những chi phí không cần thiết và đơn giản hóa sản phẩm, khách hàng sẽ dễ dàng tiếp cận sản phẩm LMcation với giá cả hợp lý nhất.'
+    find_us:
+      send_msg: 'Gửi Tin Nhắn Cho Chúng Tôi'
+      submit: 'Gửi'
+      address_detail: 'Coza Store Center 8th floor, 379 Hudson St, New York, NY 10018 US '
+      talk: 'Số Điện thoại'
+      help_field: 'Chúng tôi có thể giúp gì cho bạn?'
+      email_field: 'Nhập địa chỉ email'
+      address: 'Địa chỉ'
+      support: 'Email Hỗ Trợ'
+    join_us:
+      connect: 'HỢP TÁC (ĐỐI TÁC)'
+      connect_btn: 'HỢP TÁC'
+      work: 'LÀM VIỆC CHO LM (CÔNG VIỆC & TÌNH NGUYỆN VIÊN)'
+    product:
+      color: 'màu'
+      add_to_cart: 'BỎ VÀO GIỎ HÀNG'
+      description: 'Mô Tả Sản Phẩm'
+      measurement: 'Thông Số'
+    job:
+      name: 'Họ Tên'
+      email: 'Địa chỉ email'
+      phone: 'Số điện thoại'
+      upload: 'Tải CV'
+  user:
+    signin: 'Đăng Nhập'
+    signup: 'Đăng Ký'
+    email: 'Email'
+    password: 'Mật khẩu'
+    password_confirmation: 'Lặp lại mật khẩu'
+    submit: 'Gửi'
+    phone: 'Điện Thoại'
+    first_name: 'Tên'
+    last_name: 'Họ'
+    post_orders: 'Đơn Hàng Đã Đặt'
+    information: 'Thông Tin'
+    no_order: 'Bạn chưa có đơn hàng nào'

@@ -19,7 +19,7 @@
           %span.mtext-106.cl2
             = number_with_delimiter(@product.price.to_i, :delimiter => '.')
           %p.stext-102.cl3.p-t-23
-            = @product.description
+            = @product.short_description
           /
           = form_tag line_items_path, method: :post, remote: true do
             .p-t-33
@@ -33,7 +33,7 @@
                     .dropDownSelect2
               .flex-w.flex-r-m.p-b-10
                 .size-203.flex-c-m.respon6
-                  Color
+                  = I18n.t("page.product.color")
                 .size-204.respon6-next
                   .rs1-select2.bor8.bg0
                     = select_tag :color, options_for_select(@stocks.map(&:color)), class: 'js-select2'
@@ -47,14 +47,16 @@
                     .btn-num-product-up.cl8.hov-btn3.trans-04.flex-c-m
                       %i.fs-16.zmdi.zmdi-plus
                   %button.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04.js-addcart-detail
-                    Add to cart
+                    = I18n.t("page.product.add_to_cart")
     .bor10.m-t-50.p-t-43.p-b-40
       / Tab01
       .tab01
         %nav
           #nav-tab.nav.nav-tabs{:role => "tablist"}
-            %a#nav-home-tab.nav-item.nav-link.active{"aria-controls" => "nav-home", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-home", :role => "tab"} Home
-            %a#nav-profile-tab.nav-item.nav-link{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-profile", :role => "tab"} Profile
+            %a#nav-home-tab.nav-item.nav-link.active{"aria-controls" => "nav-home", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-home", :role => "tab"}
+              = I18n.t("page.product.description")
+            %a#nav-profile-tab.nav-item.nav-link{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-profile", :role => "tab"}
+              = I18n.t("page.product.measurement")
         #nav-tabContent.tab-content
           #nav-home.tab-pane.fade.show.active{"aria-labelledby" => "nav-home-tab", :role => "tabpanel"}
             .how-pos2.p-lr-15-md

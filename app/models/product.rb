@@ -5,7 +5,10 @@ class Product < ActiveRecord::Base
   # paginates_per 9
   # max_paginates_per 50
   # PAGINATION_OPTIONS = [9, 12 , 15, 18]
-
+  translates :title, :short_description, :description
+  active_admin_translates :title, :short_description, :description do
+    validates_presence_of :title
+  end
   scope :best_sellers, -> { where(is_best_seller: true) }
   scope :promotion, -> { where(is_promotion: true) }
   scope :new_arrivals, -> { where(is_new_arrival: true) }

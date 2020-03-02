@@ -7,7 +7,11 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_params)
+    if current_user
+      @order = current_user.orders.new(order_params)
+    else
+      @order = Order.new(order_params)
+    end
     @order.add_line_items_from_cart(@cart)
 
     if @order.save
@@ -17,7 +21,7 @@ class OrdersController < ApplicationController
       redirect_to products_path
     else
       flash[:danger] = @order.errors.full_messages.to_sentence
-      redirect_to cart_path(@cart.code)
+      render 'carts/show'
     end
   end
 

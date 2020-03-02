@@ -20,4 +20,83 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  page:
+    menu:
+      home: 'Home'
+      shop: 'Shop'
+      foundation: 'LM Foundation'
+      about_us: 'About Us'
+      find_us: 'Find Us'
+      join_us: 'Join Us'
+      help: 'Help & FAQs'
+      my_account: 'My Account'
+      active_wear: 'Active Wear'
+      swim_separates: 'Swim Separates'
+      lingeries: 'Lingeries'
+    index:
+      policy: 'Policy'
+      best_seller: 'Our Best Sellers'
+      promotion: 'Promotion'
+      new_arrivals: 'New Arrivals'
+      policy_content: '3 days returns, free delivery'
+    foundation:
+      inspiration: 'Inspiration'
+      empowerment: 'Empowerment'
+      blog: 'Blog'
+      news: 'News'
+    about_us:
+      vision: 'Vision'
+      vision_content:
+        content: 'To inspire and empower women of all shapes, sizes and color, every single day.'
+      mission: 'Mission'
+      mission_content:
+        content: 'Made for women, by women, we celebrate the extraordinary sexiness of real bodies with our range of chic, versatile and affordable lingerie, swim and activewear.'
+      value: 'Value'
+      value_content:
+        content1: 'We believe in the natural beauty of women, in the power of sisterhood, and in our ability to shake up the status quo.'
+        content2: 'The four values below underlie who we are, what we stand for and define the way we work. They’re the bedrock of our brand and they guide us in all that we do.'
+        content3: 'Body Positivity. We challenge society’s unrealistic beauty standards, and we embrace the sexiness in all women - no matter her size, shape or color. Being sexy isn’t just for the 1%, it’s for every single woman, every single day.'
+        content4: 'Empowerment. “Behind every successful woman is a tribe of other successful women who have her back.” We believe we are stronger - individually and as a group - when we connect, support and grow together.'
+        content5: 'Courage. We do what we believe is right, what we believe needs to be done, no matter the risk. We are committed to our objectives, we take initiative, we learn from our mistakes, and we see change as an opportunity.'
+        content6: 'Cost-Conscious. We keep an eye on our expenses and make smart, sustainable choices. By controlling our costs, we can make a line that’s more accessible.'
+    find_us:
+      send_msg: 'Send Us A Message'
+      email_field: 'Your Email Address'
+      help_field: 'How Can We Help?'
+      submit: 'Submit'
+      address_detail: 'Coza Store Center 8th floor, 379 Hudson St, New York, NY 10018 US '
+      talk: 'Lets talk'
+      address: 'Address'
+      support: 'Sale Support'
+    join_us:
+      connect: 'CONNECT WITH US(Partners)'
+      connect_btn: 'CONNECT WITH US'
+      work: 'WORK AT LM (Career & Volunteering)'
+    product:
+      color: 'Color'
+      add_to_cart: 'ADD TO CART'
+      description: 'Product Description'
+      measurement: 'Measurement'
+    job:
+      name: 'Name'
+      email: 'Email'
+      phone: 'Phone'
+      upload: 'Upload CV'
+  active_admin:
+      globalize:
+        translations: "Translations"
+        language:
+          vi: "Tiếng Việt"
+  user:
+    signin: 'Log in'
+    signup: 'Sign Up'
+    email: 'Email'
+    password: 'Password'
+    password_confirmation: 'Password Confirmation'
+    submit: 'Submit'
+    phone: 'Phone Number'
+    first_name: 'First Name'
+    last_name: 'Last Name'
+    post_orders: 'Post Orders'
+    information: 'User Information'
+    no_order: 'You dont have any order'

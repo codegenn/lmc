@@ -1,10 +1,22 @@
 ActiveAdmin.register Category do
 
-  permit_params :name, :sort_order, :measurement_image_url, :image_url
+  permit_params :sort_order, :measurement_image_url, :image_url,
+                translations_attributes: [:id, :locale, :name, :_destroy]
+
+  index do
+    id_column
+    column :name
+    translation_status
+    actions
+  end
 
   form do |f|
     f.inputs "Category Details" do
-      f.input :name
+      f.inputs "Translated fields" do
+        f.translated_inputs 'ignored title', switch_locale: false do |t|
+          t.input :name
+        end
+      end
       f.input :sort_order
       f.input :measurement_image_url, as: :file, hint: cl_image_tag(f.object.try(:measurement_image_url), width: 200)
       f.input :image_url, as: :file, hint: cl_image_tag(f.object.try(:image_url), width: 200)

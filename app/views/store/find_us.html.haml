@@ -1,6 +1,6 @@
 .main-page.bg-img1.txt-center.p-lr-15.p-tb-92.about
   %h2.ltext-105.cl0.txt-center
-    Find Us
+    = I18n.t "page.menu.find_us"
 %section.bg0.p-t-104.p-b-116
   .container
     .flex-w.flex-tr
@@ -10,28 +10,28 @@
             = content_tag :div, value, class: "alert alert-#{key}"
         = form_for(Message.new) do |f|
           %h4.mtext-105.cl2.txt-center.p-b-30
-            Send Us A Message
+            = I18n.t "page.find_us.send_msg"
           .bor8.m-b-20.how-pos4-parent
-            = f.text_field :email, autofocus: true, class: 'stext-111 cl2 plh3 size-116 p-l-62 p-r-30', :name => "email", :placeholder => "Your Email Address", :type => "text"
+            = f.text_field :email, autofocus: true, class: 'stext-111 cl2 plh3 size-116 p-l-62 p-r-30', :name => "email", :placeholder => I18n.t("page.find_us.email_field"), :type => "text"
             = image_tag 'icons/icon-email.png', class: 'how-pos4 pointer-none'
           .bor8.m-b-30
-            = f.text_area :question, autofocus: true, class: 'stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25', :name => "question", :placeholder => "How Can We Help?"
-          = submit_tag 'Submit', class: 'flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer'
+            = f.text_area :question, autofocus: true, class: 'stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25', :name => "question", :placeholder => I18n.t("page.find_us.help_field")
+          = submit_tag I18n.t("page.find_us.submit"), class: 'flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer'
       .size-210.bor10.flex-w.flex-col-m.p-lr-93.p-tb-30.p-lr-15-lg.w-full-md
         .flex-w.w-full.p-b-42
           %span.fs-18.cl5.txt-center.size-211
             %span.lnr.lnr-map-marker
           .size-212.p-t-2
             %span.mtext-110.cl2
-              Address
+              = I18n.t "page.find_us.address"
             %p.stext-115.cl6.size-213.p-t-18
-              Coza Store Center 8th floor, 379 Hudson St, New York, NY 10018 US
+              = I18n.t "page.find_us.address_detail"
         .flex-w.w-full.p-b-42
           %span.fs-18.cl5.txt-center.size-211
             %span.lnr.lnr-phone-handset
           .size-212.p-t-2
             %span.mtext-110.cl2
-              Lets Talk
+              = I18n.t "page.find_us.talk"
             %p.stext-115.cl1.size-213.p-t-18
               +1 800 1236879
         .flex-w.w-full
@@ -39,6 +39,6 @@
             %span.lnr.lnr-envelope
           .size-212.p-t-2
             %span.mtext-110.cl2
-              Sale Support
+              = I18n.t "page.find_us.support"
             %p.stext-115.cl1.size-213.p-t-18
               contact@example.com

@@ -21,10 +21,12 @@
             .left-top-bar
             .right-top-bar.flex-w.h-full
               = link_to 'Help & FAQs', store_path, class: "flex-c-m trans-04 p-lr-25"
-              %a.flex-c-m.trans-04.p-lr-25{:href => "#"}
-                My Account
-              %a.flex-c-m.trans-04.p-lr-25{:href => "#"}
-                EN
+              - if user_signed_in?
+                = link_to I18n.t("page.menu.my_account"), edit_user_registration_path, class: "flex-c-m trans-04 p-lr-25"
+              - else
+                = link_to I18n.t("page.menu.my_account"), new_user_session_path, class: "flex-c-m trans-04 p-lr-25"
+              = link_to_unless I18n.locale == :vi, "VI", { locale: :vi }, { class: 'flex-c-m trans-04 p-lr-25' } if I18n.locale == :en
+              = link_to_unless I18n.locale == :en, "EN", { locale: :en }, { class: 'flex-c-m trans-04 p-lr-25' } if I18n.locale == :vi
               %a.flex-c-m.trans-04.p-lr-25{:href => "#"}
                 USD
         .wrap-menu-desktop
@@ -33,33 +35,26 @@
             .menu-desktop
               %ul.main-menu
                 %li{:class => ('active-menu' if @menu == 'store')}
-                  = link_to 'Home', store_path
+                  = link_to I18n.t("page.menu.home"), store_path
                 %li{:class => ('active-menu' if @menu == 'product')}
-                  = link_to 'Shop', products_path
+                  = link_to I18n.t("page.menu.shop"), products_path
                   %ul.sub-menu
-                    %li
-                      = link_to 'Active Wear', products_path
-                    %li
-                      = link_to 'Swim Separates', products_path
-                    %li
-                      = link_to 'Lingeries', products_path
+                    - @cats.each do |cat|
+                      %li
+                        = link_to cat.name, products_path(category: cat.id)
                 %li{:class => ('active-menu' if @menu == 'foundation')}
-                  = link_to 'LM Foundation', foundations_path
+                  = link_to I18n.t("page.menu.foundation"), foundations_path
                 %li{:class => ('active-menu' if @menu == 'about')}
-                  = link_to 'About Us', store_about_path
+                  = link_to I18n.t("page.menu.about_us"), store_about_path
                 %li{:class => ('active-menu' if @menu == 'findus')}
-                  = link_to 'Find Us', store_find_us_path
+                  = link_to I18n.t("page.menu.find_us"), store_find_us_path
                 %li{:class => ('active-menu' if @menu == 'joinus')}
-                  = link_to 'Join Us', jobs_path
+                  = link_to I18n.t("page.menu.join_us"), jobs_path
             / Logo desktop
             = link_to store_path, class: 'logo' do
               = image_tag 'main-logo.jpg'
             / Icon header
             .wrap-icon-header.flex-w.flex-r-m
-              .icon-header-item.cl2.hov-cl1.trans-04.p-l-22.p-r-11
-                %input.stext-111.cl2.plh3.size-116.search-string{:name => "search", :placeholder => "Keywords", :type => "text"}/
-              .icon-header-item.cl2.hov-cl1.trans-04.p-l-22.p-r-11
-                %i.zmdi.zmdi-search
               .icon-cart
                 = render 'carts/icon', total_products: @cart.try(:total_products) || 0
               %a.dis-block.icon-header-item.cl2.hov-cl1.trans-04.p-l-22.p-r-11.icon-header-noti{"data-notify" => "0", :href => "#"}
@@ -87,39 +82,39 @@
         %ul.topbar-mobile
           %li
             .left-top-bar
-              Free shipping for standard order over $100
+              = I18n.t "page.index.policy_content"
           %li
             .right-top-bar.flex-w.h-full
               %a.flex-c-m.p-lr-10.trans-04{:href => "#"}
-                Help & FAQs
+                = I18n.t "page.menu.help"
               %a.flex-c-m.p-lr-10.trans-04{:href => "#"}
-                My Account
+                = I18n.t "page.menu.my_account"
               %a.flex-c-m.p-lr-10.trans-04{:href => "#"}
                 EN
               %a.flex-c-m.p-lr-10.trans-04{:href => "#"}
                 USD
         %ul.main-menu-m
           %li
-            = link_to 'Home', store_path
+            = link_to I18n.t("page.menu.home"), store_path
+          %li
+            = link_to I18n.t("page.menu.shop"), products_path
             %span.arrow-main-menu-m
               %i.fa.fa-angle-right{"aria-hidden" => "true"}
-          %li
-            = link_to 'Shop', products_path
             %ul.sub-menu-m
-              %li
-                = link_to 'Active Wear', products_path
-              %li
-                = link_to 'Swim Separates', products_path
-              %li
-                = link_to 'Lingeries', products_path
+              - @cats.each do |cat|
+                %li
+                  = link_to cat.name, products_path(category: cat.id)
           %li
-            = link_to 'LM Foundation', foundations_path
+            = link_to I18n.t("page.menu.foundation"), foundations_path
           %li
-            = link_to 'About', store_about_path
+            = link_to I18n.t("page.menu.about_us"), store_about_path
           %li
-            = link_to 'Find Us', store_find_us_path
+            = link_to I18n.t("page.menu.join_us"), jobs_path
     / Cart
     .wrap-header-cart.js-panel-cart.cart-render
+      .alert
+        - flash.each do |key, value|
+          = content_tag :div, value, class: "alert alert-#{key}"
       = render 'carts/cart'
     = yield
     / Footer
