@@ -7,7 +7,7 @@ ActiveAdmin.register Foundation do
       f.input :author
       f.input :title
       f.input :short_description
-      f.input :content
+      f.input :content, as: :html_editor
       input :category, :as => :select, collection: %w(inspiration empowerment blog news), include_blank: true, allow_blank: true
       f.input :image, as: :file, hint: cl_image_tag(f.object.try(:image), width: 200)
     end

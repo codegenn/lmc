@@ -17,6 +17,7 @@
  *= require material-design-iconic-font
  *= require util
  *= require select2
+ *= require active_admin/editor/wysiwyg
  *= require slick
  *= require_self
  */
