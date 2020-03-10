@@ -38,7 +38,7 @@ en:
       best_seller: 'Our Best Sellers'
       promotion: 'Promotion'
       new_arrivals: 'New Arrivals'
-      policy_content: '3 days returns, free delivery'
+      policy_content: '30 days returns, free delivery'
     foundation:
       inspiration: 'Inspiration'
       empowerment: 'Empowerment'
@@ -55,16 +55,20 @@ en:
       value_content:
         content1: 'We believe in the natural beauty of women, in the power of sisterhood, and in our ability to shake up the status quo.'
         content2: 'The four values below underlie who we are, what we stand for and define the way we work. They’re the bedrock of our brand and they guide us in all that we do.'
-        content3: 'Body Positivity. We challenge society’s unrealistic beauty standards, and we embrace the sexiness in all women - no matter her size, shape or color. Being sexy isn’t just for the 1%, it’s for every single woman, every single day.'
-        content4: 'Empowerment. “Behind every successful woman is a tribe of other successful women who have her back.” We believe we are stronger - individually and as a group - when we connect, support and grow together.'
-        content5: 'Courage. We do what we believe is right, what we believe needs to be done, no matter the risk. We are committed to our objectives, we take initiative, we learn from our mistakes, and we see change as an opportunity.'
-        content6: 'Cost-Conscious. We keep an eye on our expenses and make smart, sustainable choices. By controlling our costs, we can make a line that’s more accessible.'
+        content3_head: 'Body Positivity:'
+        content4_head: 'Empowerment:'
+        content5_head: 'Courage:'
+        content6_head: 'Cost-Conscious:'
+        content3: 'We challenge society’s unrealistic beauty standards, and we embrace the sexiness in all women - no matter her size, shape or color. Being sexy isn’t just for the 1%, it’s for every single woman, every single day.'
+        content4: '“Behind every successful woman is a tribe of other successful women who have her back.” We believe we are stronger - individually and as a group - when we connect, support and grow together.'
+        content5: 'We do what we believe is right, what we believe needs to be done, no matter the risk. We are committed to our objectives, we take initiative, we learn from our mistakes, and we see change as an opportunity.'
+        content6: 'We keep an eye on our expenses and make smart, sustainable choices. By controlling our costs, we can make a line that’s more accessible.'
     find_us:
       send_msg: 'Send Us A Message'
       email_field: 'Your Email Address'
       help_field: 'How Can We Help?'
       submit: 'Submit'
-      address_detail: 'Coza Store Center 8th floor, 379 Hudson St, New York, NY 10018 US '
+      address_detail: '58 Hoa Cau, Ward 7, Phu Nhuan District, Ho Chi Minh City, Vietnam 700000'
       talk: 'Lets talk'
       address: 'Address'
       support: 'Sale Support'
@@ -100,3 +104,10 @@ en:
     post_orders: 'Post Orders'
     information: 'User Information'
     no_order: 'You dont have any order'
+  activerecord:
+    errors:
+      template:
+        header:
+          one:   "1 error prohibited this %{model} from being saved"
+          other: "%{count} errors prohibited this %{model} from being saved"
+        body:    "There were problems with the following fields:"
