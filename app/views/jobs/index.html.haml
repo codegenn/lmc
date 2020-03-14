@@ -13,7 +13,9 @@
           .bor8.m-b-20.how-pos4-parent
             = f.text_field :email, autofocus: true, class: 'stext-111 cl2 plh3 size-116 p-l-62 p-r-30', :name => "email", :placeholder => "Your Email Address", :type => "text"
             = image_tag 'icons/icon-email.png', class: 'how-pos4 pointer-none'
-          = submit_tag 'Connect With Us', class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
+          %center
+            .col-sm-6
+              = submit_tag 'Connect With Us', class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
   .container
     .policy
       .col-md-12.col-xl-12.p-b-30.policy-box

@@ -16,7 +16,9 @@
             = image_tag 'icons/icon-email.png', class: 'how-pos4 pointer-none'
           .bor8.m-b-30
             = f.text_area :question, autofocus: true, class: 'stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25', :name => "question", :placeholder => I18n.t("page.find_us.help_field")
-          = submit_tag I18n.t("page.find_us.submit"), class: 'flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer'
+          %center
+            .col-sm-6
+              = submit_tag I18n.t("page.find_us.submit"), class: 'flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer'
       .size-210.bor10.flex-w.flex-col-m.p-lr-93.p-tb-30.p-lr-15-lg.w-full-md
         .flex-w.w-full.p-b-42
           %span.fs-18.cl5.txt-center.size-211

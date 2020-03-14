@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     get 'store/index'
     get 'store/about'
     get 'store/find_us'
+    get 'store/ping'
     root 'store#index', as: 'store'
     resources :products, only: [:index, :show]
+    resources :subscribers, only: [:create]
     resources :foundations, only: [:index, :show]
     resources :jobs, only: [:index, :show]
     resources :applications, only: [:create]

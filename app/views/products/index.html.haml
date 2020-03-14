@@ -111,13 +111,24 @@
           / Block2
           .block2
             .block2-pic.hov-img0
-              = cl_image_tag product.product_images.first.try(:url)
+              = link_to product_path(product.id) do
+                = cl_image_tag product.product_images.first.try(:url)
             .block2-txt.flex-w.flex-t.p-t-14
               .block2-txt-child1.flex-col-l
-                = link_to product_path(product.id), :"data-no-turbolink" => 'false', class: "stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" do
+                = link_to product_path(product.id), :"data-no-turbolink" => 'false', class: "stext-301 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" do
                   = product.title
+                %span.mtext-102.cl3
+                  = "#{number_with_delimiter(product.price.to_i, :delimiter => '.')} vnd"
                 %span.stext-105.cl3
-                  = number_with_delimiter(product.price.to_i, :delimiter => '.')
+                  - count = product.stocks.map(&:color).uniq.count
+                  - if count == 1
+                    = I18n.t("page.product.single_colour")
+                  - else
+                    = I18n.t("page.product.other_colour_count", count: count)
+              - if product.has_promotion
+                .block2-txt-promo.flex-col-l.bor10
+                  %span.mtext-103.cl3.promotion
+                    = product.promotion
               .block2-txt-child2.flex-r.p-t-3
                 %a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2{:href => "#"}
                   -#%img.icon-heart1.dis-block.trans-04{:alt => "ICON", :src => "images/icons/icon-heart-01.png"}/

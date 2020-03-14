@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200227130752) do
+ActiveRecord::Schema.define(version: 20200314144352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,20 @@ ActiveRecord::Schema.define(version: 20200227130752) do
 
   add_index "applications", ["job_id"], name: "index_applications_on_job_id", using: :btree
 
+  create_table "assets", force: :cascade do |t|
+    t.string   "storage_uid"
+    t.string   "storage_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "storage_width"
+    t.integer  "storage_height"
+    t.float    "storage_aspect_ratio"
+    t.integer  "storage_depth"
+    t.string   "storage_format"
+    t.string   "storage_mime_type"
+    t.string   "storage_size"
+  end
+
   create_table "carts", force: :cascade do |t|
     t.string   "code"
     t.datetime "created_at"
@@ -96,7 +110,22 @@ ActiveRecord::Schema.define(version: 20200227130752) do
     t.string   "category"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.string   "slug"
   end
+
+  add_index "foundations", ["slug"], name: "index_foundations_on_slug", unique: true, using: :btree
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id", using: :btree
 
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
@@ -171,6 +200,7 @@ ActiveRecord::Schema.define(version: 20200227130752) do
     t.string   "title"
     t.text     "short_description"
     t.text     "description"
+    t.string   "promotion"
   end
 
   add_index "product_translations", ["locale"], name: "index_product_translations_on_locale", using: :btree
@@ -183,6 +213,8 @@ ActiveRecord::Schema.define(version: 20200227130752) do
     t.boolean  "is_best_seller", default: false
     t.boolean  "is_promotion",   default: false
     t.boolean  "is_new_arrival", default: false
+    t.boolean  "has_promotion",  default: false
+    t.string   "promotion"
   end
 
   create_table "stocks", force: :cascade do |t|
@@ -190,6 +222,10 @@ ActiveRecord::Schema.define(version: 20200227130752) do
     t.string  "size"
     t.string  "color"
     t.boolean "in_stock"
+  end
+
+  create_table "subscribers", force: :cascade do |t|
+    t.string "email"
   end
 
   create_table "users", force: :cascade do |t|

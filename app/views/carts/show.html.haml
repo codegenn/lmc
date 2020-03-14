@@ -23,7 +23,7 @@
                         %td.column-2
                           = line_item.stock.product.title
                         %td.column-3
-                          = line_item.stock.product.price
+                          = "#{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} vnd"
                         %td.column-4
                           = f.fields_for :line_items do |line|
                             .wrap-num-product.flex-w.m-l-auto.m-r-0
@@ -33,7 +33,7 @@
                               .btn-num-product-up.cl8.hov-btn3.trans-04.flex-c-m
                                 %i.fs-16.zmdi.zmdi-plus
                         %td.column-5
-                          = line_item.total_price
+                          = "#{line_item.total_price.to_i} vnd"
                 .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
                   .flex-w.flex-m.m-r-20.m-tb-5
                   = f.hidden_field :id, { :value => @cart.code }
@@ -61,7 +61,10 @@
                     = f.label :note, class: 'col-sm-3 control-label'
                     = f.text_field :note, required: true, class: 'stext-111 cl2 plh3 size-126', value: @order.note
                     = f.hidden_field :id, { :value => @cart.code }
-                    = submit_tag 'Proceed to Checkout', class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
+                    .col-sm-3
+                    .col-sm-6
+                      = submit_tag 'Proceed to Checkout', class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
+                    .col-sm-3
           .col-sm-10.col-lg-7.col-xl-5.m-lr-auto.m-b-50
             .bor10.p-lr-40.p-t-30.p-b-40.m-l-63.m-r-40.m-lr-0-xl.p-lr-15-sm
               %h4.mtext-109.cl2.p-b-30
@@ -72,4 +75,4 @@
                     Total:
                 .size-209.p-t-1
                   %span.mtext-110.cl2
-                    = @cart.total_price
+                    = "#{@cart.total_price.to_i} vnd"

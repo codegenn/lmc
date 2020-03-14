@@ -2,7 +2,7 @@
   .container
     .alert
     .row
-      .col-md-6.col-lg-7.p-b-30
+      .col-md-4.col-lg-5.p-b-30
         .p-l-25.p-r-30.p-lr-0-lg
           .wrap-slick3.flex-sb.flex-w
             .wrap-slick3-dots
@@ -12,12 +12,12 @@
                 .item-slick3{"data-thumb" => "http://res.cloudinary.com/dbysq36qu/image/upload/#{image.url}"}
                   .wrap-pic-w.pos-relative
                     = cl_image_tag image.url
-      .col-md-6.col-lg-5.p-b-30
+      .col-md-8.col-lg-7.p-b-30
         .p-r-50.p-t-5.p-lr-0-lg
           %h4.mtext-105.cl2.js-name-detail.p-b-14
             = @product.title
           %span.mtext-106.cl2
-            = number_with_delimiter(@product.price.to_i, :delimiter => '.')
+            = "#{number_with_delimiter(@product.price.to_i, :delimiter => '.')} vnd"
           %p.stext-102.cl3.p-t-23
             = @product.short_description
           /
@@ -64,6 +64,33 @@
           #nav-profile.tab-pane.fade{"aria-labelledby" => "nav-profile-tab", :role => "tabpanel"}
             .how-pos2.p-lr-15-md
               = cl_image_tag @category.measurement_image_url if @category
+    .bor10.m-t-50.p-t-43.p-b-40
+      %center
+        %h4.mtext-105.cl2.js-name-detail.p-b-14
+          Related Products
+      .tab01
+        - @related_products.each do |product|
+          .col-sm-6.col-md-4.col-lg-3.p-b-35.isotope-item.women
+            .block2
+              .block2-pic.hov-img0
+                = link_to product_path(product.id) do
+                  = cl_image_tag product.product_images.first.try(:url)
+              .block2-txt.flex-w.flex-t.p-t-14
+                .block2-txt-child1.flex-col-l
+                  = link_to product_path(product.id), :"data-no-turbolink" => 'false', class: "stext-301 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" do
+                    = product.title
+                  %span.mtext-102.cl3
+                    = "#{number_with_delimiter(product.price.to_i, :delimiter => '.')} vnd"
+                  %span.stext-105.cl3
+                    - count = product.stocks.map(&:color).uniq.count
+                    - if count == 1
+                      = I18n.t("page.product.single_colour")
+                    - else
+                      = I18n.t("page.product.other_colour_count", count: count)
+                - if product.has_promotion
+                  .block2-txt-promo.flex-col-l.bor10
+                    %span.mtext-103.cl3.promotion
+                      = product.promotion
 :javascript
   $(document).ready(function() {
     $(".js-select2").each(function(){

@@ -10,4 +10,8 @@ class StoreController < ApplicationController
   def find_us
     @menu = 'findus'
   end
+
+  def ping
+    render :text => "PONG!"
+  end
 end

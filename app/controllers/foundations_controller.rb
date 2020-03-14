@@ -13,7 +13,7 @@ class FoundationsController < ApplicationController
   end
 
   def show
-    @blog = Foundation.find_by_id(params[:id])
+    @blog = Foundation.friendly.find(params[:id])
   end
 
   def set_menu

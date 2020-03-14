@@ -1406,7 +1406,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 .wrap-slick3-arrows {
   position: absolute;
   z-index: 100;
-  width: 83.333333%;
+  width: 80%;
   right: 0;
   top: calc(50% - 20px);
 }
@@ -1436,11 +1436,11 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*---------------------------------------------*/
 .wrap-slick3-dots {
-  width: 11.111111%;
+  width: 16.75%;
 }
 
 .slick3 {
-  width: 83.333333%;
+  width: 80%;
 }
 
 .slick3-dots li {
@@ -2036,6 +2036,10 @@ input.num-product::-webkit-inner-spin-button {
 /*---------------------------------------------*/
 .block2-txt-child1 {
   width: calc(100% - 30px);
+}
+
+.block2-txt-promo {
+  width: 100%;
 }
 
 .block2-txt-child2 {
@@ -3386,4 +3390,17 @@ input.num-product::-webkit-inner-spin-button {
 .vision {
   padding-right: 40px;
   text-align: justify;
+}
+
+.input-checkout {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+  height: 50px;
+}
+
+.promotion {
+  padding: 6px;
+  align-self: center;
 }

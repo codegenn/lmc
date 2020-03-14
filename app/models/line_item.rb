@@ -6,6 +6,6 @@ class LineItem < ActiveRecord::Base
   validates :quantity, numericality: { greater_than_or_equal_to: 1 }
 
   def total_price
-    stock.product_price * quantity
+    (stock.product_price * quantity).to_i
   end
 end

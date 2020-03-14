@@ -44,6 +44,15 @@
                         = link_to cat.name, products_path(category: cat.id)
                 %li{:class => ('active-menu' if @menu == 'foundation')}
                   = link_to I18n.t("page.menu.foundation"), foundations_path
+                  %ul.sub-menu
+                    %li
+                      = link_to I18n.t("page.foundation.inspiration"), foundations_path(category: "inspiration")
+                    %li
+                      = link_to I18n.t("page.foundation.empowerment"), foundations_path(category: "empowerment")
+                    %li
+                      = link_to I18n.t("page.foundation.blog"), foundations_path(category: "blog")
+                    %li
+                      = link_to I18n.t("page.foundation.news"), foundations_path(category: "news")
                 %li{:class => ('active-menu' if @menu == 'about')}
                   = link_to I18n.t("page.menu.about_us"), store_about_path
                 %li{:class => ('active-menu' if @menu == 'findus')}
@@ -166,12 +175,12 @@
             %h4.stext-301.cl0.p-b-30
               Newsletter
             %form
+            = form_for(Subscriber.new) do |f|
               .wrap-input1.w-full.p-b-4
-                %input.input1.bg-none.plh1.stext-107.cl7{:name => "email", :placeholder => "email@example.com", :type => "text"}/
+                = f.text_field :email, required: true, autofocus: true, class: 'input1 bg-none plh1 stext-107 cl7', placeholder: "email@example.com", type: "text"
                 .focus-input1.trans-04
               .p-t-18
-                %button.flex-c-m.stext-101.cl0.size-103.bg1.bor1.hov-btn2.p-lr-15.trans-04
-                  Subscribe
+                = submit_tag 'Subscribe', class: 'flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04'
         .p-t-40
           .flex-c-m.flex-w.p-b-18
             %a.m-all-1{:href => "#"}

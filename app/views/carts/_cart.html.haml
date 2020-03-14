@@ -16,10 +16,10 @@
               %a.header-cart-item-name.m-b-18.hov-cl1.trans-04{:href => "#"}
                 = line_item.stock.product.title
                 %span.header-cart-item-info
-                  ="#{line_item.quantity} x #{line_item.stock.product.price}"
+                  ="#{line_item.quantity} x #{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} vnd"
       .w-full
         .header-cart-buttons.flex-w
           .size-107.p-lr-15.trans-04.m-b-10
-            = "Total: #{@cart.total_price}"
+            = "Total: #{@cart.total_price.to_i} vnd"
           = link_to cart_path(@cart.code), class: "flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10" do
             Check Out

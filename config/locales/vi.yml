@@ -79,6 +79,8 @@ vi:
       add_to_cart: 'BỎ VÀO GIỎ HÀNG'
       description: 'Mô Tả Sản Phẩm'
       measurement: 'Thông Số'
+      single_colour: 'có 1 màu'
+      other_colour_count: 'có %{count} màu'
     job:
       name: 'Họ Tên'
       email: 'Địa chỉ email'

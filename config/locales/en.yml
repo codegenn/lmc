@@ -81,6 +81,8 @@ en:
       add_to_cart: 'ADD TO CART'
       description: 'Product Description'
       measurement: 'Measurement'
+      single_colour: '1 colour available'
+      other_colour_count: '%{count} colours available'
     job:
       name: 'Name'
       email: 'Email'

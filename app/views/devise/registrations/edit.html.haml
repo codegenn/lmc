@@ -78,7 +78,7 @@
                                     = link_to product_path(line_item.stock.product.id), :"data-no-turbolink" => 'false', class: "stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" do
                                       = line_item.stock.product.title
                                   %td.column-3
-                                    = line_item.stock.product.price
+                                    = "#{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} vnd"
                                   %td.column-4
                                     = line_item.quantity
                                   %td.column-5

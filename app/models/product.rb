@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
   # paginates_per 9
   # max_paginates_per 50
   # PAGINATION_OPTIONS = [9, 12 , 15, 18]
-  translates :title, :short_description, :description
+  translates :title, :short_description, :description, :promotion
   active_admin_translates :title, :short_description, :description do
     validates_presence_of :title
   end

@@ -1,8 +1,8 @@
 ActiveAdmin.register Product do
 
-  permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :price,
+  permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :price, :has_promotion,
                 category_ids: [], stocks_attributes: [:id, :_destroy, :size, :color], product_images_attributes: [:id, :_destroy, :url],
-                translations_attributes: [:id, :locale, :title, :description, :short_description, :_destroy]
+                translations_attributes: [:id, :locale, :title, :description, :promotion, :short_description, :_destroy]
 
   index do
     id_column
@@ -18,7 +18,8 @@ ActiveAdmin.register Product do
         f.translated_inputs 'ignored title', switch_locale: false do |t|
           t.input :title
           t.input :short_description
-          t.input :description
+          t.input :description, as: :html_editor
+          t.input :promotion
         end
       end
 
@@ -26,6 +27,7 @@ ActiveAdmin.register Product do
       f.input :is_best_seller
       f.input :is_promotion
       f.input :is_new_arrival
+      f.input :has_promotion
       f.input :categories, as: :check_boxes, collection: Category.all, multiple: true
       f.has_many :product_images, heading: false, allow_destroy: true do |image_form|
         cl_image_tag image_form.object.try(:url), width: 200

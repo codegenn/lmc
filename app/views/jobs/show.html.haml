@@ -26,4 +26,7 @@
                     = f.hidden_field :job_id, value: "#{@job.id}", class: 'stext-111 cl2 plh3 size-126'
                     = f.label :cv, I18n.t("page.job.upload"), class: 'col-sm-3 control-label'
                     = f.file_field :cv, class: 'stext-111 cl2 plh3 size-126'
-                    = submit_tag 'Apply', class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
+                    .col-sm-3
+                    .col-sm-6
+                      = submit_tag 'Apply', class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
+                    .col-sm-3
