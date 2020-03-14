@@ -1,6 +1,6 @@
 class Foundation < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :slug_url, use: :slugged
 
   def self.main_page
     foundations = []
@@ -11,6 +11,6 @@ class Foundation < ActiveRecord::Base
   end
 
   def should_generate_new_friendly_id?
-    slug.blank? || self.title_changed?
+    slug.blank? || self.slug_url_changed?
   end
 end

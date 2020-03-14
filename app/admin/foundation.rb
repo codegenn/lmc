@@ -1,11 +1,12 @@
 ActiveAdmin.register Foundation do
 
-  permit_params :author, :title, :short_description, :content, :image, :category
+  permit_params :author, :title, :short_description, :content, :image, :category, :slug_url
 
   form do |f|
     f.inputs "Foundation Details" do
       f.input :author
       f.input :title
+      f.input :slug_url
       f.input :short_description
       f.input :content, as: :html_editor
       input :category, :as => :select, collection: %w(inspiration empowerment blog news), include_blank: true, allow_blank: true
@@ -21,6 +22,7 @@ ActiveAdmin.register Foundation do
       row :short_description
       row :content
       row :category
+      row :slug_url
       row :image do
         image_tag foundation.image, class: 'my_image_size', width: 200
       end

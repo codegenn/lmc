@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
     @product = Product.find_by_id(params[:id])
     @stocks = @product.stocks
     @category = @product.categories.first
-    @related_products = @category.products.sample(4)
+    @related_products = @category ? @category.products.sample(4) : Product.all.sample(4)
   end
 
   private
