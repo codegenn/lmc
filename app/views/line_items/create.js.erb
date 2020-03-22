@@ -3,6 +3,7 @@
 <% elsif flash[:success] %>
   $('.alert').html('<p class="alert alert-danger"><%= flash[:danger] %></p>')
 <% end %>
+<% flash.discard %>
 
 $('.cart-render').html('<%= j(render('carts/cart')) %>')
 $('.icon-cart').html('<%= j(render('carts/icon', total_products: @cart.total_products)) %>')

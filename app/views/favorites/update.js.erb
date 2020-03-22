@@ -1,0 +1,23 @@
+<% if flash[:success] %>
+  $('.alert').html('<p class="alert alert-success"><%= flash[:success] %></p>')
+<% elsif flash[:success] %>
+  $('.alert').html('<p class="alert alert-danger"><%= flash[:danger] %></p>')
+<% end %>
+<% flash.discard %>
+
+$('.wishlist-render').html('<%= j(render('favorites/wishlist')) %>')
+$('.icon-wishlist').html('<%= j(render('favorites/icon', total_products: @favorite.products.count)) %>')
+
+if($(".wishlist-<%=@product.id%>").hasClass("js-addedwish-b2")){
+  $(".wishlist-<%=@product.id%>").removeClass("js-addedwish-b2")
+} else {
+  $(".wishlist-<%=@product.id%>").addClass("js-addedwish-b2")
+}
+
+$('.js-show-wishlist').on('click',function(){
+  $('.js-panel-wishlist').addClass('show-header-cart');
+});
+
+$('.js-hide-wishlist').on('click',function(){
+  $('.js-panel-wishlist').removeClass('show-header-cart');
+});

@@ -19,5 +19,6 @@ Rails.application.routes.draw do
     resources :line_items, only: [:create, :update, :destroy]
     resources :orders, only: [:index, :new, :create]
     resources :search, only: [:index]
+    resources :favorites, only: [:update]
   end
 end

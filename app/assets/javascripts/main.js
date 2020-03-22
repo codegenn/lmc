@@ -179,6 +179,16 @@ $(function () {
     });
 
     /*==================================================================
+    [ wishlist ]*/
+    $('.js-show-wishlist').on('click',function(){
+        $('.js-panel-wishlist').addClass('show-header-cart');
+    });
+
+    $('.js-hide-wishlist').on('click',function(){
+        $('.js-panel-wishlist').removeClass('show-header-cart');
+    });
+
+    /*==================================================================
     [ +/- num product ]*/
     $('.btn-num-product-down').on('click', function(){
         var numProduct = Number($(this).next().val());

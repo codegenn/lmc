@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :set_cart
+  before_action :set_fav
   before_action :set_categories
   before_filter :set_i18n_locale
 
@@ -18,6 +19,10 @@ class ApplicationController < ActionController::Base
   private
   def set_cart
     @cart = Cart.find_by_code(session[:cart_code])
+  end
+
+  def set_fav
+    @favorite = Favorite.find_by_code(session[:fav_code])
   end
 
   def set_i18n_locale

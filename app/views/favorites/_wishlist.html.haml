@@ -1,0 +1,19 @@
+.s-full.js-hide-wishlist
+.header-cart.flex-col-l.p-l-65.p-r-25
+  .header-cart-title.flex-w.flex-sb-m.p-b-8
+    %span.mtext-103.cl2
+      Your Wishlist
+    .fs-35.lh-10.cl2.p-lr-5.pointer.hov-cl1.trans-04.js-hide-wishlist
+      %i.zmdi.zmdi-close
+  - if @favorite
+    .header-cart-content.flex-w.js-pscroll
+      %ul.header-cart-wrapitem.w-full
+        - @favorite.products.each do |product|
+          %li.header-cart-item.flex-w.flex-t.m-b-12
+            .header-cart-item-img
+              = cl_image_tag product.product_images.first.url
+            .header-cart-item-txt.p-t-8
+              %a.header-cart-item-name.m-b-18.hov-cl1.trans-04{:href => "#"}
+                = product.title
+                %span.header-cart-item-info
+                  ="#{number_with_delimiter(product.price.to_i, :delimiter => '.')} vnd"

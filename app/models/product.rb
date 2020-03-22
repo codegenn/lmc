@@ -17,6 +17,7 @@ class Product < ActiveRecord::Base
   has_many :categories, through: :category_products
   has_many :product_images
   has_many :stocks
+  belongs_to :favorite
 
   validates :title, :description, :short_description, :price, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }

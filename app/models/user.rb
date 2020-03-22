@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
             presence: true,
             format: { with: /\d{10}/, message: 'phone number should following include 10 digits' }
   has_many :orders
+  has_one :favorite
 end

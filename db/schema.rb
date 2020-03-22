@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200314152327) do
+ActiveRecord::Schema.define(version: 20200315092639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,16 @@ ActiveRecord::Schema.define(version: 20200314152327) do
 
   add_index "category_translations", ["category_id"], name: "index_category_translations_on_category_id", using: :btree
   add_index "category_translations", ["locale"], name: "index_category_translations_on_locale", using: :btree
+
+  create_table "favorite_products", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "favorite_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.string  "code"
+    t.integer "user_id"
+  end
 
   create_table "foundations", force: :cascade do |t|
     t.string   "author"
