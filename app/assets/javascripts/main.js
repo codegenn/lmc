@@ -253,3 +253,9 @@ $(function () {
         $('.js-modal1').removeClass('show-modal1');
     });
 });
+function changeImage(img) {
+  img = $(img);
+  var in_url = img.attr('src'),
+    out_url =  img.attr('data-image2');
+  img.attr('src', out_url).attr('data-image2', in_url);
+}

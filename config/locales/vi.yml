@@ -32,11 +32,11 @@ vi:
       help: 'Hỏi Đáp'
       my_account: 'Tài Khoản'
     index:
-      policy: 'Chính Sách'
+      policy: 'CHÍNH SÁCH'
       best_seller: 'Hàng Bán Chạy'
       promotion: 'Khuyến Mãi'
       new_arrivals: 'Hàng Mới'
-      policy_content: '30 ngày đổi trả, miễn phí vận chuyển'
+      policy_content: '30 NGÀY ĐỔI TRẢ, MIỄN PHÍ VẬN CHUYỂN'
     foundation:
       inspiration: 'Cảm Hứng'
       empowerment: 'Trao Quyền'

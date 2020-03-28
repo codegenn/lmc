@@ -3065,6 +3065,23 @@ input.num-product::-webkit-inner-spin-button {
   transform: scale(1.1);
 }
 
+.hov-change-img .img-top {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.hov-change-img:hover .img-top {
+  display: inline;
+  position: absolute;
+}
+
+.slogan {
+  flex-grow: 3;
+}
+
 /*---------------------------------------------*/
 .hov-btn1:hover {
   border-color: #222;

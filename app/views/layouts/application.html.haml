@@ -60,6 +60,8 @@
             / Logo desktop
             = link_to store_path, class: 'logo' do
               = image_tag 'main-logo.jpg'
+            .slogan.flex-w.flex-r-m
+              Create Love Moments Everyday
             / Icon header
             .wrap-icon-header.flex-w.flex-r-m
               .icon-cart
@@ -134,15 +136,9 @@
             %h4.stext-301.cl0.p-b-30
               Categories
             %ul
-              %li.p-b-10
-                %a.stext-107.cl7.hov-cl1.trans-04{:href => "#"}
-                  Active Wear
-              %li.p-b-10
-                %a.stext-107.cl7.hov-cl1.trans-04{:href => "#"}
-                  Swim Separates
-              %li.p-b-10
-                %a.stext-107.cl7.hov-cl1.trans-04{:href => "#"}
-                  Lingeries
+              - @cats.each do |cat|
+                %li.p-b-10
+                  = link_to cat.name, products_path(category: cat.id), class: 'stext-107 cl7 hov-cl1 trans-04'
           .col-sm-6.col-lg-3.p-b-50
             %h4.stext-301.cl0.p-b-30
               Help
@@ -163,7 +159,7 @@
             %h4.stext-301.cl0.p-b-30
               GET IN TOUCH
             %p.stext-107.cl7.size-201
-              Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+              Any questions? Let us know in store at 58 Hoa Cau, Ward 7, Phu Nhuan District, Ho Chi Minh City, Vietnam 700000 or call us on 0777-12-12-99
             .p-t-27
               %a.fs-18.cl7.hov-cl1.trans-04.m-r-16{:href => "#"}
                 %i.fa.fa-facebook
