@@ -6,8 +6,9 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :phone,
-            presence: true,
-            format: { with: /\d{10}/, message: 'phone number should following include 10 digits' }
+            :presence => {:message => 'Only positive number without spaces are allowed'},
+            :numericality => true,
+            :length => { :minimum => 6, :maximum => 15 }
   has_many :orders
   has_one :favorite
 end
