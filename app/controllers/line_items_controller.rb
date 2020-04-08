@@ -5,12 +5,16 @@ class LineItemsController < ApplicationController
   before_action :set_line_item, only: [:update, :destroy]
 
   def create
-    @line_item = @cart.add_product(@stock)
+    if @stock
+      @line_item = @cart.add_product(@stock)
 
-    if @line_item.save
-      flash[:success] = 'Add product to cart successfully'
+      if @line_item.save
+        flash[:success] = 'Add product to cart successfully'
+      else
+        flash[:danger] = @line_item.errors.full_messages.to_sentence
+      end
     else
-      flash[:danger] = @line_item.errors.full_messages.to_sentence
+      flash[:danger] = 'Please select size and color'
     end
   end
 
@@ -46,10 +50,7 @@ class LineItemsController < ApplicationController
   end
 
   def validate_stock_id
-    @stock = Stock.where(size: params[:size], color: params[:color]).first
-    unless @stock
-      flash[:danger] = 'Invalid Product'
-      redirect_to products_path
-    end
+    @product = Product.where(id: params[:product_id]).first
+    @stock = @product.stocks.where(size: params[:size], color: params[:color]).first
   end
 end

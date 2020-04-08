@@ -9,6 +9,8 @@ ActiveAdmin.register Order do
       row :district
       row :note
       row :address
+      row :tracking
+      row :status
       row :total do  |order|
         number_with_delimiter(order.total_price.to_i, :delimiter => '.')
       end

@@ -2,7 +2,7 @@
   .container
     .alert
     .row
-      .col-md-4.col-lg-5.p-b-30
+      .col-md-7.col-lg-7.p-b-30
         .p-l-25.p-r-30.p-lr-0-lg
           .wrap-slick3.flex-sb.flex-w
             .wrap-slick3-dots
@@ -12,7 +12,7 @@
                 .item-slick3{"data-thumb" => "http://res.cloudinary.com/dbysq36qu/image/upload/#{image.url}"}
                   .wrap-pic-w.pos-relative
                     = cl_image_tag image.url
-      .col-md-8.col-lg-7.p-b-30
+      .col-md-5.col-lg-5.p-b-30
         .p-r-50.p-t-5.p-lr-0-lg
           %h4.mtext-105.cl2.js-name-detail.p-b-14
             = @product.title
@@ -24,21 +24,23 @@
           = form_tag line_items_path, method: :post, remote: true do
             .p-t-33
               .flex-w.flex-r-m.p-b-10
-                .size-203.flex-c-m.respon6
-                  Size
+                .size-203.flex-c-m.respon6.text-left
+                  = I18n.t("page.product.size")
                 .size-204.respon6-nextp
                   .rs1-select2.bor8.bg0
                     /
-                    = select_tag :size, options_for_select(@stocks.map(&:size)), class: 'js-select2'
+                    = select_tag :size, options_for_select(@stocks.map{ |c| [c[0], c[0], { 'data-color-src'=> c[1].map(&:color).join('|') }] }), class: 'js-select2'
                     .dropDownSelect2
               .flex-w.flex-r-m.p-b-10
-                .size-203.flex-c-m.respon6
+                .size-203.flex-c-m.respon6.text-left
                   = I18n.t("page.product.color")
                 .size-204.respon6-next
-                  .rs1-select2.bor8.bg0
-                    = select_tag :color, options_for_select(@stocks.map(&:color)), class: 'js-select2'
-                    .dropDownSelect2
+                  = select_tag :color, options_for_select(@color_images.map{ |i| [i.color_name, i.color_name,
+                    { 'data-img-src'=>cl_image_path(i.image_url, :width => 60, :height => 60, :crop => :fill), 'data-img-class'=>"#{i.color_name} size-color" }] }),
+                    class: 'image-picker show-html', include_blank: true
               .flex-w.flex-r-m.p-b-10
+                .size-203.flex-c-m.respon6.text-left
+                  = I18n.t("page.product.quantity")
                 .size-204.flex-w.flex-m.respon6-next
                   .wrap-num-product.flex-w.m-r-20.m-tb-10
                     .btn-num-product-down.cl8.hov-btn3.trans-04.flex-c-m
@@ -46,6 +48,9 @@
                     %input.mtext-104.cl3.txt-center.num-product{:name => "num-product", disabled: 'disabled', :value => "1"}/
                     .btn-num-product-up.cl8.hov-btn3.trans-04.flex-c-m
                       %i.fs-16.zmdi.zmdi-plus
+                  = hidden_field_tag :product_id, @product.id
+              .flex-w.flex-r-m.p-b-10
+                .size-204.flex-w.flex-m.respon6-next
                   %button.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04.js-addcart-detail
                     = I18n.t("page.product.add_to_cart")
     .bor10.m-t-50.p-t-43.p-b-40
@@ -60,43 +65,73 @@
         #nav-tabContent.tab-content
           #nav-home.tab-pane.fade.show.active{"aria-labelledby" => "nav-home-tab", :role => "tabpanel"}
             .how-pos2.p-lr-15-md
-              = @product.description
+              = raw @product.description
           #nav-profile.tab-pane.fade{"aria-labelledby" => "nav-profile-tab", :role => "tabpanel"}
             .how-pos2.p-lr-15-md
-              = cl_image_tag @category.measurement_image_url if @category
+              .product-measurement-image
+                = cl_image_tag(@product.measurement_image_url)
+            .how-pos2.p-lr-15-md
+              = raw @product.measurement_description
     .bor10.m-t-50.p-t-43.p-b-40
       %center
         %h4.mtext-105.cl2.js-name-detail.p-b-14
           Related Products
       .tab01
-        - @related_products.each do |product|
-          .col-sm-6.col-md-4.col-lg-3.p-b-35.isotope-item.women
-            .block2
-              .block2-pic.hov-img0
-                = link_to product_path(product.id) do
-                  = cl_image_tag product.product_images.first.try(:url)
-              .block2-txt.flex-w.flex-t.p-t-14
-                .block2-txt-child1.flex-col-l
-                  = link_to product_path(product.id), :"data-no-turbolink" => 'false', class: "stext-301 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" do
-                    = product.title
-                  %span.mtext-102.cl3
-                    = "#{number_with_delimiter(product.price.to_i, :delimiter => '.')} vnd"
-                  %span.stext-105.cl3
-                    - count = product.stocks.map(&:color).uniq.count
-                    - if count == 1
-                      = I18n.t("page.product.single_colour")
-                    - else
-                      = I18n.t("page.product.other_colour_count", count: count)
-                - if product.has_promotion
-                  .block2-txt-promo.flex-col-l.bor10
-                    %span.mtext-103.cl3.promotion
-                      = product.promotion
+        .row.related
+          - @related_products.each do |product|
+            .col-sm-6.col-md-4.col-lg-3.p-b-35.isotope-item.women
+              .block2
+                .block2-pic.hov-img0
+                  = link_to product_path(product.id) do
+                    = cl_image_tag product.product_images.first.try(:url)
+                .block2-txt.flex-w.flex-t.p-t-14
+                  .block2-txt-child1.flex-col-l
+                    = link_to product_path(product.id), :"data-no-turbolink" => 'false', class: "stext-301 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" do
+                      = product.title
+                    %span.mtext-102.cl3
+                      = "#{number_with_delimiter(product.price.to_i, :delimiter => '.')} vnd"
+                    %span.stext-105.cl3
+                      - count = product.stocks.map(&:color).uniq.count
+                      - if count == 1
+                        = I18n.t("page.product.single_colour")
+                      - else
+                        = I18n.t("page.product.other_colour_count", count: count)
+                  - if product.has_promotion
+                    .block2-txt-promo.flex-col-l.bor10
+                      %span.mtext-103.cl3.promotion
+                        = product.promotion
 :javascript
+  function checkcolor(){
+    var color = '\\b(' + $('#size').find(':selected').data('color-src') + ')\\b'
+    regex = new RegExp(color, 'i');
+    $("div.size-color").each(function() {
+      var elClasses = ' ' + $(this).attr('class').replace(/\s+/, ' ') + ' ';
+      if(regex.test(elClasses)) {
+        $(this).removeClass('unclicked');
+      } else {
+        $(this).addClass('unclicked');
+      }
+    });
+  }
   $(document).ready(function() {
     $(".js-select2").each(function(){
       $(this).select2({
           minimumResultsForSearch: 20,
           dropdownParent: $(this).next('.dropDownSelect2')
       });
-    })
+    });
+
+    $(".image-picker").imagepicker({
+      hide_select:  true,
+      show_label:   false,
+      clicked:function(){
+        console.log($(this).find("option[value='" + $(this).val() + "']").data('img-src'));
+      }
+    });
+
+    checkcolor();
+
+    $("#size").change(function(){
+      checkcolor();
+    });
   });

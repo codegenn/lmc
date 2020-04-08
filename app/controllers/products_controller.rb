@@ -6,8 +6,8 @@ class ProductsController < ApplicationController
     category = params[:category]
     check = params[:check]
     if category.present?
-      category = Category.find_by_id(category)
-      @products = category.products
+      @category = Category.find_by_id(category)
+      @products = @category.products
     elsif check.present?
       @products = Product.send(check.to_sym)
     else
@@ -17,7 +17,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find_by_id(params[:id])
-    @stocks = @product.stocks
+    @stocks = @product.stocks.group_by(&:size)
+    @size_colors = []
+    @color_images = @product.color_images
     @category = @product.categories.first
     @related_products = @category ? @category.products.sample(4) : Product.all.sample(4)
   end

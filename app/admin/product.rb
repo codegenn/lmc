@@ -1,8 +1,9 @@
 ActiveAdmin.register Product do
 
-  permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :price, :has_promotion,
+  permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :price, :has_promotion, :measurement_image_url,
                 category_ids: [], stocks_attributes: [:id, :_destroy, :size, :color], product_images_attributes: [:id, :_destroy, :url],
-                translations_attributes: [:id, :locale, :title, :description, :promotion, :short_description, :_destroy]
+                translations_attributes: [:id, :locale, :title, :description, :promotion, :short_description, :measurement_description, :_destroy],
+                color_images_attributes: [:id, :_destroy, :image_url, :color_name]
 
   index do
     id_column
@@ -19,6 +20,7 @@ ActiveAdmin.register Product do
           t.input :title
           t.input :short_description
           t.input :description, as: :html_editor
+          t.input :measurement_description, as: :html_editor
           t.input :promotion
         end
       end
@@ -33,9 +35,14 @@ ActiveAdmin.register Product do
         cl_image_tag image_form.object.try(:url), width: 200
         image_form.input :url, as: :file, hint: cl_image_tag(image_form.object.try(:url), width: 200)
       end
+      f.input :measurement_image_url, as: :file, hint: cl_image_tag(f.object.try(:measurement_image_url), width: 200)
       f.has_many :stocks, heading: false, allow_destroy: true do |stocks_form|
         stocks_form.input :size
         stocks_form.input :color, as: :string
+      end
+      f.has_many :color_images, heading: false, allow_destroy: true do |colors_form|
+        colors_form.input :color_name, as: :string
+        colors_form.input :image_url, as: :file, hint: cl_image_tag(colors_form.object.try(:image_url), width: 200)
       end
     end
     f.actions
@@ -45,11 +52,21 @@ ActiveAdmin.register Product do
     attributes_table do
       row :title
       row :short_description
+      row :measurement_description
       row :description
       row :price
       row :is_best_seller
       row :is_promotion
       row :is_new_arrival
+      row :measurement_image do
+        cl_image_tag product.measurement_image_url, class: 'my_image_size', width: 200
+      end
+      attributes_table_for product.color_images do
+        row :color_name
+        row :image_url do |ad|
+          cl_image_tag ad.image_url, :width => 50
+        end
+      end
       attributes_table_for product.product_images do
         row :product_image do |ad|
           cl_image_tag ad.url, :width => 400
@@ -75,6 +92,24 @@ ActiveAdmin.register Product do
             Cloudinary::Uploader.upload(uploaded_file.path, public_id:  uploaded_file.original_filename.slice(0,uploaded_file.original_filename.index('.')))
             image_attrs[key][:url] = uploaded_file.original_filename
           end
+        end
+      end
+      image_attrs = params[:product][:color_images_attributes]
+      if image_attrs.present?
+        params[:product][:color_images_attributes].each do |key, image_params|
+          uploaded_file = image_params[:image_url]
+          if uploaded_file
+            Cloudinary::Uploader.upload(uploaded_file.path, public_id:  uploaded_file.original_filename.slice(0,uploaded_file.original_filename.index('.')))
+            image_attrs[key][:image_url] = uploaded_file.original_filename
+          end
+        end
+      end
+
+      [:measurement_image_url].each do |url|
+        image_attrs = params[:product][url]
+        if image_attrs.present?
+          Cloudinary::Uploader.upload(image_attrs.path, public_id:  image_attrs.original_filename.slice(0,image_attrs.original_filename.index('.')))
+          params[:product][url] = image_attrs.original_filename
         end
       end
     end

@@ -59,6 +59,11 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   src: font_url('barkentina/Barkentinanew.ttf') format("opentype");
 }
 
+@font-face {
+  font-family: vacation;
+  src: font_url('gotham/vacation.ttf') format("opentype");
+}
+
 /*---------------------------------------------*/
 @font-face {
   font-family: PlayfairDisplay-Regular;
@@ -1406,7 +1411,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 .wrap-slick3-arrows {
   position: absolute;
   z-index: 100;
-  width: 80%;
+  width: 83.333333%;
   right: 0;
   top: calc(50% - 20px);
 }
@@ -1436,11 +1441,11 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*---------------------------------------------*/
 .wrap-slick3-dots {
-  width: 16.75%;
+  width: 11.111111%;
 }
 
 .slick3 {
-  width: 80%;
+  width: 83.333333%;
 }
 
 .slick3-dots li {
@@ -3080,6 +3085,8 @@ input.num-product::-webkit-inner-spin-button {
 
 .slogan {
   flex-grow: 3;
+  font-family: vacation;
+  font-size: 1.4em;
 }
 
 /*---------------------------------------------*/
@@ -3345,6 +3352,31 @@ input.num-product::-webkit-inner-spin-button {
   background-image: image-url('bg-01.jpg');
 }
 
+.category {
+  padding-top: 10px !important;
+  padding-bottom: 25px !important;
+  position: relative;
+  text-align: center;
+}
+
+.title {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.description {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.product-index {
+  padding-top: 0px !important;
+}
+
 .lm_foundation {
   background-image: image-url('bg-02.jpg');
 }
@@ -3420,4 +3452,21 @@ input.num-product::-webkit-inner-spin-button {
 .promotion {
   padding: 6px;
   align-self: center;
+}
+
+.unclicked {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.product-measurement-image img {
+  width: 100%;
+}
+
+.related {
+  padding: 10px;
+}
+
+.text-left {
+  justify-content: initial !important;
 }

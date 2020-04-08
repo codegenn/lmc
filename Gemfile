@@ -52,6 +52,7 @@ gem "paperclip"
 
 ruby "2.6.0"
 gem 'globalize'
+gem 'image-picker-rails'
 gem "activeadmin-globalize"
 gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
 gem 'friendly_id', '~> 5.2.4'

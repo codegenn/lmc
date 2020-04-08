@@ -20,4 +20,5 @@
  *= require active_admin/editor/wysiwyg
  *= require slick
  *= require_self
+ *= require image-picker
  */

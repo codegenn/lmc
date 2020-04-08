@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require select2
 //= require slick-custom
+//= require image-picker
 //= require_tree .

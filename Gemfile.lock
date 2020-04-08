@@ -127,6 +127,8 @@ GEM
       domain_name (~> 0.5)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
+    image-picker-rails (0.2.4)
+      railties (>= 3.0)
     inherited_resources (1.9.0)
       actionpack (>= 4.2, < 5.3)
       has_scope (~> 0.6)
@@ -286,6 +288,7 @@ DEPENDENCIES
   friendly_id (~> 5.2.4)
   globalize
   haml-rails
+  image-picker-rails
   jbuilder (~> 2.0)
   jquery-rails
   paperclip

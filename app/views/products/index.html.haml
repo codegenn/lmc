@@ -1,5 +1,11 @@
-/ Banner
-.sec-banner.bg0.p-t-80.p-b-50.main-page
+- if @category
+  .main-page.bg-img1.txt-center.p-tb-92.category
+    = cl_image_tag @category.banner_url
+    %h2.ltext-105.cl0.txt-center.title
+      = @category.name
+    .mtext-105.cl0.txt-center.description
+      = @category.description
+.sec-banner.bg0.p-t-80.p-b-50{:class => (@category ? 'product-index' : 'main-page') }
   .container
     .alert
       - flash.each do |key, value|

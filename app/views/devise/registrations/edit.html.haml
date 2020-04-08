@@ -48,7 +48,9 @@
                     = f.password_field :current_password, autocomplete: 'off', class: 'form-control'
                     %p.help-block we need your current password to confirm your changes
                 %center
-                  %div= f.submit 'Update', class: 'btn btn-primary'
+                  %div
+                    = f.submit 'Update', class: 'btn btn-primary'
+                    = link_to('Logout', destroy_user_session_path, method: :delete)
           #nav-profile.tab-pane.fade{"aria-labelledby" => "nav-profile-tab", :role => "tabpanel"}
             .how-pos2.p-lr-15-md
               - if @orders
@@ -58,9 +60,14 @@
                       #headingOne.card-header
                         %h2.mb-0
                           %button.btn.btn-link{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-target" => "#collapse#{order.id}", "data-toggle" => "collapse", :type => "button"}
-                            = "On #{order.created_at} - total: #{order.total_price}"
+                            = "On #{order.created_at} - total: #{order.total_price.to_i} vnd"
                       .collapse{"aria-labelledby" => "headingOne", "data-parent" => "#accordionExample", id: "collapse#{order.id}"}
                         .card-body
+                          .order-number
+                            = "Order Tracking Number: #{order.tracking}"
+                          .order-number
+                            = "Order Status: #{order.status}"
+                          %br
                           .wrap-table-shopping-cart
                             %table.table-shopping-cart
                               %tr.table_head

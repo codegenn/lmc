@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
   # paginates_per 9
   # max_paginates_per 50
   # PAGINATION_OPTIONS = [9, 12 , 15, 18]
-  translates :title, :short_description, :description, :promotion
+  translates :title, :short_description, :description, :promotion, :measurement_description
   active_admin_translates :title, :short_description, :description do
     validates_presence_of :title
   end
@@ -16,6 +16,7 @@ class Product < ActiveRecord::Base
   has_many :category_products, dependent: :destroy
   has_many :categories, through: :category_products
   has_many :product_images
+  has_many :color_images
   has_many :stocks
   belongs_to :favorite
 
@@ -23,5 +24,6 @@ class Product < ActiveRecord::Base
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }
   validates :title, uniqueness: true
   accepts_nested_attributes_for :product_images, allow_destroy: true
+  accepts_nested_attributes_for :color_images, :allow_destroy => true
   accepts_nested_attributes_for :stocks, :allow_destroy => true
 end

@@ -36,6 +36,9 @@ vi:
       best_seller: 'Hàng Bán Chạy'
       promotion: 'Khuyến Mãi'
       new_arrivals: 'Hàng Mới'
+      best_seller_description: ''
+      promotion_description: ''
+      new_arrivals_description: ''
       policy_content: '30 NGÀY ĐỔI TRẢ, MIỄN PHÍ VẬN CHUYỂN'
     foundation:
       inspiration: 'Cảm Hứng'
@@ -75,7 +78,9 @@ vi:
       connect_btn: 'HỢP TÁC'
       work: 'LÀM VIỆC CHO LM (CÔNG VIỆC & TÌNH NGUYỆN VIÊN)'
     product:
-      color: 'màu'
+      color: 'Màu'
+      size: 'Size'
+      quantity: 'Số Lượng'
       add_to_cart: 'BỎ VÀO GIỎ HÀNG'
       description: 'Mô Tả Sản Phẩm'
       measurement: 'Thông Số'
@@ -87,8 +92,11 @@ vi:
       phone: 'Số điện thoại'
       upload: 'Tải CV'
   user:
+    user_header: 'LOG IN/SIGN UP'
+    signin_description: ''
     signin: 'Đăng Nhập'
     signup: 'Đăng Ký'
+    signup_btn: 'Đăng Ký'
     email: 'Email'
     password: 'Mật khẩu'
     password_confirmation: 'Lặp lại mật khẩu'

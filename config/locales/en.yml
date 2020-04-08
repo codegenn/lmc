@@ -38,6 +38,9 @@ en:
       best_seller: 'Our Best Sellers'
       promotion: 'Promotion'
       new_arrivals: 'New Arrivals'
+      best_seller_description: 'The crowd favorite'
+      promotion_description: 'Get it while it’s hot'
+      new_arrivals_description: 'Our latest release'
       policy_content: '30 DAYS RETURNS, FREE DELIVERY'
     foundation:
       inspiration: 'Inspiration'
@@ -78,6 +81,8 @@ en:
       work: 'WORK AT LM (Career & Volunteering)'
     product:
       color: 'Color'
+      size: 'Size'
+      quantity: 'Quantity'
       add_to_cart: 'ADD TO CART'
       description: 'Product Description'
       measurement: 'Measurement'
@@ -94,8 +99,11 @@ en:
         language:
           vi: "Tiếng Việt"
   user:
-    signin: 'Log in'
-    signup: 'Sign Up'
+    user_header: 'LOG IN/SIGN UP'
+    signin_description: 'Be the first to learn about our secret sales, new items, health tips and more!'
+    signin: 'Already a Member? Sign in'
+    signup: 'Not a Member yet? Sign Up'
+    signup_btn: 'Sign Up'
     email: 'Email'
     password: 'Password'
     password_confirmation: 'Password Confirmation'

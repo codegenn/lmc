@@ -2,7 +2,7 @@ class Category < ActiveRecord::Base
   validates :sort_order, numericality: { greater_than_or_equal_to: 0 }
   validates :name, presence: true
 
-  translates :name
+  translates :name, :description
   active_admin_translates :name do
     validates_presence_of :name
   end

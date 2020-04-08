@@ -1,6 +1,6 @@
 <% if flash[:success] %>
   $('.alert').html('<p class="alert alert-success"><%= flash[:success] %></p>')
-<% elsif flash[:success] %>
+<% elsif flash[:danger] %>
   $('.alert').html('<p class="alert alert-danger"><%= flash[:danger] %></p>')
 <% end %>
 <% flash.discard %>

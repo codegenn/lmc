@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200315092639) do
+ActiveRecord::Schema.define(version: 20200408123354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20200315092639) do
     t.integer "sort_order"
     t.string  "measurement_image_url"
     t.string  "image_url"
+    t.string  "banner_url"
   end
 
   create_table "category_products", force: :cascade do |t|
@@ -96,10 +97,17 @@ ActiveRecord::Schema.define(version: 20200315092639) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "name"
+    t.string   "description"
   end
 
   add_index "category_translations", ["category_id"], name: "index_category_translations_on_category_id", using: :btree
   add_index "category_translations", ["locale"], name: "index_category_translations_on_locale", using: :btree
+
+  create_table "color_images", force: :cascade do |t|
+    t.integer "product_id"
+    t.string  "image_url"
+    t.string  "color_name"
+  end
 
   create_table "favorite_products", force: :cascade do |t|
     t.integer "product_id"
@@ -188,6 +196,8 @@ ActiveRecord::Schema.define(version: 20200315092639) do
     t.text     "address"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "tracking"
+    t.string   "status"
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
@@ -204,14 +214,15 @@ ActiveRecord::Schema.define(version: 20200315092639) do
   end
 
   create_table "product_translations", force: :cascade do |t|
-    t.integer  "product_id",        null: false
-    t.string   "locale",            null: false
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.integer  "product_id",              null: false
+    t.string   "locale",                  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "title"
     t.text     "short_description"
     t.text     "description"
     t.string   "promotion"
+    t.text     "measurement_description"
   end
 
   add_index "product_translations", ["locale"], name: "index_product_translations_on_locale", using: :btree
@@ -221,11 +232,12 @@ ActiveRecord::Schema.define(version: 20200315092639) do
     t.float    "price"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_best_seller", default: false
-    t.boolean  "is_promotion",   default: false
-    t.boolean  "is_new_arrival", default: false
-    t.boolean  "has_promotion",  default: false
+    t.boolean  "is_best_seller",        default: false
+    t.boolean  "is_promotion",          default: false
+    t.boolean  "is_new_arrival",        default: false
+    t.boolean  "has_promotion",         default: false
     t.string   "promotion"
+    t.string   "measurement_image_url"
   end
 
   create_table "stocks", force: :cascade do |t|
