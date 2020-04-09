@@ -33,9 +33,9 @@ vi:
       my_account: 'Tài Khoản'
     index:
       policy: 'CHÍNH SÁCH'
-      best_seller: 'Hàng Bán Chạy'
-      promotion: 'Khuyến Mãi'
-      new_arrivals: 'Hàng Mới'
+      best_seller: 'HÀNG BÁN CHẠY'
+      promotion: 'KHUYẾN MÃI'
+      new_arrivals: 'HÀNG MỚI'
       best_seller_description: ''
       promotion_description: ''
       new_arrivals_description: ''

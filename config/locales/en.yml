@@ -35,9 +35,9 @@ en:
       lingeries: 'Lingeries'
     index:
       policy: 'POLICY'
-      best_seller: 'Our Best Sellers'
-      promotion: 'Promotion'
-      new_arrivals: 'New Arrivals'
+      best_seller: 'OUR BEST SELLERS'
+      promotion: 'PROMOTION'
+      new_arrivals: 'NEW ARRIVALS'
       best_seller_description: 'The crowd favorite'
       promotion_description: 'Get it while it’s hot'
       new_arrivals_description: 'Our latest release'
