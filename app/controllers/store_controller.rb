@@ -11,6 +11,9 @@ class StoreController < ApplicationController
     @menu = 'findus'
   end
 
+  def policy
+  end
+
   def ping
     render :text => "PONG!"
   end

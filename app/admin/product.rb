@@ -1,6 +1,6 @@
 ActiveAdmin.register Product do
 
-  permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :price, :has_promotion, :measurement_image_url,
+  permit_params :is_best_seller, :product_code, :is_promotion, :is_new_arrival, :image_url, :price, :has_promotion, :measurement_image_url,
                 category_ids: [], stocks_attributes: [:id, :_destroy, :size, :color], product_images_attributes: [:id, :_destroy, :url],
                 translations_attributes: [:id, :locale, :title, :description, :promotion, :short_description, :measurement_description, :_destroy],
                 color_images_attributes: [:id, :_destroy, :image_url, :color_name]
@@ -8,6 +8,7 @@ ActiveAdmin.register Product do
   index do
     id_column
     column :title
+    column :product_code
     column :price
     translation_status
     actions
@@ -25,6 +26,7 @@ ActiveAdmin.register Product do
         end
       end
 
+      f.input :product_code
       f.input :price
       f.input :is_best_seller
       f.input :is_promotion
@@ -54,6 +56,7 @@ ActiveAdmin.register Product do
       row :short_description
       row :measurement_description
       row :description
+      row :product_code
       row :price
       row :is_best_seller
       row :is_promotion

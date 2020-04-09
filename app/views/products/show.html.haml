@@ -16,6 +16,9 @@
         .p-r-50.p-t-5.p-lr-0-lg
           %h4.mtext-105.cl2.js-name-detail.p-b-14
             = @product.title
+            .stext-103.cl2.js-name-detail.p-b-14
+              = I18n.t("page.product.code")
+              = ": #{@product.product_code}"
           %span.mtext-106.cl2
             = "#{number_with_delimiter(@product.price.to_i, :delimiter => '.')} vnd"
           %p.stext-102.cl3.p-t-23
@@ -75,7 +78,7 @@
     .bor10.m-t-50.p-t-43.p-b-40
       %center
         %h4.mtext-105.cl2.js-name-detail.p-b-14
-          Related Products
+          = I18n.t "page.product.related_product"
       .tab01
         .row.related
           - @related_products.each do |product|

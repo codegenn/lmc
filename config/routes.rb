@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get 'store/index'
     get 'store/about'
     get 'store/find_us'
+    get 'store/policy'
     get 'store/ping'
     root 'store#index', as: 'store'
     resources :products, only: [:index, :show]

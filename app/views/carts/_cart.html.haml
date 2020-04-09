@@ -2,7 +2,7 @@
 .header-cart.flex-col-l.p-l-65.p-r-25
   .header-cart-title.flex-w.flex-sb-m.p-b-8
     %span.mtext-103.cl2
-      Your Cart
+      = I18n.t("page.cart.your_cart")
     .fs-35.lh-10.cl2.p-lr-5.pointer.hov-cl1.trans-04.js-hide-cart
       %i.zmdi.zmdi-close
   - if @cart
@@ -20,6 +20,6 @@
       .w-full
         .header-cart-buttons.flex-w
           .size-107.p-lr-15.trans-04.m-b-10
-            = "Total: #{@cart.total_price.to_i} vnd"
+            = "#{I18n.t("page.cart.total")}: #{@cart.total_price.to_i} vnd"
           = link_to cart_path(@cart.code), class: "flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10" do
-            Check Out
+            = I18n.t("page.cart.checkout")
