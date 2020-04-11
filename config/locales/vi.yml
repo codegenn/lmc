@@ -162,3 +162,6 @@ vi:
           one:   "Có một lỗi sảy ra khi lưu"
           other: "có %{count} lỗi sảy ra khi lưu"
         body:    "Xin vui lòng kiểm tra những lỗi sau"
+  time:
+   formats:
+     long: "%Y-%m-%d %H:%M:%S"
