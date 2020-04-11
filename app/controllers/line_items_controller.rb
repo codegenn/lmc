@@ -9,18 +9,18 @@ class LineItemsController < ApplicationController
       @line_item = @cart.add_product(@stock)
 
       if @line_item.save
-        flash[:success] = 'Add product to cart successfully'
+        flash[:success] = I18n.t('controllers.line_items.success')
       else
         flash[:danger] = @line_item.errors.full_messages.to_sentence
       end
     else
-      flash[:danger] = 'Please select size and color'
+      flash[:danger] = I18n.t('controllers.line_items.select_sc')
     end
   end
 
   def update
     if @line_item.update(line_item_params)
-      flash[:success] = 'Update successfully'
+      flash[:success] = I18n.t('controllers.line_items.success_update')
     else
       flash[:danger] = @line_item.errors.full_messages.to_sentence
     end
@@ -29,7 +29,7 @@ class LineItemsController < ApplicationController
 
   def destroy
     LineItem.includes(:cart).where(carts: { code: session[:cart_code] }, line_items: { id: params[:id] }).destroy_all
-    flash[:success] = 'Remove successfully'
+    flash[:success] = I18n.t('controllers.line_items.success_remove')
     redirect_to cart_path(@line_item.cart.code)
   end
 
@@ -44,7 +44,7 @@ class LineItemsController < ApplicationController
 
   def validate_cart_session
     if !session[:cart_code].present?
-      flash[:danger] = 'Cart is not present'
+      flash[:danger] = I18n.t('controllers.line_items.cart_not_present')
       redirect_to products_path
     end
   end

@@ -27,7 +27,7 @@
                         %td.column-2
                           = line_item.stock.product.title
                         %td.column-3
-                          = "#{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} vnd"
+                          = "#{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} VND"
                         %td.column-4
                           = f.fields_for :line_items do |line|
                             .wrap-num-product.flex-w.m-l-auto.m-r-0
@@ -37,7 +37,7 @@
                               .btn-num-product-up.cl8.hov-btn3.trans-04.flex-c-m
                                 %i.fs-16.zmdi.zmdi-plus
                         %td.column-5
-                          = "#{line_item.total_price.to_i} vnd"
+                          = "#{number_with_delimiter(line_item.total_price.to_i, :delimiter => '.')} VND"
                 .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
                   .flex-w.flex-m.m-r-20.m-tb-5
                   = f.hidden_field :id, { :value => @cart.code }
@@ -79,4 +79,4 @@
                     = "#{I18n.t("page.cart.total")}: "
                 .size-209.p-t-1
                   %span.mtext-110.cl2
-                    = "#{@cart.total_price.to_i} vnd"
+                    = "#{number_with_delimiter(@cart.total_price.to_i, :delimiter => '.')} VND"

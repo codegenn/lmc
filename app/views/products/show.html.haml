@@ -17,8 +17,8 @@
           %h4.mtext-105.cl2.js-name-detail.p-b-14
             = @product.title
             .stext-103.cl2.js-name-detail.p-b-14
-              = I18n.t("page.product.code")
-              = ": #{@product.product_code}"
+              = "#{I18n.t("page.product.code") }: "
+              .stock_code
           %span.mtext-106.cl2
             = "#{number_with_delimiter(@product.price.to_i, :delimiter => '.')} vnd"
           %p.stext-102.cl3.p-t-23
@@ -85,14 +85,14 @@
             .col-sm-6.col-md-4.col-lg-3.p-b-35.isotope-item.women
               .block2
                 .block2-pic.hov-img0
-                  = link_to product_path(product.id) do
+                  = link_to product_path(product.slug) do
                     = cl_image_tag product.product_images.first.try(:url)
                 .block2-txt.flex-w.flex-t.p-t-14
                   .block2-txt-child1.flex-col-l
-                    = link_to product_path(product.id), :"data-no-turbolink" => 'false', class: "stext-301 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" do
+                    = link_to product_path(product.slug), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6" do
                       = product.title
                     %span.mtext-102.cl3
-                      = "#{number_with_delimiter(product.price.to_i, :delimiter => '.')} vnd"
+                      = "#{number_with_delimiter(product.price.to_i, :delimiter => '.')} VND"
                     %span.stext-105.cl3
                       - count = product.stocks.map(&:color).uniq.count
                       - if count == 1
@@ -116,6 +116,26 @@
       }
     });
   }
+
+  function checkStockCode(){
+    stock_id = $('#size').find(':selected').val(),
+    product_id = "#{@product.id}",
+    color = $("#color").val(),
+    $.ajax({
+      type: "GET",
+      url: '/stocks',
+      data: {
+        'product_id': product_id,
+        'color': color,
+        'stock_id': stock_id
+      },
+      complete: function (response) {
+        var responseText = response.responseText;
+        $.globalEval(responseText);
+      }
+    });
+  }
+
   $(document).ready(function() {
     $(".js-select2").each(function(){
       $(this).select2({
@@ -133,8 +153,14 @@
     });
 
     checkcolor();
+    checkStockCode();
 
     $("#size").change(function(){
       checkcolor();
+      checkStockCode();
+    });
+
+    $("#color").change(function(){
+      checkStockCode();
     });
   });

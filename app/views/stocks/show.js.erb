@@ -1,0 +1,3 @@
+<% if @selected_stock.try(:product_code) %>
+  $('.stock_code').html("<%= @selected_stock.product_code %>")
+<% end %>

@@ -7,7 +7,7 @@
     .policy.partner
       .col-md-12.col-xl-10.p-b-30.m-lr-auto.policy-box
         %h4.ltext-107.txt-center
-          CONNECT WITH US (Partners)
+          = I18n.t "jobs.partner"
         %br
         = form_for(Partner.new) do |f|
           .bor8.m-b-20.how-pos4-parent
@@ -15,12 +15,12 @@
             = image_tag 'icons/icon-email.png', class: 'how-pos4 pointer-none'
           %center
             .col-sm-6
-              = submit_tag 'Connect With Us', class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
+              = submit_tag I18n.t("jobs.partner_btn"), class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
   .container
     .policy
       .col-md-12.col-xl-12.p-b-30.policy-box
         %h4.ltext-107.txt-center
-          WORK AT LM (Career & Volunteering)
+          = I18n.t("jobs.work")
         %br
         - @jobs.each do |job|
           .job-p

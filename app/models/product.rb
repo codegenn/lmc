@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :slug_url, use: :slugged
   # include PgSearch
   # pg_search_scope :search, against: [:title, :short_description]
 
@@ -26,4 +28,8 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :product_images, allow_destroy: true
   accepts_nested_attributes_for :color_images, :allow_destroy => true
   accepts_nested_attributes_for :stocks, :allow_destroy => true
+
+  def should_generate_new_friendly_id?
+    slug.blank? || self.slug_url_changed?
+  end
 end

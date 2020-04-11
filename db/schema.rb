@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200410102808) do
+ActiveRecord::Schema.define(version: 20200411111508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,7 +84,11 @@ ActiveRecord::Schema.define(version: 20200410102808) do
     t.string  "measurement_image_url"
     t.string  "image_url"
     t.string  "banner_url"
+    t.string  "slug"
+    t.string  "slug_url"
   end
+
+  add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true, using: :btree
 
   create_table "category_products", force: :cascade do |t|
     t.integer "product_id"
@@ -238,14 +242,18 @@ ActiveRecord::Schema.define(version: 20200410102808) do
     t.boolean  "has_promotion",         default: false
     t.string   "promotion"
     t.string   "measurement_image_url"
-    t.string   "product_code"
+    t.string   "slug"
+    t.string   "slug_url"
   end
+
+  add_index "products", ["slug"], name: "index_products_on_slug", unique: true, using: :btree
 
   create_table "stocks", force: :cascade do |t|
     t.integer "product_id"
     t.string  "size"
     t.string  "color"
     t.boolean "in_stock"
+    t.string  "product_code"
   end
 
   create_table "subscribers", force: :cascade do |t|

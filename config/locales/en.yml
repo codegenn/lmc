@@ -29,7 +29,7 @@ en:
       find_us: 'Find Us'
       join_us: 'Join Us'
       help: 'Help & FAQs'
-      my_account: 'My Account'
+      my_account: 'LOG IN/ SIGN UP'
       active_wear: 'Active Wear'
       swim_separates: 'Swim Separates'
       lingeries: 'Lingeries'
@@ -46,8 +46,8 @@ en:
       shop_now: 'SHOP NOW'
       more: 'MORE'
     foundation:
-      inspiration: 'Inspiration'
-      empowerment: 'Empowerment'
+      inspiration: 'INSPIRATION'
+      empowerment: 'EMPOWERMENT'
       blog: 'Blog'
       news: 'News'
     policy:
@@ -133,6 +133,12 @@ en:
       email: 'Email'
       phone: 'Phone'
       upload: 'Upload CV'
+  jobs:
+    partner: 'CONNECT WITH US (Partners)'
+    partner_btn: 'connect with us'
+    work: 'WORK AT LM (Career & Volunteering)'
+  wishlist:
+    your_wishlist: 'Your Wishlist'
   active_admin:
       globalize:
         translations: "Translations"
@@ -169,3 +175,12 @@ en:
           one:   "1 error prohibited this %{model} from being saved"
           other: "%{count} errors prohibited this %{model} from being saved"
         body:    "There were problems with the following fields:"
+  controllers:
+    line_items:
+      success: 'Add product to cart successfully'
+      success_update: 'Update successfully'
+      success_remove: 'Remove successfully'
+      cart_not_present: 'Cart is not present'
+      select_sc: 'Please select size and color'
+    order:
+      success: 'Thank you for your order. We will process the order for you within 48 hours. If you have any other requests, please call us at 0777 12 12 99.'

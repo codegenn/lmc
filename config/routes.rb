@@ -21,5 +21,8 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :new, :create]
     resources :search, only: [:index]
     resources :favorites, only: [:update]
+    resources :stocks, only: [] do
+      get :show, on: :collection
+    end
   end
 end

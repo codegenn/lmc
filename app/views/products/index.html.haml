@@ -117,12 +117,12 @@
           / Block2
           .block2
             .block2-pic.hov-img0.hov-change-img
-              = link_to product_path(product.id) do
+              = link_to product_path(product.slug) do
                 = cl_image_tag product.product_images.first.try(:url)
                 = cl_image_tag product.product_images.second.try(:url), class: 'img-top'
             .block2-txt.flex-w.flex-t.p-t-14
               .block2-txt-child1.flex-col-l
-                = link_to product_path(product.id), :"data-no-turbolink" => 'false', class: "stext-301 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" do
+                = link_to product_path(product.slug), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6" do
                   = product.title
                 %span.mtext-102.cl3
                   = "#{number_with_delimiter(product.price.to_i, :delimiter => '.')} vnd"

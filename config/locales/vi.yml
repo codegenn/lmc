@@ -30,7 +30,7 @@ vi:
       find_us: 'Liên Hệ'
       join_us: 'Hợp Tác'
       help: 'Hỏi Đáp'
-      my_account: 'Tài Khoản'
+      my_account: 'ĐĂNG NHẬP/ ĐĂNG KÝ'
     index:
       policy: 'CHÍNH SÁCH'
       best_seller: 'HÀNG BÁN CHẠY'
@@ -44,8 +44,8 @@ vi:
       shop_now: 'MUA NGAY'
       more: 'XEM THÊM'
     foundation:
-      inspiration: 'Cảm Hứng'
-      empowerment: 'Trao Quyền'
+      inspiration: 'CẢM HỨNG CỦA LMCATION'
+      empowerment: 'TRAO QUYỀN CHO PHÁI ĐẸP'
       blog: 'Blog'
       news: 'Tin Tức'
     policy:
@@ -94,7 +94,7 @@ vi:
     find_us:
       send_msg: 'Gửi Tin Nhắn'
       submit: 'Gửi'
-      address_detail: '58 Hoa Cau, P.7, Q. Phú Nhuận, thành phố Hồ Chí Minh, Vietnam 700000'
+      address_detail: '58 Hoa Cau, P.7, Q. Phú Nhuận, thành phố Hồ Chí Minh, Vietnam'
       talk: 'Số Điện thoại'
       help_field: 'Chúng tôi có thể giúp gì cho bạn?'
       email_field: 'Nhập địa chỉ email'
@@ -155,6 +155,12 @@ vi:
     city: 'THÀNH PHỐ'
     phone: 'ĐIỆN THOẠI'
     note: 'GHI CHÚ'
+  jobs:
+    partner: 'KẾT NỐI VỚI LMCATION'
+    partner_btn: 'Kết nối'
+    work: 'CƠ HỘI VIỆC LÀM TẠI LMCATION'
+  wishlist:
+    your_wishlist: 'SẢN PHẨM YÊU THÍCH CỦA BẠN'
   activerecord:
     errors:
       template:
@@ -165,3 +171,12 @@ vi:
   time:
    formats:
      long: "%Y-%m-%d %H:%M:%S"
+  controllers:
+    line_items:
+      success: 'Thêm sản phẩm thành công'
+      success_update: 'Cập nhật thành công'
+      success_remove: 'Xoá thành công'
+      cart_not_present: 'Cart is not present'
+      select_sc: 'Vui lòng chọn kích thước và màu sắc.'
+    order:
+      success: 'Cảm ơn bạn đã đặt hàng, đơn hàng của bạn sẽ được xử lý trong vòng 48 tiếng đồng hồ. Vui lòng gọi 0777 12 12 99 nếu bạn có những yêu cầu khác.'

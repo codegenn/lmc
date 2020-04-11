@@ -1,15 +1,15 @@
 ActiveAdmin.register Product do
 
-  permit_params :is_best_seller, :product_code, :is_promotion, :is_new_arrival, :image_url, :price, :has_promotion, :measurement_image_url,
-                category_ids: [], stocks_attributes: [:id, :_destroy, :size, :color], product_images_attributes: [:id, :_destroy, :url],
+  permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :price, :has_promotion, :measurement_image_url, :slug_url,
+                category_ids: [], stocks_attributes: [:id, :_destroy, :size, :color, :product_code], product_images_attributes: [:id, :_destroy, :url],
                 translations_attributes: [:id, :locale, :title, :description, :promotion, :short_description, :measurement_description, :_destroy],
                 color_images_attributes: [:id, :_destroy, :image_url, :color_name]
 
   index do
     id_column
     column :title
-    column :product_code
     column :price
+    column :slug
     translation_status
     actions
   end
@@ -26,7 +26,7 @@ ActiveAdmin.register Product do
         end
       end
 
-      f.input :product_code
+      f.input :slug_url
       f.input :price
       f.input :is_best_seller
       f.input :is_promotion
@@ -41,6 +41,7 @@ ActiveAdmin.register Product do
       f.has_many :stocks, heading: false, allow_destroy: true do |stocks_form|
         stocks_form.input :size
         stocks_form.input :color, as: :string
+        stocks_form.input :product_code
       end
       f.has_many :color_images, heading: false, allow_destroy: true do |colors_form|
         colors_form.input :color_name, as: :string
@@ -53,10 +54,11 @@ ActiveAdmin.register Product do
   show do |product|
     attributes_table do
       row :title
+      row :slug
+      row :slug_url
       row :short_description
       row :measurement_description
       row :description
-      row :product_code
       row :price
       row :is_best_seller
       row :is_promotion
@@ -78,6 +80,7 @@ ActiveAdmin.register Product do
       attributes_table_for product.stocks do
         row :size
         row :color
+        row :product_code
       end
     end
     active_admin_comments

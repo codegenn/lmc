@@ -1,12 +1,13 @@
 ActiveAdmin.register Category do
 
-  permit_params :sort_order, :measurement_image_url, :image_url, :banner_url,
+  permit_params :sort_order, :measurement_image_url, :image_url, :banner_url, :slug_url,
                 translations_attributes: [:id, :locale, :name, :_destroy, :description]
 
   index do
     id_column
     column :name
     column :description
+    column :slug
     translation_status
     actions
   end
@@ -20,6 +21,7 @@ ActiveAdmin.register Category do
         end
       end
       f.input :sort_order
+      f.input :slug_url
       f.input :measurement_image_url, as: :file, hint: cl_image_tag(f.object.try(:measurement_image_url), width: 200)
       f.input :image_url, as: :file, hint: cl_image_tag(f.object.try(:image_url), width: 200)
       f.input :banner_url, as: :file, hint: cl_image_tag(f.object.try(:banner_url), width: 200)
@@ -30,6 +32,8 @@ ActiveAdmin.register Category do
   show do |category|
     attributes_table do
       row :name
+      row :slug
+      row :slug_url
       row :description
       row :sort_order
       row :measurement_image do

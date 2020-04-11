@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Lmcation
+    %title LMCATION
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     = csrf_meta_tags
     %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
@@ -20,7 +20,7 @@
           .content-topbar.flex-sb-m.h-full.container
             .left-top-bar
             .right-top-bar.flex-w.h-full
-              = link_to I18n.t("page.footer.help"), store_path, class: "flex-c-m trans-04 p-lr-25"
+              -#= link_to I18n.t("page.footer.help"), store_path, class: "flex-c-m trans-04 p-lr-25"
               - if user_signed_in?
                 = link_to I18n.t("page.menu.my_account"), edit_user_registration_path, class: "flex-c-m trans-04 p-lr-25"
               - else
@@ -41,7 +41,7 @@
                   %ul.sub-menu
                     - @cats.each do |cat|
                       %li
-                        = link_to cat.name, products_path(category: cat.id)
+                        = link_to cat.name, products_path(category: cat.slug)
                 %li{:class => ('active-menu' if @menu == 'foundation')}
                   = link_to I18n.t("page.menu.foundation"), foundations_path
                   %ul.sub-menu
@@ -112,7 +112,7 @@
             %ul.sub-menu-m
               - @cats.each do |cat|
                 %li
-                  = link_to cat.name, products_path(category: cat.id)
+                  = link_to cat.name, products_path(category: cat.slug)
           %li
             = link_to I18n.t("page.menu.foundation"), foundations_path
           %li
@@ -138,7 +138,7 @@
             %ul
               - @cats.each do |cat|
                 %li.p-b-10
-                  = link_to cat.name, products_path(category: cat.id), class: 'stext-107 cl7 hov-cl1 trans-04'
+                  = link_to cat.name, products_path(category: cat.slug), class: 'stext-107 cl7 hov-cl1 trans-04'
           .col-sm-6.col-lg-3.p-b-50
             %h4.stext-301.cl0.p-b-30
               = I18n.t "page.footer.help"
