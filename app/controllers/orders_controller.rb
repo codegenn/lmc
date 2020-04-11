@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
     if @order.save
       Cart.find_by_code(session[:cart_code]).destroy
       session[:cart_code] = nil
-      flash[:success] = 'Thank you for your order'
+      flash[:success] = I18n.t('controllers.order.success')
       redirect_to products_path
     else
       flash[:danger] = @order.errors.full_messages.to_sentence
