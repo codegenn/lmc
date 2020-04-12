@@ -3359,12 +3359,12 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .banner-bg {
-  padding-top: 10px !important;
-  padding-bottom: 25px !important;
+  padding: 10px 0 25px 0 !important;
   position: relative;
   text-align: center;
   img {
     opacity: 0.5;
+    max-width: 100%;
   }
 }
 
