@@ -5,7 +5,6 @@ class Order < ActiveRecord::Base
   validates :first_name, :last_name, :phone, :city, :district, :address, :email, presence: true
 
   def add_line_items_from_cart(cart)
-    self.tracking = "#{DateTime::now().to_time.to_i}#{self.id}"
     cart.line_items.each do |item|
       item.cart_id = nil
       line_items << item

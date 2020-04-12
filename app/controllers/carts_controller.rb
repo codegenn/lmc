@@ -3,7 +3,7 @@ class CartsController < ApplicationController
 
   def show
     @line_items = @cart.line_items.includes(:stock)
-    @order = Order.new
+    @order = Order.new(tracking: "#{DateTime::now().to_time.to_i}#{Order.last.id + 1}")
   end
 
   def update

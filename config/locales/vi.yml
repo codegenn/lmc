@@ -131,6 +131,16 @@ vi:
       cart_total: 'Tổng Cộng'
       update_cart: 'CẬP NHẬT'
       proceed_to_checkout: 'ĐẶT HÀNG'
+      transfer: 'VUI LÒNG CHUYỂN KHOẢN VÀO:'
+      bank: 'Ngân Hàng'
+      account_no: 'Số Tài Khoản'
+      account_holder: 'Chủ Tài Khoản'
+      bank_branch: 'Chi Nhánh'
+      bank_branch_content: 'TP.HCM'
+      tech_bank_branch_content: 'TP.HCM'
+      content: 'chi nội dung chuyển khoản'
+      content_tranfer: '[Tên khách hàng]_[số điện thoại KH]'
+      or: 'HOẶC'
   user:
     user_header: 'LOG IN/SIGN UP'
     signin_description: ''
@@ -180,3 +190,5 @@ vi:
       select_sc: 'Vui lòng chọn kích thước và màu sắc.'
     order:
       success: 'Cảm ơn bạn đã đặt hàng, đơn hàng của bạn sẽ được xử lý trong vòng 48 tiếng đồng hồ. Vui lòng gọi 0777 12 12 99 nếu bạn có những yêu cầu khác.'
+  order:
+    payment_method: 'PHƯƠNG THỨC THANH TOÁN'

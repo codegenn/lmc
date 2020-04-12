@@ -3358,15 +3358,14 @@ input.num-product::-webkit-inner-spin-button {
   }
 }
 
-.about {
-  background-image: image-url('bg-01.jpg');
-}
-
-.category {
+.banner-bg {
   padding-top: 10px !important;
   padding-bottom: 25px !important;
   position: relative;
   text-align: center;
+  img {
+    opacity: 0.5;
+  }
 }
 
 .title {
@@ -3374,6 +3373,7 @@ input.num-product::-webkit-inner-spin-button {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: #333;
 }
 
 .description {
@@ -3381,6 +3381,7 @@ input.num-product::-webkit-inner-spin-button {
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: #333;
 }
 
 .product-index {
@@ -3388,7 +3389,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .lm_foundation {
-  background-image: image-url('bg-01.jpg');
+  background-image: image-url('banner-2.jpg');
 }
 .search-string {
   border: 1px solid #e6e6e6;
@@ -3487,4 +3488,27 @@ input.num-product::-webkit-inner-spin-button {
 
 .stock_code {
   display: contents;
+}
+
+.payment_method {
+  align-self: self-start;
+}
+
+.radio-payment {
+  float: left;
+  clear: none;
+  margin: 6px 8px 0 2px;
+}
+
+.radio-payment-label {
+  loat: left;
+  clear: none;
+  display: block;
+  padding: 0px 1em 0px 8px;
+}
+
+.size-color {
+  img {
+    width: 47px;
+  }
 }

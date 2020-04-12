@@ -10,6 +10,7 @@ ActiveAdmin.register Order do
       row :note
       row :address
       row :tracking
+      row :payment_method
       row :status
       row :total do  |order|
         number_with_delimiter(order.total_price.to_i, :delimiter => '.')

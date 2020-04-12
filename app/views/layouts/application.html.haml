@@ -11,6 +11,25 @@
     %script{:src => "http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"}
     = yield :header
   %body{data: {turbolinks: 'false'}}
+    / Load Facebook SDK for JavaScript
+    #fb-root
+    :javascript
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v6.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    / Your customer chat code
+    .fb-customerchat{:attribution => "install_email", :page_id => "101427861226298"}
     / Header
     %header
       / Header desktop

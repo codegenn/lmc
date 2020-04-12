@@ -65,6 +65,38 @@
                     = f.label :note, I18n.t("user.note"), class: 'col-sm-3 control-label'
                     = f.text_field :note, class: 'stext-111 cl2 plh3 size-126', value: @order.note
                     = f.hidden_field :id, { :value => @cart.code }
+                    = f.hidden_field :tracking, { :value => @order.tracking }
+                  .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
+                    = f.label :payment_method, I18n.t("order.payment_method"), class: 'col-sm-3 control-label payment_method'
+                    .col-sm-9
+                      = f.radio_button :payment_method, 'COD', class: 'radio-payment', checked: @order.payment_method.nil? || @order.payment_method == 'COD'
+                      = f.label :payment_method, 'COD', class: 'radio-payment-label', :value => 'COD'
+                      = f.radio_button :payment_method, 'TRANSFER', class: 'radio-payment', checked: @order.payment_method == 'transfer'
+                      = f.label :payment_method, 'TRANSFER', class: 'radio-payment-label', :value => 'TRANSFER'
+                      %br
+                    .tranfer-content
+                      .col-sm-12.control-label
+                        = I18n.t("page.cart.transfer")
+                        %br
+                      .col-sm-12
+                        = "#{I18n.t("page.cart.account_holder")}: Nguyễn Thị Anh Thư"
+                      .col-sm-12
+                        = "#{I18n.t("page.cart.bank")}: VIB"
+                      .col-sm-12
+                        = "#{I18n.t("page.cart.bank_branch")}: #{I18n.t("page.cart.bank_branch_content")}"
+                      .col-sm-12
+                        = "#{I18n.t("page.cart.account_no")}: 604704060140143"
+                      .col-sm-12
+                        = I18n.t("page.cart.or")
+                      .col-sm-12
+                        = "#{I18n.t("page.cart.bank")}: Techcombank"
+                      .col-sm-12
+                        = "#{I18n.t("page.cart.bank_branch")}: #{I18n.t("page.cart.bank_branch_content")}"
+                      .col-sm-12
+                        = "#{I18n.t("page.cart.account_no")}: 10623456052016"
+                      .col-sm-12
+                        = "#{I18n.t("page.cart.content")}: lm_#{@order.tracking}_CK"
+                  .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
                     .col-sm-3
                     .col-sm-6
                       = submit_tag I18n.t("page.cart.proceed_to_checkout"), class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
@@ -80,3 +112,20 @@
                 .size-209.p-t-1
                   %span.mtext-110.cl2
                     = "#{number_with_delimiter(@cart.total_price.to_i, :delimiter => '.')} VND"
+
+:javascript
+  function checktransfer(){
+    if($("input[name='order[payment_method]']:checked").val() == 'TRANSFER') {
+      $('.tranfer-content').show();
+    } else {
+      $('.tranfer-content').hide();
+    }
+  }
+
+  $(document).ready(function() {
+    checktransfer();
+
+    $("input[name='order[payment_method]']").change(function(){
+      checktransfer();
+    });
+  });

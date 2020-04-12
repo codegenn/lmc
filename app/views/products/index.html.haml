@@ -1,6 +1,6 @@
 - if @category
-  .main-page.bg-img1.txt-center.p-tb-92.category
-    = cl_image_tag @category.banner_url
+  .main-page.bg-img1.txt-center.p-tb-92.banner-bg
+    = @category.banner_url ? cl_image_tag(@category.banner_url) : cl_image_tag('lmcation_banner_3_sromtg.jpg')
     %h2.ltext-105.cl0.txt-center.title
       = @category.name
     .mtext-105.cl0.txt-center.description
