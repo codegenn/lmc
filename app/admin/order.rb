@@ -1,4 +1,5 @@
 ActiveAdmin.register Order do
+  permit_params :first_name, :last_name, :email, :phone, :city, :district, :note, :address, :tracking, :payment_method, :status, :user_id
   show do
     attributes_table do
       row :first_name

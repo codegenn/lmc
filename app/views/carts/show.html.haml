@@ -29,7 +29,7 @@
                         %td.column-3
                           = "#{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} VND"
                         %td.column-4
-                          = f.fields_for :line_items do |line|
+                          = f.fields_for :line_items, line_item do |line|
                             .wrap-num-product.flex-w.m-l-auto.m-r-0
                               .btn-num-product-down.cl8.hov-btn3.trans-04.flex-c-m
                                 %i.fs-16.zmdi.zmdi-minus
