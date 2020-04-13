@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
 
     if @order.save
       Cart.find_by_code(session[:cart_code]).destroy
+      UserMailer.delay.order_for_user(@order)
       session[:cart_code] = nil
       flash[:success] = I18n.t('controllers.order.success')
       redirect_to products_path

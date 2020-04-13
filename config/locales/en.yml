@@ -27,6 +27,7 @@ en:
       foundation: 'LM Foundation'
       about_us: 'About Us'
       find_us: 'Find Us'
+      tracking: 'Order'
       join_us: 'Join Us'
       help: 'Help & FAQs'
       my_account: 'LOG IN/ SIGN UP'
@@ -106,6 +107,14 @@ en:
       connect: 'CONNECT WITH US(Partners)'
       connect_btn: 'CONNECT WITH US'
       work: 'WORK AT LM (Career & Volunteering)'
+    tracking:
+      tracking: 'TRACK ORDER'
+      info: 'ORDER INFORMATION'
+      search: 'SEARCH YOUR ORDER'
+      order_id: 'Your Order Tracking Number'
+      order_tracking_number: 'Your Order Tracking Number'
+      order_status: 'Your Order Status'
+      search_empty: 'Please input your tracking ID and click on search'
     product:
       color: 'Color'
       size: 'Size'

@@ -28,6 +28,7 @@ vi:
       foundation: 'Nền Tảng'
       about_us: 'Giới Thiệu'
       find_us: 'Liên Hệ'
+      tracking: 'Đơn Hàng'
       join_us: 'Hợp Tác'
       help: 'Hỏi Đáp'
       my_account: 'ĐĂNG NHẬP/ ĐĂNG KÝ'
@@ -104,6 +105,14 @@ vi:
       connect: 'HỢP TÁC (ĐỐI TÁC)'
       connect_btn: 'HỢP TÁC'
       work: 'LÀM VIỆC CHO LM (CÔNG VIỆC & TÌNH NGUYỆN VIÊN)'
+    tracking:
+      tracking: 'THÔNG TIN ĐẶT HÀNG'
+      info: 'THÔNG TIN ĐƠN HÀNG'
+      search: 'TÌM KIẾM ĐƠN HÀNG'
+      order_id: 'Mã Đơn Hàng Của Bạn'
+      order_tracking_number: 'Mã Đơn Hàng Của Bạn'
+      order_status: 'Tình Trạng Đơn Hàng'
+      search_empty: 'Vui lòng nhập mã đơn hàng và tìm kiếm'
     product:
       color: 'Màu'
       size: 'Size'

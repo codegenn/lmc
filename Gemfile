@@ -56,3 +56,4 @@ gem 'image-picker-rails'
 gem "activeadmin-globalize"
 gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
 gem 'friendly_id', '~> 5.2.4'
+gem 'delayed_job_active_record'
