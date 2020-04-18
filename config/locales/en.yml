@@ -137,6 +137,7 @@ en:
       cart_total: 'Cart Totals'
       update_cart: 'UPDATE CART'
       proceed_to_checkout: 'PROCEED TO CHECKOUT'
+      transfer_btn: 'TRANSFER'
       transfer: 'PLEASE TRANSFER TO THE ACCOUNT:'
       bank: 'Bank'
       account_no: 'Account Number'
@@ -145,7 +146,7 @@ en:
       bank_branch_content: 'TP.HCM'
       tech_bank_branch_content: 'TP.HCM'
       content: 'Content'
-      content_tranfer: '[customer name]_[customer phone number]'
+      content_tranfer: 'LMCATION-[customer name]-[customer phone number] (LMCATION-THU-0772404646)'
       or: 'OR'
     job:
       name: 'Name'

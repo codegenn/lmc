@@ -11,12 +11,17 @@
         - @cart.line_items.each do |line_item|
           %li.header-cart-item.flex-w.flex-t.m-b-12
             .header-cart-item-img-no-de
-              = cl_image_tag line_item.stock.product.product_images.first.url
+              = link_to line_item, method: :delete, noindex: true, id: 'delete', data: { confirm: 'Are you sure you want to delete this line item?' }, class: 'delete-item' do
+                .how-itemcart1
+                  = cl_image_tag line_item.stock.product.product_images.first.url
             .header-cart-item-txt.p-t-8
               = link_to product_path(line_item.stock.product.slug), :"data-no-turbolink" => 'false', class: "header-cart-item-name m-b-18 hov-cl1 trans-04" do
                 = line_item.stock.product.title
                 %span.header-cart-item-info
                   ="#{line_item.quantity} x #{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} VND"
+                %span.header-cart-item-info
+                  = link_to line_item, method: :delete, noindex: true, id: 'delete', data: { confirm: 'Are you sure you want to delete this line item?' }, class: 'delete-item' do
+                    delete
       .w-full
         .header-cart-buttons.flex-w
           .size-107.p-lr-15.trans-04.m-b-10

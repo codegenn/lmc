@@ -6,7 +6,7 @@ class LineItemsController < ApplicationController
 
   def create
     if @stock
-      @line_item = @cart.add_product(@stock)
+      @line_item = @cart.add_product(@stock, params[:quantity])
 
       if @line_item.save
         flash[:success] = I18n.t('controllers.line_items.success')
@@ -28,7 +28,12 @@ class LineItemsController < ApplicationController
   end
 
   def destroy
-    LineItem.includes(:cart).where(carts: { code: session[:cart_code] }, line_items: { id: params[:id] }).destroy_all
+    line = LineItem.includes(:cart).where(carts: { code: session[:cart_code] }, line_items: { id: params[:id] }).first
+    if line.quantity == 1
+      line.destroy
+    else
+      line.update(quantity: line.quantity - 1)
+    end
     flash[:success] = I18n.t('controllers.line_items.success_remove')
     redirect_to cart_path(@line_item.cart.code)
   end

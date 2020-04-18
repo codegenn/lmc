@@ -48,7 +48,7 @@
                   .wrap-num-product.flex-w.m-r-20.m-tb-10
                     .btn-num-product-down.cl8.hov-btn3.trans-04.flex-c-m
                       %i.fs-16.zmdi.zmdi-minus
-                    %input.mtext-104.cl3.txt-center.num-product{:name => "num-product", disabled: 'disabled', :value => "1"}/
+                    %input.mtext-104.cl3.txt-center.num-product{:name => "quantity", readonly: 'true', :value => "1", id: 'quantity'}/
                     .btn-num-product-up.cl8.hov-btn3.trans-04.flex-c-m
                       %i.fs-16.zmdi.zmdi-plus
                   = hidden_field_tag :product_id, @product.id

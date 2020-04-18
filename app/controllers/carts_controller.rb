@@ -27,7 +27,12 @@ class CartsController < ApplicationController
   end
 
   def cart_params
-    params.require(:cart).permit(line_items_attributes: [:quantity, :id])
+    params[:cart][:line_items_attributes].each do |line_items, l_params|
+      if l_params[:quantity].to_i == 0
+        params[:cart][:line_items_attributes][line_items][:_destroy] = true
+      end
+    end
+    params.require(:cart).permit(line_items_attributes: [:quantity, :id, :_destroy])
   end
 
   def validate_cart_id

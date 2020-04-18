@@ -140,6 +140,7 @@ vi:
       cart_total: 'Tổng Cộng'
       update_cart: 'CẬP NHẬT'
       proceed_to_checkout: 'ĐẶT HÀNG'
+      transfer_btn: 'CHUYỂN KHOẢN'
       transfer: 'VUI LÒNG CHUYỂN KHOẢN VÀO:'
       bank: 'Ngân Hàng'
       account_no: 'Số Tài Khoản'
@@ -147,8 +148,8 @@ vi:
       bank_branch: 'Chi Nhánh'
       bank_branch_content: 'TP.HCM'
       tech_bank_branch_content: 'TP.HCM'
-      content: 'chi nội dung chuyển khoản'
-      content_tranfer: '[Tên khách hàng]_[số điện thoại KH]'
+      content: 'Nội dung chuyển khoản'
+      content_tranfer: 'LMCATION-[Tên khách hàng]-[số điện thoại KH] (LMCATION-THU-0772404646)'
       or: 'HOẶC'
   user:
     user_header: 'LOG IN/SIGN UP'
