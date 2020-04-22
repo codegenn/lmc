@@ -76,12 +76,14 @@ en:
       newsletter: 'NEWSLETTER'
       subscribe: 'SUBSCRIBE'
     about_us:
+      about_us: 'About Us'
       vision: 'Vision'
       vision_content:
         content: 'To inspire and empower women of all shapes, sizes and color, every single day.'
       mission: 'Mission'
       mission_content:
         content: 'Made for women, by women, we celebrate the extraordinary sexiness of real bodies with our range of chic, versatile and affordable lingerie, swim and activewear.'
+        content_1: ''
       value: 'Value'
       value_content:
         content1: 'We believe in the natural beauty of women, in the power of sisterhood, and in our ability to shake up the status quo.'
@@ -94,6 +96,8 @@ en:
         content4: '“Behind every successful woman is a tribe of other successful women who have her back.” We believe we are stronger - individually and as a group - when we connect, support and grow together.'
         content5: 'We do what we believe is right, what we believe needs to be done, no matter the risk. We are committed to our objectives, we take initiative, we learn from our mistakes, and we see change as an opportunity.'
         content6: 'We keep an eye on our expenses and make smart, sustainable choices. By controlling our costs, we can make a line that’s more accessible.'
+        content7: ''
+        content8: ''
     find_us:
       send_msg: 'Send Us A Message'
       email_field: 'Your Email Address'
