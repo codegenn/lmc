@@ -10,6 +10,14 @@
     = javascript_include_tag "application"
     %script{:src => "http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"}
     = yield :header
+    / Global site tag (gtag.js) - Google Analytics
+    %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-164577749-1"}
+    :javascript
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-164577749-1');
   %body{data: {turbolinks: 'false'}}
     / Load Facebook SDK for JavaScript
     #fb-root
