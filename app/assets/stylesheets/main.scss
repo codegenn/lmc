@@ -3512,3 +3512,12 @@ input.num-product::-webkit-inner-spin-button {
     width: 47px;
   }
 }
+
+ul.disc {
+  list-style-position: outside;
+
+  li {
+    margin-left: 50px;
+    list-style-type: circle;
+  }
+}

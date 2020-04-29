@@ -11,6 +11,9 @@ class StoreController < ApplicationController
     @menu = 'findus'
   end
 
+  def privacy
+  end
+
   def policy
   end
 

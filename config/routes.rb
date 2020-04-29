@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get 'store/find_us'
     get 'store/policy'
     get 'store/ping'
+    get 'store/privacy'
     root 'store#index', as: 'store'
     resources :products, only: [:index, :show]
     resources :subscribers, only: [:create]
