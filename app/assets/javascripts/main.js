@@ -1,4 +1,7 @@
 $(function () {
+    if ( window.location.pathname == '/' || window.location.pathname == '/vi' || window.location.pathname == '/en' ){
+       $("#promotion").modal();
+    }
     "use strict";
 
     /*[ Back to top ]
