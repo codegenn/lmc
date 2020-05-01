@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <div class="">
+      Xin chào, bạn vừa có một tin nhắn từ website
+      <a href="https://lmcation.herokuapp.com/vi/store/find_us">lmcation</a><br/><br/>
+      Người Gửi:
+      <a href="mailto:<%= @message.email %>">@message.email</a><br/><br/>
+      Tin Nhắn: <%= @message.question %>
+    </div>
+  </body>
+</html>
