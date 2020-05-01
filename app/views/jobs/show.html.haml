@@ -4,25 +4,25 @@
       .container
         .row
           .col-lg-10.col-xl-7.m-lr-auto.m-b-50
-            .m-l-25.m-r--38.m-lr-0-xl
+            .m-l-25.m-r--38.m-lr-0-xl.shopping-cart-table
               .wrap-table-shopping-cart.bor10
                 .flex-w.flex-sb-m.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
                   .ltext-109.cl2.p-b-28
                     = @job.title
                 .flex-w.flex-sb-m.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
                   = @job.content
-            .m-l-25.m-r--38.m-lr-0-xl
+            .m-l-25.m-r--38.m-lr-0-xl.shopping-cart-table
               = form_for(@application) do |f|
                 .wrap-table-shopping-cart
                   - flash.each do |key, value|
                     = content_tag :div, value, class: "alert alert-#{key}"
                   .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
                     = f.label :name, I18n.t("page.job.name"), class: 'col-sm-3 control-label'
-                    = f.text_field :name, required: true, autofocus: true, class: 'stext-111 cl2 plh3 size-126'
+                    = f.text_field :name, required: true, autofocus: true, class: 'stext-111 cl2 plh3 size-126 input-txt'
                     = f.label :email, I18n.t("page.job.email"), class: 'col-sm-3 control-label'
-                    = f.text_field :email, required: true, autofocus: true, class: 'stext-111 cl2 plh3 size-126'
+                    = f.text_field :email, required: true, autofocus: true, class: 'stext-111 cl2 plh3 size-126 input-txt'
                     = f.label :phone_number, I18n.t("page.job.phone"), class: 'col-sm-3 control-label'
-                    = f.text_field :phone_number, required: true, autofocus: true, class: 'stext-111 cl2 plh3 size-126'
+                    = f.text_field :phone_number, required: true, autofocus: true, class: 'stext-111 cl2 plh3 size-126 input-txt'
                     = f.hidden_field :job_id, value: "#{@job.id}", class: 'stext-111 cl2 plh3 size-126'
                     = f.label :cv, I18n.t("page.job.upload"), class: 'col-sm-3 control-label'
                     = f.file_field :cv, class: 'stext-111 cl2 plh3 size-126'

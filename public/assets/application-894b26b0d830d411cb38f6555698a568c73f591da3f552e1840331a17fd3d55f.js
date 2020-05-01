@@ -59656,6 +59656,9 @@ var widgetsTooltip = $.ui.tooltip;
 
 }));
 $(function () {
+    if ( window.location.pathname == '/' || window.location.pathname == '/vi' || window.location.pathname == '/en' ){
+       $("#promotion").modal({backdrop: true});
+    }
     "use strict";
 
     /*[ Back to top ]
@@ -59670,10 +59673,14 @@ $(function () {
         }
     });
 
+    $(window).on('ontouchend',function(){
+      $("#promotion").modal('hide');
+    });
+
     $('#myBtn').on("click", function(){
         $('html, body').animate({scrollTop: 0}, 300);
     });
-
+    window.scrollTo(0, 0);
 
     /*==================================================================
     [ Fixed Header ]*/

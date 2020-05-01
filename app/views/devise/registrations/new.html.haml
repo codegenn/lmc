@@ -1,25 +1,27 @@
-.main-page.bg-img1.txt-center.p-lr-15.p-tb-92.about
-  %h2.ltext-105.cl0.txt-center
+.main-page.bg-img1.txt-center.p-tb-92.banner-bg
+  = cl_image_tag 'lmcation_banner_2_ngcg8k.jpg'
+  %h2.ltext-105.cl0.txt-center.title
     = I18n.t "user.signup"
-%section.bg0.p-t-104.p-b-116
+%section.bg0.p-t-104.p-b-116.session-top
   .container
     .flex-w.flex-tr
-      .size-217.bor10.p-lr-70.p-t-55.p-b-70.p-lr-15-lg.w-full-md
+      .size-217.bor10.p-lr-70.p-t-55.p-b-70.p-lr-15-lg.w-full-md.m-no-padding
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
           = render "devise/shared/error_messages", resource: resource
+          %br
           .field
             = f.label :email, I18n.t("user.email")
             .bor8.m-b-20.how-pos4-parent
               = f.email_field :email, autofocus: true, autocomplete: "email", class: 'stext-111 cl2 plh3 size-116 p-l-20'
           .field
-            = f.label :password, I18n.t("user.password")
+            = f.label :password, I18n.t("user.password").upcase
             - if @minimum_password_length
               %em
                 (#{@minimum_password_length} characters minimum)
             .bor8.m-b-20.how-pos4-parent
               = f.password_field :password, autocomplete: "new-password", class: 'stext-111 cl2 plh3 size-116 p-l-20'
           .field
-            = f.label :password_confirmation, I18n.t("user.password_confirmation")
+            = f.label :password_confirmation, I18n.t("user.password_confirmation").upcase
             .bor8.m-b-20.how-pos4-parent
               = f.password_field :password_confirmation, autocomplete: "new-password", class: 'stext-111 cl2 plh3 size-116 p-l-20'
           .field

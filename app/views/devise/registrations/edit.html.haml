@@ -59,8 +59,10 @@
                     .card
                       #headingOne.card-header
                         %h2.mb-0
-                          %button.btn.btn-link{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-target" => "#collapse#{order.id}", "data-toggle" => "collapse", :type => "button"}
-                            = "On #{order.created_at} - total: #{order.total_price.to_i} vnd"
+                          %button.order-header.btn.btn-link{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-target" => "#collapse#{order.id}", "data-toggle" => "collapse", :type => "button"}
+                            = "On #{order.created_at}"
+                            %br
+                            = " total: #{number_with_delimiter(order.total_price.to_i, :delimiter => '.')} vnd"
                       .collapse{"aria-labelledby" => "headingOne", "data-parent" => "#accordionExample", id: "collapse#{order.id}"}
                         .card-body
                           .order-number

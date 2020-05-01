@@ -246,3 +246,34 @@ vi:
       success: 'Cảm ơn bạn đã đặt hàng, đơn hàng của bạn sẽ được xử lý trong vòng 48 tiếng đồng hồ. Vui lòng gọi 0777 12 12 99 nếu bạn có những yêu cầu khác.'
   order:
     payment_method: 'PHƯƠNG THỨC THANH TOÁN'
+
+  errors:
+    messages:
+      not_saved: 'Vui lòng sửa những lỗi sau:'
+  devise:
+    failure:
+      user:
+        not_found_in_database: 'Không tìm thấy thông tin'
+    sessions:
+      user:
+        signed_in: 'Quý khách đã đăng nhập'
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: 'Email không được để trống'
+            password:
+              blank: 'Mật khẩu không được để trống'
+            first_name:
+              blank: 'Tên không được để trống'
+            last_name:
+              blank: 'Họ không được để trống'
+            phone:
+              not_a_number: ' Điện Thoại chỉ được là số'
+              too_short: ' Điện Thoại quá ngắn'
+            current_password:
+              blank: 'Vui lòng điền mật khẩu'
+            password_confirmation:
+              confirmation: 'Vui lòng điền lặp lại mật khẩu'

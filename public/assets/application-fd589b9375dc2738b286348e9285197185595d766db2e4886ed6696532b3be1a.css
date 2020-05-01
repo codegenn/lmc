@@ -9066,7 +9066,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /* line 256, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .wrap-menu-desktop {
   position: fixed;
-  z-index: 1100;
+  z-index: 1;
   background-color: transparent;
   width: 100%;
   height: 120px;
@@ -9903,7 +9903,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   line-height: 1.3;
 }
 
-/*---------------------------------------------*/
+/*-------------------MOBILE VER--------------------------*/
 @media (max-width: 575px) {
   /* line 1043, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .header-cart {
@@ -9914,17 +9914,98 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   .header-cart-title {
     padding-bottom: 35px;
   }
+
+  /* line 1051, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  .title {
+    font-size: 28px !important;
+    width: 100%;
+    top: 39% !important;
+  }
+
+  /* line 1057, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  .description {
+    top: 110% !important;
+    font-size: 19px !important;
+    width: 100%;
+  }
+
+  /* line 1063, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  .products-container {
+    padding-bottom: 10px !important;
+  }
+
+  /* line 1067, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  .sec-product-detail {
+    padding-top: 5px !important;
+  }
+
+  /* line 1071, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  .foundation-content {
+    padding-right: 0 !important;
+  }
+
+  /* line 1075, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  .about-header {
+    font-size: 20px !important;
+  }
+
+  /* line 1078, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  .vision {
+    padding-right: 0 !important;
+  }
+
+  /* line 1081, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  .value {
+    padding-left: 0 !important;
+  }
+
+  /* line 1085, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  .shopping-cart-table {
+    margin-left: -7px !important;
+    margin-right: -20px !important;
+  }
+
+  /* line 1090, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  .input-txt {
+    width: 100% !important;
+  }
+
+  /* line 1094, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  .session-top {
+    padding-top: 50px !important;
+  }
+
+  /* line 1098, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  .m-no-padding {
+    padding: 10px !important;
+  }
+
+  /* line 1102, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  .fav-icon {
+    padding-left: 10px !important;
+  }
+
+  /* line 1106, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  .wrap-slick3-dots {
+    width: 9.1% !important;
+    max-height: 366px !important;
+  }
+
+  /* line 1111, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  .slick3 {
+    width: 84% !important;
+  }
 }
 /*//////////////////////////////////////////////////////////////////
 [ Restyle Select2 ]*/
-/* line 1056, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1120, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container {
   display: block;
   max-width: 100% !important;
   width: auto !important;
 }
 
-/* line 1062, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1126, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container .select2-selection--single {
   height: 45px;
   display: -webkit-box;
@@ -9942,7 +10023,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*------------------------------------------------------------------
 [ in select ]*/
-/* line 1079, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1143, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container .select2-selection--single .select2-selection__rendered {
   font-family: Gotham-Book;
   font-size: 13px;
@@ -9952,7 +10033,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   background-color: transparent;
 }
 
-/* line 1088, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1152, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container--default .select2-selection--single .select2-selection__arrow {
   width: 38px;
   height: 20px;
@@ -9968,12 +10049,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   border-left: 1px solid #e6e6e6;
 }
 
-/* line 1103, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1167, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container--default .select2-selection--single .select2-selection__arrow b {
   display: none;
 }
 
-/* line 1107, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1171, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container--default .select2-selection--single .select2-selection__arrow::after {
   content: "\f0dc";
   font-family: FontAwesome;
@@ -9981,14 +10062,14 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   color: #808080;
 }
 
-/* line 1114, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1178, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container--default .select2-selection--single .select2-selection__arrow:hover:after {
   color: #6c7ae0;
 }
 
 /*------------------------------------------------------------------
 [ Dropdown option ]*/
-/* line 1121, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1185, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container--open .select2-dropdown {
   z-index: 1251;
   width: 100%;
@@ -10004,36 +10085,36 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   -ms-box-shadow: 0 3px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
-/* line 1137, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1201, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-dropdown--above {
   top: -2px;
 }
 
-/* line 1138, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1202, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-dropdown--below {
   top: 2px;
 }
 
-/* line 1140, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1204, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container .select2-results__option[aria-selected] {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 20px;
 }
 
-/* line 1146, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1210, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container .select2-results__option[aria-selected="true"] {
   background: #6c7ae0;
   color: white;
 }
 
-/* line 1151, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1215, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container .select2-results__option--highlighted[aria-selected] {
   background: #6c7ae0;
   color: white;
 }
 
-/* line 1156, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1220, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-results__options {
   font-family: Gotham-Book;
   font-size: 13px;
@@ -10041,7 +10122,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   line-height: 1.2;
 }
 
-/* line 1163, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1227, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-search--dropdown .select2-search__field {
   border: 1px solid #aaa;
   outline: none;
@@ -10053,36 +10134,36 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*------------------------------------------------------------------
 [ rs2 ]*/
-/* line 1174, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1238, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs2-select2 .select2-container .select2-selection--single {
   height: 40px;
 }
 
-/* line 1178, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1242, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs2-select2 .select2-container .select2-selection--single .select2-selection__rendered {
   padding-left: 15px;
 }
 
-/* line 1182, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1246, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs2-select2 .select2-container--default .select2-selection--single .select2-selection__arrow {
   width: 35px;
   right: 0px;
   border-left: none;
 }
 
-/* line 1188, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1252, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs2-select2 .select2-container--default .select2-selection--single .select2-selection__arrow::after {
   content: "\f0d7";
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ Slick1 ]*/
-/* line 1196, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1260, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .wrap-slick1 {
   position: relative;
 }
 
-/* line 1200, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1264, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .item-slick1 {
   height: calc(100vh - 40px);
   background-size: cover;
@@ -10091,23 +10172,23 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   background-image: url(/images/slide-01.jpg);
 }
 
-/* line 1208, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1272, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs1-slick1 .item-slick1 {
   height: calc(100vh - 84px);
 }
 
-/* line 1212, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1276, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs2-slick1 .item-slick1 {
   height: 100vh;
 }
 
 @media (max-width: 991px) {
-  /* line 1217, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 1281, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .item-slick1 {
     height: calc(100vh - 70px) !important;
   }
 }
-/* line 1222, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1286, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .arrow-slick1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10135,51 +10216,51 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: all 0.4s;
 }
 
-/* line 1251, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1315, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .wrap-slick1:hover .arrow-slick1 {
   opacity: 1;
 }
 
-/* line 1255, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1319, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .arrow-slick1:hover {
   color: #7280e0;
 }
 
-/* line 1259, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1323, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .next-slick1 {
   right: 50px;
   left: auto;
 }
 
-/* line 1264, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1328, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .prev-slick1 {
   left: 50px;
   right: auto;
 }
 
 @media (max-width: 991px) {
-  /* line 1270, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 1334, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .next-slick1 {
     right: 15px;
   }
 
-  /* line 1274, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 1338, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .prev-slick1 {
     left: 15px;
   }
 }
 /*---------------------------------------------*/
-/* line 1280, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1344, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs2-slick1 .arrow-slick1 {
   color: rgba(255, 255, 255, 0.3);
 }
 
-/* line 1284, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1348, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .rs2-slick1 .arrow-slick1:hover {
   color: #7280e0;
 }
 
-/* line 1288, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1352, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .wrap-slick1-dots {
   position: absolute;
   width: 100%;
@@ -10187,7 +10268,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   bottom: 60px;
 }
 
-/* line 1295, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1359, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .slick1-dots {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10197,7 +10278,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   justify-content: center;
 }
 
-/* line 1304, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1368, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .slick1-dots li {
   max-width: 190px;
   position: relative;
@@ -10205,12 +10286,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   margin-right: 1px;
 }
 
-/* line 1311, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1375, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .slick1-dots li img {
   width: 100%;
 }
 
-/* line 1315, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1379, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .caption-dots-slick1 {
   font-family: Gotham-Light;
   font-size: 16px;
@@ -10238,30 +10319,30 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   opacity: 0;
 }
 
-/* line 1345, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1409, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .slick1-dots li:hover .caption-dots-slick1 {
   opacity: 1;
 }
 
-/* line 1349, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1413, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .slick1-dots li.slick-active .caption-dots-slick1 {
   opacity: 1;
 }
 
 @media (max-width: 575px) {
-  /* line 1354, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 1418, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .caption-dots-slick1 {
     font-size: 13px;
   }
 
-  /* line 1358, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 1422, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .wrap-slick1-dots {
     bottom: 25px;
   }
 }
 /*//////////////////////////////////////////////////////////////////
 [ Slick2 ]*/
-/* line 1367, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1431, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .wrap-slick2 {
   position: relative;
   margin-right: -15px;
@@ -10269,7 +10350,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 /* ------------------------------------ */
-/* line 1374, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1438, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .arrow-slick2 {
   position: absolute;
   z-index: 100;
@@ -10287,41 +10368,41 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: all 0.4s;
 }
 
-/* line 1392, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1456, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .arrow-slick2:hover {
   color: #666;
 }
 
-/* line 1396, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1460, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .next-slick2 {
   right: -40px;
 }
 
-/* line 1400, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1464, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .prev-slick2 {
   left: -40px;
 }
 
 @media (max-width: 1300px) {
-  /* line 1405, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 1469, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .next-slick2 {
     right: 0px;
   }
 
-  /* line 1409, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 1473, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .prev-slick2 {
     left: 0px;
   }
 }
 /*//////////////////////////////////////////////////////////////////
 [ Slick3 ]*/
-/* line 1417, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1481, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .wrap-slick3 {
   position: relative;
 }
 
 /*---------------------------------------------*/
-/* line 1422, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1486, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .wrap-slick3-arrows {
   position: absolute;
   z-index: 100;
@@ -10330,7 +10411,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   top: calc(50% - 20px);
 }
 
-/* line 1430, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1494, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .arrow-slick3 {
   font-size: 25px;
   color: #fff;
@@ -10345,33 +10426,35 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: all 0.4s;
 }
 
-/* line 1446, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1510, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .arrow-slick3:hover {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* line 1450, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1514, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .prev-slick3 {
   left: 0px;
 }
 
-/* line 1451, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1515, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .next-slick3 {
   right: 0px;
 }
 
 /*---------------------------------------------*/
-/* line 1454, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1518, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .wrap-slick3-dots {
   width: 11.111111%;
+  max-height: 900px;
+  overflow-y: auto;
 }
 
-/* line 1458, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1524, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .slick3 {
   width: 83.333333%;
 }
 
-/* line 1462, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1528, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .slick3-dots li {
   display: block;
   position: relative;
@@ -10379,12 +10462,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   margin-bottom: 27px;
 }
 
-/* line 1469, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1535, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .slick3-dots li img {
   width: 100%;
 }
 
-/* line 1473, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1539, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .slick3-dot-overlay {
   position: absolute;
   width: 100%;
@@ -10399,37 +10482,37 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: all 0.4s;
 }
 
-/* line 1487, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1553, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .slick3-dot-overlay:hover {
   border-color: #ccc;
 }
 
-/* line 1491, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1557, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .slick3-dots .slick-active .slick3-dot-overlay {
   border-color: #ccc;
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ RS Magnific-Popup ]*/
-/* line 1499, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1565, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mfp-bg {
   z-index: 10000;
   background-color: #000;
   opacity: 0.9;
 }
 
-/* line 1505, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1571, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mfp-wrap {
   z-index: 10000;
 }
 
-/* line 1509, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1575, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mfp-arrow:after,
 .mfp-arrow:before {
   display: none;
 }
 
-/* line 1514, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1580, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mfp-arrow {
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -10437,21 +10520,21 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: all 0.4s;
 }
 
-/* line 1521, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1587, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 button.mfp-arrow-right {
   background-image: url(../images/icons/icon-next.png);
   background-position: center center;
   background-repeat: no-repeat;
 }
 
-/* line 1527, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1593, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 button.mfp-arrow-left {
   background-image: url(../images/icons/icon-prev.png);
   background-position: center center;
   background-repeat: no-repeat;
 }
 
-/* line 1533, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1599, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 button.mfp-close {
   width: 75px !important;
   height: 58px !important;
@@ -10471,7 +10554,7 @@ button.mfp-close {
 }
 
 /* overlay at start */
-/* line 1552, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1618, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mfp-fade.mfp-bg {
   opacity: 0;
   -webkit-transition: all 0.3s ease-out;
@@ -10480,19 +10563,19 @@ button.mfp-close {
 }
 
 /* overlay animate in */
-/* line 1560, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1626, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mfp-fade.mfp-bg.mfp-ready {
   opacity: 0.9;
 }
 
 /* overlay animate out */
-/* line 1564, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1630, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mfp-fade.mfp-bg.mfp-removing {
   opacity: 0;
 }
 
 /* content at start */
-/* line 1569, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1635, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mfp-fade.mfp-wrap .mfp-content {
   opacity: 0;
   -webkit-transition: all 0.3s ease-out;
@@ -10501,20 +10584,20 @@ button.mfp-close {
 }
 
 /* content animate it */
-/* line 1577, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1643, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
   opacity: 1;
 }
 
 /* content animate out */
-/* line 1581, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1647, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
   opacity: 0;
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ Tab01 ]*/
-/* line 1588, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1654, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .tab01 .nav-tabs {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10527,12 +10610,12 @@ button.mfp-close {
   border: none;
 }
 
-/* line 1600, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1666, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .tab01 .nav-tabs .nav-item {
   margin: 0px 15px;
 }
 
-/* line 1604, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1670, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .tab01 .nav-link {
   font-family: Gotham-Book;
   font-size: 15px;
@@ -10548,13 +10631,13 @@ button.mfp-close {
   transition: all 0.4s;
 }
 
-/* line 1621, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1687, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .tab01 .nav-link.active {
   color: #333;
   border-color: #797979;
 }
 
-/* line 1626, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1692, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .tab01 .nav-link:hover {
   color: #333;
   border-color: #797979;
@@ -10562,18 +10645,18 @@ button.mfp-close {
 
 /*//////////////////////////////////////////////////////////////////
 [ RS sweet alert ]*/
-/* line 1635, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1701, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .swal-overlay {
   overflow-y: auto;
 }
 
-/* line 1637, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1703, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .swal-button:focus {
   outline: none;
   box-shadow: none;
 }
 
-/* line 1642, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1708, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .swal-button {
   background-color: #717fe0;
   font-family: Gotham-Book;
@@ -10588,17 +10671,17 @@ button.mfp-close {
   transition: all 0.3s;
 }
 
-/* line 1656, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1722, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .swal-button:hover {
   background-color: #333;
 }
 
-/* line 1660, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1726, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .swal-button:active {
   background-color: #333;
 }
 
-/* line 1664, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1730, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .swal-title {
   font-family: Gotham-Medium;
   color: #333333;
@@ -10607,7 +10690,7 @@ button.mfp-close {
   padding: 0 15px;
 }
 
-/* line 1672, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1738, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .swal-text {
   font-family: Gotham-Book;
   color: #555555;
@@ -10616,26 +10699,26 @@ button.mfp-close {
   text-align: center;
 }
 
-/* line 1680, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1746, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .swal-footer {
   margin-top: 0;
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ Filter ]*/
-/* line 1687, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1753, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .show-search .icon-search,
 .show-filter .icon-filter {
   display: none;
 }
 
-/* line 1690, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1756, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .show-search .icon-close-search,
 .show-filter .icon-close-filter {
   display: unset;
 }
 
-/* line 1693, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1759, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .show-search,
 .show-filter {
   background-color: #f2f2f2;
@@ -10643,7 +10726,7 @@ button.mfp-close {
   position: relative;
 }
 
-/* line 1700, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1766, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .show-search::after,
 .show-filter::after {
   content: "";
@@ -10668,7 +10751,7 @@ button.mfp-close {
   transition: all 0.4s;
 }
 
-/* line 1728, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1794, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .show-search:hover:after,
 .show-filter:hover:after {
   background-color: #717fe0;
@@ -10676,47 +10759,47 @@ button.mfp-close {
 }
 
 /*---------------------------------------------*/
-/* line 1735, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1801, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .filter-col1 {
   width: 27%;
 }
 
-/* line 1736, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1802, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .filter-col2 {
   width: 27%;
 }
 
-/* line 1737, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1803, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .filter-col3 {
   width: 26%;
 }
 
-/* line 1738, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1804, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .filter-col4 {
   width: 20%;
 }
 
 /*---------------------------------------------*/
-/* line 1741, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1807, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .filter-link {
   color: #aaa;
   border-bottom: 1px solid transparent;
 }
 
-/* line 1746, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1812, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .filter-link:hover {
   color: #6c7ae0;
   border-bottom: 1px solid #6c7ae0;
 }
 
-/* line 1751, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1817, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .filter-link-active {
   color: #6c7ae0;
   border-bottom: 1px solid #6c7ae0;
 }
 
 @media (max-width: 767px) {
-  /* line 1757, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 1823, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .filter-col1,
   .filter-col2,
   .filter-col3,
@@ -10725,7 +10808,7 @@ button.mfp-close {
   }
 }
 @media (max-width: 575px) {
-  /* line 1764, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 1830, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .filter-col1,
   .filter-col2,
   .filter-col3,
@@ -10735,7 +10818,7 @@ button.mfp-close {
 }
 /*//////////////////////////////////////////////////////////////////
 [ Num Product ]*/
-/* line 1774, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1840, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .wrap-num-product {
   width: 140px;
   height: 45px;
@@ -10744,7 +10827,7 @@ button.mfp-close {
   overflow: hidden;
 }
 
-/* line 1782, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1848, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .btn-num-product-up,
 .btn-num-product-down {
   width: 45px;
@@ -10752,7 +10835,7 @@ button.mfp-close {
   cursor: pointer;
 }
 
-/* line 1789, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1855, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .num-product {
   width: calc(100% - 90px);
   height: 100%;
@@ -10761,14 +10844,14 @@ button.mfp-close {
   background-color: #f7f7f7;
 }
 
-/* line 1797, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1863, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 input.num-product {
   -moz-appearance: textfield;
   appearance: none;
   -webkit-appearance: none;
 }
 
-/* line 1803, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1869, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 input.num-product::-webkit-outer-spin-button,
 input.num-product::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -10777,12 +10860,12 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ Tolltip100 ]*/
-/* line 1811, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1877, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .tooltip100 {
   position: relative;
 }
 
-/* line 1815, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1881, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .tooltip100::after {
   content: attr(data-tooltip);
   font-family: Gotham-Book;
@@ -10816,7 +10899,7 @@ input.num-product::-webkit-inner-spin-button {
   opacity: 0;
 }
 
-/* line 1852, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1918, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .tooltip100:hover:after {
   visibility: visible;
   opacity: 1;
@@ -10824,7 +10907,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ Modal1 ]*/
-/* line 1860, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1926, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .wrap-modal1 {
   position: fixed;
   width: 100%;
@@ -10841,7 +10924,7 @@ input.num-product::-webkit-inner-spin-button {
   opacity: 0;
 }
 
-/* line 1878, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1944, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .overlay-modal1 {
   position: fixed;
   z-index: -1;
@@ -10853,7 +10936,7 @@ input.num-product::-webkit-inner-spin-button {
   opacity: 0.8;
 }
 
-/* line 1889, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1955, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .show-modal1 {
   visibility: visible;
   opacity: 1;
@@ -10861,51 +10944,51 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ Table Shopping Cart ]*/
-/* line 1897, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1963, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .wrap-table-shopping-cart {
   overflow: auto;
   border-left: 1px solid #e6e6e6;
   border-right: 1px solid #e6e6e6;
 }
 
-/* line 1903, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1969, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .table-shopping-cart {
   border-collapse: collapse;
   width: 100%;
   min-width: 680px;
 }
 
-/* line 1909, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1975, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .table-shopping-cart tr {
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
 }
 
-/* line 1914, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1980, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .table-shopping-cart .column-1 {
   width: 133px;
   padding-left: 50px;
 }
 
-/* line 1919, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1985, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .table-shopping-cart .column-2 {
   width: 220px;
   font-size: 15px;
 }
 
-/* line 1924, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1990, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .table-shopping-cart .column-3 {
   width: 120px;
   font-size: 16px;
 }
 
-/* line 1929, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 1995, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .table-shopping-cart .column-4 {
   width: 145px;
   text-align: right;
 }
 
-/* line 1934, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2000, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .table-shopping-cart .column-5 {
   width: 172px;
   padding-right: 50px;
@@ -10913,22 +10996,22 @@ input.num-product::-webkit-inner-spin-button {
   font-size: 16px;
 }
 
-/* line 1941, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2007, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .table-shopping-cart .table_row {
   height: 185px;
 }
 
-/* line 1945, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2011, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .table-shopping-cart .table_row td {
   padding-bottom: 20px;
 }
 
-/* line 1949, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2015, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .table-shopping-cart .table_row td.column-1 {
   padding-bottom: 30px;
 }
 
-/* line 1953, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2019, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .table-shopping-cart .table_head th {
   font-family: Gotham-Medium;
   font-size: 13px;
@@ -10939,7 +11022,7 @@ input.num-product::-webkit-inner-spin-button {
   padding-bottom: 15px;
 }
 
-/* line 1963, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2029, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .table-shopping-cart td {
   font-family: Gotham-Book;
   color: #555;
@@ -10948,30 +11031,30 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ Block1 ]*/
-/* line 1973, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2039, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .block1 {
   position: relative;
   border: 1px solid #e6e6e6;
 }
 
-/* line 1978, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2044, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .block1-txt {
   background-color: rgba(103, 117, 214, 0);
 }
 
 /*---------------------------------------------*/
-/* line 1983, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2049, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .block1-name {
   color: #333;
 }
 
-/* line 1984, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2050, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .block1-info {
   color: #555;
 }
 
 /*---------------------------------------------*/
-/* line 1987, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2053, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .block1-txt-child2 {
   border-bottom: 2px solid #fff;
   overflow: hidden;
@@ -10982,7 +11065,7 @@ input.num-product::-webkit-inner-spin-button {
   transform: scaleX(0);
 }
 
-/* line 1997, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2063, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .block1-link {
   -webkit-transform: translateY(250%);
   -moz-transform: translateY(250%);
@@ -10992,12 +11075,12 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2006, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2072, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .block1-txt:hover {
   background-color: rgba(103, 117, 214, 0.8);
 }
 
-/* line 2010, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2076, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .block1-txt:hover .block1-txt-child2 {
   -webkit-transform: scaleX(1);
   -moz-transform: scaleX(1);
@@ -11006,7 +11089,7 @@ input.num-product::-webkit-inner-spin-button {
   transform: scaleX(1);
 }
 
-/* line 2018, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2084, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .block1-txt:hover .block1-link {
   -webkit-transform: translateY(0%);
   -moz-transform: translateY(0%);
@@ -11015,7 +11098,7 @@ input.num-product::-webkit-inner-spin-button {
   transform: translateY(0%);
 }
 
-/* line 2026, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2092, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .block1-txt:hover .block1-name,
 .block1-txt:hover .block1-info {
   color: #fff;
@@ -11023,12 +11106,12 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ Block2 ]*/
-/* line 2033, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2099, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .block2-pic {
   position: relative;
 }
 
-/* line 2037, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2103, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .block2-btn {
   position: absolute;
   bottom: -50px;
@@ -11040,59 +11123,59 @@ input.num-product::-webkit-inner-spin-button {
   transform: translateX(-50%);
 }
 
-/* line 2048, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2114, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .block2-pic:hover .block2-btn {
   bottom: 20px;
 }
 
 /*---------------------------------------------*/
-/* line 2053, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2119, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .block2-txt-child1 {
   width: calc(100% - 30px);
 }
 
-/* line 2057, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2123, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .block2-txt-promo {
   width: 100%;
 }
 
-/* line 2061, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2127, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .block2-txt-child2 {
   width: 30px;
 }
 
-/* line 2065, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2131, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .btn-addwish-b2 .icon-heart2 {
   opacity: 0;
 }
 
-/* line 2069, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2135, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .btn-addwish-b2:hover .icon-heart2 {
   opacity: 1;
 }
 
-/* line 2073, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2139, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .btn-addwish-b2:hover .icon-heart1 {
   opacity: 0;
 }
 
-/* line 2077, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2143, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .js-addedwish-b2 .icon-heart2 {
   opacity: 1;
 }
 
-/* line 2081, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2147, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .js-addedwish-b2 .icon-heart1 {
   opacity: 0;
 }
 
 /*---------------------------------------------*/
-/* line 2086, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2152, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .label-new {
   position: relative;
 }
 
-/* line 2090, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2156, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .label-new::after {
   content: attr(data-label);
   font-family: Montserrat-Regular;
@@ -11119,74 +11202,74 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
     TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 ==================================================================*/
-/* line 2119, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2185, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .cl0 {
   color: #fff;
 }
 
-/* line 2120, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2186, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .cl1 {
   color: #717fe0;
 }
 
-/* line 2121, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2187, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .cl2 {
   color: #333;
 }
 
-/* line 2122, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2188, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .cl3 {
   color: #666;
 }
 
-/* line 2123, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2189, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .cl4 {
   color: #999;
 }
 
-/* line 2124, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2190, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .cl5 {
   color: #222;
 }
 
-/* line 2125, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2191, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .cl6 {
   color: #888;
 }
 
-/* line 2126, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2192, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .cl7 {
   color: #b2b2b2;
 }
 
-/* line 2127, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2193, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .cl8 {
   color: #555;
 }
 
-/* line 2128, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2194, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .cl9 {
   color: #aaa;
 }
 
-/* line 2129, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2195, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .cl10 {
   color: #1d1d1d;
 }
 
-/* line 2130, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2196, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .cl11 {
   color: #f9ba48;
 }
 
-/* line 2131, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2197, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .cl12 {
   color: #ccc;
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ S-Text 0 - 15 ]*/
-/* line 2135, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2201, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-101 {
   font-family: Gotham-Medium;
   font-size: 15px;
@@ -11194,28 +11277,28 @@ input.num-product::-webkit-inner-spin-button {
   text-transform: uppercase;
 }
 
-/* line 2142, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2208, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-102 {
   font-family: Gotham-Book;
   font-size: 14px;
   line-height: 1.7;
 }
 
-/* line 2148, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2214, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-103 {
   font-family: Gotham-Book;
   font-size: 15px;
   line-height: 1.466667;
 }
 
-/* line 2154, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2220, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-104 {
   font-family: Gotham-Book;
   font-size: 14px;
   line-height: 1.466667;
 }
 
-/* line 2160, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2226, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-105 {
   font-family: Gotham-Book;
   font-size: 14px;
@@ -11223,49 +11306,49 @@ input.num-product::-webkit-inner-spin-button {
   letter-spacing: 1px;
 }
 
-/* line 2167, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2233, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-106 {
   font-family: Gotham-Book;
   font-size: 15px;
   line-height: 1.2;
 }
 
-/* line 2173, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2239, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-107 {
   font-family: Gotham-Book;
   font-size: 13px;
   line-height: 1.923;
 }
 
-/* line 2179, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2245, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-108 {
   font-family: Gotham-Light;
   font-size: 14px;
   line-height: 1.7143;
 }
 
-/* line 2185, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2251, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-109 {
   font-family: Gotham-Book;
   font-size: 12px;
   line-height: 1.833333;
 }
 
-/* line 2191, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2257, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-110 {
   font-family: Gotham-Medium;
   font-size: 15px;
   line-height: 1.466667;
 }
 
-/* line 2197, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2263, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-111 {
   font-family: Gotham-Book;
   font-size: 13px;
   line-height: 1.6923;
 }
 
-/* line 2203, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2269, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-112 {
   font-family: Gotham-Book;
   font-size: 13px;
@@ -11273,35 +11356,35 @@ input.num-product::-webkit-inner-spin-button {
   text-transform: uppercase;
 }
 
-/* line 2210, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2276, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-113 {
   font-family: Gotham-Light;
   font-size: 14px;
   line-height: 1.7857;
 }
 
-/* line 2216, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2282, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-114 {
   font-family: Gotham-Book;
   font-size: 15px;
   line-height: 1.666667;
 }
 
-/* line 2222, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2288, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-115 {
   font-family: Gotham-Book;
   font-size: 15px;
   line-height: 1.666667;
 }
 
-/* line 2228, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2294, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-116 {
   font-family: Gotham-Book;
   font-size: 15px;
   line-height: 1.266667;
 }
 
-/* line 2234, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2300, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-117 {
   font-family: Gotham-Light;
   font-size: 15px;
@@ -11309,7 +11392,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2242, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2308, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stext-301 {
   font-family: Gotham-Medium;
   font-size: 15px;
@@ -11319,21 +11402,21 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ M-Text 16 - 25 ]*/
-/* line 2252, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2318, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mtext-101 {
   font-family: Gotham-Medium;
   font-size: 18px;
   line-height: 1.333333;
 }
 
-/* line 2258, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2324, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mtext-102 {
   font-family: Gotham-Medium;
   font-size: 16px;
   line-height: 1.6;
 }
 
-/* line 2264, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2330, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mtext-103 {
   font-family: Gotham-Medium;
   font-size: 18px;
@@ -11341,42 +11424,42 @@ input.num-product::-webkit-inner-spin-button {
   text-transform: uppercase;
 }
 
-/* line 2271, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2337, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mtext-104 {
   font-family: Gotham-Medium;
   font-size: 16px;
   line-height: 1.6;
 }
 
-/* line 2277, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2343, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mtext-105 {
   font-family: Gotham-Book;
   font-size: 24px;
   line-height: 1.5;
 }
 
-/* line 2283, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2349, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mtext-106 {
   font-family: Gotham-Medium;
   font-size: 18px;
   line-height: 1.388888;
 }
 
-/* line 2289, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2355, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mtext-107 {
   font-family: Gotham-Book;
   font-size: 16px;
   line-height: 1.625;
 }
 
-/* line 2295, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2361, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mtext-108 {
   font-family: Gotham-Book;
   font-size: 20px;
   line-height: 1.3;
 }
 
-/* line 2301, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2367, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mtext-109 {
   font-family: Gotham-Medium;
   font-size: 20px;
@@ -11384,28 +11467,28 @@ input.num-product::-webkit-inner-spin-button {
   text-transform: uppercase;
 }
 
-/* line 2308, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2374, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mtext-110 {
   font-family: Gotham-Book;
   font-size: 18px;
   line-height: 1.222222;
 }
 
-/* line 2314, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2380, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mtext-111 {
   font-family: Gotham-Medium;
   font-size: 25px;
   line-height: 1.2;
 }
 
-/* line 2320, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2386, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mtext-112 {
   font-family: Gotham-Medium;
   font-size: 22px;
   line-height: 1.333333;
 }
 
-/* line 2326, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2392, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .mtext-113 {
   font-family: Gotham-Medium;
   font-size: 22px;
@@ -11415,21 +11498,21 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ L-Text >= 26 ]*/
-/* line 2336, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2402, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .ltext-101 {
   font-family: Gotham-Book;
   font-size: 28px;
   line-height: 1.2857;
 }
 
-/* line 2342, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2408, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .ltext-102 {
   font-family: Gotham-Medium;
   font-size: 28px;
   line-height: 1.1;
 }
 
-/* line 2348, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2414, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .ltext-103 {
   font-family: Gotham-Medium;
   font-size: 36px;
@@ -11437,7 +11520,7 @@ input.num-product::-webkit-inner-spin-button {
   text-transform: uppercase;
 }
 
-/* line 2355, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2421, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .ltext-104 {
   font-family: Gotham-Medium;
   font-size: 60px;
@@ -11445,35 +11528,35 @@ input.num-product::-webkit-inner-spin-button {
   text-transform: uppercase;
 }
 
-/* line 2362, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2428, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .ltext-105 {
   font-family: Gotham-Medium;
   font-size: 50px;
   line-height: 1.1;
 }
 
-/* line 2368, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2434, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .ltext-106 {
   font-family: Gotham-Medium;
   font-size: 36px;
   line-height: 1.2;
 }
 
-/* line 2374, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2440, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .ltext-107 {
   font-family: Gotham-Medium;
   font-size: 30px;
   line-height: 1.1;
 }
 
-/* line 2380, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2446, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .ltext-108 {
   font-family: Gotham-Medium;
   font-size: 26px;
   line-height: 1.3846;
 }
 
-/* line 2386, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2452, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .ltext-109 {
   font-family: Gotham-Medium;
   font-size: 36px;
@@ -11481,7 +11564,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2394, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2460, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .ltext-201 {
   font-family: PlayfairDisplay-Bold;
   font-size: 60px;
@@ -11489,7 +11572,7 @@ input.num-product::-webkit-inner-spin-button {
   text-transform: uppercase;
 }
 
-/* line 2401, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2467, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .ltext-202 {
   font-family: PlayfairDisplay-Regular;
   font-size: 28px;
@@ -11501,157 +11584,157 @@ input.num-product::-webkit-inner-spin-button {
 ==================================================================*/
 /*//////////////////////////////////////////////////////////////////
 [ Size ]*/
-/* line 2417, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2483, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-101 {
   min-width: 161px;
   height: 46px;
 }
 
-/* line 2422, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2488, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-102 {
   min-width: 139px;
   height: 40px;
 }
 
-/* line 2427, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2493, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-103 {
   min-width: 179px;
   height: 46px;
 }
 
-/* line 2432, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2498, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-104 {
   min-width: 94px;
   height: 40px;
 }
 
-/* line 2437, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2503, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-105 {
   min-width: 111px;
   height: 40px;
 }
 
-/* line 2442, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2508, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-106 {
   width: 88px;
   height: 100%;
 }
 
-/* line 2447, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2513, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-107 {
   min-width: 145px;
   height: 40px;
 }
 
-/* line 2452, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2518, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-108 {
   width: 40px;
   height: 40px;
 }
 
-/* line 2457, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2523, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-109 {
   width: 60px;
   height: 60px;
 }
 
-/* line 2462, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2528, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-110 {
   width: 100%;
   min-height: 100px;
 }
 
-/* line 2467, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2533, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-111 {
   width: 100%;
   height: 40px;
 }
 
-/* line 2472, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2538, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-112 {
   min-width: 134px;
   height: 43px;
 }
 
-/* line 2477, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2543, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-113 {
   width: 38px;
   height: 60px;
 }
 
-/* line 2482, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2548, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-114 {
   width: calc(100% - 38px);
   height: 60px;
 }
 
-/* line 2487, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2553, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-115 {
   min-width: 185px;
   height: 45px;
 }
 
-/* line 2492, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2558, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-116 {
   width: 100%;
   height: 50px;
 }
 
-/* line 2497, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2563, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-117 {
   width: 220px;
   height: 45px;
 }
 
-/* line 2502, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2568, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-118 {
   min-width: 163px;
   height: 45px;
 }
 
-/* line 2507, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2573, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-119 {
   min-width: 156px;
   height: 45px;
 }
 
-/* line 2512, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2578, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-120 {
   width: 100%;
   min-height: 199px;
 }
 
-/* line 2517, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2583, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-121 {
   width: 100%;
   height: 46px;
 }
 
-/* line 2522, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2588, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-122 {
   width: 55px;
   height: 100%;
 }
 
-/* line 2527, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2593, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-123 {
   width: 70px;
   min-height: 70px;
 }
 
-/* line 2532, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2598, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-124 {
   width: 100%;
   min-height: 150px;
 }
 
-/* line 2537, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2603, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-125 {
   min-width: 180px;
   height: 40px;
 }
 
-/* line 2542, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2608, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-126 {
   width: 70%;
   height: 50px;
@@ -11664,109 +11747,109 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ Width ]*/
-/* line 2554, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2620, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-201 {
   max-width: 270px;
 }
 
-/* line 2558, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2624, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-202 {
   width: calc(100% / 3);
 }
 
-/* line 2562, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2628, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-203 {
   width: 105px;
 }
 
-/* line 2566, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2632, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-204 {
   width: calc(100% - 105px);
 }
 
-/* line 2570, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2636, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-205 {
   width: 145px;
 }
 
-/* line 2574, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2640, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-206 {
   width: calc(100% - 145px);
 }
 
-/* line 2578, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2644, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-207 {
   width: calc(100% - 78px);
 }
 
-/* line 2582, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2648, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-208 {
   width: 34.5%;
 }
 
-/* line 2586, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2652, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-209 {
   width: 65.5%;
 }
 
-/* line 2590, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2656, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-210 {
   width: 50%;
 }
 
-/* line 2594, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2660, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-211 {
   width: 60px;
 }
 
-/* line 2598, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2664, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-212 {
   width: calc(100% - 60px);
 }
 
-/* line 2602, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2668, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-213 {
   max-width: 245px;
 }
 
-/* line 2606, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2672, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-214 {
   width: 90px;
 }
 
-/* line 2610, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2676, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-215 {
   width: calc(100% - 110px);
 }
 
-/* line 2614, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2680, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-216 {
   width: 55px;
 }
 
-/* line 2618, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2684, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-217 {
   width: calc(100% - 55px);
 }
 
-/* line 2622, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2688, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-218 {
   max-width: 286px;
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ Height ]*/
-/* line 2630, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2696, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-301 {
   min-height: 30px;
 }
 
-/* line 2634, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2700, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-302 {
   min-height: 80px;
 }
 
-/* line 2638, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2704, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-303 {
   height: 390px;
 }
@@ -11774,58 +11857,58 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
    BACKGROUND BACKGROUND BACKGROUND BACKGROUND BACKGROUND BACKGROUND
 ==================================================================*/
-/* line 2646, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2712, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bg-none {
   background-color: transparent;
 }
 
-/* line 2647, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2713, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bg0 {
   background-color: #fff;
 }
 
-/* line 2648, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2714, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bg1 {
   background-color: #717fe0;
 }
 
-/* line 2649, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2715, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bg2 {
   background-color: #e6e6e6;
 }
 
-/* line 2650, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2716, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bg3 {
   background-color: #222;
 }
 
-/* line 2651, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2717, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bg5 {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 2652, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2718, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bg6 {
   background-color: #f2f2f2;
 }
 
-/* line 2653, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2719, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bg7 {
   background-color: #333;
 }
 
-/* line 2654, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2720, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bg8 {
   background-color: #f3f3f3;
 }
 
-/* line 2655, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2721, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bg9 {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
 /*---------------------------------------------*/
-/* line 2658, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2724, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bg-overlay1::before {
   content: "";
   position: absolute;
@@ -11840,7 +11923,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2672, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2738, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bg-img1 {
   background-size: cover;
   background-position: center center;
@@ -11850,117 +11933,117 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
        BORDER BORDER  BORDER  BORDER  BORDER  BORDER  BORDER  BORDER
 ==================================================================*/
-/* line 2684, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2750, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor0 {
   border-radius: 50%;
 }
 
-/* line 2686, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2752, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor1 {
   border-radius: 23px;
 }
 
-/* line 2690, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2756, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor2 {
   border-radius: 20px;
 }
 
-/* line 2694, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2760, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor3 {
   border-bottom: 1px solid transparent;
 }
 
-/* line 2698, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2764, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor4 {
   border: 1px solid #e6e6e6;
   border-radius: 3px;
 }
 
-/* line 2703, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2769, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor5 {
   border-left: 1px solid #e5e5e5;
   border-right: 1px solid #e5e5e5;
 }
 
-/* line 2708, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2774, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor6 {
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* line 2710, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2776, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor7 {
   border: 1px solid #ccc;
   border-radius: 15px;
 }
 
-/* line 2715, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2781, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor8 {
   border: 1px solid #e6e6e6;
   border-radius: 2px;
 }
 
-/* line 2720, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2786, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor9 {
   border-right: 1px solid #e6e6e6;
 }
 
-/* line 2724, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2790, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor10 {
   border: 1px solid #e6e6e6;
 }
 
-/* line 2728, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2794, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor11 {
   border-radius: 21px;
 }
 
-/* line 2732, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2798, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor12 {
   border-bottom: 1px dashed #d9d9d9;
 }
 
-/* line 2736, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2802, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor13 {
   border: 1px solid #e6e6e6;
   border-radius: 22px;
 }
 
-/* line 2741, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2807, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor14 {
   border-radius: 25px;
 }
 
-/* line 2745, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2811, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor15 {
   border-left: 1px solid #e6e6e6;
   border-right: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
 }
 
-/* line 2751, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2817, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor16 {
   border-left: 3px solid #e6e6e6;
 }
 
-/* line 2755, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2821, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor17 {
   border: 1px solid #e6e6e6;
   border-radius: 25px;
 }
 
 /*---------------------------------------------*/
-/* line 2761, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2827, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor18 {
   border-top: 1px solid #e6e6e6;
 }
 
-/* line 2765, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2831, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor18:last-child {
   border-bottom: 1px solid #e6e6e6;
 }
 
 /*---------------------------------------------*/
-/* line 2770, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2836, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .bor19 {
   border: 1px solid #d9d9d9;
   border-radius: 2px;
@@ -11969,119 +12052,119 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
  HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW
 ==================================================================*/
-/* line 2779, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2845, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh0::-webkit-input-placeholder {
   color: #999999;
 }
 
-/* line 2780, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2846, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh0:-moz-placeholder {
   color: #999999;
 }
 
-/* line 2781, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2847, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh0::-moz-placeholder {
   color: #999999;
 }
 
-/* line 2782, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2848, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh0:-ms-input-placeholder {
   color: #999999;
 }
 
-/* line 2784, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2850, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh1::-webkit-input-placeholder {
   color: #b2b2b2;
 }
 
-/* line 2785, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2851, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh1:-moz-placeholder {
   color: #b2b2b2;
 }
 
-/* line 2786, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2852, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh1::-moz-placeholder {
   color: #b2b2b2;
 }
 
-/* line 2787, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2853, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh1:-ms-input-placeholder {
   color: #b2b2b2;
 }
 
-/* line 2789, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2855, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh2::-webkit-input-placeholder {
   color: #333;
 }
 
-/* line 2790, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2856, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh2:-moz-placeholder {
   color: #333;
 }
 
-/* line 2791, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2857, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh2::-moz-placeholder {
   color: #333;
 }
 
-/* line 2792, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2858, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh2:-ms-input-placeholder {
   color: #333;
 }
 
-/* line 2794, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2860, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh3::-webkit-input-placeholder {
   color: #555;
 }
 
-/* line 2795, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2861, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh3:-moz-placeholder {
   color: #555;
 }
 
-/* line 2796, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2862, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh3::-moz-placeholder {
   color: #555;
 }
 
-/* line 2797, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2863, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh3:-ms-input-placeholder {
   color: #555;
 }
 
-/* line 2799, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2865, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh4::-webkit-input-placeholder {
   color: #888;
 }
 
-/* line 2800, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2866, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh4:-moz-placeholder {
   color: #888;
 }
 
-/* line 2801, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2867, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh4::-moz-placeholder {
   color: #888;
 }
 
-/* line 2802, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2868, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .plh4:-ms-input-placeholder {
   color: #888;
 }
 
 /*---------------------------------------------*/
-/* line 2805, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2871, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .js-addedwish-detail {
   color: #6c7ae0;
 }
 
 /*---------------------------------------------*/
-/* line 2810, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2876, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .label1 {
   position: relative;
 }
 
-/* line 2814, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2880, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .label1::after {
   content: attr(data-label1);
   font-family: Gotham-Book;
@@ -12101,7 +12184,7 @@ input.num-product::-webkit-inner-spin-button {
   background-color: #f74877;
 }
 
-/* line 2834, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2900, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .label1.rs1::after {
   top: calc(50% - 8px);
   right: auto;
@@ -12109,26 +12192,26 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2841, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2907, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-active1 {
   color: #333;
   border-color: #797979;
 }
 
 /*---------------------------------------------*/
-/* line 2848, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2914, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .wrap-input1 {
   position: relative;
   border-bottom: 2px solid rgba(204, 204, 204, 0.1);
 }
 
-/* line 2853, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2919, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .input1 {
   background-color: transparent;
   width: 100%;
 }
 
-/* line 2858, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2924, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .focus-input1 {
   position: absolute;
   width: 0%;
@@ -12138,13 +12221,13 @@ input.num-product::-webkit-inner-spin-button {
   bottom: -2px;
 }
 
-/* line 2867, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2933, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .input1:focus + .focus-input1 {
   width: 100%;
 }
 
 /*---------------------------------------------*/
-/* line 2873, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2939, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-pagination1 {
   font-family: Gotham-Book;
   font-size: 14px;
@@ -12155,14 +12238,14 @@ input.num-product::-webkit-inner-spin-button {
   border: 1px solid #e6e6e6;
 }
 
-/* line 2884, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2950, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-pagination1:hover {
   background-color: #999;
   border-color: #999;
   color: #fff;
 }
 
-/* line 2890, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2956, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .active-pagination1 {
   background-color: #999;
   border-color: #999;
@@ -12170,7 +12253,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2897, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2963, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-shadow1 {
   box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
@@ -12180,7 +12263,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2906, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2972, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-pos1 {
   position: absolute;
   top: 10px;
@@ -12188,7 +12271,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2913, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2979, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-pos2 {
   padding-top: 20px;
   padding-left: 10.7%;
@@ -12196,19 +12279,19 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 @media (max-width: 991px) {
-  /* line 2920, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 2986, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .how-pos2 {
     padding-left: 8%;
     padding-right: 8%;
   }
 }
 /*---------------------------------------------*/
-/* line 2927, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2993, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-pos3-parent {
   position: relative;
 }
 
-/* line 2931, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 2997, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-pos3 {
   position: absolute;
   top: -35px;
@@ -12216,12 +12299,12 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2938, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3004, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-pos4-parent {
   position: relative;
 }
 
-/* line 2942, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3008, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-pos4 {
   position: absolute;
   top: calc(50% - 9px);
@@ -12229,12 +12312,12 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2949, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3015, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-pos5-parent {
   position: relative;
 }
 
-/* line 2953, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3019, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-pos5 {
   position: absolute;
   top: 15px;
@@ -12242,7 +12325,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2962, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3028, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-itemcart1 {
   width: 60px;
   position: relative;
@@ -12250,12 +12333,12 @@ input.num-product::-webkit-inner-spin-button {
   cursor: pointer;
 }
 
-/* line 2969, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3035, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-itemcart1 img {
   width: 100%;
 }
 
-/* line 2973, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3039, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-itemcart1::after {
   content: '\e870';
   font-family: Linearicons-Free;
@@ -12281,46 +12364,46 @@ input.num-product::-webkit-inner-spin-button {
   opacity: 0;
 }
 
-/* line 2998, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3064, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-itemcart1:hover:after {
   opacity: 1;
 }
 
 /*---------------------------------------------*/
-/* line 3003, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3069, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-bor2,
 .how-bor1 {
   position: relative;
   z-index: 1;
 }
 
-/* line 3009, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3075, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-bor2::before,
 .how-bor1::before {
   content: "";
   display: block;
   position: absolute;
   z-index: -1;
-  width: 100%;
+  width: 250px;
   height: 100%;
   border: 3px solid #ccc;
 }
 
-/* line 3020, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3086, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-bor1::before {
   bottom: -21px;
   left: -21px;
 }
 
 @media (max-width: 767px) {
-  /* line 3026, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3092, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .how-bor1::before {
     bottom: -21px;
     right: -21px;
     left: auto;
   }
 }
-/* line 3033, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3099, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .how-bor2::before {
   bottom: -21px;
   right: -21px;
@@ -12331,56 +12414,65 @@ input.num-product::-webkit-inner-spin-button {
 ==================================================================*/
 /*//////////////////////////////////////////////////////////////////
 [ Focus ]*/
-/* line 3046, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3112, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .focus-in0:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-/* line 3047, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3113, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .focus-in0:focus:-moz-placeholder {
   color: transparent;
 }
 
-/* line 3048, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3114, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .focus-in0:focus::-moz-placeholder {
   color: transparent;
 }
 
-/* line 3049, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3115, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .focus-in0:focus:-ms-input-placeholder {
   color: transparent;
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ Hover ]*/
-/* line 3057, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3123, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-cl0:hover {
   color: #fff;
 }
 
-/* line 3058, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3124, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-bg0:hover {
   background-color: #fff;
 }
 
-/* line 3059, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3125, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-cl1:hover {
   color: #717fe0;
 }
 
-/* line 3060, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3126, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-bg1:hover {
   background-color: #717fe0;
 }
 
 /*---------------------------------------------*/
-/* line 3063, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3129, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-img0 {
   display: block;
   overflow: hidden;
 }
 
-/* line 3068, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3134, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+.about-img1 {
+  width: 250px;
+  -webkit-transition: transform 0.9s ease;
+  -o-transition: transform 0.9s ease;
+  -moz-transition: transform 0.9s ease;
+  transition: transform 0.9s ease;
+}
+
+/* line 3142, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-img0 img {
   width: 100%;
   -webkit-transition: transform 0.9s ease;
@@ -12389,7 +12481,7 @@ input.num-product::-webkit-inner-spin-button {
   transition: transform 0.9s ease;
 }
 
-/* line 3076, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3150, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-img0:hover img {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -12398,7 +12490,7 @@ input.num-product::-webkit-inner-spin-button {
   transform: scale(1.1);
 }
 
-/* line 3084, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3158, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-change-img .img-top {
   display: none;
   position: absolute;
@@ -12407,13 +12499,13 @@ input.num-product::-webkit-inner-spin-button {
   z-index: 99;
 }
 
-/* line 3092, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3166, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-change-img:hover .img-top {
   display: inline;
   position: absolute;
 }
 
-/* line 3097, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3171, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .slogan {
   flex-grow: 3;
   font-family: vacation;
@@ -12421,20 +12513,20 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3104, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3178, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-btn1:hover {
   border-color: #222;
   background-color: #222;
   color: #fff;
 }
 
-/* line 3110, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3184, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-btn1:hover i {
   color: #fff;
 }
 
 /*---------------------------------------------*/
-/* line 3115, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3189, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-btn2:hover {
   border-color: #fff;
   background-color: #fff;
@@ -12442,32 +12534,32 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3122, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3196, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-btn3:hover {
   border-color: #717fe0;
   background-color: #717fe0;
   color: #fff;
 }
 
-/* line 3128, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3202, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-btn3:hover i {
   color: #fff;
 }
 
 /*---------------------------------------------*/
-/* line 3133, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3207, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-tag1:hover {
   color: #717fe0;
   border-color: #717fe0;
 }
 
 /*---------------------------------------------*/
-/* line 3140, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3214, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-ovelay1 {
   position: relative;
 }
 
-/* line 3144, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3218, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-ovelay1::after {
   content: "";
   display: block;
@@ -12484,31 +12576,31 @@ input.num-product::-webkit-inner-spin-button {
   -moz-transition: all 0.3s;
 }
 
-/* line 3160, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3234, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov-ovelay1:hover:after {
   opacity: 1;
 }
 
 /*---------------------------------------------*/
-/* line 3166, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3240, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov1:hover {
   color: #333;
   border-color: #797979;
 }
 
 /*---------------------------------------------*/
-/* line 3172, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3246, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov2:hover {
   background-color: #f2f2f2;
 }
 
 /*---------------------------------------------*/
-/* line 3177, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3251, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov3 {
   opacity: 0.6;
 }
 
-/* line 3181, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3255, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .hov3:hover {
   opacity: 1;
 }
@@ -12519,81 +12611,81 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ XL ]*/
 @media (max-width: 1199px) {
-  /* line 3195, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3269, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-0-xl {
     margin: 0;
   }
 
-  /* line 3196, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3270, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-lr-0-xl {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 3197, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3271, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-lr-15-xl {
     margin-left: 15px;
     margin-right: 15px;
   }
 
-  /* line 3198, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3272, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-l-0-xl {
     margin-left: 0;
   }
 
-  /* line 3199, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3273, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-r-0-xl {
     margin-right: 0;
   }
 
-  /* line 3200, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3274, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-l-15-xl {
     margin-left: 15px;
   }
 
-  /* line 3201, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3275, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-r-15-xl {
     margin-right: 15px;
   }
 
-  /* line 3203, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3277, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-0-xl {
     padding: 0;
   }
 
-  /* line 3204, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3278, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-lr-0-xl {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 3205, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3279, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-lr-15-xl {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 3206, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3280, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-l-0-xl {
     padding-left: 0;
   }
 
-  /* line 3207, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3281, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-r-0-xl {
     padding-right: 0;
   }
 
-  /* line 3208, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3282, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-l-15-xl {
     padding-left: 15px;
   }
 
-  /* line 3209, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3283, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-r-15-xl {
     padding-right: 15px;
   }
 
-  /* line 3211, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3285, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .w-full-xl {
     width: 100%;
   }
@@ -12603,93 +12695,93 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ LG ]*/
 @media (max-width: 991px) {
-  /* line 3221, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3295, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-0-lg {
     margin: 0;
   }
 
-  /* line 3222, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3296, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-lr-0-lg {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 3223, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3297, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-lr-15-lg {
     margin-left: 15px;
     margin-right: 15px;
   }
 
-  /* line 3224, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3298, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-l-0-lg {
     margin-left: 0;
   }
 
-  /* line 3225, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3299, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-r-0-lg {
     margin-right: 0;
   }
 
-  /* line 3226, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3300, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-l-15-lg {
     margin-left: 15px;
   }
 
-  /* line 3227, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3301, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-r-15-lg {
     margin-right: 15px;
   }
 
-  /* line 3229, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3303, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-0-lg {
     padding: 0;
   }
 
-  /* line 3230, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3304, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-lr-0-lg {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 3231, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3305, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-lr-15-lg {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 3232, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3306, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-l-0-lg {
     padding-left: 0;
   }
 
-  /* line 3233, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3307, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-r-0-lg {
     padding-right: 0;
   }
 
-  /* line 3234, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3308, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-l-15-lg {
     padding-left: 15px;
   }
 
-  /* line 3235, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3309, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-r-15-lg {
     padding-right: 15px;
   }
 
-  /* line 3237, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3311, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .w-full-lg {
     width: 100%;
   }
 
   /*---------------------------------------------*/
-  /* line 3240, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3314, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .respon4 {
     width: 50%;
   }
 
   /*---------------------------------------------*/
-  /* line 3245, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3319, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .respon5 {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -12698,87 +12790,87 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ MD ]*/
 @media (max-width: 767px) {
-  /* line 3255, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3329, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-0-md {
     margin: 0;
   }
 
-  /* line 3256, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3330, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-lr-0-md {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 3257, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3331, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-lr-15-md {
     margin-left: 15px;
     margin-right: 15px;
   }
 
-  /* line 3258, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3332, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-l-0-md {
     margin-left: 0;
   }
 
-  /* line 3259, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3333, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-r-0-md {
     margin-right: 0;
   }
 
-  /* line 3260, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3334, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-l-15-md {
     margin-left: 15px;
   }
 
-  /* line 3261, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3335, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-r-15-md {
     margin-right: 15px;
   }
 
-  /* line 3263, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3337, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-0-md {
     padding: 0;
   }
 
-  /* line 3264, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3338, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-lr-0-md {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 3265, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3339, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-lr-15-md {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 3266, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3340, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-l-0-md {
     padding-left: 0;
   }
 
-  /* line 3267, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3341, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-r-0-md {
     padding-right: 0;
   }
 
-  /* line 3268, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3342, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-l-15-md {
     padding-left: 15px;
   }
 
-  /* line 3269, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3343, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-r-15-md {
     padding-right: 15px;
   }
 
-  /* line 3271, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3345, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .w-full-md {
     width: 100%;
   }
 
   /*---------------------------------------------*/
-  /* line 3274, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3348, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .respon4 {
     width: 100%;
   }
@@ -12786,110 +12878,110 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ SM ]*/
 @media (max-width: 575px) {
-  /* line 3284, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3358, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-0-sm {
     margin: 0;
   }
 
-  /* line 3285, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3359, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-lr-0-sm {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 3286, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3360, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-lr-15-sm {
     margin-left: 15px;
     margin-right: 15px;
   }
 
-  /* line 3287, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3361, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-l-0-sm {
     margin-left: 0;
   }
 
-  /* line 3288, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3362, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-r-0-sm {
     margin-right: 0;
   }
 
-  /* line 3289, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3363, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-l-15-sm {
     margin-left: 15px;
   }
 
-  /* line 3290, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3364, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-r-15-sm {
     margin-right: 15px;
   }
 
-  /* line 3292, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3366, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-0-sm {
     padding: 0;
   }
 
-  /* line 3293, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3367, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-lr-0-sm {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 3294, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3368, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-lr-15-sm {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 3295, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3369, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-l-0-sm {
     padding-left: 0;
   }
 
-  /* line 3296, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3370, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-r-0-sm {
     padding-right: 0;
   }
 
-  /* line 3297, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3371, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-l-15-sm {
     padding-left: 15px;
   }
 
-  /* line 3298, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3372, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-r-15-sm {
     padding-right: 15px;
   }
 
-  /* line 3300, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3374, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .w-full-sm {
     width: 100%;
   }
 
   /*---------------------------------------------*/
-  /* line 3303, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3377, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .respon1 {
     font-size: 40px;
   }
 
   /*---------------------------------------------*/
-  /* line 3308, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3382, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .respon2 {
     font-size: 20px;
   }
 
   /*---------------------------------------------*/
-  /* line 3313, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3387, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .respon6 {
-    width: 65px;
+    width: 105px;
   }
 
-  /* line 3317, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3391, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .respon6-next {
     width: calc(100% - 65px);
   }
 
   /*---------------------------------------------*/
-  /* line 3322, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3396, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .respon7 {
     padding-left: 60px;
   }
@@ -12897,110 +12989,110 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ SSM ]*/
 @media (max-width: 480px) {
-  /* line 3333, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3407, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-0-ssm {
     margin: 0;
   }
 
-  /* line 3334, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3408, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-lr-0-ssm {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 3335, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3409, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-lr-15-ssm {
     margin-left: 15px;
     margin-right: 15px;
   }
 
-  /* line 3336, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3410, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-l-0-ssm {
     margin-left: 0;
   }
 
-  /* line 3337, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3411, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-r-0-ssm {
     margin-right: 0;
   }
 
-  /* line 3338, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3412, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-l-15-ssm {
     margin-left: 15px;
   }
 
-  /* line 3339, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3413, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .m-r-15-ssm {
     margin-right: 15px;
   }
 
-  /* line 3341, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3415, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-0-ssm {
     padding: 0;
   }
 
-  /* line 3342, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3416, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-lr-0-ssm {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 3343, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3417, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-lr-15-ssm {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 3344, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3418, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-l-0-ssm {
     padding-left: 0;
   }
 
-  /* line 3345, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3419, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-r-0-ssm {
     padding-right: 0;
   }
 
-  /* line 3346, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3420, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-l-15-ssm {
     padding-left: 15px;
   }
 
-  /* line 3347, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3421, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .p-r-15-ssm {
     padding-right: 15px;
   }
 
-  /* line 3349, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3423, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .w-full-ssm {
     width: 100%;
   }
 
   /*---------------------------------------------*/
-  /* line 3352, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3426, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .respon3 {
     padding: 20px;
   }
 }
 @media (min-width: 991px) {
-  /* line 3357, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3431, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .main-page {
     margin-top: 110px;
   }
 }
-/* line 3362, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3436, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .banner-bg {
   padding: 10px 0 25px 0 !important;
   position: relative;
   text-align: center;
 }
-/* line 3366, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3440, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .banner-bg img {
   opacity: 0.5;
   max-width: 100%;
 }
 
-/* line 3372, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3446, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .title {
   position: absolute;
   top: 40%;
@@ -13009,7 +13101,7 @@ input.num-product::-webkit-inner-spin-button {
   color: #333;
 }
 
-/* line 3380, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3454, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .description {
   position: absolute;
   top: 60%;
@@ -13018,17 +13110,17 @@ input.num-product::-webkit-inner-spin-button {
   color: #333;
 }
 
-/* line 3388, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3462, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .product-index {
   padding-top: 0px !important;
 }
 
-/* line 3392, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3466, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .lm_foundation {
   background-image: url(/images/banner-2.jpg);
 }
 
-/* line 3395, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3469, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .search-string {
   border: 1px solid #e6e6e6;
   padding-right: 0px;
@@ -13036,52 +13128,52 @@ input.num-product::-webkit-inner-spin-button {
   margin-right: -70px;
 }
 
-/* line 3401, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3475, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .policy {
   border: 1px solid #e6e6e6;
   margin-bottom: 30px;
 }
-/* line 3404, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3478, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .policy .policy-box {
   margin-top: 30px;
   margin-bottom: -30px;
 }
 
-/* line 3410, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3484, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .job-p {
   margin-bottom: 40px;
   border-top: 1px solid #e6e6e6;
 }
 
-/* line 3415, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3489, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .partner {
   padding-bottom: 10px;
 }
 
-/* line 3419, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3493, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .field_with_errors {
   display: contents;
 }
 
-/* line 3422, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3496, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .center-blog {
   margin-left: auto;
   margin-right: auto;
 }
 
 @media (min-width: 991px) {
-  /* line 3428, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3502, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .about {
     margin-top: 120px;
   }
 
-  /* line 3432, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3506, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .lm_foundation {
     margin-top: 120px;
   }
 }
 @media (max-width: 1130px) {
-  /* line 3438, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+  /* line 3512, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
   .main-menu > li {
     display: block;
     position: relative;
@@ -13089,19 +13181,19 @@ input.num-product::-webkit-inner-spin-button {
     margin: 0px 1px 0px 14px;
   }
 }
-/* line 3446, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3520, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .value {
   padding-left: 40px;
   text-align: justify;
 }
 
-/* line 3451, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3525, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .vision {
   padding-right: 40px;
   text-align: justify;
 }
 
-/* line 3456, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3530, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .input-checkout {
   display: block;
   margin-right: auto;
@@ -13110,56 +13202,56 @@ input.num-product::-webkit-inner-spin-button {
   height: 50px;
 }
 
-/* line 3464, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3538, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .promotion {
   padding: 6px;
   align-self: center;
 }
 
-/* line 3469, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3543, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .unclicked {
   pointer-events: none;
   opacity: 0.5;
 }
 
-/* line 3474, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3548, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .product-measurement-image img {
   width: 100%;
 }
 
-/* line 3478, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3552, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .related {
   padding: 10px;
 }
 
-/* line 3482, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3556, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .text-left {
   justify-content: initial !important;
 }
 
-/* line 3486, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3560, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .policy-text {
   color: #333;
 }
 
-/* line 3490, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3564, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .stock_code {
   display: contents;
 }
 
-/* line 3494, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3568, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .payment_method {
   align-self: self-start;
 }
 
-/* line 3498, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3572, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .radio-payment {
   float: left;
   clear: none;
   margin: 6px 8px 0 2px;
 }
 
-/* line 3504, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3578, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .radio-payment-label {
   loat: left;
   clear: none;
@@ -13167,9 +13259,44 @@ input.num-product::-webkit-inner-spin-button {
   padding: 0px 1em 0px 8px;
 }
 
-/* line 3512, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+/* line 3586, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
 .size-color img {
   width: 47px;
+}
+
+/* line 3591, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+ul.disc {
+  list-style-position: outside;
+}
+/* line 3594, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+ul.disc li {
+  margin-left: 50px;
+  list-style-type: circle;
+}
+
+/* line 3600, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+.modal-dialog {
+  margin-top: 10%;
+  max-width: 1000px !important;
+}
+/* line 3603, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+.modal-dialog .close {
+  font-size: 1rem !important;
+}
+/* line 3606, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+.modal-dialog button {
+  position: absolute;
+  left: 1%;
+}
+
+/* line 3611, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+.img-responsive {
+  width: 100%;
+}
+
+/* line 3615, /Users/luongngoc/code/ecommerce/lmcation_project/app/assets/stylesheets/main.scss */
+.order-header {
+  text-align: left;
 }
 /*
 Linearicons Free v1.0.0 - https://linearicons.com/free

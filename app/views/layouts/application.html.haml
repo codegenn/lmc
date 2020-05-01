@@ -3,6 +3,7 @@
   %head
     %title LMCATION
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "width=device-width", :name => "viewport"}/
     = csrf_meta_tags
     %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
     %script{:defer => "defer", :src => "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"}
@@ -19,12 +20,6 @@
 
       gtag('config', 'UA-164577749-1');
   %body{data: {turbolinks: 'false'}}
-    #promotion.modal.fade{:role => "dialog"}
-      .modal-dialog
-        / Modal content
-        .modal-content
-          %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          = cl_image_tag 'IMG_0718_d5wl6s.jpg', class: 'img-responsive'
     / Load Facebook SDK for JavaScript
     #fb-root
     :javascript
@@ -109,10 +104,10 @@
             = image_tag 'icons/mobile-logo.jpg'
         / Icon header
         .wrap-icon-header.flex-w.flex-r-m.m-r-15
-          .icon-header-item.cl2.hov-cl1.trans-04.p-r-11.p-l-10.icon-header-noti.js-show-cart{"data-notify" => "2"}
-            %i.zmdi.zmdi-shopping-cart
-          %a.dis-block.icon-header-item.cl2.hov-cl1.trans-04.p-r-11.p-l-10.icon-header-noti{"data-notify" => "0", :href => "#"}
-            %i.zmdi.zmdi-favorite-outline
+          .icon-cart
+            = render 'carts/icon', total_products: @cart.try(:total_products) || 0
+          .icon-wishlist
+            = render 'favorites/icon', total_products: @favorite.try(:favorite_products).try(:count) || 0
         / Button show menu
         .btn-show-menu-mobile.hamburger.hamburger--squeeze
           %span.hamburger-box
@@ -220,3 +215,9 @@
     #myBtn.btn-back-to-top
       %span.symbol-btn-back-to-top
         %i.zmdi.zmdi-chevron-up
+    #promotion.modal.fade{:role => "dialog"}
+      .modal-dialog
+        / Modal content
+        .modal-content
+          %button.close{"data-dismiss" => "modal", :type => "button"} ×
+          = cl_image_tag 'IMG_0718_d5wl6s.jpg', class: 'img-responsive'
