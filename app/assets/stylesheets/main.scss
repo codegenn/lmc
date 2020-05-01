@@ -1037,7 +1037,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   line-height: 1.3;
 }
 
-/*---------------------------------------------*/
+/*-------------------MOBILE VER--------------------------*/
 @media (max-width: 575px) {
   .header-cart {
     padding: 30px;
@@ -1045,6 +1045,40 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
   .header-cart-title {
     padding-bottom: 35px;
+  }
+
+  .title {
+    font-size: 30px !important;
+    width: 100%;
+    top: 39% !important;
+  }
+
+  .description {
+    top: 110% !important;
+    font-size: 19px !important;
+    width: 100%;
+  }
+
+  .products-container {
+    padding-bottom: 10px !important;
+  }
+
+  .sec-product-detail {
+    padding-top: 5px !important;
+  }
+
+  .foundation-content {
+    padding-right: 0 !important;
+  }
+
+  .about-header {
+    font-size: 20px !important;
+  }
+  .vision {
+    padding-right: 0 !important;
+  }
+  .value {
+    padding-left: 0 !important;
   }
 }
 
@@ -3318,7 +3352,7 @@ input.num-product::-webkit-inner-spin-button {
 
   /*---------------------------------------------*/
   .respon6 {
-    width: 65px;
+    width: 105px;
   }
 
   .respon6-next {
@@ -3534,9 +3568,12 @@ ul.disc {
   height: 80% !important;
   padding-top: 10%;
   max-width: 1000px !important;
+  .close {
+    font-size: 1rem !important;
+  }
   button {
     position: absolute;
-    left: 10px;
+    left: 1%;
   }
 }
 .img-responsive {
