@@ -109,8 +109,6 @@
             = image_tag 'icons/mobile-logo.jpg'
         / Icon header
         .wrap-icon-header.flex-w.flex-r-m.m-r-15
-          .icon-header-item.cl2.hov-cl1.trans-04.p-r-11.js-show-modal-search
-            %i.zmdi.zmdi-search
           .icon-header-item.cl2.hov-cl1.trans-04.p-r-11.p-l-10.icon-header-noti.js-show-cart{"data-notify" => "2"}
             %i.zmdi.zmdi-shopping-cart
           %a.dis-block.icon-header-item.cl2.hov-cl1.trans-04.p-r-11.p-l-10.icon-header-noti{"data-notify" => "0", :href => "#"}
@@ -124,14 +122,12 @@
         %ul.topbar-mobile
           %li
             .right-top-bar.flex-w.h-full
-              %a.flex-c-m.p-lr-10.trans-04{:href => "#"}
-                = I18n.t "page.menu.help"
-              %a.flex-c-m.p-lr-10.trans-04{:href => "#"}
-                = I18n.t "page.menu.my_account"
-              %a.flex-c-m.p-lr-10.trans-04{:href => "#"}
-                EN
-              %a.flex-c-m.p-lr-10.trans-04{:href => "#"}
-                USD
+              - if user_signed_in?
+                = link_to I18n.t("page.menu.my_account"), edit_user_registration_path, class: "flex-c-m trans-04 p-lr-10"
+              - else
+                = link_to I18n.t("page.menu.my_account"), new_user_session_path, class: "flex-c-m trans-04 p-lr-10"
+              = link_to_unless I18n.locale == :vi, "VI", { locale: :vi }, { class: 'flex-c-m trans-04 p-lr-25' } if I18n.locale == :en
+              = link_to_unless I18n.locale == :en, "EN", { locale: :en }, { class: 'flex-c-m trans-04 p-lr-25' } if I18n.locale == :vi
         %ul.main-menu-m
           %li
             = link_to I18n.t("page.menu.home"), store_path
@@ -174,13 +170,13 @@
               = I18n.t "page.footer.help"
             %ul
               %li.p-b-10
-                %a.stext-107.cl7.hov-cl1.trans-04{:href => "store/policy"}
+                %a.stext-107.cl7.hov-cl1.trans-04{:href => "http://www.lmcation.com/store/policy"}
                   = I18n.t "page.index.return"
             %li.p-b-10
-              %a.stext-107.cl7.hov-cl1.trans-04{:href => "/trackings"}
+              %a.stext-107.cl7.hov-cl1.trans-04{:href => "http://www.lmcation.com/trackings"}
                 = I18n.t "page.tracking.tracking"
               %li.p-b-10
-                %a.stext-107.cl7.hov-cl1.trans-04{:href => "store/privacy"}
+                %a.stext-107.cl7.hov-cl1.trans-04{:href => "http://www.lmcation.com/store/privacy"}
                   = I18n.t "page.privacy.privacy"
             -#  %li.p-b-10
             -#    %a.stext-107.cl7.hov-cl1.trans-04{:href => "#"}
@@ -191,12 +187,10 @@
             %p.stext-107.cl7.size-201
               = I18n.t "page.footer.get_in_touch_content"
             .p-t-27
-              %a.fs-18.cl7.hov-cl1.trans-04.m-r-16{:href => "#"}
+              %a.fs-18.cl7.hov-cl1.trans-04.m-r-16{:href => "http://www.facebook.com/lmcation"}
                 %i.fa.fa-facebook
-              %a.fs-18.cl7.hov-cl1.trans-04.m-r-16{:href => "#"}
+              %a.fs-18.cl7.hov-cl1.trans-04.m-r-16{:href => "http://www.instagram.com/lmcation"}
                 %i.fa.fa-instagram
-              %a.fs-18.cl7.hov-cl1.trans-04.m-r-16{:href => "#"}
-                %i.fa.fa-pinterest-p
           .col-sm-6.col-lg-3.p-b-50
             %h4.stext-301.cl0.p-b-30
               = I18n.t "page.footer.newsletter"
