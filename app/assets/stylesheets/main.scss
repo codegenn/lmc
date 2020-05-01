@@ -3011,7 +3011,7 @@ input.num-product::-webkit-inner-spin-button {
   display: block;
   position: absolute;
   z-index: -1;
-  width: 100%;
+  width: 250px;
   height: 100%;
   border: 3px solid #ccc;
 }
@@ -3062,6 +3062,14 @@ input.num-product::-webkit-inner-spin-button {
 .hov-img0 {
   display: block;
   overflow: hidden;
+}
+
+.about-img1 {
+  width: 250px;
+  -webkit-transition: transform 0.9s ease;
+  -o-transition: transform 0.9s ease;
+  -moz-transition: transform 0.9s ease;
+  transition: transform 0.9s ease;
 }
 
 .hov-img0 img{
