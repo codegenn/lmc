@@ -34,7 +34,7 @@
         .row
           .col-sm-6.col-md-4.p-b-40
             %h3.mtext-111.cl2.p-b-16
-              = key.upcase
+              = I18n.t("page.foundation.#{key}")
         .row
           - blogs.each do |blog|
             .col-sm-6.col-md-4.p-b-40
@@ -63,5 +63,5 @@
           .col-sm-6.col-md-4.p-b-40
           .col-sm-6.col-md-4.p-b-40
             %h3.mtext-111.cl2.p-b-16
-              = link_to 'See more', foundations_path(category: key), class: 'flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10'
+              = link_to I18n.t("page.foundation.more"), foundations_path(category: key), class: 'flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10'
           .col-sm-6.col-md-4.p-b-40
