@@ -11,7 +11,7 @@
         %br
         = form_for(Partner.new) do |f|
           .bor8.m-b-20.how-pos4-parent
-            = f.text_field :email, autofocus: true, class: 'stext-111 cl2 plh3 size-116 p-l-62 p-r-30', :name => "email", :placeholder => "Your Email Address", :type => "text"
+            = f.text_field :email, autofocus: true, class: 'stext-111 cl2 plh3 size-116 p-l-62 p-r-30', :name => "email", :placeholder =>I18n.t("jobs.partner_email"), :type => "text"
             = image_tag 'icons/icon-email.png', class: 'how-pos4 pointer-none'
           %center
             .col-sm-6

@@ -198,6 +198,7 @@ en:
   jobs:
     partner: 'CONNECT WITH US (Partners)'
     partner_btn: 'connect with us'
+    partner_email: 'Your Email Address'
     work: 'WORK AT LM (Career & Volunteering)'
   wishlist:
     your_wishlist: 'Your Wishlist'

@@ -219,6 +219,7 @@ vi:
   jobs:
     partner: 'KẾT NỐI VỚI LMCATION'
     partner_btn: 'Kết nối'
+    partner_email: 'Nhập địa chỉ email'
     work: 'CƠ HỘI VIỆC LÀM TẠI LMCATION'
   wishlist:
     your_wishlist: 'SẢN PHẨM YÊU THÍCH CỦA BẠN'
