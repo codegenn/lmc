@@ -49,6 +49,7 @@ vi:
       empowerment: 'TRAO QUYỀN CHO PHÁI ĐẸP'
       blog: 'Blog'
       news: 'Tin Tức'
+      more: 'xem thêm'
     policy:
       exchange_qualify_qus: 'Những sản phẩm đủ điều kiện để đổi?'
       exchange_qualify_ans: 'Bạn có thể trao đổi bất kỳ mặt hàng nào còn nguyên vẹn như lúc mới mua (chưa mở, chưa tẩy rửa hay giặt, chưa sử dụng, còn nhãn mác gốc đính kèm) kèm hóa đơn mua hàng. Đồ bơi và quần lót phải còn miếng dán vệ sinh trên đáy.'
@@ -189,6 +190,8 @@ vi:
       content: 'Nội dung chuyển khoản'
       content_tranfer: 'LMCATION-[Tên khách hàng]-[số điện thoại KH] (LMCATION-THU-0772404646)'
       or: 'HOẶC'
+      delete: 'BỎ CHỌN'
+      delete_confirm: 'Bạn muốn bỏ chọn sản phẩm này?'
   user:
     user_header: 'LOG IN/SIGN UP'
     signin_description: ''

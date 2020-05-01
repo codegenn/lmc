@@ -51,6 +51,8 @@ en:
       empowerment: 'EMPOWERMENT'
       blog: 'Blog'
       news: 'News'
+      news: 'News'
+      more: 'See More'
     policy:
       exchange_qualify_qus: 'What products qualify for exchange?'
       exchange_qualify_ans: 'You can exchange any item in its original sale condition (unworn, unwashed, unused, with the original tags and labels attached) with proof of purchase. Swimwear and panties must have their original hygienic sticker attached.'
@@ -171,6 +173,8 @@ en:
       product: 'Product'
       price: 'Price'
       quantity: 'Quantity'
+      delete: 'DELETE'
+      delete_confirm: 'Are you sure you want to delete this line item?'
       total: 'Total'
       cart_total: 'Cart Totals'
       update_cart: 'UPDATE CART'
