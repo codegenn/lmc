@@ -238,6 +238,8 @@ en:
           other: "%{count} errors prohibited this %{model} from being saved"
         body:    "There were problems with the following fields:"
   controllers:
+    message:
+      success: 'Thank you for your contact. We will check and contact to you soon'
     line_items:
       success: 'Add product to cart successfully'
       success_update: 'Update successfully'

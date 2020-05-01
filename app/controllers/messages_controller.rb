@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
     @message = Message.new(email: params[:email], question: params[:question])
 
     if @message.save
-      flash[:success] = 'Thank you for your contact. We will check and contact to you soon'
+      flash[:success] = I18n.t('controllers.message.success')
     else
       flash[:danger] = @message.errors.full_messages.to_sentence
     end

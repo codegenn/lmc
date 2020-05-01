@@ -239,6 +239,8 @@ vi:
       success_remove: 'Xoá thành công'
       cart_not_present: 'Cart is not present'
       select_sc: 'Vui lòng chọn kích thước và màu sắc.'
+    message:
+      success: 'Cảm ơn bạn đã liên hệ LMcation. Chị em LMcation sẽ phản hồi cho bạn ngay thôi. Để được hỗ trợ nhanh, vui lòng gọi 0777 12 12 99; để biết thêm thông tin, vui lòng truy cập <a href="https://www.facebook.com/LMcation/">https://www.facebook.com/LMcation/</a>'
     order:
       success: 'Cảm ơn bạn đã đặt hàng, đơn hàng của bạn sẽ được xử lý trong vòng 48 tiếng đồng hồ. Vui lòng gọi 0777 12 12 99 nếu bạn có những yêu cầu khác.'
   order:
