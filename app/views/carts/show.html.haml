@@ -28,7 +28,13 @@
                           %td.column-2
                             = line_item.stock.product.title
                           %td.column-3
-                            = "#{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} VND"
+                            - if line_item.stock.product.promotion_price.present?
+                              .promotion-price
+                                = "#{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} vnd"
+                              %b
+                                = "#{number_with_delimiter(line_item.stock.product.promotion_price.to_i, :delimiter => '.')} vnd"
+                            - else
+                              = "#{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} vnd"
                           %td.column-4
                             = f.fields_for :line_items, line_item do |line|
                               .wrap-num-product.flex-w.m-l-auto.m-r-0

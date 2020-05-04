@@ -7,7 +7,14 @@ class Order
     end
 
     def total_price
-      line_items.joins(:stock).map { |line| line.stock.product_price * line.quantity }.inject(0, :+)
+      line_items.joins(:stock).map do |line|
+        price = line.stock.product_promotion_price.present? ? line.stock.product_promotion_price : line.stock.product_price
+        price * line.quantity
+      end.inject(0, :+)
+    end
+
+    def order_total_price
+      line_items.map { |line| line.price.to_i * line.quantity }.inject(0, :+)
     end
 
     def total_products

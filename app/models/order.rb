@@ -7,12 +7,14 @@ class Order < ActiveRecord::Base
   def add_line_items_from_cart(cart)
     cart.line_items.each do |item|
       item.cart_id = nil
+      price = item.stock.product_promotion_price.present? ? item.stock.product_promotion_price : item.stock.product_price
+      item.price = price
       line_items << item
     end
   end
 
   def total_price
-    calculator.total_price
+    calculator.order_total_price
   end
 
   def total_products

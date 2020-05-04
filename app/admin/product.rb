@@ -1,9 +1,10 @@
 ActiveAdmin.register Product do
 
-  permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :price, :has_promotion, :measurement_image_url, :slug_url,
-                category_ids: [], stocks_attributes: [:id, :_destroy, :size, :color, :product_code], product_images_attributes: [:id, :_destroy, :url],
-                translations_attributes: [:id, :locale, :title, :description, :promotion, :short_description, :measurement_description, :_destroy],
-                color_images_attributes: [:id, :_destroy, :image_url, :color_name]
+  permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :out_of_stock, :promotion_price, :price,
+                :has_promotion, :measurement_image_url, :slug_url, category_ids: [],
+                stocks_attributes: [:id, :_destroy, :size, :color, :product_code],
+                product_images_attributes: [:id, :_destroy, :url], color_images_attributes: [:id, :_destroy, :image_url, :color_name],
+                translations_attributes: [:id, :locale, :title, :description, :promotion, :short_description, :measurement_description, :_destroy]
 
   index do
     id_column
@@ -28,6 +29,7 @@ ActiveAdmin.register Product do
 
       f.input :slug_url
       f.input :price
+      f.input :promotion_price
       f.input :is_best_seller
       f.input :is_promotion
       f.input :is_new_arrival
@@ -38,6 +40,7 @@ ActiveAdmin.register Product do
         image_form.input :url, as: :file, hint: cl_image_tag(image_form.object.try(:url), width: 200)
       end
       f.input :measurement_image_url, as: :file, hint: cl_image_tag(f.object.try(:measurement_image_url), width: 200)
+      f.input :out_of_stock, as: :boolean
       f.has_many :stocks, heading: false, allow_destroy: true do |stocks_form|
         stocks_form.input :size
         stocks_form.input :color, as: :string
@@ -60,6 +63,7 @@ ActiveAdmin.register Product do
       row :measurement_description
       row :description
       row :price
+      row :promotion_price
       row :is_best_seller
       row :is_promotion
       row :is_new_arrival
@@ -77,6 +81,7 @@ ActiveAdmin.register Product do
           cl_image_tag ad.url, :width => 400
         end
       end
+      row :out_of_stock
       attributes_table_for product.stocks do
         row :size
         row :color

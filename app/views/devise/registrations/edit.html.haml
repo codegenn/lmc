@@ -62,7 +62,7 @@
                           %button.order-header.btn.btn-link{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-target" => "#collapse#{order.id}", "data-toggle" => "collapse", :type => "button"}
                             = "On #{order.created_at}"
                             %br
-                            = " total: #{number_with_delimiter(order.total_price.to_i, :delimiter => '.')} vnd"
+                            = " total: #{number_with_delimiter(order.total_price.to_i, :delimiter => '.')} VND"
                       .collapse{"aria-labelledby" => "headingOne", "data-parent" => "#accordionExample", id: "collapse#{order.id}"}
                         .card-body
                           .order-number
@@ -82,12 +82,13 @@
                                 %tr.table_row
                                   %td.column-1
                                     .how-itemcart1
-                                      = cl_image_tag line_item.stock.product.product_images.first.url
+                                      = cl_image_tag line_item.stock.try(:product).try(:product_images).try(:first).try(:url)
                                   %td.column-2
-                                    = link_to product_path(line_item.stock.product.slug), :"data-no-turbolink" => 'false', class: "stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" do
-                                      = line_item.stock.product.title
+                                    - path = line_item.stock.try(:product).try(:slug) ? product_path(line_item.stock.try(:product).try(:slug)) : products_path
+                                    = link_to path, :"data-no-turbolink" => 'false', class: "stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" do
+                                      = line_item.stock.try(:product).try(:title)
                                   %td.column-3
-                                    = "#{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} vnd"
+                                    = "#{number_with_delimiter(line_item.price.to_i, :delimiter => '.')} VND"
                                   %td.column-4
                                     = line_item.quantity
                                   %td.column-5

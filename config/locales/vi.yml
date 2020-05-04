@@ -161,6 +161,7 @@ vi:
       description: 'Mô Tả Sản Phẩm'
       measurement: 'Thông Số'
       single_colour: 'có 1 màu'
+      out_of_stock: 'HẾT HÀNG'
       other_colour_count: 'có %{count} màu'
       related_product: 'SẢN PHẨM LIÊN QUAN'
     job:

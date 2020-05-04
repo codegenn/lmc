@@ -18,7 +18,8 @@
               = link_to product_path(line_item.stock.product.slug), :"data-no-turbolink" => 'false', class: "header-cart-item-name m-b-18 hov-cl1 trans-04" do
                 = line_item.stock.product.title
                 %span.header-cart-item-info
-                  ="#{line_item.quantity} x #{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} VND"
+                  - price = line_item.stock.product.promotion_price.present? ? line_item.stock.product.promotion_price : line_item.stock.product.price
+                  = "#{line_item.quantity} x #{number_with_delimiter(price.to_i, :delimiter => '.')} VND"
                 %span.header-cart-item-info
                   = link_to line_item, method: :delete, noindex: true, id: 'delete', data: { confirm: I18n.t("page.cart.delete_confirm") }, class: 'delete-item' do
                     = I18n.t("page.cart.delete")

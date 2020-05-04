@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200411152619) do
+ActiveRecord::Schema.define(version: 20200504134634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -181,6 +181,7 @@ ActiveRecord::Schema.define(version: 20200411152619) do
     t.datetime "updated_at"
     t.integer  "quantity",   default: 0
     t.integer  "order_id"
+    t.float    "price"
   end
 
   add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id", using: :btree
@@ -261,6 +262,8 @@ ActiveRecord::Schema.define(version: 20200411152619) do
     t.string   "measurement_image_url"
     t.string   "slug"
     t.string   "slug_url"
+    t.boolean  "out_of_stock",          default: false
+    t.float    "promotion_price"
   end
 
   add_index "products", ["slug"], name: "index_products_on_slug", unique: true, using: :btree

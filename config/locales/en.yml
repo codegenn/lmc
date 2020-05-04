@@ -166,6 +166,7 @@ en:
       single_colour: '1 colour available'
       other_colour_count: '%{count} colours available'
       related_product: 'RELATED PRODUCTS'
+      out_of_stock: 'OUT OF STOCK'
     cart:
       total: 'Total'
       your_cart: 'Your Cart'
