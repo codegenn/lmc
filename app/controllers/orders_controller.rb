@@ -19,6 +19,7 @@ class OrdersController < ApplicationController
       UserMailer.delay.order_for_user(@order)
       session[:cart_code] = nil
       flash[:success] = I18n.t('controllers.order.success')
+      flash[:pixel] = 'Purchase'
       redirect_to products_path
     else
       flash[:danger] = @order.errors.full_messages.to_sentence

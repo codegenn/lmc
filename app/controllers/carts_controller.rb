@@ -2,6 +2,7 @@ class CartsController < ApplicationController
   before_action :validate_cart_id, :set_cart, only: [:show, :update]
 
   def show
+    flash[:pixel] = "InitiateCheckout"
     @line_items = @cart.line_items.includes(:stock)
     @order = Order.new(tracking: "#{DateTime::now().to_time.to_i}#{Order.last.id + 1}")
   end

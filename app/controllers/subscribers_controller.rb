@@ -4,6 +4,7 @@ class SubscribersController < ApplicationController
 
     if @subscriber.save
       flash[:success] = 'Thank you for your subscriber'
+      flash[:pixel] = 'Subscribe'
       redirect_to products_path
     else
       flash[:danger] = @subscriber.errors.full_messages.to_sentence
