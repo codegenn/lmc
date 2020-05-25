@@ -12,7 +12,7 @@
           = I18n.t "user.signin"
         %br
         - flash.each do |key, value|
-          = content_tag :div, value, class: "alert alert-#{key}"
+          = content_tag :div, value, class: "alert alert-#{key}" unless key == 'pixel'
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .field
             = f.label :email, I18n.t("user.email")

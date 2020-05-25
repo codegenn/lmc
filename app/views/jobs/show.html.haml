@@ -15,7 +15,7 @@
               = form_for(@application) do |f|
                 .wrap-table-shopping-cart
                   - flash.each do |key, value|
-                    = content_tag :div, value, class: "alert alert-#{key}"
+                    = content_tag :div, value, class: "alert alert-#{key}" unless key == 'pixel'
                   .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
                     = f.label :name, I18n.t("page.job.name"), class: 'col-sm-3 control-label'
                     = f.text_field :name, required: true, autofocus: true, class: 'stext-111 cl2 plh3 size-126 input-txt'

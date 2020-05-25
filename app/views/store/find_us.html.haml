@@ -8,7 +8,7 @@
       .size-210.bor10.p-lr-70.p-t-55.p-b-70.p-lr-15-lg.w-full-md
         .alert
           - flash.each do |key, value|
-            = content_tag :div, value.html_safe, class: "alert alert-#{key}"
+            = content_tag :div, value.html_safe, class: "alert alert-#{key}" unless key == 'pixel'
         = form_for(Message.new) do |f|
           %h4.mtext-105.cl2.txt-center.p-b-30
             = I18n.t "page.find_us.send_msg"

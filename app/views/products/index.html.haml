@@ -9,7 +9,7 @@
   .container
     .alert
       - flash.each do |key, value|
-        = content_tag :div, value, class: "alert alert-#{key}"
+        = content_tag :div, value, class: "alert alert-#{key}" unless key == 'pixel'
     .flex-w.flex-sb-m.p-b-52.products-container
       .dis-none.panel-search.w-full.p-t-10.p-b-15
         .bor8.dis-flex.p-l-15

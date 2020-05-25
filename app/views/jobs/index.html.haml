@@ -3,7 +3,7 @@
   .container
     .alert
       - flash.each do |key, value|
-        = content_tag :div, value, class: "alert alert-#{key}"
+        = content_tag :div, value, class: "alert alert-#{key}" unless key == 'pixel'
     .policy.partner
       .col-md-12.col-xl-10.p-b-30.m-lr-auto.policy-box
         %h4.ltext-107.txt-center
