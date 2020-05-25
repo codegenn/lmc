@@ -78,8 +78,8 @@
                       .col-sm-9
                         = f.radio_button :payment_method, 'COD', class: 'radio-payment', checked: @order.payment_method.nil? || @order.payment_method == 'COD'
                         = f.label :payment_method, 'COD', class: 'radio-payment-label', :value => 'COD'
-                        = f.radio_button :payment_method, 'TRANSFER', class: 'radio-payment', checked: @order.payment_method == 'transfer'
-                        = f.label :payment_method, I18n.t("page.cart.transfer_btn"), class: 'radio-payment-label', :value => 'TRANSFER'
+                        -#= f.radio_button :payment_method, 'TRANSFER', class: 'radio-payment', checked: @order.payment_method == 'transfer'
+                        -#= f.label :payment_method, I18n.t("page.cart.transfer_btn"), class: 'radio-payment-label', :value => 'TRANSFER'
                         %br
                       .tranfer-content
                         .col-sm-12.control-label

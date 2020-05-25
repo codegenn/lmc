@@ -4,7 +4,9 @@ class CartsController < ApplicationController
   def show
     flash[:pixel] = "InitiateCheckout"
     @line_items = @cart.line_items.includes(:stock)
-    @order = Order.new(tracking: "#{DateTime::now().to_time.to_i}#{Order.last.id + 1}")
+    last_order = Order.last
+    id = last_order ?  last_order.id : 0
+    @order = Order.new(tracking: "#{DateTime::now().to_time.to_i}#{id + 1}")
   end
 
   def update
