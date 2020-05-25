@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
 
     if @order.save
       Cart.find_by_code(session[:cart_code]).destroy
-      UserMailer.delay.order_for_user(@order)
+      UserMailer.order_for_user(@order).deliver_now
       session[:cart_code] = nil
       flash[:success] = I18n.t('controllers.order.success')
       flash[:pixel] = 'Purchase'
