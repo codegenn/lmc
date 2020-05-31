@@ -686,6 +686,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 .hamburger:hover {
   opacity: 1;
 }
+.modal-content-mobile {display: none;}
 
 /*---------------------------------------------*/
 @media (max-width: 991px){
@@ -697,6 +698,8 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     display: flex;
   }
   .container-menu-desktop {display: none;}
+  .modal-content-desktop {display: none;}
+  .modal-content-mobile {display: block;}
 }
 
 /*==================================================================
@@ -3610,7 +3613,7 @@ ul.disc {
   margin-top: 10%;
   max-width: 1000px !important;
   .close {
-    font-size: 1rem !important;
+    font-size: 1.8rem !important;
   }
   button {
     position: absolute;
