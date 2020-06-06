@@ -45,6 +45,11 @@
                                   %i.fs-16.zmdi.zmdi-plus
                           %td.column-5
                             = "#{number_with_delimiter(line_item.total_price.to_i, :delimiter => '.')} VND"
+                      %tr.table_row
+                        %td.column-voucher{:colspan => "3"}
+                          = f.label :voucher_code, I18n.t("page.cart.voucher"), class: 'control-label'
+                        %td.column-3{:colspan => "2"}
+                          = f.text_field :voucher_code, autofocus: true, class: 'stext-111 cl2 plh3 size-100 input-txt'
                   .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
                     .flex-w.flex-m.m-r-20.m-tb-5
                     = f.hidden_field :id, { :value => @cart.code }
@@ -127,8 +132,23 @@
                     %span.mtext-101.cl2
                       = "#{I18n.t("page.cart.total")}: "
                   .size-206.p-t-1.ml-lg-3
-                    %span.mtext-110.cl2
+                    %span.mtext-110.cl2{ class: ('line-out' if @cart.voucher_code.present?) }
                       = "#{number_with_delimiter(@cart.total_price.to_i, :delimiter => '.')} VND"
+                - if @cart.voucher_code.present?
+                  .flex-w.flex-t.p-b-33
+                    .size-208
+                      %span.mtext-101.cl2
+                        = "#{I18n.t("page.cart.voucher")}: "
+                    .size-206.p-t-1.ml-lg-3
+                      %span.mtext-110.cl2
+                        = @cart.voucher_code
+                  .flex-w.flex-t.p-b-33
+                    .size-208
+                      %span.mtext-101.cl2
+                        = "#{I18n.t("page.cart.grand_total")}: "
+                    .size-206.p-t-1.ml-lg-3
+                      %span.mtext-110.cl2
+                        = "#{number_with_delimiter(@cart.calculate_grand_total.to_i, :delimiter => '.')} VND"
 
 :javascript
   function checktransfer(){

@@ -27,7 +27,12 @@
               .order-number
                 = "#{I18n.t("page.tracking.order_status")}: #{@order.status}"
               .order-number
-                = "#{I18n.t("page.cart.cart_total")}: #{@order.total_price}"
+                = "#{I18n.t("page.cart.cart_total")}: #{number_with_delimiter(@order.total_price.to_i, :delimiter => '.')} vnd"
+              - if @order.voucher_code.present?
+                .order-number
+                  = "#{I18n.t("page.cart.voucher")}: #{@order.voucher_code}"
+                .order-number
+                  = "#{I18n.t("page.cart.grand_total")}: #{number_with_delimiter(@order.grand_total.to_i, :delimiter => '.')} vnd"
               %br
               .wrap-table-shopping-cart
                 %table.table-shopping-cart

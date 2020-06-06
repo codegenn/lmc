@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200504134634) do
+ActiveRecord::Schema.define(version: 20200606074212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20200504134634) do
     t.string   "code"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "voucher_code"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -220,6 +221,9 @@ ActiveRecord::Schema.define(version: 20200504134634) do
     t.string   "tracking"
     t.string   "status"
     t.string   "payment_method"
+    t.float    "sub_total_price"
+    t.float    "grand_total"
+    t.string   "voucher_code"
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
@@ -295,5 +299,11 @@ ActiveRecord::Schema.define(version: 20200504134634) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "vouchers", force: :cascade do |t|
+    t.string  "code"
+    t.string  "voucher_type"
+    t.boolean "active"
+  end
 
 end

@@ -62,13 +62,17 @@
                           %button.order-header.btn.btn-link{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-target" => "#collapse#{order.id}", "data-toggle" => "collapse", :type => "button"}
                             = "On #{order.created_at}"
                             %br
-                            = " total: #{number_with_delimiter(order.total_price.to_i, :delimiter => '.')} VND"
+                            = " total: #{number_with_delimiter(order.grand_total.to_i, :delimiter => '.')} VND"
                       .collapse{"aria-labelledby" => "headingOne", "data-parent" => "#accordionExample", id: "collapse#{order.id}"}
                         .card-body
                           .order-number
                             = "Order Tracking Number: #{order.tracking}"
                           .order-number
                             = "Order Status: #{order.status}"
+                          .order-number
+                            = " total: #{number_with_delimiter(order.total_price.to_i, :delimiter => '.')} VND"
+                          .order-number
+                            = "voucher: #{order.voucher_code}"
                           %br
                           .wrap-table-shopping-cart
                             %table.table-shopping-cart

@@ -11,10 +11,22 @@ class Order < ActiveRecord::Base
       item.price = price
       line_items << item
     end
+    self.voucher_code = cart.voucher_code
+    self.sub_total_price = total_price
+    self.grand_total = calculate_grand_total
   end
 
   def total_price
     calculator.order_total_price
+  end
+
+  def calculate_grand_total
+    total = sub_total_price
+    discount = Voucher.where(code: self.voucher_code, voucher_type: '50 off', active: true).first
+    if discount.present?
+      total = total - (total * 50 / 100)
+    end
+    self.grand_total = total
   end
 
   def total_products

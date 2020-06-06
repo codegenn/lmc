@@ -11,7 +11,7 @@ class CartsController < ApplicationController
 
   def update
     if @cart.update(cart_params)
-      flash[:success] = 'Update successfully'
+      flash[:success] = I18n.t('controllers.line_items.success_update')
     else
       flash[:danger] = @cart.errors.full_messages.to_sentence
     end
@@ -35,7 +35,7 @@ class CartsController < ApplicationController
         params[:cart][:line_items_attributes][line_items][:_destroy] = true
       end
     end
-    params.require(:cart).permit(line_items_attributes: [:quantity, :id, :_destroy])
+    params.require(:cart).permit(:voucher_code, line_items_attributes: [:quantity, :id, :_destroy])
   end
 
   def validate_cart_id

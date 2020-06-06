@@ -169,6 +169,7 @@ en:
       out_of_stock: 'OUT OF STOCK'
     cart:
       total: 'Total'
+      grand_total: 'Grand Total'
       your_cart: 'Your Cart'
       checkout: 'Check Out'
       product: 'Product'
@@ -191,6 +192,9 @@ en:
       content: 'Content'
       content_tranfer: 'LMCATION-[customer name]-[customer phone number] (LMCATION-THU-0772404646)'
       or: 'OR'
+      voucher: 'Voucher code'
+    voucher:
+      invalid: "Invalid voucher code"
     job:
       name: 'Name'
       email: 'Email'

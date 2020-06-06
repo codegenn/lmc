@@ -171,6 +171,7 @@ vi:
       upload: 'Tải CV'
     cart:
       total: 'Tổng Cộng'
+      grand_total: 'Sau Giảm Giá'
       your_cart: 'Giỏ Hàng Của Bạn'
       checkout: 'Thanh Toán'
       product: 'Sản Phẩm'
@@ -193,6 +194,9 @@ vi:
       or: 'HOẶC'
       delete: 'BỎ CHỌN'
       delete_confirm: 'Bạn muốn bỏ chọn sản phẩm này?'
+      voucher: 'Mã giảm giá'
+  voucher:
+    invalid: "Mã giảm giá không tồn tại"
   user:
     user_header: 'LOG IN/SIGN UP'
     signin_description: ''

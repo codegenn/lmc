@@ -13,8 +13,12 @@ ActiveAdmin.register Order do
       row :tracking
       row :payment_method
       row :status
+      row :voucher_code
       row :total do  |order|
         number_with_delimiter(order.total_price.to_i, :delimiter => '.')
+      end
+      row :grand_total do  |order|
+        number_with_delimiter(order.grand_total.to_i, :delimiter => '.')
       end
       table_for order.line_items do
         column :title do |line_item|
