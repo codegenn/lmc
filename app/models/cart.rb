@@ -15,12 +15,7 @@ class Cart < ActiveRecord::Base
   end
 
   def calculate_grand_total
-    total = total_price
-    discount = Voucher.where(code: self.voucher_code, voucher_type: '50 off', active: true).first
-    if discount.present?
-      total = total - (total * 50 / 100)
-    end
-    total
+    calculator.calculate_grand_total(self)
   end
 
   def total_products
@@ -29,13 +24,15 @@ class Cart < ActiveRecord::Base
 
   private
   def calculator
-    @calculator ||= Order::Calculator.new(line_items: line_items)
+    @calculator ||= Order::Calculator.new(line_items: line_items, voucher_code: voucher_code)
   end
 
   def validate_voucher
-    discount = Voucher.where(code: self.voucher_code, active: true).first
-    unless discount.present?
-      errors.add(:voucher_code, I18n.t("voucher.invalid"))
+    if voucher_code.present?
+      discount = Voucher.where(code: self.voucher_code, active: true).first
+      unless discount.present?
+        errors.add(:voucher_code, I18n.t("voucher.invalid"))
+      end
     end
   end
 

@@ -1,9 +1,10 @@
 class Order
   class Calculator
-    attr_accessor :line_items
+    attr_accessor :line_items, :voucher_code
 
     def initialize(options = {})
       self.line_items = options[:line_items]
+      self.voucher_code = options[:voucher_code]
     end
 
     def total_price
@@ -19,6 +20,36 @@ class Order
 
     def total_products
       line_items.sum('line_items.quantity')
+    end
+
+    def calculate_grand_total(cart)
+      discount = Voucher.where(code: self.voucher_code, active: true).first
+      if discount.present?
+        if discount.voucher_type == '50 off'
+          total = cart.total_price
+          total = total - (total * 50 / 100)
+        elsif discount.voucher_type == 'Buy 1 get 1 free'
+          total = 0
+          counting = 1
+          cart.line_items.joins(:stock).sort_by do |obj|
+            obj.stock.product_promotion_price.present? ? -obj.stock.product_promotion_price : -obj.stock.product_price
+          end.map do |line|
+            line.quantity.times do
+              if counting % 2 == 1
+                total += line.stock.product_promotion_price.present? ? line.stock.product_promotion_price : line.stock.product_price
+              end
+              counting += 1
+            end
+          end
+        elsif discount.voucher_type == '199k'
+          total = cart.line_items.sum('line_items.quantity') * 199000
+        elsif discount.voucher_type == '99k'
+          total = cart.line_items.sum('line_items.quantity') * 99000
+        end
+      else
+        total = cart.total_price
+      end
+      total
     end
   end
 end
