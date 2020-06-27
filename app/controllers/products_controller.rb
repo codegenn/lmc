@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
+    @products = @products.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
   end
 
   def show
