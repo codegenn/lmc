@@ -22,9 +22,9 @@ ActiveAdmin.register Category do
       end
       f.input :sort_order
       f.input :slug_url
-      f.input :measurement_image_url, as: :file, hint: cl_image_tag(f.object.try(:measurement_image_url), width: 200)
-      f.input :image_url, as: :file, hint: cl_image_tag(f.object.try(:image_url), width: 200)
-      f.input :banner_url, as: :file, hint: cl_image_tag(f.object.try(:banner_url), width: 200)
+      f.input :measurement_image, as: :file, hint: f.object.try(:measurement_image_url) ? cl_image_tag(f.object.try(:measurement_image_url), width: 200) : image_tag(f.object.measurement_image.url, width: 200)
+      f.input :category_image, as: :file, hint: f.object.try(:image_url) ? cl_image_tag(f.object.try(:image_url), width: 200) : image_tag(f.object.category_image.url, width: 200)
+      f.input :banner, as: :file, hint: f.object.try(:banner_url) ? cl_image_tag(f.object.try(:banner_url), width: 200) : image_tag(f.object.banner.url, width: 200)
     end
     f.actions
   end
@@ -37,13 +37,13 @@ ActiveAdmin.register Category do
       row :description
       row :sort_order
       row :measurement_image do
-        cl_image_tag category.measurement_image_url, class: 'my_image_size', width: 200
+        category.measurement_image_url ? cl_image_tag(category.measurement_image_url, class: 'my_image_size', width: 200) : image_tag(category.measurement_image.url, width: 200)
       end
       row :image_url do
-        cl_image_tag category.image_url, class: 'my_image_size', width: 200
+        category.image_url ? cl_image_tag(category.image_url, class: 'my_image_size', width: 200) : image_tag(category.category_image.url, width: 200)
       end
       row :banner_url do
-        cl_image_tag category.banner_url, class: 'my_image_size', width: 200
+        category.banner_url ? cl_image_tag(category.banner_url, class: 'my_image_size', width: 200) : image_tag(category.banner.url, width: 200)
       end
     end
     active_admin_comments

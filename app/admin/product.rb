@@ -3,7 +3,7 @@ ActiveAdmin.register Product do
   permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :out_of_stock, :promotion_price, :price, :sort_order,
                 :has_promotion, :measurement_image_url, :slug_url, category_ids: [],
                 stocks_attributes: [:id, :_destroy, :size, :color, :product_code],
-                product_images_attributes: [:id, :_destroy, :url], color_images_attributes: [:id, :_destroy, :image_url, :color_name],
+                product_images_attributes: [:id, :_destroy, :url, :pimage], color_images_attributes: [:id, :_destroy, :image_url, :color_name],
                 translations_attributes: [:id, :locale, :title, :description, :promotion, :short_description, :measurement_description, :_destroy]
 
   index do
@@ -37,10 +37,9 @@ ActiveAdmin.register Product do
       f.input :has_promotion
       f.input :categories, as: :check_boxes, collection: Category.all, multiple: true
       f.has_many :product_images, heading: false, allow_destroy: true do |image_form|
-        cl_image_tag image_form.object.try(:url), width: 200
-        image_form.input :url, as: :file, hint: cl_image_tag(image_form.object.try(:url), width: 200)
+        image_form.input :pimage, as: :file, label: 'product image', hint: image_form.object.try(:url) ? cl_image_tag(image_form.object.try(:url), width: 200) : image_tag(image_form.object.pimage.url, :width => 200)
       end
-      f.input :measurement_image_url, as: :file, hint: cl_image_tag(f.object.try(:measurement_image_url), width: 200)
+      f.input :measurement_image, as: :file, hint: f.object.try(:measurement_image_url) ? cl_image_tag(f.object.try(:measurement_image_url), width: 200) : image_tag(f.object.measurement_image.url, width: 200)
       f.input :out_of_stock, as: :boolean
       f.has_many :stocks, heading: false, allow_destroy: true do |stocks_form|
         stocks_form.input :size
@@ -49,7 +48,7 @@ ActiveAdmin.register Product do
       end
       f.has_many :color_images, heading: false, allow_destroy: true do |colors_form|
         colors_form.input :color_name, as: :string
-        colors_form.input :image_url, as: :file, hint: cl_image_tag(colors_form.object.try(:image_url), width: 200)
+        colors_form.input :color_image, as: :file, hint: colors_form.object.try(:image_url) ? cl_image_tag(colors_form.object.try(:image_url), width: 50) : image_tag(colors_form.object.color_image.url, :width => 50)
       end
     end
     f.actions
@@ -70,17 +69,25 @@ ActiveAdmin.register Product do
       row :is_promotion
       row :is_new_arrival
       row :measurement_image do
-        cl_image_tag product.measurement_image_url, class: 'my_image_size', width: 200
+        product.measurement_image_url ? cl_image_tag(product.measurement_image_url, class: 'my_image_size', width: 200) : image_tag(product.measurement_image.url, class: 'my_image_size', width: 200)
       end
       attributes_table_for product.color_images do
         row :color_name
         row :image_url do |ad|
-          cl_image_tag ad.image_url, :width => 50
+          if ad.image_url.present?
+            cl_image_tag ad.url, :width => 50
+          else
+            image_tag ad.color_image.url, :width => 50
+          end
         end
       end
       attributes_table_for product.product_images do
         row :product_image do |ad|
-          cl_image_tag ad.url, :width => 400
+          if ad.url.present?
+            cl_image_tag ad.url, :width => 400
+          else
+            image_tag ad.pimage.url, :width => 400
+          end
         end
       end
       row :out_of_stock

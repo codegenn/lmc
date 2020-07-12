@@ -11,7 +11,7 @@
         - @favorite.products.each do |product|
           %li.header-cart-item.flex-w.flex-t.m-b-12
             .header-cart-item-img-no-de
-              = cl_image_tag product.product_images.first.url
+              = cl_image_tag product.product_images.first.image_url
             .header-cart-item-txt.p-t-8
               = link_to product_path(product.slug), :"data-no-turbolink" => 'false', class: "header-cart-item-name m-b-18 hov-cl1 trans-04" do
                 = product.title

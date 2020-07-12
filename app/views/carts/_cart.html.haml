@@ -13,7 +13,7 @@
             .header-cart-item-img-no-de
               = link_to line_item, method: :delete, noindex: true, id: 'delete', data: { confirm: I18n.t("page.cart.delete_confirm") }, class: 'delete-item' do
                 .how-itemcart1
-                  = cl_image_tag line_item.stock.product.product_images.first.url
+                  = cl_image_tag line_item.stock.product.product_images.first.image_url
             .header-cart-item-txt.p-t-8
               = link_to product_path(line_item.stock.product.slug), :"data-no-turbolink" => 'false', class: "header-cart-item-name m-b-18 hov-cl1 trans-04" do
                 = line_item.stock.product.title

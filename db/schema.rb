@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200627123858) do
+ActiveRecord::Schema.define(version: 20200712070426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,12 +81,24 @@ ActiveRecord::Schema.define(version: 20200627123858) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.integer "sort_order"
-    t.string  "measurement_image_url"
-    t.string  "image_url"
-    t.string  "banner_url"
-    t.string  "slug"
-    t.string  "slug_url"
+    t.integer  "sort_order"
+    t.string   "measurement_image_url"
+    t.string   "image_url"
+    t.string   "banner_url"
+    t.string   "slug"
+    t.string   "slug_url"
+    t.string   "measurement_image_file_name"
+    t.string   "measurement_image_content_type"
+    t.integer  "measurement_image_file_size",    limit: 8
+    t.datetime "measurement_image_updated_at"
+    t.string   "category_image_file_name"
+    t.string   "category_image_content_type"
+    t.integer  "category_image_file_size",       limit: 8
+    t.datetime "category_image_updated_at"
+    t.string   "banner_file_name"
+    t.string   "banner_content_type"
+    t.integer  "banner_file_size",               limit: 8
+    t.datetime "banner_updated_at"
   end
 
   add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true, using: :btree
@@ -109,9 +121,13 @@ ActiveRecord::Schema.define(version: 20200627123858) do
   add_index "category_translations", ["locale"], name: "index_category_translations_on_locale", using: :btree
 
   create_table "color_images", force: :cascade do |t|
-    t.integer "product_id"
-    t.string  "image_url"
-    t.string  "color_name"
+    t.integer  "product_id"
+    t.string   "image_url"
+    t.string   "color_name"
+    t.string   "color_image_file_name"
+    t.string   "color_image_content_type"
+    t.integer  "color_image_file_size",    limit: 8
+    t.datetime "color_image_updated_at"
   end
 
   create_table "delayed_jobs", force: :cascade do |t|
@@ -147,10 +163,14 @@ ActiveRecord::Schema.define(version: 20200627123858) do
     t.text     "content"
     t.string   "image"
     t.string   "category"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.string   "slug"
     t.string   "slug_url"
+    t.string   "foundation_image_file_name"
+    t.string   "foundation_image_content_type"
+    t.integer  "foundation_image_file_size",    limit: 8
+    t.datetime "foundation_image_updated_at"
   end
 
   add_index "foundations", ["slug"], name: "index_foundations_on_slug", unique: true, using: :btree
@@ -235,8 +255,12 @@ ActiveRecord::Schema.define(version: 20200627123858) do
   end
 
   create_table "product_images", force: :cascade do |t|
-    t.integer "product_id"
-    t.string  "url"
+    t.integer  "product_id"
+    t.string   "url"
+    t.string   "pimage_file_name"
+    t.string   "pimage_content_type"
+    t.integer  "pimage_file_size",    limit: 8
+    t.datetime "pimage_updated_at"
   end
 
   create_table "product_translations", force: :cascade do |t|
@@ -258,17 +282,21 @@ ActiveRecord::Schema.define(version: 20200627123858) do
     t.float    "price"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_best_seller",        default: false
-    t.boolean  "is_promotion",          default: false
-    t.boolean  "is_new_arrival",        default: false
-    t.boolean  "has_promotion",         default: false
+    t.boolean  "is_best_seller",                           default: false
+    t.boolean  "is_promotion",                             default: false
+    t.boolean  "is_new_arrival",                           default: false
+    t.boolean  "has_promotion",                            default: false
     t.string   "promotion"
     t.string   "measurement_image_url"
     t.string   "slug"
     t.string   "slug_url"
-    t.boolean  "out_of_stock",          default: false
+    t.boolean  "out_of_stock",                             default: false
     t.float    "promotion_price"
-    t.integer  "sort_order",            default: 0
+    t.integer  "sort_order",                               default: 0
+    t.string   "measurement_image_file_name"
+    t.string   "measurement_image_content_type"
+    t.integer  "measurement_image_file_size",    limit: 8
+    t.datetime "measurement_image_updated_at"
   end
 
   add_index "products", ["slug"], name: "index_products_on_slug", unique: true, using: :btree

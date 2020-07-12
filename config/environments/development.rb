@@ -38,4 +38,31 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.action_mailer.delivery_method = :smtp
+  host = 'lmcation.com' #replace with your own url
+  config.action_mailer.default_url_options = { host: host }
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain => "gmail.com",
+    :enable_starttls_auto => true,
+    :openssl_verify_mode => 'none',
+    :user_name            => Rails.application.secrets.gmail_email,
+    :password             => Rails.application.secrets.gmail_password,
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: "lmcation",
+      access_key_id: "AKIAVOA7O3QTCMF32FCF",
+      secret_access_key: "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",
+      s3_region: "ap-southeast-1"
+    }
+  }
 end
