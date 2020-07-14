@@ -24,12 +24,6 @@ class Product < ActiveRecord::Base
   has_attached_file :measurement_image
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :measurement_image, :content_type => /image/
-  has_attached_file :category_image
-  # Validate the attached image is image/jpg, image/png, etc
-  validates_attachment_content_type :category_image, :content_type => /image/
-  has_attached_file :banner
-  # Validate the attached image is image/jpg, image/png, etc
-  validates_attachment_content_type :banner, :content_type => /image/
   validates :title, :description, :short_description, :price, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }
   validates :title, uniqueness: true

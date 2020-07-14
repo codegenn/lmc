@@ -1,9 +1,9 @@
 ActiveAdmin.register Product do
 
   permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :out_of_stock, :promotion_price, :price, :sort_order,
-                :has_promotion, :measurement_image_url, :slug_url, category_ids: [],
+                :has_promotion, :measurement_image_url, :measurement_image, :slug_url, category_ids: [],
                 stocks_attributes: [:id, :_destroy, :size, :color, :product_code],
-                product_images_attributes: [:id, :_destroy, :url, :pimage], color_images_attributes: [:id, :_destroy, :image_url, :color_name],
+                product_images_attributes: [:id, :_destroy, :url, :pimage], color_images_attributes: [:id, :_destroy, :image_url, :color_name, :color_image],
                 translations_attributes: [:id, :locale, :title, :description, :promotion, :short_description, :measurement_description, :_destroy]
 
   index do
@@ -75,7 +75,7 @@ ActiveAdmin.register Product do
         row :color_name
         row :image_url do |ad|
           if ad.image_url.present?
-            cl_image_tag ad.url, :width => 50
+            cl_image_tag ad.image_url, :width => 50
           else
             image_tag ad.color_image.url, :width => 50
           end

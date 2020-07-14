@@ -1,6 +1,6 @@
 ActiveAdmin.register Foundation do
 
-  permit_params :author, :title, :short_description, :content, :image, :category, :slug_url
+  permit_params :author, :title, :short_description, :content, :image, :category, :slug_url, :foundation_image
 
   form do |f|
     f.inputs "Foundation Details" do

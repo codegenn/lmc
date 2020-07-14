@@ -1,6 +1,7 @@
 ActiveAdmin.register Category do
 
-  permit_params :sort_order, :measurement_image_url, :image_url, :banner_url, :slug_url,
+  permit_params :sort_order, :measurement_image_url, :image_url, :banner_url, :slug_url, :measurement_image,
+                :category_image, :banner,
                 translations_attributes: [:id, :locale, :name, :_destroy, :description]
 
   index do
