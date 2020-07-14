@@ -133,5 +133,14 @@ ActiveAdmin.register Product do
         end
       end
     end
+
+    def create
+      create! { |success, failure|
+        failure.html do
+          flash[:error] = "Error(s) : #{resource.errors.full_messages.join(',')}"
+          redirect_to :back
+        end
+      }
+    end
   end
 end
