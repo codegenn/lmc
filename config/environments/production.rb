@@ -91,10 +91,9 @@ Rails.application.configure do
     :domain => "gmail.com",
     :enable_starttls_auto => true,
     :openssl_verify_mode => 'none',
-    :user_name            => Rails.application.secrets.gmail_email,
-    :password             => Rails.application.secrets.gmail_password,
-    :authentication       => "plain",
-    :enable_starttls_auto => true
+    :user_name            => 'no-reply@lmcation.com',
+    :password             => 'tlxnvgsozyceiyng',
+    :authentication       => "plain"
   }
   config.paperclip_defaults = {
     storage: :s3,
