@@ -15,7 +15,7 @@ class Order < ActiveRecord::Base
     self.sub_total_price = total_price
     self.grand_total = calculate_grand_total(cart)
     discount = Voucher.where(code: self.voucher_code, active: true).first
-    discount.update(active: false) if discount.present? && discount.voucher_type == 'Buy 1 get 1 free'
+    discount.update(active: false) if discount.present? && (discount.voucher_type == 'Buy 1 get 1 free' || discount.one_time_use?)
   end
 
   def total_price
