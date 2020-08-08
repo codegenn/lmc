@@ -1,7 +1,8 @@
 class Foundation < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug_url, use: :slugged
-
+  has_attached_file :foundation_image
+  validates_attachment_content_type :foundation_image, :content_type => /image/
   def self.main_page
     foundations = []
     %w(inspiration empowerment news).each do |category|
