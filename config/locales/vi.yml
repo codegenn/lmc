@@ -262,6 +262,10 @@ vi:
     sessions:
       user:
         signed_in: 'Quý khách đã đăng nhập'
+  active_admin:
+    search_status:
+      current_filters: 'Lọc Theo'
+      headline: 'Tìm Kiếm'
   activerecord:
     errors:
       models:
@@ -282,3 +286,7 @@ vi:
               blank: 'Vui lòng điền mật khẩu'
             password_confirmation:
               confirmation: 'Vui lòng điền lặp lại mật khẩu'
+        wheel_user:
+          attributes:
+            email:
+              taken: 'đã được sử dụng để tham gia chương trình'
