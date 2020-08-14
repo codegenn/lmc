@@ -7,6 +7,7 @@ ActiveAdmin.register Product do
                 translations_attributes: [:id, :locale, :title, :description, :promotion, :short_description, :measurement_description, :_destroy]
 
   index do
+    selectable_column
     id_column
     column :title
     column :price
@@ -98,6 +99,16 @@ ActiveAdmin.register Product do
       end
     end
     active_admin_comments
+  end
+
+  batch_action :update_false_arrival do |ids|
+    Product.where(id: ids).update_all(is_new_arrival: false)
+    redirect_to collection_path, alert: "updated all"
+  end
+
+  batch_action :update_true_arrival do |ids|
+    Product.where(id: ids).update_all(is_new_arrival: true)
+    redirect_to collection_path, alert: "updated all"
   end
 
   controller do
