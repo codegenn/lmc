@@ -32,14 +32,32 @@
           /
           = form_tag line_items_path, method: :post, remote: true do
             .p-t-33.stext-103
-              .flex-w.flex-r-m.p-b-10
-                .size-203.flex-c-m.respon6.text-left
-                  = I18n.t("page.product.size")
-                .size-204.respon6-nextp
-                  .rs1-select2.bor8.bg0
-                    /
-                    = select_tag :size, options_for_select(@stocks.map{ |c| [c[0], c[0], { 'data-color-src'=> c[1].map(&:color).join('|') }] }), class: 'js-select2'
-                    .dropDownSelect2
+              - if @product.bottom_stocks.present?
+                .flex-w.flex-r-m.p-b-10
+                  .size-203.flex-c-m.respon6.text-left
+                    = I18n.t("page.product.tsize")
+                  .size-204.respon6-nextp
+                    .rs1-select2.bor8.bg0
+                      /
+                      = select_tag :size, options_for_select(@stocks.map{ |c| [c[0], c[0], { 'data-color-src'=> c[1].map(&:color).join('|') }] }), class: 'js-select2'
+                      .dropDownSelect2.flex-w.flex-r-m.p-b-10
+                .flex-w.flex-r-m.p-b-10
+                  .size-203.flex-c-m.respon6.text-left
+                    = I18n.t("page.product.ssize")
+                  .size-204.respon6-nextp
+                    .rs1-select2.bor8.bg0
+                      /
+                      = select_tag :b_size, options_for_select(@b_stocks.map{ |c| [c.size, c.size] }), class: 'js-select2'
+                      .dropDownSelect2.flex-w.flex-r-m.p-b-10
+              - else
+                .flex-w.flex-r-m.p-b-10
+                  .size-203.flex-c-m.respon6.text-left
+                    = I18n.t("page.product.size")
+                  .size-204.respon6-nextp
+                    .rs1-select2.bor8.bg0
+                      /
+                      = select_tag :size, options_for_select(@stocks.map{ |c| [c[0], c[0], { 'data-color-src'=> c[1].map(&:color).join('|') }] }), class: 'js-select2'
+                      .dropDownSelect2
               .flex-w.flex-r-m.p-b-10
                 .size-203.flex-c-m.respon6.text-left
                   = I18n.t("page.product.color")

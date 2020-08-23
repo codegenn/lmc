@@ -19,6 +19,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.friendly.find(params[:id])
     @stocks = @product.stocks.group_by(&:size)
+    @b_stocks = @product.bottom_stocks
     @size_colors = []
     @color_images = @product.color_images
     @category = @product.categories.first

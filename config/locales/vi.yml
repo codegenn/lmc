@@ -155,6 +155,8 @@ vi:
     product:
       color: 'Màu'
       size: 'Size'
+      ssize: 'Size quần'
+      tsize: 'Size áo'
       code: 'Mã sản phẩm'
       quantity: 'Số Lượng'
       add_to_cart: 'BỎ VÀO GIỎ HÀNG'

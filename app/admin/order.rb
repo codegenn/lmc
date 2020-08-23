@@ -27,6 +27,9 @@ ActiveAdmin.register Order do
         column :size do |line_item|
           line_item.stock.size
         end
+        column :bottom_stock do |line_item|
+          line_item.bottom_stock.try(:size)
+        end
         column :color do |line_item|
           line_item.stock.color
         end

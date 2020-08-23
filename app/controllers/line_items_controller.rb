@@ -6,7 +6,7 @@ class LineItemsController < ApplicationController
 
   def create
     if @stock
-      @line_item = @cart.add_product(@stock, params[:quantity])
+      @line_item = @cart.add_product(@stock, @bstock, params[:quantity])
 
       if @line_item.save
         flash[:success] = I18n.t('controllers.line_items.success')
@@ -57,5 +57,6 @@ class LineItemsController < ApplicationController
   def validate_stock_id
     @product = Product.where(id: params[:product_id]).first
     @stock = @product.stocks.where(size: params[:size], color: params[:color]).first
+    @bstock = @product.bottom_stocks.where(size: params[:b_size]).first
   end
 end

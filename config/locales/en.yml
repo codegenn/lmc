@@ -158,6 +158,8 @@ en:
     product:
       color: 'Color'
       size: 'Size'
+      ssize: 'Size for shorts'
+      tsize: 'Size for top'
       code: 'Product Code'
       quantity: 'Quantity'
       add_to_cart: 'ADD TO CART'
