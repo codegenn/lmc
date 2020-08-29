@@ -5,7 +5,7 @@ class Cart < ActiveRecord::Base
   validate :validate_voucher, if: :voucher_code_changed?
 
   def add_product(stock, bottom_stock=nil, quantity=1)
-    current_line_item = line_items.where(stock_id: stock.id, bottom_stock_id: bottom_stock.id).first_or_initialize
+    current_line_item = line_items.where(stock: stock, bottom_stock: bottom_stock).first_or_initialize
     current_line_item.increment(:quantity, quantity.to_i)
     current_line_item
   end

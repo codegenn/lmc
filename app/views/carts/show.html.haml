@@ -46,7 +46,7 @@
                           %td.column-5
                             = "#{number_with_delimiter(line_item.total_price.to_i, :delimiter => '.')} VND"
                       %tr.table_row
-                        %td.column-voucher{:colspan => "3"}
+                        %td.column-1.column-voucher
                           = f.label :voucher_code, I18n.t("page.cart.voucher"), class: 'control-label'
                         %td.column-3{:colspan => "2"}
                           = f.text_field :voucher_code, autofocus: true, class: 'stext-111 cl2 plh3 size-100 input-txt'

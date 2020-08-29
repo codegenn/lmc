@@ -1995,11 +1995,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .table-shopping-cart .column-voucher {
-  width: 133px;
-  padding-left: 50px;
-  text-align: right;
-  padding-right: 50px;
-
+  width: 21% !important;
 }
 
 .table-shopping-cart .column-2 {
@@ -3669,4 +3665,18 @@ ul.disc {
 .line-out {
   text-decoration: line-through;
   color: gray;
+}
+
+#canvas {
+  margin-left: -43px;
+}
+
+@media (min-width: 991px) {
+  #canvasbtn {
+    margin-left: -7%;
+  }
+}
+
+#bigButton:disabled {
+  background: #dddddd;
 }
