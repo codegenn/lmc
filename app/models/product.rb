@@ -44,4 +44,12 @@ class Product < ActiveRecord::Base
       self.measurement_image.url
     end
   end
+
+  def self.main_page
+    product_hash = {}
+    Category.all.each do |category|
+      product_hash["#{category.name},#{category.slug}"] = category.products.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc).first(4)
+    end
+    product_hash
+  end
 end

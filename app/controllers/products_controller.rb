@@ -7,13 +7,13 @@ class ProductsController < ApplicationController
     check = params[:check]
     if category.present?
       @category = Category.friendly.find(category)
-      @products = @category.products
+      @products = @category.products.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
     elsif check.present?
-      @products = Product.send(check.to_sym)
+      @products = Product.send(check.to_sym).order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
+      @check = true
     else
-      @products = Product.all
+      @products = Product.main_page
     end
-    @products = @products.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
   end
 
   def show

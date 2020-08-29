@@ -111,44 +111,99 @@
                 Streetstyle
               %a.flex-c-m.stext-107.cl6.size-301.bor7.p-lr-15.hov-tag1.trans-04.m-r-5.m-b-5{:href => "#"}
                 Crafts
-    .row.isotope-grid
-      - @products.each do |product|
-        .col-sm-6.col-md-4.col-lg-3.p-b-35.isotope-item.women
-          / Block2
-          .block2
-            - if product.stocks.empty? || product.out_of_stock?
-              .block2-pic.oos
-                %span.stext-112.cl3.out-of-stock
-                  = I18n.t("page.product.out_of_stock")
-            .block2-pic.hov-img0.hov-change-img
-              = link_to product_path(product.slug) do
-                = cl_image_tag product.product_images.first.try(:image_url)
-                = cl_image_tag product.product_images.second.try(:image_url), class: 'img-top'
-            .block2-txt.flex-w.flex-t.p-t-14
-              .block2-txt-child1.flex-col-l
-                = link_to product_path(product.slug), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6" do
-                  = product.title
-                %span.mtext-102.cl3
-                  - if product.promotion_price.present?
-                    .promotion-price
+    - if @category || @check
+      .row.isotope-grid
+        - @products.each do |product|
+          .col-sm-6.col-md-4.col-lg-3.p-b-35.isotope-item.women
+            / Block2
+            .block2
+              - if product.stocks.empty? || product.out_of_stock?
+                .block2-pic.oos
+                  %span.stext-112.cl3.out-of-stock
+                    = I18n.t("page.product.out_of_stock")
+              .block2-pic.hov-img0.hov-change-img
+                = link_to product_path(product.slug) do
+                  = cl_image_tag product.product_images.first.try(:image_url)
+                  = cl_image_tag product.product_images.second.try(:image_url), class: 'img-top'
+              .block2-txt.flex-w.flex-t.p-t-14
+                .block2-txt-child1.flex-col-l
+                  = link_to product_path(product.slug), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6" do
+                    = product.title
+                  %span.mtext-102.cl3
+                    - if product.promotion_price.present?
+                      .promotion-price
+                        = "#{number_with_delimiter(product.price.to_i, :delimiter => '.')} VND"
+                      %b
+                        = "#{number_with_delimiter(product.promotion_price.to_i, :delimiter => '.')} VND"
+                    - else
                       = "#{number_with_delimiter(product.price.to_i, :delimiter => '.')} VND"
-                    %b
-                      = "#{number_with_delimiter(product.promotion_price.to_i, :delimiter => '.')} VND"
-                  - else
-                    = "#{number_with_delimiter(product.price.to_i, :delimiter => '.')} VND"
-                %span.stext-105.cl3
-                  - count = product.stocks.map(&:color).uniq.count
-                  - if count == 1
-                    = I18n.t("page.product.single_colour")
-                  - else
-                    = I18n.t("page.product.other_colour_count", count: count)
-              .block2-txt-child2.flex-r.p-t-3
-                - pro_ids = @favorite.try(:product_ids) || []
-                = link_to favorite_path(product.id), method: :put, remote: true,
-                  class: "#{'js-addedwish-b2' if pro_ids.include?(product.id)} wishlist-#{product.id} btn-addwish-b2 dis-block pos-relative js-addwish-b2" do
-                  = image_tag "icons/icon-heart-01.png", class: "icon-heart1 dis-block trans-04", alt: 'ICON'
-                  = image_tag "icons/icon-heart-02.png", class: "icon-heart2 dis-block trans-04 ab-t-l", alt: 'ICON'
-              - if product.has_promotion
-                .block2-txt-promo.flex-col-l.bor10
-                  %span.mtext-103.cl3.promotion
-                    = product.promotion
+                  %span.stext-105.cl3
+                    - count = product.stocks.map(&:color).uniq.count
+                    - if count == 1
+                      = I18n.t("page.product.single_colour")
+                    - else
+                      = I18n.t("page.product.other_colour_count", count: count)
+                .block2-txt-child2.flex-r.p-t-3
+                  - pro_ids = @favorite.try(:product_ids) || []
+                  = link_to favorite_path(product.id), method: :put, remote: true,
+                    class: "#{'js-addedwish-b2' if pro_ids.include?(product.id)} wishlist-#{product.id} btn-addwish-b2 dis-block pos-relative js-addwish-b2" do
+                    = image_tag "icons/icon-heart-01.png", class: "icon-heart1 dis-block trans-04", alt: 'ICON'
+                    = image_tag "icons/icon-heart-02.png", class: "icon-heart2 dis-block trans-04 ab-t-l", alt: 'ICON'
+                - if product.has_promotion
+                  .block2-txt-promo.flex-col-l.bor10
+                    %span.mtext-103.cl3.promotion
+                      = product.promotion
+    - else
+      - @products.each do |cate, products|
+        .row.isotope-grid
+          .col-sm-6.col-md-4.p-b-40
+            %h3.mtext-111.cl2.p-b-16
+              %b
+                = cate.split(",").first.upcase
+        .row.isotope-grid
+          - products.each do |product|
+            .col-sm-6.col-md-4.col-lg-3.p-b-35.isotope-item.women
+              / Block2
+              .block2
+                - if product.stocks.empty? || product.out_of_stock?
+                  .block2-pic.oos
+                    %span.stext-112.cl3.out-of-stock
+                      = I18n.t("page.product.out_of_stock")
+                .block2-pic.hov-img0.hov-change-img
+                  = link_to product_path(product.slug) do
+                    = cl_image_tag product.product_images.first.try(:image_url)
+                    = cl_image_tag product.product_images.second.try(:image_url), class: 'img-top'
+                .block2-txt.flex-w.flex-t.p-t-14
+                  .block2-txt-child1.flex-col-l
+                    = link_to product_path(product.slug), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6" do
+                      = product.title
+                    %span.mtext-102.cl3
+                      - if product.promotion_price.present?
+                        .promotion-price
+                          = "#{number_with_delimiter(product.price.to_i, :delimiter => '.')} VND"
+                        %b
+                          = "#{number_with_delimiter(product.promotion_price.to_i, :delimiter => '.')} VND"
+                      - else
+                        = "#{number_with_delimiter(product.price.to_i, :delimiter => '.')} VND"
+                    %span.stext-105.cl3
+                      - count = product.stocks.map(&:color).uniq.count
+                      - if count == 1
+                        = I18n.t("page.product.single_colour")
+                      - else
+                        = I18n.t("page.product.other_colour_count", count: count)
+                  .block2-txt-child2.flex-r.p-t-3
+                    - pro_ids = @favorite.try(:product_ids) || []
+                    = link_to favorite_path(product.id), method: :put, remote: true,
+                      class: "#{'js-addedwish-b2' if pro_ids.include?(product.id)} wishlist-#{product.id} btn-addwish-b2 dis-block pos-relative js-addwish-b2" do
+                      = image_tag "icons/icon-heart-01.png", class: "icon-heart1 dis-block trans-04", alt: 'ICON'
+                      = image_tag "icons/icon-heart-02.png", class: "icon-heart2 dis-block trans-04 ab-t-l", alt: 'ICON'
+                  - if product.has_promotion
+                    .block2-txt-promo.flex-col-l.bor10
+                      %span.mtext-103.cl3.promotion
+                        = product.promotion
+        .row.isotope-grid
+          .col-sm-6.col-md-4.p-b-40
+          .col-sm-6.col-md-4.p-b-40
+            %h3.mtext-111.cl2.p-b-16
+              = link_to I18n.t("page.foundation.more"), products_path(category: cate.split(",").last), class: 'flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10'
+          .col-sm-6.col-md-4.p-b-40
