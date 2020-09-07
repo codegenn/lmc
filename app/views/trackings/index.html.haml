@@ -46,7 +46,7 @@
                     %tr.table_row
                       %td.column-1
                         .how-itemcart1
-                          = cl_image_tag line_item.stock.product.product_images.first.url
+                          = cl_image_tag line_item.stock.product.product_images.first.url ? line_item.stock.product.product_images.first.url : line_item.stock.product.product_images.first.pimage.url
                       %td.column-2
                         = link_to product_path(line_item.stock.product.slug), :"data-no-turbolink" => 'false', class: "stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" do
                           = line_item.stock.product.title
