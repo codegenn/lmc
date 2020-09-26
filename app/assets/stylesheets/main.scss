@@ -3458,6 +3458,22 @@ input.num-product::-webkit-inner-spin-button {
     margin-top: 110px;
   }
 }
+.center {
+  display: table;
+  margin: 50px auto 0 auto;
+}
+@media (max-width: 767px) {
+  .partner-img {
+    width: 45%;
+    margin: 0 2%;
+  }
+}
+@media (min-width: 767px){
+  .partner-img {
+    width: 15.4%;
+    margin: 0 2%;
+  }
+}
 
 .banner-bg {
   padding: 10px 0 25px 0 !important;
