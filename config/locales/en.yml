@@ -257,5 +257,9 @@ en:
       select_sc: 'Please select size and color'
     order:
       success: 'Thank you for your order. We will process the order for you within 48 hours. If you have any other requests, please call us at 0777 12 12 99.'
+    search:
+      no_re: 'No result with this keyword'
   order:
     payment_method: 'PAYMENT METHOD'
+  search:
+    input: 'Enter search term...'

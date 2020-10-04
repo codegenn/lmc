@@ -16,9 +16,6 @@ $(function () {
         }
     });
 
-    $('#myBtn').on("click", function(){
-        $('html, body').animate({scrollTop: 0}, 300);
-    });
     window.scrollTo(0, 0);
 
     /*==================================================================

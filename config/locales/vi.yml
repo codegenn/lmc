@@ -252,6 +252,8 @@ vi:
       success: 'Cảm ơn bạn đã liên hệ LMcation. Chị em LMcation sẽ phản hồi cho bạn ngay thôi. Để được hỗ trợ nhanh, vui lòng gọi 0777 12 12 99; để biết thêm thông tin, vui lòng truy cập <a href="https://www.facebook.com/LMcation/">https://www.facebook.com/LMcation/</a>'
     order:
       success: 'Cảm ơn bạn đã đặt hàng, đơn hàng của bạn sẽ được xử lý trong vòng 48 tiếng đồng hồ. Vui lòng gọi 0777 12 12 99 nếu bạn có những yêu cầu khác.'
+    search:
+      no_re: 'Không tìm thấy sản phẩm với từ khoá'
   order:
     payment_method: 'PHƯƠNG THỨC THANH TOÁN'
 
@@ -293,3 +295,5 @@ vi:
           attributes:
             email:
               taken: 'đã được sử dụng để tham gia chương trình'
+  search:
+    input: 'Nhâp từ khoá tìm kiếm...'
