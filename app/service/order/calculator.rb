@@ -31,6 +31,12 @@ class Order
         elsif discount.voucher_type == '55 off'
           total = cart.total_price
           total = total - (total * 55 / 100)
+        elsif discount.voucher_type == '60 off'
+          total = cart.total_price
+          total = total - (total * 60 / 100)
+        elsif discount.voucher_type == '70 off'
+          total = cart.total_price
+          total = total - (total * 70 / 100)
         elsif discount.voucher_type == 'Buy 1 get 1 free'
           total = 0
           counting = 1
