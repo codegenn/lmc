@@ -3,6 +3,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
 
   validates :first_name, :last_name, :phone, :city, :district, :address, :email, presence: true
+  validates_format_of :email,:with => Devise::email_regexp
 
   def add_line_items_from_cart(cart)
     cart.line_items.each do |item|

@@ -274,10 +274,16 @@ vi:
   activerecord:
     errors:
       models:
+        order:
+          attributes:
+            email:
+              blank: 'không được để trống'
+              invalid: 'không hợp lệ'
         user:
           attributes:
             email:
               blank: 'Email không được để trống'
+              invalid: 'Email không hợp lệ'
             password:
               blank: 'Mật khẩu không được để trống'
             first_name:
