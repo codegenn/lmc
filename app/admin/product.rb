@@ -1,6 +1,6 @@
 ActiveAdmin.register Product do
 
-  permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :out_of_stock, :promotion_price, :price, :sort_order,
+  permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :is_hidden, :out_of_stock, :promotion_price, :price, :sort_order,
                 :has_promotion, :measurement_image_url, :measurement_image, :slug_url, category_ids: [],
                 stocks_attributes: [:id, :_destroy, :size, :color, :product_code], bottom_stocks_attributes: [:id, :_destroy, :size],
                 product_images_attributes: [:id, :_destroy, :url, :pimage], color_images_attributes: [:id, :_destroy, :image_url, :color_name, :color_image],
@@ -42,6 +42,7 @@ ActiveAdmin.register Product do
       end
       f.input :measurement_image, as: :file, hint: f.object.try(:measurement_image_url) ? cl_image_tag(f.object.try(:measurement_image_url), width: 200) : image_tag(f.object.measurement_image.url, width: 200)
       f.input :out_of_stock, as: :boolean
+      f.input :is_hidden, as: :boolean
       f.has_many :stocks, heading: false, allow_destroy: true do |stocks_form|
         stocks_form.input :size
         stocks_form.input :color, as: :string
@@ -95,6 +96,7 @@ ActiveAdmin.register Product do
         end
       end
       row :out_of_stock
+      row :is_hidden
       attributes_table_for product.stocks do
         row :size
         row :color

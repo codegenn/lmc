@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200823072046) do
+ActiveRecord::Schema.define(version: 20210317101807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -304,6 +304,7 @@ ActiveRecord::Schema.define(version: 20200823072046) do
     t.string   "measurement_image_content_type"
     t.integer  "measurement_image_file_size",    limit: 8
     t.datetime "measurement_image_updated_at"
+    t.boolean  "is_hidden",                                default: false
   end
 
   add_index "products", ["slug"], name: "index_products_on_slug", unique: true, using: :btree

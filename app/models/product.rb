@@ -14,6 +14,7 @@ class Product < ActiveRecord::Base
   scope :best_sellers, -> { where(is_best_seller: true) }
   scope :promotion, -> { where(is_promotion: true) }
   scope :new_arrivals, -> { where(is_new_arrival: true) }
+  scope :active, -> { where(is_hidden: false) }
 
   has_many :category_products, dependent: :destroy
   has_many :categories, through: :category_products
@@ -48,7 +49,7 @@ class Product < ActiveRecord::Base
   def self.main_page
     product_hash = {}
     Category.all.each do |category|
-      product_hash["#{category.name},#{category.slug}"] = category.products.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc).first(4)
+      product_hash["#{category.name},#{category.slug}"] = category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc).first(4)
     end
     product_hash
   end

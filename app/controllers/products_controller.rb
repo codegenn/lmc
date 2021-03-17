@@ -8,9 +8,9 @@ class ProductsController < ApplicationController
     query = params[:q]
     if category.present?
       @category = Category.friendly.find(category)
-      @products = @category.products.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
+      @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
     elsif check.present?
-      @products = Product.send(check.to_sym).order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
+      @products = Product.send(check.to_sym).active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
       @check = true
     elsif query
       @at = []
@@ -31,6 +31,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.friendly.find(params[:id])
+    redirect_to products_path if @product.is_hidden
     @stocks = @product.stocks.group_by(&:size)
     @b_stocks = @product.bottom_stocks
     @size_colors = []
