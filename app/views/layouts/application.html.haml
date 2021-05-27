@@ -108,7 +108,7 @@
                   = link_to I18n.t("page.menu.join_us"), jobs_path
             / Logo desktop
             = link_to store_path, class: 'logo' do
-              = image_tag 'main-logo.jpg'
+              = cl_image_tag 'https://res.cloudinary.com/dbysq36qu/image/upload/v1622129787/main-logo-sm.jpg'
             .slogan.flex-w.flex-r-m
               Create love moments everyday
             / Icon header
@@ -122,7 +122,7 @@
         / Logo moblie
         .logo-mobile
           = link_to store_path do
-            = image_tag 'icons/mobile-logo.jpg'
+            = cl_image_tag 'https://res.cloudinary.com/dbysq36qu/image/upload/v1622129479/mobile-logo-sm.jpg'
         / Icon header
         .wrap-icon-header.flex-w.flex-r-m.m-r-15
           .icon-cart
