@@ -2,10 +2,10 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  before_action :set_i18n_locale
   before_action :set_cart
   before_action :set_fav
   before_action :set_categories
-  before_filter :set_i18n_locale
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
@@ -40,6 +40,28 @@ class ApplicationController < ActionController::Base
   end
 
   def set_categories
-    @cats = Category.all
+    # @cats = Category.all
+    @cats = ActiveRecord::Base.connection.execute(<<-QS
+SELECT
+  c.id, c.category_image_file_name, c.category_image_content_type, c.category_image_file_size,
+  c.category_image_updated_at, c.slug, ct.name, ct.description
+FROM categories c
+LEFT JOIN category_translations ct ON ct.category_id = c.id AND ct.locale='#{I18n.locale.to_s}'
+ORDER BY sort_order ASC
+    QS
+    ).as_json
+    @cats.map do |cat|
+      _cat_tmp = Category.new(
+        :id => cat['id'],
+        :category_image_file_name => cat['category_image_file_name'],
+        :category_image_content_type => cat['category_image_content_type'],
+        :category_image_updated_at => cat['category_image_updated_at'],
+        :category_image_file_size=>cat['category_image_file_size'],
+      )
+      pap = Paperclip::Attachment.new :category_image, _cat_tmp
+
+      cat['cate_image_url'] = pap.url
+      cat
+    end
   end
 end

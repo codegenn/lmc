@@ -56,7 +56,13 @@ Rails.application.configure do
     :enable_starttls_auto => true
   }
   config.paperclip_defaults = {
+    # storage: :cloudinary,
+    # url: ':cloudinary_domain_url',
+    # path: ':filename',
+    # cloudinary_credentials: Rails.root.join("config/cloudinary.yml"),
     storage: :s3,
+    url: ':s3_domain_url',
+    path: '/:class/:attachment/:id_partition/:style/:filename',
     s3_credentials: {
       bucket: "lmcation",
       access_key_id: "AKIAVOA7O3QTCMF32FCF",

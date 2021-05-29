@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
         flash[:success] = I18n.t('controllers.search.no_re')
       end
     else
-      @products = Product.main_page
+      @products = Product.main_page @cats
     end
   end
 

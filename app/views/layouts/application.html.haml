@@ -1,7 +1,9 @@
 !!!
 %html
   %head
-    %title LMCATION
+    %title<
+      = content_for?(:title) ? yield(:title) : 'LMCATION'
+
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:content => "width=device-width", :name => "viewport"}/
     %meta{:content => "h8jh9wwwef15r45wi9vm9h2wmnoqu4", :name => "facebook-domain-verification"}/
@@ -90,7 +92,7 @@
                   %ul.sub-menu
                     - @cats.each do |cat|
                       %li
-                        = link_to cat.name, products_path(category: cat.slug)
+                        = link_to cat['name'], products_path(category: cat['slug'])
                 %li{:class => ('active-menu' if @menu == 'foundation')}
                   = link_to I18n.t("page.menu.foundation"), foundations_path
                   %ul.sub-menu
@@ -108,7 +110,7 @@
                   = link_to I18n.t("page.menu.join_us"), jobs_path
             / Logo desktop
             = link_to store_path, class: 'logo' do
-              = cl_image_tag 'https://res.cloudinary.com/dbysq36qu/image/upload/v1622129787/main-logo-sm.jpg'
+              = cl_image_tag 'https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png'
             .slogan.flex-w.flex-r-m
               Create love moments everyday
             / Icon header
@@ -154,7 +156,7 @@
             %ul.sub-menu-m
               - @cats.each do |cat|
                 %li
-                  = link_to cat.name, products_path(category: cat.slug)
+                  = link_to cat['name'], products_path(category: cat['slug'])
           %li
             = link_to I18n.t("page.menu.foundation"), foundations_path
           %li
@@ -180,7 +182,7 @@
             %ul
               - @cats.each do |cat|
                 %li.p-b-10
-                  = link_to cat.name, products_path(category: cat.slug), class: 'stext-107 cl7 hov-cl1 trans-04'
+                  = link_to cat['name'], products_path(category: cat['slug']), class: 'stext-107 cl7 hov-cl1 trans-04'
           .col-sm-6.col-lg-3.p-b-50
             %h4.stext-301.cl0.p-b-30
               = I18n.t "page.footer.help"
