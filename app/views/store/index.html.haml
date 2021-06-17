@@ -18,7 +18,7 @@
       .col-md-4.col-xl-4.p-b-30.m-lr-auto
         / Block1
         .block1.wrap-pic-w
-          = cl_image_tag Rails.application.secrets.best_seller_link
+          = cl_image_tag Rails.application.secrets.best_seller_link, width: "100", height: "100%"
           = link_to products_path(check: 'best_sellers'), class: "block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" do
             .block1-txt-child1.flex-col-l
               %span.block1-name.ltext-102.trans-04.p-b-8
@@ -32,7 +32,7 @@
       .col-md-4.col-xl-4.p-b-30.m-lr-auto
         / Block1
         .block1.wrap-pic-w
-          = cl_image_tag Rails.application.secrets.promotion_link
+          = cl_image_tag Rails.application.secrets.promotion_link, width: "100", height: "100%"
           = link_to products_path(check: 'promotion'), class: "block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" do
             .block1-txt-child1.flex-col-l
               %span.block1-name.ltext-102.trans-04.p-b-8
@@ -46,7 +46,7 @@
       .col-md-4.col-xl-4.p-b-30.m-lr-auto
         / Block1
         .block1.wrap-pic-w
-          = cl_image_tag Rails.application.secrets.new_arrival_link
+          = cl_image_tag Rails.application.secrets.new_arrival_link, width: "100", height: "100%"
           = link_to products_path(check: 'new_arrivals'), class: "block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" do
             .block1-txt-child1.flex-col-l
               %span.block1-name.ltext-102.trans-04.p-b-8
@@ -63,7 +63,7 @@
         .col-md-4.col-xl-4.p-b-30.m-lr-auto
           / Block1
           .block1.wrap-pic-w
-            = cl_image_tag cat['cate_image_url']
+            = cl_image_tag cat['cate_image_url'], width: "100", height: "100%"
             = link_to products_path(category: cat['slug']), class: "block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" do
               .block1-txt-child1.flex-col-l
                 %span.block1-name.ltext-102.trans-04.p-b-8
@@ -79,7 +79,7 @@
       .col-md-6.p-b-30.m-lr-auto
         / Block1
         .block1.wrap-pic-w
-          = cl_image_tag Rails.application.secrets.inspiration_link
+          = cl_image_tag Rails.application.secrets.inspiration_link, width: "100", height: "100%"
           = link_to foundations_path(category: "inspiration"), class: "block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" do
             .block1-txt-child1.flex-col-l
               %span.block1-name.ltext-102.trans-04.p-b-8
@@ -90,7 +90,7 @@
       .col-md-6.p-b-30.m-lr-auto
         / Block1
         .block1.wrap-pic-w
-          = cl_image_tag Rails.application.secrets.empowerment_link
+          = cl_image_tag Rails.application.secrets.empowerment_link, width: "100", height: "100%"
           = link_to foundations_path(category: "empowerment"), class: "block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" do
             .block1-txt-child1.flex-col-l
               %span.block1-name.ltext-102.trans-04.p-b-8
@@ -105,11 +105,11 @@
           = I18n.t "page.menu.partners"
     .row.d-flex
       .col-md-12.p-b-30.m-lr-auto
-        = cl_image_tag  "https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/Crop+logo-03.png", class: "partner-img", width: "100"
-        = cl_image_tag  "https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/Crop+logo-02.png", class: "partner-img", width: "100"
-        = cl_image_tag  "https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/Crop+logo-05.png", class: "partner-img", width: "100"
-        = cl_image_tag  "https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/Crop+logo-04.png", class: "partner-img", width: "100"
-        = cl_image_tag  "https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/Crop+logo-01.png", class: "partner-img", width: "100"
-        = cl_image_tag  "https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/logo-6.png", class: "partner-img", width: "100"
-        = cl_image_tag  "https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/logo-7.png", class: "partner-img", width: "100"
-        = cl_image_tag  "https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/logo-8.png", class: "partner-img", width: "100"
+        = cl_image_tag  "https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/Crop+logo-03.png", height: "50%", width: "100%", class: "partner-img", loading: "lazy"
+        = cl_image_tag  "https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/Crop+logo-02.png", height: "50%", width: "100%", class: "partner-img", loading: "lazy"
+        = cl_image_tag  "https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/Crop+logo-05.png", height: "50%", width: "100%", class: "partner-img", loading: "lazy"
+        = cl_image_tag  "https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/Crop+logo-04.png", height: "50%", width: "100%", class: "partner-img", loading: "lazy"
+        = cl_image_tag  "https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/Crop+logo-01.png", height: "50%", width: "100%", class: "partner-img", loading: "lazy"
+        = cl_image_tag  "https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/logo-6-1.png", height: "50%", width: "100%", class: "partner-img", loading: "lazy"
+        = cl_image_tag  "https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/logo-7.png", height: "50%", width: "100%", class: "partner-img", loading: "lazy"
+        = cl_image_tag  "https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/logo-8.png", height: "50%", width: "100%", class: "partner-img", loading: "lazy"

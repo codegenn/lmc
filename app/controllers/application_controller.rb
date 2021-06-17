@@ -18,11 +18,15 @@ class ApplicationController < ActionController::Base
 
   private
   def set_cart
-    @cart = Cart.find_by_code(session[:cart_code])
+    cart_code = session[:cart_code]
+    @cart = cart_code.present? ? Cart.find_by_code(cart_code) : nil
+    @cart_products = @cart.try(:total_products) || 0
   end
 
   def set_fav
-    @favorite = Favorite.find_by_code(session[:fav_code])
+    fav_code = session[:fav_code]
+    @favorite = fav_code.present? ? Favorite.find_by_code(fav_code) : nil
+    @favorite_products = @favorite.try(:favorite_products).try(:count) || 0
   end
 
   def set_i18n_locale
@@ -40,16 +44,16 @@ class ApplicationController < ActionController::Base
   end
 
   def set_categories
-    # @cats = Category.all
-    @cats = ActiveRecord::Base.connection.execute(<<-QS
-SELECT
-  c.id, c.category_image_file_name, c.category_image_content_type, c.category_image_file_size,
-  c.category_image_updated_at, c.slug, ct.name, ct.description
-FROM categories c
-LEFT JOIN category_translations ct ON ct.category_id = c.id AND ct.locale='#{I18n.locale.to_s}'
-ORDER BY sort_order ASC
-    QS
-    ).as_json
+      @cats = ActiveRecord::Base.connection.execute(
+        <<-QS
+          SELECT
+            c.id, c.category_image_file_name, c.category_image_content_type, c.category_image_file_size,
+            c.category_image_updated_at, c.slug, ct.name, ct.description
+          FROM categories c
+          LEFT JOIN category_translations ct ON ct.category_id = c.id AND ct.locale='#{I18n.locale.to_s}'
+          ORDER BY sort_order ASC
+        QS
+      ).as_json
     @cats.map do |cat|
       _cat_tmp = Category.new(
         :id => cat['id'],
