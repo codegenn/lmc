@@ -107,5 +107,5 @@ Rails.application.configure do
     }
   }
 
-  config.static_cache_control = "public, max-age=3600"
+  config.static_cache_control = "public, max-age=31536000"
 end
