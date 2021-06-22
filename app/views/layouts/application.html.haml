@@ -8,40 +8,13 @@
     %meta{:content => "width=device-width", :name => "viewport"}/
     %meta{:content => "h8jh9wwwef15r45wi9vm9h2wmnoqu4", :name => "facebook-domain-verification"}/
     = csrf_meta_tags
-    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
-    %script{:defer => "defer", :src => "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"}
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
     %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"}
+    %script{:defer => "defer", :src => "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"}
+    
     = yield :header
-    / Global site tag (gtag.js) - Google Analytics
-    %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-164577749-1"}
-    / Facebook Pixel Code
-    :javascript
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window,document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '389691432057186');
-      fbq('track', 'PageView');
-      var event = "#{flash[:pixel]}";
-      var event_array = event.split(',');
-      for(var i = 0; i < event_array.length; i++) {
-        event_array[i] = event_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
-        fbq('track', event_array[i]);
-      }
-    %noscript
-      %img{:height => "1", :src => "https://www.facebook.com/tr?id=584519498852272&ev=PageView\n&noscript=1", :width => "1"}/
-    :javascript
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-164577749-1');
   %body{data: {turbolinks: 'false'}}
     / Load Facebook SDK for JavaScript
     #fb-root
@@ -247,3 +220,31 @@
         .modal-content-mobile
           %button.close{"data-dismiss" => "modal", :type => "button"} ×
           = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/ND.jpg', class: 'img-responsive'
+    / Global site tag (gtag.js) - Google Analytics
+    %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-164577749-1"}
+    / Facebook Pixel Code
+    :javascript
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '389691432057186');
+      fbq('track', 'PageView');
+      var event = "#{flash[:pixel]}";
+      var event_array = event.split(',');
+      for(var i = 0; i < event_array.length; i++) {
+        event_array[i] = event_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
+        fbq('track', event_array[i]);
+      }
+    %noscript
+      %img{:height => "1", :src => "https://www.facebook.com/tr?id=584519498852272&ev=PageView\n&noscript=1", :width => "1"}/
+    :javascript
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-164577749-1');

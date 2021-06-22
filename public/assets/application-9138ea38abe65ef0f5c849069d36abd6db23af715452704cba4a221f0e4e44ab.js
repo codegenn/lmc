@@ -59673,9 +59673,6 @@ $(function () {
         }
     });
 
-    $('#myBtn').on("click", function(){
-        $('html, body').animate({scrollTop: 0}, 300);
-    });
     window.scrollTo(0, 0);
 
     /*==================================================================
@@ -59768,16 +59765,18 @@ $(function () {
 
     // init Isotope
     $(window).on('load', function () {
-        var $grid = $topeContainer.each(function () {
-            $(this).isotope({
-                itemSelector: '.isotope-item',
-                layoutMode: 'fitRows',
-                percentPosition: true,
-                animationEngine : 'best-available',
-                masonry: {
-                    columnWidth: '.isotope-item'
-                }
-            });
+        $topeContainer.each(function () {
+            if (this.length){
+                $(this).isotope({
+                    itemSelector: '.isotope-item',
+                    layoutMode: 'fitRows',
+                    percentPosition: true,
+                    animationEngine : 'best-available',
+                    masonry: {
+                        columnWidth: '.isotope-item'
+                    }
+                });
+            }
         });
     });
 

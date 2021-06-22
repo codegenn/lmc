@@ -106,4 +106,6 @@ Rails.application.configure do
       s3_region: Rails.application.secrets.s3_region
     }
   }
+
+  config.static_cache_control = "public, max-age=3600"
 end
