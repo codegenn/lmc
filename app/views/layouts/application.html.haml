@@ -1,5 +1,5 @@
 !!!
-%html
+%html{ lang: I18n.locale.to_s }
   %head
     %title<
       = content_for?(:title) ? yield(:title) : 'LMCATION'
@@ -10,8 +10,8 @@
     = csrf_meta_tags
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
-    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
-    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"}
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet", defer: :true}/
+    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", defer: :true}
     %script{:defer => "defer", :src => "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"}
     
     = yield :header
@@ -163,9 +163,9 @@
               %li.p-b-10
                 %a.stext-107.cl7.hov-cl1.trans-04{:href => "http://www.lmcation.com/store/policy"}
                   = I18n.t "page.index.return"
-            %li.p-b-10
-              %a.stext-107.cl7.hov-cl1.trans-04{:href => "http://www.lmcation.com/trackings"}
-                = I18n.t "page.tracking.tracking"
+              %li.p-b-10
+                %a.stext-107.cl7.hov-cl1.trans-04{:href => "http://www.lmcation.com/trackings"}
+                  = I18n.t "page.tracking.tracking"
               %li.p-b-10
                 %a.stext-107.cl7.hov-cl1.trans-04{:href => "http://www.lmcation.com/store/privacy"}
                   = I18n.t "page.privacy.privacy"
