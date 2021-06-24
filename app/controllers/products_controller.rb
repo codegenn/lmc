@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
     query = params[:q]
     @keyword = nil
     if category.present?
-      @keyword = I18n.t("keyword_sport") if category.include?("do-the-thao")
+      @keyword = I18n.t("keyword_sport") unless category.include?("do-mac-nha-do-ngu")
       @category = Category.friendly.find(category)
       @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
     elsif check.present?
