@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  include ApplicationHelper
   before_action :set_product, only: [:show]
   before_action :set_menu
 
@@ -30,19 +31,24 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.friendly.find(params[:id])
     redirect_to products_path if @product.is_hidden
     @stocks = @product.stocks.group_by(&:size)
     @b_stocks = @product.bottom_stocks
-    @size_colors = []
     @color_images = @product.color_images
     @category = @product.categories.first
     @related_products = @category ? @category.products.sample(4) : Product.all.sample(4)
+    meta_data(
+      @product.title,
+      @product.description,
+      @product.product_images.first.try(:image_url),
+      product_path(@product.slug)
+    )
   end
 
   private
+
   def set_product
-    @product = Product.find_by_id(params[:id])
+    @product = Product.friendly.find(params[:id])
   end
 
   def set_menu

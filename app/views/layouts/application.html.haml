@@ -7,6 +7,10 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:content => "width=device-width", :name => "viewport"}/
     %meta{:content => "h8jh9wwwef15r45wi9vm9h2wmnoqu4", :name => "facebook-domain-verification"}/
+    %meta{property: "og:title", content: @title.present? ? @title : "LMCATION" }/
+    %meta{property: "og:description", content: @description.present? ? @title : "LMCATION" }/
+    %meta{property: "og:image", content: @image.present? ? @title : "LMCATION" }/
+    %meta{property: "og:url", content: @url.present? ? @title : "LMCATION" }/
     = csrf_meta_tags
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
