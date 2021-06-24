@@ -15,7 +15,7 @@
     %meta{name: "description", content: @description.present? ? @description : "LMCATION" }/
     %meta{name: "image", content: @image.present? ? @image : "LMCATION" }/
     %meta{name: "url", content: @url.present? ? @url : "LMCATION" }/
-    %meta{name: "keyword", content: @keyword.present? ? @keyword : (I18n.t("keyword") << "," << I18n.t("keyword_sport")) }/
+    %meta{name: "keywords", content: @keyword.present? ? @keyword : (I18n.t("keyword") << "," << I18n.t("keyword_sport")) }/
     = csrf_meta_tags
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
