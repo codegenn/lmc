@@ -11,6 +11,10 @@
     %meta{property: "og:description", content: @description.present? ? @description : "LMCATION" }/
     %meta{property: "og:image", content: @image.present? ? @image : "LMCATION" }/
     %meta{property: "og:url", content: @url.present? ? @url : "LMCATION" }/
+    %meta{name: "title", content: @title.present? ? @title : "LMCATION" }/
+    %meta{name: "description", content: @description.present? ? @description : "LMCATION" }/
+    %meta{name: "image", content: @image.present? ? @image : "LMCATION" }/
+    %meta{name: "url", content: @url.present? ? @url : "LMCATION" }/
     = csrf_meta_tags
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
