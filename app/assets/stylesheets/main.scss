@@ -2116,6 +2116,13 @@ input.num-product::-webkit-inner-spin-button {
   position: relative;
 }
 
+.text-wrap-split {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 90%;
+}
+
 .block2-btn {
   position: absolute;
   bottom: -50px;
