@@ -13,8 +13,12 @@ module ApplicationHelper
 
   def meta_data(title, description, image, url)
     @title = title
-    @description = description
+    @description = strip_tags(description)
     @image = image
     @url = url
+  end
+
+  def strip_tags(string)
+    string.gsub( %r{</?[^>]+?>}, '' )
   end
 end
