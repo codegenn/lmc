@@ -7,7 +7,9 @@ class ProductsController < ApplicationController
     category = params[:category]
     check = params[:check]
     query = params[:q]
+    @keyword = nil
     if category.present?
+      @keyword = I18n.t("keyword_sport") if category.include?("do-the-thao")
       @category = Category.friendly.find(category)
       @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
     elsif check.present?
@@ -33,7 +35,8 @@ class ProductsController < ApplicationController
       "Đồ Mặc Nhà - Đồ Ngủ, Gym-to-Swim, Đồ Bơi, Đồ Thể Thao",
       "Đồ Mặc Nhà - Đồ Ngủ, Gym-to-Swim, Đồ Bơi, Đồ Thể Thao",
       "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png",
-      "https://www.lmcation.com/#{I18n.locale.to_s}/products"
+      "https://www.lmcation.com/#{I18n.locale.to_s}/products",
+      @keyword.nil? ? I18n.t("keyword") : @keyword
     )
   end
 
@@ -48,7 +51,8 @@ class ProductsController < ApplicationController
       @product.title,
       @product.description,
       @product.product_images.first.try(:image_url),
-      product_path(@product.slug)
+      product_path(@product.slug),
+      I18n.t("keyword") << "," << I18n.t("keyword_sport")
     )
   end
 
