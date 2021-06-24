@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
       "Đồ Mặc Nhà - Đồ Ngủ, Gym-to-Swim, Đồ Bơi, Đồ Thể Thao",
       "Đồ Mặc Nhà - Đồ Ngủ, Gym-to-Swim, Đồ Bơi, Đồ Thể Thao",
       "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png",
-      "https://www.lmcation.com/#{i18n.locale.to_s}/products"
+      "https://www.lmcation.com/#{I18n.locale.to_s}/products"
     )
   end
 
