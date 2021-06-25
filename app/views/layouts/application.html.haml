@@ -225,10 +225,10 @@
         / Modal content
         .modal-content-desktop
           %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/140924607_419908412547009_4057087241630477945_n.jpg', class: 'img-responsive'
+          = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/140924607_419908412547009_4057087241630477945_n.jpg', class: 'img-responsive', loading: "lazy"
         .modal-content-mobile
           %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/ND.jpg', class: 'img-responsive'
+          = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/ND.jpg', class: 'img-responsive', loading: "lazy"
     / Global site tag (gtag.js) - Google Analytics
     %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-164577749-1"}
     / Facebook Pixel Code
