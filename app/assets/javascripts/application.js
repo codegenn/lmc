@@ -16,3 +16,4 @@
 //= require slick-custom
 //= require image-picker
 //= require_tree .
+//= require turbolinks
