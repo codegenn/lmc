@@ -16,9 +16,10 @@
     %meta{name: "image", content: @image.present? ? @image : "LMCATION" }/
     %meta{name: "url", content: @url.present? ? @url : "LMCATION" }/
     %meta{name: "keywords", content: @keyword.present? ? @keyword : (I18n.t("keyword") << "," << I18n.t("keyword_sport")) }/
+    %meta{name: "turbolinks-visit-control", content:"reload"}
     = csrf_meta_tags
-    = stylesheet_link_tag    "application"
-    = javascript_include_tag "application"
+    = stylesheet_link_tag    "application", media: "all", data_turbolinks_track: "reload"
+    = javascript_include_tag "application", data_turbolinks_track: "reload"
     %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet", defer: :true}/
     %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", defer: :true}
     %script{:defer => "defer", :src => "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"}
