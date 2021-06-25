@@ -19,7 +19,6 @@
     %meta{name: "turbolinks-visit-control", content:"reload"}
     = csrf_meta_tags
     = stylesheet_link_tag    "application", media: "all", data_turbolinks_track: "reload"
-    = javascript_include_tag "application", data_turbolinks_track: "reload"
     %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet", defer: :true}/
     %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", defer: :true}
     %script{:defer => "defer", :src => "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"}
@@ -230,6 +229,7 @@
         .modal-content-mobile
           %button.close{"data-dismiss" => "modal", :type => "button"} ×
           = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/ND.jpg', class: 'img-responsive', loading: "lazy"
+    = javascript_include_tag "application", data_turbolinks_track: "reload"
     / Global site tag (gtag.js) - Google Analytics
     %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-164577749-1"}
     / Facebook Pixel Code
