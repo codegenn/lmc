@@ -2,27 +2,27 @@
 %html{ lang: I18n.locale.to_s }
   %head
     %title<
-      = content_for?(:title) ? yield(:title) : 'LMCATION'
+      = content_for?(:title) ? yield(:title) : 'LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ'
 
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:content => "width=device-width", :name => "viewport"}/
     %meta{:content => "h8jh9wwwef15r45wi9vm9h2wmnoqu4", :name => "facebook-domain-verification"}/
-    %meta{property: "og:title", content: @title.present? ? @title : "LMCATION" }/
-    %meta{property: "og:description", content: @description.present? ? @description : "LMCATION" }/
-    %meta{property: "og:image", content: @image.present? ? @image : "LMCATION" }/
-    %meta{property: "og:url", content: @url.present? ? @url : "LMCATION" }/
-    %meta{name: "title", content: @title.present? ? @title : "LMCATION" }/
-    %meta{name: "description", content: @description.present? ? @description : "LMCATION" }/
-    %meta{name: "image", content: @image.present? ? @image : "LMCATION" }/
-    %meta{name: "url", content: @url.present? ? @url : "LMCATION" }/
+    %meta{property: "og:title", content: @title.present? ? @title : "LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ" }/
+    %meta{property: "og:description", content: @description.present? ? @description : "Đồ Mặc Nhà - Đồ Ngủ, Gym-to-Swim, Đồ Bơi, Đồ Thể Thao" }/
+    %meta{property: "og:image", content: @image.present? ? @image : "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png" }/
+    %meta{property: "og:url", content: @url.present? ? @url : "https://www.lmcation.com/" }/
+    %meta{property: "og:error", content: "LMCATION" }/
+    %meta{name: "title", content: @title.present? ? @title : "LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ" }/
+    %meta{name: "description", content: @description.present? ? @description : "LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ" }/
+    %meta{name: "image", content: @image.present? ? @image : "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png" }/
+    %meta{name: "url", content: @url.present? ? @url : "https://www.lmcation.com/" }/
     %meta{name: "keywords", content: @keyword.present? ? @keyword : (I18n.t("keyword") << "," << I18n.t("keyword_sport")) }/
     %meta{name: "turbolinks-visit-control", content:"reload"}
+    %link{link: "https://www.lmcation.com/", rel:"canonical"}
     = csrf_meta_tags
     = stylesheet_link_tag    "application", media: "all", data_turbolinks_track: "reload"
     = javascript_include_tag "application", data_turbolinks_track: "reload"
     %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet", defer: :true}/
-    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", defer: :true}
-    %script{:defer => "defer", :src => "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"}
     
     = yield :header
   %body{data: {turbolinks: 'false'}}
@@ -205,15 +205,15 @@
         .p-t-40
           .flex-c-m.flex-w.p-b-18
             %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-01.png"
+              = image_tag "icons/icon-pay-01.png", title: "icon-pay-01"
             %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-02.png"
+              = image_tag "icons/icon-pay-02.png", title: "icon-pay-02"
             %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-03.png"
+              = image_tag "icons/icon-pay-03.png", title: "icon-pay-03"
             %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-04.png"
+              = image_tag "icons/icon-pay-04.png", title: "icon-pay-04"
             %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-05.png"
+              = image_tag "icons/icon-pay-05.png", title: "icon-pay-05"
           %p.stext-107.cl6.txt-center
             COPYRIGHT © 2020 LMCATION
             %br
@@ -231,7 +231,9 @@
           %button.close{"data-dismiss" => "modal", :type => "button"} ×
           = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/ND.jpg', class: 'img-responsive', loading: "lazy"
     / Global site tag (gtag.js) - Google Analytics
-    %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-164577749-1"}
+    %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-164577749-1", defer: :true}
+    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", defer: :true}
+    %script{:defer => "defer", :src => "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"}
     / Facebook Pixel Code
     :javascript
       !function(f,b,e,v,n,t,s)
