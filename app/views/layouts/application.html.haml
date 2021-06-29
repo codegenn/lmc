@@ -74,7 +74,7 @@
             .menu-desktop
               %ul.main-menu
                 %li{:class => ('active-menu' if @menu == 'store')}
-                  = link_to I18n.t("page.menu.home"), store_path, onclick: "ga('send', 'event', 'mua-hang', 'menu-link', 'link');"
+                  = link_to I18n.t("page.menu.home"), store_path, onclick: "ga('send', 'event', 'trang-chu', 'menu-link', 'link');"
                 %li{:class => ('active-menu' if @menu == 'product')}
                   = link_to I18n.t("page.menu.shop"), products_path, onclick:"dataLayer.push({'ga_event_category': 'mua-hang', 'ga_event_action': 'menu-link', 'ga_event_label': 'link', 'event': 'ga_event'});"
                   %ul.sub-menu
@@ -93,7 +93,7 @@
                 %li{:class => ('active-menu' if @menu == 'about')}
                   = link_to I18n.t("page.menu.about_us"), about_path
                 %li{:class => ('active-menu' if @menu == 'findus')}
-                  = link_to I18n.t("page.menu.find_us"), find_us_path
+                  = link_to I18n.t("page.menu.find_us"), find_us_path, onclick: "ga('send', 'event', 'lien-he', 'menu-link', 'link');"
                 %li{:class => ('active-menu' if @menu == 'joinus')}
                   = link_to I18n.t("page.menu.join_us"), jobs_path
             / Logo desktop
