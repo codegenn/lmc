@@ -86,9 +86,9 @@
                     %li
                       = link_to I18n.t("page.foundation.news"), foundations_path(category: "news")
                 %li{:class => ('active-menu' if @menu == 'about')}
-                  = link_to I18n.t("page.menu.about_us"), store_about_path
+                  = link_to I18n.t("page.menu.about_us"), about_path
                 %li{:class => ('active-menu' if @menu == 'findus')}
-                  = link_to I18n.t("page.menu.find_us"), store_find_us_path
+                  = link_to I18n.t("page.menu.find_us"), find_us_path
                 %li{:class => ('active-menu' if @menu == 'joinus')}
                   = link_to I18n.t("page.menu.join_us"), jobs_path
             / Logo desktop
@@ -143,7 +143,7 @@
           %li
             = link_to I18n.t("page.menu.foundation"), foundations_path
           %li
-            = link_to I18n.t("page.menu.about_us"), store_about_path
+            = link_to I18n.t("page.menu.about_us"), about_path
           %li
             = link_to I18n.t("page.menu.join_us"), jobs_path
     / Cart
@@ -171,13 +171,13 @@
               = I18n.t "page.footer.help"
             %ul
               %li.p-b-10
-                %a.stext-107.cl7.hov-cl1.trans-04{:href => "http://www.lmcation.com/store/policy"}
+                %a.stext-107.cl7.hov-cl1.trans-04{ :href => policy_path }
                   = I18n.t "page.index.return"
               %li.p-b-10
-                %a.stext-107.cl7.hov-cl1.trans-04{:href => "http://www.lmcation.com/trackings"}
+                %a.stext-107.cl7.hov-cl1.trans-04{ :href => trackings_path }
                   = I18n.t "page.tracking.tracking"
               %li.p-b-10
-                %a.stext-107.cl7.hov-cl1.trans-04{:href => "http://www.lmcation.com/store/privacy"}
+                %a.stext-107.cl7.hov-cl1.trans-04{ :href => privacy_path }
                   = I18n.t "page.privacy.privacy"
             -#  %li.p-b-10
             -#    %a.stext-107.cl7.hov-cl1.trans-04{:href => "#"}
