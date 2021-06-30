@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   scope "(:locale)", :locale => /en|vi/ do
     get 'store/index'
-    get 'about', to: "store#about"
-    get 'find-us', to: "store#find_us"
+    get 'thoi-trang-ton-vinh-phu-nu', to: "store#about"
+    get 'lien-he', to: "store#find_us"
     get 'policy', to:"store#policy"
     get 'store/ping'
     get 'privacy', to:"store#privacy"

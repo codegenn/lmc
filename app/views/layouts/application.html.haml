@@ -18,6 +18,7 @@
     %meta{name: "url", content: @url.present? ? @url : "https://www.lmcation.com/" }/
     %meta{name: "keywords", content: @keyword.present? ? @keyword : (I18n.t("keyword") << "," << I18n.t("keyword_sport")) }/
     %meta{name: "turbolinks-visit-control", content:"reload"}
+    %meta{name:"google-site-verification", content:"g-fEOaiTrFmMKnfAztaLVsayhtwOaK9dHM892NBYip4"}
     %link{link: "https://www.lmcation.com/", rel:"canonical"}
     = csrf_meta_tags
     = stylesheet_link_tag    "application", media: "all", data_turbolinks_track: "reload"
@@ -91,9 +92,9 @@
                     %li
                       = link_to I18n.t("page.foundation.news"), foundations_path(category: "news")
                 %li{:class => ('active-menu' if @menu == 'about')}
-                  = link_to I18n.t("page.menu.about_us"), about_path, onclick: "dataLayer.push({'ga_event_category': 'gioi-thieu', 'ga_event_action': 'link', 'ga_event_label': 'menu', 'event': 'ga_event'});"
+                  = link_to I18n.t("page.menu.about_us"), thoi_trang_ton_vinh_phu_nu_path, onclick: "dataLayer.push({'ga_event_category': 'gioi-thieu', 'ga_event_action': 'link', 'ga_event_label': 'menu', 'event': 'ga_event'});"
                 %li{:class => ('active-menu' if @menu == 'findus')}
-                  = link_to I18n.t("page.menu.find_us"), find_us_path, onclick: "dataLayer.push({'ga_event_category': 'lien-he', 'ga_event_action': 'link', 'ga_event_label': 'menu', 'event': 'ga_event'});"
+                  = link_to I18n.t("page.menu.find_us"), lien_he_path, onclick: "dataLayer.push({'ga_event_category': 'lien-he', 'ga_event_action': 'link', 'ga_event_label': 'menu', 'event': 'ga_event'});"
                 %li{:class => ('active-menu' if @menu == 'joinus')}
                   = link_to I18n.t("page.menu.join_us"), jobs_path, onclick: "dataLayer.push({'ga_event_category': 'hop-tac', 'ga_event_action': 'link', 'ga_event_label': 'menu', 'event': 'ga_event'});"
             / Logo desktop
@@ -148,7 +149,7 @@
           %li
             = link_to I18n.t("page.menu.foundation"), foundations_path
           %li
-            = link_to I18n.t("page.menu.about_us"), about_path
+            = link_to I18n.t("page.menu.about_us"), thoi_trang_ton_vinh_phu_nu_path
           %li
             = link_to I18n.t("page.menu.join_us"), jobs_path
     / Cart
