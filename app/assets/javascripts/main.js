@@ -40,6 +40,13 @@ $(function () {
         }
     });
 
+    $(".text-split").each(function() {
+        var data = $(this).text();
+        console.log(data);
+        if (data.length > 90) {
+            $(this).text(data.slice(0, 90) + ' ...');
+        }
+    });
 
     /*==================================================================
     [ Menu mobile ]*/
