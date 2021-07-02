@@ -23,6 +23,24 @@
     = csrf_meta_tags
     = stylesheet_link_tag    "application", media: "all", data_turbolinks_track: "reload"
     = javascript_include_tag "application", data_turbolinks_track: "reload"
+    / Facebook Pixel Code
+    :javascript
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '389691432057186');
+      fbq('track', 'PageView');
+      var event = "#{flash[:pixel]}";
+      var event_array = event.split(',');
+      for(var i = 0; i < event_array.length; i++) {
+        event_array[i] = event_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
+        fbq('track', event_array[i]);
+      }
     %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet", defer: :true}/
     :javascript
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -99,7 +117,7 @@
                   = link_to I18n.t("page.menu.join_us"), jobs_path, onclick: "dataLayer.push({'ga_event_category': 'hop-tac', 'ga_event_action': 'link', 'ga_event_label': 'menu', 'event': 'ga_event'});"
             / Logo desktop
             = link_to store_path, class: 'logo' do
-              = cl_image_tag 'https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png'
+              = cl_image_tag 'https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png', class: "Sirv"
             .slogan.flex-w.flex-r-m
               Create love moments everyday
             / Icon header
@@ -113,7 +131,7 @@
         / Logo moblie
         .logo-mobile
           = link_to store_path do
-            = cl_image_tag 'https://res.cloudinary.com/dbysq36qu/image/upload/v1622129479/mobile-logo-sm.jpg'
+            = cl_image_tag 'https://res.cloudinary.com/dbysq36qu/image/upload/v1622129479/mobile-logo-sm.jpg', class: "Sirv"
         / Icon header
         .wrap-icon-header.flex-w.flex-r-m.m-r-15
           .icon-cart
@@ -211,15 +229,15 @@
         .p-t-40
           .flex-c-m.flex-w.p-b-18
             %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-01.png", title: "icon-pay-01"
+              = image_tag "icons/icon-pay-01.png", title: "icon-pay-01", class: "Sirv"
             %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-02.png", title: "icon-pay-02"
+              = image_tag "icons/icon-pay-02.png", title: "icon-pay-02", class: "Sirv"
             %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-03.png", title: "icon-pay-03"
+              = image_tag "icons/icon-pay-03.png", title: "icon-pay-03", class: "Sirv"
             %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-04.png", title: "icon-pay-04"
+              = image_tag "icons/icon-pay-04.png", title: "icon-pay-04", class: "Sirv"
             %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-05.png", title: "icon-pay-05"
+              = image_tag "icons/icon-pay-05.png", title: "icon-pay-05", class: "Sirv"
           %p.stext-107.cl6.txt-center
             COPYRIGHT © 2020 LMCATION
             %br
@@ -232,32 +250,15 @@
         / Modal content
         .modal-content-desktop
           %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/140924607_419908412547009_4057087241630477945_n.jpg', class: 'img-responsive', loading: "lazy"
+          = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/140924607_419908412547009_4057087241630477945_n.jpg', class: 'img-responsive Sirv', loading: "lazy"
         .modal-content-mobile
           %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/ND.jpg', class: 'img-responsive', loading: "lazy"
+          = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/ND.jpg', class: 'img-responsive Sirv', loading: "lazy"
     / Global site tag (gtag.js) - Google Analytics
+    %script{src:"https://scripts.sirv.com/sirv.js", defer: :true}
     %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-164577749-1", defer: :true}
     %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", defer: :true}
     %script{:defer => "defer", :src => "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"}
-    / Facebook Pixel Code
-    :javascript
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window,document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '389691432057186');
-      fbq('track', 'PageView');
-      var event = "#{flash[:pixel]}";
-      var event_array = event.split(',');
-      for(var i = 0; i < event_array.length; i++) {
-        event_array[i] = event_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
-        fbq('track', event_array[i]);
-      }
     %noscript
       %img{:height => "1", :src => "https://www.facebook.com/tr?id=584519498852272&ev=PageView\n&noscript=1", :width => "1"}/
     :javascript
