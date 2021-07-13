@@ -41,10 +41,25 @@ $(function () {
     });
 
     $(".text-split").each(function() {
+        var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
         var data = $(this).text();
-        console.log(data);
-        if (data.length > 90) {
-            $(this).text(data.slice(0, 90) + ' ...');
+        if(width < 1600 && width > 1300 ) {
+            if (data.length > 82) {
+                $(this).text(data.slice(0, 80) + '...');
+            }
+        } else if(width < 1200) {
+            if (data.length > 75) {
+                $(this).text(data.slice(0, 69) + '...');
+            }
+        } else if(width <= 800) {
+            if (data.length > 75) {
+                $(this).text(data.slice(0, 60) + '...');
+            }
+        } 
+        else {
+            if (data.length > 90) {
+                $(this).text(data.slice(0, 90) + '...');
+            }
         }
     });
 
