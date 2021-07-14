@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  get "sitemap.xml" => "sitemaps#index", :format => "xml", :as => :sitemap
   scope "(:locale)", :locale => /en|vi/ do
     get 'store/index'
     get 'thoi-trang-ton-vinh-phu-nu', to: "store#about"
