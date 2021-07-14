@@ -79,8 +79,8 @@
                       = I18n.t("page.product.out_of_stock")
                 .block2-pic.hov-img0.hov-change-img
                   = link_to product_path(product['slug']) do
-                    = cl_image_tag product['first_img_url'], loading:"lazy", alt: "#{product.title}"
-                    = cl_image_tag product['second_img_url'], class: 'img-top', loading:"lazy", alt: "#{product.title}"
+                    = cl_image_tag product['first_img_url'], loading:"lazy", alt: "#{product['title']}"
+                    = cl_image_tag product['second_img_url'], class: 'img-top', loading:"lazy", alt: "#{product['title']}"
                 .block2-txt.flex-w.flex-t.p-t-14
                   .block2-txt-child1.flex-col-l
                     = link_to product_path(product['slug']), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6 text-split" do
