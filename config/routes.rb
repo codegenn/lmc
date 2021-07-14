@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get "sitemap.xml" => "sitemaps#index", :format => "xml", :as => :sitemap
+  get "sitemaps/static-index.xml" => "sitemaps#index_page", :format => "xml", :as => :sitemap_static
   scope "(:locale)", :locale => /en|vi/ do
     get 'store/index'
     get 'thoi-trang-ton-vinh-phu-nu', to: "store#about"
