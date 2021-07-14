@@ -17,6 +17,8 @@
     %meta{name: "image", content: @image.present? ? @image : "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png" }/
     %meta{name: "url", content: @url.present? ? @url : "https://www.lmcation.com/" }/
     %meta{name: "keywords", content: @keyword.present? ? @keyword : (I18n.t("keyword") << "," << I18n.t("keyword_sport")) }/
+    %meta{name: "googlebot", content: @title.present? ? @title : "LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ" }/
+    %meta{name: "robots", content: @title.present? ? @title : "LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ" }/
     %meta{name: "turbolinks-visit-control", content:"reload"}
     %meta{name:"google-site-verification", content:"g-fEOaiTrFmMKnfAztaLVsayhtwOaK9dHM892NBYip4"}
     %link{link: "https://www.lmcation.com/", rel:"canonical", as:"canonical"}
