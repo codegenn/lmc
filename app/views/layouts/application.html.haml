@@ -263,6 +263,18 @@
     %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-164577749-1", defer: :true}
     %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", defer: :true}
     %script{:defer => "defer", :src => "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"}
+    %script{"@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://www.lmcation.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.lmcation.com/"
+        },
+        "query-input": "required name=lmcation"
+      }
+    }
     %noscript
       %img{:height => "1", :src => "https://www.facebook.com/tr?id=584519498852272&ev=PageView\n&noscript=1", :width => "1"}/
     :javascript
