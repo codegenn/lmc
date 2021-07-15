@@ -3,7 +3,7 @@
 - if @category
   .main-page.bg-img1.txt-center.p-tb-92.banner-bg
     = cl_image_tag @category.cate_banner_url, alt: "#{@category.name}"
-    %h2.ltext-105.cl0.txt-center.title
+    %h1.ltext-105.cl0.txt-center.title
       = @category.name
     .mtext-105.cl0.txt-center.description
       = @category.description
