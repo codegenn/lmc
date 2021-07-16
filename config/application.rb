@@ -27,5 +27,6 @@ module LmcationProject
     config.i18n.available_locales = [:en, :vi]
     config.i18n.default_locale = :vi
     config.active_job.queue_adapter = :delayed_job
+    config.exceptions_app = self.routes
   end
 end
