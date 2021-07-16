@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get "sitemap.xml" => "sitemaps#index", :format => "xml", :as => :sitemap
   get "sitemaps/static-index.xml" => "sitemaps#index_page", :format => "xml", :as => :sitemap_static
+  match "/404", to: "errors#not_found", via: :all
+  match "/422", to: "errors#unacceptable", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
   scope "(:locale)", :locale => /en|vi/ do
     get 'store/index'
     get 'thoi-trang-ton-vinh-phu-nu', to: "store#about"

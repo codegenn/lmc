@@ -22,4 +22,8 @@ module ApplicationHelper
   def strip_tags(string)
     string.gsub( %r{</?[^>]+?>}, '' )
   end
+
+  def canonical(url)
+    content_for(:canonical, tag(:link, rel: :canonical, href: url)) if url
+  end
 end
