@@ -20,11 +20,13 @@ class ApplicationController < ActionController::Base
   def set_cart
     cart_code = session[:cart_code]
     @cart = cart_code.present? ? Cart.find_by_code(cart_code) : nil
+    @cart_total = @cart.try(:total_products) || 0
   end
 
   def set_fav
     fav_code = session[:fav_code]
     @favorite = fav_code.present? ? Favorite.find_by_code(fav_code) : nil
+    @favorite_total = @favorite.try(:favorite_products).try(:count) || 0
   end
 
   def set_i18n_locale

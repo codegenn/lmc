@@ -123,9 +123,9 @@
             / Icon header
             .wrap-icon-header.flex-w.flex-r-m
               .icon-cart
-                = render 'carts/icon', total_products: @cart.try(:total_products) || 0
+                = render 'carts/icon', total_products: @cart_total
               .icon-wishlist
-                = render 'favorites/icon', total_products: @favorite.try(:favorite_products).try(:count) || 0
+                = render 'favorites/icon', total_products: @favorite_total
       / Header Mobile
       .wrap-header-mobile
         / Logo moblie
@@ -135,9 +135,9 @@
         / Icon header
         .wrap-icon-header.flex-w.flex-r-m.m-r-15
           .icon-cart
-            = render 'carts/icon', total_products: @cart.try(:total_products) || 0
+            = render 'carts/icon', total_products: @cart_total
           .icon-wishlist
-            = render 'favorites/icon', total_products: @favorite.try(:favorite_products).try(:count) || 0
+            = render 'favorites/icon', total_products: @favorite_total
         / Button show menu
         .btn-show-menu-mobile.hamburger.hamburger--squeeze
           %span.hamburger-box
@@ -265,5 +265,4 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-164577749-1');
