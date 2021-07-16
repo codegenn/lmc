@@ -96,7 +96,7 @@
           #nav-profile.tab-pane.fade{"aria-labelledby" => "nav-profile-tab", :role => "tabpanel"}
             .how-pos2.p-lr-15-md
               .product-measurement-image
-                = cl_image_tag(@product.measurement_url), alt: "#{@product.title}"
+                = cl_image_tag @product.measurement_url, alt: "#{@product.title}"
             .how-pos2.p-lr-15-md
               = raw @product.measurement_description
     .bor10.m-t-50.p-t-43.p-b-40
