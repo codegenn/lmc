@@ -11,7 +11,7 @@
               - @product.product_images.each do |image|
                 .item-slick3{"data-thumb" => image.thumb_url}
                   .wrap-pic-w.pos-relative
-                    = cl_image_tag image.image_url
+                    = cl_image_tag image.image_url, alt: "#{@product.title}"
       .col-md-5.col-lg-5.p-b-30
         .p-r-50.p-t-5.p-lr-0-lg
           %h4.mtext-105.cl2.js-name-detail.p-b-14
@@ -96,7 +96,7 @@
           #nav-profile.tab-pane.fade{"aria-labelledby" => "nav-profile-tab", :role => "tabpanel"}
             .how-pos2.p-lr-15-md
               .product-measurement-image
-                = cl_image_tag(@product.measurement_url)
+                = cl_image_tag(@product.measurement_url), alt: "#{@product.title}"
             .how-pos2.p-lr-15-md
               = raw @product.measurement_description
     .bor10.m-t-50.p-t-43.p-b-40
@@ -110,7 +110,7 @@
               .block2
                 .block2-pic.hov-img0
                   = link_to product_path(product.slug) do
-                    = cl_image_tag product.product_images.first.try(:image_url)
+                    = cl_image_tag product.product_images.first.try(:image_url), alt: "#{product.title}"
                 .block2-txt.flex-w.flex-t.p-t-14
                   .block2-txt-child1.flex-col-l
                     = link_to product_path(product.slug), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6" do
