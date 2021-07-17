@@ -22,9 +22,11 @@ class StoreController < ApplicationController
   end
 
   def privacy
+    breadcrumb I18n.t "page.privacy.privacy", privacy_path
   end
 
   def policy
+    breadcrumb I18n.t "page.index.return", policy_path
   end
 
   def ping
