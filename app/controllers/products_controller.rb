@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
   include ApplicationHelper
   before_action :set_product, only: [:show]
   before_action :set_menu
-  breadcrumb I18n.t("page.menu.shop"), "#{I18n.locale}/products"
 
   def index
     category = params[:category]
@@ -62,6 +61,7 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.friendly.find(params[:id])
+    breadcrumb I18n.t("page.menu.shop"), "#{I18n.locale}/products"
     breadcrumb @category.name, "#{I18n.locale}/products/?category=#{params[:id]}" if params[:category].present?
   end
 
