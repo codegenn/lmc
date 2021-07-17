@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   before_action :set_bread
 
   def index
+    breadcrumb I18n.t("page.menu.shop"), "products"
     category = params[:category]
     check = params[:check]
     query = params[:q]
@@ -49,6 +50,7 @@ class ProductsController < ApplicationController
     @color_images = @product.color_images
     @category = @product.categories.first
     @related_products = @category ? @category.products.sample(4) : Product.all.sample(4)
+    breadcrumb I18n.t("page.menu.shop"), "products"
     breadcrumb @category.name, "?category=#{@category.slug}"
     breadcrumb @product.title, "#{@product.slug}"
     meta_data(
@@ -67,7 +69,6 @@ class ProductsController < ApplicationController
   end
 
   def set_bread
-    breadcrumb I18n.t("page.menu.shop"), ""
   end
 
   def set_menu
