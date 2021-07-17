@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :set_cart
   before_action :set_fav
   before_action :set_categories
+  before_action :set_breadcrum
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
@@ -41,6 +42,10 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     { :locale => I18n.locale }
+  end
+
+  def set_breadcrum
+    add_breadcrumb I18n.t("page.menu.home"), store_path
   end
 
   def set_categories

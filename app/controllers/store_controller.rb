@@ -12,10 +12,12 @@ class StoreController < ApplicationController
   end
 
   def about
+    breadcrumb I18n.t("page.menu.about_us"), thoi_trang_ton_vinh_phu_nu_path
     @menu = 'about'
   end
 
   def find_us
+    breadcrumb I18n.t("page.menu.find_us"), lien_he_path
     @menu = 'findus'
   end
 

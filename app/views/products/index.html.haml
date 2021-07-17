@@ -9,6 +9,7 @@
       = @category.description
 .sec-banner.bg0.p-t-80.p-b-50{:class => (@category ? 'product-index' : 'main-page') }
   .container
+    = render_breadcrumbs :separator => ' / '
     .alert
       - flash.each do |key, value|
         = content_tag :div, value, class: "alert alert-#{key}" unless key == 'pixel'
