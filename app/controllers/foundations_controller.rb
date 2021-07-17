@@ -3,7 +3,7 @@ class FoundationsController < ApplicationController
   before_action :set_menu
 
   def index
-    breadcrumb I18n.t("page.menu.foundation"), "/#{I18n.locale}/foundations"
+    breadcrumb I18n.t("page.menu.foundation"), "#{I18n.locale}/foundations"
     category = params[:category]
     if category.present?
       @cat = true
