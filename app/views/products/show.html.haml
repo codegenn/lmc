@@ -2,6 +2,7 @@
   = @product.title
 %section.sec-product-detail.bg0.p-t-65.p-b-60.main-page
   .container
+    = render_breadcrumbs :separator => ' / '
     .alert
     .row
       .col-md-7.col-lg-7.p-b-30
@@ -235,6 +236,7 @@
         "priceCurrency": "VND",
         "price": "#{number_with_delimiter(@product.price.to_i, :delimiter => '.')}",
         "itemCondition": "https://www.lmcation.com/vi/products/#{@product.slug}",
-        "availability": "https://www.lmcation.com/vi/products/#{@product.slug}"
+        "availability": "https://www.lmcation.com/vi/products/#{@product.slug}",
+        "priceValidUntil": "2021-01-01"
       }
     }

@@ -4,6 +4,8 @@
   = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/lmcation+banner+7.jpg', alt:"Liên Hệ"
   %h1.ltext-105.cl0.txt-center.title
     = I18n.t "page.menu.find_us"
+.container
+  = render_breadcrumbs :separator => ' / '
 %section.bg0.p-t-104.p-b-116
   .container
     .flex-w.flex-tr
