@@ -67,7 +67,7 @@ class ProductsController < ApplicationController
   end
 
   def set_bread
-    breadcrumb I18n.t("page.menu.shop"), "products"
+    breadcrumb I18n.t("page.menu.shop"), ""
   end
 
   def set_menu
