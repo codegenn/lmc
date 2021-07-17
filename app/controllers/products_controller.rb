@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
       @keyword = I18n.t("keyword_sport") unless category.include?("do-mac-nha-do-ngu")
       @category = Category.friendly.find(category)
       @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
-      breadcrumb @category.name, "#{I18n.locale}/products/?category=#{@category.name}"
+      breadcrumb @category.name, "products/?category=#{@category.slug}"
     elsif check.present?
       @products = Product.send(check.to_sym).active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
       @check = true
@@ -49,8 +49,8 @@ class ProductsController < ApplicationController
     @color_images = @product.color_images
     @category = @product.categories.first
     @related_products = @category ? @category.products.sample(4) : Product.all.sample(4)
-    breadcrumb @category.name, "#{I18n.locale}/products/?category=#{@category.name}"
-    breadcrumb @product.title, "#{I18n.locale}/products/#{@product.title}"
+    breadcrumb @category.name, "products/?category=#{@category.slug}"
+    breadcrumb @product.title, "products/#{@product.slug}"
     meta_data(
       @product.title,
       @product.description,
@@ -67,7 +67,7 @@ class ProductsController < ApplicationController
   end
 
   def set_bread
-    breadcrumb I18n.t("page.menu.shop"), "#{I18n.locale}/products"
+    breadcrumb I18n.t("page.menu.shop"), "products"
   end
 
   def set_menu
