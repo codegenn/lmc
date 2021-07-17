@@ -50,9 +50,9 @@ class ProductsController < ApplicationController
     @color_images = @product.color_images
     @category = @product.categories.first
     @related_products = @category ? @category.products.sample(4) : Product.all.sample(4)
-    breadcrumb I18n.t("page.menu.shop"), "products"
-    breadcrumb @category.name, "?category=#{@category.slug}"
-    breadcrumb @product.title, "#{@product.slug}"
+    breadcrumb(I18n.t("page.menu.shop"), "https://www.lmcation.com/vi/products")
+    breadcrumb(@category.name, "https://www.lmcation.com/vi/products?category=#{@category.slug}")
+    breadcrumb(@product.title, "#{@product.slug}")
     meta_data(
       @product.title,
       @product.description,
