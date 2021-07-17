@@ -12,17 +12,21 @@ class StoreController < ApplicationController
   end
 
   def about
+    breadcrumb I18n.t("page.menu.about_us"), thoi_trang_ton_vinh_phu_nu_path.to_s
     @menu = 'about'
   end
 
   def find_us
+    breadcrumb I18n.t("page.menu.find_us"), lien_he_path.to_s
     @menu = 'findus'
   end
 
   def privacy
+    breadcrumb I18n.t("page.privacy.privacy"), privacy_path.to_s
   end
 
   def policy
+    breadcrumb I18n.t("page.index.return"), policy_path.to_s
   end
 
   def ping
