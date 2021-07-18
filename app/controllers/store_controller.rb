@@ -23,6 +23,7 @@ class StoreController < ApplicationController
 
   def privacy
     breadcrumb I18n.t("page.privacy.privacy"), "https://www.lmcation.com/vi/privacy"
+  end
 
   def policy
     breadcrumb I18n.t("page.index.return"), "https://www.lmcation.com/vi/policy"
