@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :set_cart
   before_action :set_fav
   before_action :set_categories
-  before_action :set_breadcrum
+  before_action :set_breadcrum, :arr_bread
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
@@ -46,6 +46,11 @@ class ApplicationController < ActionController::Base
 
   def set_breadcrum
     add_breadcrumb I18n.t("page.menu.home"), store_path
+  end
+
+
+  def arr_bread
+    @data_bread = [{name: I18n.t("page.menu.home"), item: "https://www.lmcation.com/#{I18n.locale}"}]
   end
 
   def set_categories

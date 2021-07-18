@@ -12,7 +12,11 @@ class StoreController < ApplicationController
   end
 
   def about
-    breadcrumb I18n.t("page.menu.about_us"), "https://www.lmcation.com/vi/thoi-trang-ton-vinh-phu-nu"
+    name = I18n.t("page.menu.about_us")
+    item = "https://www.lmcation.com/vi/thoi-trang-ton-vinh-phu-nu"
+    @data_bread.push({name: name, item: item})
+    list_bread(@data_bread)
+    breadcrumb(name, item)
     @menu = 'about'
   end
 
@@ -31,5 +35,25 @@ class StoreController < ApplicationController
 
   def ping
     render :text => "PONG!"
+  end
+
+  private
+
+  def list_bread(arr_bread)
+    list_items = []
+    arr_bread.each_with_index do |v, i|
+      list_items.push({
+        "@type": "ListItem",
+        "position": (i+1).to_i,
+        "name": v[:name],
+        "item": v[:item]
+      })
+    end
+
+    @datas = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": list_items
+    }.to_json
   end
 end
