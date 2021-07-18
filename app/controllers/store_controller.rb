@@ -21,16 +21,28 @@ class StoreController < ApplicationController
   end
 
   def find_us
-    breadcrumb I18n.t("page.menu.find_us"), "https://www.lmcation.com/vi/lien-he"
+    name = I18n.t("page.menu.find_us")
+    item = "https://www.lmcation.com/vi/lien-he"
+    @data_bread.push({name: name, item: item})
+    list_bread(@data_bread)
+    breadcrumb(name, item)
     @menu = 'findus'
   end
 
   def privacy
-    breadcrumb I18n.t("page.privacy.privacy"), "https://www.lmcation.com/vi/privacy"
+    name = I18n.t("page.privacy.privacy")
+    item = "https://www.lmcation.com/vi/privacy"
+    @data_bread.push({name: name, item: item})
+    list_bread(@data_bread)
+    breadcrumb(name, item)
   end
 
   def policy
-    breadcrumb I18n.t("page.index.return"), "https://www.lmcation.com/vi/policy"
+    name = I18n.t("page.index.return")
+    item = "https://www.lmcation.com/vi/policy"
+    @data_bread.push({name: name, item: item})
+    list_bread(@data_bread)
+    breadcrumb(name, item)
   end
 
   def ping
