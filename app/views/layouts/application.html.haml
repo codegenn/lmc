@@ -12,8 +12,13 @@
     %meta{property: "og:image", content: @image.present? ? @image : "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png" }/
     %meta{property: "og:url", content: @url.present? ? @url : "https://www.lmcation.com/" }/
     %meta{property: "og:error", content: "LMCATION" }/
-    %meta{name: "title", content: @title.present? ? @title : "LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ" }/
-    %meta{name: "description", content: @description.present? ? @description : "LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ" }/
+    %meta{name:"twitter:title", content: @title.present? ? @title : "LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ" }/
+    %meta{name:"twitter:description", content: @description.present? ? @description : "Đồ Mặc Nhà - Đồ Ngủ, Gym-to-Swim, Đồ Bơi, Đồ Thể Thao" }/
+    %meta{name:"twitter:image" , content: @image.present? ? @image : "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png" }/
+    %meta{name:"twitter:site", content: @url.present? ? @url : "https://www.lmcation.com/" }/
+    %meta{name:"twitter:card", content: "LMCATION" }/
+    %meta{name: "title", content: @title.present? ? @title : "LMcation - Thương hiệu thời trang truyền cảm hứng và trao quyền cho cộng đồng phụ nữ thông qua bộ sưu tập các sản phẩm đồ mặc nhà, đồ ngủ, đồ tập và đồ bơi." }/
+    %meta{name: "description", content: @description.present? ? @description : "LMcation - Thương hiệu thời trang truyền cảm hứng và trao quyền cho cộng đồng phụ nữ thông qua bộ sưu tập các sản phẩm đồ mặc nhà, đồ ngủ, đồ tập và đồ bơi." }/
     %meta{name: "image", content: @image.present? ? @image : "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png" }/
     %meta{name: "url", content: @url.present? ? @url : "https://www.lmcation.com/" }/
     %meta{name: "keywords", content: @keyword.present? ? @keyword : (I18n.t("keyword") << "," << I18n.t("keyword_sport")) }/
@@ -195,13 +200,13 @@
               = I18n.t "page.footer.help"
             %ul
               %li.p-b-10
-                %a.stext-107.cl7.hov-cl1.trans-04{ :href => policy_path }
+                %a.stext-107.cl7.hov-cl1.trans-04{ :href => policy_path, hreflang: "#{I18n.locale}" }
                   = I18n.t "page.index.return"
               %li.p-b-10
-                %a.stext-107.cl7.hov-cl1.trans-04{ :href => trackings_path }
+                %a.stext-107.cl7.hov-cl1.trans-04{ :href => trackings_path, hreflang: "#{I18n.locale}" }
                   = I18n.t "page.tracking.tracking"
               %li.p-b-10
-                %a.stext-107.cl7.hov-cl1.trans-04{ :href => privacy_path }
+                %a.stext-107.cl7.hov-cl1.trans-04{ :href => privacy_path, hreflang: "#{I18n.locale}" }
                   = I18n.t "page.privacy.privacy"
             -#  %li.p-b-10
             -#    %a.stext-107.cl7.hov-cl1.trans-04{:href => "#"}
@@ -212,9 +217,9 @@
             %p.stext-107.cl7.size-201
               = I18n.t "page.footer.get_in_touch_content"
             .p-t-27
-              %a.fs-18.cl7.hov-cl1.trans-04.m-r-16{:href => "http://www.facebook.com/lmcation"}
+              %a.fs-18.cl7.hov-cl1.trans-04.m-r-16{:href => "http://www.facebook.com/lmcation", hreflang: "#{I18n.locale}"}
                 %i.fa.fa-facebook
-              %a.fs-18.cl7.hov-cl1.trans-04.m-r-16{:href => "http://www.instagram.com/lmcation"}
+              %a.fs-18.cl7.hov-cl1.trans-04.m-r-16{:href => "http://www.instagram.com/lmcation", hreflang: "#{I18n.locale}"}
                 %i.fa.fa-instagram
           .col-sm-6.col-lg-3.p-b-50
             %h4.stext-301.cl0.p-b-30
@@ -228,16 +233,16 @@
                 = submit_tag I18n.t("page.footer.subscribe"), class: 'flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04'
         .p-t-40
           .flex-c-m.flex-w.p-b-18
-            %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-01.png", title: "icon-pay-01", class: "Sirv", alt:"Payment method"
-            %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-02.png", title: "icon-pay-02", class: "Sirv", alt:"Payment method"
-            %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-03.png", title: "icon-pay-03", class: "Sirv", alt:"Payment method"
-            %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-04.png", title: "icon-pay-04", class: "Sirv", alt:"Payment method"
-            %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-05.png", title: "icon-pay-05", class: "Sirv", alt:"Payment method"
+            %a.m-all-1{:href => "#", hreflang: "#{I18n.locale}"}
+              = image_tag "icons/icon-pay-01.png", title: "icon-pay-01", class: "Sirv", alt:"Payment method", title: "Payment method"
+            %a.m-all-1{:href => "#", hreflang: "#{I18n.locale}"}
+              = image_tag "icons/icon-pay-02.png", title: "icon-pay-02", class: "Sirv", alt:"Payment method", title: "Payment method"
+            %a.m-all-1{:href => "#", hreflang: "#{I18n.locale}"}
+              = image_tag "icons/icon-pay-03.png", title: "icon-pay-03", class: "Sirv", alt:"Payment method", title: "Payment method"
+            %a.m-all-1{:href => "#", hreflang: "#{I18n.locale}"}
+              = image_tag "icons/icon-pay-04.png", title: "icon-pay-04", class: "Sirv", alt:"Payment method", title: "Payment method"
+            %a.m-all-1{:href => "#", hreflang: "#{I18n.locale}"}
+              = image_tag "icons/icon-pay-05.png", title: "icon-pay-05", class: "Sirv", alt:"Payment method", title: "Payment method"
           %p.stext-107.cl6.txt-center
             COPYRIGHT © 2020 LMCATION
             %br
@@ -250,10 +255,10 @@
         / Modal content
         .modal-content-desktop
           %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/140924607_419908412547009_4057087241630477945_n.webp', class: 'img-responsive Sirv', loading: "lazy", alt: "lmcation discount"
+          = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/140924607_419908412547009_4057087241630477945_n.webp', class: 'img-responsive Sirv', loading: "lazy", alt: "lmcation discount", title: "Payment method"
         .modal-content-mobile
           %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/ND.webp', class: 'img-responsive Sirv', loading: "lazy", alt: "lmcation discount"
+          = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/ND.webp', class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
     / Global site tag (gtag.js) - Google Analytics
     %script{src:"https://scripts.sirv.com/sirv.js", defer: :true}
     %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-164577749-1", defer: :true}
