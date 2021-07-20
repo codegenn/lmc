@@ -983,6 +983,8 @@ GEM
     breadcrumbs_on_rails (3.0.1)
     builder (3.2.4)
     byebug (11.1.1)
+    canonical-rails (0.2.11)
+      rails (>= 4.1, < 6.2)
     climate_control (0.2.0)
     cloudinary (1.13.2)
       aws_cf_signer
@@ -1235,6 +1237,7 @@ DEPENDENCIES
   aws-sdk
   breadcrumbs_on_rails
   byebug
+  canonical-rails
   cloudinary
   coffee-rails (~> 4.1.0)
   delayed_job_active_record

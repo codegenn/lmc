@@ -26,6 +26,7 @@ gem 'haml-rails'
 gem 'mimemagic', '0.3.8'
 gem 'redis-rails'
 gem "breadcrumbs_on_rails"
+gem 'canonical-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
