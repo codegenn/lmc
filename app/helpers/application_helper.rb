@@ -30,4 +30,23 @@ module ApplicationHelper
   def breadcrumb(title, url)
     add_breadcrumb title, url
   end
+
+
+  def list_bread(arr_bread)
+    list_items = []
+    arr_bread.each_with_index do |v, i|
+      list_items.push({
+        "@type": "ListItem",
+        "position": (i+1).to_i,
+        "name": v[:name],
+        "item": v[:item]
+      })
+    end
+
+    @datas = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": list_items
+    }.to_json
+  end
 end

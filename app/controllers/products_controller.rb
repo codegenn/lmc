@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
 
   def index
     breadcrumb I18n.t("page.menu.shop"), "products"
+    @data_bread.push({name: I18n.t("page.menu.shop"), item: "https://www.lmcation.com/#{I18n.locale}/products"})
     category = params[:category]
     check = params[:check]
     query = params[:q]
@@ -15,6 +16,7 @@ class ProductsController < ApplicationController
       @category = Category.friendly.find(category)
       @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
       breadcrumb @category.name, "?category=#{@category.slug}"
+      @data_bread.push({name: @category.name, item: "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}"})
     elsif check.present?
       @products = Product.send(check.to_sym).active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
       @check = true
@@ -33,7 +35,7 @@ class ProductsController < ApplicationController
     else
       @products = Product.main_page @cats
     end
-
+    list_bread(@data_bread)
     meta_data(
       "Đồ Mặc Nhà - Đồ Ngủ, Gym-to-Swim, Đồ Bơi, Đồ Thể Thao",
       "Đồ Mặc Nhà - Đồ Ngủ, Gym-to-Swim, Đồ Bơi, Đồ Thể Thao",
@@ -50,9 +52,13 @@ class ProductsController < ApplicationController
     @color_images = @product.color_images
     @category = @product.categories.first
     @related_products = @category ? @category.products.sample(4) : Product.all.sample(4)
-    breadcrumb(I18n.t("page.menu.shop"), "https://www.lmcation.com/vi/products")
-    breadcrumb(@category.name, "https://www.lmcation.com/vi/products?category=#{@category.slug}")
-    breadcrumb(@product.title, "#{@product.slug}")
+    breadcrumb(I18n.t("page.menu.shop"), "https://www.lmcation.com/#{I18n.locale}/products")
+    breadcrumb(@category.name, "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}")
+    breadcrumb(@product.title, "https://www.lmcation.com/#{I18n.locale}/#{@product.slug}")
+    @data_bread.push({name: I18n.t("page.menu.shop"), item: "https://www.lmcation.com/#{I18n.locale}/products"})
+    @data_bread.push({name: @category.name, item: "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}"})
+    @data_bread.push({name: @product.title, item: "https://www.lmcation.com/#{I18n.locale}/#{@product.slug}"})
+    list_bread(@data_bread)
     meta_data(
       @product.title,
       @product.description,

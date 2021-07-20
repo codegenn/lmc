@@ -136,6 +136,7 @@
                     .block2-txt-promo.flex-col-l.bor10
                       %span.mtext-103.cl3.promotion
                         = product.promotion
+= render "layouts/seo_bread", datas: @datas              
 :javascript
   function checkcolor(){
     var color = '\\b(' + $('#size').find(':selected').data('color-src') + ')\\b'
