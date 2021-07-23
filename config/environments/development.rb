@@ -70,4 +70,6 @@ Rails.application.configure do
       s3_region: "ap-southeast-1"
     }
   }
+
+  config.static_cache_control = "public, max-age=3600"
 end

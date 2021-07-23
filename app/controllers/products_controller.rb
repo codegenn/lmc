@@ -1,14 +1,22 @@
 class ProductsController < ApplicationController
+  include ApplicationHelper
   before_action :set_product, only: [:show]
   before_action :set_menu
+  before_action :set_bread
 
   def index
+    breadcrumb I18n.t("page.menu.shop"), "products"
+    @data_bread.push({name: I18n.t("page.menu.shop"), item: "https://www.lmcation.com/#{I18n.locale}/products"})
     category = params[:category]
     check = params[:check]
     query = params[:q]
+    @keyword = nil
     if category.present?
+      @keyword = I18n.t("keyword_sport") unless category.include?("do-mac-nha-do-ngu")
       @category = Category.friendly.find(category)
       @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
+      breadcrumb @category.name, "?category=#{@category.slug}"
+      @data_bread.push({name: @category.name, item: "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}"})
     elsif check.present?
       @products = Product.send(check.to_sym).active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
       @check = true
@@ -27,22 +35,46 @@ class ProductsController < ApplicationController
     else
       @products = Product.main_page @cats
     end
+    list_bread(@data_bread)
+    meta_data(
+      "Đồ Mặc Nhà - Đồ Ngủ, Gym-to-Swim, Đồ Bơi, Đồ Thể Thao",
+      "Đồ Mặc Nhà - Đồ Ngủ, Gym-to-Swim, Đồ Bơi, Đồ Thể Thao",
+      "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png",
+      "https://www.lmcation.com/#{I18n.locale.to_s}/products",
+      @keyword.nil? ? I18n.t("keyword") : @keyword
+    )
   end
 
   def show
-    @product = Product.friendly.find(params[:id])
     redirect_to products_path if @product.is_hidden
     @stocks = @product.stocks.group_by(&:size)
     @b_stocks = @product.bottom_stocks
-    @size_colors = []
     @color_images = @product.color_images
     @category = @product.categories.first
     @related_products = @category ? @category.products.sample(4) : Product.all.sample(4)
+    breadcrumb(I18n.t("page.menu.shop"), "https://www.lmcation.com/#{I18n.locale}/products")
+    breadcrumb(@category.name, "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}")
+    breadcrumb(@product.title, "https://www.lmcation.com/#{I18n.locale}/#{@product.slug}")
+    @data_bread.push({name: I18n.t("page.menu.shop"), item: "https://www.lmcation.com/#{I18n.locale}/products"})
+    @data_bread.push({name: @category.name, item: "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}"})
+    @data_bread.push({name: @product.title, item: "https://www.lmcation.com/#{I18n.locale}/#{@product.slug}"})
+    list_bread(@data_bread)
+    meta_data(
+      @product.title,
+      @product.description,
+      @product.product_images.first.try(:image_url),
+      product_path(@product.slug),
+      I18n.t("keyword") << "," << I18n.t("keyword_sport")
+    )
   end
 
   private
+
   def set_product
-    @product = Product.find_by_id(params[:id])
+    @product = Product.friendly.find(params[:id])
+  end
+
+  def set_bread
   end
 
   def set_menu

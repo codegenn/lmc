@@ -1,7 +1,11 @@
+= content_for :title do
+  Giới Thiệu
 .main-page.bg-img1.txt-center.p-lr-15.p-tb-92.banner-bg
-  = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/lmcation+banner+5.jpg'
-  %h2.ltext-105.cl0.txt-center.title.about-header
+  = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/lmcation+banner+5.jpg', alt: "Giới Thiệu"
+  %h1.ltext-105.cl0.txt-center.title.about-header
     = I18n.t "page.about_us.about_us"
+.container
+  = render_breadcrumbs :separator => ' / '
 .sec-banner.bg0.p-t-81.p-b-50
   .container
     .row.p-b-70
@@ -54,3 +58,4 @@
         .how-bor2
           .hov-img0
             = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/new+arrivals.jpg'
+= render "layouts/seo_bread", datas: @datas

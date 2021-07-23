@@ -175,6 +175,10 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 
+.img-height {
+  min-height: 30px !important;
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ Header ]*/
 
@@ -2114,6 +2118,13 @@ input.num-product::-webkit-inner-spin-button {
 [ Block2 ]*/
 .block2-pic {
   position: relative;
+}
+
+.text-wrap-split {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 90%;
 }
 
 .block2-btn {

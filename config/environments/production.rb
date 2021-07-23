@@ -13,6 +13,12 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
+  config.cache_store = :redis_store, {
+    expires_in: 30.days,
+    namespace: 'cache',
+    redis: { host: 'redis-15566.c278.us-east-1-4.ec2.cloud.redislabs.com:15566', port: 6379, db: 0 },
+    }
+
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
@@ -106,4 +112,6 @@ Rails.application.configure do
       s3_region: Rails.application.secrets.s3_region
     }
   }
+
+  config.static_cache_control = "public, max-age=31536000"
 end

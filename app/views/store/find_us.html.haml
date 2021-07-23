@@ -1,7 +1,11 @@
+= content_for :title do
+  Liên Hệ
 .main-page.bg-img1.txt-center.p-lr-15.p-tb-92.banner-bg
-  = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/lmcation+banner+7.jpg'
-  %h2.ltext-105.cl0.txt-center.title
+  = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/lmcation+banner+7.jpg', alt:"Liên Hệ"
+  %h1.ltext-105.cl0.txt-center.title
     = I18n.t "page.menu.find_us"
+.container
+  = render_breadcrumbs :separator => ' / '
 %section.bg0.p-t-104.p-b-116
   .container
     .flex-w.flex-tr
@@ -45,3 +49,4 @@
               = I18n.t "page.find_us.support"
             %p.stext-115.cl1.size-213.p-t-18
               info@lmcation.com
+= render "layouts/seo_bread", datas: @datas

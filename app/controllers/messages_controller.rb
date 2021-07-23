@@ -8,6 +8,6 @@ class MessagesController < ApplicationController
     else
       flash[:danger] = @message.errors.full_messages.to_sentence
     end
-    redirect_to store_find_us_path
+    redirect_to lien_he_path
   end
 end
