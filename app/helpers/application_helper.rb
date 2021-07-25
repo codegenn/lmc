@@ -49,4 +49,8 @@ module ApplicationHelper
       "itemListElement": list_items
     }.to_json
   end
+
+  def cdn_url
+    "https://d1monvl96vvqbd.cloudfront.net"
+  end
 end
