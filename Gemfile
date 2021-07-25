@@ -49,7 +49,7 @@ group :development, :test do
 end
 
 gem 'rack-mini-profiler'
-
+gem "s3"
 group :production do
   gem 'rails_12factor'
 end

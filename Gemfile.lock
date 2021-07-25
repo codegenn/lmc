@@ -59,6 +59,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
     arbre (1.2.1)
       activesupport (>= 3.0.0)
     arel (6.0.4)
@@ -1102,11 +1104,13 @@ GEM
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
     pg (0.21.0)
+    proxies (0.2.3)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     pry-nav (0.3.0)
       pry (>= 0.9.10, < 0.13.0)
+    public_suffix (4.0.6)
     rack (1.6.13)
     rack-mini-profiler (2.3.2)
       rack (>= 1.2.0)
@@ -1180,6 +1184,9 @@ GEM
       netrc (~> 0.8)
     ruby_parser (3.14.2)
       sexp_processor (~> 4.9)
+    s3 (0.3.29)
+      addressable
+      proxies
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -1256,6 +1263,7 @@ DEPENDENCIES
   rails (= 4.2.8)
   rails_12factor
   redis-rails
+  s3
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

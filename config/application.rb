@@ -22,11 +22,11 @@ module LmcationProject
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.paths << Rails.root.join("app", "assets")
     I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
     config.i18n.available_locales = [:en, :vi]
     config.i18n.default_locale = :vi
-    config.active_job.queue_adapter = :delayed_job
+    config.active_job.queue_adapter = :delayed_job 
     config.exceptions_app = self.routes
   end
 end

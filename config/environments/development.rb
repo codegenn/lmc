@@ -21,11 +21,12 @@ Rails.application.configure do
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
+  config.action_controller.asset_host = 'https://lmcation.s3.ap-southeast-1.amazonaws.com'
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = true
+  # config.assets.debug = true
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
@@ -61,7 +62,9 @@ Rails.application.configure do
     # path: ':filename',
     # cloudinary_credentials: Rails.root.join("config/cloudinary.yml"),
     storage: :s3,
-    url: ':s3_domain_url',
+    s3_protocol: :https,
+    url: ':s3_alias_url',
+    s3_host_alias: "d1monvl96vvqbd.cloudfront.net",
     path: '/:class/:attachment/:id_partition/:style/:filename',
     s3_credentials: {
       bucket: "lmcation",

@@ -8850,37 +8850,37 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 [ FONT ]*/
 @font-face {
   font-family: Elkwood;
-  src: url(/assets/barkentina/Barkentinanew-cecc9e36c32025962c9011f7b2ec8105d7a7a5d1d921e0a6e2b804a0c72f6ceb.ttf) format("opentype");
+  src: url(https://d1monvl96vvqbd.cloudfront.net/assets/fonts/barkentina/Barkentinanew.ttf) format("opentype");
 }
 @font-face {
   font-family: Gotham-Book;
-  src: url(/assets/barkentina/Barkentinanew-cecc9e36c32025962c9011f7b2ec8105d7a7a5d1d921e0a6e2b804a0c72f6ceb.ttf) format("opentype");
+  src: url(https://d1monvl96vvqbd.cloudfront.net/assets/fonts/barkentina/Barkentinanew.ttf) format("opentype");
 }
 @font-face {
   font-family: Gotham-Light;
-  src: url(/assets/barkentina/Barkentinanew-cecc9e36c32025962c9011f7b2ec8105d7a7a5d1d921e0a6e2b804a0c72f6ceb.ttf) format("opentype");
+  src: url(https://d1monvl96vvqbd.cloudfront.net/assets/fonts/barkentina/Barkentinanew.ttf) format("opentype");
 }
 @font-face {
   font-family: Gotham-Medium;
-  src: url(/assets/barkentina/Barkentinanew-cecc9e36c32025962c9011f7b2ec8105d7a7a5d1d921e0a6e2b804a0c72f6ceb.ttf) format("opentype");
+  src: url(https://d1monvl96vvqbd.cloudfront.net/assets/fonts/barkentina/Barkentinanew.ttf) format("opentype");
 }
 @font-face {
   font-family: vacation;
-  src: url(/assets/Gotham/vacation-8470abb9a9ef332e5ce026936fdcc4bfe78799436f50dfdbec4b9fc75ffc86d7.ttf) format("opentype");
+  src: url(https://d1monvl96vvqbd.cloudfront.net/assets/fonts/Gotham/vacation.ttf) format("opentype");
 }
 /*---------------------------------------------*/
 @font-face {
   font-family: PlayfairDisplay-Regular;
-  src: url(/assets/PlayfairDisplay/PlayfairDisplay-Regular-8252dedbc1fa558c3e193ffc7fc69e1b249802d297017711ca0ef77c8ed7c52d.ttf);
+  src: url(https://d1monvl96vvqbd.cloudfront.net/assets/fonts/PlayfairDisplay/PlayfairDisplay-Regular.ttf);
 }
 @font-face {
   font-family: PlayfairDisplay-Bold;
-  src: url(/assets/PlayfairDisplay/PlayfairDisplay-Bold-d518dd71ea63b10313a9cc127a47ac583f585e68bd6c084167ba223b4db240c4.ttf);
+  src: url(https://d1monvl96vvqbd.cloudfront.net/assets/fonts/PlayfairDisplay/PlayfairDisplay-Bold.ttf);
 }
 /*---------------------------------------------*/
 @font-face {
   font-family: Montserrat-Regular;
-  src: url(/assets/Montserrat/Montserrat-Regular-d104de3cd2bcab4493c69f0456c5e423e143fa86ddd13439f1839740e1f479dd.ttf);
+  src: url(https://d1monvl96vvqbd.cloudfront.net/assets/fonts/Montserrat/Montserrat-Regular.ttf);
 }
 /*//////////////////////////////////////////////////////////////////
 [ RS PLUGIN ]*/
@@ -8985,11 +8985,16 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     right: 15px;
   }
 }
+/* line 179, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+.img-height {
+  min-height: 30px !important;
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ Header ]*/
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 [ Header Desktop ]*/
-/* line 185, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 189, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .container-menu-desktop {
   height: auto;
   width: 100%;
@@ -9000,31 +9005,31 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: all 0.3s;
 }
 
-/* line 195, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 199, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-v2 .container-menu-desktop {
   height: 84px;
 }
 
-/* line 199, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 203, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-v3 .container-menu-desktop {
   height: auto;
 }
 
-/* line 203, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 207, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-v4 .container-menu-desktop {
   height: 124px;
 }
 
 /*==================================================================
 [ Top bar ]*/
-/* line 210, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 214, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .top-bar {
   height: 40px;
   background-color: #222;
 }
 
 /*---------------------------------------------*/
-/* line 216, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 220, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .left-top-bar {
   font-family: Gotham-Book;
   font-size: 12px;
@@ -9033,7 +9038,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 /*---------------------------------------------*/
-/* line 225, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 229, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .right-top-bar a {
   font-family: Gotham-Book;
   font-size: 12px;
@@ -9043,18 +9048,18 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   border-right: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* line 235, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 239, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .right-top-bar a:first-child {
   border-left: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* line 239, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 243, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .right-top-bar a:hover {
   color: #6c7ae0;
 }
 
 /*---------------------------------------------*/
-/* line 245, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 249, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .topbar-mobile li {
   padding: 8px 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -9063,7 +9068,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*==================================================================
 [ Menu ]*/
-/* line 256, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 260, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-menu-desktop {
   position: fixed;
   z-index: 101;
@@ -9078,26 +9083,26 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: height 0.3s, background-color 0.3s;
 }
 
-/* line 271, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 275, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-v2 .wrap-menu-desktop {
   background-color: #fff;
   top: 0;
 }
 
-/* line 276, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 280, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-v3 .wrap-menu-desktop {
   background-color: transparent;
   top: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* line 282, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 286, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-v4 .wrap-menu-desktop {
   background-color: #fff;
 }
 
 /*---------------------------------------------*/
-/* line 288, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 292, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .limiter-menu-desktop {
   height: 100%;
   display: -webkit-box;
@@ -9111,14 +9116,14 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*------------------------------------------------------------------
 [ Logo ]*/
-/* line 303, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 307, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .logo {
   height: 100%;
   left: 45%;
   position: absolute;
 }
 
-/* line 309, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 313, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .logo img {
   max-width: 100%;
   max-height: 100%;
@@ -9126,7 +9131,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*------------------------------------------------------------------
 [ Menu ]*/
-/* line 319, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 323, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .menu-desktop {
   display: -webkit-box;
   display: -webkit-flex;
@@ -9137,7 +9142,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   height: 100%;
 }
 
-/* line 329, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 333, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .main-menu {
   list-style-type: none;
   margin: 0;
@@ -9149,7 +9154,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   align-items: center;
 }
 
-/* line 341, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 345, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .main-menu > li {
   display: block;
   position: relative;
@@ -9157,7 +9162,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   margin: 0px 4px 0px 14px;
 }
 
-/* line 348, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 352, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .main-menu > li > a {
   font-family: Gotham-Medium;
   font-size: 14px;
@@ -9169,13 +9174,13 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   -moz-transition: all 0.4s;
 }
 
-/* line 359, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 363, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-v3 .main-menu > li > a {
   color: #fff;
 }
 
 /*---------------------------------------------*/
-/* line 364, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 368, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .sub-menu {
   list-style-type: none;
   position: absolute;
@@ -9198,7 +9203,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   opacity: 0;
 }
 
-/* line 388, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 392, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .sub-menu li {
   position: relative;
   background-color: transparent;
@@ -9208,13 +9213,13 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   -moz-transition: all 0.4s;
 }
 
-/* line 398, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 402, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .main-menu > li > .sub-menu {
   top: 100%;
   left: 0;
 }
 
-/* line 403, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 407, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .sub-menu a {
   font-family: Gotham-Book;
   font-size: 14px;
@@ -9230,43 +9235,43 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 /*---------------------------------------------*/
-/* line 420, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 424, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .main-menu > li:hover > a {
   text-decoration: none;
   color: #6c7ae0;
 }
 
-/* line 425, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 429, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .main-menu > li:hover > .sub-menu {
   visibility: visible;
   opacity: 1;
 }
 
-/* line 430, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 434, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .sub-menu li:hover > .sub-menu {
   visibility: visible;
   opacity: 1;
 }
 
-/* line 435, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 439, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .sub-menu li:hover {
   background-color: transparent;
 }
 
-/* line 439, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 443, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .sub-menu > li:hover > a {
   color: #6c7ae0;
   text-decoration: none;
 }
 
 @media (max-width: 1300px) {
-  /* line 445, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 449, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .main-menu > .respon-sub-menu .sub-menu {
     right: 100%;
     left: auto;
   }
 
-  /* line 450, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 454, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .main-menu > .respon-sub-menu > .sub-menu {
     right: 0px;
     left: auto;
@@ -9274,12 +9279,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 /*------------------------------------------------------------------
 [ Icon header ]*/
-/* line 459, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 463, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-icon-header {
   flex-grow: 1;
 }
 
-/* line 463, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 467, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .icon-header-item {
   position: relative;
   font-size: 26px;
@@ -9288,7 +9293,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 /*---------------------------------------------*/
-/* line 472, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 476, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .icon-header-noti::after {
   content: attr(data-notify);
   font-family: Gotham-Book;
@@ -9307,14 +9312,14 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 /*---------------------------------------------*/
-/* line 491, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 495, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-header-mobile .wrap-icon-header {
   flex-grow: unset;
 }
 
 /*------------------------------------------------------------------
 [ Modal search ]*/
-/* line 498, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 502, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .modal-search-header {
   position: fixed;
   z-index: 2000;
@@ -9326,12 +9331,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   padding: 50px 15px 100px 15px;
 }
 
-/* line 509, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 513, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .show-modal-search {
   bottom: 0;
 }
 
-/* line 513, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 517, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .container-search-header {
   width: auto;
   max-width: 100%;
@@ -9339,7 +9344,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 /*---------------------------------------------*/
-/* line 520, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 524, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .btn-hide-modal-search {
   position: absolute;
   padding: 5px;
@@ -9348,12 +9353,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   opacity: 0.8;
 }
 
-/* line 528, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 532, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .btn-hide-modal-search:hover {
   opacity: 1;
 }
 
-/* line 532, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 536, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-search-header {
   width: 960px;
   max-width: 100%;
@@ -9363,7 +9368,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 /*---------------------------------------------*/
-/* line 541, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 545, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-search-header input {
   font-family: Gotham-Light;
   font-size: 50px;
@@ -9375,7 +9380,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   background-color: transparent;
 }
 
-/* line 553, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 557, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-search-header button {
   font-size: 50px;
   color: #333;
@@ -9383,44 +9388,44 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   height: 100%;
 }
 
-/* line 560, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 564, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-search-header button:hover {
   color: #6c7ae0;
 }
 
 /*---------------------------------------------*/
 @media (max-width: 767px) {
-  /* line 566, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 570, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .wrap-search-header input,
   .wrap-search-header button {
     font-size: 30px;
   }
 
-  /* line 571, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 575, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .wrap-search-header {
     height: 90px;
   }
 }
 @media (max-width: 575px) {
-  /* line 577, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 581, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .wrap-search-header input,
   .wrap-search-header button {
     font-size: 20px;
   }
 
-  /* line 582, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 586, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .wrap-search-header button {
     width: 40px;
   }
 
-  /* line 586, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 590, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .wrap-search-header {
     height: 80px;
   }
 }
 /*==================================================================
 [ Fixed menu desktop ]*/
-/* line 595, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 599, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .fix-menu-desktop .wrap-menu-desktop {
   height: 70px;
   background-color: white;
@@ -9431,31 +9436,31 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   -ms-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
-/* line 605, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 609, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-v2 .fix-menu-desktop.container-menu-desktop {
   height: 70px;
 }
 
-/* line 609, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 613, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-v3 .fix-menu-desktop .wrap-menu-desktop {
   background-color: #222;
   border-color: #222;
 }
 
-/* line 614, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 618, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-v4 .fix-menu-desktop.container-menu-desktop {
   height: 110px;
 }
 
 /*---------------------------------------------*/
-/* line 619, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 623, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .main-menu > li.active-menu > a {
   color: #6c7ae0;
 }
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 [ Header Mobile ]*/
-/* line 627, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 631, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-header-mobile {
   display: -webkit-box;
   display: -webkit-flex;
@@ -9476,7 +9481,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*------------------------------------------------------------------
 [ Logo mobile ]*/
-/* line 648, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 652, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .logo-mobile {
   display: block;
   position: relative;
@@ -9487,7 +9492,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   flex-grow: 1;
 }
 
-/* line 658, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 662, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .logo-mobile img {
   max-width: calc(100% - 20px);
   max-height: 100%;
@@ -9500,7 +9505,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*------------------------------------------------------------------
 [ btn show menu ]*/
-/* line 672, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 676, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hamburger {
   display: -webkit-box;
   display: -webkit-flex;
@@ -9516,19 +9521,19 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transform: scale(0.7);
 }
 
-/* line 687, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 691, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hamburger:hover {
   opacity: 1;
 }
 
-/* line 690, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 694, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .modal-content-mobile {
   display: none;
 }
 
 /*---------------------------------------------*/
 @media (max-width: 991px) {
-  /* line 694, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 698, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .wrap-header-mobile {
     display: -webkit-box;
     display: -webkit-flex;
@@ -9537,38 +9542,38 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     display: flex;
   }
 
-  /* line 701, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 705, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .container-menu-desktop {
     display: none;
   }
 
-  /* line 702, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 706, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .modal-content-desktop {
     display: none;
   }
 
-  /* line 703, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 707, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .modal-content-mobile {
     display: block;
   }
 }
 /*==================================================================
 [ Menu mobile ]*/
-/* line 708, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 712, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .menu-mobile {
   width: 100%;
   background-color: white;
   display: none;
 }
 
-/* line 714, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 718, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .main-menu-m {
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: #717fe0;
 }
 
-/* line 720, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 724, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .main-menu-m > li > a {
   font-family: Gotham-Medium;
   font-size: 14px;
@@ -9577,13 +9582,13 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   padding: 8px 20px 8px 20px;
 }
 
-/* line 728, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 732, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .main-menu-m > li {
   color: white;
   position: relative;
 }
 
-/* line 733, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 737, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .arrow-main-menu-m {
   font-size: 14px;
   color: #fff;
@@ -9601,7 +9606,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   cursor: pointer;
 }
 
-/* line 751, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 755, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .arrow-main-menu-m i {
   transform-origin: center;
   -webkit-transition: all 0.3s;
@@ -9610,7 +9615,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: all 0.3s;
 }
 
-/* line 759, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 763, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .turn-arrow-main-menu-m i {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -9620,14 +9625,14 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 /*---------------------------------------------*/
-/* line 768, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 772, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .sub-menu-m {
   background-color: #fff;
   padding: 10px 15px 10px 32px;
   display: none;
 }
 
-/* line 774, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 778, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .sub-menu-m a {
   font-family: Gotham-Book;
   font-size: 14px;
@@ -9636,21 +9641,21 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   padding: 5px 0 5px 0;
 }
 
-/* line 782, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 786, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .sub-menu-m a:hover {
   text-decoration: none;
   color: #555555;
 }
 
 @media (min-width: 992px) {
-  /* line 788, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 792, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .menu-mobile {
     display: none;
   }
 }
 /*//////////////////////////////////////////////////////////////////
 [ Sidebar ]*/
-/* line 796, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 800, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-sidebar {
   position: fixed;
   z-index: 1100;
@@ -9666,7 +9671,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: all 0.4s;
 }
 
-/* line 812, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 816, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .sidebar {
   position: fixed;
   z-index: 1100;
@@ -9687,25 +9692,25 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   -ms-box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.18);
 }
 
-/* line 834, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 838, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .show-sidebar {
   visibility: visible;
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 839, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 843, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .show-sidebar .sidebar {
   right: 0;
 }
 
 @media (max-width: 991px) {
-  /* line 844, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 848, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .wrap-sidebar {
     display: none;
   }
 }
 /*---------------------------------------------*/
-/* line 850, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 854, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .sidebar-content {
   flex-grow: 1;
   overflow: auto;
@@ -9713,12 +9718,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 /*---------------------------------------------*/
-/* line 857, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 861, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-item-gallery {
   width: calc((100% - 20px) / 3);
 }
 
-/* line 861, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 865, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .item-gallery {
   display: block;
   width: 100%;
@@ -9726,7 +9731,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   position: relative;
 }
 
-/* line 868, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 872, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .item-gallery::after {
   content: "";
   display: block;
@@ -9743,14 +9748,14 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: all 0.4s;
 }
 
-/* line 885, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 889, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .item-gallery:hover:after {
   opacity: 1;
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ Header cart ]*/
-/* line 892, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 896, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-header-cart {
   position: fixed;
   z-index: 1100;
@@ -9766,7 +9771,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: all 0.4s;
 }
 
-/* line 908, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 912, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-cart {
   position: fixed;
   z-index: 1100;
@@ -9787,7 +9792,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   -ms-box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.18);
 }
 
-/* line 930, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 934, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-cart::after {
   content: "";
   display: block;
@@ -9796,19 +9801,19 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   min-height: 30px;
 }
 
-/* line 938, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 942, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .show-header-cart {
   visibility: visible;
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 943, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 947, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .show-header-cart .header-cart {
   right: 0;
 }
 
 /*---------------------------------------------*/
-/* line 948, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 952, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-cart-title {
   width: 350px;
   max-width: 100%;
@@ -9816,20 +9821,20 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   min-height: 85px;
 }
 
-/* line 955, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 959, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-cart-content {
   flex-grow: 1;
   overflow: auto;
   align-content: space-between;
 }
 
-/* line 961, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 965, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-cart-wrapitem {
   flex-grow: 1;
 }
 
 /*---------------------------------------------*/
-/* line 966, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 970, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-cart-item-img {
   width: 60px;
   position: relative;
@@ -9837,12 +9842,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   cursor: pointer;
 }
 
-/* line 973, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 977, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-cart-item-img img {
   width: 100%;
 }
 
-/* line 976, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 980, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-cart-item-img-no-de {
   width: 60px;
   position: relative;
@@ -9850,12 +9855,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   cursor: pointer;
 }
 
-/* line 983, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 987, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-cart-item-img-no-de img {
   width: 100%;
 }
 
-/* line 987, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 991, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-cart-item-img::after {
   content: '\e870';
   font-family: Linearicons-Free;
@@ -9881,18 +9886,18 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   opacity: 0;
 }
 
-/* line 1012, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1016, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-cart-item-img:hover:after {
   opacity: 1;
 }
 
 /*---------------------------------------------*/
-/* line 1017, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1021, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-cart-item-txt {
   width: calc(100% - 80px);
 }
 
-/* line 1021, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1025, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-cart-item-name {
   display: block;
   font-family: Gotham-Book;
@@ -9901,7 +9906,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   line-height: 1.3;
 }
 
-/* line 1029, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1033, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-cart-item-info {
   display: block;
   font-family: Gotham-Book;
@@ -9910,7 +9915,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   line-height: 1.5;
 }
 
-/* line 1037, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1041, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .header-cart-total {
   font-family: Gotham-Book;
   font-size: 18px;
@@ -9920,119 +9925,119 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*-------------------MOBILE VER--------------------------*/
 @media (max-width: 820px) {
-  /* line 1046, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1050, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .header-cart {
     padding: 30px;
   }
 
-  /* line 1050, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1054, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .header-cart-title {
     padding-bottom: 35px;
   }
 
-  /* line 1054, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1058, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .title {
     font-size: 28px !important;
     width: 100%;
     top: 39% !important;
   }
 
-  /* line 1060, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1064, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .description {
     top: 110% !important;
     font-size: 19px !important;
     width: 100%;
   }
 
-  /* line 1066, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1070, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .products-container {
     padding-bottom: 10px !important;
   }
 
-  /* line 1070, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1074, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .sec-product-detail {
     padding-top: 5px !important;
   }
 
-  /* line 1074, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1078, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .foundation-content {
     padding-right: 0 !important;
   }
 
-  /* line 1078, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1082, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .about-header {
     font-size: 20px !important;
   }
 
-  /* line 1081, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1085, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .vision {
     padding-right: 0 !important;
   }
 
-  /* line 1084, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1088, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .value {
     padding-left: 0 !important;
   }
 
-  /* line 1088, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1092, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .shopping-cart-table {
     margin-left: -7px !important;
     margin-right: -20px !important;
   }
 
-  /* line 1093, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1097, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .input-txt {
     width: 100% !important;
   }
 
-  /* line 1097, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1101, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .session-top {
     padding-top: 50px !important;
   }
 
-  /* line 1101, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1105, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-no-padding {
     padding: 10px !important;
   }
 
-  /* line 1105, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1109, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .fav-icon {
     padding-left: 10px !important;
   }
 
-  /* line 1109, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1113, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .wrap-slick3-dots {
     width: 9.1% !important;
     max-height: 366px !important;
   }
 
-  /* line 1114, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1118, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .slick3 {
     width: 84% !important;
   }
 
-  /* line 1118, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1122, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .image_picker_image {
     width: 45px !important;
   }
 }
 /*-------------------IPAD VER--------------------------*/
 @media (max-width: 1200px) and (min-width: 820px) {
-  /* line 1124, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1128, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .wrap-slick3-dots {
     max-height: 645px !important;
   }
 }
 /*//////////////////////////////////////////////////////////////////
 [ Restyle Select2 ]*/
-/* line 1132, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1136, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container {
   display: block;
   max-width: 100% !important;
   width: auto !important;
 }
 
-/* line 1138, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1142, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container .select2-selection--single {
   height: 45px;
   display: -webkit-box;
@@ -10050,7 +10055,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*------------------------------------------------------------------
 [ in select ]*/
-/* line 1155, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1159, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container .select2-selection--single .select2-selection__rendered {
   font-family: Gotham-Book;
   font-size: 13px;
@@ -10060,7 +10065,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   background-color: transparent;
 }
 
-/* line 1164, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1168, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container--default .select2-selection--single .select2-selection__arrow {
   width: 38px;
   height: 20px;
@@ -10076,12 +10081,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   border-left: 1px solid #e6e6e6;
 }
 
-/* line 1179, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1183, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container--default .select2-selection--single .select2-selection__arrow b {
   display: none;
 }
 
-/* line 1183, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1187, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container--default .select2-selection--single .select2-selection__arrow::after {
   content: "\f0dc";
   font-family: FontAwesome;
@@ -10089,14 +10094,14 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   color: #808080;
 }
 
-/* line 1190, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1194, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container--default .select2-selection--single .select2-selection__arrow:hover:after {
   color: #6c7ae0;
 }
 
 /*------------------------------------------------------------------
 [ Dropdown option ]*/
-/* line 1197, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1201, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container--open .select2-dropdown {
   z-index: 1251;
   width: 100%;
@@ -10112,36 +10117,36 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   -ms-box-shadow: 0 3px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
-/* line 1213, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1217, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-dropdown--above {
   top: -2px;
 }
 
-/* line 1214, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1218, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-dropdown--below {
   top: 2px;
 }
 
-/* line 1216, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1220, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container .select2-results__option[aria-selected] {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 20px;
 }
 
-/* line 1222, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1226, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container .select2-results__option[aria-selected="true"] {
   background: #6c7ae0;
   color: white;
 }
 
-/* line 1227, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1231, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-container .select2-results__option--highlighted[aria-selected] {
   background: #6c7ae0;
   color: white;
 }
 
-/* line 1232, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1236, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-results__options {
   font-family: Gotham-Book;
   font-size: 13px;
@@ -10149,7 +10154,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   line-height: 1.2;
 }
 
-/* line 1239, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1243, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs1-select2 .select2-search--dropdown .select2-search__field {
   border: 1px solid #aaa;
   outline: none;
@@ -10161,61 +10166,61 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*------------------------------------------------------------------
 [ rs2 ]*/
-/* line 1250, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1254, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs2-select2 .select2-container .select2-selection--single {
   height: 40px;
 }
 
-/* line 1254, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1258, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs2-select2 .select2-container .select2-selection--single .select2-selection__rendered {
   padding-left: 15px;
 }
 
-/* line 1258, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1262, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs2-select2 .select2-container--default .select2-selection--single .select2-selection__arrow {
   width: 35px;
   right: 0px;
   border-left: none;
 }
 
-/* line 1264, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1268, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs2-select2 .select2-container--default .select2-selection--single .select2-selection__arrow::after {
   content: "\f0d7";
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ Slick1 ]*/
-/* line 1272, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1276, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-slick1 {
   position: relative;
 }
 
-/* line 1276, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1280, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .item-slick1 {
   height: calc(100vh - 40px);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(/images/slide-01.jpg);
+  background-image: url(https://d1monvl96vvqbd.cloudfront.net/images/slide-01.jpg);
 }
 
-/* line 1284, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1288, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs1-slick1 .item-slick1 {
   height: calc(100vh - 84px);
 }
 
-/* line 1288, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1292, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs2-slick1 .item-slick1 {
   height: 100vh;
 }
 
 @media (max-width: 991px) {
-  /* line 1293, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1297, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .item-slick1 {
     height: calc(100vh - 70px) !important;
   }
 }
-/* line 1298, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1302, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .arrow-slick1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10243,51 +10248,51 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: all 0.4s;
 }
 
-/* line 1327, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1331, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-slick1:hover .arrow-slick1 {
   opacity: 1;
 }
 
-/* line 1331, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1335, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .arrow-slick1:hover {
   color: #7280e0;
 }
 
-/* line 1335, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1339, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .next-slick1 {
   right: 50px;
   left: auto;
 }
 
-/* line 1340, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1344, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .prev-slick1 {
   left: 50px;
   right: auto;
 }
 
 @media (max-width: 991px) {
-  /* line 1346, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1350, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .next-slick1 {
     right: 15px;
   }
 
-  /* line 1350, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1354, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .prev-slick1 {
     left: 15px;
   }
 }
 /*---------------------------------------------*/
-/* line 1356, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1360, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs2-slick1 .arrow-slick1 {
   color: rgba(255, 255, 255, 0.3);
 }
 
-/* line 1360, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1364, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .rs2-slick1 .arrow-slick1:hover {
   color: #7280e0;
 }
 
-/* line 1364, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1368, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-slick1-dots {
   position: absolute;
   width: 100%;
@@ -10295,7 +10300,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   bottom: 60px;
 }
 
-/* line 1371, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1375, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .slick1-dots {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10305,7 +10310,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   justify-content: center;
 }
 
-/* line 1380, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1384, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .slick1-dots li {
   max-width: 190px;
   position: relative;
@@ -10313,12 +10318,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   margin-right: 1px;
 }
 
-/* line 1387, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1391, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .slick1-dots li img {
   width: 100%;
 }
 
-/* line 1391, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1395, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .caption-dots-slick1 {
   font-family: Gotham-Light;
   font-size: 16px;
@@ -10346,30 +10351,30 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   opacity: 0;
 }
 
-/* line 1421, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1425, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .slick1-dots li:hover .caption-dots-slick1 {
   opacity: 1;
 }
 
-/* line 1425, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1429, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .slick1-dots li.slick-active .caption-dots-slick1 {
   opacity: 1;
 }
 
 @media (max-width: 575px) {
-  /* line 1430, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1434, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .caption-dots-slick1 {
     font-size: 13px;
   }
 
-  /* line 1434, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1438, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .wrap-slick1-dots {
     bottom: 25px;
   }
 }
 /*//////////////////////////////////////////////////////////////////
 [ Slick2 ]*/
-/* line 1443, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1447, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-slick2 {
   position: relative;
   margin-right: -15px;
@@ -10377,7 +10382,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 /* ------------------------------------ */
-/* line 1450, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1454, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .arrow-slick2 {
   position: absolute;
   z-index: 100;
@@ -10395,41 +10400,41 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: all 0.4s;
 }
 
-/* line 1468, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1472, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .arrow-slick2:hover {
   color: #666;
 }
 
-/* line 1472, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1476, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .next-slick2 {
   right: -40px;
 }
 
-/* line 1476, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1480, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .prev-slick2 {
   left: -40px;
 }
 
 @media (max-width: 1300px) {
-  /* line 1481, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1485, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .next-slick2 {
     right: 0px;
   }
 
-  /* line 1485, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1489, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .prev-slick2 {
     left: 0px;
   }
 }
 /*//////////////////////////////////////////////////////////////////
 [ Slick3 ]*/
-/* line 1493, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1497, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-slick3 {
   position: relative;
 }
 
 /*---------------------------------------------*/
-/* line 1498, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1502, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-slick3-arrows {
   position: absolute;
   z-index: 100;
@@ -10438,7 +10443,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   top: calc(50% - 20px);
 }
 
-/* line 1506, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1510, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .arrow-slick3 {
   font-size: 25px;
   color: #fff;
@@ -10453,23 +10458,23 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: all 0.4s;
 }
 
-/* line 1522, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1526, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .arrow-slick3:hover {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* line 1526, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1530, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .prev-slick3 {
   left: 0px;
 }
 
-/* line 1527, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1531, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .next-slick3 {
   right: 0px;
 }
 
 /*---------------------------------------------*/
-/* line 1530, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1534, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-slick3-dots {
   width: 11.111111%;
   max-height: 820px;
@@ -10477,12 +10482,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   scrollbar-width: thin;
 }
 
-/* line 1537, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1541, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .slick3 {
   width: 83.333333%;
 }
 
-/* line 1541, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1545, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .slick3-dots li {
   display: block;
   position: relative;
@@ -10490,12 +10495,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   margin-bottom: 27px;
 }
 
-/* line 1548, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1552, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .slick3-dots li img {
   width: 100%;
 }
 
-/* line 1552, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1556, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .slick3-dot-overlay {
   position: absolute;
   width: 100%;
@@ -10510,37 +10515,37 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: all 0.4s;
 }
 
-/* line 1566, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1570, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .slick3-dot-overlay:hover {
   border-color: #ccc;
 }
 
-/* line 1570, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1574, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .slick3-dots .slick-active .slick3-dot-overlay {
   border-color: #ccc;
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ RS Magnific-Popup ]*/
-/* line 1578, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1582, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mfp-bg {
   z-index: 10000;
   background-color: #000;
   opacity: 0.9;
 }
 
-/* line 1584, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1588, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mfp-wrap {
   z-index: 10000;
 }
 
-/* line 1588, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1592, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mfp-arrow:after,
 .mfp-arrow:before {
   display: none;
 }
 
-/* line 1593, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1597, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mfp-arrow {
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -10548,21 +10553,21 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   transition: all 0.4s;
 }
 
-/* line 1600, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1604, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 button.mfp-arrow-right {
   background-image: url(../images/icons/icon-next.png);
   background-position: center center;
   background-repeat: no-repeat;
 }
 
-/* line 1606, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1610, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 button.mfp-arrow-left {
   background-image: url(../images/icons/icon-prev.png);
   background-position: center center;
   background-repeat: no-repeat;
 }
 
-/* line 1612, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1616, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 button.mfp-close {
   width: 75px !important;
   height: 58px !important;
@@ -10582,7 +10587,7 @@ button.mfp-close {
 }
 
 /* overlay at start */
-/* line 1631, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1635, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mfp-fade.mfp-bg {
   opacity: 0;
   -webkit-transition: all 0.3s ease-out;
@@ -10591,19 +10596,19 @@ button.mfp-close {
 }
 
 /* overlay animate in */
-/* line 1639, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1643, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mfp-fade.mfp-bg.mfp-ready {
   opacity: 0.9;
 }
 
 /* overlay animate out */
-/* line 1643, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1647, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mfp-fade.mfp-bg.mfp-removing {
   opacity: 0;
 }
 
 /* content at start */
-/* line 1648, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1652, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mfp-fade.mfp-wrap .mfp-content {
   opacity: 0;
   -webkit-transition: all 0.3s ease-out;
@@ -10612,20 +10617,20 @@ button.mfp-close {
 }
 
 /* content animate it */
-/* line 1656, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1660, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
   opacity: 1;
 }
 
 /* content animate out */
-/* line 1660, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1664, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
   opacity: 0;
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ Tab01 ]*/
-/* line 1667, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1671, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .tab01 .nav-tabs {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10638,12 +10643,12 @@ button.mfp-close {
   border: none;
 }
 
-/* line 1679, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1683, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .tab01 .nav-tabs .nav-item {
   margin: 0px 15px;
 }
 
-/* line 1683, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1687, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .tab01 .nav-link {
   font-family: Gotham-Book;
   font-size: 15px;
@@ -10659,13 +10664,13 @@ button.mfp-close {
   transition: all 0.4s;
 }
 
-/* line 1700, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1704, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .tab01 .nav-link.active {
   color: #333;
   border-color: #797979;
 }
 
-/* line 1705, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1709, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .tab01 .nav-link:hover {
   color: #333;
   border-color: #797979;
@@ -10673,18 +10678,18 @@ button.mfp-close {
 
 /*//////////////////////////////////////////////////////////////////
 [ RS sweet alert ]*/
-/* line 1714, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1718, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .swal-overlay {
   overflow-y: auto;
 }
 
-/* line 1716, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1720, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .swal-button:focus {
   outline: none;
   box-shadow: none;
 }
 
-/* line 1721, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1725, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .swal-button {
   background-color: #717fe0;
   font-family: Gotham-Book;
@@ -10699,17 +10704,17 @@ button.mfp-close {
   transition: all 0.3s;
 }
 
-/* line 1735, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1739, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .swal-button:hover {
   background-color: #333;
 }
 
-/* line 1739, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1743, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .swal-button:active {
   background-color: #333;
 }
 
-/* line 1743, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1747, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .swal-title {
   font-family: Gotham-Medium;
   color: #333333;
@@ -10718,7 +10723,7 @@ button.mfp-close {
   padding: 0 15px;
 }
 
-/* line 1751, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1755, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .swal-text {
   font-family: Gotham-Book;
   color: #555555;
@@ -10727,26 +10732,26 @@ button.mfp-close {
   text-align: center;
 }
 
-/* line 1759, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1763, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .swal-footer {
   margin-top: 0;
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ Filter ]*/
-/* line 1766, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1770, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .show-search .icon-search,
 .show-filter .icon-filter {
   display: none;
 }
 
-/* line 1769, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1773, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .show-search .icon-close-search,
 .show-filter .icon-close-filter {
   display: unset;
 }
 
-/* line 1772, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1776, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .show-search,
 .show-filter {
   background-color: #f2f2f2;
@@ -10754,7 +10759,7 @@ button.mfp-close {
   position: relative;
 }
 
-/* line 1779, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1783, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .show-search::after,
 .show-filter::after {
   content: "";
@@ -10779,7 +10784,7 @@ button.mfp-close {
   transition: all 0.4s;
 }
 
-/* line 1807, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1811, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .show-search:hover:after,
 .show-filter:hover:after {
   background-color: #717fe0;
@@ -10787,47 +10792,47 @@ button.mfp-close {
 }
 
 /*---------------------------------------------*/
-/* line 1814, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1818, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .filter-col1 {
   width: 27%;
 }
 
-/* line 1815, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1819, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .filter-col2 {
   width: 27%;
 }
 
-/* line 1816, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1820, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .filter-col3 {
   width: 26%;
 }
 
-/* line 1817, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1821, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .filter-col4 {
   width: 20%;
 }
 
 /*---------------------------------------------*/
-/* line 1820, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1824, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .filter-link {
   color: #aaa;
   border-bottom: 1px solid transparent;
 }
 
-/* line 1825, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1829, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .filter-link:hover {
   color: #6c7ae0;
   border-bottom: 1px solid #6c7ae0;
 }
 
-/* line 1830, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1834, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .filter-link-active {
   color: #6c7ae0;
   border-bottom: 1px solid #6c7ae0;
 }
 
 @media (max-width: 767px) {
-  /* line 1836, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1840, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .filter-col1,
   .filter-col2,
   .filter-col3,
@@ -10836,7 +10841,7 @@ button.mfp-close {
   }
 }
 @media (max-width: 575px) {
-  /* line 1843, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 1847, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .filter-col1,
   .filter-col2,
   .filter-col3,
@@ -10846,7 +10851,7 @@ button.mfp-close {
 }
 /*//////////////////////////////////////////////////////////////////
 [ Num Product ]*/
-/* line 1853, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1857, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-num-product {
   width: 140px;
   height: 45px;
@@ -10855,7 +10860,7 @@ button.mfp-close {
   overflow: hidden;
 }
 
-/* line 1861, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1865, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .btn-num-product-up,
 .btn-num-product-down {
   width: 45px;
@@ -10863,7 +10868,7 @@ button.mfp-close {
   cursor: pointer;
 }
 
-/* line 1868, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1872, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .num-product {
   width: calc(100% - 90px);
   height: 100%;
@@ -10872,14 +10877,14 @@ button.mfp-close {
   background-color: #f7f7f7;
 }
 
-/* line 1876, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1880, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 input.num-product {
   -moz-appearance: textfield;
   appearance: none;
   -webkit-appearance: none;
 }
 
-/* line 1882, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1886, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 input.num-product::-webkit-outer-spin-button,
 input.num-product::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -10888,12 +10893,12 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ Tolltip100 ]*/
-/* line 1890, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1894, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .tooltip100 {
   position: relative;
 }
 
-/* line 1894, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1898, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .tooltip100::after {
   content: attr(data-tooltip);
   font-family: Gotham-Book;
@@ -10927,7 +10932,7 @@ input.num-product::-webkit-inner-spin-button {
   opacity: 0;
 }
 
-/* line 1931, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1935, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .tooltip100:hover:after {
   visibility: visible;
   opacity: 1;
@@ -10935,7 +10940,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ Modal1 ]*/
-/* line 1939, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1943, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-modal1 {
   position: fixed;
   width: 100%;
@@ -10952,7 +10957,7 @@ input.num-product::-webkit-inner-spin-button {
   opacity: 0;
 }
 
-/* line 1957, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1961, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .overlay-modal1 {
   position: fixed;
   z-index: -1;
@@ -10964,7 +10969,7 @@ input.num-product::-webkit-inner-spin-button {
   opacity: 0.8;
 }
 
-/* line 1968, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1972, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .show-modal1 {
   visibility: visible;
   opacity: 1;
@@ -10972,56 +10977,56 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ Table Shopping Cart ]*/
-/* line 1976, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1980, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-table-shopping-cart {
   overflow: auto;
   border-left: 1px solid #e6e6e6;
   border-right: 1px solid #e6e6e6;
 }
 
-/* line 1982, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1986, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .table-shopping-cart {
   border-collapse: collapse;
   width: 100%;
   min-width: 680px;
 }
 
-/* line 1988, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1992, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .table-shopping-cart tr {
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
 }
 
-/* line 1993, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 1997, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .table-shopping-cart .column-1 {
   width: 133px;
   padding-left: 50px;
 }
 
-/* line 1998, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2002, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .table-shopping-cart .column-voucher {
   width: 21% !important;
 }
 
-/* line 2002, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2006, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .table-shopping-cart .column-2 {
   width: 220px;
   font-size: 15px;
 }
 
-/* line 2007, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2011, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .table-shopping-cart .column-3 {
   width: 120px;
   font-size: 16px;
 }
 
-/* line 2012, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2016, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .table-shopping-cart .column-4 {
   width: 145px;
   text-align: right;
 }
 
-/* line 2017, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2021, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .table-shopping-cart .column-5 {
   width: 172px;
   padding-right: 50px;
@@ -11029,22 +11034,22 @@ input.num-product::-webkit-inner-spin-button {
   font-size: 16px;
 }
 
-/* line 2024, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2028, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .table-shopping-cart .table_row {
   height: 185px;
 }
 
-/* line 2028, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2032, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .table-shopping-cart .table_row td {
   padding-bottom: 20px;
 }
 
-/* line 2032, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2036, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .table-shopping-cart .table_row td.column-1 {
   padding-bottom: 30px;
 }
 
-/* line 2036, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2040, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .table-shopping-cart .table_head th {
   font-family: Gotham-Medium;
   font-size: 13px;
@@ -11055,7 +11060,7 @@ input.num-product::-webkit-inner-spin-button {
   padding-bottom: 15px;
 }
 
-/* line 2046, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2050, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .table-shopping-cart td {
   font-family: Gotham-Book;
   color: #555;
@@ -11064,30 +11069,30 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ Block1 ]*/
-/* line 2056, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2060, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .block1 {
   position: relative;
   border: 1px solid #e6e6e6;
 }
 
-/* line 2061, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2065, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .block1-txt {
   background-color: rgba(103, 117, 214, 0);
 }
 
 /*---------------------------------------------*/
-/* line 2066, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2070, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .block1-name {
   color: #333;
 }
 
-/* line 2067, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2071, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .block1-info {
   color: #555;
 }
 
 /*---------------------------------------------*/
-/* line 2070, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2074, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .block1-txt-child2 {
   border-bottom: 2px solid #fff;
   overflow: hidden;
@@ -11098,7 +11103,7 @@ input.num-product::-webkit-inner-spin-button {
   transform: scaleX(0);
 }
 
-/* line 2080, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2084, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .block1-link {
   -webkit-transform: translateY(250%);
   -moz-transform: translateY(250%);
@@ -11108,12 +11113,12 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2089, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2093, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .block1-txt:hover {
   background-color: rgba(103, 117, 214, 0.8);
 }
 
-/* line 2093, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2097, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .block1-txt:hover .block1-txt-child2 {
   -webkit-transform: scaleX(1);
   -moz-transform: scaleX(1);
@@ -11122,7 +11127,7 @@ input.num-product::-webkit-inner-spin-button {
   transform: scaleX(1);
 }
 
-/* line 2101, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2105, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .block1-txt:hover .block1-link {
   -webkit-transform: translateY(0%);
   -moz-transform: translateY(0%);
@@ -11131,7 +11136,7 @@ input.num-product::-webkit-inner-spin-button {
   transform: translateY(0%);
 }
 
-/* line 2109, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2113, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .block1-txt:hover .block1-name,
 .block1-txt:hover .block1-info {
   color: #fff;
@@ -11139,12 +11144,12 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ Block2 ]*/
-/* line 2116, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2120, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .block2-pic {
   position: relative;
 }
 
-/* line 2120, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2124, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .text-wrap-split {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -11152,7 +11157,7 @@ input.num-product::-webkit-inner-spin-button {
   width: 90%;
 }
 
-/* line 2127, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2131, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .block2-btn {
   position: absolute;
   bottom: -50px;
@@ -11164,59 +11169,59 @@ input.num-product::-webkit-inner-spin-button {
   transform: translateX(-50%);
 }
 
-/* line 2138, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2142, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .block2-pic:hover .block2-btn {
   bottom: 20px;
 }
 
 /*---------------------------------------------*/
-/* line 2143, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2147, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .block2-txt-child1 {
   width: calc(100% - 30px);
 }
 
-/* line 2147, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2151, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .block2-txt-promo {
   width: 100%;
 }
 
-/* line 2151, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2155, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .block2-txt-child2 {
   width: 30px;
 }
 
-/* line 2155, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2159, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .btn-addwish-b2 .icon-heart2 {
   opacity: 0;
 }
 
-/* line 2159, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2163, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .btn-addwish-b2:hover .icon-heart2 {
   opacity: 1;
 }
 
-/* line 2163, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2167, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .btn-addwish-b2:hover .icon-heart1 {
   opacity: 0;
 }
 
-/* line 2167, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2171, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .js-addedwish-b2 .icon-heart2 {
   opacity: 1;
 }
 
-/* line 2171, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2175, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .js-addedwish-b2 .icon-heart1 {
   opacity: 0;
 }
 
 /*---------------------------------------------*/
-/* line 2176, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2180, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .label-new {
   position: relative;
 }
 
-/* line 2180, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2184, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .label-new::after {
   content: attr(data-label);
   font-family: Montserrat-Regular;
@@ -11243,74 +11248,74 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
     TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 ==================================================================*/
-/* line 2209, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2213, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .cl0 {
   color: #fff;
 }
 
-/* line 2210, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2214, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .cl1 {
   color: #717fe0;
 }
 
-/* line 2211, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2215, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .cl2 {
   color: #333;
 }
 
-/* line 2212, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2216, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .cl3 {
   color: #666;
 }
 
-/* line 2213, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2217, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .cl4 {
   color: #999;
 }
 
-/* line 2214, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2218, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .cl5 {
   color: #222;
 }
 
-/* line 2215, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2219, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .cl6 {
   color: #888;
 }
 
-/* line 2216, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2220, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .cl7 {
   color: #b2b2b2;
 }
 
-/* line 2217, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2221, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .cl8 {
   color: #555;
 }
 
-/* line 2218, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2222, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .cl9 {
   color: #aaa;
 }
 
-/* line 2219, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2223, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .cl10 {
   color: #1d1d1d;
 }
 
-/* line 2220, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2224, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .cl11 {
   color: #f9ba48;
 }
 
-/* line 2221, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2225, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .cl12 {
   color: #ccc;
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ S-Text 0 - 15 ]*/
-/* line 2225, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2229, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-101 {
   font-family: Gotham-Medium;
   font-size: 15px;
@@ -11318,28 +11323,28 @@ input.num-product::-webkit-inner-spin-button {
   text-transform: uppercase;
 }
 
-/* line 2232, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2236, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-102 {
   font-family: Gotham-Book;
   font-size: 14px;
   line-height: 1.7;
 }
 
-/* line 2238, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2242, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-103 {
   font-family: Gotham-Book;
   font-size: 15px;
   line-height: 1.466667;
 }
 
-/* line 2244, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2248, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-104 {
   font-family: Gotham-Book;
   font-size: 14px;
   line-height: 1.466667;
 }
 
-/* line 2250, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2254, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-105 {
   font-family: Gotham-Book;
   font-size: 14px;
@@ -11347,49 +11352,49 @@ input.num-product::-webkit-inner-spin-button {
   letter-spacing: 1px;
 }
 
-/* line 2257, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2261, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-106 {
   font-family: Gotham-Book;
   font-size: 15px;
   line-height: 1.2;
 }
 
-/* line 2263, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2267, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-107 {
   font-family: Gotham-Book;
   font-size: 13px;
   line-height: 1.923;
 }
 
-/* line 2269, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2273, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-108 {
   font-family: Gotham-Light;
   font-size: 14px;
   line-height: 1.7143;
 }
 
-/* line 2275, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2279, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-109 {
   font-family: Gotham-Book;
   font-size: 12px;
   line-height: 1.833333;
 }
 
-/* line 2281, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2285, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-110 {
   font-family: Gotham-Medium;
   font-size: 15px;
   line-height: 1.466667;
 }
 
-/* line 2287, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2291, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-111 {
   font-family: Gotham-Book;
   font-size: 13px;
   line-height: 1.6923;
 }
 
-/* line 2293, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2297, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-112 {
   font-family: Gotham-Book;
   font-size: 13px;
@@ -11397,35 +11402,35 @@ input.num-product::-webkit-inner-spin-button {
   text-transform: uppercase;
 }
 
-/* line 2300, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2304, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-113 {
   font-family: Gotham-Light;
   font-size: 14px;
   line-height: 1.7857;
 }
 
-/* line 2306, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2310, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-114 {
   font-family: Gotham-Book;
   font-size: 15px;
   line-height: 1.666667;
 }
 
-/* line 2312, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2316, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-115 {
   font-family: Gotham-Book;
   font-size: 15px;
   line-height: 1.666667;
 }
 
-/* line 2318, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2322, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-116 {
   font-family: Gotham-Book;
   font-size: 15px;
   line-height: 1.266667;
 }
 
-/* line 2324, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2328, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-117 {
   font-family: Gotham-Light;
   font-size: 15px;
@@ -11433,7 +11438,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2332, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2336, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stext-301 {
   font-family: Gotham-Medium;
   font-size: 15px;
@@ -11443,21 +11448,21 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ M-Text 16 - 25 ]*/
-/* line 2342, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2346, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mtext-101 {
   font-family: Gotham-Medium;
   font-size: 18px;
   line-height: 1.333333;
 }
 
-/* line 2348, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2352, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mtext-102 {
   font-family: Gotham-Medium;
   font-size: 16px;
   line-height: 1.6;
 }
 
-/* line 2354, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2358, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mtext-103 {
   font-family: Gotham-Medium;
   font-size: 18px;
@@ -11465,42 +11470,42 @@ input.num-product::-webkit-inner-spin-button {
   text-transform: uppercase;
 }
 
-/* line 2361, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2365, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mtext-104 {
   font-family: Gotham-Medium;
   font-size: 16px;
   line-height: 1.6;
 }
 
-/* line 2367, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2371, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mtext-105 {
   font-family: Gotham-Book;
   font-size: 24px;
   line-height: 1.5;
 }
 
-/* line 2373, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2377, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mtext-106 {
   font-family: Gotham-Medium;
   font-size: 18px;
   line-height: 1.388888;
 }
 
-/* line 2379, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2383, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mtext-107 {
   font-family: Gotham-Book;
   font-size: 16px;
   line-height: 1.625;
 }
 
-/* line 2385, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2389, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mtext-108 {
   font-family: Gotham-Book;
   font-size: 20px;
   line-height: 1.3;
 }
 
-/* line 2391, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2395, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mtext-109 {
   font-family: Gotham-Medium;
   font-size: 20px;
@@ -11508,28 +11513,28 @@ input.num-product::-webkit-inner-spin-button {
   text-transform: uppercase;
 }
 
-/* line 2398, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2402, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mtext-110 {
   font-family: Gotham-Book;
   font-size: 18px;
   line-height: 1.222222;
 }
 
-/* line 2404, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2408, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mtext-111 {
   font-family: Gotham-Medium;
   font-size: 25px;
   line-height: 1.2;
 }
 
-/* line 2410, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2414, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mtext-112 {
   font-family: Gotham-Medium;
   font-size: 22px;
   line-height: 1.333333;
 }
 
-/* line 2416, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2420, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .mtext-113 {
   font-family: Gotham-Medium;
   font-size: 22px;
@@ -11539,21 +11544,21 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ L-Text >= 26 ]*/
-/* line 2426, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2430, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .ltext-101 {
   font-family: Gotham-Book;
   font-size: 28px;
   line-height: 1.2857;
 }
 
-/* line 2432, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2436, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .ltext-102 {
   font-family: Gotham-Medium;
   font-size: 28px;
   line-height: 1.1;
 }
 
-/* line 2438, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2442, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .ltext-103 {
   font-family: Gotham-Medium;
   font-size: 36px;
@@ -11561,7 +11566,7 @@ input.num-product::-webkit-inner-spin-button {
   text-transform: uppercase;
 }
 
-/* line 2445, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2449, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .ltext-104 {
   font-family: Gotham-Medium;
   font-size: 60px;
@@ -11569,35 +11574,35 @@ input.num-product::-webkit-inner-spin-button {
   text-transform: uppercase;
 }
 
-/* line 2452, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2456, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .ltext-105 {
   font-family: Gotham-Medium;
   font-size: 50px;
   line-height: 1.1;
 }
 
-/* line 2458, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2462, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .ltext-106 {
   font-family: Gotham-Medium;
   font-size: 36px;
   line-height: 1.2;
 }
 
-/* line 2464, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2468, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .ltext-107 {
   font-family: Gotham-Medium;
   font-size: 30px;
   line-height: 1.1;
 }
 
-/* line 2470, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2474, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .ltext-108 {
   font-family: Gotham-Medium;
   font-size: 26px;
   line-height: 1.3846;
 }
 
-/* line 2476, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2480, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .ltext-109 {
   font-family: Gotham-Medium;
   font-size: 36px;
@@ -11605,7 +11610,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2484, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2488, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .ltext-201 {
   font-family: PlayfairDisplay-Bold;
   font-size: 60px;
@@ -11613,7 +11618,7 @@ input.num-product::-webkit-inner-spin-button {
   text-transform: uppercase;
 }
 
-/* line 2491, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2495, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .ltext-202 {
   font-family: PlayfairDisplay-Regular;
   font-size: 28px;
@@ -11625,157 +11630,157 @@ input.num-product::-webkit-inner-spin-button {
 ==================================================================*/
 /*//////////////////////////////////////////////////////////////////
 [ Size ]*/
-/* line 2507, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2511, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-101 {
   min-width: 161px;
   height: 46px;
 }
 
-/* line 2512, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2516, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-102 {
   min-width: 139px;
   height: 40px;
 }
 
-/* line 2517, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2521, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-103 {
   min-width: 179px;
   height: 46px;
 }
 
-/* line 2522, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2526, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-104 {
   min-width: 94px;
   height: 40px;
 }
 
-/* line 2527, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2531, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-105 {
   min-width: 111px;
   height: 40px;
 }
 
-/* line 2532, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2536, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-106 {
   width: 88px;
   height: 100%;
 }
 
-/* line 2537, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2541, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-107 {
   min-width: 145px;
   height: 40px;
 }
 
-/* line 2542, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2546, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-108 {
   width: 40px;
   height: 40px;
 }
 
-/* line 2547, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2551, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-109 {
   width: 60px;
   height: 60px;
 }
 
-/* line 2552, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2556, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-110 {
   width: 100%;
   min-height: 100px;
 }
 
-/* line 2557, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2561, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-111 {
   width: 100%;
   height: 40px;
 }
 
-/* line 2562, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2566, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-112 {
   min-width: 134px;
   height: 43px;
 }
 
-/* line 2567, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2571, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-113 {
   width: 38px;
   height: 60px;
 }
 
-/* line 2572, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2576, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-114 {
   width: calc(100% - 38px);
   height: 60px;
 }
 
-/* line 2577, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2581, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-115 {
   min-width: 185px;
   height: 45px;
 }
 
-/* line 2582, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2586, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-116 {
   width: 100%;
   height: 50px;
 }
 
-/* line 2587, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2591, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-117 {
   width: 220px;
   height: 45px;
 }
 
-/* line 2592, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2596, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-118 {
   min-width: 163px;
   height: 45px;
 }
 
-/* line 2597, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2601, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-119 {
   min-width: 156px;
   height: 45px;
 }
 
-/* line 2602, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2606, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-120 {
   width: 100%;
   min-height: 199px;
 }
 
-/* line 2607, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2611, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-121 {
   width: 100%;
   height: 46px;
 }
 
-/* line 2612, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2616, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-122 {
   width: 55px;
   height: 100%;
 }
 
-/* line 2617, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2621, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-123 {
   width: 70px;
   min-height: 70px;
 }
 
-/* line 2622, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2626, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-124 {
   width: 100%;
   min-height: 150px;
 }
 
-/* line 2627, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2631, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-125 {
   min-width: 180px;
   height: 40px;
 }
 
-/* line 2632, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2636, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-126 {
   width: 70%;
   height: 50px;
@@ -11786,7 +11791,7 @@ input.num-product::-webkit-inner-spin-button {
   margin-bottom: 15px;
 }
 
-/* line 2642, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2646, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-100 {
   width: 90%;
   height: 50px;
@@ -11799,109 +11804,109 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ Width ]*/
-/* line 2654, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2658, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-201 {
   max-width: 270px;
 }
 
-/* line 2658, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2662, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-202 {
   width: calc(100% / 3);
 }
 
-/* line 2662, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2666, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-203 {
   width: 105px;
 }
 
-/* line 2666, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2670, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-204 {
   width: calc(100% - 105px);
 }
 
-/* line 2670, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2674, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-205 {
   width: 145px;
 }
 
-/* line 2674, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2678, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-206 {
   width: calc(100% - 145px);
 }
 
-/* line 2678, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2682, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-207 {
   width: calc(100% - 78px);
 }
 
-/* line 2682, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2686, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-208 {
   width: 34.5%;
 }
 
-/* line 2686, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2690, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-209 {
   width: 65.5%;
 }
 
-/* line 2690, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2694, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-210 {
   width: 50%;
 }
 
-/* line 2694, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2698, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-211 {
   width: 60px;
 }
 
-/* line 2698, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2702, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-212 {
   width: calc(100% - 60px);
 }
 
-/* line 2702, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2706, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-213 {
   max-width: 245px;
 }
 
-/* line 2706, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2710, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-214 {
   width: 90px;
 }
 
-/* line 2710, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2714, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-215 {
   width: calc(100% - 110px);
 }
 
-/* line 2714, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2718, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-216 {
   width: 55px;
 }
 
-/* line 2718, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2722, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-217 {
   width: calc(100% - 55px);
 }
 
-/* line 2722, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2726, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-218 {
   max-width: 286px;
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ Height ]*/
-/* line 2730, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2734, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-301 {
   min-height: 30px;
 }
 
-/* line 2734, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2738, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-302 {
   min-height: 80px;
 }
 
-/* line 2738, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2742, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-303 {
   height: 390px;
 }
@@ -11909,58 +11914,58 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
    BACKGROUND BACKGROUND BACKGROUND BACKGROUND BACKGROUND BACKGROUND
 ==================================================================*/
-/* line 2746, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2750, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bg-none {
   background-color: transparent;
 }
 
-/* line 2747, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2751, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bg0 {
   background-color: #fff;
 }
 
-/* line 2748, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2752, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bg1 {
   background-color: #717fe0;
 }
 
-/* line 2749, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2753, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bg2 {
   background-color: #e6e6e6;
 }
 
-/* line 2750, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2754, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bg3 {
   background-color: #222;
 }
 
-/* line 2751, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2755, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bg5 {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 2752, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2756, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bg6 {
   background-color: #f2f2f2;
 }
 
-/* line 2753, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2757, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bg7 {
   background-color: #333;
 }
 
-/* line 2754, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2758, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bg8 {
   background-color: #f3f3f3;
 }
 
-/* line 2755, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2759, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bg9 {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
 /*---------------------------------------------*/
-/* line 2758, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2762, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bg-overlay1::before {
   content: "";
   position: absolute;
@@ -11975,7 +11980,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2772, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2776, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bg-img1 {
   background-size: cover;
   background-position: center center;
@@ -11985,117 +11990,117 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
        BORDER BORDER  BORDER  BORDER  BORDER  BORDER  BORDER  BORDER
 ==================================================================*/
-/* line 2784, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2788, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor0 {
   border-radius: 50%;
 }
 
-/* line 2786, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2790, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor1 {
   border-radius: 23px;
 }
 
-/* line 2790, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2794, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor2 {
   border-radius: 20px;
 }
 
-/* line 2794, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2798, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor3 {
   border-bottom: 1px solid transparent;
 }
 
-/* line 2798, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2802, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor4 {
   border: 1px solid #e6e6e6;
   border-radius: 3px;
 }
 
-/* line 2803, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2807, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor5 {
   border-left: 1px solid #e5e5e5;
   border-right: 1px solid #e5e5e5;
 }
 
-/* line 2808, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2812, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor6 {
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* line 2810, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2814, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor7 {
   border: 1px solid #ccc;
   border-radius: 15px;
 }
 
-/* line 2815, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2819, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor8 {
   border: 1px solid #e6e6e6;
   border-radius: 2px;
 }
 
-/* line 2820, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2824, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor9 {
   border-right: 1px solid #e6e6e6;
 }
 
-/* line 2824, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2828, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor10 {
   border: 1px solid #e6e6e6;
 }
 
-/* line 2828, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2832, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor11 {
   border-radius: 21px;
 }
 
-/* line 2832, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2836, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor12 {
   border-bottom: 1px dashed #d9d9d9;
 }
 
-/* line 2836, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2840, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor13 {
   border: 1px solid #e6e6e6;
   border-radius: 22px;
 }
 
-/* line 2841, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2845, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor14 {
   border-radius: 25px;
 }
 
-/* line 2845, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2849, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor15 {
   border-left: 1px solid #e6e6e6;
   border-right: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
 }
 
-/* line 2851, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2855, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor16 {
   border-left: 3px solid #e6e6e6;
 }
 
-/* line 2855, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2859, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor17 {
   border: 1px solid #e6e6e6;
   border-radius: 25px;
 }
 
 /*---------------------------------------------*/
-/* line 2861, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2865, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor18 {
   border-top: 1px solid #e6e6e6;
 }
 
-/* line 2865, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2869, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor18:last-child {
   border-bottom: 1px solid #e6e6e6;
 }
 
 /*---------------------------------------------*/
-/* line 2870, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2874, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .bor19 {
   border: 1px solid #d9d9d9;
   border-radius: 2px;
@@ -12104,119 +12109,119 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
  HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW
 ==================================================================*/
-/* line 2879, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2883, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh0::-webkit-input-placeholder {
   color: #999999;
 }
 
-/* line 2880, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2884, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh0:-moz-placeholder {
   color: #999999;
 }
 
-/* line 2881, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2885, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh0::-moz-placeholder {
   color: #999999;
 }
 
-/* line 2882, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2886, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh0:-ms-input-placeholder {
   color: #999999;
 }
 
-/* line 2884, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2888, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh1::-webkit-input-placeholder {
   color: #b2b2b2;
 }
 
-/* line 2885, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2889, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh1:-moz-placeholder {
   color: #b2b2b2;
 }
 
-/* line 2886, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2890, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh1::-moz-placeholder {
   color: #b2b2b2;
 }
 
-/* line 2887, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2891, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh1:-ms-input-placeholder {
   color: #b2b2b2;
 }
 
-/* line 2889, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2893, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh2::-webkit-input-placeholder {
   color: #333;
 }
 
-/* line 2890, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2894, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh2:-moz-placeholder {
   color: #333;
 }
 
-/* line 2891, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2895, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh2::-moz-placeholder {
   color: #333;
 }
 
-/* line 2892, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2896, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh2:-ms-input-placeholder {
   color: #333;
 }
 
-/* line 2894, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2898, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh3::-webkit-input-placeholder {
   color: #555;
 }
 
-/* line 2895, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2899, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh3:-moz-placeholder {
   color: #555;
 }
 
-/* line 2896, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2900, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh3::-moz-placeholder {
   color: #555;
 }
 
-/* line 2897, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2901, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh3:-ms-input-placeholder {
   color: #555;
 }
 
-/* line 2899, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2903, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh4::-webkit-input-placeholder {
   color: #888;
 }
 
-/* line 2900, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2904, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh4:-moz-placeholder {
   color: #888;
 }
 
-/* line 2901, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2905, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh4::-moz-placeholder {
   color: #888;
 }
 
-/* line 2902, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2906, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .plh4:-ms-input-placeholder {
   color: #888;
 }
 
 /*---------------------------------------------*/
-/* line 2905, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2909, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .js-addedwish-detail {
   color: #6c7ae0;
 }
 
 /*---------------------------------------------*/
-/* line 2910, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2914, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .label1 {
   position: relative;
 }
 
-/* line 2914, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2918, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .label1::after {
   content: attr(data-label1);
   font-family: Gotham-Book;
@@ -12236,7 +12241,7 @@ input.num-product::-webkit-inner-spin-button {
   background-color: #f74877;
 }
 
-/* line 2934, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2938, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .label1.rs1::after {
   top: calc(50% - 8px);
   right: auto;
@@ -12244,26 +12249,26 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2941, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2945, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-active1 {
   color: #333;
   border-color: #797979;
 }
 
 /*---------------------------------------------*/
-/* line 2948, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2952, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .wrap-input1 {
   position: relative;
   border-bottom: 2px solid rgba(204, 204, 204, 0.1);
 }
 
-/* line 2953, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2957, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .input1 {
   background-color: transparent;
   width: 100%;
 }
 
-/* line 2958, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2962, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .focus-input1 {
   position: absolute;
   width: 0%;
@@ -12273,13 +12278,13 @@ input.num-product::-webkit-inner-spin-button {
   bottom: -2px;
 }
 
-/* line 2967, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2971, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .input1:focus + .focus-input1 {
   width: 100%;
 }
 
 /*---------------------------------------------*/
-/* line 2973, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2977, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-pagination1 {
   font-family: Gotham-Book;
   font-size: 14px;
@@ -12290,14 +12295,14 @@ input.num-product::-webkit-inner-spin-button {
   border: 1px solid #e6e6e6;
 }
 
-/* line 2984, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2988, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-pagination1:hover {
   background-color: #999;
   border-color: #999;
   color: #fff;
 }
 
-/* line 2990, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 2994, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .active-pagination1 {
   background-color: #999;
   border-color: #999;
@@ -12305,7 +12310,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2997, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3001, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-shadow1 {
   box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
@@ -12315,7 +12320,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3006, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3010, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-pos1 {
   position: absolute;
   top: 10px;
@@ -12323,7 +12328,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3013, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3017, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-pos2 {
   padding-top: 20px;
   padding-left: 10.7%;
@@ -12331,19 +12336,19 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 @media (max-width: 991px) {
-  /* line 3020, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3024, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .how-pos2 {
     padding-left: 8%;
     padding-right: 8%;
   }
 }
 /*---------------------------------------------*/
-/* line 3027, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3031, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-pos3-parent {
   position: relative;
 }
 
-/* line 3031, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3035, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-pos3 {
   position: absolute;
   top: -35px;
@@ -12351,12 +12356,12 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3038, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3042, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-pos4-parent {
   position: relative;
 }
 
-/* line 3042, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3046, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-pos4 {
   position: absolute;
   top: calc(50% - 9px);
@@ -12364,12 +12369,12 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3049, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3053, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-pos5-parent {
   position: relative;
 }
 
-/* line 3053, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3057, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-pos5 {
   position: absolute;
   top: 15px;
@@ -12377,7 +12382,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3062, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3066, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-itemcart1 {
   width: 60px;
   position: relative;
@@ -12385,12 +12390,12 @@ input.num-product::-webkit-inner-spin-button {
   cursor: pointer;
 }
 
-/* line 3069, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3073, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-itemcart1 img {
   width: 100%;
 }
 
-/* line 3073, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3077, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-itemcart1::after {
   content: '\e870';
   font-family: Linearicons-Free;
@@ -12416,20 +12421,20 @@ input.num-product::-webkit-inner-spin-button {
   opacity: 0;
 }
 
-/* line 3098, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3102, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-itemcart1:hover:after {
   opacity: 1;
 }
 
 /*---------------------------------------------*/
-/* line 3103, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3107, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-bor2,
 .how-bor1 {
   position: relative;
   z-index: 1;
 }
 
-/* line 3109, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3113, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-bor2::before,
 .how-bor1::before {
   content: "";
@@ -12441,21 +12446,21 @@ input.num-product::-webkit-inner-spin-button {
   border: 3px solid #ccc;
 }
 
-/* line 3120, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3124, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-bor1::before {
   bottom: -21px;
   left: -21px;
 }
 
 @media (max-width: 767px) {
-  /* line 3126, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3130, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .how-bor1::before {
     bottom: -21px;
     right: -21px;
     left: auto;
   }
 }
-/* line 3133, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3137, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .how-bor2::before {
   bottom: -21px;
   right: -21px;
@@ -12466,56 +12471,56 @@ input.num-product::-webkit-inner-spin-button {
 ==================================================================*/
 /*//////////////////////////////////////////////////////////////////
 [ Focus ]*/
-/* line 3146, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3150, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .focus-in0:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-/* line 3147, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3151, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .focus-in0:focus:-moz-placeholder {
   color: transparent;
 }
 
-/* line 3148, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3152, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .focus-in0:focus::-moz-placeholder {
   color: transparent;
 }
 
-/* line 3149, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3153, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .focus-in0:focus:-ms-input-placeholder {
   color: transparent;
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ Hover ]*/
-/* line 3157, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3161, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-cl0:hover {
   color: #fff;
 }
 
-/* line 3158, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3162, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-bg0:hover {
   background-color: #fff;
 }
 
-/* line 3159, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3163, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-cl1:hover {
   color: #717fe0;
 }
 
-/* line 3160, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3164, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-bg1:hover {
   background-color: #717fe0;
 }
 
 /*---------------------------------------------*/
-/* line 3163, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3167, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-img0 {
   display: block;
   overflow: hidden;
 }
 
-/* line 3168, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3172, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .about-img1 {
   width: 250px;
   -webkit-transition: transform 0.9s ease;
@@ -12524,7 +12529,7 @@ input.num-product::-webkit-inner-spin-button {
   transition: transform 0.9s ease;
 }
 
-/* line 3176, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3180, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-img0 img {
   width: 100%;
   -webkit-transition: transform 0.9s ease;
@@ -12533,7 +12538,7 @@ input.num-product::-webkit-inner-spin-button {
   transition: transform 0.9s ease;
 }
 
-/* line 3184, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3188, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-img0:hover img {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -12542,7 +12547,7 @@ input.num-product::-webkit-inner-spin-button {
   transform: scale(1.1);
 }
 
-/* line 3192, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3196, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-change-img .img-top {
   display: none;
   position: absolute;
@@ -12551,13 +12556,13 @@ input.num-product::-webkit-inner-spin-button {
   z-index: 99;
 }
 
-/* line 3200, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3204, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-change-img:hover .img-top {
   display: inline;
   position: absolute;
 }
 
-/* line 3205, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3209, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .slogan {
   flex-grow: 3;
   font-family: vacation;
@@ -12565,20 +12570,20 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3212, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3216, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-btn1:hover {
   border-color: #222;
   background-color: #222;
   color: #fff;
 }
 
-/* line 3218, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3222, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-btn1:hover i {
   color: #fff;
 }
 
 /*---------------------------------------------*/
-/* line 3223, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3227, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-btn2:hover {
   border-color: #fff;
   background-color: #fff;
@@ -12586,32 +12591,32 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3230, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3234, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-btn3:hover {
   border-color: #717fe0;
   background-color: #717fe0;
   color: #fff;
 }
 
-/* line 3236, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3240, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-btn3:hover i {
   color: #fff;
 }
 
 /*---------------------------------------------*/
-/* line 3241, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3245, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-tag1:hover {
   color: #717fe0;
   border-color: #717fe0;
 }
 
 /*---------------------------------------------*/
-/* line 3248, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3252, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-ovelay1 {
   position: relative;
 }
 
-/* line 3252, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3256, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-ovelay1::after {
   content: "";
   display: block;
@@ -12628,31 +12633,31 @@ input.num-product::-webkit-inner-spin-button {
   -moz-transition: all 0.3s;
 }
 
-/* line 3268, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3272, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov-ovelay1:hover:after {
   opacity: 1;
 }
 
 /*---------------------------------------------*/
-/* line 3274, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3278, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov1:hover {
   color: #333;
   border-color: #797979;
 }
 
 /*---------------------------------------------*/
-/* line 3280, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3284, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov2:hover {
   background-color: #f2f2f2;
 }
 
 /*---------------------------------------------*/
-/* line 3285, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3289, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov3 {
   opacity: 0.6;
 }
 
-/* line 3289, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3293, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .hov3:hover {
   opacity: 1;
 }
@@ -12663,81 +12668,81 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ XL ]*/
 @media (max-width: 1199px) {
-  /* line 3303, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3307, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-0-xl {
     margin: 0;
   }
 
-  /* line 3304, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3308, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-lr-0-xl {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 3305, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3309, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-lr-15-xl {
     margin-left: 15px;
     margin-right: 15px;
   }
 
-  /* line 3306, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3310, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-l-0-xl {
     margin-left: 0;
   }
 
-  /* line 3307, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3311, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-r-0-xl {
     margin-right: 0;
   }
 
-  /* line 3308, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3312, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-l-15-xl {
     margin-left: 15px;
   }
 
-  /* line 3309, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3313, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-r-15-xl {
     margin-right: 15px;
   }
 
-  /* line 3311, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3315, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-0-xl {
     padding: 0;
   }
 
-  /* line 3312, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3316, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-lr-0-xl {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 3313, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3317, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-lr-15-xl {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 3314, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3318, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-l-0-xl {
     padding-left: 0;
   }
 
-  /* line 3315, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3319, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-r-0-xl {
     padding-right: 0;
   }
 
-  /* line 3316, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3320, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-l-15-xl {
     padding-left: 15px;
   }
 
-  /* line 3317, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3321, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-r-15-xl {
     padding-right: 15px;
   }
 
-  /* line 3319, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3323, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .w-full-xl {
     width: 100%;
   }
@@ -12747,93 +12752,93 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ LG ]*/
 @media (max-width: 991px) {
-  /* line 3329, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3333, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-0-lg {
     margin: 0;
   }
 
-  /* line 3330, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3334, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-lr-0-lg {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 3331, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3335, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-lr-15-lg {
     margin-left: 15px;
     margin-right: 15px;
   }
 
-  /* line 3332, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3336, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-l-0-lg {
     margin-left: 0;
   }
 
-  /* line 3333, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3337, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-r-0-lg {
     margin-right: 0;
   }
 
-  /* line 3334, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3338, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-l-15-lg {
     margin-left: 15px;
   }
 
-  /* line 3335, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3339, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-r-15-lg {
     margin-right: 15px;
   }
 
-  /* line 3337, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3341, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-0-lg {
     padding: 0;
   }
 
-  /* line 3338, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3342, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-lr-0-lg {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 3339, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3343, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-lr-15-lg {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 3340, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3344, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-l-0-lg {
     padding-left: 0;
   }
 
-  /* line 3341, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3345, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-r-0-lg {
     padding-right: 0;
   }
 
-  /* line 3342, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3346, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-l-15-lg {
     padding-left: 15px;
   }
 
-  /* line 3343, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3347, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-r-15-lg {
     padding-right: 15px;
   }
 
-  /* line 3345, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3349, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .w-full-lg {
     width: 100%;
   }
 
   /*---------------------------------------------*/
-  /* line 3348, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3352, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .respon4 {
     width: 50%;
   }
 
   /*---------------------------------------------*/
-  /* line 3353, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3357, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .respon5 {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -12842,87 +12847,87 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ MD ]*/
 @media (max-width: 767px) {
-  /* line 3363, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3367, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-0-md {
     margin: 0;
   }
 
-  /* line 3364, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3368, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-lr-0-md {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 3365, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3369, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-lr-15-md {
     margin-left: 15px;
     margin-right: 15px;
   }
 
-  /* line 3366, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3370, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-l-0-md {
     margin-left: 0;
   }
 
-  /* line 3367, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3371, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-r-0-md {
     margin-right: 0;
   }
 
-  /* line 3368, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3372, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-l-15-md {
     margin-left: 15px;
   }
 
-  /* line 3369, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3373, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-r-15-md {
     margin-right: 15px;
   }
 
-  /* line 3371, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3375, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-0-md {
     padding: 0;
   }
 
-  /* line 3372, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3376, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-lr-0-md {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 3373, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3377, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-lr-15-md {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 3374, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3378, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-l-0-md {
     padding-left: 0;
   }
 
-  /* line 3375, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3379, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-r-0-md {
     padding-right: 0;
   }
 
-  /* line 3376, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3380, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-l-15-md {
     padding-left: 15px;
   }
 
-  /* line 3377, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3381, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-r-15-md {
     padding-right: 15px;
   }
 
-  /* line 3379, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3383, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .w-full-md {
     width: 100%;
   }
 
   /*---------------------------------------------*/
-  /* line 3382, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3386, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .respon4 {
     width: 100%;
   }
@@ -12930,110 +12935,110 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ SM ]*/
 @media (max-width: 575px) {
-  /* line 3392, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3396, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-0-sm {
     margin: 0;
   }
 
-  /* line 3393, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3397, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-lr-0-sm {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 3394, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3398, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-lr-15-sm {
     margin-left: 15px;
     margin-right: 15px;
   }
 
-  /* line 3395, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3399, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-l-0-sm {
     margin-left: 0;
   }
 
-  /* line 3396, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3400, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-r-0-sm {
     margin-right: 0;
   }
 
-  /* line 3397, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3401, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-l-15-sm {
     margin-left: 15px;
   }
 
-  /* line 3398, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3402, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-r-15-sm {
     margin-right: 15px;
   }
 
-  /* line 3400, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3404, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-0-sm {
     padding: 0;
   }
 
-  /* line 3401, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3405, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-lr-0-sm {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 3402, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3406, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-lr-15-sm {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 3403, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3407, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-l-0-sm {
     padding-left: 0;
   }
 
-  /* line 3404, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3408, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-r-0-sm {
     padding-right: 0;
   }
 
-  /* line 3405, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3409, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-l-15-sm {
     padding-left: 15px;
   }
 
-  /* line 3406, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3410, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-r-15-sm {
     padding-right: 15px;
   }
 
-  /* line 3408, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3412, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .w-full-sm {
     width: 100%;
   }
 
   /*---------------------------------------------*/
-  /* line 3411, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3415, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .respon1 {
     font-size: 40px;
   }
 
   /*---------------------------------------------*/
-  /* line 3416, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3420, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .respon2 {
     font-size: 20px;
   }
 
   /*---------------------------------------------*/
-  /* line 3421, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3425, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .respon6 {
     width: 105px;
   }
 
-  /* line 3425, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3429, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .respon6-next {
     width: calc(100% - 65px);
   }
 
   /*---------------------------------------------*/
-  /* line 3430, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3434, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .respon7 {
     padding-left: 60px;
   }
@@ -13041,130 +13046,130 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ SSM ]*/
 @media (max-width: 480px) {
-  /* line 3441, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3445, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-0-ssm {
     margin: 0;
   }
 
-  /* line 3442, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3446, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-lr-0-ssm {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 3443, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3447, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-lr-15-ssm {
     margin-left: 15px;
     margin-right: 15px;
   }
 
-  /* line 3444, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3448, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-l-0-ssm {
     margin-left: 0;
   }
 
-  /* line 3445, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3449, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-r-0-ssm {
     margin-right: 0;
   }
 
-  /* line 3446, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3450, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-l-15-ssm {
     margin-left: 15px;
   }
 
-  /* line 3447, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3451, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .m-r-15-ssm {
     margin-right: 15px;
   }
 
-  /* line 3449, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3453, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-0-ssm {
     padding: 0;
   }
 
-  /* line 3450, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3454, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-lr-0-ssm {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 3451, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3455, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-lr-15-ssm {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 3452, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3456, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-l-0-ssm {
     padding-left: 0;
   }
 
-  /* line 3453, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3457, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-r-0-ssm {
     padding-right: 0;
   }
 
-  /* line 3454, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3458, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-l-15-ssm {
     padding-left: 15px;
   }
 
-  /* line 3455, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3459, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .p-r-15-ssm {
     padding-right: 15px;
   }
 
-  /* line 3457, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3461, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .w-full-ssm {
     width: 100%;
   }
 
   /*---------------------------------------------*/
-  /* line 3460, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3464, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .respon3 {
     padding: 20px;
   }
 }
 @media (min-width: 991px) {
-  /* line 3465, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3469, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .main-page {
     margin-top: 110px;
   }
 }
-/* line 3469, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3473, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .center {
   display: table;
   margin: 50px auto 0 auto;
 }
 
 @media (max-width: 767px) {
-  /* line 3474, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3478, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .partner-img {
     width: 45%;
     margin: 0 2%;
   }
 }
 @media (min-width: 767px) {
-  /* line 3480, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3484, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .partner-img {
     width: 15.4%;
     margin: 0 2%;
   }
 }
-/* line 3486, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3490, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .banner-bg {
   padding: 10px 0 25px 0 !important;
   position: relative;
   text-align: center;
 }
-/* line 3490, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3494, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .banner-bg img {
   opacity: 0.5;
   max-width: 100%;
 }
 
-/* line 3496, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3500, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .title {
   position: absolute;
   top: 40%;
@@ -13173,7 +13178,7 @@ input.num-product::-webkit-inner-spin-button {
   color: #333;
 }
 
-/* line 3504, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3508, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .description {
   position: absolute;
   top: 60%;
@@ -13182,17 +13187,17 @@ input.num-product::-webkit-inner-spin-button {
   color: #333;
 }
 
-/* line 3512, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3516, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .product-index {
   padding-top: 0px !important;
 }
 
-/* line 3516, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3520, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .lm_foundation {
-  background-image: url(/images/banner-2.jpg);
+  background-image: url(https://d1monvl96vvqbd.cloudfront.net/images/banner-2.jpg);
 }
 
-/* line 3519, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3523, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .search-string {
   border: 1px solid #e6e6e6;
   padding-right: 0px;
@@ -13200,52 +13205,52 @@ input.num-product::-webkit-inner-spin-button {
   margin-right: -70px;
 }
 
-/* line 3525, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3529, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .policy {
   border: 1px solid #e6e6e6;
   margin-bottom: 30px;
 }
-/* line 3528, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3532, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .policy .policy-box {
   margin-top: 30px;
   margin-bottom: -30px;
 }
 
-/* line 3534, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3538, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .job-p {
   margin-bottom: 40px;
   border-top: 1px solid #e6e6e6;
 }
 
-/* line 3539, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3543, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .partner {
   padding-bottom: 10px;
 }
 
-/* line 3543, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3547, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .field_with_errors {
   display: contents;
 }
 
-/* line 3546, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3550, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .center-blog {
   margin-left: auto;
   margin-right: auto;
 }
 
 @media (min-width: 991px) {
-  /* line 3552, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3556, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .about {
     margin-top: 120px;
   }
 
-  /* line 3556, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3560, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .lm_foundation {
     margin-top: 120px;
   }
 }
 @media (max-width: 1130px) {
-  /* line 3562, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3566, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   .main-menu > li {
     display: block;
     position: relative;
@@ -13253,19 +13258,19 @@ input.num-product::-webkit-inner-spin-button {
     margin: 0px 1px 0px 14px;
   }
 }
-/* line 3570, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3574, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .value {
   padding-left: 40px;
   text-align: justify;
 }
 
-/* line 3575, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3579, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .vision {
   padding-right: 40px;
   text-align: justify;
 }
 
-/* line 3580, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3584, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .input-checkout {
   display: block;
   margin-right: auto;
@@ -13274,56 +13279,56 @@ input.num-product::-webkit-inner-spin-button {
   height: 50px;
 }
 
-/* line 3588, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3592, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .promotion {
   padding: 6px;
   align-self: center;
 }
 
-/* line 3593, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3597, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .unclicked {
   pointer-events: none;
   opacity: 0.5;
 }
 
-/* line 3598, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3602, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .product-measurement-image img {
   width: 100%;
 }
 
-/* line 3602, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3606, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .related {
   padding: 10px;
 }
 
-/* line 3606, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3610, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .text-left {
   justify-content: initial !important;
 }
 
-/* line 3610, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3614, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .policy-text {
   color: #333;
 }
 
-/* line 3614, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3618, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .stock_code {
   display: contents;
 }
 
-/* line 3618, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3622, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .payment_method {
   align-self: self-start;
 }
 
-/* line 3622, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3626, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .radio-payment {
   float: left;
   clear: none;
   margin: 6px 8px 0 2px;
 }
 
-/* line 3628, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3632, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .radio-payment-label {
   loat: left;
   clear: none;
@@ -13331,54 +13336,54 @@ input.num-product::-webkit-inner-spin-button {
   padding: 0px 1em 0px 8px;
 }
 
-/* line 3636, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3640, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .size-color img {
   width: 47px;
 }
 
-/* line 3641, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3645, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 ul.disc {
   list-style-position: outside;
 }
-/* line 3644, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3648, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 ul.disc li {
   margin-left: 50px;
   list-style-type: circle;
 }
 
-/* line 3650, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3654, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .modal-dialog {
   margin-top: 10%;
   max-width: 1000px !important;
 }
-/* line 3653, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3657, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .modal-dialog .close {
   font-size: 1.8rem !important;
 }
-/* line 3656, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3660, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .modal-dialog button {
   position: absolute;
   left: 1%;
 }
 
-/* line 3661, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3665, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .img-responsive {
   width: 100%;
 }
 
-/* line 3665, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3669, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .order-header {
   text-align: left;
 }
 
-/* line 3669, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3673, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .oos {
   z-index: 100;
   position: absolute;
   top: 5px;
   left: 14px;
 }
-/* line 3675, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3679, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .oos .out-of-stock {
   padding: 6px;
   border: 1px solid #e6e6e6;
@@ -13386,31 +13391,31 @@ ul.disc li {
   color: #fff;
 }
 
-/* line 3683, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3687, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .promotion-price {
   text-decoration: line-through;
   display: initial;
   margin-right: 6px;
 }
 
-/* line 3689, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3693, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 .line-out {
   text-decoration: line-through;
   color: gray;
 }
 
-/* line 3694, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3698, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 #canvas {
   margin-left: -43px;
 }
 
 @media (min-width: 991px) {
-  /* line 3699, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+  /* line 3703, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
   #canvasbtn {
     margin-left: -7%;
   }
 }
-/* line 3704, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
+/* line 3708, /home/camnh/Desktop/job/lmcation/app/assets/stylesheets/main.scss */
 #bigButton:disabled {
   background: #dddddd;
 }
@@ -13428,7 +13433,7 @@ License: https://linearicons.com/free/license
  */
 @font-face {
   font-family: 'Material-Design-Iconic-Font';
-  src: url(/assets/iconic/Material-Design-Iconic-Font-e8eea96e29a7c0a72612ab85ca3229979666467a28349642c2176e7189a1a39c.woff2) format("woff2"), url(/assets/iconic/Material-Design-Iconic-Font-7c74c136895350e927bf69fe9fcb9f33fe9fae6340709d6ec4f8cb838a9470a3.woff) format("woff"), url(/assets/iconic/Material-Design-Iconic-Font-18a45be2ecb66ce217c3bbccf219f8bdc05dc76d61a6e63673186efd1c7cda1a.ttf) format("truetype");
+  src: url(/assets/fonts/iconic/Material-Design-Iconic-Font.woff2) format("woff2"), url(/assets/fonts/iconic/Material-Design-Iconic-Font.woff) format("woff"), url(/assets/fonts/iconic/Material-Design-Iconic-Font.ttf) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
