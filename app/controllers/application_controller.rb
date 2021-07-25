@@ -54,7 +54,6 @@ class ApplicationController < ActionController::Base
   end
 
   def set_categories
-    # @cats = Category.all
     # cats = ActiveRecord::Base.connection.execute(<<-QS
     #     SELECT c.id, c.category_image_file_name, c.category_image_content_type, c.category_image_file_size,
     #       c.category_image_updated_at, c.slug, ct.name, ct.description
