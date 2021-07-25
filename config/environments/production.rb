@@ -67,7 +67,7 @@ Rails.application.configure do
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.action_controller.asset_host = 'https://d1monvl96vvqbd.cloudfront.net'
+  # config.action_controller.asset_host = 'http://assets.example.com'
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -103,7 +103,9 @@ Rails.application.configure do
   }
   config.paperclip_defaults = {
     storage: :s3,
-    url: ':s3_domain_url',
+    s3_protocol: :https,
+    url: ':s3_alias_url',
+    s3_host_alias: "d1monvl96vvqbd.cloudfront.net",
     path: '/:class/:attachment/:id_partition/:style/:filename',
     s3_credentials: {
       bucket: Rails.application.secrets.bucket,
