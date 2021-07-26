@@ -26,8 +26,7 @@
     %meta{name:"google-site-verification", content:"g-fEOaiTrFmMKnfAztaLVsayhtwOaK9dHM892NBYip4"}
     %link{link: "https://www.lmcation.com/", rel:"canonical", as:"canonical"}
     = csrf_meta_tags
-    = stylesheet_link_tag    "application", media: "all", data_turbolinks_track: "reload"
-    = javascript_include_tag "application", data_turbolinks_track: "reload"
+    %link{href: "https://lmcation.s3.ap-southeast-1.amazonaws.com/assets/application-ecbea9759933843a8751fd71e53cf9a12d2cb5e03a20ceffb9616ce1d36dcf02.css", rel:"stylesheet", media: "all", data_turbolinks_track: "reload"}
     = canonical_tag
     / Facebook Pixel Code
     :javascript
@@ -261,6 +260,7 @@
           %button.close{"data-dismiss" => "modal", :type => "button"} ×
           = cl_image_tag "#{cdn_url}/systems/ND.webp", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
     / Global site tag (gtag.js) - Google Analytics
+    = javascript_include_tag "application"
     %script{src:"https://scripts.sirv.com/sirv.js", defer: :true}
     %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-164577749-1", defer: :true}
     %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", defer: :true}

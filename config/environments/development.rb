@@ -21,7 +21,7 @@ Rails.application.configure do
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
-  config.action_controller.asset_host = 'https://lmcation.s3.ap-southeast-1.amazonaws.com'
+  config.action_controller.asset_host = 'https://d1monvl96vvqbd.cloudfront.net'
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
