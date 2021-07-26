@@ -18,7 +18,7 @@
             = I18n.t "page.find_us.send_msg"
           .bor8.m-b-20.how-pos4-parent
             = f.text_field :email, autofocus: true, class: 'stext-111 cl2 plh3 size-116 p-l-62 p-r-30', :name => "email", :placeholder => I18n.t("page.find_us.email_field"), :type => "text"
-            = image_tag 'icons/icon-email.png', class: 'how-pos4 pointer-none'
+            = cl_image_tag 'https://lmcation.s3.ap-southeast-1.amazonaws.com/icons/icon-email.png', class: 'how-pos4 pointer-none'
           .bor8.m-b-30
             = f.text_area :question, autofocus: true, class: 'stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25', :name => "question", :placeholder => I18n.t("page.find_us.help_field")
           %center

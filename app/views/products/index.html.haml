@@ -56,8 +56,8 @@
                   - pro_ids = @favorite.try(:product_ids) || []
                   = link_to favorite_path(product.id), method: :put, remote: true,
                     class: "#{'js-addedwish-b2' if pro_ids.include?(product.id)} wishlist-#{product.id} btn-addwish-b2 dis-block pos-relative js-addwish-b2" do
-                    = image_tag "icons/icon-heart-01.png", class: "icon-heart1 dis-block trans-04", alt: 'ICON', loading:"lazy"
-                    = image_tag "icons/icon-heart-02.png", class: "icon-heart2 dis-block trans-04 ab-t-l", alt: 'ICON', loading:"lazy"
+                    = cl_image_tag "https://lmcation.s3.ap-southeast-1.amazonaws.com/icons/icon-heart-01.png", class: "icon-heart1 dis-block trans-04", alt: 'ICON', loading:"lazy"
+                    = cl_image_tag "https://lmcation.s3.ap-southeast-1.amazonaws.com/icons/icon-heart-02.png", class: "icon-heart2 dis-block trans-04 ab-t-l", alt: 'ICON', loading:"lazy"
                 - if product.has_promotion
                   .block2-txt-promo.flex-col-l.bor10
                     %span.mtext-103.cl3.promotion
@@ -104,8 +104,8 @@
                     - pro_ids = @favorite.try(:product_ids) || []
                     = link_to favorite_path(product['id']), method: :put, remote: true,
                       class: "#{'js-addedwish-b2' if pro_ids.include?(product['id'])} wishlist-#{product['id']} btn-addwish-b2 dis-block pos-relative js-addwish-b2" do
-                      = image_tag "icons/icon-heart-01.png", class: "icon-heart1 dis-block trans-04", alt: 'ICON', loading:"lazy"
-                      = image_tag "icons/icon-heart-02.png", class: "icon-heart2 dis-block trans-04 ab-t-l", alt: 'ICON', loading:"lazy"
+                      = cl_image_tag "https://lmcation.s3.ap-southeast-1.amazonaws.com/icons/icon-heart-01.png", class: "icon-heart1 dis-block trans-04", alt: 'ICON', loading:"lazy"
+                      = cl_image_tag "https://lmcation.s3.ap-southeast-1.amazonaws.com/icons/icon-heart-02.png", class: "icon-heart2 dis-block trans-04 ab-t-l", alt: 'ICON', loading:"lazy"
                   - if product['has_promotion'] == 't'
                     .block2-txt-promo.flex-col-l.bor10
                       %span.mtext-103.cl3.promotion
