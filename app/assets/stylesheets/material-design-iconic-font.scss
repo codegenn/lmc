@@ -4,9 +4,9 @@
  */
 @font-face {
   font-family: 'Material-Design-Iconic-Font';
-  src: font_url('iconic/Material-Design-Iconic-Font.woff2') format('woff2'),
-      font_url('iconic/Material-Design-Iconic-Font.woff') format('woff'),
-      font_url('iconic/Material-Design-Iconic-Font.ttf') format('truetype');
+  src: font_url('https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/fonts/Material-Design-Iconic-Font.woff2') format('woff2'),
+      font_url('https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/fonts/Material-Design-Iconic-Font.woff') format('woff'),
+      font_url('https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/fonts/Material-Design-Iconic-Font.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
