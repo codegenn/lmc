@@ -42,42 +42,49 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 @font-face {
   font-family: Elkwood;
   src: font_url('https://lmcationfont.s3.ap-southeast-1.amazonaws.com/font/barkentina/Barkentinanew.ttf') format("opentype");
-  
+  font-display: swap;
 }
 
 @font-face {
+  font-display: swap;
   font-family: Gotham-Book;
   src: font_url('https://lmcationfont.s3.ap-southeast-1.amazonaws.com/font/barkentina/Barkentinanew.ttf') format("opentype");
 }
 
 @font-face {
+  font-display: swap;
   font-family: Gotham-Light;
   src: font_url('https://lmcationfont.s3.ap-southeast-1.amazonaws.com/font/barkentina/Barkentinanew.ttf') format("opentype");
 }
 
 @font-face {
+  font-display: swap;
   font-family: Gotham-Medium;
   src: font_url('https://lmcationfont.s3.ap-southeast-1.amazonaws.com/font/barkentina/Barkentinanew.ttf') format("opentype");
 }
 
 @font-face {
+  font-display: swap;
   font-family: vacation;
   src: font_url('https://lmcationfont.s3.ap-southeast-1.amazonaws.com/font/Gotham/vacation.ttf') format("opentype");
 }
 
 /*---------------------------------------------*/
 @font-face {
+  font-display: swap;
   font-family: PlayfairDisplay-Regular;
   src: font_url('https://dhh3mcusffey3.cloudfront.net/font/PlayfairDisplay/PlayfairDisplay-Regular.ttf');
 }
 
 @font-face {
+  font-display: swap;
   font-family: PlayfairDisplay-Bold;
   src: font_url('https://dhh3mcusffey3.cloudfront.net/font/PlayfairDisplay/PlayfairDisplay-Bold.ttf');
 }
 
 /*---------------------------------------------*/
 @font-face {
+  font-display: swap;
   font-family: Montserrat-Regular;
   src: font_url('https://dhh3mcusffey3.cloudfront.net/font/Montserrat/Montserrat-Regular.ttf');
 }
