@@ -54,31 +54,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_categories
-    # cats = ActiveRecord::Base.connection.execute(<<-QS
-    #     SELECT c.id, c.category_image_file_name, c.category_image_content_type, c.category_image_file_size,
-    #       c.category_image_updated_at, c.slug, ct.name, ct.description
-    #     FROM categories c
-    #     LEFT JOIN category_translations ct ON ct.category_id = c.id AND ct.locale='#{I18n.locale.to_s}'
-    #     ORDER BY sort_order ASC
-    #     QS
-    #   ).as_json
-    
-    # @cats = cats.map do |cat|
-    #     _cat_tmp = Category.new(
-    #       :id => cat['id'],
-    #       :category_image_file_name => cat['category_image_file_name'],
-    #       :category_image_content_type => cat['category_image_content_type'],
-    #       :category_image_updated_at => cat['category_image_updated_at'],
-    #       :category_image_file_size=>cat['category_image_file_size'],
-    #     )
-    #     pap = Paperclip::Attachment.new :category_image, _cat_tmp
-
-    #     cat['cate_image_url'] = pap.url
-    #     cat
-    #   end
-
-    cats = Rails.cache.fetch("categories") do
-      ActiveRecord::Base.connection.execute(<<-QS
+    cats = ActiveRecord::Base.connection.execute(<<-QS
         SELECT c.id, c.category_image_file_name, c.category_image_content_type, c.category_image_file_size,
           c.category_image_updated_at, c.slug, ct.name, ct.description
         FROM categories c
@@ -86,10 +62,8 @@ class ApplicationController < ActionController::Base
         ORDER BY sort_order ASC
         QS
       ).as_json
-    end
     
-    @cats = Rails.cache.fetch("categories_arr") do
-      cats.map do |cat|
+    @cats = cats.map do |cat|
         _cat_tmp = Category.new(
           :id => cat['id'],
           :category_image_file_name => cat['category_image_file_name'],
@@ -102,6 +76,32 @@ class ApplicationController < ActionController::Base
         cat['cate_image_url'] = pap.url
         cat
       end
-    end
+
+    # cats = Rails.cache.fetch("categories") do
+    #   ActiveRecord::Base.connection.execute(<<-QS
+    #     SELECT c.id, c.category_image_file_name, c.category_image_content_type, c.category_image_file_size,
+    #       c.category_image_updated_at, c.slug, ct.name, ct.description
+    #     FROM categories c
+    #     LEFT JOIN category_translations ct ON ct.category_id = c.id AND ct.locale='#{I18n.locale.to_s}'
+    #     ORDER BY sort_order ASC
+    #     QS
+    #   ).as_json
+    # end
+    
+    # @cats = Rails.cache.fetch("categories_arr") do
+    #   cats.map do |cat|
+    #     _cat_tmp = Category.new(
+    #       :id => cat['id'],
+    #       :category_image_file_name => cat['category_image_file_name'],
+    #       :category_image_content_type => cat['category_image_content_type'],
+    #       :category_image_updated_at => cat['category_image_updated_at'],
+    #       :category_image_file_size=>cat['category_image_file_size'],
+    #     )
+    #     pap = Paperclip::Attachment.new :category_image, _cat_tmp
+
+    #     cat['cate_image_url'] = pap.url
+    #     cat
+    #   end
+    # end
   end
 end
