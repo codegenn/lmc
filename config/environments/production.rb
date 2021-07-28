@@ -106,8 +106,9 @@ Rails.application.configure do
   config.paperclip_defaults = {
     storage: :s3,
     s3_protocol: :https,
-    url: ':s3_domain_url',
+    url: ':s3_alias_url',
     path: '/:class/:attachment/:id_partition/:style/:filename',
+    s3_host_alias: "d1monvl96vvqbd.cloudfront.net",
     s3_credentials: {
       bucket: Rails.application.secrets.bucket,
       access_key_id: Rails.application.secrets.access_key_id,
