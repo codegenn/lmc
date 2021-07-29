@@ -13,19 +13,25 @@ class ProductsController < ApplicationController
     @keyword = nil
     if category.present?
       @keyword = I18n.t("keyword_sport") unless category.include?("do-mac-nha-do-ngu")
-      @category = Category.friendly.find(category)
-      @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
-      breadcrumb @category.name, "?category=#{@category.slug}"
-      @data_bread.push({name: @category.name, item: "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}"})
-    elsif check.present?
-      @products = Product.send(check.to_sym).active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
-      @check = true
-    elsif query
-      @at = []
-      @products = Product.translation_class.where('title LIKE :search_name OR description LIKE :search_description OR short_description = :short_description',
-                                  search_name: "%#{query}%", search_description: "%#{query}%", short_description: "%#{query}%").all.each do |t|
-        @at << t.product_id
+      Rails.cache.fetch(cache_key(category)) do
+        @category = Category.friendly.find(category)
+        @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
+        breadcrumb @category.name, "?category=#{@category.slug}"
+        @data_bread.push({name: @category.name, item: "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}"})
       end
+    elsif check.present?
+      Rails.cache.fetch(cache_key(check)) do
+        @products = Product.send(check.to_sym).active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
+        @check = true
+      end
+    elsif query
+        @at = []
+        @products = Rails.cache.fetch(cache_key(query)) do
+          Product.translation_class.where('title LIKE :search_name OR description LIKE :search_description OR short_description = :short_description',
+                                    search_name: "%#{query}%", search_description: "%#{query}%", short_description: "%#{query}%").all.each do |t|
+           @at << t.product_id
+          end
+        end
       if @at.present?
         @products = Product.where(id: @at).main_page
       else
@@ -47,34 +53,42 @@ class ProductsController < ApplicationController
 
   def show
     redirect_to products_path if @product.is_hidden
-    @stocks = @product.stocks.group_by(&:size)
-    @b_stocks = @product.bottom_stocks
-    @color_images = @product.color_images
-    @category = @product.categories.first
-    @related_products = @category ? @category.products.sample(4) : Product.all.sample(4)
-    breadcrumb(I18n.t("page.menu.shop"), "https://www.lmcation.com/#{I18n.locale}/products")
-    breadcrumb(@category.name, "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}")
-    breadcrumb(@product.title, "https://www.lmcation.com/#{I18n.locale}/#{@product.slug}")
-    @data_bread.push({name: I18n.t("page.menu.shop"), item: "https://www.lmcation.com/#{I18n.locale}/products"})
-    @data_bread.push({name: @category.name, item: "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}"})
-    @data_bread.push({name: @product.title, item: "https://www.lmcation.com/#{I18n.locale}/#{@product.slug}"})
-    list_bread(@data_bread)
-    meta_data(
-      @product.title,
-      @product.description,
-      @product.product_images.first.try(:image_url),
-      product_path(@product.slug),
-      I18n.t("keyword") << "," << I18n.t("keyword_sport")
-    )
+    Rails.cache.fetch(cache_key(@product.id)) do
+      @stocks = @product.stocks.group_by(&:size)
+      @b_stocks = @product.bottom_stocks
+      @color_images = @product.color_images
+      @category = @product.categories.first
+      @related_products = @category ? @category.products.sample(4) : Product.all.sample(4)
+      breadcrumb(I18n.t("page.menu.shop"), "https://www.lmcation.com/#{I18n.locale}/products")
+      breadcrumb(@category.name, "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}")
+      breadcrumb(@product.title, "https://www.lmcation.com/#{I18n.locale}/#{@product.slug}")
+      @data_bread.push({name: I18n.t("page.menu.shop"), item: "https://www.lmcation.com/#{I18n.locale}/products"})
+      @data_bread.push({name: @category.name, item: "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}"})
+      @data_bread.push({name: @product.title, item: "https://www.lmcation.com/#{I18n.locale}/#{@product.slug}"})
+      list_bread(@data_bread)
+      meta_data(
+        @product.title,
+        @product.description,
+        @product.product_images.first.try(:image_url),
+        product_path(@product.slug),
+        I18n.t("keyword") << "," << I18n.t("keyword_sport")
+      )
+    end
   end
 
   private
 
   def set_product
-    @product = Product.friendly.find(params[:id])
+    @product = Rails.cache.fetch(cache_key(params[:id])) do
+      Product.friendly.find(params[:id])
+    end
   end
 
   def set_bread
+  end
+  
+  def cache_key(key)
+    "#{key}_#{I18n.locale}"
   end
 
   def set_menu
