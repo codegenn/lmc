@@ -1,7 +1,7 @@
 class StoreController < ApplicationController
   include ApplicationHelper
   def index
-    Rails.cache.fetch(cache_key(store)) do
+    Rails.cache.fetch(cache_key("store")) do
       @menu = 'store'
       expires_in 3.days, :public => true
       meta_data(
