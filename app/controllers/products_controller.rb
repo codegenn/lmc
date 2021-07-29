@@ -13,8 +13,10 @@ class ProductsController < ApplicationController
     @keyword = nil
     if category.present?
       @keyword = I18n.t("keyword_sport") unless category.include?("do-mac-nha-do-ngu")
-      @category = Category.friendly.find(category)
-      @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
+      Rails.cache.fetch(cache_key(category)) do
+        @category = Category.friendly.find(category)
+        @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
+      end
       breadcrumb @category.name, "?category=#{@category.slug}"
       @data_bread.push({name: @category.name, item: "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}"})
     elsif check.present?
@@ -47,11 +49,13 @@ class ProductsController < ApplicationController
 
   def show
     redirect_to products_path if @product.is_hidden
-    @stocks = @product.stocks.group_by(&:size)
-    @b_stocks = @product.bottom_stocks
-    @color_images = @product.color_images
-    @category = @product.categories.first
-    @related_products = @category ? @category.products.sample(4) : Product.all.sample(4)
+    Rails.cache.fetch(cache_key(@product.id)) do
+      @stocks = @product.stocks.group_by(&:size)
+      @b_stocks = @product.bottom_stocks
+      @color_images = @product.color_images
+      @category = @product.categories.first
+      @related_products = @category ? @category.products.sample(4) : Product.all.sample(4)
+    end
     breadcrumb(I18n.t("page.menu.shop"), "https://www.lmcation.com/#{I18n.locale}/products")
     breadcrumb(@category.name, "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}")
     breadcrumb(@product.title, "https://www.lmcation.com/#{I18n.locale}/#{@product.slug}")
