@@ -23,7 +23,11 @@ default: &default
 
 development:
   <<: *default
-  database: lmcation_project_development
+  database: <%= ENV["DB_DATABASE"] %>
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
+  host: <%= ENV["DB_HOST"] %>
+  port: <%= ENV["DB_PORT"] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,8 +61,11 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: lmcation_project_test
-
+  database: <%= ENV["DB_DATABASE"] %>
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
+  host: <%= ENV["DB_HOST"] %>
+  port: <%= ENV["DB_PORT"] %>
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -80,6 +87,17 @@ test:
 #
 production:
   <<: *default
-  database: lmcation_project_production
-  username: lmcation_project
-  password: <%= ENV['LMCATION_PROJECT_DATABASE_PASSWORD'] %>
+  database: <%= ENV["DB_DATABASE"] %>
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
+  host: <%= ENV["DB_HOST"] %>
+  port: <%= ENV["DB_PORT"] %>
+
+# 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
+# psql -h database-1.cbtbof2lkjhb.ap-southeast-1.rds.amazonaws.com -p 5432 -U postgres -d lmcation_project_production
+# psql --host=lmc-data.cbtbof2lkjhb.ap-southeast-1.rds.amazonaws.com --port=5432 --user=lmcation_project
+# psql -h lmc-data.cbtbof2lkjhb.ap-southeast-1.rds.amazonaws.com
+# psql "host=lmc-data.cbtbof2lkjhb.ap-southeast-1.rds.amazonaws.com port=5432 sslmode=verify-full sslrootcert=/sample_dir/rds-combined-ca-bundle.pem dbname=DBName user=jane_doe password=$PGPASSWORD"
+# CREATE ROLE cam WITH PASSWORD 'cam123' CREATEDB CREATEROLE LOGIN;
+# psql -h lmc-data.cbtbof2lkjhb.ap-southeast-1.rds.amazonaws.com -U lmcation-project -d lmc-data
+# psql -h lmc-data.cbtbof2lkjhb.ap-southeast-1.rds.amazonaws.com -p 5432 "sslmode=verify-full sslrootcert=rds-ca-2019-root.pem dbname=aurora_pg_ssl user=webit"

@@ -57,7 +57,6 @@ gem 'activeadmin'
 gem 'devise'
 gem 'cloudinary'
 gem "paperclip"
-gem 'unicorn'
 
 ruby "2.6.0"
 gem 'globalize'
