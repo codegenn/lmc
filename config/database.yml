@@ -87,13 +87,10 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV["DB_DATABASE"] %>
-  username: <%= ENV["DB_USER"] %>
-  password: <%= ENV["DB_PASSWORD"] %>
-  host: <%= ENV["DB_HOST"] %>
-  port: <%= ENV["DB_PORT"] %>
+  url: <%= ENV['DATABASE_URL'] %>
 
-# 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
+#DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+  # 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
 # psql -h database-1.cbtbof2lkjhb.ap-southeast-1.rds.amazonaws.com -p 5432 -U postgres -d lmcation_project_production
 # psql --host=lmc-data.cbtbof2lkjhb.ap-southeast-1.rds.amazonaws.com --port=5432 --user=lmcation_project
 # psql -h lmc-data.cbtbof2lkjhb.ap-southeast-1.rds.amazonaws.com
