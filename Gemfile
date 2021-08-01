@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'turbolinks'
+gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -27,6 +28,7 @@ gem 'mimemagic', '0.3.8'
 gem 'redis-rails'
 gem "breadcrumbs_on_rails"
 gem 'canonical-rails'
+# gem "dotenv"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

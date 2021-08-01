@@ -1103,6 +1103,9 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
+    passenger (6.0.10)
+      rack
+      rake (>= 0.8.1)
     pg (0.21.0)
     proxies (0.2.3)
     pry (0.12.2)
@@ -1257,6 +1260,7 @@ DEPENDENCIES
   jquery-rails
   mimemagic (= 0.3.8)
   paperclip
+  passenger (>= 5.0.25)
   pg (~> 0.20)
   pry-nav
   rack-mini-profiler
