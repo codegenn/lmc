@@ -16,7 +16,7 @@ Rails.application.configure do
   config.cache_store = :redis_store, {
     expires_in: 30.days,
     namespace: 'cache',
-    redis: { host: 'redis-15566.c278.us-east-1-4.ec2.cloud.redislabs.com:15566', port: 6379, db: 0 },
+    redis: { host: 'lmc-app-cache-ro.91wmpu.ng.0001.apse1.cache.amazonaws.com', port: 6379, db: 0 },
     }
 
 
