@@ -15,13 +15,11 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'turbolinks'
-gem 'unicorn'
-group :development do
-  gem 'capistrano-rails', require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-rbenv'
-  gem 'capistrano', '~> 3.4.0'
-end
+gem "capistrano"
+gem "capistrano3-puma"
+gem "capistrano-rails", require: false
+gem "capistrano-bundler", require: false
+gem "capistrano-rvm"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
