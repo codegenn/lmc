@@ -57,7 +57,7 @@ class ProductsController < ApplicationController
       @related_products = @category ? @category.products.sample(4) : Product.all.sample(4)
     # end
     breadcrumb(I18n.t("page.menu.shop"), "https://www.lmcation.com/#{I18n.locale}/products")
-    if @category.name.present?
+    unless @category.name.nil?
       breadcrumb(@category.name, "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}")
     end
     breadcrumb(@product.title, "https://www.lmcation.com/#{I18n.locale}/#{@product.slug}")
