@@ -57,7 +57,7 @@ class ProductsController < ApplicationController
       @related_products = @category ? @category.products.sample(4) : Product.all.sample(4)
     # end
     breadcrumb(I18n.t("page.menu.shop"), "https://www.lmcation.com/#{I18n.locale}/products")
-    breadcrumb(@category.name, "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}")
+    breadcrumb(@category.name, "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}") if @category.present?
     breadcrumb(@product.title, "https://www.lmcation.com/#{I18n.locale}/#{@product.slug}")
     @data_bread.push({name: I18n.t("page.menu.shop"), item: "https://www.lmcation.com/#{I18n.locale}/products"})
     @data_bread.push({name: @category.name, item: "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}"})
