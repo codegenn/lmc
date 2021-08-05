@@ -62,7 +62,9 @@ class ProductsController < ApplicationController
     end
     breadcrumb(@product.title, "https://www.lmcation.com/#{I18n.locale}/#{@product.slug}")
     @data_bread.push({name: I18n.t("page.menu.shop"), item: "https://www.lmcation.com/#{I18n.locale}/products"})
-    @data_bread.push({name: @category.name, item: "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}"})
+    unless @category.nil?
+      @data_bread.push({name: @category.name, item: "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}"})
+    end
     @data_bread.push({name: @product.title, item: "https://www.lmcation.com/#{I18n.locale}/#{@product.slug}"})
     list_bread(@data_bread)
     meta_data(
