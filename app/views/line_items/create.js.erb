@@ -11,8 +11,7 @@
   fbq('init', '584519498852272');
   fbq('track', 'AddToCart');
 <% elsif flash[:danger] %>
-  $("#modal-window").find(".modal-content").html("<%= j (render 'line_items/modal', danger: flash[:danger] ) %>");
-  $("#modal-window").modal();
+  $('<%= j render "line_items/modal", danger: flash[:danger] %>').modal();
 <% end %>
 <% flash.discard %>
 
