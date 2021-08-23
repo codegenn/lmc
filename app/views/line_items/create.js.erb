@@ -11,7 +11,8 @@
   fbq('init', '584519498852272');
   fbq('track', 'AddToCart');
 <% elsif flash[:danger] %>
-  $('.alert').html('<p class="alert alert-danger"><%= flash[:danger] %></p>')
+  $("#modal-window").find(".modal-content").html("<%= j (render 'new', danger: flash[:danger] ) %>");
+  $("#modal-window").modal();
 <% end %>
 <% flash.discard %>
 
