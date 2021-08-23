@@ -80,7 +80,7 @@ class ProductsController < ApplicationController
 
   def set_product
     # @product = Rails.cache.fetch(cache_key(params[:id])) do
-      Product.friendly.find(params[:id])
+    @product = Product.friendly.find(params[:id])
     # end
   end
 
