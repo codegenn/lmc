@@ -1,0 +1,208 @@
+kind: pipeline
+type: kubernetes
+name: lmcation-ci
+
+steps:
+  - name: build-dev-lmcation-image
+    image: plugins/ecr
+    environment:
+      PLUGIN_STORAGE_DRIVER: overlay2
+      PLUGIN_CACHE_FROM: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com/lmcation:latest
+      DOCKER_BUILDKIT: "1"
+    settings:
+      dockerfile: ./Dockerfile
+      region: ap-northeast-1
+      repo: lmcation
+      registry: 045675425505.dkr.ecr.ap-northeast-1.amazonaws.com
+      access_key:
+        from_secret: aws_access_key_id
+      secret_key:
+        from_secret: aws_secret_access_key
+      build_args:
+        - BUILDKIT_INLINE_CACHE=1
+      tags:
+        - DEV-${DRONE_BRANCH##DEV-}
+        - dev-${DRONE_COMMIT:0:7}
+    when:
+      branch:
+        include:
+          - DEV-*
+      event:
+        - push
+      status:
+        - success
+
+  # staging
+  - name: build-staging-lmcation-image
+    image: plugins/ecr
+    environment:
+      PLUGIN_STORAGE_DRIVER: overlay2
+      PLUGIN_CACHE_FROM: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com/lmcation:latest
+      DOCKER_BUILDKIT: "1"
+    settings:
+      dockerfile: ./Dockerfile
+      region: ap-northeast-1
+      repo: lmcation
+      registry: 045675425505.dkr.ecr.ap-northeast-1.amazonaws.com
+      access_key:
+        from_secret: aws_access_key_id
+      secret_key:
+        from_secret: aws_secret_access_key
+      build_args:
+        - BUILDKIT_INLINE_CACHE=1
+      tags:
+        - stg-${DRONE_COMMIT:0:7}
+        - staging
+        - latest
+    when:
+      branch:
+        - staging
+      event:
+        - push
+      status:
+        - success
+
+  - name: flux-staging-lmcation-status
+    image: sinlead/drone-kubectl
+    environment:
+      NAMESPACE: stg-customer
+      SERVICE: lmcation
+    settings:
+      kubernetes_server:
+        from_secret: lmcation_server
+      kubernetes_cert:
+        from_secret: lmcation_cert
+      kubernetes_token:
+        from_secret: lmcation_token
+    commands:
+      - /bin/bash ./script/check-flux-status.sh stg-${DRONE_COMMIT:0:7}
+    when:
+      branch:
+        - staging
+      event:
+        - push
+      status:
+        - success
+
+  # prod
+  # - name: build-production-lmcation-image
+  #   image: plugins/ecr
+  #   environment:
+  #     PLUGIN_STORAGE_DRIVER: overlay2
+  #     PLUGIN_CACHE_FROM: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com/lmcation:latest
+  #     DOCKER_BUILDKIT: "1"
+  #   settings:
+  #     dockerfile: ./Dockerfile
+  #     region: ap-northeast-1
+  #     repo: lmcation
+  #     registry: 045675425505.dkr.ecr.ap-northeast-1.amazonaws.com
+  #     access_key:
+  #       from_secret: aws_access_key_id
+  #     secret_key:
+  #       from_secret: aws_secret_access_key
+  #     build_args:
+  #       - BUILDKIT_INLINE_CACHE=1
+  #     tag:
+  #       - production
+  #       - prod-${DRONE_COMMIT:0:7}
+  #   when:
+  #     branch:
+  #       - release
+  #     event:
+  #       - push
+  #     status:
+  #       - success
+
+  # - name: flux-production-lmcation-status
+  #   image: sinlead/drone-kubectl
+  #   environment:
+  #     NAMESPACE: prod-customer
+  #     SERVICE: lmcation
+  #   settings:
+  #     kubernetes_server:
+  #       from_secret: lmcation_server
+  #     kubernetes_cert:
+  #       from_secret: lmcation_cert
+  #     kubernetes_token:
+  #       from_secret: lmcation_token
+  #   commands:
+  #     - /bin/bash ./script/check-flux-status.sh prod-${DRONE_COMMIT:0:7}
+  #   when:
+  #     branch:
+  #       - release
+  #     event:
+  #       - push
+  #     status:
+  #       - success
+
+  # # master
+  # - name: build-master-lmcation-image
+  #   image: plugins/ecr
+  #   environment:
+  #     PLUGIN_STORAGE_DRIVER: overlay2
+  #     PLUGIN_CACHE_FROM: 045675425505.dkr.ecr.ap-northeast-1.amazonaws.com/lmcation:latest
+  #     DOCKER_BUILDKIT: "1"
+  #   settings:
+  #     dockerfile: ./Dockerfile
+  #     region: ap-northeast-1
+  #     repo: lmcation
+  #     registry: 045675425505.dkr.ecr.ap-northeast-1.amazonaws.com
+  #     access_key:
+  #       from_secret: aws_access_key_id
+  #     secret_key:
+  #       from_secret: aws_secret_access_key
+  #     build_args:
+  #       - BUILDKIT_INLINE_CACHE=1
+  #     tag:
+  #       - latest
+  #       - master
+  #   when:
+  #     event:
+  #       - push
+  #     branch:
+  #       - master
+  #     status:
+  #       - success
+
+tolerations:
+  - key: ciInstance
+    operator: Exists
+    effect: NoSchedule
+
+node_selector:
+  ci: true
+
+---
+kind: secret
+name: aws_access_key_id
+get:
+  path: drone/aws
+  name: aws_access_key_id
+
+---
+kind: secret
+name: aws_secret_access_key
+get:
+  path: drone/aws
+  name: aws_secret_access_key
+
+---
+kind: secret
+name: lmcation_server
+get:
+  path: prod/k8s
+  name: server
+
+---
+kind: secret
+name: lmcation_cert
+get:
+  path: prod/k8s
+  name: cert
+
+---
+kind: secret
+name: lmcation_token
+get:
+  path: prod/k8s
+  name: token

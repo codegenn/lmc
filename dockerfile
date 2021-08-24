@@ -13,6 +13,15 @@ RUN sed -i -e "s/deb.debian.org/cloudfront.debian.net/g" /etc/apt/sources.list \
     &&  apt-get clean \
     &&  gem install bundler -v ${BUNDLER_VERSION}
 
+RUN apt-get update && apt-get install -y \
+    curl \
+    build-essential \
+    libpq-dev &&\
+    curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+    apt-get update && apt-get install -y nodejs yarn
+
 RUN echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections \
     && echo "postfix postfix/mailname string \$myhostname" | debconf-set-selections \
     && apt-get install postfix -y
@@ -29,6 +38,6 @@ RUN --mount=type=cache,target=.cache/bundle,id=lmcation-bundle \
 
 COPY ./ .
 
-RUN bundle exec rake assets:precompile
+RUN /bin/bash -c bundle exec rake assets:precompile -e production
 
 EXPOSE 8080

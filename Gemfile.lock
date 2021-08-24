@@ -1015,6 +1015,7 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.6)
     ejs (1.1.1)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -1254,6 +1255,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   delayed_job_active_record
   devise
+  dotenv
   friendly_id (~> 5.2.4)
   globalize
   haml-rails
