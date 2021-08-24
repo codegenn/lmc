@@ -1,5 +1,5 @@
 kind: pipeline
-type: kubernetes
+type: docker
 name: lmcation-ci
 
 steps:
@@ -12,12 +12,12 @@ steps:
     settings:
       dockerfile: ./Dockerfile
       region: ap-southeast-1
-      repo: lmcation
+      repo: lmc
       registry: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com
-      access_key:
-        from_secret: aws_access_key_id
-      secret_key:
-        from_secret: aws_secret_access_key
+      # access_key:
+      #   from_secret: aws_access_key_id
+      # secret_key:
+      #   from_secret: aws_secret_access_key
       build_args:
         - BUILDKIT_INLINE_CACHE=1
       tags:
@@ -33,56 +33,56 @@ steps:
         - success
 
   # staging
-  - name: build-staging-lmcation-image
-    image: plugins/ecr
-    environment:
-      PLUGIN_STORAGE_DRIVER: overlay2
-      PLUGIN_CACHE_FROM: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com/lmcation:latest
-      DOCKER_BUILDKIT: "1"
-    settings:
-      dockerfile: ./Dockerfile
-      region: ap-southeast-1
-      repo: lmc
-      registry: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com
-      access_key:
-        from_secret: aws_access_key_id
-      secret_key:
-        from_secret: aws_secret_access_key
-      build_args:
-        - BUILDKIT_INLINE_CACHE=1
-      tags:
-        - stg-${DRONE_COMMIT:0:7}
-        - staging
-        - latest
-    when:
-      branch:
-        - staging
-      event:
-        - push
-      status:
-        - success
+  # - name: build-staging-lmcation-image
+  #   image: plugins/ecr
+  #   environment:
+  #     PLUGIN_STORAGE_DRIVER: overlay2
+  #     PLUGIN_CACHE_FROM: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com/lmcation:latest
+  #     DOCKER_BUILDKIT: "1"
+  #   settings:
+  #     dockerfile: ./Dockerfile
+  #     region: ap-southeast-1
+  #     repo: lmc
+  #     registry: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com
+  #     access_key:
+  #       from_secret: aws_access_key_id
+  #     secret_key:
+  #       from_secret: aws_secret_access_key
+  #     build_args:
+  #       - BUILDKIT_INLINE_CACHE=1
+  #     tags:
+  #       - stg-${DRONE_COMMIT:0:7}
+  #       - staging
+  #       - latest
+  #   when:
+  #     branch:
+  #       - staging
+  #     event:
+  #       - push
+  #     status:
+  #       - success
 
-  - name: flux-staging-lmcation-status
-    image: sinlead/drone-kubectl
-    environment:
-      NAMESPACE: lmcation-stg
-      SERVICE: lmcation
-    settings:
-      kubernetes_server:
-        from_secret: lmcation_server
-      kubernetes_cert:
-        from_secret: lmcation_cert
-      kubernetes_token:
-        from_secret: lmcation_token
-    commands:
-      - /bin/bash ./script/check-flux-status.sh stg-${DRONE_COMMIT:0:7}
-    when:
-      branch:
-        - DEV-*
-      event:
-        - push
-      status:
-        - success
+  # - name: flux-staging-lmcation-status
+  #   image: sinlead/drone-kubectl
+  #   environment:
+  #     NAMESPACE: lmcation-stg
+  #     SERVICE: lmcation
+  #   settings:
+  #     kubernetes_server:
+  #       from_secret: lmcation_server
+  #     kubernetes_cert:
+  #       from_secret: lmcation_cert
+  #     kubernetes_token:
+  #       from_secret: lmcation_token
+  #   commands:
+  #     - /bin/bash ./script/check-flux-status.sh stg-${DRONE_COMMIT:0:7}
+  #   when:
+  #     branch:
+  #       - DEV-*
+  #     event:
+  #       - push
+  #     status:
+  #       - success
 
   # prod
   # - name: build-production-lmcation-image
