@@ -11,9 +11,9 @@ steps:
       DOCKER_BUILDKIT: "1"
     settings:
       dockerfile: ./Dockerfile
-      region: ap-northeast-1
+      region: ap-southeast-1
       repo: lmcation
-      registry: 045675425505.dkr.ecr.ap-northeast-1.amazonaws.com
+      registry: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com
       access_key:
         from_secret: aws_access_key_id
       secret_key:
@@ -41,9 +41,9 @@ steps:
       DOCKER_BUILDKIT: "1"
     settings:
       dockerfile: ./Dockerfile
-      region: ap-northeast-1
-      repo: lmcation
-      registry: 045675425505.dkr.ecr.ap-northeast-1.amazonaws.com
+      region: ap-southeast-1
+      repo: lmc
+      registry: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com
       access_key:
         from_secret: aws_access_key_id
       secret_key:
@@ -65,7 +65,7 @@ steps:
   - name: flux-staging-lmcation-status
     image: sinlead/drone-kubectl
     environment:
-      NAMESPACE: stg-customer
+      NAMESPACE: lmcation-stg
       SERVICE: lmcation
     settings:
       kubernetes_server:
@@ -78,7 +78,7 @@ steps:
       - /bin/bash ./script/check-flux-status.sh stg-${DRONE_COMMIT:0:7}
     when:
       branch:
-        - staging
+        - DEV-*
       event:
         - push
       status:
@@ -93,9 +93,9 @@ steps:
   #     DOCKER_BUILDKIT: "1"
   #   settings:
   #     dockerfile: ./Dockerfile
-  #     region: ap-northeast-1
-  #     repo: lmcation
-  #     registry: 045675425505.dkr.ecr.ap-northeast-1.amazonaws.com
+  #     region: ap-southeast-1
+  #     repo: lmc
+  #     registry: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com
   #     access_key:
   #       from_secret: aws_access_key_id
   #     secret_key:
@@ -140,13 +140,13 @@ steps:
   #   image: plugins/ecr
   #   environment:
   #     PLUGIN_STORAGE_DRIVER: overlay2
-  #     PLUGIN_CACHE_FROM: 045675425505.dkr.ecr.ap-northeast-1.amazonaws.com/lmcation:latest
+  #     PLUGIN_CACHE_FROM: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com/lmcation:latest
   #     DOCKER_BUILDKIT: "1"
   #   settings:
   #     dockerfile: ./Dockerfile
-  #     region: ap-northeast-1
-  #     repo: lmcation
-  #     registry: 045675425505.dkr.ecr.ap-northeast-1.amazonaws.com
+  #     region: ap-southeast-1
+  #     repo: lmc
+  #     registry: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com
   #     access_key:
   #       from_secret: aws_access_key_id
   #     secret_key:
