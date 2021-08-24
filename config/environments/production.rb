@@ -16,7 +16,7 @@ Rails.application.configure do
   config.cache_store = :redis_store, {
     expires_in: 30.days,
     namespace: 'cache',
-    redis: { host: 'redis-15566.c278.us-east-1-4.ec2.cloud.redislabs.com:15566', port: 6379, db: 0 },
+    redis: { host: 'lmcation-memcache.91wmpu.cfg.apse1.cache.amazonaws.com', port: 11211, db: 0 },
     }
 
 
@@ -35,7 +35,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.serve_static_assets = true
+  config.serve_static_files = true
   config.assets.compress = true
   config.assets.compile = true
 

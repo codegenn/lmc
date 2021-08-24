@@ -15,6 +15,11 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'turbolinks'
+gem "capistrano"
+gem "capistrano3-puma"
+gem "capistrano-rails", require: false
+gem "capistrano-bundler", require: false
+gem "capistrano-rvm"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -27,6 +32,7 @@ gem 'mimemagic', '0.3.8'
 gem 'redis-rails'
 gem "breadcrumbs_on_rails"
 gem 'canonical-rails'
+# gem "dotenv"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -57,7 +63,6 @@ gem 'activeadmin'
 gem 'devise'
 gem 'cloudinary'
 gem "paperclip"
-gem 'unicorn'
 
 ruby "2.6.0"
 gem 'globalize'
