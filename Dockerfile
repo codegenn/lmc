@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile:experimental
-FROM ruby:2.6.0
+FROM 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com/lmcation:2.6.0
 
 ARG BUNDLER_VERSION="1.15.3"
 ARG RAILS_ROOT=/lmcation

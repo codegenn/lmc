@@ -14,10 +14,10 @@ steps:
       region: ap-southeast-1
       repo: lmc
       registry: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com
-      # access_key:
-      #   from_secret: aws_access_key_id
-      # secret_key:
-      #   from_secret: aws_secret_access_key
+      access_key:
+        from_secret: aws_access_key_id
+      secret_key:
+        from_secret: aws_secret_access_key
       build_args:
         - BUILDKIT_INLINE_CACHE=1
       tags:
