@@ -39,6 +39,22 @@ class StoreController < ApplicationController
     breadcrumb(name, item)
   end
 
+  def privacy_buy
+    name = I18n.t("page.privacy_buy.title")
+    item = "https://www.lmcation.com/vi/huong-dan-mua-hang"
+    @data_bread.push({name: name, item: item})
+    list_bread(@data_bread)
+    breadcrumb(name, item)
+  end
+
+  def privacy_payment
+    name = I18n.t("page.privacy_payment.title")
+    item = "https://www.lmcation.com/vi/quy-dinh-thanh-toan-va-can-chuyen"
+    @data_bread.push({name: name, item: item})
+    list_bread(@data_bread)
+    breadcrumb(name, item)
+  end
+
   def policy
     name = I18n.t("page.index.return")
     item = "https://www.lmcation.com/#{I18n.locale}/policy"
