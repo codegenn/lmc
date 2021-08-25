@@ -12,7 +12,7 @@ steps:
     settings:
       dockerfile: ./Dockerfile
       region: ap-southeast-1
-      repo: lmc
+      repo: lmcation
       registry: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com
       access_key:
         from_secret: aws_access_key_id
@@ -42,7 +42,7 @@ steps:
   #   settings:
   #     dockerfile: ./Dockerfile
   #     region: ap-southeast-1
-  #     repo: lmc
+  #     repo: lmcation
   #     registry: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com
   #     access_key:
   #       from_secret: aws_access_key_id
@@ -94,7 +94,7 @@ steps:
   #   settings:
   #     dockerfile: ./Dockerfile
   #     region: ap-southeast-1
-  #     repo: lmc
+  #     repo: lmcation
   #     registry: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com
   #     access_key:
   #       from_secret: aws_access_key_id
@@ -145,7 +145,7 @@ steps:
   #   settings:
   #     dockerfile: ./Dockerfile
   #     region: ap-southeast-1
-  #     repo: lmc
+  #     repo: lmcation
   #     registry: 373728140326.dkr.ecr.ap-southeast-1.amazonaws.com
   #     access_key:
   #       from_secret: aws_access_key_id
