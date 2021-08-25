@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     get 'thoi-trang-ton-vinh-phu-nu', to: "store#about"
     get 'lien-he', to: "store#find_us"
     get 'policy', to:"store#policy"
+    get "huong-dan-mua-hang", to: "store#privacy_buy"
+    get "quy-dinh-thanh-toan-va-van-chuyen", to: "store#privacy_payment"
     get 'store/ping'
     get 'privacy', to:"store#privacy"
     root 'store#index', as: 'store'
