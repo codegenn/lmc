@@ -1,0 +1,12 @@
+*.DS_Store
+.git
+.github
+.gitignore
+.circleci
+.codeclimate.yml
+deploy
+test
+Dockerfile
+Dockerfile.dev
+README.md
+sider.yml

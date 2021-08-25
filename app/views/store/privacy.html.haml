@@ -1,7 +1,9 @@
 .main-page.bg-img1.txt-center.p-lr-15.p-tb-92.banner-bg
-  = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/lmcation+banner+7.jpg'
-  %h2.ltext-105.cl0.txt-center.title
+  = cl_image_tag "#{cdn_url}/systems/lmcation+banner+7.jpg"
+  %h1.ltext-105.cl0.txt-center.title
     = I18n.t "page.privacy.privacy"
+.container
+  = render_breadcrumbs :separator => ' / '
 .sec-banner.bg0.p-t-81.p-b-50
   .container
     .row.p-b-148
@@ -77,3 +79,4 @@
               %li
                 = I18n.t("page.privacy.content_10_4").html_safe
             = I18n.t("page.privacy.content_11").html_safe
+= render "layouts/seo_bread", datas: @datas
