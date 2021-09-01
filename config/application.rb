@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-Dotenv::Railtie.load
+# Dotenv::Railtie.load
 
 module LmcationProject
   class Application < Rails::Application
