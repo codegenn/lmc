@@ -4,7 +4,7 @@ module Api
       before_action :check_order
 
       def update_tags
-        render return json: template_json(0, "Không Thành Công") unless check_shop_id
+        return render json: template_json(0, "Không Thành Công") unless check_shop_id
         order = Order.find_by_id(@order_id)
         order.status = params["tags"].last
         if order.save
@@ -15,7 +15,7 @@ module Api
       end
 
       def update_payment
-        render return json: template_json(0, "Không Thành Công") unless check_shop_id
+        return render json: template_json(0, "Không Thành Công") unless check_shop_id
         order = Order.find_by_id(@order_id)
         order.payment_status = params["payment_status"]
         if order.save
@@ -26,7 +26,7 @@ module Api
       end
 
       def order_detail
-        render return json: template_json(0, "Không Thành Công") unless check_shop_id
+        return render json: template_json(0, "Không Thành Công") unless check_shop_id
         @order = Order.find_by_id(@order_id)
 
         return render json: template_json(0, "Không Thành Công") unless @order.present?
