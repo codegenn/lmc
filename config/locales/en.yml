@@ -196,6 +196,7 @@ en:
       update_cart: 'UPDATE CART'
       proceed_to_checkout: 'PROCEED TO CHECKOUT'
       transfer_btn: 'TRANSFER'
+      fundiin_btn: 'FUNDIIN'
       transfer: 'PLEASE TRANSFER TO THE ACCOUNT:'
       bank: 'Bank'
       account_no: 'Account Number'

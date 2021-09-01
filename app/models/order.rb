@@ -2,6 +2,7 @@ class Order < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
   belongs_to :user
 
+
   validates :first_name, :last_name, :phone, :city, :district, :address, :email, presence: true
   validates_format_of :email,:with => Devise::email_regexp
 
