@@ -23,7 +23,7 @@ module Api
       private
 
       def token
-        request.env["HTTP_AUTHORIZATION"].scan(/Bearer (.*)$/).flatten.last
+        request.headers["Authorization"]
       end
 
       def auth
@@ -31,7 +31,7 @@ module Api
       end
 
       def auth_present?
-        !!request.env.fetch("HTTP_AUTHORIZATION", "").scan(/Bearer/).flatten.first
+        !!request.headers.fetch("Authorization", "")
       end
     end
   end
