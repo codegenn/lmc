@@ -23,6 +23,10 @@ module Api
       private
 
       def token
+        request.headers["MerchantAuthorization"]
+      end
+
+      def token_fundiin
         request.headers["Authorization"]
       end
 
@@ -31,7 +35,7 @@ module Api
       end
 
       def auth_present?
-        !!request.headers.fetch("Authorization", "")
+        !!request.headers.fetch("Authorization", "") && !!request.headers.fetch("MerchantAuthorization", "") && (token_fundiin.include?(ENV["FUNDIIN_PRIVATE_MERCHANT_CODE"]))
       end
     end
   end

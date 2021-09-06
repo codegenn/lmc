@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
         if respon["code"] == 1
           update_status(@order)
           noti_success(@order)
-          render 'carts/fundiin'
+          redirect_to products_path
         else
           flash[:danger] = @order.errors.full_messages.to_sentence
           render 'carts/show'

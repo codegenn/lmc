@@ -27,7 +27,9 @@ module Api
 
       def order_detail
         return render json: template_json(0, "Không Thành Công") unless check_shop_id
+
         @order = Order.find_by_id(@order_id)
+        return render json: template_json(0, "Không Thành Công") unless @order.payment_method.include?("FUNDIIN")
 
         return render json: template_json(0, "Không Thành Công") unless @order.present?
       end
