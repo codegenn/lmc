@@ -30,6 +30,8 @@
                 = "#{number_with_delimiter(@product.promotion_price.to_i, :delimiter => '.')} VND"
             - else
               = "#{number_with_delimiter(@product.price.to_i, :delimiter => '.')} VND"
+            %div.stext-103.cl3
+              = I18n.t("page.product.fundiin", price: (@product.price.to_i/3) ).html_safe
           %p.stext-103.cl3.p-t-23
             = @product.short_description
           /

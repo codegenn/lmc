@@ -17,6 +17,7 @@ module Api
       def update_payment
         return render json: template_json(0, "Không Thành Công") unless check_shop_id
         order = Order.find_by_id(@order_id)
+        binding.pry
         order.payment_status = params["payment_status"]
         if order.save
           render json: template_json(1, "Thành Công")

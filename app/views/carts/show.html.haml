@@ -81,6 +81,12 @@
                     .size-206.p-t-1.ml-lg-3
                       %span.mtext-110.cl2
                         = "#{number_with_delimiter(@cart.calculate_grand_total.to_i, :delimiter => '.')} VND"
+                .flex-w.flex-t.p-b-33
+                  .size-208
+                    %span.mtext-101.cl2
+                  .size-206.p-t-1.ml-lg-3
+                    %h6
+                      = I18n.t("page.product.fundiin", price: (@cart.total_price.to_i/3) ).html_safe
             .col-lg-10.col-xl-7.m-lr-auto.m-b-50
               .m-l-25.m-r--38.m-lr-0-xl.shopping-cart-table
                 = form_for(@order) do |f|
@@ -113,6 +119,7 @@
                         = f.label :payment_method, 'COD', class: 'radio-payment-label', :value => 'COD'
                         = f.radio_button :payment_method, 'FUNDIIN', class: 'radio-payment'
                         = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label', :value => 'FUNDIIN'
+                          
                         %br
                       .tranfer-content
                         .col-sm-12.control-label
