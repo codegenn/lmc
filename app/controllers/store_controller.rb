@@ -1,7 +1,7 @@
 class StoreController < ApplicationController
   include ApplicationHelper
   def index
-    # Rails.cache.fetch(cache_key("store")) do
+    Rails.cache.fetch(cache_key("store")) do
       @menu = 'store'
       expires_in 3.days, :public => true
       meta_data(
@@ -10,7 +10,7 @@ class StoreController < ApplicationController
         "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png",
         "https://www.lmcation.com/#{I18n.locale.to_s}"
       )
-    # end
+    end
   end
 
   def about
