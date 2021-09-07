@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+# Dotenv::Railtie.load
+
 module LmcationProject
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -28,5 +30,7 @@ module LmcationProject
     config.i18n.default_locale = :vi
     config.active_job.queue_adapter = :delayed_job 
     config.exceptions_app = self.routes
+    config.autoload_paths << Rails.root.join('lib')
   end
 end
+

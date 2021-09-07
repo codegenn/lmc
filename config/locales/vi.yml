@@ -206,6 +206,7 @@ vi:
       ssize: 'Size quần'
       tsize: 'Size áo'
       code: 'Mã sản phẩm'
+      fundiin: "hoặc %{price} VND x 3 kỳ với <span class='text-primary'>Fundiin</span>"
       quantity: 'Số Lượng'
       add_to_cart: 'BỎ VÀO GIỎ HÀNG'
       description: 'Mô Tả Sản Phẩm'
@@ -232,6 +233,7 @@ vi:
       update_cart: 'CẬP NHẬT'
       proceed_to_checkout: 'ĐẶT HÀNG'
       transfer_btn: 'CHUYỂN KHOẢN'
+      fundiin_btn: 'FUNDIIN'
       transfer: 'VUI LÒNG CHUYỂN KHOẢN VÀO:'
       bank: 'Ngân Hàng'
       account_no: 'Số Tài Khoản'

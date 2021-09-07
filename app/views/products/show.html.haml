@@ -30,6 +30,8 @@
                 = "#{number_with_delimiter(@product.promotion_price.to_i, :delimiter => '.')} VND"
             - else
               = "#{number_with_delimiter(@product.price.to_i, :delimiter => '.')} VND"
+            %div.stext-103.cl3
+              = I18n.t("page.product.fundiin", price: number_with_delimiter(@product.price.to_i/3, :delimiter => '.') ).html_safe
           %p.stext-103.cl3.p-t-23
             = @product.short_description
           /
@@ -198,46 +200,47 @@
       checkStockCode();
     });
   });
-%script{type: "application/ld+json"}
-  :plain
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "#{@product.title}",
-      "image": [
-          "#{@product.product_images.last.image_url}"
-       ],
-      "description": "#{@product.description.gsub(/<\/?[^>]+>/, '')}",
-      "sku": "0446310786",
-      "mpn": "925872",
-      "brand": {
-        "@type": "Brand",
-        "name": "lmcation"
-      },
-      "review": {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "4",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",  
+- if Rails.env.production?
+  %script{type: "application/ld+json"}
+    :plain
+      {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "#{@product.title}",
+        "image": [
+            "#{@product.product_images.last.image_url}"
+        ],
+        "description": "#{@product.description.gsub(/<\/?[^>]+>/, '')}",
+        "sku": "0446310786",
+        "mpn": "925872",
+        "brand": {
+          "@type": "Brand",
           "name": "lmcation"
+        },
+        "review": {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "4",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",  
+            "name": "lmcation"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.4",
+          "reviewCount": "89"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.lmcation.com/vi/products/#{@product.slug}",
+          "priceCurrency": "VND",
+          "price": "#{number_with_delimiter(@product.price.to_i, :delimiter => '.')}",
+          "itemCondition": "https://www.lmcation.com/vi/products/#{@product.slug}",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2021-01-01"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.4",
-        "reviewCount": "89"
-      },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://www.lmcation.com/vi/products/#{@product.slug}",
-        "priceCurrency": "VND",
-        "price": "#{number_with_delimiter(@product.price.to_i, :delimiter => '.')}",
-        "itemCondition": "https://www.lmcation.com/vi/products/#{@product.slug}",
-        "availability": "https://schema.org/InStock",
-        "priceValidUntil": "2021-01-01"
       }
-    }

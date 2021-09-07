@@ -173,6 +173,7 @@ en:
       ssize: 'Size for shorts'
       tsize: 'Size for top'
       code: 'Product Code'
+      fundiin: "hoặc %{price} VND x 3 kỳ với <span class='text-primary'>Fundiin</span>"
       quantity: 'Quantity'
       add_to_cart: 'ADD TO CART'
       description: 'Product Description'
@@ -196,6 +197,7 @@ en:
       update_cart: 'UPDATE CART'
       proceed_to_checkout: 'PROCEED TO CHECKOUT'
       transfer_btn: 'TRANSFER'
+      fundiin_btn: 'FUNDIIN'
       transfer: 'PLEASE TRANSFER TO THE ACCOUNT:'
       bank: 'Bank'
       account_no: 'Account Number'

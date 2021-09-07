@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      post "order_detail", to: "fundiin#order_detail"
+      post "update_payment", to: "fundiin#update_payment"
+      post "update_tags", to: "fundiin#update_tags"
+    end
+  end
+
   devise_for :users, controllers: { registrations: 'registrations' }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
