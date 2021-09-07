@@ -173,6 +173,7 @@ en:
       ssize: 'Size for shorts'
       tsize: 'Size for top'
       code: 'Product Code'
+      fundiin: "hoặc %{price} VND x 3 kỳ với <span class='text-primary'>Fundiin</span>"
       quantity: 'Quantity'
       add_to_cart: 'ADD TO CART'
       description: 'Product Description'
