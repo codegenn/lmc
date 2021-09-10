@@ -32,6 +32,7 @@
               = "#{number_with_delimiter(@product.price.to_i, :delimiter => '.')} VND"
             %div.stext-103.cl3
               = I18n.t("page.product.fundiin", price: number_with_delimiter(@product.price.to_i/3, :delimiter => '.') ).html_safe
+              %span{"data-target" => "#myModal", "data-toggle" => "modal", :style => "cursor: help;"} Tìm hiểu (?)
           %p.stext-103.cl3.p-t-23
             = @product.short_description
           /
@@ -244,3 +245,31 @@
           "priceValidUntil": "2021-01-01"
         }
       }
+#myModal.modal.fade{:role => "dialog"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"} ×
+      .modal-body
+        .fundiinModal-wrapper-30D.text-center{:style => "background-color: #fff; margin-top: 10px; border-radius: 24px;"}
+          %img.fundiinModal-logo-3Mc.text-center{:alt => "logo", :src => "https://fundiin.vn/wp-content/themes/education-lms/images/logo-kCB.svg"}/
+          %p.fundiinModal-title-37a.p-t-10 SHOPPING TRẢ SAU - LUÔN LUÔN MIỄN LÃI
+          %p.fundiinModal-title-37a.p-t-10{:style => "font-size: 17px;"} LỢI ÍCH KHÁC BIỆT
+          %p.text-center.text-dark.p-t-10
+            %b.fundiin-bold Không
+            lãi suất
+          %p.text-center.text-dark.p-t-10
+            %b.fundiin-bold Không
+            chênh lệch giá
+          %p.text-center.text-dark.p-t-10
+            %b.fundiin-bold Không
+            thủ tục phức tạp
+          %p.text-center.text-dark.p-t-10
+            %b.fundiin-bold Không
+            mất phí hồ sơ
+          %p.text-center.text-dark.p-t-10
+            %b.fundiin-bold Không
+            cần thẻ tín dụng
+          %p.fundiinModal-title-37a.text-center.p-t-10{:style => "font-size: 17px;"} CÁC BƯỚC MUA SẮM SAU 5 GIÂY
+          %img.text-center.p-t-10{:alt => "steps", :src => "https://fundiin.vn/wp-content/themes/education-lms/images/steps-nc8.png", :style => "max-width: 260px; margin: 0 auto; margin-bottom: 24px;"}/
+          %p.fundiinModal-description-yRU.p-t-10 Bạn cần phải trên 18 tuổi, là công dân Việt Nam, sở hữu số điện thoại chính chủ từ các nhà mạng Viettel, Mobifone, Vinaphone, và một số tiêu chí khác để được duyệt.
