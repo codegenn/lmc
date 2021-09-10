@@ -1,7 +1,6 @@
 module Api
   module V1
     class ApiController < ActionController::Base
-      before_action :authenticate 
 
       def logged_in?
         !!current_user
@@ -16,11 +15,23 @@ module Api
         end
       end
 
+      def authenticate_spp
+        render json: {error: "unauthorized"}, status: 401 unless Auth.auth_signature(params["spp"]).include?(airpay_token)
+      end
+
       def authenticate
         render json: {error: "unauthorized"}, status: 401 unless logged_in?
       end
 
       private
+
+      def airpay_client
+        request.headers["X-Airpay-ClientId"]
+      end
+
+      def airpay_token
+        request.headers["X-Airpay-Req-H"]
+      end
 
       def token
         request.headers["MerchantAuthorization"]
@@ -30,12 +41,19 @@ module Api
         request.headers["Authorization"]
       end
 
+      def auth_spp
+      end
+
       def auth
         Auth.decode(token)
       end
 
       def auth_present?
         !!request.headers.fetch("Authorization", "") && !!request.headers.fetch("MerchantAuthorization", "") && (token_fundiin.include?(ENV["FUNDIIN_PRIVATE_MERCHANT_CODE"]))
+      end
+
+      def auth_present_spp?
+        !!request.headers.fetch("X-Airpay-ClientId", "") && !!request.headers.fetch("X-Airpay-Req-H", "") && (airpay_client.include?(ENV["SPP_CLIENT_ID"]))
       end
     end
   end

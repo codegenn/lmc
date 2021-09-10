@@ -24,7 +24,7 @@
                           %td.column-1
                             = link_to line_item, method: :delete, noindex: true, id: 'delete', data: { confirm: 'Are you sure you want to delete this line item?' }, class: 'delete-item' do
                               .how-itemcart1
-                                = cl_image_tag line_item.stock.product.product_images.first.url ? line_item.stock.product.product_images.first.url : line_item.stock.product.product_images.first.pimage
+                                =# cl_image_tag line_item.stock.product.product_images.first.url ? line_item.stock.product.product_images.first.url : line_item.stock.product.product_images.first.pimage
                           %td.column-2
                             = line_item.stock.product.title
                           %td.column-3
@@ -126,6 +126,8 @@
                                 = "1. Sim chính chủ Viettel/Mobifone/Vinaphone"
                               %li.p-l-15
                                 = "2. Trên 18 tuổi"
+                        = f.radio_button :payment_method, 'Shopee pay', class: 'radio-payment'
+                        = f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label', :value => 'Shopee pay'
                         %br
                       .tranfer-content
                         .col-sm-12.control-label

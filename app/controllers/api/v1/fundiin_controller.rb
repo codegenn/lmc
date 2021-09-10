@@ -1,6 +1,7 @@
 module Api
   module V1
     class FundiinController < ApiController
+      before_action :authenticate
       before_action :check_order
 
       def update_tags

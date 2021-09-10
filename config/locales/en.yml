@@ -198,6 +198,7 @@ en:
       proceed_to_checkout: 'PROCEED TO CHECKOUT'
       transfer_btn: 'TRANSFER'
       fundiin_btn: 'FUNDIIN'
+      spp_btn: 'Shopee pay'
       transfer: 'PLEASE TRANSFER TO THE ACCOUNT:'
       bank: 'Bank'
       account_no: 'Account Number'

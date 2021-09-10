@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:new, :create]
   before_action :fundiin_config, only: :create
+  before_action :spp_config, only: :create
 
   def index
     @orders = current_user.orders
@@ -17,7 +18,8 @@ class OrdersController < ApplicationController
 
     if @order.save
       Cart.find_by_code(session[:cart_code]).destroy
-      if params["order"]["payment_method"].include?("FUNDIIN")
+      case
+      when params["order"]["payment_method"].include?("FUNDIIN")
         respon = pay_fundiin(@order.phone, @order.grand_total, @order.id)
         if respon["code"] == 1
           update_status(@order)
@@ -27,10 +29,28 @@ class OrdersController < ApplicationController
           flash[:danger] = @order.errors.full_messages.to_sentence
           render 'carts/show'
         end
+      when params["order"]["payment_method"].include?("Shopee pay")
+        if check_device.include?("mobile")
+          respon = create_order_app_spp(@order.phone, @order.grand_total, @order.id)
+          if respon["errcode"] == 0 && respon["request_id"].include?(@order.id)
+            redirect_to respon["redirect_url_http"]
+          else
+            render 'carts/show'
+          end
+        else
+          @respon = spp_qrcode(@order.phone, @order.grand_total, @order.id)
+          if @respon["errcode"] == 0
+            render 'carts/spp_qrcode'
+          else
+            flash[:danger] = @order.errors.full_messages.to_sentence
+            render 'carts/show'
+          end
+        end
       else
         noti_success(@order)
         redirect_to products_path
       end
+
     else
       flash[:danger] = @order.errors.full_messages.to_sentence
       render 'carts/show'
@@ -56,6 +76,12 @@ class OrdersController < ApplicationController
     end
   end
 
+  def spp_config
+    ShopeePay.configure do |config|
+      config.client_id = ENV["SPP_CLIENT_ID"]
+    end
+  end
+
   def pay_fundiin(phone, amount, order_id)
     body = {
       :phone_number => phone,
@@ -67,15 +93,61 @@ class OrdersController < ApplicationController
     Fundiin.create_booking_sms(body)
   end
 
+  def spp_qrcode(phone, amount, order_id)
+    total_amout = Rails.env.production? ? amout : 1000
+    order_id = Rails.env.production? ? order_id : "a#{order_id}"
+    expried_at = (Time.now + 15.days).to_i
+    body = {
+      "request_id": order_id,
+      "store_ext_id": ENV["SPP_STORE_EXT_ID"],
+      "merchant_ext_id": ENV["SPP_MERCHANT_EXT_ID"],
+      "amount": total_amout,
+      "additional_info": "",
+      "currency": "VND",
+      "expiry_time": expried_at,
+      "payment_reference_id": order_id
+    }
+
+    ShopeePay.create_qr_code(body, Auth.auth_signature(body))
+  end
+
   def update_status(order)
     order.status = "Send sms to Fundiin"
     order.save!
   end
 
   def noti_success(order)
-    # UserMailer.order_for_user(order).deliver_now
+    UserMailer.order_for_user(order).deliver_now if Rails.env.production?
     session[:cart_code] = nil
     flash[:success] = I18n.t('controllers.order.success')
     flash[:pixel] = 'Purchase'
+  end
+
+  def create_order_app_spp(phone, amount, order_id)
+    binding.pry
+    total_amout = Rails.env.production? ? amout : 1000
+    order_id = Rails.env.production? ? order_id : "a#{order_id}"
+    expried_at = (Time.now + 15.days).to_i
+    body = {
+      "request_id": order_id,
+      "store_ext_id": ENV["SPP_STORE_EXT_ID"],
+      "merchant_ext_id": ENV["SPP_MERCHANT_EXT_ID"],
+      "amount": total_amout,
+      "return_url": "https://www.lmcation.com/",
+      "platform_type": "mweb",
+      "currency": "VND",
+      "expiry_time": expried_at,
+      "payment_reference_id": order_id,
+      "additional_info": ""
+    }
+
+    ShopeePay.create_order(body, Auth.auth_signature(body))
+  end
+
+  def check_device
+    agent = request.user_agent
+    return "tablet" if agent =~ /(tablet|ipad)|(android(?!.*mobile))/i
+    return "mobile" if agent =~ /Mobile/
+    return "desktop"
   end
 end

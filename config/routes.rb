@@ -4,9 +4,9 @@ Rails.application.routes.draw do
       post "order_detail", to: "fundiin#order_detail"
       post "update_payment", to: "fundiin#update_payment"
       post "update_tags", to: "fundiin#update_tags"
+      post "update_transaction", to: "spp#noti_transaction_status"
     end
   end
-
   devise_for :users, controllers: { registrations: 'registrations' }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -43,3 +43,5 @@ Rails.application.routes.draw do
     end
   end
 end
+
+

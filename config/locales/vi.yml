@@ -234,6 +234,7 @@ vi:
       proceed_to_checkout: 'ĐẶT HÀNG'
       transfer_btn: 'CHUYỂN KHOẢN'
       fundiin_btn: 'FUNDIIN'
+      spp_btn: 'Shopee pay'
       transfer: 'VUI LÒNG CHUYỂN KHOẢN VÀO:'
       bank: 'Ngân Hàng'
       account_no: 'Số Tài Khoản'
