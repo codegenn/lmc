@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
         if check_device.include?("mobile")
           respon = create_order_app_spp(@order.phone, @order.grand_total, @order.id)
           if (respon["errcode"] == 0 && respon["request_id"] == @order.id) ||
-              !Rails.env.production? && respon["request_id"].include?("a#{@order.id}")
+              !Rails.env.production? && respon["request_id"].include?("a#{@order.id}") && !respon.nil?
             redirect_to respon["redirect_url_http"]
           else
             render 'carts/show'
@@ -41,7 +41,7 @@ class OrdersController < ApplicationController
         else
           @respon = spp_qrcode(@order.phone, @order.grand_total, @order.id)
           Rails.logger.info @respon
-          if @respon["errcode"] == 0
+          if !@response.body.nil? && @respon["errcode"] == 0
             render 'carts/spp_qrcode'
           else
             flash[:danger] = @order.errors.full_messages.to_sentence
@@ -112,7 +112,11 @@ class OrdersController < ApplicationController
       "payment_reference_id": order_id
     }
 
-    ShopeePay.create_qr_code(body, Auth.auth_signature(body, secret_key))
+    Rails.logger.info body
+
+    Rails.logger.info Auth.auth_signature(body, secret_key)
+
+    # ShopeePay.create_qr_code(body, Auth.auth_signature(body, secret_key))
   end
 
   def update_status(order)
