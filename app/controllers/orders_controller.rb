@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
           redirect_to products_path
         else
           flash[:danger] = @order.errors.full_messages.to_sentence
-          render 'carts/show'
+          redirect_to products_path
         end
       when params["order"]["payment_method"].include?("Shopee pay")
         if check_device.include?("mobile")
@@ -36,16 +36,16 @@ class OrdersController < ApplicationController
               !Rails.env.production? && respon["request_id"].include?("a#{@order.id}") && !respon.body.nil?
             redirect_to respon["redirect_url_http"]
           else
-            render 'carts/show'
+            redirect_to products_path
           end
         else
           @respon = spp_qrcode(@order.phone, @order.grand_total, @order.id)
-          Rails.logger.info @respon
+          Rails.logger.info "respon: #{@respon}"
           if !@respon.body.nil? && @respon["errcode"] == 0
             render 'carts/spp_qrcode'
           else
             flash[:danger] = @order.errors.full_messages.to_sentence
-            render 'carts/show'
+            redirect_to products_path
           end
         end
       else
