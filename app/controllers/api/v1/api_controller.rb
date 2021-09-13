@@ -16,7 +16,8 @@ module Api
       end
 
       def authenticate_spp
-        render json: {error: "unauthorized"}, status: 401 unless Auth.auth_signature(params["spp"]).include?(airpay_token)
+        secret_key = check_device.include?("mobile") ? ENV["SPP_SECRET_KEY_MOBILE"] : ENV["SPP_SECRET_KEY"]
+        render json: {error: "unauthorized"}, status: 401 unless Auth.auth_signature(params["spp"], secret_key).include?(airpay_token)
       end
 
       def authenticate
@@ -54,6 +55,13 @@ module Api
 
       def auth_present_spp?
         !!request.headers.fetch("X-Airpay-ClientId", "") && !!request.headers.fetch("X-Airpay-Req-H", "") && (airpay_client.include?(ENV["SPP_CLIENT_ID"]))
+      end
+
+      def check_device
+        agent = request.user_agent
+        return "tablet" if agent =~ /(tablet|ipad)|(android(?!.*mobile))/i
+        return "mobile" if agent =~ /Mobile/
+        return "desktop"
       end
     end
   end

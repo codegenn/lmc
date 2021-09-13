@@ -111,7 +111,7 @@ class OrdersController < ApplicationController
       "payment_reference_id": order_id
     }
 
-    ShopeePay.create_qr_code(body, Auth.auth_signature(body, ENV[""]))
+    ShopeePay.create_qr_code(body, Auth.auth_signature(body, secret_key))
   end
 
   def update_status(order)
