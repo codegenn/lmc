@@ -40,7 +40,7 @@ class OrdersController < ApplicationController
           end
         else
           @respon = spp_qrcode(@order.phone, @order.grand_total, @order.id)
-          printf @respon
+          Rails.logger.info @respon
           if @respon["errcode"] == 0
             render 'carts/spp_qrcode'
           else

@@ -18,6 +18,8 @@ Rails.application.configure do
     namespace: 'cache',
     redis: { host: 'redis-15566.c278.us-east-1-4.ec2.cloud.redislabs.com:15566', port: 6379, db: 0 },
     }
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger::ERROR
 
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
