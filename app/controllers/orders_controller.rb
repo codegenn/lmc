@@ -102,7 +102,7 @@ class OrdersController < ApplicationController
     order_id = Rails.env.production? ? order_id : "a#{order_id}"
     expried_at = (Time.now + 15.days).to_i
     body = {
-      "request_id": order_id,
+      "request_id": order_id.to_s,
       "store_ext_id": ENV["SPP_STORE_EXT_ID"],
       "merchant_ext_id": ENV["SPP_MERCHANT_EXT_ID"],
       "amount": total_amout.to_i,
@@ -136,7 +136,7 @@ class OrdersController < ApplicationController
     order_id = Rails.env.production? ? order_id : "a#{order_id}"
     expried_at = (Time.now + 15.days).to_i
     body = {
-      "request_id": order_id,
+      "request_id": order_id.to_s,
       "store_ext_id": ENV["SPP_STORE_EXT_ID"],
       "merchant_ext_id": ENV["SPP_MERCHANT_EXT_ID"],
       "amount": total_amout.to_i,
