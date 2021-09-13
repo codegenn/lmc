@@ -1,7 +1,6 @@
 require 'jwt'
 class Auth
   ALGORITHM = ENV["ALGORITHM"]
-  SECRET_KEY = ENV["SPP_SECRET_KEY"]
 
   def self.issue(payload)
     JWT.encode(
@@ -21,9 +20,9 @@ class Auth
     ENV["AUTH_SECRET"]
   end
 
-  def self.auth_signature(body)
+  def self.auth_signature(body, secret_key)
     digest = OpenSSL::Digest.new('sha256')
-    hash = OpenSSL::HMAC.digest(digest, SECRET_KEY, body.to_json)
+    hash = OpenSSL::HMAC.digest(digest, secret_key, body.to_json)
     signature = Base64.encode64(hash)
 
     signature

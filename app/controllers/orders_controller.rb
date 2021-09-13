@@ -32,7 +32,8 @@ class OrdersController < ApplicationController
       when params["order"]["payment_method"].include?("Shopee pay")
         if check_device.include?("mobile")
           respon = create_order_app_spp(@order.phone, @order.grand_total, @order.id)
-          if respon["errcode"] == 0 && respon["request_id"].include?(@order.id)
+          if (respon["errcode"] == 0 && respon["request_id"] == @order.id) ||
+              !Rails.env.production? && respon["request_id"].include?("a#{@order.id}")
             redirect_to respon["redirect_url_http"]
           else
             render 'carts/show'
@@ -77,8 +78,9 @@ class OrdersController < ApplicationController
   end
 
   def spp_config
+    client_id = check_device.include?("mobile") ? ENV["SPP_CLIENT_ID_MOBILE"] : ENV["SPP_CLIENT_ID"]
     ShopeePay.configure do |config|
-      config.client_id = ENV["SPP_CLIENT_ID"]
+      config.client_id = client_id
     end
   end
 
@@ -94,6 +96,7 @@ class OrdersController < ApplicationController
   end
 
   def spp_qrcode(phone, amount, order_id)
+    secret_key = check_device.include?("mobile") ? ENV["SPP_SECRET_KEY_MOBILE"] : ENV["SPP_SECRET_KEY"]
     total_amout = Rails.env.production? ? amout : 1000
     order_id = Rails.env.production? ? order_id : "a#{order_id}"
     expried_at = (Time.now + 15.days).to_i
@@ -108,7 +111,7 @@ class OrdersController < ApplicationController
       "payment_reference_id": order_id
     }
 
-    ShopeePay.create_qr_code(body, Auth.auth_signature(body))
+    ShopeePay.create_qr_code(body, Auth.auth_signature(body, ENV[""]))
   end
 
   def update_status(order)
@@ -124,7 +127,7 @@ class OrdersController < ApplicationController
   end
 
   def create_order_app_spp(phone, amount, order_id)
-    binding.pry
+    secret_key = check_device.include?("mobile") ? ENV["SPP_SECRET_KEY_MOBILE"] : ENV["SPP_SECRET_KEY"]
     total_amout = Rails.env.production? ? amout : 1000
     order_id = Rails.env.production? ? order_id : "a#{order_id}"
     expried_at = (Time.now + 15.days).to_i
@@ -141,7 +144,7 @@ class OrdersController < ApplicationController
       "additional_info": ""
     }
 
-    ShopeePay.create_order(body, Auth.auth_signature(body))
+    ShopeePay.create_order(body, Auth.auth_signature(body, secret_key))
   end
 
   def check_device
