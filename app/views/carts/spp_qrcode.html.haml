@@ -21,6 +21,7 @@
                     = "#{number_with_delimiter(@order.grand_total.to_i, :delimiter => '.')} vnd"
                 %tr
                   %td.alignright
+                    = I18n.t("page.cart.spp_qr")
                   %td.alignright
                     = image_tag(@respon["qr_url"])
 :css
