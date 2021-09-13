@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
         if check_device.include?("mobile")
           respon = create_order_app_spp(@order.phone, @order.grand_total, @order.id)
           if (respon["errcode"] == 0 && respon["request_id"] == @order.id) ||
-              !Rails.env.production? && respon["request_id"].include?("a#{@order.id}") && !respon.nil?
+              !Rails.env.production? && respon["request_id"].include?("a#{@order.id}") && !respon.body.nil?
             redirect_to respon["redirect_url_http"]
           else
             render 'carts/show'
@@ -41,7 +41,7 @@ class OrdersController < ApplicationController
         else
           @respon = spp_qrcode(@order.phone, @order.grand_total, @order.id)
           Rails.logger.info @respon
-          if !@response.body.nil? && @respon["errcode"] == 0
+          if !@respon.body.nil? && @respon["errcode"] == 0
             render 'carts/spp_qrcode'
           else
             flash[:danger] = @order.errors.full_messages.to_sentence
@@ -105,18 +105,17 @@ class OrdersController < ApplicationController
       "request_id": order_id,
       "store_ext_id": ENV["SPP_STORE_EXT_ID"],
       "merchant_ext_id": ENV["SPP_MERCHANT_EXT_ID"],
-      "amount": total_amout,
+      "amount": total_amout.to_i,
       "additional_info": "",
       "currency": "VND",
       "expiry_time": expried_at,
       "payment_reference_id": order_id
     }
+    Rails.logger.info "body: #{body}"
+    Rails.logger.info "signature: #{Auth.auth_signature(body, secret_key)}"
+    Rails.logger.info "secret_key: #{secret_key}"
 
-    Rails.logger.info body
-
-    Rails.logger.info Auth.auth_signature(body, secret_key)
-
-    # ShopeePay.create_qr_code(body, Auth.auth_signature(body, secret_key))
+    ShopeePay.create_qr_code(body, Auth.auth_signature(body, secret_key))
   end
 
   def update_status(order)
@@ -140,7 +139,7 @@ class OrdersController < ApplicationController
       "request_id": order_id,
       "store_ext_id": ENV["SPP_STORE_EXT_ID"],
       "merchant_ext_id": ENV["SPP_MERCHANT_EXT_ID"],
-      "amount": total_amout,
+      "amount": total_amout.to_i,
       "return_url": "https://www.lmcation.com/",
       "platform_type": "mweb",
       "currency": "VND",
