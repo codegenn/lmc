@@ -97,7 +97,7 @@ class OrdersController < ApplicationController
 
   def spp_qrcode(phone, amount, order_id)
     secret_key = check_device.include?("mobile") ? ENV["SPP_SECRET_KEY_MOBILE"] : ENV["SPP_SECRET_KEY"]
-    total_amout = Rails.env.production? ? amout : 1000
+    total_amout = Rails.env.production? ? amount : 1000
     order_id = Rails.env.production? ? order_id : "a#{order_id}"
     expried_at = (Time.now + 15.days).to_i
     body = {
@@ -128,7 +128,7 @@ class OrdersController < ApplicationController
 
   def create_order_app_spp(phone, amount, order_id)
     secret_key = check_device.include?("mobile") ? ENV["SPP_SECRET_KEY_MOBILE"] : ENV["SPP_SECRET_KEY"]
-    total_amout = Rails.env.production? ? amout : 1000
+    total_amout = Rails.env.production? ? amount : 1000
     order_id = Rails.env.production? ? order_id : "a#{order_id}"
     expried_at = (Time.now + 15.days).to_i
     body = {
