@@ -235,6 +235,7 @@ vi:
       transfer_btn: 'CHUYỂN KHOẢN'
       fundiin_btn: 'FUNDIIN'
       spp_btn: 'Shopee pay'
+      spp_qr: "Vui lòng quét mã QR code trên app Shopee để thanh toán."
       transfer: 'VUI LÒNG CHUYỂN KHOẢN VÀO:'
       bank: 'Ngân Hàng'
       account_no: 'Số Tài Khoản'
