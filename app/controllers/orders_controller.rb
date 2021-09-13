@@ -109,7 +109,7 @@ class OrdersController < ApplicationController
       "additional_info": "",
       "currency": "VND",
       "expiry_time": expried_at,
-      "payment_reference_id": order_id
+      "payment_reference_id": order_id.to_s
     }
     Rails.logger.info "body: #{body}"
     Rails.logger.info "signature: #{Auth.auth_signature(body, secret_key)}"
@@ -144,7 +144,7 @@ class OrdersController < ApplicationController
       "platform_type": "mweb",
       "currency": "VND",
       "expiry_time": expried_at,
-      "payment_reference_id": order_id,
+      "payment_reference_id": order_id.to_s,
       "additional_info": ""
     }
 
