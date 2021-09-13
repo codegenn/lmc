@@ -1,44 +1,28 @@
-<div class="sec-banner bg0 p-t-80 p-b-50 main-page">
-  <div class="container">
-    <table class="invoice">
-      <tbody>
-          <tr>
-            <td>Invoice: #<%= @order.id %></td>
-          </tr>
-          <tr>
-            <td>
-              <table class="invoice-items" cellpadding="0" cellspacing="0">
-                <tbody>
-                  <% @order.line_items.includes(:stock).each do |line_item| %>
-                    <tr>
-                      <td>
-                        <%= line_item.stock.product.title %>
-                      </td>
-                      <td class="alignright">
-                        <%= "#{number_with_delimiter(line_item.total_price.to_i, :delimiter => '.')} vnd" %>
-                      </td>
-                    </tr>
-                  <% end %>
-                  <tr class="total">
-                    <td class="alignright" width="80%">Total</td>
-                    <td class="alignright">
-                      <%= "#{number_with_delimiter(@order.grand_total.to_i, :delimiter => '.')} vnd" %>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="alignright"></td>
-                    <td class="alignright">
-                      <%= image_tag(@respon["qr_url"]) %>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+.sec-banner.bg0.p-t-80.p-b-50.main-page
+  .container
+    %table.invoice
+      %tbody
+        %tr
+          %td
+            Invoice: ##{@order.id}
+        %tr
+          %td
+            %table.invoice-items{:cellpadding => "0", :cellspacing => "0"}
+              %tbody
+                - @order.line_items.includes(:stock).each do |line_item|
+                  %tr
+                    %td
+                      = line_item.stock.product.title
+                    %td.alignright
+                      = "#{number_with_delimiter(line_item.total_price.to_i, :delimiter => '.')} vnd"
+                %tr.total
+                  %td.alignright{:width => "80%"} Total
+                  %td.alignright
+                    = "#{number_with_delimiter(@order.grand_total.to_i, :delimiter => '.')} vnd"
+                %tr
+                  %td.alignright
+                  %td.alignright
+                    = image_tag(@respon["qr_url"])
 
 <style>
 .body-wrap {
