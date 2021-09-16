@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
         if check_device.include?("mobile")
           respon = create_order_app_spp(@order.phone, @order.grand_total, @order.id)
           if (respon["errcode"] == 0 && respon["request_id"] == @order.id) ||
-              !Rails.env.production? && respon["request_id"].include?("a#{@order.id}") && !respon.body.nil?
+              !Rails.env.production? && respon["request_id"].include?("a#{@order.id}")
             redirect_to respon["redirect_url_http"]
           else
             redirect_to products_path
