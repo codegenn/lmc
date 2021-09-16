@@ -32,6 +32,7 @@ class OrdersController < ApplicationController
       when params["order"]["payment_method"].include?("Shopee pay")
         if check_device.include?("mobile")
           respon = create_order_app_spp(@order.phone, @order.grand_total, @order.id)
+          Rails.logger.info("respon: #{respon}")
           if (respon["errcode"] == 0 && respon["request_id"] == @order.id) ||
               !Rails.env.production? && respon["request_id"].include?("a#{@order.id}")
             redirect_to respon["redirect_url_http"]
