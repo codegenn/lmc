@@ -131,6 +131,7 @@ class OrdersController < ApplicationController
   end
 
   def create_order_app_spp(phone, amount, order_id)
+    Rails.logger.info("device: #{check_device}")
     secret_key = check_device.include?("mobile") ? ENV["SPP_SECRET_KEY_MOBILE"] : ENV["SPP_SECRET_KEY"]
     total_amout = Rails.env.production? ? amount*100 : 1000
     order_id = Rails.env.production? ? order_id : "a#{order_id}"
