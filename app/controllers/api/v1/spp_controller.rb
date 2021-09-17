@@ -7,6 +7,7 @@ module Api
       def noti_transaction_status
         return render json: template_json(0, "Không Thành Công") unless merchant_spp
         order = Order.find_by_id(@order_id)
+        return render json: template_json(0, "Không Thành Công") if order.nil?
         order.payment_status = @data_respon_spp["payment_status"]
         update_status(order, @data_respon_spp["payment_status"])
         if @data_respon_spp["amount"].to_i == order.grand_total.to_i && order.save
@@ -26,7 +27,7 @@ module Api
       end
 
       def check_reference_id
-        @order_id = @data_respon_spp["payment_reference_id"]
+        @order_id = @data_respon_spp["reference_id"]
         return render json: template_json(0, "Không Thành Công") unless @order_id.present?
 
         @order_id
