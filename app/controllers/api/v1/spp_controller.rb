@@ -5,12 +5,16 @@ module Api
       before_action :check_reference_id
 
       def noti_transaction_status
+        Rails.logger.info("merchant_spp: #{merchant_spp}")
         return render json: template_json(0, "Không Thành Công") unless merchant_spp
         order = Order.find_by_id(@order_id)
+        Rails.logger.info("order: #{order}")
         return render json: template_json(0, "Không Thành Công") if order.nil?
         order.payment_status = @data_respon_spp["payment_status"]
         update_status(order, @data_respon_spp["payment_status"])
         if @data_respon_spp["amount"].to_i == order.grand_total.to_i && order.save
+          Rails.logger.info("amount: #{@data_respon_spp["amount"]}")
+          Rails.logger.info("=====save data=====")
           render json: template_json(1, "Thành Công")
         else
           render json: template_json(0, "Không Thành Công")
@@ -28,12 +32,14 @@ module Api
 
       def check_reference_id
         @order_id = @data_respon_spp["reference_id"]
+        Rails.logger.info("order_id: #{@data_respon_spp["reference_id"]}")
         return render json: template_json(0, "Không Thành Công") unless @order_id.present?
 
         @order_id
       end
 
       def merchant_spp
+        Rails.logger.info("merchant_spp: #{@data_respon_spp["merchant_spp"]}")
         return @data_respon_spp["merchant_ext_id"].present? && @data_respon_spp["merchant_ext_id"].include?(ENV["SPP_MERCHANT_EXT_ID"]) &&
           @data_respon_spp["store_ext_id"].present? && @data_respon_spp["store_ext_id"].include?(ENV["SPP_STORE_EXT_ID"])
       end
