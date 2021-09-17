@@ -16,8 +16,8 @@ module Api
       end
 
       def authenticate_spp
-        secret_key = check_device.include?("mobile") ? ENV["SPP_SECRET_KEY_MOBILE"] : ENV["SPP_SECRET_KEY"]
-        render json: {error: "unauthorized"}, status: 401 unless Auth.auth_signature(params["spp"], secret_key).include?(airpay_token)
+        secret_key = ENV["SPP_SECRET_KEY"]
+        render json: {error: "unauthorized"}, status: 401 unless Auth.auth_signature(body_spp, secret_key).include?(airpay_token) && auth_present_spp?
       end
 
       def authenticate
@@ -42,11 +42,13 @@ module Api
         request.headers["Authorization"]
       end
 
-      def auth_spp
-      end
-
       def auth
         Auth.decode(token)
+      end
+
+      def body_spp
+        @data_respon_spp = JSON.parse request.body.read
+        @data_respon_spp
       end
 
       def auth_present?
