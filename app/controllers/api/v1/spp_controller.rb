@@ -39,6 +39,7 @@ module Api
       end
 
       def merchant_spp
+        Rails.logger.info("key_lmcation: #{Auth.auth_signature(@data_respon_spp, secret_key)}")
         Rails.logger.info("merchant_spp: #{@data_respon_spp["merchant_spp"]}")
         return @data_respon_spp["merchant_ext_id"].present? && @data_respon_spp["merchant_ext_id"].include?(ENV["SPP_MERCHANT_EXT_ID"]) &&
           @data_respon_spp["store_ext_id"].present? && @data_respon_spp["store_ext_id"].include?(ENV["SPP_STORE_EXT_ID"])

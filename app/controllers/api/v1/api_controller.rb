@@ -18,7 +18,6 @@ module Api
       def authenticate_spp
         secret_key = ENV["SPP_SECRET_KEY"]
         Rails.logger.info("key_spp: #{airpay_token}")
-        Rails.logger.info("key_lmcation: #{Auth.auth_signature(@data_respon_spp, secret_key)}")
         render json: {error: "unauthorized"}, status: 401 unless Auth.auth_signature(body_spp, secret_key).include?(airpay_token) && auth_present_spp?
       end
 
