@@ -8,7 +8,7 @@ module Api
         Rails.logger.info("merchant_spp: #{merchant_spp}")
         return render json: template_json(0, "Không Thành Công") unless merchant_spp
         order = Order.find_by_id(@order_id)
-        Rails.logger.info("order: #{order}")
+        Rails.logger.info("order: #{order.grand_total}")
         return render json: template_json(0, "Không Thành Công") if order.nil?
         order.payment_status = @data_respon_spp["payment_status"]
         update_status(order, @data_respon_spp["payment_status"])
