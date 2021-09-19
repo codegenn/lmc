@@ -12,7 +12,7 @@ module Api
         return render json: template_json(0, "Không Thành Công") if order.nil?
         order.payment_status = @data_respon_spp["payment_status"]
         update_status(order, @data_respon_spp["payment_status"])
-        if @data_respon_spp["amount"].to_i == order.grand_total.to_i && order.save
+        if @data_respon_spp["amount"].to_i == order.grand_total.to_i*100 && order.save
           Rails.logger.info("amount: #{@data_respon_spp["amount"]}")
           Rails.logger.info("=====save data=====")
           render json: template_json(1, "Thành Công")
