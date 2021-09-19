@@ -16,7 +16,7 @@ module Api
       end
 
       def authenticate_spp
-        secret_key = ENV["SPP_SECRET_KEY"]
+        secret_key = ENV["SPP_SECRET_KEY_MOBILE"]
         signature_lmc = Auth.auth_signature(body_spp, secret_key).gsub("=\n", "=")
         signature_spp = airpay_token.gsub("=\n", "=")
         Rails.logger.info("key_spp: #{signature_spp}")
@@ -60,7 +60,7 @@ module Api
       end
 
       def auth_present_spp?
-        !!request.headers.fetch("X-Airpay-ClientId", "") && !!request.headers.fetch("X-Airpay-Req-H", "") && (airpay_client.include?(ENV["SPP_CLIENT_ID"]))
+        !!request.headers.fetch("X-Airpay-ClientId", "") && !!request.headers.fetch("X-Airpay-Req-H", "") && (airpay_client.include?(ENV["SPP_CLIENT_ID_MOBILE"]))
       end
 
       def check_device
