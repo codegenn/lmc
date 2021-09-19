@@ -10,8 +10,8 @@ module Api
         order = Order.find_by_id(@order_id)
         Rails.logger.info("order: #{order.grand_total}")
         return render json: template_json(0, "Không Thành Công") if order.nil?
-        order.payment_status = @data_respon_spp["payment_status"]
-        update_status(order, @data_respon_spp["payment_status"])
+        order.payment_status = "#{@data_respon_spp["transaction_status"]}_#{@data_respon_spp["transaction_type"]}_#{@data_respon_spp["payment_method"]}"
+        update_status(order, @data_respon_spp["transaction_status"])
         if @data_respon_spp["amount"].to_i == order.grand_total.to_i*100 && order.save
           Rails.logger.info("amount: #{@data_respon_spp["amount"]}")
           Rails.logger.info("=====save data=====")
