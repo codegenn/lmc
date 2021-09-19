@@ -46,16 +46,12 @@ module Api
       end
 
       def update_status(order, payment_status)
-        data =  if payment_status.to_i == 1
-                  "Payment successful"
-                elsif payment_status.to_i == 2
-                  "Payment not found"
+        data =  if payment_status.to_i == 2
+                  "Transaction processing"
                 elsif payment_status.to_i == 3
-                  "Payment refunded"
-                elsif payment_status.to_i == 5
-                  "Payment processing"
-                elsif payment_status.to_i == 6
-                  "Payment failed"
+                  "Transaction successful"
+                elsif payment_status.to_i == 4
+                  "Transaction failed"
                 end
         order.status = data
       end
