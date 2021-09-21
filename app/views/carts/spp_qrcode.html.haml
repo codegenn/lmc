@@ -229,7 +229,7 @@
       url: url,
       dataType: 'json',
       data: JSON.stringify({
-        id: 3,
+        id: item_id,
       }),
       success: function(returndata) {
         console.log(returndata)
@@ -238,7 +238,7 @@
           clearInterval(myVar);
         }
       },
-      error: setTimeout(function() {get_data(item_id);}, 3000)
+      error: setTimeout(function() {get_data(item_id);}, 5000)
     });
   }
 
