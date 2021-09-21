@@ -6,7 +6,7 @@ module Api
 
       def check_transaction
         order = Order.find_by_id(@order_id)
-        return json: template_json(2, "") if order.payment_status.nil?
+        return render json: template_json(2, "") if order.payment_status.nil?
         payment_status = order.payment_status.to_s.split("_")[0].to_i
         data =  if payment_status.to_i == 2
                   "Đang trong quá trình thanh toán"
