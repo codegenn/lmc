@@ -9,6 +9,7 @@
           %td
             %table.invoice-items{:cellpadding => "0", :cellspacing => "0"}
               %tbody
+                = hidden_field_tag :order_id, @order.id
                 - @order.line_items.includes(:stock).each do |line_item|
                   %tr
                     %td
@@ -220,23 +221,32 @@
     }
   }
 :javascript
-  url = "https://pure-crag-47156.herokuapp.com/api/v1/check_transaction"
-  $.ajax({
-  type: 'post',
-  url: url,
-  dataType: 'json',
-  data: {
-    id: 3,
-  },
-  success: function(returndata) {
-    if (returndata[4] === 1) {
-
-      $("#bsModal3").modal('show');
-
-    } else {
-    }
-  },
-  error: function() {
-    console.error('Failed to process ajax !');
+  var get_data = function(item_id){
+    console.log(item_id)
+    url = "https://pure-crag-47156.herokuapp.com/api/v1/check_transaction"
+    $.ajax({
+      type: 'post',
+      url: url,
+      dataType: 'json',
+      data: JSON.stringify({
+        id: 3,
+      }),
+      success: function(returndata) {
+        console.log(returndata)
+        if (returndata[1] === 1) {
+          $("#bsModal3").modal('show');
+          clearInterval(myVar);
+        }
+      },
+      error: setTimeout(function() {get_data(item_id);}, 300)
+    });
   }
-});
+
+  $(function() {
+    var id = $("#order_id").val();
+
+    if(id.length > 0) {
+      get_data(id);
+    }
+  });
+  

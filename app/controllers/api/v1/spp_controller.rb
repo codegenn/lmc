@@ -5,7 +5,7 @@ module Api
       before_action :check_reference_id, only: [:noti_transaction_status]
 
       def check_transaction
-        order = Order.find_by_id(@order_id)
+        order = Order.find_by_id(@data_respon_spp["id"])
         return render json: template_json(2, "") if order.payment_status.nil?
         payment_status = order.payment_status.to_s.split("_")[0].to_i
         data =  if payment_status.to_i == 2
