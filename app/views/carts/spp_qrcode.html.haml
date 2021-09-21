@@ -238,11 +238,12 @@
           clearInterval(myVar);
         }
       },
-      error: setTimeout(function() {get_data(item_id);}, 300)
+      error: setTimeout(function() {get_data(item_id);}, 3000)
     });
   }
 
   $(function() {
+    sleep(5000);
     var id = $("#order_id").val();
 
     if(id.length > 0) {
