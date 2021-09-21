@@ -217,7 +217,6 @@
     }
   }
 :javascript
-  var timer = setTimeout(function(item_id) {get_data(item_id);}, 5000)
   var get_data = function(item_id){
     url = "https://pure-crag-47156.herokuapp.com/api/v1/check_transaction"
     $.ajax({
@@ -230,11 +229,11 @@
       success: function(returndata) {
         if (returndata["code"] === 1) {
           $("#bsModal3").modal('show');
-          clearTimeout(timer(item_id));
-          timer = 0;
         }
-      },
-      error: timer(item_id)
+        else {
+          setTimeout(function(item_id) {get_data(item_id);}, 5000)
+        }
+      }
     });
   }
 
