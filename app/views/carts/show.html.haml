@@ -116,8 +116,8 @@
                       .col-sm-9
                         = f.radio_button :payment_method, 'COD', class: 'radio-payment', checked: @order.payment_method.nil? || @order.payment_method == 'COD'
                         = f.label :payment_method, 'COD', class: 'radio-payment-label', :value => 'COD'
-                        = f.radio_button :payment_method, 'Shopee pay', class: 'radio-payment'
-                        = f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label', :value => 'Shopee pay'
+                        =# f.radio_button :payment_method, 'Shopee pay', class: 'radio-payment'
+                        =# f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label', :value => 'Shopee pay'
                         = f.radio_button :payment_method, 'FUNDIIN', class: 'radio-payment'
                         = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label', :value => 'FUNDIIN'
                         %span
