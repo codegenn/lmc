@@ -31,8 +31,6 @@
     .modal-content
       .modal-body
         = I18n.t('controllers.order.success')
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
 :css
   .body-wrap {width: 100%;}
   img {max-width: 100%;}
@@ -219,20 +217,11 @@
 :javascript
   var get_data = function(item_id){
     url = "https://pure-crag-47156.herokuapp.com/api/v1/check_transaction"
-    $.ajax({
-      type: 'post',
-      url: url,
-      dataType: 'json',
-      data: JSON.stringify({
-        id: item_id,
-      }),
-      success: function(returndata) {
-        if (returndata["code"] === 1) {
-          $("#bsModal3").modal('show');
-        }
-        else {
-          setTimeout(function(item_id) {get_data(item_id);}, 5000)
-        }
+    $.post(url, JSON.stringify({id: item_id}),function(result){
+      if (result["code"] === 1) {
+        $("#bsModal3").modal('show');
+      } else {
+        setTimeout(function() {get_data(item_id);}, 5000);
       }
     });
   }
