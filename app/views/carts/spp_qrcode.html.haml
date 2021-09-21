@@ -24,6 +24,18 @@
                     = I18n.t("page.cart.spp_qr")
                   %td.alignright
                     = image_tag(@respon["qr_url"])
+
+#bsModal3.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+        %h4#mySmallModalLabel.modal-title Modal title
+      .modal-body
+        Your content goes here...
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+        %button.btn.btn-primary{:type => "button"} Save changes
 :css
   .body-wrap {width: 100%;}
   img {max-width: 100%;}
@@ -207,3 +219,24 @@
       width: 100% !important;
     }
   }
+:javascript
+  url = "https://pure-crag-47156.herokuapp.com/api/v1/check_transaction"
+  $.ajax({
+  type: 'post',
+  url: url,
+  dataType: 'json',
+  data: {
+    id: 3,
+  },
+  success: function(returndata) {
+    if (returndata[4] === 1) {
+
+      $("#bsModal3").modal('show');
+
+    } else {
+    }
+  },
+  error: function() {
+    console.error('Failed to process ajax !');
+  }
+});

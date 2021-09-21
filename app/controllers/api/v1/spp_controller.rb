@@ -1,8 +1,22 @@
 module Api
   module V1
     class SppController < ApiController
-      before_action :authenticate_spp
-      before_action :check_reference_id
+      before_action :authenticate_spp, only: [:noti_transaction_status]
+      before_action :check_reference_id, only: [:noti_transaction_status]
+
+      def check_transaction
+        order = Order.find_by_id(@order_id)
+        return json: template_json(2, "") if order.payment_status.nil?
+        payment_status = order.payment_status.to_s.split("_")[0].to_i
+        data =  if payment_status.to_i == 2
+                  "Đang trong quá trình thanh toán"
+                elsif payment_status.to_i == 3
+                  "Thanh toán thành công!"
+                elsif payment_status.to_i == 4
+                  "Thanh toán thất bại!"
+                end
+        render json: template_json(1, data)
+      end
 
       def noti_transaction_status
         Rails.logger.info("merchant_spp: #{merchant_spp}")
