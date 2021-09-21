@@ -29,14 +29,10 @@
 #bsModal3.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", :role => "dialog", :tabindex => "-1"}
   .modal-dialog.modal-sm
     .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
-        %h4#mySmallModalLabel.modal-title Modal title
       .modal-body
-        Your content goes here...
+        = I18n.t('controllers.order.success')
       .modal-footer
         %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
-        %button.btn.btn-primary{:type => "button"} Save changes
 :css
   .body-wrap {width: 100%;}
   img {max-width: 100%;}
@@ -221,6 +217,7 @@
     }
   }
 :javascript
+  var timer = setTimeout(function() {get_data(item_id);}, 5000)
   var get_data = function(item_id){
     url = "https://pure-crag-47156.herokuapp.com/api/v1/check_transaction"
     $.ajax({
@@ -233,10 +230,11 @@
       success: function(returndata) {
         if (returndata["code"] === 1) {
           $("#bsModal3").modal('show');
-          clearInterval(get_data);
+          clearTimeout(timer);
+          timer = 0;
         }
       },
-      error: setTimeout(function() {get_data(item_id);}, 5000)
+      error: timer
     });
   }
 
