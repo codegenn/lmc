@@ -232,10 +232,10 @@
         id: item_id,
       }),
       success: function(returndata) {
-        console.log(returndata)
+        console.log(returndata[1])
         if (returndata[1] === 1) {
           $("#bsModal3").modal('show');
-          clearInterval(myVar);
+          clearInterval(get_data);
         }
       },
       error: setTimeout(function() {get_data(item_id);}, 5000)
