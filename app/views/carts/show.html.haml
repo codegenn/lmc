@@ -117,18 +117,19 @@
                         %div.form-check
                           = f.radio_button :payment_method, 'COD', class: 'radio-payment', checked: @order.payment_method.nil? || @order.payment_method == 'COD'
                           %label.row
-                            = f.label :payment_method, I18n.t("page.cart.cod"), class: 'radio-payment-label mr-auto', :value => 'COD'
-                            = image_tag "COD.png",  width: 60, class: "ml-auto"
+                            = image_tag "COD.png",  width: 60, class: "mr-auto col-3"
+                            = f.label :payment_method, I18n.t("page.cart.cod"), class: 'radio-payment-label ml-auto col-9 align-middle', :value => 'COD'
                         %div.form-check
                           = f.radio_button :payment_method, 'Shopee pay', class: 'radio-payment'
                           %label.row
-                            = f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label mr-auto', :value => 'COD'
-                            = image_tag "SPP.png",  width: 80, class: "ml-auto"
+                            = image_tag "SPP.png",  width: 80, class: "mr-auto col-3"
+                            = f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label ml-auto col-9 align-middle', :value => 'COD'
                         %div.form-check
                           = f.radio_button :payment_method, 'FUNDIIN', class: 'radio-payment'
                           %label.row
-                            = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label mr-auto', :value => 'FUNDIIN'
-                            = image_tag "Fundiin.png",  width: 80, class: "ml-auto"
+                            = image_tag "Fundiin.png",  width: 80, class: "mr-auto col-3"
+                            = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label ml-auto col-9 align-middle', :value => 'FUNDIIN'
+                            
                         %div
                           %small.m-l-15
                             = "Sau khi hoàn thành đặt hàng, bạn sẽ nhận được tin nhắn SMS hướng dẫn."
