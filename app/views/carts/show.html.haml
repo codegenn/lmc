@@ -24,7 +24,7 @@
                           %td.column-1
                             = link_to line_item, method: :delete, noindex: true, id: 'delete', data: { confirm: 'Are you sure you want to delete this line item?' }, class: 'delete-item' do
                               .how-itemcart1
-                                = cl_image_tag line_item.stock.product.product_images.first.url ? line_item.stock.product.product_images.first.url : line_item.stock.product.product_images.first.pimage
+                                =# cl_image_tag line_item.stock.product.product_images.first.url ? line_item.stock.product.product_images.first.url : line_item.stock.product.product_images.first.pimage
                           %td.column-2
                             = line_item.stock.product.title
                           %td.column-3
@@ -114,14 +114,25 @@
                     .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
                       = f.label :payment_method, I18n.t("order.payment_method"), class: 'col-sm-3 control-label payment_method'
                       .col-sm-9
-                        = f.radio_button :payment_method, 'COD', class: 'radio-payment', checked: @order.payment_method.nil? || @order.payment_method == 'COD'
-                        = f.label :payment_method, 'COD', class: 'radio-payment-label', :value => 'COD'
-                        = f.radio_button :payment_method, 'FUNDIIN', class: 'radio-payment'
-                        = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label', :value => 'FUNDIIN'
-                        %span
-                          = "Sau khi hoàn thành đặt hàng, bạn sẽ nhận được tin nhắn SMS hướng dẫn để thanh toán 1/3 đầu tiên để nhận hàng bạn nhé"
+                        %div.form-check
+                          = f.radio_button :payment_method, 'COD', class: 'radio-payment', checked: @order.payment_method.nil? || @order.payment_method == 'COD'
+                          %label.row
+                            = image_tag "COD.png",  width: 60, class: "mr-auto col-3"
+                            = f.label :payment_method, I18n.t("page.cart.cod"), class: 'radio-payment-label ml-auto col-9 align-middle', :value => 'COD'
+                        -# %div.form-check
+                        -#   = f.radio_button :payment_method, 'Shopee pay', class: 'radio-payment'
+                        -#   %label.row
+                        -#     = image_tag "SPP.png",  width: 80, class: "mr-auto col-3"
+                        -#     = f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label ml-auto col-9 align-middle', :value => 'COD'
+                        %div.form-check
+                          = f.radio_button :payment_method, 'FUNDIIN', class: 'radio-payment'
+                          %label.row
+                            = image_tag "Fundiin.png",  width: 80, class: "mr-auto col-3"
+                            = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label ml-auto col-9 align-middle', :value => 'FUNDIIN'
+                        %div.fundiin-note
+                          = "Sau khi hoàn thành đặt hàng, bạn sẽ nhận được tin nhắn SMS hướng dẫn."
                           %br
-                            %ul
+                            %ul.m-l-15
                               %li.p-l-15
                                 = "1. Sim chính chủ Viettel/Mobifone/Vinaphone"
                               %li.p-l-15
@@ -165,6 +176,10 @@
                         = submit_tag I18n.t("page.cart.proceed_to_checkout"), class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
                       .col-sm-3
             .col-sm-10.col-lg-7.col-xl-5.m-lr-auto.m-b-50
+:css
+  .fundiin-note {
+    padding-left: 8%;
+  }          
 :javascript
   function checktransfer(){
     if($("input[name='order[payment_method]']:checked").val() == 'TRANSFER') {

@@ -19,4 +19,12 @@ class Auth
   def self.auth_secret
     ENV["AUTH_SECRET"]
   end
+
+  def self.auth_signature(body, secret_key)
+    digest = OpenSSL::Digest.new('sha256')
+    hash = OpenSSL::HMAC.digest(digest, secret_key, body.to_json)
+    signature = Base64.encode64(hash)
+
+    signature
+  end
 end
