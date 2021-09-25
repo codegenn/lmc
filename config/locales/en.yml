@@ -197,8 +197,9 @@ en:
       update_cart: 'UPDATE CART'
       proceed_to_checkout: 'PROCEED TO CHECKOUT'
       transfer_btn: 'TRANSFER'
-      fundiin_btn: 'FUNDIIN'
-      spp_btn: 'Shopee pay'
+      fundiin_btn: 'Buy First - Pay Later'
+      spp_btn: 'ShopeePay Wallet'
+      cod: "Cash On Delivery"
       spp_qr: "Please scan the QR code on Shopee app to pay."
       transfer: 'PLEASE TRANSFER TO THE ACCOUNT:'
       bank: 'Bank'
