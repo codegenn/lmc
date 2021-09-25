@@ -119,26 +119,24 @@
                           %label.row
                             = image_tag "COD.png",  width: 60, class: "mr-auto col-3"
                             = f.label :payment_method, I18n.t("page.cart.cod"), class: 'radio-payment-label ml-auto col-9 align-middle', :value => 'COD'
-                        %div.form-check
-                          = f.radio_button :payment_method, 'Shopee pay', class: 'radio-payment'
-                          %label.row
-                            = image_tag "SPP.png",  width: 80, class: "mr-auto col-3"
-                            = f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label ml-auto col-9 align-middle', :value => 'COD'
+                        -# %div.form-check
+                        -#   = f.radio_button :payment_method, 'Shopee pay', class: 'radio-payment'
+                        -#   %label.row
+                        -#     = image_tag "SPP.png",  width: 80, class: "mr-auto col-3"
+                        -#     = f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label ml-auto col-9 align-middle', :value => 'COD'
                         %div.form-check
                           = f.radio_button :payment_method, 'FUNDIIN', class: 'radio-payment'
                           %label.row
                             = image_tag "Fundiin.png",  width: 80, class: "mr-auto col-3"
                             = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label ml-auto col-9 align-middle', :value => 'FUNDIIN'
-                            
-                        %div
-                          %small.m-l-15
-                            = "Sau khi hoàn thành đặt hàng, bạn sẽ nhận được tin nhắn SMS hướng dẫn."
-                            %br
-                              %ul.m-l-15
-                                %li.p-l-15
-                                  = "1. Sim chính chủ Viettel/Mobifone/Vinaphone"
-                                %li.p-l-15
-                                  = "2. Trên 18 tuổi"
+                        %div.fundiin-note
+                          = "Sau khi hoàn thành đặt hàng, bạn sẽ nhận được tin nhắn SMS hướng dẫn."
+                          %br
+                            %ul.m-l-15
+                              %li.p-l-15
+                                = "1. Sim chính chủ Viettel/Mobifone/Vinaphone"
+                              %li.p-l-15
+                                = "2. Trên 18 tuổi"
                         %br
                       .tranfer-content
                         .col-sm-12.control-label
@@ -178,6 +176,10 @@
                         = submit_tag I18n.t("page.cart.proceed_to_checkout"), class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
                       .col-sm-3
             .col-sm-10.col-lg-7.col-xl-5.m-lr-auto.m-b-50
+:css
+  .fundiin-note {
+    padding-left: 8%;
+  }          
 :javascript
   function checktransfer(){
     if($("input[name='order[payment_method]']:checked").val() == 'TRANSFER') {
