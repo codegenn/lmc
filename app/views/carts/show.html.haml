@@ -114,24 +114,21 @@
                     .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.payment-method
                       = f.label :payment_method, I18n.t("order.payment_method"), class: 'col-sm-3 control-label payment_method'
                       .col-sm-10
-                        %div.form-check
-                          = f.radio_button :payment_method, 'COD', class: 'radio-payment', checked: @order.payment_method.nil? || @order.payment_method == 'COD'
-                          %label.row
-                            %div.payment-image.col-4.col-lg-3
-                              = image_tag "COD.png", class: "mr-auto"
-                            = f.label :payment_method, I18n.t("page.cart.cod"), class: 'radio-payment-label ml-auto col-8 align-middle', :value => 'COD'
-                        %div.form-check
-                          = f.radio_button :payment_method, 'Shopee pay', class: 'radio-payment'
-                          %label.row
-                            %div.payment-image.col-4.col-lg-3
-                              = image_tag "SPP.png", class: "mr-auto"
-                            = f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label ml-auto col-8 align-middle', :value => 'COD'
-                        %div.form-check
-                          = f.radio_button :payment_method, 'FUNDIIN', class: 'radio-payment'
-                          %label.row
-                            %div.payment-image.col-4.col-lg-3
-                              = image_tag "Fundiin.png", class: "mr-auto"
-                            = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label ml-auto col-8 align-middle', :value => 'FUNDIIN'
+                        %div.row
+                          = f.radio_button :payment_method, 'COD', class: 'radio-payment col-1', checked: @order.payment_method.nil? || @order.payment_method == 'COD'
+                          %div.payment-image.col-4.col-lg-3
+                            = image_tag "COD.png", class: "mr-auto"
+                          = f.label :payment_method, I18n.t("page.cart.cod"), class: 'radio-payment-label ml-auto col-6 align-middle', :value => 'COD'
+                        %div.row
+                          = f.radio_button :payment_method, 'Shopee pay', class: 'radio-payment col-1'
+                          %div.payment-image.col-4.col-lg-3
+                            = image_tag "SPP.png", class: "mr-auto"
+                          = f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label ml-auto col-6 align-middle', :value => 'COD'
+                        %div.row
+                          = f.radio_button :payment_method, 'FUNDIIN', class: 'radio-payment col-1'
+                          %div.payment-image.col-4.col-lg-3
+                            = image_tag "Fundiin.png", class: "mr-auto"
+                          = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label ml-auto col-6 align-middle', :value => 'FUNDIIN'
                         %div.fundiin-note
                           = I18n.t("page.cart.fundiin_note")
                           %br
@@ -181,7 +178,7 @@
             .col-sm-10.col-lg-7.col-xl-5.m-lr-auto.m-b-50
 :css
   .fundiin-note {
-    padding-left: 8%;
+    padding-left: 11%;
   }
   .payment-image {
     width: 80px;
@@ -197,7 +194,7 @@
 
   @media only screen and (max-width: 600px) {
     .fundiin-note {
-      padding-left: 10%;
+      padding-left: 6%;
     }
 
     .payment-method {
@@ -206,12 +203,16 @@
     }
     .payment-image {
       width: 100px;
+      padding: 0px;
     }
     .payment-image img {
       width: 100%;
     }
     .radio-payment-label{
       padding: 0px;
+    }
+    .radio-payment{
+      margin-right: 0px;
     }
   }
 :javascript
