@@ -228,7 +228,6 @@ vi:
       product: 'Sản Phẩm'
       price: 'Giá'
       quantity: 'Số Lượng'
-      total: 'Tổng Cộng'
       cart_total: 'Tổng Cộng'
       update_cart: 'CẬP NHẬT'
       proceed_to_checkout: 'ĐẶT HÀNG'
