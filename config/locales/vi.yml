@@ -234,6 +234,9 @@ vi:
       proceed_to_checkout: 'ĐẶT HÀNG'
       transfer_btn: 'CHUYỂN KHOẢN'
       fundiin_btn: 'Mua trước trả sau'
+      fundiin_note: "Sau khi hoàn thành đặt hàng, bạn sẽ nhận được tin nhắn SMS hướng dẫn."
+      fundiin_note_1: "1. Sim chính chủ Viettel/Mobifone/Vinaphone"
+      fundiin_note_2: "2. Trên 18 tuổi"
       spp_btn: 'Ví ShopeePay'
       cod: "Thanh toán khi nhận hàng"
       spp_qr: "Vui lòng quét mã QR code trên app"
