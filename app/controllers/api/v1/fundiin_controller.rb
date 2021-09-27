@@ -9,6 +9,7 @@ module Api
         order = Order.find_by_id(@order_id)
         order.status = params["tags"].last
         if order.save
+          UserMailer.order_for_user(order).deliver_now if Rails.env.production? && params["tags"].last.to_s.include?("Đã duyệt")
           render json: template_json(1, "Thành Công")
         else
           render json: template_json(0, "Không Thành Công")
