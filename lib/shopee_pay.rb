@@ -2,7 +2,7 @@ require "httparty"
 require 'uri'
 
 module ShopeePay
-  SPP_HOST = "https://api.uat.wallet.airpay.vn".freeze
+  SPP_HOST = "https://api.wallet.airpay.vn".freeze
 
   class Config
     attr_accessor :client_id
@@ -47,7 +47,21 @@ module ShopeePay
       pay_post(uri, payload, signature)
     end
 
+    def noti_translate(payload= {}, signature)
+      uri = "api/v1/update_transaction"
+      pay_post_lm(uri, payload, signature)
+    end
+
     private
+
+    def pay_post_lm(uri, payload = {}, signature)
+      headers = {
+        "X-Airpay-ClientId" => config.client_id,
+        "X-Airpay-Req-H" => signature
+      }
+      url = "https://pure-crag-47156.herokuapp.com/#{uri}"
+      HTTParty.post(url, {headers: headers, body: payload.to_json})
+    end
 
     # POST
     def pay_post(uri, payload = {}, signature)
