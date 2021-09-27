@@ -111,32 +111,35 @@
                       = f.text_field :note, class: 'stext-111 cl2 plh3 size-126 input-txt', value: @order.note
                       = f.hidden_field :id, { :value => @cart.code }
                       = f.hidden_field :tracking, { :value => @order.tracking }
-                    .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
+                    .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.payment-method
                       = f.label :payment_method, I18n.t("order.payment_method"), class: 'col-sm-3 control-label payment_method'
-                      .col-sm-9
+                      .col-sm-10
                         %div.form-check
                           = f.radio_button :payment_method, 'COD', class: 'radio-payment', checked: @order.payment_method.nil? || @order.payment_method == 'COD'
                           %label.row
-                            = image_tag "COD.png",  width: 60, class: "mr-auto col-3"
-                            = f.label :payment_method, I18n.t("page.cart.cod"), class: 'radio-payment-label ml-auto col-9 align-middle', :value => 'COD'
+                            %div.payment-image.col-4.col-lg-3
+                              = image_tag "COD.png", class: "mr-auto"
+                            = f.label :payment_method, I18n.t("page.cart.cod"), class: 'radio-payment-label ml-auto col-8 align-middle', :value => 'COD'
                         %div.form-check
                           = f.radio_button :payment_method, 'Shopee pay', class: 'radio-payment'
                           %label.row
-                            = image_tag "SPP.png",  width: 80, class: "mr-auto col-3"
-                            = f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label ml-auto col-9 align-middle', :value => 'COD'
+                            %div.payment-image.col-4.col-lg-3
+                              = image_tag "SPP.png", class: "mr-auto"
+                            = f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label ml-auto col-8 align-middle', :value => 'COD'
                         %div.form-check
                           = f.radio_button :payment_method, 'FUNDIIN', class: 'radio-payment'
                           %label.row
-                            = image_tag "Fundiin.png",  width: 80, class: "mr-auto col-3"
-                            = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label ml-auto col-9 align-middle', :value => 'FUNDIIN'
+                            %div.payment-image.col-4.col-lg-3
+                              = image_tag "Fundiin.png", class: "mr-auto"
+                            = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label ml-auto col-8 align-middle', :value => 'FUNDIIN'
                         %div.fundiin-note
-                          = "Sau khi hoàn thành đặt hàng, bạn sẽ nhận được tin nhắn SMS hướng dẫn."
+                          = I18n.t("page.cart.fundiin_note")
                           %br
                             %ul.m-l-15
                               %li.p-l-15
-                                = "1. Sim chính chủ Viettel/Mobifone/Vinaphone"
+                                = I18n.t("page.cart.fundiin_note_1")
                               %li.p-l-15
-                                = "2. Trên 18 tuổi"
+                                = I18n.t("page.cart.fundiin_note_2")
                         %br
                       .tranfer-content
                         .col-sm-12.control-label
@@ -179,7 +182,35 @@
 :css
   .fundiin-note {
     padding-left: 8%;
-  }          
+  }
+  .payment-image {
+    width: 80px;
+  }
+  .payment-image img {
+    width: 100%;
+  }
+
+  .payment-method {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+  @media only screen and (max-width: 600px) {
+    .fundiin-note {
+      padding-left: 10%;
+    }
+
+    .payment-method {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .payment-image {
+      width: 100px;
+    }
+    .payment-image img {
+      width: 100%;
+    }
+  }
 :javascript
   function checktransfer(){
     if($("input[name='order[payment_method]']:checked").val() == 'TRANSFER') {
