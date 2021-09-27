@@ -112,23 +112,23 @@
                       = f.hidden_field :id, { :value => @cart.code }
                       = f.hidden_field :tracking, { :value => @order.tracking }
                     .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.payment-method
-                      = f.label :payment_method, I18n.t("order.payment_method"), class: 'col-sm-3 control-label payment_method'
+                      = f.label :payment_method, I18n.t("order.payment_method"), class: 'col-sm-3 control-label payment_method font-weight-bold'
                       .col-sm-10
                         %div.row
                           = f.radio_button :payment_method, 'COD', class: 'radio-payment col-1', checked: @order.payment_method.nil? || @order.payment_method == 'COD'
                           %div.payment-image.col-2
                             = image_tag "COD.png", class: "mr-auto payment-cod"
-                          = f.label :payment_method, I18n.t("page.cart.cod"), class: 'radio-payment-label ml-auto col-8 align-middle', :value => 'COD'
+                          = f.label :payment_method, I18n.t("page.cart.cod"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'COD'
                         %div.row
                           = f.radio_button :payment_method, 'Shopee pay', class: 'radio-payment col-1'
                           %div.payment-image.col-2
                             = image_tag "SPP.png", class: "mr-auto"
-                          = f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label ml-auto col-8 align-middle', :value => 'COD'
+                          = f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'COD'
                         %div.row
                           = f.radio_button :payment_method, 'FUNDIIN', class: 'radio-payment col-1'
                           %div.payment-image.col-2
                             = image_tag "Fundiin.png", class: "mr-auto"
-                          = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label ml-auto col-8 align-middle', :value => 'FUNDIIN'
+                          = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'FUNDIIN'
                         %div.fundiin-note
                           = I18n.t("page.cart.fundiin_note")
                           %br
@@ -186,6 +186,10 @@
   }
   .payment-image img {
     width:inherit;
+  }
+
+  .fundiin-note {
+    font-size: 12px;
   }
 
   .payment-method {
