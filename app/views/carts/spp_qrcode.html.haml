@@ -218,7 +218,7 @@
   }
 :javascript
   var get_data = function(item_id){
-    url = "https://pure-crag-47156.herokuapp.com/api/v1/check_transaction"
+    url = "https://www.lmcation.com/api/v1/check_transaction"
     $.post(url, JSON.stringify({id: item_id}),function(result){
       if (result["code"] === 1) {
         $("#bsModal3").modal('show');
