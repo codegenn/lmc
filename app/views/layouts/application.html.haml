@@ -264,10 +264,10 @@
         / Modal content
         .modal-content-desktop
           %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          = cl_image_tag "#{cdn_url}/systems/140924607_419908412547009_4057087241630477945_n.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
+          = image_tag "spp_desktop.png", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
         .modal-content-mobile
           %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          = cl_image_tag "#{cdn_url}/systems/ND.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
+          = image_tag "spp_mobile.png", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
     / Global site tag (gtag.js) - Google Analytics
     %script{src:"https://scripts.sirv.com/sirv.js", defer: :true}
     %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-164577749-1", defer: :true}
