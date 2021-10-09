@@ -1,0 +1,30 @@
+%section
+  = form_for(@cart, method: :put) do |f|
+    .mb-3
+      - @cart.line_items.includes(:stock).each do |line_item|
+        .pt-4.wish-list
+          .row.mb-4
+            .col-md-5.col-lg-3.col-xl-3
+              .view.zoom.overlay.z-depth-1.rounded.mb-3.mb-md-0
+                %img.img-fluid.w-100{:alt => "Sample", src: line_item.stock.product.product_images.first.url ? line_item.stock.product.product_images.first.url : line_item.stock.product.product_images.first.pimage}/
+            .col-md-7.col-lg-9.col-xl-9
+              .row
+                .col-5
+                  %h5.mb-4
+                    = line_item.stock.product.title
+                  %p.mb-2.text-muted.text-uppercase.small.thumbnails.image_picker_selector
+                    = "Color: #{line_item.stock.color}"
+                  %p.mb-2.text-muted.text-uppercase.small
+                    = "Size: #{line_item.stock.size}"
+                .col-4.column-4
+                  = f.fields_for :line_items, line_item do |line|
+                    = line.number_field :quantity
+                .col-3.p-l-15
+                  - if line_item.stock.product.promotion_price.present?
+                    .promotion-price
+                      = "#{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} vnd"
+                    %b
+                      = "#{number_with_delimiter(line_item.stock.product.promotion_price.to_i, :delimiter => '.')} vnd"
+                  - else
+                    = "#{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} vnd"
+        = render "discount", line_item: line_item, f: f
