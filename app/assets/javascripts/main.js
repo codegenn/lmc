@@ -40,24 +40,7 @@ $(function () {
         }
     });
 
-    $(".text-split").each(function() {
-        var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-        var data = $(this).text();
-        if( width <= 800) {
-            if (data.length > 65) {
-                $(this).text(data.slice(0, 60).trim() + '...');
-            }
-        } else if(width <= 1600 && width > 801) {
-            if (data.length > 75) {
-                $(this).text(data.slice(0, 69).trim() + '...');
-            }
-        }
-        else {
-            if (data.length > 90) {
-                $(this).text(data.slice(0, 90).trim() + '...');
-            }
-        }
-    });
+
 
     /*==================================================================
     [ Menu mobile ]*/
