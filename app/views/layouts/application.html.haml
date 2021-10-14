@@ -264,10 +264,12 @@
         / Modal content
         .modal-content-desktop
           %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          = image_tag "spp_desktop.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
+          %a{href: "https://shopeepay.vn/khuyen-mai/lmcation", target: "_blank"}
+            = image_tag "spp_desktop.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
         .modal-content-mobile
           %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          = image_tag "spp_mobile.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
+          %a{href: "https://shopeepay.vn/khuyen-mai/lmcation", target: "_blank"}
+            = image_tag "spp_mobile.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
     / Global site tag (gtag.js) - Google Analytics
     %script{src:"https://scripts.sirv.com/sirv.js", defer: :true}
     %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-164577749-1", defer: :true}
