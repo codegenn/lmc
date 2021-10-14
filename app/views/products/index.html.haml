@@ -23,7 +23,7 @@
     - if @category || @check
       .row.isotope-grid
         - @products.each do |product|
-          .col-sm-4.col-md-4.col-lg-3.p-b-35.isotope-item.women
+          .col-6.col-sm-4.col-md-4.col-lg-3.p-b-35.isotope-item.women
             / Block2
             .block2
               - if product.stocks.empty? || product.out_of_stock?
@@ -71,7 +71,7 @@
                 = cats['name']
         .row.isotope-grid
           - cats['products']&.each do |product|
-            .col-sm-4.col-md-4.col-lg-3.p-b-35.isotope-item.women
+            .col-6.col-sm-4.col-md-4.col-lg-3.p-b-35.isotope-item.women
               / Block2
               .block2
                 - if product['stocks_count']&.to_i<1 || product['out_of_stock'] == 't'
@@ -117,10 +117,3 @@
               = link_to I18n.t("page.foundation.more"), products_path(category: cats['slug']), class: 'flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10'
           .col-sm-6.col-md-4.p-b-40
 = render "layouts/seo_bread", datas: @datas
-:css
-  @media only screen and (max-width: 480) {
-    .isotope-item{
-      flex: 0 0 50%;
-      max-width: 50%;
-    }
-  }
