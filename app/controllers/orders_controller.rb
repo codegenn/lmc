@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
     @order.add_line_items_from_cart(@cart)
 
     if @order.save
+      create_url_vnpay(@order.phone, @order.grand_total, @order.id)
       Cart.find_by_code(session[:cart_code]).destroy
       case
       when params["order"]["payment_method"].include?("FUNDIIN")
@@ -151,6 +152,32 @@ class OrdersController < ApplicationController
     }
 
     ShopeePay.create_order(body, Auth.auth_signature(body, secret_key))
+  end
+
+  def create_url_vnpay(phone, amount, order_id)
+    uri = Addressable::URI.new
+    secret_key = "CLHCJXFVFNOWZJNCTZMSQNDZMVAGTJSG"
+    tmn_code = "LMCATI01"
+    total_amout = Rails.env.production? ? amount*100 : 100000
+    order_id = Rails.env.production? ? order_id : "a#{order_id}"
+    created_at = Time.now.to_i
+    body = {
+      vnp_Version: "2.1.0",
+      vnp_Command: "pay",
+      vnp_TmnCode: "LMCATI01",
+      vnp_Amount: total_amout.to_i,
+      vnp_CreateDate: created_at,
+      vnp_CurrCode: "VND",
+      vnp_IpAddr: "0.0.0.0",
+      vnp_Locale: I18n.locale.to_s,
+      vnp_OrderInfo: "test",
+      vnp_ReturnUrl: "http://localhost",
+      vnp_TxnRef: order_id,
+      vnp_SecureHash: ""
+    }
+    uri.query_values = body
+    query = uri.query
+    binding.pry
   end
 
   def check_device
