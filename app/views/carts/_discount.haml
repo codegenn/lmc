@@ -1,0 +1,8 @@
+.row.form-group.p-t-15
+  = f.label :voucher_code, I18n.t("page.cart.voucher"), class: 'col-sm-2 col-form-label'
+  .col-8
+    = f.text_field :voucher_code, autofocus: true, class: 'stext-111 cl2 plh3 size-100 input-txt'
+.flex-w.flex-sb-m.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
+  .flex-w.flex-m.m-r-20.m-tb-5
+  = f.hidden_field :id, { :value => @cart.code }
+  = submit_tag I18n.t("page.cart.update_cart"), class: 'flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10'

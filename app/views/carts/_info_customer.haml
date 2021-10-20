@@ -1,0 +1,38 @@
+- flash.each do |key, value|
+  = content_tag :div, value, class: "alert alert-#{key}" unless key == 'pixel'
+.p-t-20
+  .row.form-group.m-l-25
+    = f.label :first_name, I18n.t("user.first_name"), class: 'col-sm-2 col-form-label'
+    .col-10
+      = f.text_field :first_name, autofocus: true, required: true, class: 'stext-111 cl2 plh3 size-126 input-txt', value: @order.first_name || current_user.try(:first_name)
+  .row.form-group.m-l-25
+    = f.label :last_name, I18n.t("user.last_name"), class: 'col-sm-2 col-form-label'
+    .col-10
+      = f.text_field :last_name, required: true, class: 'stext-111 cl2 plh3 size-126 input-txt', value: @order.last_name || current_user.try(:last_name)
+  .row.form-group.m-l-25
+    = f.label :email, I18n.t("user.email"), class: 'col-sm-2 col-form-label'
+    .col-10
+      = f.text_field :email, required: true, class: 'stext-111 cl2 plh3 size-126 input-txt', value: @order.email || current_user.try(:email)
+  .row.form-group.m-l-25
+    = f.label :address, I18n.t("user.address"), class: 'col-sm-2 col-form-label'
+    .col-10
+      = f.text_field :address, required: true, class: 'stext-111 cl2 plh3 size-126 input-txt', value: @order.address || current_user.try(:address)
+  .row.form-group.m-l-25
+    = f.label :district, I18n.t("user.district"), class: 'col-sm-2 col-form-label'
+    .col-10
+      = f.text_field :district, required: true, class: 'stext-111 cl2 plh3 size-126 input-txt', value: @order.district || current_user.try(:district)
+  .row.form-group.m-l-25
+    = f.label :city, I18n.t("user.city"), class: 'col-sm-2 col-form-label'
+    .col-10
+      = f.text_field :city, required: true, class: 'stext-111 cl2 plh3 size-126 input-txt', value: @order.city || current_user.try(:city)
+  .row.form-group.m-l-25
+    = f.label :phone, I18n.t("user.phone"), class: 'col-sm-2 col-form-label'
+    .col-10
+      = f.text_field :phone, required: true, class: 'stext-111 cl2 plh3 size-126 input-txt', value: @order.phone || current_user.try(:phone)
+  .row.form-group.m-l-25
+    = f.label :note, I18n.t("user.note"), class: 'col-sm-2 col-form-label'
+    .col-10
+      = f.text_field :note, class: 'stext-111 cl2 plh3 size-126 input-txt', value: @order.note
+  .row.form-group
+    = f.hidden_field :id, { :value => @cart.code }
+    = f.hidden_field :tracking, { :value => @order.tracking }
