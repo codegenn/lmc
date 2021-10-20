@@ -1,0 +1,41 @@
+%table.table.table_head.bor5.m-b-0
+  %thead
+    %tr.text-center
+      %th{:scope => "col", :colspan => "2", style:"text-align: center;"}
+        = I18n.t("page.cart.product")
+      %th{:scope => "col", style:"text-align: right;"}
+        = I18n.t("page.cart.quantity")
+      %th{:scope => "col", style:"text-align: center;"}
+        = I18n.t("page.cart.total")
+  %tbody
+    - @cart.line_items.includes(:stock).each do |line_item|
+      %tr
+        %th{:scope => "row"}
+          = link_to line_item, method: :delete, noindex: true, id: 'delete', data: { confirm: 'Are you sure you want to delete this line item?' }, class: 'delete-item' do
+            .how-itemcart1
+              = cl_image_tag line_item.stock.product.product_images.first.url ? line_item.stock.product.product_images.first.url : line_item.stock.product.product_images.first.pimage
+        %td
+          = line_item.stock.product.title
+          %br
+          - if line_item.stock.product.promotion_price.present?
+            .promotion-price
+              = "#{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} vnd"
+            %b
+              = "#{number_with_delimiter(line_item.stock.product.promotion_price.to_i, :delimiter => '.')} vnd"
+          - else
+            = "#{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} vnd"
+        %td{style:"text-align: right;"}
+          = f.fields_for :line_items, line_item do |line|
+            .wrap-num-product.flex-w.m-l-auto.m-r-0
+              .btn-num-product-down.cl8.hov-btn3.trans-04.flex-c-m
+                %i.fs-16.zmdi.zmdi-minus
+              = line.text_field :quantity, class: 'mtext-104 cl3 txt-center num-product'
+              .btn-num-product-up.cl8.hov-btn3.trans-04.flex-c-m
+                %i.fs-16.zmdi.zmdi-plus
+        %td{style:"text-align: center;"}
+          = "#{number_with_delimiter(line_item.total_price.to_i, :delimiter => '.')} VND"
+      %tr.table_row
+        %td.column-1.column-voucher
+          = f.label :voucher_code, I18n.t("page.cart.voucher"), class: 'control-label'
+        %td.column-3{:colspan => "3"}
+          = f.text_field :voucher_code, autofocus: true, class: 'stext-111 cl2 plh3 size-100 input-txt'
