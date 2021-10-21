@@ -7,7 +7,8 @@ module Api
           order_object = Order.find_by_id(permit_params["vnp_TxnRef"])
           if order_object
             if order_object.total_price == (permit_params["vnp_Amount"].to_i / 100)
-              if order_object.payment_status.include?("Pay Success")
+              status = order_object.payment_status
+              if sorder_object.payment_status&.include?("Pay Success")
                 if permit_params["vnp_ResponseCode"] == "00"
                   order_object.payment_status = "Pay Success"
                 end
