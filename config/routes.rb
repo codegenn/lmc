@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   match "/422", to: "errors#unacceptable", via: :all
   match "/500", to: "errors#internal_server_error", via: :all
   scope "(:locale)", :locale => /en|vi/ do
-    get 'vnpay-fallback', to: "order#fallback"
+    get 'vnpay-fallback', to: "orders#fallback"
     get 'store/index'
     get 'thoi-trang-ton-vinh-phu-nu', to: "store#about"
     get 'lien-he', to: "store#find_us"
