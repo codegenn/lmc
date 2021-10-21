@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       post "update_tags", to: "fundiin#update_tags"
       post "update_transaction", to: "spp#noti_transaction_status"
       post "check_transaction", to: "spp#check_transaction"
-      post "vnp-ipn-transaction", to: "vnpay#vnpay_ipn"
+      get "vnp-ipn-transaction", to: "vnpay#vnpay_ipn"
     end
   end
   devise_for :users, controllers: { registrations: 'registrations' }
