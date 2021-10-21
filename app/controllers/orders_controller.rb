@@ -178,7 +178,7 @@ class OrdersController < ApplicationController
     total_amout = Rails.env.production? ? amount*100 : 100000000
     order_id = Rails.env.production? ? order_id : "a#{order_id}"
     created_at = Time.now.to_i
-    uri = Rails.env.production? ? "https://www.lmcation.com" : "http://pure-crag-47156.herokuapp.com"
+    uri = "http://pure-crag-47156.herokuapp.com"
     url = "#{uri}/#{I18n.locale}/vnpay-fallback"
     input_data = {
       "vnp_Amount" => total_amout.to_i,
