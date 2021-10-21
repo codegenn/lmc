@@ -9,7 +9,7 @@ module Api
             if order_object.total_price == (permit_params["vnp_Amount"].to_i / 100)
               if order_object.status.nil?
                 if permit_params["vnp_ResponseCode"] == "00"
-                  order_object.payment_status = "Pay Success"
+                  order_object.status = "Pay Success"
                 end
                 order_object.save!
                 code = "00"
