@@ -203,6 +203,7 @@ en:
       fundiin_note_1: "1. Sim card owner"
       fundiin_note_2: "2. Over 18 years old"
       spp_btn: 'ShopeePay Wallet'
+      vnpay_btn: 'VNpay'
       cod: "Cash On Delivery"
       spp_qr: "Please scan the QR code on Shopee app to pay."
       transfer: 'PLEASE TRANSFER TO THE ACCOUNT:'

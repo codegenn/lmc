@@ -24,11 +24,7 @@ module VNPay
     end
 
     def auth_signature(body, secret_key)
-      digest = OpenSSL::Digest.new('sha512')
-      hash = OpenSSL::HMAC.digest(digest, secret_key, body)
-      signature = Base64.encode64(hash)
-  
-      signature
+      Digest::SHA256.hexdigest(secret_key + body)
     end
 
     private
