@@ -1,6 +1,7 @@
 class UserMailer < ApplicationMailer
   def order_for_user(order)
     @order = order
+    @payment_method = payment_method(order)
     subj = 'Thanks for Purchase'
     mail(to: @order.email, bcc: 'info@lmcation.com', subject: subj, from: Rails.application.secrets.gmail_email)
   end
