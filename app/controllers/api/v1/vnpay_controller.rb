@@ -21,14 +21,17 @@ module Api
             else
               code = "04"
               message = "Invalid amount"
+              order_object.status = "Pay fail"
             end
           else
             code = "01";
             message = "Order not found"
+            order_object.status = "Pay fail"
           end
         else
           code = "97";
           message = "Invalid Signature"
+          order_object.status = "Pay fail"
         end
 
         logger.info("VNPAY with params: " + permit_params.to_s + ", code: #{code}, message: #{message}")
@@ -46,8 +49,11 @@ module Api
         data = response_params.to_h.map do |key, value|
           "#{key}=#{value}"
         end.join("&")
-    
+      
         secure_hash = Digest::SHA256.hexdigest(ENV["VNP_HASH_SECRET"] + data)
+        puts "====================================="
+        puts secure_hash
+        puts "====================================="
         vnp_secure_hash == secure_hash
       end
     
