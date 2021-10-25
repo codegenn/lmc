@@ -28,7 +28,7 @@ module Api
           end
         else
           code = "97";
-          message = "Invalid Checksum"
+          message = "Invalid Signature"
         end
 
         logger.info("VNPAY with params: " + permit_params.to_s + ", code: #{code}, message: #{message}")
