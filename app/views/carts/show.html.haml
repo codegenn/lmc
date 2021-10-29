@@ -24,7 +24,7 @@
                           %td.column-1
                             = link_to line_item, method: :delete, noindex: true, id: 'delete', data: { confirm: 'Are you sure you want to delete this line item?' }, class: 'delete-item' do
                               .how-itemcart1
-                                = cl_image_tag line_item.stock.product.product_images.first.url ? line_item.stock.product.product_images.first.url : line_item.stock.product.product_images.first.pimage
+                                -# = cl_image_tag line_item.stock.product.product_images.first.url ? line_item.stock.product.product_images.first.url : line_item.stock.product.product_images.first.pimage
                           %td.column-2
                             = line_item.stock.product.title
                           %td.column-3
@@ -129,14 +129,28 @@
                           %div.payment-image.col-2
                             = image_tag "Fundiin.png", class: "mr-auto"
                           = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'FUNDIIN'
-                        %div.fundiin-note
-                          = I18n.t("page.cart.fundiin_note")
-                          %br
-                            %ul.m-l-15
-                              %li.p-l-15
-                                = I18n.t("page.cart.fundiin_note_1")
-                              %li.p-l-15
-                                = I18n.t("page.cart.fundiin_note_2")
+                        - if false
+                          %div.fundiin-note
+                            = I18n.t("page.cart.fundiin_note")
+                            %br
+                              %ul.m-l-15
+                                %li.p-l-15
+                                  = I18n.t("page.cart.fundiin_note_1")
+                                %li.p-l-15
+                                  = I18n.t("page.cart.fundiin_note_2")
+                        - else
+                          %div.fundiin-note
+                            = I18n.t("page.cart.fundiin_note_event").html_safe
+                            %br
+                            = I18n.t("page.cart.fundiin_note_event_1").html_safe
+                          %div.fundiin-note
+                            = I18n.t("page.cart.fundiin_note")
+                            %br
+                              %ul.m-l-15
+                                %li.p-l-15
+                                  = I18n.t("page.cart.fundiin_note_1")
+                                %li.p-l-15
+                                  = I18n.t("page.cart.fundiin_note_2")
                         %br
                       .tranfer-content
                         .col-sm-12.control-label

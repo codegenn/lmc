@@ -233,6 +233,8 @@ vi:
       proceed_to_checkout: 'ĐẶT HÀNG'
       transfer_btn: 'CHUYỂN KHOẢN'
       fundiin_btn: 'Mua trước trả sau'
+      fundiin_note_event: "Trả sau 3 kỳ miễn lãi qua Fundiin giảm 30K (*)"
+      fundiin_note_event_1: '(*) Nhập <b>"NEWFUN"</b> tại giao diện thanh toán của Fundiin để được giảm 10K/20K/30K cho đơn từ 100K/1TR/2TR. Chỉ áp dụng cho đơn hàng đầu tiên với Fundiin, số lượng có hạn.'
       fundiin_note: "Sau khi hoàn thành đặt hàng, bạn sẽ nhận được tin nhắn SMS hướng dẫn."
       fundiin_note_1: "1. Sim chính chủ Viettel/Mobifone/Vinaphone"
       fundiin_note_2: "2. Trên 18 tuổi"
