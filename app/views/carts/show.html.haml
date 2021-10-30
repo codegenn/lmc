@@ -130,13 +130,22 @@
                             = image_tag "Fundiin.png", class: "mr-auto"
                           = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'FUNDIIN'
                           %div.fundiin-note
-                            .row
-                              .col-5
-                                = @body["title_text"]
-                              .col-7
-                                = image_tag @body["title_image"], class: "mr-auto title-image-fundiin"
-                            %br
-                            = @body["description"].html_safe
+                            - if I18n.locale == "en"
+                              .row
+                                .col-5
+                                  = @body["title_text"]
+                                .col-7
+                                  = image_tag @body["title_image"], class: "mr-auto title-image-fundiin"
+                              %br
+                              = @body["description"].html_safe
+                            - else
+                              .row
+                                .col-5
+                                  = @body["title_text"]
+                                .col-7
+                                  = image_tag @body["title_image"], class: "mr-auto title-image-fundiin"
+                              %br
+                              = @body["description"].html_safe
                         %br
                       .tranfer-content
                         .col-sm-12.control-label
