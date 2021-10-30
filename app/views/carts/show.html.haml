@@ -129,28 +129,14 @@
                           %div.payment-image.col-2
                             = image_tag "Fundiin.png", class: "mr-auto"
                           = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'FUNDIIN'
-                        - if false
                           %div.fundiin-note
-                            = I18n.t("page.cart.fundiin_note")
+                            .row
+                              .col-5
+                                = @body["title_text"]
+                              .col-7
+                                = image_tag @body["title_image"], class: "mr-auto title-image-fundiin"
                             %br
-                              %ul.m-l-15
-                                %li.p-l-15
-                                  = I18n.t("page.cart.fundiin_note_1")
-                                %li.p-l-15
-                                  = I18n.t("page.cart.fundiin_note_2")
-                        - else
-                          %div.fundiin-note
-                            = I18n.t("page.cart.fundiin_note_event").html_safe
-                            %br
-                            = I18n.t("page.cart.fundiin_note_event_1").html_safe
-                          %div.fundiin-note
-                            = I18n.t("page.cart.fundiin_note")
-                            %br
-                              %ul.m-l-15
-                                %li.p-l-15
-                                  = I18n.t("page.cart.fundiin_note_1")
-                                %li.p-l-15
-                                  = I18n.t("page.cart.fundiin_note_2")
+                            = @body["description"].html_safe
                         %br
                       .tranfer-content
                         .col-sm-12.control-label
@@ -191,8 +177,11 @@
                       .col-sm-3
             .col-sm-10.col-lg-7.col-xl-5.m-lr-auto.m-b-50
 :css
+  .title-image-fundiin {
+    width: 20%;
+  }
   .fundiin-note {
-    padding-left: 11%;
+    padding-left: 12.5%;
   }
   .payment-image {
     width: 50px;
