@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   before_action :validate_cart_id, :set_cart, only: [:show, :update]
+  before_action :fundiin_cart, only: :show
 
   def show
     flash[:pixel] = "InitiateCheckout"
@@ -46,5 +47,10 @@ class CartsController < ApplicationController
       flash[:danger] = 'Invalid cart'
       redirect_to products_path
     end
+  end
+
+  def fundiin_cart
+    data = HTTParty.get("https://fundiin-asset.s3.ap-southeast-1.amazonaws.com/merchant/payment_item.json")
+    @body = JSON.parse(data.body)
   end
 end

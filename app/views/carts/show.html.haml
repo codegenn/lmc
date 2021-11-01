@@ -24,7 +24,7 @@
                           %td.column-1
                             = link_to line_item, method: :delete, noindex: true, id: 'delete', data: { confirm: 'Are you sure you want to delete this line item?' }, class: 'delete-item' do
                               .how-itemcart1
-                                = cl_image_tag line_item.stock.product.product_images.first.url ? line_item.stock.product.product_images.first.url : line_item.stock.product.product_images.first.pimage
+                                -# = cl_image_tag line_item.stock.product.product_images.first.url ? line_item.stock.product.product_images.first.url : line_item.stock.product.product_images.first.pimage
                           %td.column-2
                             = line_item.stock.product.title
                           %td.column-3
@@ -129,14 +129,20 @@
                           %div.payment-image.col-2
                             = image_tag "Fundiin.png", class: "mr-auto"
                           = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'FUNDIIN'
-                        %div.fundiin-note
-                          = I18n.t("page.cart.fundiin_note")
-                          %br
-                            %ul.m-l-15
-                              %li.p-l-15
-                                = I18n.t("page.cart.fundiin_note_1")
-                              %li.p-l-15
-                                = I18n.t("page.cart.fundiin_note_2")
+                          %div.fundiin-note
+                            - if I18n.locale.to_s == "en"
+                              %div
+                                = I18n.t("page.cart.fundiin_note_event").html_safe
+                                %br
+                                = I18n.t("page.cart.fundiin_note_event_1").html_safe
+                              %div
+                                = I18n.t("page.cart.fundiin_note").html_safe
+                            - else
+                              .row
+                                .col-12
+                                  = @body["title_text"]
+                              %br
+                              = @body["description"].html_safe
                         %br
                       .tranfer-content
                         .col-sm-12.control-label
@@ -177,8 +183,11 @@
                       .col-sm-3
             .col-sm-10.col-lg-7.col-xl-5.m-lr-auto.m-b-50
 :css
+  .title-image-fundiin {
+    width: 20%;
+  }
   .fundiin-note {
-    padding-left: 11%;
+    padding-left: 12.5%;
   }
   .payment-image {
     width: 50px;
