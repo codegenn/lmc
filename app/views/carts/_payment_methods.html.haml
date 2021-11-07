@@ -1,0 +1,65 @@
+.flex-w.flex-sb-m.p-t-18.p-b-15.payment-method
+  = f.label :payment_method, I18n.t("order.payment_method"), class: 'col-sm-3 control-label payment_method font-weight-bold'
+  .col-sm-10
+    %div.row
+      = f.radio_button :payment_method, 'COD', class: 'radio-payment col-1', checked: @order.payment_method.nil? || @order.payment_method == 'COD'
+      %div.payment-image.col-2
+        = image_tag "COD.png", class: "mr-auto payment-cod"
+      = f.label :payment_method, I18n.t("page.cart.cod"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'COD'
+    %div.row
+      = f.radio_button :payment_method, 'Shopee pay', class: 'radio-payment col-1'
+      %div.payment-image.col-2
+        = image_tag "SPP.png", class: "mr-auto"
+      = f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'COD'
+    %div.row
+      = f.radio_button :payment_method, 'FUNDIIN', class: 'radio-payment col-1'
+      %div.payment-image.col-2
+        = image_tag "Fundiin.png", class: "mr-auto"
+      = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'FUNDIIN'
+      %div.fundiin-note
+        - if I18n.locale.to_s == "en"
+          %div
+            = I18n.t("page.cart.fundiin_note_event").html_safe
+            %br
+            = I18n.t("page.cart.fundiin_note_event_1").html_safe
+          %div
+            = I18n.t("page.cart.fundiin_note").html_safe
+        - else
+          .row
+            .col-12
+              = @body["title_text"]
+          %br
+          = @body["description"].html_safe
+    %br
+  .tranfer-content
+    .col-sm-12.control-label
+      = I18n.t("page.cart.transfer")
+      %br
+    .col-sm-12
+      = "#{I18n.t("page.cart.account_holder")}: Nguyễn Thị Anh Thư"
+    .col-sm-12
+      %br
+      = "#{I18n.t("page.cart.bank")}: VIB"
+    .col-sm-12
+      = "#{I18n.t("page.cart.bank_branch")}: #{I18n.t("page.cart.bank_branch_content")}"
+    .col-sm-12
+      = "#{I18n.t("page.cart.account_no")}: 604704060140143"
+    .col-sm-12
+      = I18n.t("page.cart.or")
+    .col-sm-12
+      = "#{I18n.t("page.cart.bank")}: Techcombank"
+    .col-sm-12
+      = "#{I18n.t("page.cart.bank_branch")}: #{I18n.t("page.cart.bank_branch_content")}"
+    .col-sm-12
+      = "#{I18n.t("page.cart.account_no")}: 10623456052016"
+    .col-sm-12
+      = I18n.t("page.cart.or")
+    .col-sm-12
+      = "#{I18n.t("page.cart.bank")}: BIDV"
+    .col-sm-12
+      = "#{I18n.t("page.cart.bank_branch")}: #{I18n.t("page.cart.bank_branch_content")}"
+    .col-sm-12
+      = "#{I18n.t("page.cart.account_no")}: 31010002337101"
+    .col-sm-12
+      %br
+      = "#{I18n.t("page.cart.content")}: #{I18n.t("page.cart.content_tranfer")}"
