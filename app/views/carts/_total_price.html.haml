@@ -1,0 +1,28 @@
+.bor15.bor18.p-t-40.p-r-50.p-l-50.p-b-40.total-mobile
+  %h4.mtext-109.cl2.p-b-30
+    = I18n.t("page.cart.cart_total")
+  %div.p-b-33.d-flex
+    .p2
+      %span.mtext-101.cl2
+        = "#{I18n.t("page.cart.total")}: "
+    .p2.ml-auto
+      %span.mtext-110.cl2{ class: ('line-out' if @cart.voucher_code.present?) }
+        = "#{number_with_delimiter(@cart.total_price.to_i, :delimiter => '.')} VND"  
+  - if @cart.voucher_code.present?
+    %div.p-b-33.d-flex
+      .p2
+        %span.mtext-101.cl2
+          = "#{I18n.t("page.cart.voucher")}: "
+      .p2.ml-auto
+        %span.mtext-110.cl2.m-l-100.total-mobile-price
+          = @cart.voucher_code
+    %div.p-b-33.d-flex
+      .p2
+        %span.mtext-101.cl2
+          = "#{I18n.t("page.cart.grand_total")}: "
+      .p2.ml-auto
+        %span.mtext-110.cl2.m-l-100.total-mobile-price
+          = "#{number_with_delimiter(@cart.calculate_grand_total.to_i, :delimiter => '.')} VND" 
+  .flex-w.flex-t
+    %h6
+      = I18n.t("page.product.fundiin", price: number_with_delimiter(@cart.calculate_grand_total.to_i/3, :delimiter => '.')).html_safe
