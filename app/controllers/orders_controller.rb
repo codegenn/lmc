@@ -174,11 +174,11 @@ class OrdersController < ApplicationController
 
   def create_url_vnpay(amount, order_id)
     uri = Addressable::URI.new
-    tmn_code = "LMCATI01"
+    tmn_code = "LM000001"
     total_amout = Rails.env.production? ? amount*100 : 100000000
     order_id = Rails.env.production? ? order_id : "a#{order_id}"
     created_at = Time.now.to_i
-    uri = "http://pure-crag-47156.herokuapp.com"
+    uri = "https://www.lmcation.com"
     url = "#{uri}/#{I18n.locale}/vnpay-fallback"
     input_data = {
       "vnp_Amount" => total_amout.to_i,
@@ -187,9 +187,9 @@ class OrdersController < ApplicationController
       "vnp_CurrCode" => "VND",
       "vnp_IpAddr" => "0.0.0.0",
       "vnp_Locale" => "vn",
-      "vnp_OrderInfo" => "test",
+      "vnp_OrderInfo" => "HD: #{order_id}",
       "vnp_ReturnUrl" => url,
-      "vnp_TmnCode" => "LMCATI01",
+      "vnp_TmnCode" => tmn_code,
       "vnp_TxnRef" => order_id,
       "vnp_Version" => "2.0.0",
     }
