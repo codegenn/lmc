@@ -34,13 +34,14 @@
                   = line.text_field :quantity, class: 'mtext-104 cl3 txt-center num-product'
                   .btn-num-product-up.cl8.hov-btn3.trans-04.flex-c-m
                     %i.fs-16.zmdi.zmdi-plus
+              -# = f.number_field :line_items, :in => 0..100, :step => 1
             %td{style:"text-align: center;"}
               = "#{number_with_delimiter(line_item.total_price.to_i, :delimiter => '.')} VND"
-        %tr.table_row
-          %td.column-1.column-voucher{style:"vertical-align: middle;"}
-            = f.label :voucher_code, I18n.t("page.cart.voucher"), class: 'control-label'
-          %td.column-2{:colspan => "2"}
-            = f.text_field :voucher_code, autofocus: true, class: 'stext-111 cl2 plh3 size-100 input-txt'
-          %td.col-1
-            = f.hidden_field :id, { :value => @cart.code }
-            = submit_tag I18n.t("page.cart.update_cart"), class: 'flex-c-m stext-101 cl2 size-119 bg8 hov-btn3 p-lr-15 trans-04 pointer'
+        -# %tr.table_row
+        -#   %td.column-1.column-voucher{style:"vertical-align: middle;"}
+        -#     = f.label :voucher_code, I18n.t("page.cart.voucher"), class: 'control-label'
+        -#   %td.column-2{:colspan => "2"}
+        -#     = f.text_field :voucher_code, autofocus: true, class: 'stext-111 cl2 plh3 size-100 input-txt'
+        -#   %td.col-1
+        -#     = f.hidden_field :id, { :value => @cart.code }
+        -#     = submit_tag I18n.t("page.cart.update_cart"), class: 'flex-c-m stext-101 cl2 size-119 bg8 hov-btn3 p-lr-15 trans-04 pointer'
