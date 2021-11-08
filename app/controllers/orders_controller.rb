@@ -52,6 +52,8 @@ class OrdersController < ApplicationController
       when params["order"]["payment_method"].include?("vnpay")
         vnp_url = create_url_vnpay(@order.grand_total, @order.id)
         redirect_to vnp_url
+      when params["order"]["payment_method"].include?("momo")
+        render 'carts/momo_qrcode'
       else
         noti_success(@order)
         redirect_to products_path
