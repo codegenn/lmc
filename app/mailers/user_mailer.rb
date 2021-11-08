@@ -19,6 +19,8 @@ class UserMailer < ApplicationMailer
       return 'Chuyển Khoản FUNDIIN'
     elsif order.payment_method.include?("Shopee pay")
       return 'Chuyển Khoản Ví ShopeePay'
+    elsif order.payment_method.include?("vnpay")
+      return 'Thẻ ATM, VISA, MASTER'
     end
   end
 end

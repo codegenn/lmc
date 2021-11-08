@@ -12,6 +12,7 @@ module Api
                   order_object.status = "Pay Success"
                 end
                 order_object.save!
+                UserMailer.order_for_user(order_object).deliver_now if Rails.env.production?
                 code = "00"
                 message = "Confirm Success"
               else
