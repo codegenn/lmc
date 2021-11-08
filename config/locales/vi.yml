@@ -239,6 +239,7 @@ vi:
       fundiin_note_1: "1. Sim chính chủ Viettel/Mobifone/Vinaphone"
       fundiin_note_2: "2. Trên 18 tuổi"
       spp_btn: 'Ví ShopeePay'
+      vnpay_btn: 'VNpay'
       cod: "Thanh toán khi nhận hàng"
       spp_qr: "Vui lòng quét mã QR code trên app"
       transfer: 'VUI LÒNG CHUYỂN KHOẢN VÀO:'

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       post "update_tags", to: "fundiin#update_tags"
       post "update_transaction", to: "spp#noti_transaction_status"
       post "check_transaction", to: "spp#check_transaction"
+      get "vnp-ipn-transaction", to: "vnpay#vnpay_ipn"
     end
   end
   devise_for :users, controllers: { registrations: 'registrations' }
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   match "/422", to: "errors#unacceptable", via: :all
   match "/500", to: "errors#internal_server_error", via: :all
   scope "(:locale)", :locale => /en|vi/ do
+    get 'vnpay-fallback', to: "orders#fallback"
     get 'store/index'
     get 'thoi-trang-ton-vinh-phu-nu', to: "store#about"
     get 'lien-he', to: "store#find_us"

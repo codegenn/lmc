@@ -49,6 +49,9 @@ class OrdersController < ApplicationController
             redirect_to products_path
           end
         end
+      when params["order"]["payment_method"].include?("vnpay")
+        vnp_url = create_url_vnpay(@order.grand_total, @order.id)
+        redirect_to vnp_url
       else
         noti_success(@order)
         redirect_to products_path
@@ -59,6 +62,22 @@ class OrdersController < ApplicationController
       render 'carts/show'
     end
   end
+
+  def fallback
+    if checksum_valid!
+      if params["vnp_ResponseCode"] == "00"
+        flash[:success] = I18n.t('controllers.order.success')
+        redirect_to products_path
+      else
+        # flash[:error] = t('.payment_failed')
+        redirect_to products_path
+      end
+    else
+      # flash[:error] = t('.payment_failed')
+      redirect_to products_path
+    end
+  end
+  
 
   private
   def authorize
@@ -153,10 +172,55 @@ class OrdersController < ApplicationController
     ShopeePay.create_order(body, Auth.auth_signature(body, secret_key))
   end
 
+  def create_url_vnpay(amount, order_id)
+    uri = Addressable::URI.new
+    tmn_code = "LMCATI01"
+    total_amout = Rails.env.production? ? amount*100 : 100000000
+    order_id = Rails.env.production? ? order_id : "a#{order_id}"
+    created_at = Time.now.to_i
+    uri = "http://pure-crag-47156.herokuapp.com"
+    url = "#{uri}/#{I18n.locale}/vnpay-fallback"
+    input_data = {
+      "vnp_Amount" => total_amout.to_i,
+      "vnp_Command" => "pay",
+      "vnp_CreateDate" => DateTime.current.strftime("%Y%m%d%H%M%S"),
+      "vnp_CurrCode" => "VND",
+      "vnp_IpAddr" => "0.0.0.0",
+      "vnp_Locale" => "vn",
+      "vnp_OrderInfo" => "test",
+      "vnp_ReturnUrl" => url,
+      "vnp_TmnCode" => "LMCATI01",
+      "vnp_TxnRef" => order_id,
+      "vnp_Version" => "2.0.0",
+    }
+
+    original_data = input_data.map do |key, value|
+      "#{key}=#{value}"
+    end.join("&")
+    original_data += "&vnp_SecureHash=#{VNPay.auth_signature(original_data, ENV["VNP_HASH_SECRET"])}"
+    url = VNPay.create_url(original_data)
+
+    return url
+  end
+
   def check_device
     agent = request.user_agent
     return "tablet" if agent =~ /(tablet|ipad)|(android(?!.*mobile))/i
     return "mobile" if agent =~ /Mobile/
     return "desktop"
+  end
+
+  def checksum_valid!
+    vnp_secure_hash = params["vnp_SecureHash"]
+    data = response_params.to_h.map do |key, value|
+      "#{key}=#{value}"
+    end.join("&")
+
+    secure_hash = VNPay.auth_signature(data, ENV["VNP_HASH_SECRET"])
+    vnp_secure_hash == secure_hash
+  end
+
+  def response_params
+    params.permit("vnp_Amount", "vnp_BankCode", "vnp_BankTranNo", "vnp_CardType", "vnp_OrderInfo", "vnp_PayDate", "vnp_ResponseCode", "vnp_TmnCode", "vnp_TransactionNo", "vnp_TxnRef")
   end
 end

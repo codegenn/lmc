@@ -17,6 +17,7 @@ module Api
       end
 
       def authenticate_spp
+        @data_respon_spp = JSON.parse @data_respon_spp
         secret_key = @data_respon_spp["payment_method"] == 16 ? ENV["SPP_SECRET_KEY_MOBILE"] : ENV["SPP_SECRET_KEY"]
         signature_lmc = Auth.auth_signature(@data_respon_spp, secret_key).gsub("=\n", "=")
         signature_spp = airpay_token.gsub("=\n", "=")
@@ -52,7 +53,7 @@ module Api
       end
 
       def body_spp
-        @data_respon_spp = JSON.parse request.body.read
+        @data_respon_spp = request.body.read
         @data_respon_spp
       end
 

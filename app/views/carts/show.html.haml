@@ -125,6 +125,11 @@
                             = image_tag "SPP.png", class: "mr-auto"
                           = f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'COD'
                         %div.row
+                          = f.radio_button :payment_method, 'vnpay', class: 'radio-payment col-1'
+                          %div.payment-image.col-2
+                            = image_tag "VNPAY.png", class: "mr-auto"
+                          = f.label :payment_method, I18n.t("page.cart.vnpay_btn"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'VNpay'
+                        %div.row
                           = f.radio_button :payment_method, 'FUNDIIN', class: 'radio-payment col-1'
                           %div.payment-image.col-2
                             = image_tag "Fundiin.png", class: "mr-auto"
