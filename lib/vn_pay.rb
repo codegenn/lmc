@@ -2,7 +2,7 @@ require "httparty"
 require 'uri'
 
 module VNPay
-  VNP_HOST = "https://merchant.vnpay.vn".freeze
+  VNP_HOST = "https://pay.vnpay.vn".freeze
 
   class Config
     attr_accessor :client_id
