@@ -37,11 +37,10 @@
             %td{style:"text-align: center;"}
               = "#{number_with_delimiter(line_item.total_price.to_i, :delimiter => '.')} VND"
         %tr.table_row
-          %td.column-1.column-voucher
+          %td.column-1.column-voucher{style:"vertical-align: middle;"}
             = f.label :voucher_code, I18n.t("page.cart.voucher"), class: 'control-label'
-          %td.column-3{:colspan => "3"}
+          %td.column-2{:colspan => "2"}
             = f.text_field :voucher_code, autofocus: true, class: 'stext-111 cl2 plh3 size-100 input-txt'
-  -# .flex-w.flex-sb-m.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
-  -#   .flex-w.flex-m.m-r-20.m-tb-5
-  -#   = f.hidden_field :id, { :value => @cart.code }
-  -#   = submit_tag I18n.t("page.cart.update_cart"), class: 'flex-c-m stext-101 cl2 size-119 bg8 hov-btn3 p-lr-15 trans-04 pointer m-tb-10'
+          %td.col-1
+            = f.hidden_field :id, { :value => @cart.code }
+            = submit_tag I18n.t("page.cart.update_cart"), class: 'flex-c-m stext-101 cl2 size-119 bg8 hov-btn3 p-lr-15 trans-04 pointer'
