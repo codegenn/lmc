@@ -2,7 +2,7 @@ require "httparty"
 require 'uri'
 
 module VNPay
-  VNP_HOST = "https://sandbox.vnpayment.vn".freeze
+  VNP_HOST = "https://merchant.vnpay.vn".freeze
 
   class Config
     attr_accessor :client_id
@@ -18,7 +18,7 @@ module VNPay
     end
 
     def create_url(params)
-      uri = "paymentv2/vpcpay.html"
+      uri = "vpcpay.html"
       url = "#{VNP_HOST}/#{uri}?#{params}"
       return url
     end
