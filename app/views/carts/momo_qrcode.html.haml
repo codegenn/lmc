@@ -254,10 +254,8 @@
     time = minutes + " : " + seconds;
     console.log(time);
     document.getElementById("demo").innerHTML = time;
-    if (distance < 0) {
-      var xmlHttp = new XMLHttpRequest();
-      xmlHttp.open( "GET", "https://pure-crag-47156.herokuapp.com/api/v2/product", false ); // false for synchronous request
-      xmlHttp.send( null );
+    if (distance <= 0) {
+      window.location.replace("https://pure-crag-47156.herokuapp.com/api/v2/product");
     }
   }, 1000);
 
