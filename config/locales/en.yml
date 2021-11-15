@@ -204,6 +204,9 @@ en:
       fundiin_note_2: "2. Over 18 years old"
       spp_btn: 'ShopeePay Wallet'
       vnpay_btn: 'ATM card, VISA, MASTER'
+      momo_btn: "Momo Wallet"
+      momo_qr: "Please scan the QR code on MOMO app to pay."
+      momo_exp: "Your order will be expired by"
       cod: "Cash On Delivery"
       spp_qr: "Please scan the QR code on Shopee app to pay."
       transfer: 'PLEASE TRANSFER TO THE ACCOUNT:'

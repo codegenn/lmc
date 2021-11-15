@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       post "check_transaction", to: "spp#check_transaction"
       get "vnp-ipn-transaction", to: "vnpay#vnpay_ipn"
     end
+    namespace :v2 do
+      get "product", to: "api#product"
+    end
   end
   devise_for :users, controllers: { registrations: 'registrations' }
   devise_for :admin_users, ActiveAdmin::Devise.config
