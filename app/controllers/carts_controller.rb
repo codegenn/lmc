@@ -3,6 +3,7 @@ class CartsController < ApplicationController
   before_action :fundiin_cart, only: :show
 
   def show
+    @locale = params[:locale]
     flash[:pixel] = "InitiateCheckout"
     @line_items = @cart.line_items.includes(:stock)
     last_order = Order.last
