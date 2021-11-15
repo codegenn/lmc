@@ -5,16 +5,20 @@ class LineItemsController < ApplicationController
   before_action :set_line_item, only: [:update, :destroy]
 
   def create
-    if @stock
-      @line_item = @cart.add_product(@stock, @bstock, params[:quantity])
-
-      if @line_item.save
-        flash[:success] = I18n.t('controllers.line_items.success')
-      else
-        flash[:danger] = @line_item.errors.full_messages.to_sentence
-      end
-    else
+    if params[:color].blank? || params[:quantity].blank?
       flash[:danger] = I18n.t('controllers.line_items.select_sc')
+    else
+      if @stock
+        @line_item = @cart.add_product(@stock, @bstock, params[:quantity])
+  
+        if @line_item.save
+          flash[:success] = I18n.t('controllers.line_items.success')
+        else
+          flash[:danger] = @line_item.errors.full_messages.to_sentence
+        end
+      else
+        flash[:danger] = I18n.t('controllers.line_items.select_sc')
+      end
     end
   end
 
