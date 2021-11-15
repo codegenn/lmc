@@ -240,7 +240,9 @@ vi:
       fundiin_note_2: "2. Trên 18 tuổi"
       spp_btn: 'Ví ShopeePay'
       vnpay_btn: 'Thẻ ATM, VISA, MASTER'
-      momo_btn: "Momo"
+      momo_btn: "Ví Momo"
+      momo_qr: "Vui lòng quét mã QR code trên app"
+      momo_exp: "Đơn hàng hết hạn sau"
       cod: "Thanh toán khi nhận hàng"
       spp_qr: "Vui lòng quét mã QR code trên app"
       transfer: 'VUI LÒNG CHUYỂN KHOẢN VÀO:'
