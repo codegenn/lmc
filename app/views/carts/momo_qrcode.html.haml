@@ -24,13 +24,13 @@
               .col-lg-10.col-sm-12
                 .p-b-15.d-flex
                   .p2{id: "text-momo"}
-                    = I18n.t("page.cart.spp_qr")
+                    = I18n.t("page.cart.momo_qr")
                   .p2.m-l-5{id: "qr_momo"}
                     %div{style: "width: 35%;"}
                       = image_tag "momo.jpg",  width: 100
                 .d-flex
                   .p2
-                    = "Đơn hàng hết hạn sau"
+                    = I18n.t("page.cart.momo_exp")
                   .p2.m-l-5{id: "demo"}
               .col-lg-2.txt-center.col-sm-12
                 = image_tag "momo_qr.jpg"
