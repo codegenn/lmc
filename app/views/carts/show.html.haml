@@ -111,6 +111,7 @@
                       = f.text_field :note, class: 'stext-111 cl2 plh3 size-126 input-txt', value: @order.note
                       = f.hidden_field :id, { :value => @cart.code }
                       = f.hidden_field :tracking, { :value => @order.tracking }
+                      = f.hidden_field :locale, { :value => @locale }
                     .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.payment-method
                       = f.label :payment_method, I18n.t("order.payment_method"), class: 'col-sm-3 control-label payment_method font-weight-bold'
                       .col-sm-10
@@ -247,10 +248,30 @@
     }
   }
 
+  function invalidMessage() {
+    var locale = $("#order_locale").val();
+    var mess = "";
+    switch (locale) {
+      case "vi": 
+        return "Vui lòng điền vào trường này";
+      case "en":
+        return "Please fill out this filed";
+    }
+  }
+
   $(document).ready(function() {
     checktransfer();
 
     $("input[name='order[payment_method]']").change(function(){
       checktransfer();
+    });
+
+    $('#new_order input[type=text]').on('change invalid', function() {
+        var textfield = $(this)[0];
+        textfield.setCustomValidity('');
+        
+        if (!textfield.validity.valid) {
+          textfield.setCustomValidity(invalidMessage());  
+        }
     });
   });
