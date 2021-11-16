@@ -39,7 +39,7 @@ en:
       policy: 'RETURNS & EXCHANGES POLICY'
       best_seller: 'OUR BEST SELLERS'
       promotion: 'PROMOTION'
-      new_arrivals: 'NEW ARRIVALS'
+      new_arrivals: 'NEW ARRIVALS & ACCESSORIES'
       best_seller_description: 'The crowd favorite'
       promotion_description: 'Get it while it’s hot'
       new_arrivals_description: 'Our latest release'
@@ -204,6 +204,9 @@ en:
       fundiin_note_2: "2. Over 18 years old"
       spp_btn: 'ShopeePay Wallet'
       vnpay_btn: 'ATM card, VISA, MASTER'
+      momo_btn: "Momo Wallet"
+      momo_qr: "Please scan the QR code on MOMO app to pay."
+      momo_exp: "Your order will be expired by"
       cod: "Cash On Delivery"
       spp_qr: "Please scan the QR code on Shopee app to pay."
       transfer: 'PLEASE TRANSFER TO THE ACCOUNT:'

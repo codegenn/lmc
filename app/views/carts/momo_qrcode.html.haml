@@ -1,0 +1,281 @@
+.sec-banner.bg0.p-t-80.p-b-50.main-page
+  .container
+    %table.invoice
+      %tbody
+        %tr
+          %td
+            Invoice: ##{@order.id}
+        %tr
+          %td
+            %table.invoice-items{:cellpadding => "0", :cellspacing => "0"}
+              %tbody
+                = hidden_field_tag :order_id, @order.id
+                - @order.line_items.includes(:stock).each do |line_item|
+                  %tr
+                    %td
+                      = line_item.stock.product.title
+                    %td.alignright
+                      = "#{number_with_delimiter(line_item.total_price.to_i, :delimiter => '.')} vnd"
+                %tr.total
+                  %td.alignright{:width => "80%"} Total
+                  %td.alignright
+                    = "#{number_with_delimiter(@order.grand_total.to_i, :delimiter => '.')} vnd"
+            .row.text-danger
+              .col-lg-10.col-sm-12
+                .p-b-15.d-flex
+                  .p2{id: "text-momo"}
+                    = I18n.t("page.cart.momo_qr")
+                  .p2.m-l-5{id: "qr_momo"}
+                    %div{style: "width: 35%;"}
+                      = image_tag "momo.jpg",  width: 100
+                .d-flex
+                  .p2
+                    = I18n.t("page.cart.momo_exp")
+                  .p2.m-l-5{id: "demo"}
+              .col-lg-2.txt-center.col-sm-12
+                = image_tag "momo_qr.jpg"
+
+#bsModal3.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-body
+        = I18n.t('controllers.order.success')
+:css
+  .body-wrap {width: 100%;}
+  img {max-width: 100%;}
+
+  table td {
+    vertical-align: top;
+  }
+
+  .content-block {
+    padding: 0 0 20px;
+  }
+
+  .header {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    width: 100%;
+    clear: both;
+    color: #999;
+    padding: 20px;
+  }
+  .footer a {
+      color: #999;
+  }
+  .footer p, .footer a, .footer unsubscribe, .footer td {
+      font-size: 12px;
+  }
+
+  h1, h2, h3 {
+      font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      color: #000;
+      margin: 40px 0 0;
+      line-height: 1.2;
+      font-weight: 400;
+  }
+
+  h1 {
+      font-size: 32px;
+      font-weight: 500;
+  }
+
+  h2 {
+      font-size: 24px;
+  }
+
+  h3 {
+      font-size: 18px;
+  }
+
+  h4 {
+      font-size: 14px;
+      font-weight: 600;
+  }
+
+  p, ul, ol {
+      margin-bottom: 10px;
+      font-weight: normal;
+  }
+  p li, ul li, ol li {
+      margin-left: 5px;
+      list-style-position: inside;
+  }
+
+  a {
+      color: #1ab394;
+      text-decoration: underline;
+  }
+
+  .btn-primary {
+      text-decoration: none;
+      color: #FFF;
+      background-color: #1ab394;
+      border: solid #1ab394;
+      border-width: 5px 10px;
+      line-height: 2;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      display: inline-block;
+      border-radius: 5px;
+      text-transform: capitalize;
+  }
+
+  .last {
+      margin-bottom: 0;
+  }
+
+  .first {
+      margin-top: 0;
+  }
+
+  .aligncenter {
+      text-align: center;
+  }
+
+  .alignright {
+      text-align: right;
+  }
+
+  .alignleft {
+      text-align: left;
+  }
+
+  .clear {
+      clear: both;
+  }
+
+  .alert {
+      font-size: 16px;
+      color: #fff;
+      font-weight: 500;
+      padding: 20px;
+      text-align: center;
+      border-radius: 3px 3px 0 0;
+  }
+  .alert a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+  }
+  .alert.alert-warning {
+      background: #f8ac59;
+  }
+  .alert.alert-bad {
+      background: #ed5565;
+  }
+  .alert.alert-good {
+      background: #1ab394;
+  }
+
+  .invoice {
+      margin: 40px auto;
+      text-align: left;
+      width: 80%;
+  }
+  .invoice td {
+      padding: 5px 0;
+  }
+  .invoice .invoice-items {
+      width: 100%;
+  }
+  .invoice .invoice-items td {
+      border-top: #eee 1px solid;
+  }
+  .invoice .invoice-items .total td {
+      border-top: 2px solid #333;
+      border-bottom: 2px solid #333;
+      font-weight: 700;
+  }
+
+  @media only screen and (max-width: 640px) {
+    h1, h2, h3, h4 {
+      font-weight: 600 !important;
+      margin: 20px 0 5px !important;
+    }
+
+    h1 {
+      font-size: 22px !important;
+    }
+
+    h2 {
+      font-size: 18px !important;
+    }
+
+    h3 {
+      font-size: 16px !important;
+    }
+
+    .container {
+      width: 100% !important;
+    }
+
+    .content, .content-wrap {
+      padding: 10px !important;
+    }
+
+    .invoice {
+      width: 100% !important;
+    }
+  }
+:javascript
+  var get_data = function(item_id){
+    url = "https://www.lmcation.com/api/v1/check_transaction"
+    $.post(url, JSON.stringify({id: item_id}),function(result){
+      if (result["code"] === 1) {
+        $("#bsModal3").modal('show');
+      } else {
+        setTimeout(function() {get_data(item_id);}, 5000);
+      }
+    });
+  }
+
+  $(function() {
+    var id = $("#order_id").val();
+
+    if(id.length > 0) {
+      get_data(id);
+    }
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      download("https://pure-crag-47156.herokuapp.com/assets/momo_qr-8a8a11e87d64a3af60407b58a2ee3e2400803d4eee07371b32a24cf8303b8053.jpg","lmcation.jpg")
+      document.getElementById("text-momo").innerHTML = "Please click on the QR code to save the picture to your phone, then open Momo app to scan the QR code for completing the order."
+      document.getElementById("qr_momo").style.display = 'none';
+    }
+    
+  });
+
+  function download(url, filename) {
+    fetch(url)
+      .then(response => response.blob())
+      .then(blob => {
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = filename;
+        link.click();
+    })
+    .catch(console.error);
+  }
+
+  var now = new Date();
+  now.setMinutes(now.getMinutes() + 10);
+  countDownDate = new Date(now);
+
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    time = minutes + " : " + seconds;
+    console.log(time);
+    document.getElementById("demo").innerHTML = time;
+    if (distance <= 0) {
+      window.location.replace("https://pure-crag-47156.herokuapp.com/api/v2/product");
+    }
+  }, 1000);
+
+  
