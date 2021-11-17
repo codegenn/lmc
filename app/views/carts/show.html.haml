@@ -26,7 +26,7 @@
                               .how-itemcart1
                                 -# = cl_image_tag line_item.stock.product.product_images.first.url ? line_item.stock.product.product_images.first.url : line_item.stock.product.product_images.first.pimage
                           %td.column-2
-                            = line_item.stock.product.title
+                            = line_item.stock.product.title + " - " + line_item.stock.color
                           %td.column-3
                             - if line_item.stock.product.promotion_price.present?
                               .promotion-price
