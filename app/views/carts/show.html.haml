@@ -19,7 +19,7 @@
                           = I18n.t("page.cart.quantity")
                         %th.column-5
                           = I18n.t("page.cart.total")
-                      - @cart.line_items.includes(:stock).each do |line_item|
+                      - @line_items.each do |line_item|
                         %tr.table_row
                           %td.column-1
                             = link_to line_item, method: :delete, noindex: true, id: 'delete', data: { confirm: 'Are you sure you want to delete this line item?' }, class: 'delete-item' do
@@ -29,7 +29,7 @@
                             %span.col-lg-8
                               = line_item.stock.product.title
                             %span.col-lg-3
-                              %img{:src => "https://d1monvl96vvqbd.cloudfront.net/color_images/color_images/"+("%09d" % line_item.stock.product.color_images.where(color_name: line_item.stock.color).first.id).gsub(/(\d)(?=(?:\d{3})+(?!\d))/, '\1/')+"/original/"+line_item.stock.color_image_file_name, 
+                              %img{:src => "https://d1monvl96vvqbd.cloudfront.net/color_images/color_images/"+"000/000/246"+"/original/"+line_item.stock.color_image_file_name, 
                                 :width => 50, :height => 50}
                           %td.column-3
                             - if line_item.stock.product.promotion_price.present?
