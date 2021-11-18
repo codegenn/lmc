@@ -17,7 +17,7 @@
                   = cl_image_tag line_item.stock.product.product_images.first.image_url
             .header-cart-item-txt.p-t-8
               = link_to product_path(line_item.stock.product.slug), :"data-no-turbolink" => 'false', class: "header-cart-item-name m-b-18 hov-cl1 trans-04" do
-                = line_item.stock.product.title + " - " + line_item.stock.color
+                = line_item.stock.product.title
                 %span.header-cart-item-info
                   - price = line_item.stock.product.promotion_price.present? ? line_item.stock.product.promotion_price : line_item.stock.product.price
                   = "#{line_item.quantity} x #{number_with_delimiter(price.to_i, :delimiter => '.')} VND"
