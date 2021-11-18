@@ -22,11 +22,11 @@
                       - @cart.line_items.includes(:stock).each do |line_item|
                         %tr.table_row
                           %td.column-1
-                            = link_to line_item, method: :delete, noindex: true, id: 'delete', data: { confirm: 'Are you sure you want to delete this line item?' }, class: 'delete-item' do
-                              .how-itemcart1
-                                -# = cl_image_tag line_item.stock.product.product_images.first.url ? line_item.stock.product.product_images.first.url : line_item.stock.product.product_images.first.pimage
-                          %td.column-2
-                            = line_item.stock.product.title
+                            %img{:src => "https://d1monvl96vvqbd.cloudfront.net/color_images/color_images/"+("%09d" % line_item.stock.product.color_images.where(color_name: line_item.stock.color).first.id).gsub(/(\d)(?=(?:\d{3})+(?!\d))/, '\1/')+"/original/"+line_item.stock.product.color_images.where(color_name: line_item.stock.color).first.color_image_file_name, 
+                              :width => 50, :height => 50}
+                          %td.column-2.row
+                            %span.col-lg-12.title_item
+                              = line_item.stock.product.title
                           %td.column-3
                             - if line_item.stock.product.promotion_price.present?
                               .promotion-price
