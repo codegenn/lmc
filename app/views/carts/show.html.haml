@@ -24,9 +24,19 @@
                           %td.column-1
                             %img{:src => "https://d1monvl96vvqbd.cloudfront.net/color_images/color_images/"+("%09d" % line_item.stock.product.color_images.where(color_name: line_item.stock.color).first.id).gsub(/(\d)(?=(?:\d{3})+(?!\d))/, '\1/')+"/original/"+line_item.stock.product.color_images.where(color_name: line_item.stock.color).first.color_image_file_name, 
                               :width => 50, :height => 50}
-                          %td.column-2.row
-                            %span.col-lg-12.title_item
+                          %td.column-2
+                            %span.title_item
                               = line_item.stock.product.title
+                            %div.show-for-mobile
+                              - if line_item.stock.product.promotion_price.present?
+                                .promotion-price
+                                  = "#{I18n.t("page.cart.price")}: #{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} vnd"
+                                %b
+                                  = "#{I18n.t("page.cart.price")}: #{number_with_delimiter(line_item.stock.product.promotion_price.to_i, :delimiter => '.')} vnd"
+                              - else
+                                = "#{I18n.t("page.cart.price")}: #{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} vnd"
+                            %div.show-for-mobile
+                              = "#{I18n.t("page.cart.total")}: #{number_with_delimiter(line_item.total_price.to_i, :delimiter => '.')} VND"
                           %td.column-3
                             - if line_item.stock.product.promotion_price.present?
                               .promotion-price
@@ -48,7 +58,7 @@
                       %tr.table_row
                         %td.column-1.column-voucher
                           = f.label :voucher_code, I18n.t("page.cart.voucher"), class: 'control-label'
-                        %td.column-3{:colspan => "2"}
+                        %td.column-2{:colspan => "2"}
                           = f.text_field :voucher_code, autofocus: true, class: 'stext-111 cl2 plh3 size-100 input-txt'
                   .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
                     .flex-w.flex-m.m-r-20.m-tb-5
@@ -212,12 +222,17 @@
     font-size: 12px;
   }
 
+  .show-for-mobile {
+    display: none;
+  }
+
   .payment-method {
       padding-left: 40px;
       padding-right: 40px;
     }
 
   @media only screen and (max-width: 600px) {
+
     .fundiin-note {
       padding-left: 6%;
     }
@@ -237,6 +252,43 @@
     }
     .payment-cod{
       width: 90% !important;
+    }
+
+    .show-for-mobile {
+      display: block;
+    }  
+
+    .table-shopping-cart {
+      min-width: 100%
+    }
+
+    .table-shopping-cart .column-1 {
+      padding-left: 10px;
+    }
+
+    .flex-sb-m {
+      justify-content: center
+    }
+
+    .column-voucher {
+      padding-right: 10px
+    }
+
+    .column-2 {
+      padding-right: 10px;
+    }
+
+    .column-4 {
+      padding-right: 10px;
+    }
+
+    .column-3 {
+      display: none;
+      padding-right: 10px;
+    }
+
+    .column-5 {
+      display: none;
     }
   }
 :javascript
