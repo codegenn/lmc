@@ -14,7 +14,7 @@
               = link_to line_item, method: :delete, noindex: true, id: 'delete', data: { confirm: I18n.t("page.cart.delete_confirm") }, class: 'delete-item' do
                 .how-itemcart1
                 - if Rails.env.production?
-                  = cl_image_tag line_item.stock.product.product_images.first.image_url
+                  %img.image-cart-2{:src => "https://d1monvl96vvqbd.cloudfront.net/color_images/color_images/"+("%09d" % line_item.stock.product.color_images.where(color_name: line_item.stock.color).first.id).gsub(/(\d)(?=(?:\d{3})+(?!\d))/, '\1/')+"/original/"+line_item.stock.product.color_images.where(color_name: line_item.stock.color).first.color_image_file_name}
             .header-cart-item-txt.p-t-8
               = link_to product_path(line_item.stock.product.slug), :"data-no-turbolink" => 'false', class: "header-cart-item-name m-b-18 hov-cl1 trans-04" do
                 = line_item.stock.product.title
@@ -30,3 +30,7 @@
             = "#{I18n.t("page.cart.total")}: #{number_with_delimiter(@cart.total_price.to_i, :delimiter => '.')} VND"
           = link_to cart_path(@cart.code), class: "flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10" do
             = I18n.t("page.cart.checkout")
+:css
+  .image-cart-2 {
+    max-width: 60px
+  }
