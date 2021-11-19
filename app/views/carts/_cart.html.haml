@@ -14,7 +14,8 @@
               = link_to line_item, method: :delete, noindex: true, id: 'delete', data: { confirm: I18n.t("page.cart.delete_confirm") }, class: 'delete-item' do
                 .how-itemcart1
                 - if Rails.env.production?
-                  = cl_image_tag line_item.stock.product.product_images.first.image_url
+                  %img{:src => "https://d1monvl96vvqbd.cloudfront.net/color_images/color_images/"+("%09d" % line_item.stock.product.color_images.where(color_name: line_item.stock.color).first.id).gsub(/(\d)(?=(?:\d{3})+(?!\d))/, '\1/')+"/original/"+line_item.stock.product.color_images.where(color_name: line_item.stock.color).first.color_image_file_name, 
+                    :width => 50, :height => 50}
             .header-cart-item-txt.p-t-8
               = link_to product_path(line_item.stock.product.slug), :"data-no-turbolink" => 'false', class: "header-cart-item-name m-b-18 hov-cl1 trans-04" do
                 = line_item.stock.product.title
