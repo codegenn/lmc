@@ -23,7 +23,7 @@
                         %tr.table_row
                           %td.column-1
                             %img{:src => "https://d1monvl96vvqbd.cloudfront.net/color_images/color_images/"+("%09d" % line_item.stock.product.color_images.where(color_name: line_item.stock.color).first.id).gsub(/(\d)(?=(?:\d{3})+(?!\d))/, '\1/')+"/original/"+line_item.stock.product.color_images.where(color_name: line_item.stock.color).first.color_image_file_name, 
-                              :width => 50, :height => 50}
+                              :width => 60, :height => 90}
                           %td.column-2
                             %span.title_item
                               = line_item.stock.product.title
