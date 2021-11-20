@@ -1,8 +1,8 @@
 class LineItemsController < ApplicationController
   include CurrentCart
   before_action :set_cart, :validate_stock_id,  only: [:create]
-  before_action :validate_cart_session, only: [:destroy]
-  before_action :set_line_item, only: [:update, :destroy]
+  before_action :validate_cart_session, only: [:destroy, :destroy_item]
+  before_action :set_line_item, only: [:update, :destroy, :destroy_item]
 
   def create
     if @stock
@@ -38,6 +38,14 @@ class LineItemsController < ApplicationController
     redirect_to cart_path(@line_item.cart.code)
   end
 
+  def destroy_item
+    line = LineItem.includes(:cart).where(carts: { code: session[:cart_code] }, line_items: { id: params[:id] }).first
+    line.destroy
+    flash[:success] = I18n.t('controllers.line_items.success_remove')
+    redirect_to cart_path(@line_item.cart.code)
+  end
+
+
   private
   def set_line_item
     @line_item = LineItem.find(params[:id])
@@ -56,7 +64,7 @@ class LineItemsController < ApplicationController
 
   def validate_stock_id
     @product = Product.where(id: params[:product_id]).first
-    @stock = @product.stocks.where(color: params[:color]).first
+    @stock = @product.stocks.first
     # @stock = @product.stocks.where(size: params[:size], color: params[:color]).first
     @bstock = @product.bottom_stocks.where(size: params[:b_size]).first
   end
