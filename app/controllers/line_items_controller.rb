@@ -1,5 +1,7 @@
 class LineItemsController < ApplicationController
   include CurrentCart
+  protect_from_forgery with: :null_session
+  skip_before_action :verify_authenticity_token
   before_action :set_cart, :validate_stock_id,  only: [:create]
   before_action :validate_cart_session, only: [:destroy, :destroy_item]
   before_action :set_line_item, only: [:update, :destroy, :destroy_item]
@@ -42,7 +44,11 @@ class LineItemsController < ApplicationController
     line = LineItem.includes(:cart).where(carts: { code: session[:cart_code] }, line_items: { id: params[:id] }).first
     line.destroy
     flash[:success] = I18n.t('controllers.line_items.success_remove')
-    redirect_to cart_path(@line_item.cart.code)
+    respond_to do |format|
+      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.json { head :no_content }
+      format.js   { render layout: false }
+    end
   end
 
 
@@ -64,7 +70,7 @@ class LineItemsController < ApplicationController
 
   def validate_stock_id
     @product = Product.where(id: params[:product_id]).first
-    @stock = @product.stocks.where(color: params[:color]).first
+    @stock = @product.stocks.first
     # @stock = @product.stocks.where(size: params[:size], color: params[:color]).first
     @bstock = @product.bottom_stocks.where(size: params[:b_size]).first
   end
