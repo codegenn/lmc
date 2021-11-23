@@ -32,7 +32,9 @@
       .w-full
         .header-cart-buttons.flex-w
           .size-107.p-lr-15.trans-04.m-b-10
-            = "#{I18n.t("page.cart.total")}: #{number_with_delimiter(@cart.total_price.to_i, :delimiter => '.')} VND"
+            #{I18n.t("page.cart.total")}: 
+            %span#total-price #{number_with_delimiter(@cart.total_price.to_i, :delimiter => '.')} 
+            VND
           = link_to cart_path(@cart.code), class: "flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10" do
             = I18n.t("page.cart.checkout")
 :css
@@ -46,24 +48,42 @@
 
 :javascript 
   $(".delete_item").click(function() {
-    var url = $(this).attr('id');
-    var self = this;
-    $.ajax({
-      url: url,
-      error: function(res) {
-         alert(res.messages);
-      },
-      success: function(data) {
-        var li = $(self).closest("li");
-        var temp = $(li).find(".quantity").text();
-        var arr = temp.split(" x ");
-        var n = arr[0].trim();
-        var x = $(".show_total").attr("data-notify");
-        $(".show_total").attr("data-notify", x - n);
-        li.remove();
-      },
-      dataType: 'json',
-      type: 'post'
-   });
+    var mess = $("#delete").attr("data-confirm");
+    var result = confirm(mess);
+    if (result) {
+      var url = $(this).attr('id');
+      var self = this;
+      $.ajax({
+        url: url,
+        error: function(res) {
+           alert(res.messages);
+        },
+        success: function(data) {
+          var li = $(self).closest("li");
+          var temp = $(li).find(".quantity").text();
+          var arr = temp.split(" ");
+          var n = arr[0].trim();
+          var x = $(".show_total").attr("data-notify");
+          $(".show_total").attr("data-notify", x - n);
+  
+          var total = $("#total-price").text();
+          total = total.replaceAll(".", "");
+          pr = arr[2]
+          pr = pr.replaceAll(".", "")
+          total = total - n*pr
+          $("#total-price").text(total)
+          $("#total-price").digits()
+          li.remove();
+        },
+        dataType: 'json',
+        type: 'post'
+     });
+    }
   });
+
+  $.fn.digits = function(){ 
+    return this.each(function(){ 
+        $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.") ); 
+    })
+  }
   
