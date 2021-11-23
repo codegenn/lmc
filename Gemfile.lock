@@ -1113,6 +1113,9 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
+    passenger (6.0.12)
+      rack
+      rake (>= 0.8.1)
     pg (0.21.0)
     proxies (0.2.3)
     pry (0.12.2)
@@ -1274,6 +1277,7 @@ DEPENDENCIES
   jwt
   mimemagic (= 0.3.8)
   paperclip
+  passenger
   pg (~> 0.20)
   pry-nav
   rack-mini-profiler
@@ -1293,4 +1297,4 @@ RUBY VERSION
    ruby 2.6.0p0
 
 BUNDLED WITH
-   1.17.2
+   1.17.3

@@ -73,3 +73,4 @@ gem 'delayed_job_active_record'
 
 gem 'paperclip' # file attachment syntax and callbacks
 gem 'aws-sdk'
+gem "passenger"
