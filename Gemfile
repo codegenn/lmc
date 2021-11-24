@@ -35,7 +35,7 @@ gem 'httparty'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dotenv-rails'
 gem 'jbuilder', "~> 2.0"
 
 gem 'jwt'
