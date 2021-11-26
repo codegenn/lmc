@@ -13,11 +13,11 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-  config.cache_store = :redis_store, {
-    expires_in: 1.days,
-    namespace: 'cache',
-    redis: { host: ENV['REDIS'], port: 6379, db: 0 },
-    }
+  # config.cache_store = :redis_store, {
+  #   expires_in: 1.days,
+  #   namespace: 'cache',
+  #   redis: { host: ENV['REDIS'], port: 6379, db: 0 },
+  #   }
   config.logger = Logger.new(STDOUT)
   config.logger.level = Logger::ERROR
 
@@ -66,7 +66,7 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production.
-  # config.cache_store = :mem_cache_store 
+  config.cache_store = :mem_cache_store, ENV["MEMCACHIER_SERVERS"]
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'https://d1monvl96vvqbd.cloudfront.net'
