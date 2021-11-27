@@ -1,0 +1,53 @@
+.sec-banner.bg0.p-t-80.p-b-50.main-page
+  .container
+    %form.row{:enctype => "multipart/form-data", :action => "/upload-banner", :method => "POST"}
+      %button.col-lg-1.btn.btn-primary.mf-3{:type => "submit", :style => "margin-left: 15px"}
+        = "Upload"
+      .col-lg-12
+      %label.col-lg-2 Thay đương link
+      %input.col-lg-8.form-control#myFile{:name => "link", :type => "text"}
+      %label.col-lg-12 Chọn ảnh cho banner desktop
+      %input.col-lg-11#myFile{:accept => "image/jpg, image/jpeg, image/png",:name => "filedesktop", :type => "file", :onchange => "readURL(this);"}
+      %img.col-lg-12.mt-3#blah{:alt => "your image", :src => "#", :style => "display: none"}
+      %label.col-lg-12 Chọn ảnh cho banner mobile
+      %input.col-lg-11#myFile{:accept => "image/jpg, image/jpeg, image/png",:name => "filemobile", :type => "file", :onchange => "readURL2(this);"}
+      %img.col-lg-12.mt-3#blah2{:alt => "your image", :src => "#", :style => "display: none"}
+
+
+:css
+  #blah {
+    padding-right: 0px
+  }
+
+  #blah2 {
+    padding-right: 0px
+  }
+
+:javascript
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah')
+                .attr('src', e.target.result)
+                .show()
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  function readURL2(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah2')
+                .attr('src', e.target.result)
+                .show()
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+  }

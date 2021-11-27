@@ -1,0 +1,5 @@
+{
+  "Link": "https://fb.watch/8-4K-FIPYP",
+  "desktop": "desktop.jpg",
+  "mobile": "mobile.jpg"
+}

@@ -10,6 +10,16 @@ class StoreController < ApplicationController
         "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png",
         "https://www.lmcation.com/#{I18n.locale.to_s}"
       )
+      text = ""
+      File.open("app/assets/images/banner.txt", "r") do |f|
+        f.each_line do |line|
+          text += line
+        end
+      end
+      data = eval(text)
+      @desktopbanner = "banner/desktop/#{data[:desktop]}"
+      @mobilebanner = "banner/mobile/#{data[:mobile]}"
+      @link = data[:Link]
     # end
   end
 

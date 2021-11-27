@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   match "/404", to: "errors#not_found", via: :all
   match "/422", to: "errors#unacceptable", via: :all
   match "/500", to: "errors#internal_server_error", via: :all
+  post 'destroy_item/:id', to: "line_items#destroy_item"
+  get '/change-banner', to: "banner#show"
+  post '/upload-banner', to: "banner#upload"
   scope "(:locale)", :locale => /en|vi/ do
     get 'vnpay-fallback', to: "orders#fallback"
     get 'store/index'
