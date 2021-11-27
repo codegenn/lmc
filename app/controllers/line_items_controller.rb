@@ -70,8 +70,8 @@ class LineItemsController < ApplicationController
 
   def validate_stock_id
     @product = Product.where(id: params[:product_id]).first
-    @stock = @product.stocks.where(color: params[:color]).first
-    # @stock = @product.stocks.where(size: params[:size], color: params[:color]).first
+    # @stock = @product.stocks.where(color: params[:color]).first
+    @stock = @product.stocks.where(size: params[:size], color: params[:color]).first
     @bstock = @product.bottom_stocks.where(size: params[:b_size]).first
   end
 end
