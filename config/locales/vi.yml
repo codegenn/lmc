@@ -231,6 +231,7 @@ vi:
       cart_total: 'Tổng Cộng'
       update_cart: 'CẬP NHẬT'
       proceed_to_checkout: 'ĐẶT HÀNG'
+      free_ship: 'Miễn phí giao hàng toàn quốc'
       transfer_btn: 'CHUYỂN KHOẢN'
       fundiin_btn: 'Mua trước trả sau'
       fundiin_note_event: "Trả sau 3 kỳ miễn lãi qua Fundiin giảm 30K (*)"

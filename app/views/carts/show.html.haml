@@ -25,7 +25,7 @@
                             %img.image-cart{:src => "https://d1monvl96vvqbd.cloudfront.net/color_images/color_images/"+("%09d" % line_item.stock.product.color_images.where(color_name: line_item.stock.color).first.id).gsub(/(\d)(?=(?:\d{3})+(?!\d))/, '\1/')+"/original/"+line_item.stock.product.color_images.where(color_name: line_item.stock.color).first.color_image_file_name}
                           %td.column-2
                             %span.title_item
-                              = line_item.stock.product.title
+                              = line_item.stock.product.title + " - #{I18n.t("page.product.size")}: " + line_item.stock.size
                             %div.show-for-mobile
                               - if line_item.stock.product.promotion_price.present?
                                 .promotion-price
@@ -199,7 +199,12 @@
                     .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
                       .col-sm-3
                       .col-sm-6
-                        = submit_tag I18n.t("page.cart.proceed_to_checkout"), class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
+                        %button.flex-c-m.cl0.size-116.bg3.bor14.hov-btn3.p-lr-15.trans-04.pointer{:name => "commit", :style => "display: block;", :type => "submit"}
+                          %span.stext-101
+                            = I18n.t("page.cart.proceed_to_checkout")
+                          %br/
+                          %span.note-ship
+                            = I18n.t("page.cart.free_ship")
                       .col-sm-3
             .col-sm-10.col-lg-7.col-xl-5.m-lr-auto.m-b-50
 :css
@@ -227,6 +232,10 @@
 
   .image-cart {
     max-width: 50px
+  }
+
+  .note-ship {
+    font-size: 9px
   }
 
   .payment-method {
