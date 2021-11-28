@@ -12,11 +12,13 @@ class BannerController < ApplicationController
             end
         end
         data = eval(text)
+        p data
 
         link = params[:link]
         data[:Link] = link if link.present?
 
         name = params[:filedesktop]
+        p name
         if name.present?
             type = "jpg" if name.content_type.include?("jpeg")
             type = "png" if name.content_type.include?("png")
@@ -25,6 +27,7 @@ class BannerController < ApplicationController
         end
 
         name = params[:filemobile]
+        p name
         if name.present?
             type = "jpg" if name.content_type.include?("jpeg")
             type = "png" if name.content_type.include?("png")
