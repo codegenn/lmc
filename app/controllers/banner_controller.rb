@@ -36,6 +36,6 @@ class BannerController < ApplicationController
         end
 
         File.open("/workdir/app/assets/images/banner.txt", 'w') { |file| file.write(data) }
-        redirect_to "/change-banner"
+        redirect_to "/admin/banner?locale=vi"
     end
 end
