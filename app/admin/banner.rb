@@ -1,4 +1,4 @@
-ActiveAdmin.register Banner do
+ActiveAdmin.register "Banner" do
     # form action: '/upload-banner', method: 'post', enctype: 'multipart/form-data' do
     #     input :submit, type: :submit, value: 'Upload'
     #     label 'Thay đường link'
