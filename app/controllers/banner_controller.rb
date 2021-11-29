@@ -32,7 +32,7 @@ class BannerController < ApplicationController
         if name.present?
             type = "jpg" if name.content_type.include?("jpeg")
             type = "png" if name.content_type.include?("png")
-            File.open("app/assets/images/banner/desktop/mobile.#{type}", "wb") { |f| f.write(params[:filemobile].read) } 
+            File.open("app/assets/images/banner/mobile/mobile.#{type}", "wb") { |f| f.write(params[:filemobile].read) } 
             data[:mobile] = "mobile.#{type}"
         end
 
