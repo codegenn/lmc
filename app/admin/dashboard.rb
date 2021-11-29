@@ -2,16 +2,6 @@ ActiveAdmin.register_page "Dashboard" do
 
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
-    form action: '/upload-banner', method: 'post', enctype: 'multipart/form-data' do
-        input :submit, type: :submit, value: 'Upload'
-        label 'Thay đường link'
-        input type: 'text', name: 'link'
-        label 'Chọn ảnh cho banner desktop'
-        input type: 'file', name: 'filedesktop', accept: 'image/jpg, image/jpeg, image/png'
-        label 'Chọn ảnh cho banner mobile'
-        input type: 'file', name: 'filemobile', accept: 'image/jpg, image/jpeg, image/png'
-    end
-
   content title: proc{ I18n.t("active_admin.dashboard") } do
     div class: "blank_slate_container", id: "dashboard_default_message" do
       span class: "blank_slate" do
