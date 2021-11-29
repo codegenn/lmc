@@ -7,7 +7,7 @@ class BannerController < ApplicationController
 
     def upload
         text = ""
-        File.open("/workdir/app/assets/images/banner.txt", "r") do |f|
+        File.open("app/assets/images/banner.txt", "r") do |f|
             f.each_line do |line|
                 text += line
             end
@@ -23,7 +23,7 @@ class BannerController < ApplicationController
         if name.present?
             type = "jpg" if name.content_type.include?("jpeg")
             type = "png" if name.content_type.include?("png")
-            File.open("/workdir/app/assets/images/banner/desktop/desktop.#{type}", "wb") { |f| f.write(params[:filedesktop].read) }
+            File.open("app/assets/images/banner/desktop/desktop.#{type}", "wb") { |f| f.write(params[:filedesktop].read) }
             data[:desktop] = "desktop.#{type}"
         end
 
@@ -32,11 +32,11 @@ class BannerController < ApplicationController
         if name.present?
             type = "jpg" if name.content_type.include?("jpeg")
             type = "png" if name.content_type.include?("png")
-            File.open("/workdir/app/assets/images/banner/desktop/mobile.#{type}", "wb") { |f| f.write(params[:filemobile].read) } 
+            File.open("app/assets/images/banner/desktop/mobile.#{type}", "wb") { |f| f.write(params[:filemobile].read) } 
             data[:mobile] = "mobile.#{type}"
         end
 
-        File.open("/workdir/app/assets/images/banner.txt", 'w') { |file| file.write(data) }
+        File.open("app/assets/images/banner.txt", 'w') { |file| file.write(data) }
         redirect_to "/admin/banner?locale=vi"
     end
 end
