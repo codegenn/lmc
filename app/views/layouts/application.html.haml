@@ -87,8 +87,6 @@
             .left-top-bar
             .right-top-bar.flex-w.h-full
               -#= link_to I18n.t("page.footer.help"), store_path, class: "flex-c-m trans-04 p-lr-25"
-              - if user_signed_in? && current_user.present?
-                = link_to "THAY BANNER", "/change-banner", class: "flex-c-m trans-04 p-lr-25"
               - if user_signed_in?
                 = link_to I18n.t("page.menu.my_account"), edit_user_registration_path, class: "flex-c-m trans-04 p-lr-25"
               - else
