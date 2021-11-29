@@ -194,7 +194,8 @@ en:
       delete_confirm: 'Are you sure you want to delete this line item?'
       cart_total: 'Cart Totals'
       update_cart: 'UPDATE CART'
-      proceed_to_checkout: 'PROCEED TO CHECKOUT'
+      proceed_to_checkout: 'CHECKOUT'
+      free_ship: 'Freeship nationwide'
       transfer_btn: 'TRANSFER'
       fundiin_btn: 'Buy First - Pay Later'
       fundiin_note_event: "Up to 30.000đ (*) discount with Fundiin - Buy now pay later - 3 interest-free installments"
@@ -256,7 +257,7 @@ en:
     information: 'User Information'
     no_order: 'You dont have any order'
     first_name: 'FIRST NAME'
-    last_name: 'LAST_NAME'
+    last_name: 'LAST NAME'
     email: 'EMAIL'
     address: 'ADDRESS'
     district: 'DISTRICT'
