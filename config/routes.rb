@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       get "product", to: "api#product"
     end
   end
-  get '/heathz', to: proc { [200, {}, ['']] }
+  get '/health_check', to: proc { [200, {}, ['success']] }
   devise_for :users, controllers: { registrations: 'registrations' }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
