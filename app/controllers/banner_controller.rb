@@ -23,7 +23,9 @@ class BannerController < ApplicationController
         if name.present?
             type = "jpg" if name.content_type.include?("jpeg")
             type = "png" if name.content_type.include?("png")
-            File.open("app/assets/images/banner/desktop/desktop.#{type}", "wb") { |f| f.write(params[:filedesktop].read) }
+            path_to_file = "app/assets/images/banner/desktop/desktop.#{type}"
+            File.delete(path_to_file) if File.exist?(path_to_file)
+            File.open(path_to_file, "wb") { |f| f.write(params[:filedesktop].read) }
             data[:desktop] = "desktop.#{type}"
         end
 
