@@ -12,21 +12,25 @@
     %meta{property: "og:image", content: @image.present? ? @image : "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png" }/
     %meta{property: "og:url", content: @url.present? ? @url : "https://www.lmcation.com/" }/
     %meta{property: "og:error", content: "LMCATION" }/
-    %meta{name: "title", content: @title.present? ? @title : "LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ" }/
-    %meta{name: "description", content: @description.present? ? @description : "LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ" }/
+    %meta{name:"twitter:title", content: @title.present? ? @title : "LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ" }/
+    %meta{name:"twitter:description", content: @description.present? ? @description : "Đồ Mặc Nhà - Đồ Ngủ, Gym-to-Swim, Đồ Bơi, Đồ Thể Thao" }/
+    %meta{name:"twitter:image" , content: @image.present? ? @image : "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png" }/
+    %meta{name:"twitter:site", content: @url.present? ? @url : "https://www.lmcation.com/" }/
+    %meta{name:"twitter:card", content: "LMCATION" }/
+    %meta{name: "title", content: @title.present? ? @title : "LMcation - Thương hiệu thời trang truyền cảm hứng và trao quyền cho cộng đồng phụ nữ thông qua bộ sưu tập các sản phẩm đồ mặc nhà, đồ ngủ, đồ tập và đồ bơi." }/
+    %meta{name: "description", content: @description.present? ? @description : "LMcation - Thương hiệu thời trang truyền cảm hứng và trao quyền cho cộng đồng phụ nữ thông qua bộ sưu tập các sản phẩm đồ mặc nhà, đồ ngủ, đồ tập và đồ bơi." }/
     %meta{name: "image", content: @image.present? ? @image : "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png" }/
     %meta{name: "url", content: @url.present? ? @url : "https://www.lmcation.com/" }/
     %meta{name: "keywords", content: @keyword.present? ? @keyword : (I18n.t("keyword") << "," << I18n.t("keyword_sport")) }/
     %meta{name: "turbolinks-visit-control", content:"reload"}
     %meta{name:"google-site-verification", content:"g-fEOaiTrFmMKnfAztaLVsayhtwOaK9dHM892NBYip4"}
     %link{link: "https://www.lmcation.com/", rel:"canonical", as:"canonical"}
-    %link{rel:"stylesheet", href:asset_path("barkentina/Barkentinanew.ttf"), rel:"preload", as:"font", crossorigin:"anonymous"}
-    %link{rel:"stylesheet", href:asset_path("iconic/Material-Design-Iconic-Font.woff2"), rel:"preload" , as:"font", crossorigin:"anonymous"}
-    %link{rel:"stylesheet", href:asset_path("iconic/Material-Design-Iconic-Font.woff"), rel:"preload", as:"font", crossorigin:"anonymous"}
-    %link{rel:"stylesheet", href:asset_path("iconic/Material-Design-Iconic-Font.ttf"), rel:"preload", as:"font", crossorigin:"anonymous"}
     = csrf_meta_tags
-    = stylesheet_link_tag    "application", media: "all", data_turbolinks_track: "reload"
-    = javascript_include_tag "application", data_turbolinks_track: "reload"
+    %link{href: "https://d2r4f7zaymmsnl.cloudfront.net/assets/css/application-bcd932506f532e24a3bee3cba383f9d0f3a872b49eb43af0f376990fdbce430c.css", rel:"stylesheet", media: "all", data_turbolinks_track: "reload"}
+    -# = stylesheet_link_tag "application", media: "all", data_turbolinks_track: "reload"
+    %script{src: "https://d2r4f7zaymmsnl.cloudfront.net/assets/css/application-db0e1e14fb6f8a6d1913cf6e39e1f49ff968eea3e52c5cc00f43048dcda9d3ff.js", data_turbolinks_track: "reload"}
+    -# = javascript_include_tag "application", data_turbolinks_track: "reload"
+    = canonical_tag
     / Facebook Pixel Code
     :javascript
       !function(f,b,e,v,n,t,s)
@@ -127,9 +131,9 @@
             / Icon header
             .wrap-icon-header.flex-w.flex-r-m
               .icon-cart
-                = render 'carts/icon', total_products: @cart.try(:total_products) || 0
+                = render 'carts/icon', total_products: @cart_total
               .icon-wishlist
-                = render 'favorites/icon', total_products: @favorite.try(:favorite_products).try(:count) || 0
+                = render 'favorites/icon', total_products: @favorite_total
       / Header Mobile
       .wrap-header-mobile
         / Logo moblie
@@ -139,9 +143,9 @@
         / Icon header
         .wrap-icon-header.flex-w.flex-r-m.m-r-15
           .icon-cart
-            = render 'carts/icon', total_products: @cart.try(:total_products) || 0
+            = render 'carts/icon', total_products: @cart_total
           .icon-wishlist
-            = render 'favorites/icon', total_products: @favorite.try(:favorite_products).try(:count) || 0
+            = render 'favorites/icon', total_products: @favorite_total
         / Button show menu
         .btn-show-menu-mobile.hamburger.hamburger--squeeze
           %span.hamburger-box
@@ -199,26 +203,30 @@
               = I18n.t "page.footer.help"
             %ul
               %li.p-b-10
-                %a.stext-107.cl7.hov-cl1.trans-04{ :href => policy_path }
+                %a.stext-107.cl7.hov-cl1.trans-04{ :href => policy_path, hreflang: "#{I18n.locale}" }
                   = I18n.t "page.index.return"
               %li.p-b-10
-                %a.stext-107.cl7.hov-cl1.trans-04{ :href => trackings_path }
+                %a.stext-107.cl7.hov-cl1.trans-04{ :href => trackings_path, hreflang: "#{I18n.locale}" }
                   = I18n.t "page.tracking.tracking"
               %li.p-b-10
-                %a.stext-107.cl7.hov-cl1.trans-04{ :href => privacy_path }
+                %a.stext-107.cl7.hov-cl1.trans-04{ :href => privacy_path, hreflang: "#{I18n.locale}" }
                   = I18n.t "page.privacy.privacy"
-            -#  %li.p-b-10
-            -#    %a.stext-107.cl7.hov-cl1.trans-04{:href => "#"}
-            -#      FAQs
+              - if I18n.locale.to_s.include?("vi")
+                %li.p-b-10
+                  %a.stext-107.cl7.hov-cl1.trans-04{:href => huong_dan_mua_hang_path, hreflang: "#{I18n.locale}"}
+                    = I18n.t "page.privacy_buy.slug"
+                %li.p-b-10
+                  %a.stext-107.cl7.hov-cl1.trans-04{:href => quy_dinh_thanh_toan_va_van_chuyen_path, hreflang: "#{I18n.locale}"}
+                    = "QUY ĐỊNH THANH TOÁN VÀ VẬN CHUYỂN"
           .col-sm-6.col-lg-3.p-b-50
             %h4.stext-301.cl0.p-b-30
               = I18n.t "page.footer.get_in_touch"
             %p.stext-107.cl7.size-201
               = I18n.t "page.footer.get_in_touch_content"
             .p-t-27
-              %a.fs-18.cl7.hov-cl1.trans-04.m-r-16{:href => "http://www.facebook.com/lmcation"}
+              %a.fs-18.cl7.hov-cl1.trans-04.m-r-16{:href => "http://www.facebook.com/lmcation", hreflang: "#{I18n.locale}"}
                 %i.fa.fa-facebook
-              %a.fs-18.cl7.hov-cl1.trans-04.m-r-16{:href => "http://www.instagram.com/lmcation"}
+              %a.fs-18.cl7.hov-cl1.trans-04.m-r-16{:href => "http://www.instagram.com/lmcation", hreflang: "#{I18n.locale}"}
                 %i.fa.fa-instagram
           .col-sm-6.col-lg-3.p-b-50
             %h4.stext-301.cl0.p-b-30
@@ -232,18 +240,20 @@
                 = submit_tag I18n.t("page.footer.subscribe"), class: 'flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04'
         .p-t-40
           .flex-c-m.flex-w.p-b-18
-            %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-01.png", title: "icon-pay-01", class: "Sirv", alt:"Payment method"
-            %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-02.png", title: "icon-pay-02", class: "Sirv", alt:"Payment method"
-            %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-03.png", title: "icon-pay-03", class: "Sirv", alt:"Payment method"
-            %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-04.png", title: "icon-pay-04", class: "Sirv", alt:"Payment method"
-            %a.m-all-1{:href => "#"}
-              = image_tag "icons/icon-pay-05.png", title: "icon-pay-05", class: "Sirv", alt:"Payment method"
+            %a.m-all-1{:href => "#", hreflang: "#{I18n.locale}"}
+              = cl_image_tag "#{cdn_url}/icons/icon-pay-01.png", title: "icon-pay-01", class: "Sirv", alt:"Payment method", title: "Payment method"
+            %a.m-all-1{:href => "#", hreflang: "#{I18n.locale}"}
+              = cl_image_tag "#{cdn_url}/icons/icon-pay-02.png", title: "icon-pay-02", class: "Sirv", alt:"Payment method", title: "Payment method"
+            %a.m-all-1{:href => "#", hreflang: "#{I18n.locale}"}
+              = cl_image_tag "#{cdn_url}/icons/icon-pay-03.png", title: "icon-pay-03", class: "Sirv", alt:"Payment method", title: "Payment method"
+            %a.m-all-1{:href => "#", hreflang: "#{I18n.locale}"}
+              = cl_image_tag "#{cdn_url}/icons/icon-pay-04.png", title: "icon-pay-04", class: "Sirv", alt:"Payment method", title: "Payment method"
+            %a.m-all-1{:href => "#", hreflang: "#{I18n.locale}"}
+              = cl_image_tag "#{cdn_url}/icons/icon-pay-05.png", title: "icon-pay-05", class: "Sirv", alt:"Payment method", title: "Payment method"
           %p.stext-107.cl6.txt-center
-            COPYRIGHT © 2020 LMCATION
+            = I18n.t("footer")
+            %a{ href:'http://online.gov.vn/Home/WebDetails/86295'}
+              = image_tag "logoSaleNoti.png",  width: 100
             %br
     / Back to top
     #myBtn.btn-back-to-top
@@ -254,10 +264,12 @@
         / Modal content
         .modal-content-desktop
           %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/140924607_419908412547009_4057087241630477945_n.webp', class: 'img-responsive Sirv', loading: "lazy", alt: "lmcation discount"
+          %a{href: "https://fb.watch/8-4K-FIPYP", target: "_blank"}
+            = image_tag "desktop.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
         .modal-content-mobile
           %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/ND.webp', class: 'img-responsive Sirv', loading: "lazy", alt: "lmcation discount"
+          %a{href: "https://fb.watch/8-4K-FIPYP", target: "_blank"}
+            = image_tag "mobile.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
     / Global site tag (gtag.js) - Google Analytics
     %script{src:"https://scripts.sirv.com/sirv.js", defer: :true}
     %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-164577749-1", defer: :true}
@@ -269,5 +281,4 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-164577749-1');

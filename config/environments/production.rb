@@ -13,6 +13,14 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
+  config.cache_store = :redis_store, {
+    expires_in: 30.days,
+    namespace: 'cache',
+    redis: { host: 'redis-15566.c278.us-east-1-4.ec2.cloud.redislabs.com:15566', port: 6379, db: 0 },
+    }
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger::ERROR
+
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
@@ -58,10 +66,10 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production.
-  # config.cache_store = :mem_cache_store
+  # config.cache_store = :mem_cache_store 
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  # config.action_controller.asset_host = 'http://assets.example.com'
+  # config.action_controller.asset_host = 'https://d1monvl96vvqbd.cloudfront.net'
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -95,10 +103,14 @@ Rails.application.configure do
     :password             => 'tlxnvgsozyceiyng',
     :authentication       => "plain"
   }
+  #url: ':s3_alias_url',
+   # s3_host_alias: "d1monvl96vvqbd.cloudfront.net",
   config.paperclip_defaults = {
     storage: :s3,
-    url: ':s3_domain_url',
+    s3_protocol: :https,
+    url: ':s3_alias_url',
     path: '/:class/:attachment/:id_partition/:style/:filename',
+    s3_host_alias: "d1monvl96vvqbd.cloudfront.net",
     s3_credentials: {
       bucket: Rails.application.secrets.bucket,
       access_key_id: Rails.application.secrets.access_key_id,

@@ -22,11 +22,20 @@
                       - @cart.line_items.includes(:stock).each do |line_item|
                         %tr.table_row
                           %td.column-1
-                            = link_to line_item, method: :delete, noindex: true, id: 'delete', data: { confirm: 'Are you sure you want to delete this line item?' }, class: 'delete-item' do
-                              .how-itemcart1
-                                = cl_image_tag line_item.stock.product.product_images.first.url ? line_item.stock.product.product_images.first.url : line_item.stock.product.product_images.first.pimage
+                            %img.image-cart{:src => "https://d1monvl96vvqbd.cloudfront.net/color_images/color_images/"+("%09d" % line_item.stock.product.color_images.where(color_name: line_item.stock.color).first.id).gsub(/(\d)(?=(?:\d{3})+(?!\d))/, '\1/')+"/original/"+line_item.stock.product.color_images.where(color_name: line_item.stock.color).first.color_image_file_name}
                           %td.column-2
-                            = line_item.stock.product.title
+                            %span.title_item
+                              = line_item.stock.product.title + " - #{I18n.t("page.product.size")}: " + line_item.stock.size
+                            %div.show-for-mobile
+                              - if line_item.stock.product.promotion_price.present?
+                                .promotion-price
+                                  = "#{I18n.t("page.cart.price")}: #{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} vnd"
+                                %b
+                                  = "#{I18n.t("page.cart.price")}: #{number_with_delimiter(line_item.stock.product.promotion_price.to_i, :delimiter => '.')} vnd"
+                              - else
+                                = "#{I18n.t("page.cart.price")}: #{number_with_delimiter(line_item.stock.product.price.to_i, :delimiter => '.')} vnd"
+                            %div.show-for-mobile
+                              = "#{I18n.t("page.cart.total")}: #{number_with_delimiter(line_item.total_price.to_i, :delimiter => '.')} VND"
                           %td.column-3
                             - if line_item.stock.product.promotion_price.present?
                               .promotion-price
@@ -48,7 +57,7 @@
                       %tr.table_row
                         %td.column-1.column-voucher
                           = f.label :voucher_code, I18n.t("page.cart.voucher"), class: 'control-label'
-                        %td.column-3{:colspan => "2"}
+                        %td.column-2{:colspan => "2"}
                           = f.text_field :voucher_code, autofocus: true, class: 'stext-111 cl2 plh3 size-100 input-txt'
                   .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
                     .flex-w.flex-m.m-r-20.m-tb-5
@@ -80,6 +89,12 @@
                     .size-206.p-t-1.ml-lg-3
                       %span.mtext-110.cl2
                         = "#{number_with_delimiter(@cart.calculate_grand_total.to_i, :delimiter => '.')} VND"
+                .flex-w.flex-t.p-b-33
+                  .size-208
+                    %span.mtext-101.cl2
+                  .size-206.p-t-1.ml-lg-3
+                    %h6
+                      = I18n.t("page.product.fundiin", price: number_with_delimiter(@cart.total_price.to_i/3, :delimiter => '.')).html_safe
             .col-lg-10.col-xl-7.m-lr-auto.m-b-50
               .m-l-25.m-r--38.m-lr-0-xl.shopping-cart-table
                 = form_for(@order) do |f|
@@ -105,13 +120,49 @@
                       = f.text_field :note, class: 'stext-111 cl2 plh3 size-126 input-txt', value: @order.note
                       = f.hidden_field :id, { :value => @cart.code }
                       = f.hidden_field :tracking, { :value => @order.tracking }
-                    .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
-                      = f.label :payment_method, I18n.t("order.payment_method"), class: 'col-sm-3 control-label payment_method'
-                      .col-sm-9
-                        = f.radio_button :payment_method, 'COD', class: 'radio-payment', checked: @order.payment_method.nil? || @order.payment_method == 'COD'
-                        = f.label :payment_method, 'COD', class: 'radio-payment-label', :value => 'COD'
-                        -#= f.radio_button :payment_method, 'TRANSFER', class: 'radio-payment', checked: @order.payment_method == 'transfer'
-                        -#= f.label :payment_method, I18n.t("page.cart.transfer_btn"), class: 'radio-payment-label', :value => 'TRANSFER'
+                      = f.hidden_field :locale, { :value => @locale }
+                    .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.payment-method
+                      = f.label :payment_method, I18n.t("order.payment_method"), class: 'col-sm-3 control-label payment_method font-weight-bold'
+                      .col-sm-10
+                        %div.row
+                          = f.radio_button :payment_method, 'COD', class: 'radio-payment col-1', checked: @order.payment_method.nil? || @order.payment_method == 'COD'
+                          %div.payment-image.col-2
+                            = image_tag "COD.png", class: "mr-auto payment-cod"
+                          = f.label :payment_method, I18n.t("page.cart.cod"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'COD'
+                        %div.row
+                          = f.radio_button :payment_method, 'Shopee pay', class: 'radio-payment col-1'
+                          %div.payment-image.col-2
+                            = image_tag "SPP.png", class: "mr-auto"
+                          = f.label :payment_method, I18n.t("page.cart.spp_btn"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'COD'
+                        %div.row
+                          = f.radio_button :payment_method, 'vnpay', class: 'radio-payment col-1'
+                          %div.payment-image.col-2
+                            = image_tag "VNPAY.png", class: "mr-auto"
+                          = f.label :payment_method, I18n.t("page.cart.vnpay_btn"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'VNpay'
+                        %div.row
+                          = f.radio_button :payment_method, 'momo', class: 'radio-payment col-1'
+                          %div.payment-image.col-2{style: "width: 30px;"}
+                            = image_tag "momo.jpg", class: "mr-auto"
+                          = f.label :payment_method, I18n.t("page.cart.momo_btn"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'momo'
+                        %div.row
+                          = f.radio_button :payment_method, 'FUNDIIN', class: 'radio-payment col-1'
+                          %div.payment-image.col-2
+                            = image_tag "Fundiin.png", class: "mr-auto"
+                          = f.label :payment_method, I18n.t("page.cart.fundiin_btn"), class: 'radio-payment-label ml-auto col-8 align-middle font-weight-bold', :value => 'FUNDIIN'
+                          %div.fundiin-note
+                            - if I18n.locale.to_s == "en"
+                              %div
+                                = I18n.t("page.cart.fundiin_note_event").html_safe
+                                %br
+                                = I18n.t("page.cart.fundiin_note_event_1").html_safe
+                              %div
+                                = I18n.t("page.cart.fundiin_note").html_safe
+                            - else
+                              .row
+                                .col-12
+                                  = @body["title_text"]
+                              %br
+                              = @body["description"].html_safe
                         %br
                       .tranfer-content
                         .col-sm-12.control-label
@@ -148,9 +199,115 @@
                     .flex-w.flex-sb-m.bor15.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
                       .col-sm-3
                       .col-sm-6
-                        = submit_tag I18n.t("page.cart.proceed_to_checkout"), class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
+                        %button.flex-c-m.cl0.size-116.bg3.bor14.hov-btn3.p-lr-15.trans-04.pointer{:name => "commit", :style => "display: block;", :type => "submit"}
+                          %span.stext-101
+                            = I18n.t("page.cart.proceed_to_checkout")
+                          %br/
+                          %span.note-ship
+                            = I18n.t("page.cart.free_ship")
                       .col-sm-3
             .col-sm-10.col-lg-7.col-xl-5.m-lr-auto.m-b-50
+:css
+  .title-image-fundiin {
+    width: 20%;
+  }
+  .fundiin-note {
+    padding-left: 12.5%;
+  }
+  .payment-image {
+    width: 50px;
+    float: left;
+  }
+  .payment-image img {
+    width:inherit;
+  }
+
+  .fundiin-note {
+    font-size: 12px;
+  }
+
+  .show-for-mobile {
+    display: none;
+  }
+
+  .image-cart {
+    max-width: 50px
+  }
+
+  .note-ship {
+    font-size: 9px
+  }
+
+  .payment-method {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+  @media only screen and (max-width: 600px) {
+
+    .fundiin-note {
+      padding-left: 6%;
+    }
+
+    .payment-method {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .radio-payment-label{
+      padding: 0px;
+    }
+    .payment-image {
+      padding: 0px;
+    }
+    .radio-payment{
+      margin-right: 0px;
+    }
+    .payment-cod{
+      width: 90% !important;
+    }
+
+    .show-for-mobile {
+      display: block;
+      padding-top: 5px;
+    }  
+
+    .table-shopping-cart {
+      min-width: 100%
+    }
+
+    .table-shopping-cart .column-1 {
+      padding-left: 10px;
+    }
+
+    .flex-sb-m {
+      justify-content: center
+    }
+
+    .column-voucher {
+      padding-right: 10px
+    }
+
+    .column-2 {
+      padding-right: 10px;
+    }
+
+    .column-4 {
+      padding-right: 10px;
+    }
+
+    .column-3 {
+      display: none;
+      padding-right: 10px;
+    }
+
+    .column-5 {
+      display: none;
+    }
+  }
+
+  .title_item {
+    padding-bottom: 10px;
+  }
 :javascript
   function checktransfer(){
     if($("input[name='order[payment_method]']:checked").val() == 'TRANSFER') {
@@ -160,10 +317,30 @@
     }
   }
 
+  function invalidMessage() {
+    var locale = $("#order_locale").val();
+    var mess = "";
+    switch (locale) {
+      case "vi": 
+        return "Vui lòng điền vào trường này";
+      case "en":
+        return "Please fill out this filed";
+    }
+  }
+
   $(document).ready(function() {
     checktransfer();
 
     $("input[name='order[payment_method]']").change(function(){
       checktransfer();
+    });
+
+    $('#new_order input[type=text]').on('change invalid', function() {
+        var textfield = $(this)[0];
+        textfield.setCustomValidity('');
+        
+        if (!textfield.validity.valid) {
+          textfield.setCustomValidity(invalidMessage());  
+        }
     });
   });

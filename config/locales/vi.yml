@@ -37,7 +37,7 @@ vi:
       policy: 'CHÍNH SÁCH'
       best_seller: 'HÀNG BÁN CHẠY'
       promotion: 'KHUYẾN MÃI'
-      new_arrivals: 'HÀNG MỚI'
+      new_arrivals: 'HÀNG MỚI & PHỤ KIỆN'
       best_seller_description: ''
       promotion_description: ''
       new_arrivals_description: ''
@@ -121,44 +121,92 @@ vi:
       search_empty: 'Vui lòng nhập mã đơn hàng và tìm kiếm'
     privacy:
       privacy: 'CHÍNH SÁCH BẢO MẬT'
-      header_1: 'MỤC ĐÍCH VÀ PHẠM VI THU THẬP'
-      header_2: 'PHẠM VI SỬ DỤNG THÔNG TIN'
-      header_3: 'THỜI GIAN LƯU TRỮ THÔNG TIN'
-      header_4: 'ĐỊA CHỈ CỦA ĐƠN VỊ THU THẬP VÀ QUẢN LÝ THÔNG TIN'
-      header_5: 'LMCATION'
-      header_6: 'Địa chỉ:'
-      header_7: 'Email:'
-      header_8: '  | Điện thoại:'
-      header_9: 'CHỈNH SỬA DỮ LIỆU CÁ NHÂN'
-      header_10: 'CAM KẾT BẢO MẬT'
-      content_1_1: 'Việc thu thập dữ liệu trên Website TMĐT <a href= "https://www.lmcation.com">www.lmcation.com</a> bao gồm: email, điện thoại, tên đăng nhập, mật khẩu đăng nhập, địa chỉ khách hàng (thành viên) là bắt buộc để LMcation liên hệ xác nhận khi khách hàng đăng ký sử dụng dịch vụ trên website và nhằm đảm bảo quyền lợi cho người tiêu dùng. '
+      header_1: 'I. MỤC ĐÍCH VÀ PHẠM VI THU THẬP THÔNG TIN CÁ NHÂN'
+      header_2: 'II. PHẠM VI SỬ DỤNG THÔNG TIN'
+      header_3: 'III. THỜI GIAN LƯU TRỮ THÔNG TIN'
+      header_4: 'IV. NHỮNG NGƯỜI HOẶC TỔ CHỨC CÓ THỂ ĐƯỢC TIẾP CẬN VỚI THÔNG TIN'
+      header_5: 'V. ĐỊA CHỈ CỦA ĐƠN VỊ THU THẬP VÀ QUẢN LÝ THÔNG TIN CÁ NHÂN'
+      header_6: 'VI. PHƯƠNG THỨC ĐỂ KHÁCH HÀNG TIẾP CẬN VÀ CHỈNH SỬA DỮ LIỆU CÁ NHÂN CỦA MÌNH'
+      header_7: 'VII. CAM KẾT BẢO MẬT THÔNG TIN CÁ NHÂN KHÁCH HÀNG'
+      header_8: 'VIII. CƠ CHẾ TIẾP NHẬN VÀ GIẢI QUYẾT KHIẾU NẠI LIÊN QUAN ĐẾN THÔNG TIN CÁ NHÂN HỌC VIÊN'
+      header_9: 'IX. THÔNG TIN LIÊN HỆ'
+      content_0_1: "Chính sách bảo mật này công bố cách thức mà chúng tôi thu thập, lưu trữ và xử lý thông tin hoặc dữ liệu cá nhân (“Thông tin cá nhân”) của các khách hàng của mình thông qua website. Chúng tôi cam kết sẽ bảo mật các thông tin cá nhân của khách hàng, đồng thời sẽ nỗ lực hết sức và sử dụng các biện pháp thích hợp để các thông tin mà khách hàng cung cấp cho chúng tôi trong quá trình sử dụng website được bảo mật và bảo vệ khỏi sự truy cập trái phép."
+      content_0_2: "Tuy nhiên, chúng tôi không đảm bảo ngăn chặn được tất cả các truy cập trái phép. Trong trường hợp truy cập trái phép nằm ngoài khả năng kiểm soát của chúng tôi, công ty sẽ không chịu trách nhiệm dưới bất kỳ hình thức nào đối với bất kỳ khiếu nại, tranh chấp hoặc thiệt hại nào phát sinh từ hoặc liên quan đến truy cập trái phép đó."
+      content_0_3: "Để hiểu rõ hơn về chính sách trong công tác thu thập, lưu trữ và sử dụng thông tin cá nhân của người sử dụng website này, vui lòng đọc các chính sách bảo mật dưới đây:"
+      content_1_1: 'Để truy cập và sử dụng một số dịch vụ tại website, bạn có thể sẽ được yêu cầu đăng ký với chúng tôi thông tin cá nhân (Email, Họ tên, Số ĐT liên lạc,…). Mọi thông tin khai báo phải đảm bảo tính chính xác và hợp pháp. Website của chúng tôi không chịu mọi trách nhiệm liên quan đến pháp luật của thông tin khai báo. Chúng tôi cũng có thể thu thập thông tin về số lần viếng thăm, bao gồm số trang bạn xem, số links (liên kết) bạn click và những thông tin khác liên quan đến việc kết nối đến website của chúng tôi. Chúng tôi cũng thu thập các thông tin mà trình duyệt Web (Browser) bạn sử dụng mỗi khi truy cập vào website, bao gồm: địa chỉ IP, loại Browser, ngôn ngữ sử dụng, thời gian và những địa chỉ mà Browser truy xuất đến.'
       content_1_2: 'Trong quá trình giao dịch thanh toán tại Website TMĐT <a href= "https://www.lmcation.com">www.lmcation.com</a>, LMcation chỉ lưu giữ thông tin chi tiết về đơn hàng đã thanh toán của thành viên, các thông tin về số tài khoản ngân hàng của thành viên sẽ không được lưu giữ.'
       content_1_3: 'LMcation sẽ sử dụng cả thông tin nhận diện cá nhân của thành viên và một số thông tin nhận diện phi cá nhân (như cookies, địa chỉ IP, loại trình duyệt, ngày tổng số, v.v.) để gia tăng khả năng đáp ứng của LMcation về phương diện các Trang và Dịch Vụ, cũng như về phát triển những chức năng, tính năng và các dịch vụ mới theo những xu hướng và sở thích đang diễn tiến.'
       content_1_4: 'Các thành viên sẽ tự chịu trách nhiệm về bảo mật và lưu giữ mọi hoạt động sử dụng dịch vụ dưới tên đăng ký, mật khẩu và hộp thư điện tử của mình. Ngoài ra, thành viên có trách nhiệm thông báo kịp thời cho LMcation về những hành vi sử dụng trái phép, lạm dụng, vi phạm bảo mật, lưu giữ tên đăng ký và mật khẩu của bên thứ ba để có biện pháp giải quyết phù hợp.'
-      content_2: 'Website TMĐT <a href= "https://www.lmcation.com">www.lmcation.com</a> sử dụng thông tin thành viên cung cấp để:'
-      content_2_1: 'Cung cấp các dịch vụ đến thành viên;'
-      content_2_2: 'Gửi các thông báo về các hoạt động trao đổi thông tin giữa thành viên và website TMĐT <a href= "https://www.lmcation.com">www.lmcation.com</a>;'
-      content_2_3: 'Ngăn ngừa các hoạt động phá hủy tài khoản người dùng của thành viên hoặc các hoạt động giả mạo thành viên;'
-      content_2_4: 'Liên lạc và giải quyết với thành viên trong những trường hợp đặc biệt.'
-      content_2_5: 'Không sử dụng thông tin cá nhân của thành viên ngoài mục đích xác nhận và liên hệ có liên quan đến giao dịch tại <a href= "https://www.lmcation.com">www.lmcation.com</a>;'
-      content_2_6: 'Trong trường hợp có yêu cầu của pháp luật: Sàn giao dịch TMĐT <a href= "https://www.lmcation.com">www.lmcation.com</a> có trách nhiệm hợp tác cung cấp thông tin cá nhân thành viên khi có yêu cầu từ cơ quan tư pháp bao gồm: Viện kiểm sát, tòa án, cơ quan công an điều tra liên quan đến hành vi vi phạm pháp luật nào đó của khách hàng. Ngoài ra, không ai có quyền xâm phạm vào thông tin cá nhân của thành viên.'
-      content_3_1: 'Dữ liệu cá nhân của thành viên sẽ được lưu trữ cho đến khi có yêu cầu hủy bỏ hoặc tự thành viên đăng nhập và thực hiện hủy bỏ. Còn lại trong mọi trường hợp thông tin cá nhân thành viên sẽ được bảo mật trên máy chủ của <a href= "https://www.lmcation.com">www.lmcation.com</a>.'
-      content_6_1: '58 Hoa Cau, Phường 7, Quận Phú Nhuận, TP.HCM'
-      content_7_1: '<a href="mailto:info@lmcation.com">info@lmcation.com</a>'
-      content_8_1: '(+84) 777 12 12 99 '
-      content_9_1: 'Thành viên có quyền tự kiểm tra, cập nhật, điều chỉnh hoặc hủy bỏ thông tin cá nhân của mình bằng cách đăng nhập vào tài khoản và chỉnh sửa thông tin cá nhân tại mục THÔNG TIN TÀI KHOẢN hoặc yêu cầu Ferosh thực hiện việc này.'
+      content_2: 'Các thông tin thu thập thông qua website <a href= "https://www.lmcation.com">www.lmcation.com</a> sẽ giúp chúng tôi:'
+      content_2_1: 'Hỗ trợ khách hàng khi mua sản phẩm.'
+      content_2_2: 'Giải đáp thắc mắc khách hàng.'
+      content_2_3: 'Thực hiện các bản khảo sát khách hàng.'
+      content_2_4: 'Thực hiện các hoạt động quảng bá liên quan đến các sản phẩm và dịch vụ của <a href= "https://www.lmcation.com">www.lmcation.com</a> .'
+      content_2_5: 'Khách hàng cần đề nghị hỗ trợ hoặc có thắc mắc cần giải đáp muốn chuyển thông tin đến chúng tôi thông qua website <a href= "https://www.lmcation.com">www.lmcation.com</a>., quý khách có thể sẽ được yêu cầu đăng ký với chúng tôi thông tin cá nhân (Email, Họ tên, Số ĐT liên lạc…). Mọi thông tin khai báo phải đảm bảo tính chính xác và hợp pháp. <a href= "https://www.lmcation.com">www.lmcation.com</a>. không chịu mọi trách nhiệm liên quan đến pháp luật của thông tin khai báo.'
+      content_2_6: 'Khi cần thiết, chúng tôi có thể sử dụng những thông tin này để liên hệ trực tiếp với bạn dưới các hình thức như: gởi thư ngỏ, đơn đặt hàng, thư cảm ơn, thông tin về kỹ thuật và bảo mật, ….'
+      content_2_7: "Chúng tôi cam kết về việc sử dụng thông tin cá nhân của Khách hàng đúng với các mục đích và phạm vi đã thông báo. Trong trường hợp có bất kỳ phạm vi sử dụng phát sinh ngoài mục đích và thông báo, chúng tôi sẽ gửi thông báo cho Khách hàng và chỉ sử dụng khi có sự đồng ý của Khách hàng."
+      content_3_1: 'Chúng tôi sẽ lưu trữ các thông tin cá nhân do khách hàng cung cấp trên các hệ thống nội bộ của chúng tôi trong quá trình cung cấp dịch vụ cho khách hàng hoặc cho đến khi hoàn thành mục đích thu thập hoặc khi khách hàng có yêu cầu hủy các thông tin đã cung cấp.'
+      content_4: "Khách hàng đồng ý rằng: trong trường hợp cần thiết, các cơ quan/tổ chức/cá nhân sau có quyền được tiếp cận và thu thập các thông tin của mình, bao gồm:"
+      content_4_1: "Ban Quản Trị"
+      content_4_2: "Cơ quan nhà nước có thẩm quyền"
+      content_4_3: "Bên khiếu nại chứng minh được hành vi vi phạm của Khách hàng (nếu có)"
+      content_5_1: "CÔNG TY TNHH LMCATION"
+      content_5_2: "Giấy phép ĐKKD số 0316787295 do Sở Kế hoạch và Đầu tư TP Hồ Chí Minh Cấp ngày 05/04/2021"
+      content_5_3: "Email: <a href='#'>info@lmcation.com</a> - Tel: <a href='#'>0777.12.12.99</a>"
+      content_5_4: "Trụ sở: 58 Hoa Cau, Phường 7, Quận Phú Nhuận, Thành phố Hồ Chí Minh, Việt Nam"
+      content_6: 'Khách hàng có quyền tự kiểm tra, cập nhật, điều chỉnh hoặc hủy bỏ bất kỳ thông tin của mình bằng cách đăng nhập vào tài khoản và truy cập vào trang quản trị của tài khoản của mình hoặc liên lạc với Ban quản trị để được hỗ trợ. Tuy nhiên, bất kỳ sự sửa đổi, bổ sung hoặc hủy bỏ bất kỳ thông tin cá nhân vẫn phải tuân thủ đầy đủ và theo đúng các quy định về thông tin đăng ký tài khoản trên webiste.'
+      content_7: 'Chúng tôi cam kết bảo mật thông tin cá nhân của bạn bằng mọi cách thức có thể. Chúng tôi sẽ sử dụng nhiều công nghệ bảo mật thông tin khác nhau nhằm bảo vệ thông tin này không bị truy lục, sử dụng hoặc tiết lộ ngoài ý muốn. Chúng tôi khuyến cáo bạn nên bảo mật các thông tin liên quan đến mật khẩu truy xuất của bạn và không nên chia sẻ với bất kỳ người nào khác. Nếu sử dụng máy tính chung nhiều người, bạn nên đăng xuất, hoặc thoát hết tất cả cửa sổ Website đang mở.'
+      content_8_1: 'Khách hàng có quyền gửi khiếu nại về việc lộ thông tin cá nhân cho bên thứ 3 đến ban quản trị của <a href= "https://www.lmcation.com">www.lmcation.com</a>, đến địa chỉ công ty hoặc qua email: <a href="#">info@lmcation.com</a>'
+      content_8_2: "Công ty có trách nhiệm thực hiện các biện pháp kỹ thuật, nghiệp vụ để xác minh các nội dung được phản ánh."
+      content_8_3: "Thời gian xử lý phản ánh liên quan đến thông tin cá nhân là 7 ngày."
+      content_9: 'Chúng tôi luôn hoan nghênh các ý kiến đóng góp, liên hệ và phản hồi thông tin từ bạn về “Chính sách bảo mật” này. Nếu bạn có những thắc mắc liên quan xin vui lòng liên hệ theo địa chỉ Email: <a href="#">info@lmcation.com</a> - Tel: <a href="#">0777.12.12.99</a>.'
       content_9_2: 'Thành viên có quyền gửi khiếu nại về việc lộ thông tin các nhân cho bên thứ 3 đến Ban quản trị của Website TMĐT LMcation. Khi tiếp nhận những phản hồi này, LMcation sẽ xác nhận lại thông tin, phải có trách nhiệm trả lời lý do và hướng dẫn thành viên khôi phục và bảo mật lại thông tin. Thành viên có thể liên lạc qua email: <a href="mailto:info@lmcation.com">info@lmcation.com</a> hoặc điện thoại: 0777 12 12 99.'
       content_10_1: 'Thông tin cá nhân của thành viên trên <a href= "https://www.lmcation.com">www.lmcation.com</a> được LMcation cam kết bảo mật tuyệt đối theo chính sách bảo vệ thông tin cá nhân của LMcation. Việc thu thập và sử dụng thông tin của mỗi thành viên chỉ được thực hiện khi có sự đồng ý của khách hàng đó trừ những trường hợp pháp luật có quy định khác.'
       content_10_2: 'Không sử dụng, không chuyển giao, cung cấp hay tiết lộ cho bên thứ 3 nào về thông tin cá nhân của thành viên khi không có sự cho phép đồng ý từ thành viên.'
       content_10_3: 'Trong trường hợp máy chủ lưu trữ thông tin bị hacker tấn công dẫn đến mất mát dữ liệu cá nhân thành viên, <a href= "https://www.lmcation.com">www.lmcation.com</a> sẽ có trách nhiệm thông báo vụ việc cho cơ quan chức năng điều tra xử lý kịp thời và thông báo cho thành viên được biết.'
       content_10_4: 'Bảo mật tuyệt đối mọi thông tin giao dịch trực tuyến của Thành viên bao gồm thông tin hóa đơn kế toán chứng từ số hóa tại khu vực dữ liệu trung tâm an toàn cấp 1 của <a href= "https://www.lmcation.com">www.lmcation.com</a>.'
       content_11: 'Ban quản lý <a href= "https://www.lmcation.com">www.lmcation.com</a> yêu cầu các cá nhân khi đăng ký/mua hàng là thành viên, phải cung cấp đầy đủ thông tin cá nhân có liên quan như: Họ tên, địa chỉ liên lạc, email, điện thoại, số tài khoản, số thẻ thanh toán và chịu trách nhiệm về tính pháp lý của những thông tin trên. Ban quản lý LMcation không chịu trách nhiệm cũng như không giải quyết mọi khiếu nại có liên quan đến quyền lợi của Thành viên đó nếu xét thấy tất cả thông tin cá nhân của thành viên đó cung cấp khi đăng ký ban đầu là không chính xác.'
+    privacy_buy:
+      slug: "HƯỚNG DẪN MUA HÀNG"
+      title: "HƯỚNG DẪN MUA HÀNG – THANH TOÁN – GIAO HÀNG"
+      content_1: "BƯỚC 1: ĐẶT HÀNG"
+      content_1-1: "Đặt hàng trực tiếp tại website:"
+      content_1-2: "Tìm sản phẩm cần mua"
+      content_1-3: "Bấm vào nút mua hàng"
+      content_1-4: "Điền thông tin tại giỏ hàng và bấm đặt hàng"
+      content_1-5: "Nhân viên sẽ tiến hành kiểm tra kho hàng, và tiếp nhận đơn hàng của quý khách."
+      content_2: "BƯỚC 2: THANH TOÁN"
+      content_2-1: "LMcation có các hình thức thanh toán như sau:"
+      content_2-2: "<b>Thanh toán bằng tiền mặt khi nhận hàng (COD)</b>: Khách hàng nhận hàng và thanh toán tiền trực tiếp với nhân viên giao hàng."
+      content_2-3: "<b>Thanh toán qua thẻ ATM có đăng ký thanh toán trực tuyến (miễn phí thanh toán)</b>: Để sử dụng phương thức thanh toán này, tài khoản ngân hàng của quý khách cần đăng ký dịch vụ Internet Banking với ngân hàng. LMcation hiện hỗ trợ thanh toán cho phần lớn các ngân hàng tại Việt Nam."
+      content_2-4: "<b>Thanh toán qua thẻ Visa/Master</b>: Phí thanh toán tùy thuộc vào từng loại thẻ quý khách dùng và ngân hàng phát hành thẻ. Vui lòng liên hệ với ngân hàng phát hành thẻ để biết rõ phí thanh toán phát sinh."
+      content_2-5: "<b>Thanh toán qua ví ShopeePay/ Momo</b>: Phí thanh toán tùy thuộc vào từng loại thẻ quý khách dùng và ngân hàng phát hành thẻ. Vui lòng liên hệ với ngân hàng phát hành thẻ để biết rõ phí thanh toán phát sinh."
+      content_3: "BƯỚC 3: GIAO HÀNG"
+      content_3-1: "Sau khi nhận được đơn hàng của quý khách, nhân viên tư vấn sẽ gọi điện xác nhận đơn hàng và bắt đầu tiến hành giao hàng."
+      content_3-2: "LMcation hỗ trợ giao hàng trên toàn quốc."
+      content_4: "THỜI GIAN GIAO HÀNG"
+      content_4-1: "1-3 ngày đối với TP Hồ Chí Minh"
+      content_4-2: "3-5 ngày làm việc đối với các thành phố, huyện/ xã trên khắp cả nước."
+    privacy_payment:
+      title: "QUY ĐỊNH HÌNH THỨC THANH TOÁN VÀ VẬN CHUYỂN"
+      content_1: "LMCATION.COM HIỆN ĐANG HỖ TRỢ CÁC PHƯƠNG THỨC THANH TOÁN SAU ĐÂY:"
+      content_1-1: "Thanh toán bằng tiền mặt khi nhận hàng (COD): Khách hàng nhận hàng và thanh toán tiền trực tiếp với nhân viên giao hàng."
+      content_1-2: "Thanh toán qua thẻ ATM có đăng ký thanh toán trực tuyến (miễn phí thanh toán): Để sử dụng phương thức thanh toán này, tài khoản ngân hàng của quý khách cần đăng ký dịch vụ Internet Banking với ngân hàng. LMcation hiện hỗ trợ thanh toán cho phần lớn các ngân hàng tại Việt Nam."
+      content_1-3: "Thanh toán qua thẻ Visa/Master: Phí thanh toán tùy thuộc vào từng loại thẻ quý khách dùng và ngân hàng phát hành thẻ. Vui lòng liên hệ với ngân hàng phát hành thẻ để biết rõ phí thanh toán phát sinh."
+      content_1-4: "Thanh toán qua ví ShopeePay/ Momo: Phí thanh toán tùy thuộc vào từng loại thẻ quý khách dùng và ngân hàng phát hành thẻ. Vui lòng liên hệ với ngân hàng phát hành thẻ để biết rõ phí thanh toán phát sinh."
+      content_2: "Quý khách có thể chuyển khoản qua tài khoản sau:"
+      content_2-1: "Tên tài khoản: CÔNG TY TNHH LMCATION"
+      content_2-2: "Số tài khoản: 008220860"
+      content_2-3: "Chi nhánh: Ngân Hàng Quốc Tế VIB – Chi nhánh Trần Não – TP.HCM"
+      content_3: "CHI PHÍ VẬN CHUYỂN TẠI LMCATION.COM TÍNH THẾ NÀO?"
+      content_3-1: "LMcation miễn phí giao hàng cho tất cả các hàng hàng toàn quốc, tuy nhiên một số chi phí phát sinh hoặc thay đổi từ khách hàng thì LMcation sẽ không chịu trách nhiệm. Đối với những chi phí phát sinh theo yêu cầu của khách hàng, LMcation sẽ áp dụng mức phí vận chuyển là 30.000đ cho đơn hàng nội thành TP.HCM và 50.000đ cho các tỉnh thành khác."
     product:
       color: 'Màu'
       size: 'Size'
       ssize: 'Size quần'
       tsize: 'Size áo'
       code: 'Mã sản phẩm'
+      fundiin: "hoặc %{price} VND x 3 kỳ với <span class='text-primary'>Fundiin</span>"
       quantity: 'Số Lượng'
       add_to_cart: 'BỎ VÀO GIỎ HÀNG'
       description: 'Mô Tả Sản Phẩm'
@@ -180,11 +228,24 @@ vi:
       product: 'Sản Phẩm'
       price: 'Giá'
       quantity: 'Số Lượng'
-      total: 'Tổng Cộng'
       cart_total: 'Tổng Cộng'
       update_cart: 'CẬP NHẬT'
       proceed_to_checkout: 'ĐẶT HÀNG'
+      free_ship: 'Miễn phí giao hàng toàn quốc'
       transfer_btn: 'CHUYỂN KHOẢN'
+      fundiin_btn: 'Mua trước trả sau'
+      fundiin_note_event: "Trả sau 3 kỳ miễn lãi qua Fundiin giảm 30K (*)"
+      fundiin_note_event_1: '(*) Nhập <b>"NEWFUN"</b> tại giao diện thanh toán của Fundiin để được giảm 10K/20K/30K cho đơn từ 100K/1TR/2TR. Chỉ áp dụng cho đơn hàng đầu tiên với Fundiin, số lượng có hạn.'
+      fundiin_note: "Sau khi hoàn thành đặt hàng, bạn sẽ nhận được tin nhắn SMS hướng dẫn."
+      fundiin_note_1: "1. Sim chính chủ Viettel/Mobifone/Vinaphone"
+      fundiin_note_2: "2. Trên 18 tuổi"
+      spp_btn: 'Ví ShopeePay'
+      vnpay_btn: 'Thẻ ATM, VISA, MASTER'
+      momo_btn: "Ví Momo"
+      momo_qr: "Vui lòng quét mã QR code trên app"
+      momo_exp: "Đơn hàng hết hạn sau"
+      cod: "Thanh toán khi nhận hàng"
+      spp_qr: "Vui lòng quét mã QR code trên app"
       transfer: 'VUI LÒNG CHUYỂN KHOẢN VÀO:'
       bank: 'Ngân Hàng'
       account_no: 'Số Tài Khoản'
@@ -305,3 +366,4 @@ vi:
     input: 'Nhâp từ khoá tìm kiếm...'
   keyword: "bộ mặc nhà, đồ bộ mặc nhà cao cấp, bộ đồ mặc nhà, bộ mặc nhà đẹp, bộ lụa mặc nhà, đồ bộ nữ mặc nhà, thời trang mặc nhà, pijama nữ, đồ lanh mặc nhà, đồ mặc ở nhà, đồ bộ mặc nhà cao cấp hàn quốc, đồ mặc nhà cao cấp, quần áo ngủ nữ mùa hè, đồ bộ mặc ở nhà, các kiểu đồ bộ mặc ở nhà đẹp, đồ bộ mặc nhà đẹp, bộ mặc nhà cao cấp, đồ bộ đẹp mặc nhà, do bo dep, đồ bộ thun cotton mặc nhà cao cấp, đồ mặc nhà đẹp, bộ đồ mặc nhà mùa hè cotton, bộ đũi mặc nhà, đồ bộ thun mặc nhà, bộ cotton mặc nhà, đồ mặc ở nhà cho nữ, bộ mặc nhà mùa hè, thoi trang mac nha, đồ lửng mặc nhà, mua đồ bộ mặc nhà, bộ đồ mặc nhà đẹp nhất, đồ bộ mặc nhà dễ thương, đồ bộ pijama nữ lụa cao cấp, đồ bộ mặc nhà pijama, đồ bộ ở nhà, đồ lụa mặc nhà, đồ bộ lanh mặc nhà, đồ bộ mặc nhà nữ, bộ đồ mặc nhà mùa hè, bộ mặc ở nhà, đồ bộ mặc nhà cotton, bộ lụa mặc nhà cao cấp, hình ảnh đồ bộ kiểu, bộ lửng mặc nhà, đồ bộ ở nhà đẹp, do mac nha, do bo cao cap, đồ bộ mặc nhà bằng vải thun, đồ ở nhà nữ, do bo mac nha, đồ bộ mặc nhà giá rẻ, đồ bộ tole mặc nhà, đồ bộ ngắn mặc nhà, mẫu đồ bộ mặc nhà đẹp, đồ bộ mặc nhà de thương, đồ thun mặc nhà, bộ lụa pijama, đồ bộ lung mặc ở nhà, đồ bộ nữ mặc nhà dễ thương, đồ bộ tole nữ, đồ lụa mặc nhà cao cấp, bộ thun mặc nhà, đồ bộ đũi mặc nhà, đồ bộ lửng mặc nhà, đồ bộ mặc nhà vải lụa, những kiểu đồ bộ dễ thương, shop đồ bộ mặc nhà, đồ mặc nhà lụa, đồ bộ lụa mặc nhà, đồ bộ lửng đẹp, bộ mặc nhà trung niên, đồ bộ kate mặc nhà cao cấp, đồ bộ ở nhà nữ, đồ bộ thun cotton mặc nhà, kiểu may đồ bộ mặc ở nhà, thương hiệu đồ ngủ cao cấp, bộ đồ mặc nhà đẹp, đồ bộ mặc nhà vải tole, bộ đồ ở nhà, bộ đồ 2 dây mặc nhà, bộ đồ lanh lửng mặc nhà, bộ đồ lụa mặc nhà cao cấp, bộ mặc ở nhà đẹp, đồ bộ dài mặc nhà, đồ bộ mặc nhà trung niên, đồ bộ thun lửng mặc nhà, đồ bộ thun mặc nhà cao cấp, đồ mặc ở nhà cao cấp, đồ ngủ mặc nhà, thời trang mặc nhà cao cấp, bộ đồ lụa mặc nhà, bộ quần áo mặc ở nhà, đồ bộ mặc nhà bằng vải tole, đồ bộ pijama lửng, do mac o nha, thời trang ở nhà cho nữ, đồ mặc nhà cotton, bộ quần áo lanh mặc ở nhà, đồ bộ quần ống rộng mặc nhà, bộ 2 dây mặc nhà, bộ đồ mặc ở nhà, bộ đùi mặc nhà, bộ lanh 2 dây mặc nhà, đồ bộ cao cấp mặc nhà, đồ bộ mặc nhà big size, đồ bộ mặc nhà lụa, đồ bộ mặc ở nhà nữ đẹp, đồ bộ quần dài mặc nhà, đồ mặc ngủ, đồ mặc nhà lụa cao cấp, đồ mặc ở nhà cho nữ đẹp, kiểu đồ bộ mặc ở nhà, shop đồ mặc nhà, thiết kế đồ bộ mặc nhà, bộ mặc ở nhà mùa hè, đồ bộ nữ mặc nhà cao cấp, thương hiệu đồ bộ mặc nhà, bộ đồ mặc nhà mùa hè đẹp, bộ đồ cotton mặc ở nhà, bộ lanh mặc nhà đẹp, bộ lanh mặc ở nhà, bộ mặc nhà nữ, bộ ngủ mặc nhà, bộ quần áo ngủ nữ mùa hè, các thương hiệu đồ bộ mặc nhà, đồ bộ caro mặc ở nhà, do bo kieu dep, đồ bộ mặc ngủ nữ, đồ bộ mặc nhà kiểu đẹp, đồ bộ mặc nhà người lớn tuổi, đồ bộ mặc nhà quần ống rộng, đồ bộ mặc nhà thun cotton, đồ bộ mặc ở nhà vải tôn, đồ bộ pijama lụa, đồ bộ thun mặc nhà de thương, đồ mặc ở nhà đẹp, đồ nữ mặc ở nhà, đồ thun nữ mặc nhà, kiểu đồ mặc nhà đẹp, may đồ bộ mặc nhà, mua đồ mặc ở nhà, pijama mặc nhà, pijama nữ lụa, shop bán đồ bộ đẹp, shop đồ bộ cao cấp, bộ mặc nhà lụa, bộ mặc nhà paltal, đồ bộ cotton mặc nhà, đồ bộ mặc nhà cho người trung niên, đồ bộ mặc nhà mùa hè, đồ bộ mặc ở nhà đẹp, đồ bộ nữ mặc ở nhà, đồ bộ pijama nữ lụa, đồ mặc nhà trung niên, quan ao mac nha, vải may đồ bộ mặc nhà, thời trang đồ bộ mặc nhà, áo mặc nhà, bộ đồ chấm bi mặc nhà, bộ đồ cotton dài tay mặc nhà, bộ đồ kẻ mặc nhà mùa hè, bộ đồ lanh mặc nhà mùa hè, bộ đồ mặc nhà bằng vải lanh, bộ đồ mặc nhà cao cấp, bộ đồ mặc nhà mùa hè cao cấp, bộ đồ mặc nhà nữ, bộ đồ mặc nhà trung niên, bộ đồ nữ mặc nhà, bộ đồ ở nhà đẹp, bộ đũi mặc ở nhà, bo mac o nha, bộ pijama mặc nhà, bộ quần áo mặc ở nhà cho nữ, các kiểu đồ bộ mặc nhà, đồ bộ caro kiểu, đồ bộ dài tay mặc nhà, đồ bộ kiểu mặc ở nhà, đồ bộ lanh đẹp, đồ bộ lanh nữ, đồ bộ lửng cotton, đồ bộ lửng mặc ở nhà vải kate, đồ bộ mặc nhà quần dài, đồ bộ mặc nhà tuổi trung niên, đồ bộ mặc nhà vải đũi, đồ bộ nhà, đồ bộ short mặc nhà, đồ bộ thun lạnh mặc nhà, đồ bộ thun nữ mặc nhà, đồ mặc nhà lụa satin, đồ mặc nhà pijama, đồ mặc nhà sunfly, đồ ngắn mặc ở nhà, đồ ngủ mặc ở nhà, đồ ngủ ở nhà, đồ phi bóng mặc ở nhà, đồ phi lụa mặc nhà, kiểu đồ bộ mặc nhà, những kiểu đồ bộ mặc nhà đẹp, bộ đồ mặc nhà mùa hè cho nữ, bộ mặc nhà thu đông, bộ quần áo lụa mặc nhà, đồ bộ cotton nữ đẹp, đồ bộ mặc nhà vải cotton, do bo nu mac nha"
   keyword_sport: "đồ bộ mặc nhà vải cotton, do bo nu mac nha, đồ bơi nữ, đồ bơi nữ đẹp, đồ thể thao nữ, áo thể thao nữ, đồ bơi nữ kín đáo, áo bóng rổ nữ, đồ bộ thể thao nữ, quần bơi nữ, áo bơi nữ, đồ bơi cho nữ, đồ chạy bộ nữ, áo tắm đẹp, đồ bơi nữ tay dài, mua đồ bơi nữ, quần áo bơi nữ, bikini nu, bộ đồ thể thao nữ, do boi dep, đồ bơi nữ dạng quần, đồ bơi nữ liền thân dài tay, đồ tắm biển nữ, đồ bơi dài tay nữ, bikini nữ, bộ đồ tắm biển nữ, đồ bơi tay dài cho nữ, áo tắm 1 mảnh, đồ bơi nữ cao cấp, áo bra tập yoga, áo lót thể thao nữ, bộ thể thao nữ cộc tay, đồ bộ the thao nữ quần ngắn, đồ bơi nữ dạng quần dài, đồ bơi nữ tay dài quần lửng, đồ tập thể dục nữ, mẫu áo thể thao nữ đẹp, quần áo tắm biển nữ kín đáo, áo tắm một mảnh, đồ bơi nữ dài tay, đồ bộ the thao nữ dài, áo bơi tay dài nữ, áo tắm nữ, đồ bộ thể thao nữ dài, đồ bộ thể thao nữ hàn quốc, đồ bộ thể thao nữ quần ngắn, đồ bơi đẹp cho nữ, đồ bơi nữ tay dài giá rẻ, đồ tắm biển nữ đẹp, đồ tắm nữ, đồ tập yoga big size, quan ao the thao nu, quan boi nu, set đồ bộ the thao nữ, bộ bơi nữ kín đáo, bộ đồ bơi nữ liền thân, đồ bơi nu, áo bơi dài tay nữ, áo thể dục nữ, bộ bơi dài tay nữ, bộ đồ bơi nữ, bộ đồ bơi nữ đẹp, bộ đồ the thao nữ hàng hiệu, bộ quần áo bơi dài tay nữ, các kiểu đồ bơi nữ đẹp, do bo the thao nu, đồ bộ the thao nữ ngắn, đồ bộ thể thao nữ ngắn, đồ bộ thun thể thao nữ, đồ bơi cao cấp nữ, đồ bơi dài nữ, đồ bơi dài tay cho nữ, đồ bơi kín đáo cho nữ, đồ bơi nữ 1 mảnh, đồ bơi quần dài cho nữ, đồ bơi tay dài quần dài nữ, do boi tre em nu, đồ học bơi nữ, đồ tập gym big size, đồ tập gym nữ big size, đồ thể thao nữ nike, đồ thể thao nữ tập gym, đồ thể thao tập gym nữ, quần áo bơi dài tay nữ, bộ thể thao nữ mùa đông, đồ bơi nữ quần dài, đồ thể thao chạy bộ nữ, mua đồ thể thao nữ, shop đồ thể thao nữ, bikini hai mảnh, đồ bộ thể thao nữ đẹp"
+  footer: "©2021. CÔNG TY TNHH LMCATION: 58 HOA CAU, PHƯỜNG 7, QUẬN PHÚ NHUẬN, HỒ CHÍ MINH. Số điện thoại liên hệ: 0777.12.12.99. GPDKKD: 0316787295 do Sở Kế Hoạch và Đầu Tư Tp.HCM cấp ngày 05/04/2021"
