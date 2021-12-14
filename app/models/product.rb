@@ -71,9 +71,6 @@ class Product < ActiveRecord::Base
               QS
               ).as_json
       category['products'] = products&.map do |product|
-        logger.debug "product: #{product}"
-        logger.debug "first_img: #{product['first_img']}"
-        logger.debug "second_img: #{product['second_img']}"
         product['first_img_url'] = Product.parse_product_image product['first_img']
         product['second_img_url'] = Product.parse_product_image product['second_img']
         product
