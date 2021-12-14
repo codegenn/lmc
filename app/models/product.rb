@@ -71,6 +71,9 @@ class Product < ActiveRecord::Base
               QS
               ).as_json
       category['products'] = products&.map do |product|
+        logger.debug "product: #{product}"
+        logger.debug "first_img: #{product['first_img']}"
+        logger.debug "second_img: #{product['second_img']}"
         product['first_img_url'] = Product.parse_product_image product['first_img']
         product['second_img_url'] = Product.parse_product_image product['second_img']
         product
@@ -80,6 +83,7 @@ class Product < ActiveRecord::Base
   end
 
   def self.parse_product_image(product_img_str)
+    return unless product_img_str
     product_img = JSON.parse product_img_str
     product_img_url = ''
     if product_img.present? && product_img.length == 2
