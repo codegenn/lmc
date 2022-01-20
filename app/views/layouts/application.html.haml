@@ -33,6 +33,9 @@
     = canonical_tag
     / Facebook Pixel Code
     :javascript
+      $(document).ready(function() {
+        $(this).scrollTop(0);
+      });
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
