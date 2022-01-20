@@ -1,3 +1,15 @@
+:css
+  @media only screen and (max-width: 775px) {
+    .ltext-102 {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .ab-t-l {
+      top: -20px;
+    }
+  }
+  
 = content_for :title do
   LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ
 / Banner
@@ -49,7 +61,7 @@
           = cl_image_tag Rails.application.secrets.new_arrival_link, loading:"lazy", alt: "new arrival"
           = link_to products_path(check: 'new_arrivals'), class: "block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" do
             .block1-txt-child1.flex-col-l
-              %span.block1-name.ltext-102.trans-04.p-b-8{style: "font-size: 26px;"}
+              %span.block1-name.ltext-102.trans-04.p-b-8
                 = I18n.t "page.index.new_arrivals"
               .block1-txt-child2.p-b-4.trans-05
                 .block1-link.stext-101.cl0.trans-09
