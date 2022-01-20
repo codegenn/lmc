@@ -35,7 +35,7 @@ gem 'httparty'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dotenv-rails'
 gem 'jbuilder', "~> 2.0"
 
 gem 'jwt'
@@ -73,3 +73,5 @@ gem 'delayed_job_active_record'
 
 gem 'paperclip' # file attachment syntax and callbacks
 gem 'aws-sdk'
+# gem "passenger"
+gem 'dalli'
