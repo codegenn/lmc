@@ -39,6 +39,10 @@
       right: 3px;
       left: auto !important;
     }
+    .partner-mobile{
+      width: 26%;
+      margin: 0 11px;
+    }
   }
   
 = content_for :title do
@@ -119,7 +123,7 @@
                   = I18n.t "page.index.shop_now"
   .container
     .row.isotope-grid.susgoal-body
-      .block1-txt-child1.flex-col-l.center
+      .block1-txt-child1.flex-col-l.center.m-t-5
         %span.block1-name.trans-04.p-b-8.susgoal
           = link_to I18n.t("page.menu.susgoallink"),class: "" do 
             = I18n.t "page.menu.susgoal"
@@ -161,14 +165,14 @@
           = I18n.t "page.menu.partners"
     .row.d-flex
       .col-md-12.p-b-30.m-lr-auto
-        = cl_image_tag  "#{cdn_url}/systems/Crop+logo-03.png", class: "partner-img", loading:"lazy",  alt: "lmcation logo"
-        = cl_image_tag  "#{cdn_url}/systems/Crop+logo-02.png", class: "partner-img", loading:"lazy",  alt: "lmcation logo"
-        = cl_image_tag  "#{cdn_url}/systems/Crop+logo-05.png", class: "partner-img", loading:"lazy",  alt: "lmcation logo"
-        = cl_image_tag  "#{cdn_url}/systems/Crop+logo-04.png", class: "partner-img", loading:"lazy",  alt: "lmcation logo"
-        = cl_image_tag  "#{cdn_url}/systems/Crop+logo-01.png", class: "partner-img", loading:"lazy",  alt: "lmcation logo"
-        = cl_image_tag  "#{cdn_url}/systems/logo-6.png", class: "partner-img", loading:"lazy",  alt: "lmcation logo"
-        = cl_image_tag  "#{cdn_url}/systems/logo-7.png", class: "partner-img", loading:"lazy",  alt: "lmcation logo"
-        = cl_image_tag  "#{cdn_url}/systems/logo-8.png", class: "partner-img", loading:"lazy",  alt: "lmcation logo"
+        = cl_image_tag  "#{cdn_url}/systems/Crop+logo-03.png", class: "partner-img partner-mobile", loading:"lazy",  alt: "lmcation logo"
+        = cl_image_tag  "#{cdn_url}/systems/Crop+logo-02.png", class: "partner-img partner-mobile", loading:"lazy",  alt: "lmcation logo"
+        = cl_image_tag  "#{cdn_url}/systems/Crop+logo-05.png", class: "partner-img  partner-mobile", loading:"lazy",  alt: "lmcation logo"
+        = cl_image_tag  "#{cdn_url}/systems/Crop+logo-04.png", class: "partner-img  partner-mobile", loading:"lazy",  alt: "lmcation logo"
+        = cl_image_tag  "#{cdn_url}/systems/Crop+logo-01.png", class: "partner-img  partner-mobile", loading:"lazy",  alt: "lmcation logo"
+        = cl_image_tag  "#{cdn_url}/systems/logo-6.png", class: "partner-img partner-mobile", loading:"lazy",  alt: "lmcation logo"
+        = cl_image_tag  "#{cdn_url}/systems/logo-7.png", class: "partner-img partner-mobile", loading:"lazy",  alt: "lmcation logo"
+        = cl_image_tag  "#{cdn_url}/systems/logo-8.png", class: "partner-img partner-mobile", loading:"lazy",  alt: "lmcation logo"
 #susimg.modal.fade{:role => "dialog"}
   .modal-dialog
     .modal-content{:style => "background-color: white;"}
