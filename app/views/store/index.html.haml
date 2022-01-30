@@ -9,6 +9,18 @@
       top: -20px;
     }
   }
+  .susgoal-body .susgoal {
+    font-family: Gotham-Medium !important;
+    font-size: 26px !important;
+    line-height: 1.3846;
+  }
+
+  @media (max-width: 575px) {
+    .susgoal-body .susgoal {
+      font-family: Gotham-Medium !important;
+      font-size: 20px !important;
+    }
+  }
   
 = content_for :title do
   LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ
@@ -87,11 +99,10 @@
                 .block1-link.stext-101.cl0.trans-09
                   = I18n.t "page.index.shop_now"
   .container
-    .row.isotope-grid
+    .row.isotope-grid.susgoal-body
       .block1-txt-child1.flex-col-l.center
-        %span.block1-name.ltext-108.trans-04.p-b-8
-          %a{:href => "#{I18n.t "page.menu.susgoallink"}", :style => 'color: black'} 
-            = I18n.t "page.menu.susgoal"
+        %span.block1-name.trans-04.p-b-8.susgoal
+          = I18n.t "page.menu.susgoal"
     .row.d-flex
       .col-md-12.p-b-30.m-lr-auto
         = image_tag  "#{I18n.t "page.menu.susgoalimg-1"}", class: "partner-img", loading:"lazy",  alt: "lmcation logo", :onClick => "suspopup('#{I18n.t "page.menu.susgoal1-title"}', '#{I18n.t "page.menu.susgoal1"}')".html_safe
