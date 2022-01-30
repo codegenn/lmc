@@ -13,11 +13,11 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-  config.cache_store = :redis_store, {
-    expires_in: 30.days,
-    namespace: 'cache',
-    redis: { host: 'redis-15566.c278.us-east-1-4.ec2.cloud.redislabs.com:15566', port: 6379, db: 0 },
-    }
+  # config.cache_store = :redis_store, {
+  #   expires_in: 1.days,
+  #   namespace: 'cache',
+  #   redis: { host: ENV['REDIS'], port: 6379, db: 0 },
+  #   }
   config.logger = Logger.new(STDOUT)
   config.logger.level = Logger::ERROR
 
@@ -52,7 +52,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = true
+  config.force_ssl = false
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -66,7 +66,7 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production.
-  # config.cache_store = :mem_cache_store 
+  config.cache_store = :mem_cache_store, ENV["MEMCACHIER_SERVERS"]
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'https://d1monvl96vvqbd.cloudfront.net'
@@ -96,11 +96,11 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :domain => "gmail.com",
+    :domain               => "gmail.com",
     :enable_starttls_auto => true,
-    :openssl_verify_mode => 'none',
-    :user_name            => 'no-reply@lmcation.com',
-    :password             => 'tlxnvgsozyceiyng',
+    :openssl_verify_mode  => 'none',
+    :user_name            => ENV["GMAIL_EMAIL"],
+    :password             => ENV["GMAIL_PASSWORD"],
     :authentication       => "plain"
   }
   #url: ':s3_alias_url',
