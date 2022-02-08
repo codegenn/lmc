@@ -24,10 +24,91 @@
       font-family: Gotham-Medium !important;
       font-size: 20px !important;
     }
+
+  .discount-banner {
+    position: fixed;
+    bottom: 30%;
+    right: 0;
+    height: 300px;
+    width: 650px;
+    z-index: 9999;
+    transition: transform 1s;
+  }
+
+  .wrapper-discount {
+    height: 340px;
+    width: 100%;
+    position: relative;
+    border: 2px solid #343a40;
+    border-left: 40px solid #343a40;
+    padding: 15px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: small;
+    display: inline-block;
+    background: url('https://img.ltwebstatic.com/images3_acp/2021/11/15/1636943334d2687fe177c229f6fbb9a3a46cae1dc7.webp')
+  }
+  .wrapper-text-outside {
+    font-size: 20px;
+    width: 270px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: absolute;
+    bottom: 0;
+    left: -6px;
+    margin-left: -30px;
+    transform: rotate(270deg);
+    transform-origin: 0 0;
+    font-weight: 800;
+  }
+  .discount-banner-content-hide {
+    transform: translateX(612px);
+  }
+  .button-discount {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    background-color: rgb(248, 168, 149);
+    color: rgb(255, 255, 255);
+    border-radius: 0;
+    border: 1px solid #f08679;
+    height: 36px;
+    font-size: 12px;
+    font-weight: 700;
+    min-width: 144px;
+    line-height: 34px;
+    padding: 0 16px;
+    user-select: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: 0;
+    letter-spacing: 3px;
+  }
+
+  .input-discount {
+    position: absolute;
+    bottom: 50px;
+    right: 230px;
+    height: 36px;
+    width: 320px;
+    color: rgb(45, 45, 45);
+    padding: 0 12px;
+    outline: 0;
+    background-color: rgb(255, 255, 255);
   }
   
 = content_for :title do
   LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ
+/ Discount
+.discount-banner.discount-banner-content-hide
+  .wrapper-discount
+    .wrapper-text-outside
+      Giảm giá 10%
+    %button.button-discount
+      Đăng ký
+    %input.input-discount{:placeholder => "NHẬP ĐỊA CHỈ EMAIL CỦA BẠN"}
+    
 / Banner
 .sec-banner.bg0.p-t-80.p-b-50.main-page
   .container
@@ -176,3 +257,14 @@
     $(body).text(content)
     $('#susimg').modal('show');
   }
+
+:javascript
+  $(".wrapper-text-outside").click(function() {
+    let parent = $(this).closest('.discount-banner')
+    console.log(parent[0])
+    if($(parent).hasClass('discount-banner-content-hide')) {
+      $(parent).removeClass('discount-banner-content-hide')
+    } else {
+      $(parent).addClass("discount-banner-content-hide")
+    }
+  })
