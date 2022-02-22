@@ -20,7 +20,7 @@
   }
 
   .susgoal a {
-    color: #4DBFD9 !important;
+    color: #4f8ca8 !important;
   }
 
   @media (max-width: 575px) {
@@ -29,8 +29,22 @@
       font-size: 20px !important;
     }
   }
-
+  .wrapper-discount {
+    height: 303px;
+    width: 100%;
+    position: relative;
+    border: 2px solid #343a40;
+    border-left: 40px solid #343a40;
+    padding: 15px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: small;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(#{image_path "discount-pc.jpg"})
+  }
   .discount-banner {
+    display: none;
     position: fixed;
     bottom: 30%;
     right: 0;
@@ -40,18 +54,6 @@
     transition: transform 1s;
   }
 
-  .wrapper-discount {
-    height: 340px;
-    width: 100%;
-    position: relative;
-    border: 2px solid #343a40;
-    border-left: 40px solid #343a40;
-    padding: 15px;
-    color: rgba(0, 0, 0, 0.5);
-    font-size: small;
-    display: inline-block;
-    background: url('https://img.ltwebstatic.com/images3_acp/2021/11/15/1636943334d2687fe177c229f6fbb9a3a46cae1dc7.webp')
-  }
   .wrapper-text-outside {
     font-size: 20px;
     width: 270px;
@@ -125,18 +127,52 @@
       width: 26%;
       margin: 0 11px;
     }
+
+    .wrapper-discount {
+      background-image: url(#{image_path "discount-mobile.jpg"});
+      height: 261px;
+    }
+
+    .discount-banner {
+      width: 300px;
+    }
+
+    .discount-banner-content-hide {
+      transform: translateX(260px);
+    }
+
+    .button-discount {
+      bottom: 64px;
+      right: 3px;
+      height: 32px;
+      font-size: 9px;
+      min-width: 100px;
+    }
+
+    .input-discount {
+      bottom: 64px;
+      right: 107px;
+      height: 32px;
+      width: 130px;
+      font-size: 10px;
+    }
+
+    .wrapper-text-outside {
+      bottom: -30px;
+    }
   }
   
 = content_for :title do
   LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ
 / Discount
-.discount-banner.discount-banner-content-hide
-  .wrapper-discount
-    .wrapper-text-outside
-      Giảm giá 10%
-    %button.button-discount
-      Đăng ký
-    %input.input-discount{:placeholder => "NHẬP ĐỊA CHỈ EMAIL CỦA BẠN"}
+%form{:action => "/subscribers", :method => "post"}
+  .discount-banner.discount-banner-content-hide
+    .wrapper-discount
+      .wrapper-text-outside
+        Giảm giá 10%
+      %button.button-discount{:type => "submit"}
+        Đăng ký
+      %input.input-discount{:placeholder => "NHẬP ĐỊA CHỈ EMAIL CỦA BẠN", :name => "email"}
     
 / Banner
 .sec-banner.bg0.p-t-80.p-b-50.main-page
@@ -274,6 +310,8 @@
       .modal-body
         SDG #1. LMcation helps to eliminate poverty.
         We provide work to the poor and marginalized. We give our partners access to a sustainable income, boosting their chances at a better future.
+%div
+  = image_tag  "discount-pc.jpg", loading:"lazy", style: "display: none", class: "dicount-image-src-pc"
 :javascript
   $(".susimg1").click(function() {
     $('#susimg1').modal('show');
@@ -289,6 +327,8 @@
   }
 
 :javascript
+  
+
   $(".wrapper-text-outside").click(function() {
     let parent = $(this).closest('.discount-banner')
     console.log(parent[0])
