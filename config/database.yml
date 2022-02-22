@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  url: postgres://postgres:cam123123@database-1.cbtbof2lkjhb.ap-southeast-1.rds.amazonaws.com/lmcation_project_dev
+  url: <%= ENV['DATABASE_URL'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
