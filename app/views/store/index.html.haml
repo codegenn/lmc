@@ -41,6 +41,7 @@
     }
   }
   .wrapper-discount {
+    display none;
     height: 303px;
     width: 100%;
     position: relative;
@@ -55,6 +56,7 @@
     background-image: url(#{image_path "discount-pc.jpg"})
   }
   .discount-banner {
+    display:none;
     position: fixed;
     bottom: 30%;
     right: 0;
@@ -148,6 +150,40 @@
     }
 
     .discount-banner {
+      width: 300px;
+    }
+
+    .discount-banner-content-hide {
+      transform: translateX(260px);
+    }
+
+    .button-discount {
+      bottom: 64px;
+      right: 3px;
+      height: 32px;
+      font-size: 9px;
+      min-width: 100px;
+    }
+
+    .input-discount {
+      bottom: 64px;
+      right: 107px;
+      height: 32px;
+      width: 130px;
+      font-size: 10px;
+    }
+
+    .wrapper-text-outside {
+      bottom: -30px;
+    }
+
+    .wrapper-discount {
+      background-image: url(#{image_path "discount-mobile.jpg"});
+      height: 261px;
+    }
+
+    .discount-banner {
+      display: none;
       width: 300px;
     }
 
@@ -308,6 +344,10 @@
         = image_tag  "#{I18n.t "page.menu.susgoalimg-3"}", class: "partner-img sus-image", loading:"lazy",  alt: "lmcation logo", :onClick => "suspopup('#{I18n.t "page.menu.susgoal3-title"}', '#{I18n.t "page.menu.susgoal3"}')".html_safe
         = image_tag  "#{I18n.t "page.menu.susgoalimg-4"}", class: "partner-img sus-image", loading:"lazy",  alt: "lmcation logo", :onClick => "suspopup('#{I18n.t "page.menu.susgoal4-title"}', '#{I18n.t "page.menu.susgoal4"}')".html_safe
         = image_tag  "#{I18n.t "page.menu.susgoalimg-5"}", class: "partner-img sus-image", loading:"lazy",  alt: "lmcation logo", :onClick => "suspopup('#{I18n.t "page.menu.susgoal5-title"}', '#{I18n.t "page.menu.susgoal5"}')".html_safe
+<<<<<<< HEAD
+=======
+
+>>>>>>> devc-puma
   .container
     .row
       .col-md-6.p-b-30.m-lr-auto
