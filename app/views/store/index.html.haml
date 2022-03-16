@@ -23,6 +23,13 @@
     color: #4f8ca8 !important;
   }
 
+  .discount-amount {
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    font-size: 110px;
+  }
+
   @media (max-width: 575px) {
     .susgoal-body .susgoal {
       font-family: Gotham-Medium !important;
@@ -132,6 +139,20 @@
     margin: 0 2%;
   }
 
+  .discount-amount-mobile {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    font-size: 110px;
+  }
+
+  .discount-percent-mobile {
+    position: absolute;
+    top: 35%;
+    left: 75%;
+    font-size: 35px;
+  }
+
   @media only screen and (max-width: 775px) {
     .parner-title {
       font-size: 17px;
@@ -186,6 +207,8 @@
     .wrapper-discount
       .wrapper-text-outside
         Giảm giá 10%
+      %span.discount-amount
+        10
       %button.button-discount{:type => "submit"}
         Đăng ký
       %input.input-discount{:placeholder => "NHẬP ĐỊA CHỈ EMAIL CỦA BẠN", :name => "email"}

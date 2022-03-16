@@ -272,6 +272,9 @@
         .modal-content-mobile
           %form{:action => "/subscribers", :method => "post"}
             %button.close{"data-dismiss" => "modal", :type => "button"} ×
+            %span.discount-amount-mobile
+              10
+            %span.discount-percent-mobile %
             %button.button-discount{:type => "submit"}
               Đăng ký
             %input.input-discount{:placeholder => "NHẬP ĐỊA CHỈ EMAIL CỦA BẠN", :name => "email"}
