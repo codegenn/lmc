@@ -270,7 +270,7 @@
           %span.discount-amount-pc
             = @amount
           %a{href: "https://fb.watch/8-4K-FIPYP", target: "_blank"}
-            = image_tag "discount-pc.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
+            = image_tag "discount-pc.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method", style: "image-rendering: -webkit-optimize-contrast;"
         .modal-content-mobile
           %form{:action => "/subscribers", :method => "post"}
             %button.close{"data-dismiss" => "modal", :type => "button"} ×

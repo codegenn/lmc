@@ -68,13 +68,12 @@
     position: relative;
     border: 2px solid #343a40;
     border-left: 40px solid #343a40;
-    padding: 15px;
     color: rgba(0, 0, 0, 0.5);
     font-size: small;
     display: inline-block;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url(#{image_path "discount-pc.jpg"})
+    -# background-size: contain;
+    -# background-repeat: no-repeat;
+    -# background-image: url(#{image_path "discount-pc.jpg"})
   }
   .discount-banner {
     position: fixed;
@@ -224,6 +223,7 @@
 %form{:action => "/subscribers", :method => "post"}
   .discount-banner.discount-banner-content-hide
     .wrapper-discount
+      = image_tag "discount-pc.jpg", loading: "lazy", style: "max-width: 100%; image-rendering: -webkit-optimize-contrast;"
       .wrapper-text-outside
         = "Giảm giá #{@amount}%"
       %span.discount-amount
