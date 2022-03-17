@@ -25,9 +25,24 @@
 
   .discount-amount {
     position: absolute;
-    top: 15%;
+    top: 35%;
     left: 35%;
-    font-size: 110px;
+    width: 15%;
+    height: 25%;
+    text-align: end;
+    font-size: 6vw;
+    line-height: 40%;
+  }
+
+  .discount-amount-pc {
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    width: 15%;
+    height: 25%;
+    text-align: end;
+    font-size: 10vw;
+    line-height: 40%;
   }
 
   @media (max-width: 575px) {
@@ -141,9 +156,13 @@
 
   .discount-amount-mobile {
     position: absolute;
-    top: 25%;
-    left: 50%;
-    font-size: 110px;
+    top: 40%;
+    left: 47%;
+    width: 26%;
+    height: 21%;
+    text-align: end;
+    font-size: 25vw;
+    line-height: 55%;
   }
 
   .discount-percent-mobile {
@@ -179,7 +198,7 @@
 
     .button-discount {
       bottom: 25% !important;
-      left: 55% !important;
+      left: 64% !important;
       right: 3px;
       height: 32px;
       font-size: 9px;
@@ -188,9 +207,9 @@
 
     .input-discount {
       bottom: 25%;
-      right: 45%;
+      right: 37%;
       height: 32px;
-      width: 40%;
+      width: 50%;
       font-size: 10px;
     }
 
@@ -206,12 +225,12 @@
   .discount-banner.discount-banner-content-hide
     .wrapper-discount
       .wrapper-text-outside
-        Giảm giá 10%
+        = "Giảm giá #{@amount}%"
       %span.discount-amount
-        10
+        = @amount
       %button.button-discount{:type => "submit"}
         Đăng ký
-      %input.input-discount{:placeholder => "NHẬP ĐỊA CHỈ EMAIL CỦA BẠN", :name => "email"}
+      %input.input-discount{:placeholder => @text, :name => "email"}
     
 / Banner
 .sec-banner.bg0.p-t-80.p-b-50.main-page

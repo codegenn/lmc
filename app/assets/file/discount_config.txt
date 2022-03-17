@@ -1,0 +1,1 @@
+{"text":"Nhập số điện thoại","discount":"10"}
