@@ -26,23 +26,25 @@
   .discount-amount {
     position: absolute;
     top: 35%;
-    left: 35%;
+    left: 34%;
     width: 15%;
     height: 25%;
     text-align: end;
-    font-size: 6vw;
-    line-height: 40%;
+    font-size: 7rem;
+    line-height: 50%;
+    color: #041d44;
   }
 
   .discount-amount-pc {
     position: absolute;
     top: 35%;
-    left: 35%;
+    left: 34%;
     width: 15%;
     height: 25%;
     text-align: end;
-    font-size: 10vw;
+    font-size: 7rem;
     line-height: 40%;
+    color: #041d44;
   }
 
   @media (max-width: 575px) {
@@ -162,16 +164,43 @@
     text-align: end;
     font-size: 25vw;
     line-height: 55%;
+    color: #041d44;
   }
 
   .discount-percent-mobile {
     position: absolute;
-    top: 35%;
+    top: 37%;
     left: 75%;
-    font-size: 35px;
+    font-size: 60px;
+  }
+
+  @media only screen and (max-width: 991px) {
+    .button-discount {
+      bottom: 25% !important;
+      left: 64% !important;
+      right: 3px;
+      height: 32px;
+      font-size: 9px;
+      min-width: 100px;
+    }
+
+    .input-discount {
+      bottom: 25%;
+      right: 37%;
+      height: 32px;
+      width: 50%;
+      font-size: 10px;
+    }
   }
 
   @media only screen and (max-width: 775px) {
+    .discount-percent-mobile {
+      position: absolute;
+      top: 35%;
+      left: 75%;
+      font-size: 35px;
+    }
+
     .parner-title {
       font-size: 17px;
     }
@@ -193,23 +222,6 @@
 
     .discount-banner-content-hide {
       transform: translateX(260px);
-    }
-
-    .button-discount {
-      bottom: 25% !important;
-      left: 64% !important;
-      right: 3px;
-      height: 32px;
-      font-size: 9px;
-      min-width: 100px;
-    }
-
-    .input-discount {
-      bottom: 25%;
-      right: 37%;
-      height: 32px;
-      width: 50%;
-      font-size: 10px;
     }
 
     .wrapper-text-outside {
@@ -385,7 +397,10 @@
   }
 
 :javascript
-  
+  $(document).ready(function() {
+    if($(window).width() < 991) $('#promotion-new').modal('show')
+    $(".wrapper-text-outside").click();
+  });
 
   $(".wrapper-text-outside").click(function() {
     let parent = $(this).closest('.discount-banner')

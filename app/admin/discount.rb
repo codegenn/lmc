@@ -8,8 +8,8 @@ ActiveAdmin.register_page "Discount" do
 
     page_action :change_discount, method: :post do
         data = {}
-        data["text"] = params["text"]
-        data["discount"] = params["amount"]
+        data["text"] = params["text"] if params["text"].present?
+        data["discount"] = params["amount"] if params["amount"].present?
         File.open("app/assets/file/discount_config.txt", "w") { |f| f.write data.to_json }
         redirect_to "/admin/discount"
     end
