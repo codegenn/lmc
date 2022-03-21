@@ -17,12 +17,11 @@ class FoundationsController < ApplicationController
   def show
     @blog = Foundation.friendly.find(params[:id])
     meta_data(
-      "Nền Tảng",
-      "Nền Tảng",
-      "https://d1monvl96vvqbd.cloudfront.net/foundations/foundation_images/000/000/173/original/sdgs-edit.jpg?1642493254",
-      "https://www.lmcation.com/#{I18n.locale.to_s}/foundations",
-      @keyword.nil? ? I18n.t("keyword") : @keyword
-    )
+        "lmcation.com, lmcation",
+        "Đồ Mặc Nhà - Đồ Ngủ, Gym-to-Swim, Đồ Bơi, Đồ Thể Thao",
+        "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png",
+        "https://www.lmcation.com/#{I18n.locale.to_s}"
+      )
   end
 
   def set_menu
