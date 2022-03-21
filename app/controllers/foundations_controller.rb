@@ -16,6 +16,13 @@ class FoundationsController < ApplicationController
 
   def show
     @blog = Foundation.friendly.find(params[:id])
+    meta_data(
+      "Nền Tảng",
+      "Nền Tảng",
+      "https://d1monvl96vvqbd.cloudfront.net/foundations/foundation_images/000/000/173/original/sdgs-edit.jpg?1642493254",
+      "https://www.lmcation.com/#{I18n.locale.to_s}/foundations",
+      @keyword.nil? ? I18n.t("keyword") : @keyword
+    )
   end
 
   def set_menu
