@@ -18,7 +18,7 @@ class FoundationsController < ApplicationController
     @blog = Foundation.friendly.find(params[:id])
     meta_data(
         "lmcation.com, lmcation",
-        "Đồ Mặc Nhà - Đồ Ngủ, Gym-to-Swim, Đồ Bơi, Đồ Thể Thao",
+        @blog.title,
         @blog.f_image_url,
         "https://www.lmcation.com/#{I18n.locale.to_s}"
     )
