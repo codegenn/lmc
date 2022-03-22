@@ -1,0 +1,57 @@
+<div class="col-6 col-sm-4 col-md-4 col-lg-3 p-b-35 isotope-item women">
+  <div class="block2">
+    <% if product.stocks.empty? || product.out_of_stock? %>
+      <div class="block2-pic oos">
+        <span class="stext-112 cl3 out-of-stock"></span>
+        <%= I18n.t("page.product.out_of_stock") %>
+      </div>
+    <% end %>
+    <div class="block2-pic hov-img0 hov-change-img">
+      <%= link_to product_path(product.slug) do %>
+        <%= cl_image_tag product.product_images.first.try(:image_url), loading:"lazy", alt: "#{product.title}", title: "#{product.title}" %>
+        <%= cl_image_tag product.product_images.second.try(:image_url), class: 'img-top', loading:"lazy", alt: "#{product.title}", title: "#{product.title}" %>
+      <% end %>
+    </div>
+    <div class="block2-txt flex-w flex-t p-t-14">
+      <div class="block2-txt-child1 flex-col-l">
+        <%= link_to product_path(product.slug), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6 title-product" do %>
+          <%= product.title %>
+        <% end %>
+        <span class="mtext-102 cl3">
+          <% if product.promotion_price.present? %>
+            <div class="promotion-price">
+              <%= "#{number_with_delimiter(product.price.to_i, :delimiter => '.')} VND" %>
+            </div>
+            <b>
+              <%= "#{number_with_delimiter(product.promotion_price.to_i, :delimiter => '.')} VND" %>
+            </b>
+          <% else %>
+            <%= "#{number_with_delimiter(product.price.to_i, :delimiter => '.')} VND" %>
+          <% end %>
+        </span>
+        <span class="stext-105 cl3">
+          <% count = product.stocks.map(&:color).uniq.count %>
+          <% if count == 1 %>
+            <%= I18n.t("page.product.single_colour") %>
+          <% else %>
+            <%= I18n.t("page.product.other_colour_count", count: count) %>
+          <% end %>
+        </span>
+      </div>
+      <div class="block2-txt-child2 flex-r p-t-3">
+        <% pro_ids = @favorite.try(:product_ids) || [] %>
+        <%= link_to favorite_path(product.id), method: :put, remote: true, class: "#{'js-addedwish-b2' if pro_ids.include?(product.id)} wishlist-#{product.id} btn-addwish-b2 dis-block pos-relative js-addwish-b2" do %>
+          <%= cl_image_tag "https://lmcation.s3.ap-southeast-1.amazonaws.com/icons/icon-heart-01.png", class: "icon-heart1 dis-block trans-04", alt: 'ICON', loading:"lazy" %>
+          <%= cl_image_tag "https://lmcation.s3.ap-southeast-1.amazonaws.com/icons/icon-heart-02.png", class: "icon-heart2 dis-block trans-04 ab-t-l", alt: 'ICON', loading:"lazy" %>
+        <% end %>
+      </div>
+      <% if product.has_promotion %>
+        <div class="block2-txt-promo flex-col-l bor10">
+          <span class="mtext-103 cl3 promotion">
+            <%= product.promotion %>
+          </span>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

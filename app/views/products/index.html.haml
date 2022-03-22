@@ -21,7 +21,7 @@
               %i.zmdi.zmdi-search
             = text_field_tag :q, nil, placeholder: I18n.t("search.input"), class: 'mtext-107 cl2 size-114 plh2 p-r-15', value: params[:q]
     - if @category || @check
-      .row.isotope-grid
+      .row.isotope-grid#content-page
         - @products.each do |product|
           .col-6.col-sm-4.col-md-4.col-lg-3.p-b-35.isotope-item.women
             / Block2
@@ -140,3 +140,29 @@
     height: 50px;
     -webkit-line-clamp: 3;
   }
+:javascript
+  var page = 1
+  function get_more_product() {
+    let url = new URL(window.location.href)
+    let category = url.searchParams.get("category");
+    $.ajax({
+      type: "POST",
+      url: "/get_more_product",
+      data: {page: page, category: category},
+      success: function (msg) {
+        msg.data.forEach(element => $("#content-page").append(element));
+      }
+    });
+    page = page + 1
+  }
+
+  var lastScrollTop = 0;
+  $(window).scroll(function() {
+    var st = $(this).scrollTop();
+    if (st > lastScrollTop){
+      if($(window).scrollTop() + $(window).height() == $(document).height()) {
+        get_more_product()
+      }
+    }
+    lastScrollTop = st;
+  });

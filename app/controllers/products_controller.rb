@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show]
   before_action :set_menu
   before_action :set_bread
+  skip_before_action :verify_authenticity_token, :only => [:get_more_product]
 
   def index
     breadcrumb I18n.t("page.menu.shop"), "products"
@@ -15,7 +16,7 @@ class ProductsController < ApplicationController
       @keyword = I18n.t("keyword_sport") unless category.include?("do-mac-nha-do-ngu")
       # Rails.cache.fetch(cache_key(category)) do
         @category = Category.friendly.find(category)
-        @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
+        @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc).limit(8)
       # end
       breadcrumb @category.name, "?category=#{@category.slug}"
       @data_bread.push({name: @category.name, item: "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}"})
@@ -45,6 +46,24 @@ class ProductsController < ApplicationController
       "https://www.lmcation.com/#{I18n.locale.to_s}/products",
       @keyword.nil? ? I18n.t("keyword") : @keyword
     )
+  end
+
+  def get_more_product
+    file = File.open("app/views/products/_product.html.haml")
+    data = file.read
+    rs = []
+    category = params[:category]
+    page = params[:page]
+    @category = Category.friendly.find(category)
+    @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc).limit(4).offset(page.to_i*4+4)
+    @products.each do |product|
+      html = render_to_string :inline => data, :locals => {:product => product}
+      rs << html
+    end
+    respond_to do |format|
+      msg = { :data => rs}
+      format.json  { render :json => msg }
+    end
   end
 
   def show

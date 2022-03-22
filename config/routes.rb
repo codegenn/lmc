@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   match "/422", to: "errors#unacceptable", via: :all
   match "/500", to: "errors#internal_server_error", via: :all
   post 'destroy_item/:id', to: "line_items#destroy_item"
+  post '/get_more_product', to: "products#get_more_product"
   scope "(:locale)", :locale => /en|vi/ do
     get 'vnpay-fallback', to: "orders#fallback"
     get 'store/index'
