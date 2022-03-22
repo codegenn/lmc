@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
       @keyword = I18n.t("keyword_sport") unless category.include?("do-mac-nha-do-ngu")
       Rails.cache.fetch(cache_key(category)) do
         @category = Category.friendly.find(category)
-        @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc)
+        @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc).limit(10)
       end
       breadcrumb @category.name, "?category=#{@category.slug}"
       @data_bread.push({name: @category.name, item: "https://www.lmcation.com/#{I18n.locale}/products?category=#{@category.slug}"})
