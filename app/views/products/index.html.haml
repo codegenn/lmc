@@ -152,7 +152,6 @@
       data: {page: page, category: category, total_page: total_page},
       success: function (msg) {
         total_page = msg.total_page
-        console.log(msg.total_page)
         msg.data.forEach(element => $("#content-page").append(element));
       }
     });
