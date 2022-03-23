@@ -20,7 +20,7 @@ class FoundationsController < ApplicationController
         "lmcation.com, lmcation",
         @blog.title,
         @blog.f_image_url,
-        "https://www.lmcation.com/#{I18n.locale.to_s}"
+        "https://www.lmcation.com/#{I18n.locale.to_s}/foundations/#{@blog.slug}"
     )
   end
 
