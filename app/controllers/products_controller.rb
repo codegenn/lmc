@@ -54,14 +54,16 @@ class ProductsController < ApplicationController
     rs = []
     category = params[:category]
     page = params[:page]
+    total_page = params[:total_page]
     @category = Category.friendly.find(category)
-    @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc).limit(4).offset(page.to_i*4+4)
+    @products = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc).limit(8).offset(page.to_i*8)
+    total_page = @category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc).count/8 + 1 if total_page.to_i == -1
     @products.each do |product|
       html = render_to_string :inline => data, :locals => {:product => product}
       rs << html
     end
     respond_to do |format|
-      msg = { :data => rs}
+      msg = { :data => rs, :total_page => total_page}
       format.json  { render :json => msg }
     end
   end

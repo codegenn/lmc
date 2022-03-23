@@ -142,14 +142,17 @@
   }
 :javascript
   var page = 1
+  var total_page = -1
   function get_more_product() {
     let url = new URL(window.location.href)
     let category = url.searchParams.get("category");
     $.ajax({
       type: "POST",
       url: "/get_more_product",
-      data: {page: page, category: category},
+      data: {page: page, category: category, total_page: total_page},
       success: function (msg) {
+        total_page = msg.total_page
+        console.log(msg.total_page)
         msg.data.forEach(element => $("#content-page").append(element));
       }
     });
@@ -160,8 +163,8 @@
   $(window).scroll(function() {
     var st = $(this).scrollTop();
     if (st > lastScrollTop){
-      if($(window).scrollTop() + $(window).height() == $(document).height()) {
-        get_more_product()
+      if($(window).scrollTop() + $(window).height() >= $(document).height()*80/100) {
+        if (page <= total_page || total_page == -1) get_more_product()
       }
     }
     lastScrollTop = st;
