@@ -19,7 +19,7 @@ class FoundationsController < ApplicationController
     meta_data(
         "lmcation.com, lmcation",
         @blog.title,
-        @blog.f_image_url,
+        Cloudinary::Utils.cloudinary_url(@blog.f_image_url),
         "https://www.lmcation.com/#{I18n.locale.to_s}/foundations/#{@blog.slug}"
     )
   end
