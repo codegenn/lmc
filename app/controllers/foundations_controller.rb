@@ -17,7 +17,7 @@ class FoundationsController < ApplicationController
   def show
     @blog = Foundation.friendly.find(params[:id])
     meta_data(
-        "lmcation.com, lmcation",
+        @blog.title,
         @blog.title,
         Cloudinary::Utils.cloudinary_url(@blog.f_image_url),
         "https://www.lmcation.com/#{I18n.locale.to_s}/foundations/#{@blog.slug}"
