@@ -114,7 +114,7 @@ class OrdersController < ApplicationController
       :shop_id => ENV['FUNDIIN_SHOP_ID'],
       :order_id => order_id
     }
-
+    binding.pry
     Fundiin.create_booking_sms(body)
   end
 
