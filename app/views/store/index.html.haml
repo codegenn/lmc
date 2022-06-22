@@ -281,6 +281,15 @@
             .block1-txt-child2.p-b-4.trans-05
               .block1-link.stext-101.cl0.trans-09
                 = I18n.t "page.index.shop_now"
+  - if Medium.all.count > 0
+    .container
+      .row.isotope-grid
+        .block1-txt-child1.flex-col-l.center
+          %span.block1-name.ltext-108.trans-04.p-b-8.parner-title
+            = I18n.t "page.menu.medias"
+      .row.d-flex
+        .col-md-12.p-b-30.m-lr-auto
+          = render 'media'
   .container
     .row
       - @cats.each do |cat|
