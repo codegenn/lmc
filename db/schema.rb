@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210901094030) do
+ActiveRecord::Schema.define(version: 20220622072347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,18 +59,10 @@ ActiveRecord::Schema.define(version: 20210901094030) do
 
   add_index "applications", ["job_id"], name: "index_applications_on_job_id", using: :btree
 
-  create_table "assets", force: :cascade do |t|
-    t.string   "storage_uid"
-    t.string   "storage_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "storage_width"
-    t.integer  "storage_height"
-    t.float    "storage_aspect_ratio"
-    t.integer  "storage_depth"
-    t.string   "storage_format"
-    t.string   "storage_mime_type"
-    t.string   "storage_size"
+  create_table "ar_internal_metadata", primary_key: "key", force: :cascade do |t|
+    t.string   "value"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "bottom_stocks", force: :cascade do |t|
@@ -216,6 +208,17 @@ ActiveRecord::Schema.define(version: 20210901094030) do
   add_index "line_items", ["order_id"], name: "index_line_items_on_order_id", using: :btree
   add_index "line_items", ["stock_id"], name: "index_line_items_on_stock_id", using: :btree
 
+  create_table "mautic_connections", force: :cascade do |t|
+    t.string   "type"
+    t.string   "url"
+    t.string   "client_id"
+    t.string   "secret"
+    t.string   "token"
+    t.string   "refresh_token"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "measurements", force: :cascade do |t|
     t.integer "category_id"
     t.string  "size"
@@ -226,22 +229,21 @@ ActiveRecord::Schema.define(version: 20210901094030) do
     t.boolean "sleeve_circumference"
   end
 
+  create_table "media", force: :cascade do |t|
+    t.string   "media_image_content_type"
+    t.string   "url"
+    t.string   "media_image_file_name"
+    t.string   "alt"
+    t.string   "media_image"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "messages", force: :cascade do |t|
     t.string   "email"
     t.string   "question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "order_details", force: :cascade do |t|
-    t.string   "product_id"
-    t.string   "product_name"
-    t.integer  "quantity"
-    t.float    "total_price"
-    t.float    "total_promotion"
-    t.string   "total_other"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -263,15 +265,19 @@ ActiveRecord::Schema.define(version: 20210901094030) do
     t.float    "grand_total"
     t.string   "voucher_code"
     t.string   "payment_status"
-    t.string   "list_item"
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "partners", force: :cascade do |t|
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "alt"
+    t.string   "url"
+    t.string   "partner_image"
+    t.string   "partner_image_file_name"
+    t.string   "partner_image_content_type"
   end
 
   create_table "product_images", force: :cascade do |t|
