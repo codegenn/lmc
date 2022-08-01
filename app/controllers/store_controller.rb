@@ -70,4 +70,12 @@ class StoreController < ApplicationController
   def cache_key(key)
     "#{key}_#{I18n.locale}"
   end
+
+  def deliver
+    name = I18n.t("page.delivery.title")
+    item = "https://www.lmcation.com/vi/shipping"
+    @data_bread.push({name: name, item: item})
+    list_bread(@data_bread)
+    breadcrumb(name, item)
+  end
 end
