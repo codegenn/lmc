@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     get 'policy', to:"store#policy"
     get "huong-dan-mua-hang", to: "store#privacy_buy"
     get "quy-dinh-thanh-toan-va-van-chuyen", to: "store#privacy_payment"
+    get "shipping", to: "store#deliver"
     get 'store/ping'
     get 'privacy', to:"store#privacy"
     root 'store#index', as: 'store'

@@ -254,7 +254,7 @@
           = I18n.t "page.index.return"
       .col-md-3.col-xl-3
         %i.zmdi.zmdi-car-taxi
-        %a.policy-text{:href => policy_path, hreflang: "#{I18n.locale}"}
+        %a.policy-text{:href => shipping_path, hreflang: "#{I18n.locale}"}
           = I18n.t "page.index.delivery"
       .col-md-4.col-xl-4.p-b-30.m-lr-auto
       .col-md-4.col-xl-4.p-b-30.m-lr-auto
@@ -301,6 +301,15 @@
             .block1-txt-child2.p-b-4.trans-05
               .block1-link.stext-101.cl0.trans-09
                 = I18n.t "page.index.shop_now"
+  - if Medium.all.count > 0
+    .container
+      .row.isotope-grid
+        .block1-txt-child1.flex-col-l.center.m-t-0
+          %span.block1-name.ltext-108.trans-04.p-b-8.parner-title
+            = I18n.t "page.menu.medias"
+      .row.d-flex
+        .col-md-12.p-b-30.m-lr-auto
+          = render 'media'
   .container
     .row
       - @cats.each do |cat|
@@ -357,19 +366,15 @@
                 = I18n.t "page.index.more"
   .container
     .row.isotope-grid
-      .block1-txt-child1.flex-col-l.center
+      .block1-txt-child1.flex-col-l.center.m-t-0
         %span.block1-name.ltext-108.trans-04.p-b-8.parner-title
           = I18n.t "page.menu.partners"
     .row.d-flex
       .col-md-12.p-b-30.m-lr-auto
-        = cl_image_tag  "#{cdn_url}/systems/Crop+logo-03.png", class: "partner-img partner-mobile", loading:"lazy",  alt: "lmcation logo"
-        = cl_image_tag  "#{cdn_url}/systems/Crop+logo-02.png", class: "partner-img partner-mobile", loading:"lazy",  alt: "lmcation logo"
-        = cl_image_tag  "#{cdn_url}/systems/Crop+logo-05.png", class: "partner-img  partner-mobile", loading:"lazy",  alt: "lmcation logo"
-        = cl_image_tag  "#{cdn_url}/systems/Crop+logo-04.png", class: "partner-img  partner-mobile", loading:"lazy",  alt: "lmcation logo"
-        = cl_image_tag  "#{cdn_url}/systems/Crop+logo-01.png", class: "partner-img  partner-mobile", loading:"lazy",  alt: "lmcation logo"
-        = cl_image_tag  "#{cdn_url}/systems/logo-6.png", class: "partner-img partner-mobile", loading:"lazy",  alt: "lmcation logo"
-        = cl_image_tag  "#{cdn_url}/systems/logo-7.png", class: "partner-img partner-mobile", loading:"lazy",  alt: "lmcation logo"
-        = cl_image_tag  "#{cdn_url}/systems/logo-8.png", class: "partner-img partner-mobile", loading:"lazy",  alt: "lmcation logo"
+        - if Partner.all.count > 1
+          = render 'partner_b'
+        - else
+          = render 'partner_a'
 #susimg.modal.fade{:role => "dialog"}
   .modal-dialog
     .modal-content{:style => "background-color: white;"}
