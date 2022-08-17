@@ -262,26 +262,7 @@
     #myBtn.btn-back-to-top
       %span.symbol-btn-back-to-top
         %i.zmdi.zmdi-chevron-up
-    #promotion-new.modal.fade{:role => "dialog"}
-      .modal-dialog
-        / Modal content
-        .modal-content-desktop
-          %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          %span.discount-amount-pc
-            = @amount
-          %a{href: "https://fb.watch/8-4K-FIPYP", target: "_blank"}
-            = image_tag "discount-pc.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method", style: "image-rendering: -webkit-optimize-contrast;"
-        .modal-content-mobile
-          %form{:action => "/subscribers", :method => "post"}
-            %button.close{"data-dismiss" => "modal", :type => "button"} ×
-            %span.discount-amount-mobile
-              = @amount
-            %span.discount-percent-mobile %
-            %button.button-discount{:type => "submit"}
-              Đăng ký
-            %input.input-discount{:placeholder => @text, :name => "email"}
-            %a{href: "https://fb.watch/8-4K-FIPYP", target: "_blank"}
-              = image_tag "discount-mobile.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
+    / = render 'layouts/modal'
     / Global site tag (gtag.js) - Google Analytics
     %script{src:"https://scripts.sirv.com/sirv.js", defer: :true}
     %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-164577749-1", defer: :true}
