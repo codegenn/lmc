@@ -23,6 +23,30 @@
     color: #4f8ca8 !important;
   }
 
+  .discount-amount {
+    position: absolute;
+    top: 35%;
+    left: 34%;
+    width: 15%;
+    height: 25%;
+    text-align: end;
+    font-size: 7rem;
+    line-height: 50%;
+    color: #041d44;
+  }
+
+  .discount-amount-pc {
+    position: absolute;
+    top: 35%;
+    left: 34%;
+    width: 15%;
+    height: 25%;
+    text-align: end;
+    font-size: 7rem;
+    line-height: 40%;
+    color: #041d44;
+  }
+
   @media (max-width: 575px) {
     .susgoal-body .susgoal {
       font-family: Gotham-Medium !important;
@@ -41,22 +65,19 @@
     }
   }
   .wrapper-discount {
-    display none;
     height: 303px;
     width: 100%;
     position: relative;
     border: 2px solid #343a40;
     border-left: 40px solid #343a40;
-    padding: 15px;
     color: rgba(0, 0, 0, 0.5);
     font-size: small;
     display: inline-block;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url(#{image_path "discount-pc.jpg"})
+    -# background-size: contain;
+    -# background-repeat: no-repeat;
+    -# background-image: url(#{image_path "discount-pc.jpg"})
   }
   .discount-banner {
-    display:none;
     position: fixed;
     bottom: 30%;
     right: 0;
@@ -65,6 +86,11 @@
     z-index: 9999;
     transition: transform 1s;
   }
+
+  / .discount-banner:after {
+  /  display: inline-block;
+  /  content: "\00d7"; /* This will render the 'X' */
+  / }
 
   .wrapper-text-outside {
     font-size: 20px;
@@ -134,7 +160,52 @@
     margin: 0 2%;
   }
 
+  .discount-amount-mobile {
+    position: absolute;
+    top: 40%;
+    left: 47%;
+    width: 26%;
+    height: 21%;
+    text-align: end;
+    font-size: 25vw;
+    line-height: 55%;
+    color: #041d44;
+  }
+
+  .discount-percent-mobile {
+    position: absolute;
+    top: 37%;
+    left: 75%;
+    font-size: 60px;
+  }
+
+  @media only screen and (max-width: 991px) {
+    .button-discount {
+      bottom: 25% !important;
+      left: 64% !important;
+      right: 3px;
+      height: 32px;
+      font-size: 9px;
+      min-width: 100px;
+    }
+
+    .input-discount {
+      bottom: 25%;
+      right: 37%;
+      height: 32px;
+      width: 50%;
+      font-size: 10px;
+    }
+  }
+
   @media only screen and (max-width: 775px) {
+    .discount-percent-mobile {
+      position: absolute;
+      top: 35%;
+      left: 75%;
+      font-size: 35px;
+    }
+
     .parner-title {
       font-size: 17px;
     }
@@ -151,60 +222,11 @@
 
     .discount-banner {
       width: 300px;
-    }
-
-    .discount-banner-content-hide {
-      transform: translateX(260px);
-    }
-
-    .button-discount {
-      bottom: 64px;
-      right: 3px;
-      height: 32px;
-      font-size: 9px;
-      min-width: 100px;
-    }
-
-    .input-discount {
-      bottom: 64px;
-      right: 107px;
-      height: 32px;
-      width: 130px;
-      font-size: 10px;
-    }
-
-    .wrapper-text-outside {
-      bottom: -30px;
-    }
-
-    .wrapper-discount {
-      background-image: url(#{image_path "discount-mobile.jpg"});
-      height: 261px;
-    }
-
-    .discount-banner {
       display: none;
-      width: 300px;
     }
 
     .discount-banner-content-hide {
       transform: translateX(260px);
-    }
-
-    .button-discount {
-      bottom: 64px;
-      right: 3px;
-      height: 32px;
-      font-size: 9px;
-      min-width: 100px;
-    }
-
-    .input-discount {
-      bottom: 64px;
-      right: 107px;
-      height: 32px;
-      width: 130px;
-      font-size: 10px;
     }
 
     .wrapper-text-outside {
@@ -218,11 +240,14 @@
 %form{:action => "/subscribers", :method => "post"}
   .discount-banner.discount-banner-content-hide
     .wrapper-discount
+      = image_tag "discount-pc.jpg", loading: "lazy", style: "max-width: 100%; image-rendering: -webkit-optimize-contrast;"
       .wrapper-text-outside
-        Giảm giá 10%
+        = "Giảm giá #{@amount}%"
+      %span.discount-amount
+        = @amount
       %button.button-discount{:type => "submit"}
         Đăng ký
-      %input.input-discount{:placeholder => "NHẬP ĐỊA CHỈ EMAIL CỦA BẠN", :name => "email"}
+      %input.input-discount{:placeholder => @text, :name => "email"}
     
 / Banner
 .sec-banner.bg0.p-t-80.p-b-50.main-page
@@ -320,7 +345,6 @@
         = image_tag  "#{I18n.t "page.menu.susgoalimg-3"}", class: "partner-img sus-image", loading:"lazy",  alt: "lmcation logo", :onClick => "suspopup('#{I18n.t "page.menu.susgoal3-title"}', '#{I18n.t "page.menu.susgoal3"}')".html_safe
         = image_tag  "#{I18n.t "page.menu.susgoalimg-4"}", class: "partner-img sus-image", loading:"lazy",  alt: "lmcation logo", :onClick => "suspopup('#{I18n.t "page.menu.susgoal4-title"}', '#{I18n.t "page.menu.susgoal4"}')".html_safe
         = image_tag  "#{I18n.t "page.menu.susgoalimg-5"}", class: "partner-img sus-image", loading:"lazy",  alt: "lmcation logo", :onClick => "suspopup('#{I18n.t "page.menu.susgoal5-title"}', '#{I18n.t "page.menu.susgoal5"}')".html_safe
-
   .container
     .row
       .col-md-6.p-b-30.m-lr-auto
@@ -383,7 +407,10 @@
   }
 
 :javascript
-  
+  $(document).ready(function() {
+    if($(window).width() < 991) $('#promotion-new').modal('show')
+    $(".wrapper-text-outside").click();
+  });
 
   $(".wrapper-text-outside").click(function() {
     let parent = $(this).closest('.discount-banner')

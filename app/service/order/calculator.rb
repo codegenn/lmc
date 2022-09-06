@@ -37,6 +37,9 @@ class Order
         elsif discount.voucher_type == '55 off'
           total = cart.total_price
           total = total - (total * 55 / 100)
+        elsif discount.voucher_type == '45 off'
+          total = cart.total_price
+          total = total - (total * 45 / 100)
         elsif discount.voucher_type == '60 off'
           total = cart.total_price
           total = total - (total * 60 / 100)

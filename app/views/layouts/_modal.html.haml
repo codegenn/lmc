@@ -1,0 +1,11 @@
+#promotion.modal.fade{:role => "dialog"}
+  .modal-dialog
+    / Modal content
+    .modal-content-desktop
+      %button.close{"data-dismiss" => "modal", :type => "button"} ×
+      %a{href: "https://fb.watch/8-4K-FIPYP", target: "_blank"}
+        = image_tag "desktop.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
+    .modal-content-mobile
+      %button.close{"data-dismiss" => "modal", :type => "button"} ×
+      %a{href: "https://fb.watch/8-4K-FIPYP", target: "_blank"}
+        = image_tag "mobile.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
