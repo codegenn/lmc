@@ -145,7 +145,7 @@ class OrdersController < ApplicationController
   end
 
   def noti_success(order)
-    UserMailer.order_for_user(order).deliver_now if Rails.env.production?
+    # UserMailer.order_for_user(order).deliver_now if Rails.env.production?
     session[:cart_code] = nil
     flash[:success] = I18n.t('controllers.order.success')
     flash[:pixel] = 'Purchase'
