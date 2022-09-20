@@ -1,0 +1,11 @@
+#promotion.modal.fade{:role => "dialog"}
+  .modal-dialog
+    / Modal content
+    .modal-content-desktop
+      %button.close{"data-dismiss" => "modal", :type => "button"} ×
+      %a{href: "https://www.facebook.com/LMcation/photos/a.215586923143724/850292606339816/?gidzl=2CtJ2PXQ_duCsziEdqVvS0xGtmA56_yW5OsFLz8KedLFs8DItKBsS1xRX0NO4FPsI8pN1pEbhnH6d5J_Um", target: "_blank"}
+        = image_tag "https://d2r4f7zaymmsnl.cloudfront.net/banner/desktop.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "lmcation banner"
+    .modal-content-mobile
+      %button.close{"data-dismiss" => "modal", :type => "button"} ×
+      %a{href: "https://www.facebook.com/LMcation/photos/a.215586923143724/850292606339816/?gidzl=2CtJ2PXQ_duCsziEdqVvS0xGtmA56_yW5OsFLz8KedLFs8DItKBsS1xRX0NO4FPsI8pN1pEbhnH6d5J_Um", target: "_blank"}
+        = image_tag "https://d2r4f7zaymmsnl.cloudfront.net/banner/mobile.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "lmcation banner"
