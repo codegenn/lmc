@@ -2,7 +2,7 @@ ActiveAdmin.register Product do
 
   permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :is_hidden, :out_of_stock, :promotion_price, :price, :sort_order,
                 :has_promotion, :measurement_image_url, :measurement_image, :slug_url, category_ids: [],
-                stocks_attributes: [:id, :_destroy, :size, :color, :product_code], bottom_stocks_attributes: [:id, :_destroy, :size],
+                stocks_attributes: [:id, :_destroy, :size, :color, :product_code, :quantity], bottom_stocks_attributes: [:id, :_destroy, :size, :quantity],
                 product_images_attributes: [:id, :_destroy, :url, :pimage], color_images_attributes: [:id, :_destroy, :image_url, :color_name, :color_image],
                 translations_attributes: [:id, :locale, :title, :description, :promotion, :short_description, :measurement_description, :_destroy]
 
@@ -12,7 +12,7 @@ ActiveAdmin.register Product do
     column :title
     column :price
     column :slug
-    translation_status
+    # translation_status
     actions
   end
 
@@ -47,6 +47,7 @@ ActiveAdmin.register Product do
         stocks_form.input :size
         stocks_form.input :color, as: :string
         stocks_form.input :product_code
+        stocks_form.input :quantity
       end
       f.has_many :bottom_stocks, heading: false, allow_destroy: true do |stocks_form|
         stocks_form.input :size
@@ -101,10 +102,11 @@ ActiveAdmin.register Product do
         row :size
         row :color
         row :product_code
+        row :quantity
       end
-      attributes_table_for product.bottom_stocks do
-        row :size
-      end
+      # attributes_table_for product.bottom_stocks do
+      #   row :size
+      # end
     end
     active_admin_comments
   end
