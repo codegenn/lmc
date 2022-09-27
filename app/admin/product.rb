@@ -123,6 +123,8 @@ ActiveAdmin.register Product do
 
   controller do
     before_action :upload_product_image, only: [:create, :update]
+    after_action :add_kiot, only: [:create]
+    after_action :update_kiot, only: [:update]
 
     def upload_product_image
       image_attrs = params[:product][:product_images_attributes]
@@ -155,6 +157,37 @@ ActiveAdmin.register Product do
       end
     end
 
+    def add_kiot
+      @product.stocks.each do |stock|
+        payload = payload_add(stock)
+        KiotViet.add_product(payload, token)
+      end
+    end
+
+    def update_kiot
+      @product.stocks.each do |stock|
+
+        payload = payload_add(stock)
+        KiotViet.update_product(payload, token, get_id_kiot(stock.product_code))
+      end
+    end
+
+    def get_id_kiot(product_code)
+      repo = KiotViet.get_product(token, product_code)
+      data = JSON.parse(repo.body)
+      return data["inventories"].last["productId"]
+    end
+
+    def token
+      KiotViet.configure do |config|
+        config.client_id = ENV['KIOT_CLIENT_ID']
+        config.client_secret = ENV['KIOT_CLIENT_SECRET']
+      end
+      respon = KiotViet.get_token
+      token = respon["access_token"]
+      return "Bearer ".concat(token)
+    end
+
     def create
       create! { |success, failure|
         failure.html do
@@ -162,6 +195,55 @@ ActiveAdmin.register Product do
           redirect_to :back
         end
       }
+    end
+
+    def payload_add(stock)
+      payloads = {
+        "createdDate": "#{Time.now}",
+        "code": stock.product_code,
+        "barCode": stock.product_code,
+        "name": @product.title,
+        "fullName": @product.title,
+        "categoryId": @product&.category_ids.last,
+        "categoryName": Category&.find(@product&.category_ids.last).name,
+        "allowsSale": true,
+        "type": 2,
+        "hasVariants": false,
+        "weight": 0,
+        "unit": "VND",
+        "conversionValue": 1,
+        "description": "",
+        "modifiedDate": "#{Time.now}",
+        "isActive": true,
+        "description": @product.description,
+        "attributes": [
+          {
+            "attributeName": "SIZE",
+            "attributeValue": stock.size
+          },
+          {
+            "attributeName": "MÀU SẮC",
+            "attributeValue": stock.color
+          },
+        ],
+        "inventories": [
+          {
+            "branchId": 31669,
+            "branchName": "Chi nhánh trung tâm",
+            "cost": @product.price,
+            "onHand": stock.quantity,
+            "reserved": 0,
+            "actualReserved": 0,
+            "minQuantity": 0,
+            "maxQuantity": 99999999,
+            "isActive": true
+          }
+        ],
+        "images": [
+          @product.product_images.last.thumb_url.to_s
+        ]
+      }
+      return payloads
     end
   end
 end
