@@ -62,6 +62,10 @@ gem 'devise'
 gem 'cloudinary'
 gem "paperclip"
 gem 'unicorn'
+gem "omniauth"
+gem "omniauth-google-oauth2"
+gem "omniauth-facebook"
+gem "omniauth-rails_csrf_protection"
 
 ruby "2.6.0"
 gem 'globalize'

@@ -1,5 +1,5 @@
 .main-page.bg-img1.txt-center.p-tb-92.banner-bg
-  = cl_image_tag "#{cdn_url}/systems/lmcation+banner+7.jpg"
+  = cl_image_tag "#{cdn_url}/systems/lmcation+banner+5.jpg"
   %h1.ltext-105.cl0.txt-center.title
     = I18n.t "user.user_header"
   .mtext-105.cl0.txt-center.description
@@ -8,7 +8,7 @@
   .container
     .flex-w.flex-tr
       .size-210.bor10.p-lr-70.p-t-55.p-b-70.p-lr-15-lg.w-full-md
-        %h2.ltext-102
+        %h2.ltext-102.text-center
           = I18n.t "user.signin"
         %br
         - flash.each do |key, value|
@@ -23,13 +23,17 @@
             .bor8.m-b-20.how-pos4-parent
               = f.password_field :password, autocomplete: "current-password", class: 'stext-111 cl2 plh3 size-116 p-l-20'
           - if devise_mapping.rememberable?
-            .field
-              = f.check_box :remember_me
-              = f.label :remember_me
+            .field.m-b-20
+              = f.check_box :remember_me, class: "text-inline"
+              = f.label :remember_me, class: "text-inline"
           .actions
             = submit_tag I18n.t("user.submit"), class: 'flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer'
+          .line.mt-35.text-center
+            %span
+              = I18n.t("or")
+          = render "layouts/social"
       .size-210.bor10.p-lr-70.p-t-55.p-b-70.p-lr-15-lg.w-full-md
-        %h2.ltext-102
+        %h2.ltext-102.text-center
           = I18n.t "user.signup"
         %br
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|

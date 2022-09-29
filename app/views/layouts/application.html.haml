@@ -91,7 +91,8 @@
             .right-top-bar.flex-w.h-full
               -#= link_to I18n.t("page.footer.help"), store_path, class: "flex-c-m trans-04 p-lr-25"
               - if user_signed_in?
-                = link_to I18n.t("page.menu.my_account"), edit_user_registration_path, class: "flex-c-m trans-04 p-lr-25"
+                = link_to edit_user_registration_path, class: "flex-c-m trans-04 p-lr-25" do 
+                  .zmdi.zmdi-account.zmdi-hc-2x
               - else
                 = link_to I18n.t("page.menu.my_account"), new_user_session_path, class: "flex-c-m trans-04 p-lr-25"
               = link_to_unless I18n.locale == :vi, "VI", { locale: :vi }, { class: 'flex-c-m trans-04 p-lr-25' } if I18n.locale == :en
@@ -159,9 +160,9 @@
           %li
             .right-top-bar.flex-w.h-full
               - if user_signed_in?
-                = link_to I18n.t("page.menu.my_account"), edit_user_registration_path, class: "flex-c-m trans-04 p-lr-10"
+                = link_to edit_user_registration_path, class: "flex-c-m trans-04 p-lr-10 zmdi zmdi-account"
               - else
-                = link_to I18n.t("page.menu.my_account"), new_user_session_path, class: "flex-c-m trans-04 p-lr-10"
+                -# = link_to I18n.t("page.menu.my_account"), new_user_session_path, class: "flex-c-m trans-04 p-lr-10"
               = link_to_unless I18n.locale == :vi, "VI", { locale: :vi }, { class: 'flex-c-m trans-04 p-lr-25' } if I18n.locale == :en
               = link_to_unless I18n.locale == :en, "EN", { locale: :en }, { class: 'flex-c-m trans-04 p-lr-25' } if I18n.locale == :vi
         %ul.main-menu-m
