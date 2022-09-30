@@ -1,0 +1,21 @@
+- flash.each do |key, value|
+  = content_tag :div, value, class: "alert alert-#{key}" unless key == 'pixel'
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .field
+    = f.label :email, I18n.t("user.email")
+    .bor8.m-b-20.how-pos4-parent
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'stext-111 cl2 plh3 size-116 p-l-20'
+  .field
+    = f.label :password, I18n.t("user.password").upcase
+    .bor8.m-b-20.how-pos4-parent
+      = f.password_field :password, autocomplete: "current-password", class: 'stext-111 cl2 plh3 size-116 p-l-20'
+  - if devise_mapping.rememberable?
+    .field.m-b-20
+      = f.check_box :remember_me, class: "text-inline"
+      = f.label :remember_me, class: "text-inline"
+  .actions
+    = submit_tag I18n.t("user.submit"), class: 'flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer'
+  .line.mt-35.text-center
+    %span
+      = I18n.t("or")
+  = render "layouts/social"

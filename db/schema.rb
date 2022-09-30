@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20220622072347) do
+ActiveRecord::Schema.define(version: 20220928151150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -324,6 +324,7 @@ ActiveRecord::Schema.define(version: 20220622072347) do
     t.integer  "measurement_image_file_size",    limit: 8
     t.datetime "measurement_image_updated_at"
     t.boolean  "is_hidden",                                default: false
+    t.integer  "stock"
   end
 
   add_index "products", ["slug"], name: "index_products_on_slug", unique: true, using: :btree
@@ -334,6 +335,7 @@ ActiveRecord::Schema.define(version: 20220622072347) do
     t.string  "color"
     t.boolean "in_stock"
     t.string  "product_code"
+    t.integer "quantity"
   end
 
   create_table "subscribers", force: :cascade do |t|
@@ -351,6 +353,11 @@ ActiveRecord::Schema.define(version: 20220622072347) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "username"
+    t.string   "avatar"
+    t.datetime "dob"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

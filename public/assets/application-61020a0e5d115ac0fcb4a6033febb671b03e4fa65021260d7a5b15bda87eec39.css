@@ -199,6 +199,9 @@ a:hover {
   color: #0056b3;
   text-decoration: underline;
 }
+.text-bold {
+  font-weight: bold;
+}
 
 a:not([href]):not([tabindex]) {
   color: inherit;
@@ -8022,6 +8025,84 @@ a.bg-dark:focus, a.bg-dark:hover {
 
 .text-center {
   text-align: center !important;
+}
+
+.text-inline {
+  display: inline !important;
+}
+
+.text-red {
+  color: red;
+}
+.term-margin-50 {
+  margin-top: 50px;
+}
+.term-margin-20 {
+  margin-top: 20px;
+}
+.btn-social {
+  display: block;
+  height: 38px;
+  margin-top: 5px;
+  width: 100%;
+  text-align: center;
+  line-height: 38px;
+  font-weight: 700;
+  border-radius: 0.25em;
+} 
+.btn-facebook {
+  background-color: #3b5998;
+  border: 1px solid #3b5998;
+  color: #fff;
+}
+.btn-facebook:hover {
+  color: #fff;
+}
+.btn-google {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+.btn-google:hover {
+  color: #000;
+}
+.icon-container {
+  float: left;
+  position: relative;
+  width: 38px;
+  height: 38px;
+  color: #fff;
+}
+.sns-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  margin: auto;
+}
+
+.text-blue {
+  color: #00008b;
+}
+
+.mt-35 {
+  margin-top: 35px;
+}
+
+.line {
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+  line-height: .1em;
+  border-bottom: 1px solid #e6e6e6
+}
+
+.line span {
+  padding: 0 10px;
+  background: #fff;
 }
 
 @media (min-width: 576px) {
