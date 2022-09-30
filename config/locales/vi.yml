@@ -305,20 +305,17 @@ vi:
     signin: 'Đăng Nhập'
     signup: 'Đăng Ký'
     signup_btn: 'Đăng Ký'
-    email: 'Email'
     password: 'Mật khẩu'
     password_confirmation: 'Lặp lại mật khẩu'
     submit: 'Gửi'
-    phone: 'Điện Thoại'
-    first_name: 'Tên'
-    last_name: 'Họ'
-    post_orders: 'Theo dõi đơn hàng'
-    reward: "Điểm thưởng đổi quà"
-    sign_out: "Đăng xuất"
-    information: 'Thông tin tài khoản'
+    post_orders: 'THEO DÕI ĐƠN HÀNG'
+    reward: "ĐIỂM THƯỞNG ĐỔI QUÀ"
+    sign_out: "ĐĂNG XUẤT"
+    information: 'THÔNG TIN TÀI KHOẢN'
     no_order: 'Bạn chưa có đơn hàng nào'
     first_name: 'TÊN'
     last_name: 'HỌ'
+    user_name: "HỌ VÀ TÊN"
     email: 'EMAIL'
     address: 'ĐỊA CHỈ'
     district: 'QUẬN'
@@ -415,3 +412,9 @@ vi:
   or: "Hoặc"
   label_gg: "ĐĂNG NHẬP BẰNG GOOGLE"
   label_fb: "ĐĂNG NHẬP BẰNG FACEBOOK"
+  pass_noti: "Để trống nếu bạn không muốn đổi mật khẩu"
+  pass_confirm_noti: "Vui lòng nhập mật khẩu hiện tại để xác nhận thay đổi"
+  prom_1: "THEO DÕI BẢO HÀNH SẢN PHẨM VĨNH VIỄN"
+  prom_2: "TÍCH ĐIỂM ĐỔI QUÀ MIỄN PHÍ"
+  prom_3: "GIẢM 10% CHO ĐƠN HÀNG ĐẦU TIÊN"
+  prom_4: "QUYỀN LỢI LÀM ĐẸP LÊN TỚI 3 TRIỆU ĐỒNG"

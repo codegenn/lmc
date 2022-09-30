@@ -284,19 +284,16 @@ en:
     signin: 'Already a Member? Sign in'
     signup: 'Not a Member yet? Sign Up'
     signup_btn: 'Sign Up'
-    email: 'Email'
     password: 'Password'
     password_confirmation: 'Password Confirmation'
     submit: 'Submit'
-    phone: 'Phone Number'
-    first_name: 'First Name'
-    last_name: 'Last Name'
     post_orders: 'MY ORDER'
     reward: "REWARD POINTS"
     sign_out: "SIGN OUT"
     information: 'MY PROFILE'
     no_order: 'You dont have any order'
     first_name: 'FIRST NAME'
+    user_name: "USER NAME"
     last_name: 'LAST NAME'
     email: 'EMAIL'
     address: 'ADDRESS'
@@ -339,3 +336,9 @@ en:
   label_gg: "SIGN IN WITH GOOGLE"
   label_fb: "SIGN IN WITH FACEBOOK"
   or: "Or"
+  pass_noti: "Leave blank if you don't want to change it"
+  pass_confirm_noti: "We need your current password to confirm your changes"
+  prom_1: "FOLLOWING PRODUCT LIFETIME WARRANTY"
+  prom_2: "LOYALTY PROGRAM POINTS & FREE GIFTS"
+  prom_3: "GET 10% OFF VOUCHER"
+  prom_4: "BEAUTY CARE BENEFITS UP TO 3 MILLION VND"
