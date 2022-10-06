@@ -8,12 +8,19 @@
   .container
     .flex-w.flex-tr
       .size-210.bor10.p-lr-70.p-t-55.p-b-70.p-lr-15-lg.w-full-md
-        %h2.ltext-102.text-center
+        %h2.ltext-102.text-center.title-sign
           = I18n.t "user.signin"
         %br
         = render "layouts/sign_in"
       .size-210.bor10.p-lr-70.p-t-55.p-b-70.p-lr-15-lg.w-full-md
-        %h2.ltext-102.text-center
+        %h2.ltext-102.text-center.title-sign
           = I18n.t "user.signup"
         %br
         = render "layouts/sign_up"
+:css
+  @media (max-width: 400px) {
+    .title-sign {
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+  }

@@ -302,8 +302,8 @@ vi:
   user:
     user_header: 'LOG IN/SIGN UP'
     signin_description: ''
-    signin: 'Đăng Nhập'
-    signup: 'Đăng Ký'
+    signin: 'ĐĂNG NHẬP'
+    signup: 'ĐĂNG KÝ'
     signup_btn: 'Đăng Ký'
     password: 'Mật khẩu'
     password_confirmation: 'Lặp lại mật khẩu'
@@ -322,6 +322,7 @@ vi:
     city: 'THÀNH PHỐ'
     phone: 'ĐIỆN THOẠI'
     note: 'GHI CHÚ'
+    pass_note: "Mật khẩu cần ít nhất 6 ký tự."
   jobs:
     partner: 'KẾT NỐI VỚI LMCATION'
     partner_btn: 'Kết nối'

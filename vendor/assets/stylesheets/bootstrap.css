@@ -606,6 +606,11 @@ pre code {
   padding-left: 15px;
   width: 100%;
 }
+@media (max-width: 400px) {
+  .sns-sign-up {
+    font-size: 12px;
+  }
+}
 
 @media (min-width: 576px) {
   .container {

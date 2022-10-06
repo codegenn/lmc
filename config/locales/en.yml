@@ -301,6 +301,7 @@ en:
     city: 'CITY'
     phone: 'PHONE'
     note: 'NOTE'
+    pass_note: "*(6 characters minimum)"
   activerecord:
     errors:
       template:

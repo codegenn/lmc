@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   match "/500", to: "errors#internal_server_error", via: :all
   post 'destroy_item/:id', to: "line_items#destroy_item"
   scope "(:locale)", :locale => /en|vi/ do
+    get "demo-fittingroom", to: "fittingroom#index"
     get 'vnpay-fallback', to: "orders#fallback"
     get 'store/index'
     get 'thoi-trang-ton-vinh-phu-nu', to: "store#about"

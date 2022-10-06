@@ -17,7 +17,7 @@
             = f.label :password, I18n.t("user.password").upcase
             - if @minimum_password_length
               %em
-                (#{@minimum_password_length} characters minimum)
+                = I18n.t("user.pass_note")
             .bor8.m-b-20.how-pos4-parent
               = f.password_field :password, autocomplete: "new-password", class: 'stext-111 cl2 plh3 size-116 p-l-20'
           .field

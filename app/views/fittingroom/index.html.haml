@@ -1,0 +1,149 @@
+%script{:src => "https://wearfits-cdn.azurewebsites.net/static/js/wearfits.fr.bundle.min.js?v=96", :type => "text/javascript"}
+:javascript
+  wearfits.current_garment_name = "Melia";
+  wearfits.showRayTracingButton = false;
+  wearfits.showARButton = false;
+  wearfits.showMaterialPresets = false;
+  wearfits.showSizeSelectionUI = false;
+  wearfits.showAvatarSelectionUI = false;
+  wearfits.showComfortMapButton = false;
+
+  // Downloaded garment data, configures it and loads default avatar with the garment
+  wearfits.loadDefaultOrCreateIt();
+
+  // This line does the same as wearfits.loadDefaultOrCreateIt but creates avatar with input elements params
+  //changeGarment(wearfits.current_garment_name)
+
+  //Handler is fired when new garment or avatar is loaded
+  wearfits.addEventListener("avatar_and_garment_load", () => {
+
+    //Update size list element
+    const sizes = wearfits.sizesByName[wearfits.current_garment_name] || [];
+    window.size_list.innerHTML = "";
+    for (let size of sizes) {
+      let opt = document.createElement('option');
+      opt.value = size;
+      opt.innerHTML = size;
+      if (size === wearfits.current_garment_size) {
+        opt.selected = "selected"
+      }
+      window.size_list.appendChild(opt);
+    }
+
+    //Update color list
+    window.color_select.innerHTML = "";
+    for (let material_set of wearfits.garment.material_sets) {
+      let opt = document.createElement('option');
+      // Preview image url material_set.s3_preview_url
+      opt.value = material_set.name;
+      opt.innerHTML = material_set.name;
+      if (material_set.name === wearfits.current_garment_size) {
+        opt.selected = "selected"
+      }
+      window.color_select.appendChild(opt);
+    }
+
+    // Update prefered size
+    window.prefered_size.innerHTML = wearfits.getPreferedSize();
+
+  })
+
+  async function loadAvatar() {
+    //Get avatar id
+    const hash = await wearfits.getAvatarHashFromServer(height.value, chest.value, waist.value, buttock.value);
+
+    // Update user measurements for fit advisor
+    wearfits.userParams.height = parseInt(height.value);
+    wearfits.userParams.chest = parseInt(chest.value);
+    wearfits.userParams.waist = parseInt(waist.value);
+    wearfits.userParams.buttock = parseInt(buttock.value);
+    //wearfits.userParams.gender = gender.value;
+
+    //Set avatar id
+    wearfits.current_avatar_hash = hash;
+
+    //Fetch new avatar
+    await wearfits.loadAvatarAndGarment();
+
+    wearfits.showToast("Avatar loaded successfully!")
+  }
+
+  async function changeGarment(garment_id) {
+    //Set garment id
+    wearfits.current_garment_name = garment_id;
+
+    //Get garment data from server and configure viewer for it
+    await wearfits.configureGarment(garment_id);
+
+    //Get avatar id
+    const hash = await wearfits.getAvatarHashFromServer(height.value, chest.value, waist.value, buttock.value)
+
+    //Set avatar id
+    wearfits.current_avatar_hash = hash;
+
+    //Fetch new garment
+    await wearfits.loadAvatarAndGarment();
+
+    wearfits.showToast("Garment loaded successfully!")
+  }
+
+  async function changeSize(size) {
+    //Set garment size
+    wearfits.current_garment_size = size;
+
+    //Fetch new garment
+    await wearfits.loadAvatarAndGarment();
+
+    wearfits.showToast("Garment loaded successfully!")
+  }
+:css
+  .box {
+    padding: 7px;
+    margin: 15px;
+    border-top: 1px solid black;
+  }
+
+%section.sec-product-detail.bg0.p-t-65.p-b-60.main-page
+  .container
+    .content{:style => "display:flex; height: 100%;"}
+      #wearfits_viewer{:style => "width:50%;height:100%;display:inline-block"}
+      %div{:style => "width:50%;height:100%;margin: 15px;display:inline-block;"}
+        .box
+          %div{:style => "margin-bottom: 10px;"}
+            Height
+            %input#height{:style => "display: inline-block;", :type => "range", :value => "165",  min:"140", max:"200", :oninput => "this.nextElementSibling.value = this.value"}/
+            %output 165
+          %div{:style => "margin-bottom: 10px;"}
+            Chest
+            %input#chest{:style => "display: inline-block;", :type => "range", :value => "90",  min:"80", max:"130", :oninput => "this.nextElementSibling.value = this.value"}/
+            %output 90
+          %div{:style => "margin-bottom: 10px;"}
+            Waist
+            %input#waist{:style => "display: inline-block;", :type => "range", :value => "70",  min:"60", max:"130", :oninput => "this.nextElementSibling.value = this.value"}/
+            %output 70
+          %div{:style => "margin-bottom: 10px;"}
+            Buttock
+            %input#buttock{:style => "display: inline-block;", :type => "range", :value => "94",  min:"80", max:"130", :oninput => "this.nextElementSibling.value = this.value"}/
+            %output 94
+          %div
+            %button.flex-c-m.stext-101.cl0.size-107.bg1.bor1.hov-btn1.p-lr-5.trans-04.js-addcart-detail{:onclick => "loadAvatar()"} Load avatar
+        .box
+          Garment select
+          %select#garment_list{:onchange => "changeGarment(this.value)"}
+            %option{:value => "Melia"} Melia
+            %option{:value => "Burda3"} Burda
+            %option{:value => "Burda8"} Burda 2
+        .box
+          Select size
+          %select#size_list{:onchange => "changeSize(this.value)"}
+        .box
+          Select color
+          %select#color_select{:onchange => "wearfits.loadMaterialSet(this.value)"}
+        .box
+          %button.flex-c-m.stext-101.cl0.size-107.bg1.bor1.hov-btn1.p-lr-15.trans-04.js-addcart-detail{:onclick => "wearfits.toggleStrainMap()"} Toggle strain view
+          / wearfits.enableStrainView(); wearfits.disableStrainView(); disable enable strain view
+        -#.box
+        -#  %button.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04.js-addcart-detail{:onclick => "window.open(wearfits.getARLink())"} Open AR
+        .box
+          Prefered size
+          %span#prefered_size
