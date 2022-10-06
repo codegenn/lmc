@@ -606,7 +606,7 @@ pre code {
   padding-left: 15px;
   width: 100%;
 }
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .sns-sign-up {
     font-size: 12px;
   }
