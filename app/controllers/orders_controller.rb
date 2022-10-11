@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   before_action :set_cart, only: [:new, :create]
   before_action :fundiin_config, only: :create
   before_action :spp_config, only: :create
+  after_action :update_data_user, only: :create
 
   def index
     @orders = current_user.orders
@@ -90,7 +91,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:first_name, :last_name, :email, :address, :district, :city, :phone, :note, :tracking, :payment_method)
+    params.require(:order).permit(:first_name, :last_name, :email, :address, :district, :city, :phone, :note, :tracking, :payment_method, :note)
   end
 
   def fundiin_config
@@ -219,6 +220,64 @@ class OrdersController < ApplicationController
 
     secure_hash = VNPay.auth_signature(data, ENV["VNP_HASH_SECRET"])
     vnp_secure_hash == secure_hash
+  end
+
+  def token_kiot
+    KiotViet.configure do |config|
+      config.client_id = ENV['KIOT_CLIENT_ID']
+      config.client_secret = ENV['KIOT_CLIENT_SECRET']
+    end
+    respon = KiotViet.get_token
+    token = respon["access_token"]
+    return "Bearer ".concat(token)
+  end
+
+  def update_data_user
+    if user_signed_in?
+      sync_update_customer_kiot(current_user)
+    elsif !user_signed_in?
+      user_name = "#{@order.first_name} #{@order.last_name}"
+      user = User.new(username: user_name,
+            email: @order.email,
+            first_name: @order.first_name,
+            last_name: @order.last_name,
+            phone: @order.phone,
+            kiot_id: code_kiot
+      )
+      user.save(:validate => false)
+      sync_add_customer_kiot(user)
+    end
+  end
+
+  def sync_update_customer_kiot(data)
+    payload = {
+      "name": data.username,
+      "gender": false,
+      "contactNumber": data.phone,
+      "address": "",
+      "email": data.email,
+      "comments": "Sign up with order",
+      "branchId": 31669
+    }
+    KiotViet.update_customer(payload, token_kiot, data.kiot_id)
+  end
+
+  def sync_add_customer_kiot(data)
+    payload = {
+      "code": data.kiot_id,
+      "name": data.username,
+      "gender": false,
+      "contactNumber": data.phone,
+      "address": "",
+      "email": data.email,
+      "comments": "Sign up with order",
+      "branchId": 31669
+    }
+    KiotViet.add_customer(payload, token_kiot)
+  end
+
+  def code_kiot
+    return "KHW#{DateTime.now.to_i}"
   end
 
   def response_params

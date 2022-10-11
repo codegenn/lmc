@@ -2,7 +2,7 @@ ActiveAdmin.register Product do
 
   permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :is_hidden, :out_of_stock, :promotion_price, :price, :sort_order,
                 :has_promotion, :measurement_image_url, :measurement_image, :slug_url, category_ids: [],
-                stocks_attributes: [:id, :_destroy, :size, :color, :product_code], bottom_stocks_attributes: [:id, :_destroy, :size],
+                stocks_attributes: [:id, :_destroy, :size, :color, :product_code, :quantity], bottom_stocks_attributes: [:id, :_destroy, :size, :quantity],
                 product_images_attributes: [:id, :_destroy, :url, :pimage], color_images_attributes: [:id, :_destroy, :image_url, :color_name, :color_image],
                 translations_attributes: [:id, :locale, :title, :description, :promotion, :short_description, :measurement_description, :_destroy]
 
@@ -12,7 +12,7 @@ ActiveAdmin.register Product do
     column :title
     column :price
     column :slug
-    translation_status
+    # translation_status
     actions
   end
 
@@ -47,6 +47,7 @@ ActiveAdmin.register Product do
         stocks_form.input :size
         stocks_form.input :color, as: :string
         stocks_form.input :product_code
+        stocks_form.input :quantity
       end
       f.has_many :bottom_stocks, heading: false, allow_destroy: true do |stocks_form|
         stocks_form.input :size
@@ -101,10 +102,11 @@ ActiveAdmin.register Product do
         row :size
         row :color
         row :product_code
+        row :quantity
       end
-      attributes_table_for product.bottom_stocks do
-        row :size
-      end
+      # attributes_table_for product.bottom_stocks do
+      #   row :size
+      # end
     end
     active_admin_comments
   end
@@ -121,6 +123,8 @@ ActiveAdmin.register Product do
 
   controller do
     before_action :upload_product_image, only: [:create, :update]
+    after_action :add_kiot, only: [:create]
+    after_action :update_kiot, only: [:update]
 
     def upload_product_image
       image_attrs = params[:product][:product_images_attributes]
@@ -153,6 +157,37 @@ ActiveAdmin.register Product do
       end
     end
 
+    def add_kiot
+      @product.stocks.each do |stock|
+        payload = payload_add(stock)
+        KiotViet.add_product(payload, token)
+      end
+    end
+
+    def update_kiot
+      @product.stocks.each do |stock|
+
+        payload = payload_add(stock)
+        KiotViet.update_product(payload, token, get_id_kiot(stock.product_code))
+      end
+    end
+
+    def get_id_kiot(product_code)
+      repo = KiotViet.get_product(token, product_code)
+      data = JSON.parse(repo.body)
+      return data["inventories"].last["productId"]
+    end
+
+    def token
+      KiotViet.configure do |config|
+        config.client_id = ENV['KIOT_CLIENT_ID']
+        config.client_secret = ENV['KIOT_CLIENT_SECRET']
+      end
+      respon = KiotViet.get_token
+      token = respon["access_token"]
+      return "Bearer ".concat(token)
+    end
+
     def create
       create! { |success, failure|
         failure.html do
@@ -160,6 +195,55 @@ ActiveAdmin.register Product do
           redirect_to :back
         end
       }
+    end
+
+    def payload_add(stock)
+      payloads = {
+        "createdDate": "#{Time.now}",
+        "code": stock.product_code,
+        "barCode": stock.product_code,
+        "name": @product.title,
+        "fullName": @product.title,
+        "categoryId": @product&.category_ids.last,
+        "categoryName": Category&.find(@product&.category_ids.last).name,
+        "allowsSale": true,
+        "type": 2,
+        "hasVariants": false,
+        "weight": 0,
+        "unit": "VND",
+        "conversionValue": 1,
+        "description": "",
+        "modifiedDate": "#{Time.now}",
+        "isActive": true,
+        "description": @product.description,
+        "attributes": [
+          {
+            "attributeName": "SIZE",
+            "attributeValue": stock.size
+          },
+          {
+            "attributeName": "MÀU SẮC",
+            "attributeValue": stock.color
+          },
+        ],
+        "inventories": [
+          {
+            "branchId": 31669,
+            "branchName": "Chi nhánh trung tâm",
+            "cost": @product.price,
+            "onHand": stock.quantity,
+            "reserved": 0,
+            "actualReserved": 0,
+            "minQuantity": 0,
+            "maxQuantity": 99999999,
+            "isActive": true
+          }
+        ],
+        "images": [
+          @product.product_images.last.thumb_url.to_s
+        ]
+      }
+      return payloads
     end
   end
 end
