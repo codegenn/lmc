@@ -27,7 +27,8 @@ class User < ActiveRecord::Base
           first_name: data["name"].split(" ").last,
           last_name: data["name"].split(" ").first,
           avatar: data["image"],
-          phone: 999999999
+          phone: 999999999,
+          kiot_id: code_kiot
         )
       else
         user = User.create(username: data['name'],
@@ -38,9 +39,40 @@ class User < ActiveRecord::Base
             first_name: data["first_name"],
             last_name: data["last_name"],
             avatar: data["image"],
-            phone: 999999999
+            phone: 999999999,
+            kiot_id: code_kiot
         )
       end
+      sync_customer_kiot(user, access_token)
+      return user
     end
+  end
+
+  def self.token_kiot
+    KiotViet.configure do |config|
+      config.client_id = ENV['KIOT_CLIENT_ID']
+      config.client_secret = ENV['KIOT_CLIENT_SECRET']
+    end
+    respon = KiotViet.get_token
+    token = respon["access_token"]
+    return "Bearer ".concat(token)
+  end
+
+  def self.sync_customer_kiot(data, access_token)
+    payload = {
+      "code": data.kiot_id,
+      "name": data.username,
+      "gender": false,
+      "contactNumber": data.phone,
+      "address": "",
+      "email": data.email,
+      "comments": "login #{access_token.provider}",
+      "branchId": 31669
+    }
+    KiotViet.add_customer(payload, token_kiot)
+  end
+
+  def self.code_kiot
+    "KHW#{DateTime.now.to_i}"
   end
 end

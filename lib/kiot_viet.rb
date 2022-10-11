@@ -42,6 +42,21 @@ module KiotViet
       pay_get(uri, payload, token)
     end
 
+    def get_customers(payload = {}, token, id)
+      uri = "customers/code/#{id}"
+      pay_get(uri, payload, token)
+    end
+
+    def add_customer(payload = {}, token)
+      uri = "customers"
+      pay_post_add(uri, payload, token)
+    end
+
+    def update_customer(payload = {}, token, id)
+      uri = "customers/code/#{id}"
+      pay_put_add(uri, payload, token)
+    end
+
     def get_products(payload = {}, token)
       uri = "products"
       pay_get(uri, payload, token)
@@ -60,6 +75,11 @@ module KiotViet
     def update_product(payload = {}, token, id)
       uri = "products/#{id}"
       pay_put_add(uri, payload, token)
+    end
+
+    def add_customer(payload = {}, token)
+      uri = "customers"
+      pay_post_add(uri, payload, token)
     end
 
     private

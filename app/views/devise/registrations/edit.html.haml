@@ -7,14 +7,16 @@
           #nav-tab.nav.nav-tabs{:role => "tablist"}
             %a#nav-home-tab.text-bold.nav-item.nav-link.active{"aria-controls" => "nav-home", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-home", :role => "tab"}
               = I18n.t("user.information")
-            %a#nav-profile-tab.nav-item.text-bold.nav-link{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-profile", :role => "tab"}
+            %a#nav-post-order.nav-item.text-bold.nav-link{"aria-controls" => "post_order", "aria-selected" => "false", "data-toggle" => "tab", :href => "#post-order", :role => "tab"}
               = I18n.t("user.post_orders")
-            %a#nav-profile-tab.nav-item.text-bold.nav-link{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-profile", :role => "tab"}
+            %a#nav-reward.nav-item.text-bold.nav-link{"aria-controls" => "nav-reward", "aria-selected" => "false", "data-toggle" => "tab", :href => "#reward", :role => "tab"}
               = I18n.t("user.reward")
             %a#nav-profile-tab.nav-item.text-bold.nav-link{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-profile", :role => "tab"}
               = link_to(I18n.t("user.sign_out"), destroy_user_session_path, method: :delete)
         #nav-tabContent.tab-content
           #nav-home.tab-pane.fade.show.active{"aria-labelledby" => "nav-home-tab", :role => "tabpanel"}
             = render "devise/registrations/infomation"
-          #nav-profile.tab-pane.fade{"aria-labelledby" => "nav-profile-tab", :role => "tabpanel"}
+          #post-order.tab-pane.fade{"aria-labelledby" => "nav-post-order", :role => "tabpanel"}
             = render "devise/registrations/post_order"
+          #reward.tab-pane.fade{"aria-labelledby" => "nav-reward", :role => "tabpanel"}
+            = render "devise/registrations/reward"

@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     end
   end
   get '/health_check', to: proc { [200, {}, ['success']] }
-  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  # devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  devise_for :users,
+    controllers: { registrations: 'registrations', omniauth_callbacks: "users/omniauth_callbacks"}
   # devise_for :users, controllers: { registrations: 'registrations' }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
