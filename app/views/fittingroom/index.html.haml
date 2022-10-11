@@ -1,23 +1,38 @@
-%section.sec-product-detail.bg0.p-t-65.p-b-60.main-page.login-page-demo
-  .container
-    = render "fittingroom/login"
 .fitting
   = render "fittingroom/fittin"
-
-
+%section.sec-product-detail.bg0.p-t-65.p-b-60.main-page
+  .container.login-page-demo
+    = render "fittingroom/login"
 
 :css
-  .fitting {
+  .inactive {
     display: none;
   }
-
   .active {
     display: block;
   }
 :javascript
   $( document ).ready(function() {
     if(localStorage.getItem("login-demo") == "ok") {
-      $(".fitting").addClass( "active" );
-      $(".login-page-demo").addClass("fitting");
+      $("#login").modal('hide');
+    } else {
+      $("#login").modal(
+        'show',
+        {
+          backdrop: 'static',
+          keyboard: false
+        }
+      );
     }
+
+    $('#form-demo').submit(function() {
+      var un = $(".username").val();
+      var x = document.getElementById("myPsw").value;
+      if(un == "lmcation-demo@gmail.com" && x == "LM2324") {
+        localStorage.setItem("login-demo", "ok");
+        $("#login").modal('hide');
+      }
+
+      return false;
+    });
   });

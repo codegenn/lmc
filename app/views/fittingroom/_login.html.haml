@@ -1,20 +1,11 @@
-%form.form-demo
-  %input.username.form-control{:name => "username", :placeholder => "Username", :type => "text"}/
-  %input.password.form-control#myPsw{:name => "password", :placeholder => "password", :type => "password"}/
-  
-
-:javascript
-  $('.form-demo').submit(function() { 
-    var un = $(".username").val();
-    var x = document.getElementById("myPsw").value;
-
-    if(un == "lmcation-demo@gmail.com" && x == "LM2324") {
-      localStorage.setItem("login-demo", "ok");
-      $(".fitting").addClass( "active" );
-      $(".login-page-demo").addClass("fitting");
-    }
-    return false;
-  });
+#login.modal.fade{:role => "dialog", "data-backdrop"=>'static', "data-keyboard"=>'false'}
+  .modal-dialog
+    .modal-content
+      .modal-body
+        %form#form-demo
+          %input.username.form-control{:name => "username", :placeholder => "Username", :type => "text"}/
+          %input.password#myPsw.form-control{:name => "password", :placeholder => "password", :type => "password"}/
+          %input.btn.login{:type => "submit", :value => "Login"}/
 :css
   .active {
     display: block;
