@@ -5,10 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2, :facebook]
   # validates :first_name, presence: true
   # validates :last_name, presence: true
-  validates :phone,
-            :presence => {:message => 'Only positive number without spaces are allowed'},
-            :numericality => true,
-            :length => { :minimum => 6, :maximum => 15 }
+  # validates :phone,
+  #           :presence => {:message => 'Only positive number without spaces are allowed'},
+  #           :numericality => true,
+  #           :length => { :minimum => 6, :maximum => 15 }
   has_many :orders
   has_one :favorite
 
@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
       user
     else
       if access_token.provider == "facebook"
-        user = User.create(username: data['name'],
+        user = User.new(username: data['name'],
           email: data['email'],
           password: Devise.friendly_token[0,20],
           uid: access_token[:uid],
@@ -27,11 +27,12 @@ class User < ActiveRecord::Base
           first_name: data["name"].split(" ").last,
           last_name: data["name"].split(" ").first,
           avatar: data["image"],
-          phone: 999999999,
+          phone: 0,
           kiot_id: code_kiot
         )
+        user.save(:validate => false)
       else
-        user = User.create(username: data['name'],
+        user = User.new(username: data['name'],
             email: data['email'],
             password: Devise.friendly_token[0,20],
             uid: access_token[:uid],
@@ -39,9 +40,10 @@ class User < ActiveRecord::Base
             first_name: data["first_name"],
             last_name: data["last_name"],
             avatar: data["image"],
-            phone: 999999999,
+            phone: 0,
             kiot_id: code_kiot
         )
+        user.save(:validate => false)
       end
       sync_customer_kiot(user, access_token)
       return user

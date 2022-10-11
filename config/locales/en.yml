@@ -302,6 +302,8 @@ en:
     phone: 'PHONE'
     note: 'NOTE'
     pass_note: "*(6 characters minimum)"
+    current_pass: "Current password"
+    update: "Update"
   activerecord:
     errors:
       template:

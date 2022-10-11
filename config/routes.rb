@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   post 'destroy_item/:id', to: "line_items#destroy_item"
   scope "(:locale)", :locale => /en|vi/ do
     get "demo-fittingroom", to: "fittingroom#index"
+    post "demo-login", to: "fittingroom#login"
     get 'vnpay-fallback', to: "orders#fallback"
     get 'store/index'
     get 'thoi-trang-ton-vinh-phu-nu', to: "store#about"

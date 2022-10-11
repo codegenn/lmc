@@ -4,7 +4,7 @@
       / Tab01
       .tab01
         %nav
-          #nav-tab.nav.nav-tabs{:role => "tablist"}
+          #nav-tab.user-nav-tab.nav.nav-tabs{:role => "tablist"}
             %a#nav-home-tab.text-bold.nav-item.nav-link.active{"aria-controls" => "nav-home", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-home", :role => "tab"}
               = I18n.t("user.information")
             %a#nav-post-order.nav-item.text-bold.nav-link{"aria-controls" => "post_order", "aria-selected" => "false", "data-toggle" => "tab", :href => "#post-order", :role => "tab"}

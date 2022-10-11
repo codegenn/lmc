@@ -323,6 +323,8 @@ vi:
     phone: 'ĐIỆN THOẠI'
     note: 'GHI CHÚ'
     pass_note: "Mật khẩu cần ít nhất 6 ký tự."
+    current_pass: "Mật Khẩu hiện tại"
+    update: "Cập nhật thông tin"
   jobs:
     partner: 'KẾT NỐI VỚI LMCATION'
     partner_btn: 'Kết nối'
@@ -330,13 +332,6 @@ vi:
     work: 'CƠ HỘI VIỆC LÀM TẠI LMCATION'
   wishlist:
     your_wishlist: 'SẢN PHẨM YÊU THÍCH CỦA BẠN'
-  activerecord:
-    errors:
-      template:
-        header:
-          one:   "Có một lỗi sảy ra khi lưu"
-          other: "có %{count} lỗi sảy ra khi lưu"
-        body:    "Xin vui lòng kiểm tra những lỗi sau"
   time:
    formats:
      long: "%Y-%m-%d %H:%M:%S"
@@ -372,6 +367,11 @@ vi:
       headline: 'Tìm Kiếm'
   activerecord:
     errors:
+      template:
+        header:
+          one:   "Có một lỗi sảy ra khi lưu"
+          other: "có %{count} lỗi sảy ra khi lưu"
+        body:    "Xin vui lòng kiểm tra những lỗi sau"
       models:
         order:
           attributes:
@@ -381,10 +381,10 @@ vi:
         user:
           attributes:
             email:
-              blank: 'Email không được để trống'
+              blank: 'không được để trống'
               invalid: 'Email không hợp lệ'
             password:
-              blank: 'Mật khẩu không được để trống'
+              blank: 'không được để trống'
             first_name:
               blank: 'Tên không được để trống'
             last_name:

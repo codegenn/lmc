@@ -1687,6 +1687,15 @@ button.mfp-close {
   align-items: center;
   border: none;
 }
+@media (max-width: 575px) {
+  .user-nav-tab {
+    display: grid !important;
+    text-align: center;
+  }
+  .tab01 .nav-tabs .nav-item {
+    margin: 5px 15px !important;
+  }
+}
 
 .tab01 .nav-tabs .nav-item {
   margin: 0px 15px;
