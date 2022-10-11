@@ -77,11 +77,6 @@ module KiotViet
       pay_put_add(uri, payload, token)
     end
 
-    def add_customer(payload = {}, token)
-      uri = "customers"
-      pay_post_add(uri, payload, token)
-    end
-
     private
 
     # POST
