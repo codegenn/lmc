@@ -390,6 +390,7 @@ vi:
             email:
               blank: 'không được để trống'
               invalid: 'Email không hợp lệ'
+              taken: "Email đã tồn tại"
             password:
               blank: 'không được để trống'
             first_name:

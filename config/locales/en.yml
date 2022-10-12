@@ -318,6 +318,13 @@ en:
   activerecord:
     errors:
       template:
+        models:
+          user:
+          attributes:
+            email:
+              blank: 'is not empty'
+              invalid: 'invalid'
+              taken: "already exists"
         header:
           one:   "1 error prohibited this %{model} from being saved"
           other: "%{count} errors prohibited this %{model} from being saved"
