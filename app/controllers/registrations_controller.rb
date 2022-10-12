@@ -57,7 +57,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
   
   def after_inactive_sign_up_path_for(resource)
-    binding.pry
     new_user_registration_path(resource)
   end
 
