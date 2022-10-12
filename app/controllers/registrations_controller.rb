@@ -49,6 +49,8 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_up_path_for(resource)
+    resource.update(kiot_id: code_kiot)
+    sync_customer_kiot(resource)
     edit_user_registration_path(resource)
   end
 
@@ -68,5 +70,33 @@ class RegistrationsController < Devise::RegistrationsController
 
   def set_order
     @orders = current_user.orders
+  end
+
+  def token_kiot
+    KiotViet.configure do |config|
+      config.client_id = ENV['KIOT_CLIENT_ID']
+      config.client_secret = ENV['KIOT_CLIENT_SECRET']
+    end
+    respon = KiotViet.get_token
+    token = respon["access_token"]
+    return "Bearer ".concat(token)
+  end
+
+  def sync_customer_kiot(data)
+    payload = {
+      "code": data.kiot_id,
+      "name": data.username,
+      "gender": false,
+      "contactNumber": data.phone,
+      "address": "",
+      "email": data.email,
+      "comments": "Login form",
+      "branchId": 31669
+    }
+    KiotViet.add_customer(payload, token_kiot)
+  end
+
+  def code_kiot
+    "KHW#{DateTime.now.to_i}"
   end
 end
