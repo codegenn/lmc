@@ -25,6 +25,15 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def update_resource(resource, params)
+    if current_user.provider == "facebook" || current_user.provider == "google_oauth2"
+      params.delete("current_password")
+      resource.update_without_password(params)
+    else
+      resource.update_with_password(params)
+    end
+  end
+
   def token
     KiotViet.configure do |config|
       config.client_id = ENV['KIOT_CLIENT_ID']
@@ -35,7 +44,24 @@ class RegistrationsController < Devise::RegistrationsController
     return "Bearer ".concat(token)
   end
 
+  def after_update_path_for(resource)
+    edit_user_registration_path(resource)
+  end
+
+  def after_sign_up_path_for(resource)
+    edit_user_registration_path(resource)
+  end
+
+  def after_sign_in_path_for(resource)
+    edit_user_registration_path(resource)
+  end
+  
   private
+
+  def account_update_params
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :phone, :current_password, :address)
+  end
+
   def set_order
     @orders = current_user.orders
   end

@@ -300,7 +300,7 @@ vi:
   voucher:
     invalid: "Mã giảm giá không tồn tại"
   user:
-    user_header: 'LOG IN/SIGN UP'
+    user_header: 'ĐĂNG NHẬP/ĐĂNG KÝ'
     signin_description: ''
     signin: 'ĐĂNG NHẬP'
     signup: 'ĐĂNG KÝ'
@@ -355,9 +355,13 @@ vi:
     messages:
       not_saved: 'Vui lòng sửa những lỗi sau:'
   devise:
+    registrations:
+      user:
+        updated: "Cập nhật thành công"
     failure:
       user:
         not_found_in_database: 'Không tìm thấy thông tin'
+        invalid: 'Không tìm thấy thông tin'
     sessions:
       user:
         signed_in: 'Quý khách đã đăng nhập'
@@ -414,6 +418,7 @@ vi:
   label_gg: "ĐĂNG NHẬP BẰNG GOOGLE"
   label_fb: "ĐĂNG NHẬP BẰNG FACEBOOK"
   pass_noti: "Để trống nếu bạn không muốn đổi mật khẩu"
+  address: "Địa chỉ"
   pass_confirm_noti: "Vui lòng nhập mật khẩu hiện tại để xác nhận thay đổi"
   prom_1: "THEO DÕI BẢO HÀNH SẢN PHẨM VĨNH VIỄN"
   prom_2: "TÍCH ĐIỂM ĐỔI QUÀ MIỄN PHÍ"

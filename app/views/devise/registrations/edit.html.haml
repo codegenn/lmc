@@ -1,5 +1,8 @@
 %section.sec-product-detail.bg0.p-t-65.p-b-60.main-page
   .container
+    .alert
+      - flash.each do |key, value|
+        = content_tag :div, value, class: "alert alert-#{key}" unless key == 'pixel'
     .bor10.m-t-50.p-t-43.p-b-40
       / Tab01
       .tab01
