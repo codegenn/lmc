@@ -358,10 +358,13 @@ vi:
     registrations:
       user:
         updated: "Cập nhật thành công"
+        signed_up: "Bạn đã đăng ký thành công"
+        signed_in: "Bạn đã đăng nhập thành công"
     failure:
       user:
         not_found_in_database: 'Không tìm thấy thông tin'
         invalid: 'Không tìm thấy thông tin'
+        unauthenticated: "Không tìm thấy thông tin"
     sessions:
       user:
         signed_in: 'Quý khách đã đăng nhập'

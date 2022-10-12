@@ -24,10 +24,13 @@ en:
     registrations:
       user:
         updated: "Update successfully"
+        signed_up: "You have signed up successfully"
+        signed_in: "You have logged in successfully"
     failure:
       user:
         not_found_in_database: 'Not Found User'
         invalid: 'Not Found User'
+        unauthenticated: "Not Found User"
   page:
     menu:
       home: 'Home'
