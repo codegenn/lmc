@@ -56,6 +56,11 @@ class RegistrationsController < Devise::RegistrationsController
     edit_user_registration_path(resource)
   end
   
+  def after_inactive_sign_up_path_for(resource)
+    binding.pry
+    new_user_registration_path(resource)
+  end
+
   private
 
   def account_update_params
