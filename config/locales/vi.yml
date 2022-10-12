@@ -389,8 +389,8 @@ vi:
           attributes:
             email:
               blank: 'không được để trống'
-              invalid: 'Email không hợp lệ'
-              taken: "Email đã tồn tại"
+              invalid: 'không hợp lệ'
+              taken: "đã tồn tại"
             password:
               blank: 'không được để trống'
             first_name:
