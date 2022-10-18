@@ -235,7 +235,7 @@ class OrdersController < ApplicationController
   def update_data_user
     if user_signed_in?
       sync_update_customer_kiot(current_user)
-    elsif !user_signed_in?
+    elsif !user_signed_in? && !User.find_by(email: @order.email).present?
       user_name = "#{@order.first_name} #{@order.last_name}"
       user = User.new(username: user_name,
             email: @order.email,
