@@ -59,7 +59,6 @@ class OrdersController < ApplicationController
         noti_success(@order)
         redirect_to products_path
       end
-
     else
       flash[:danger] = @order.errors.full_messages.to_sentence
       render 'carts/show'
@@ -80,7 +79,6 @@ class OrdersController < ApplicationController
       redirect_to products_path
     end
   end
-  
 
   private
   def authorize
@@ -235,18 +233,23 @@ class OrdersController < ApplicationController
   def update_data_user
     if user_signed_in?
       sync_update_customer_kiot(current_user)
-    elsif !user_signed_in? && !User.find_by(email: @order.email).present?
+    elsif User.find_by(email: @order.email).present?
+      user = User.find_by(email: @order.email)
+      @order.update(user_id: user.id)
+    elsif !user_signed_in?
       user_name = "#{@order.first_name} #{@order.last_name}"
       user = User.new(username: user_name,
             email: @order.email,
             first_name: @order.first_name,
             last_name: @order.last_name,
             phone: @order.phone,
-            kiot_id: code_kiot
       )
       user.save(:validate => false)
+      @order.update(user_id: user.id)
       sync_add_customer_kiot(user)
     end
+    res = @order.sync_order_kiot
+    @order.update(sync_kiot: (res.code == 200))
   end
 
   def sync_update_customer_kiot(data)
@@ -267,17 +270,13 @@ class OrdersController < ApplicationController
       "code": data.kiot_id,
       "name": data.username,
       "gender": false,
-      "contactNumber": data.phone,
+      "contactNumber": "0#{data.phone}",
       "address": "",
       "email": data.email,
       "comments": "Sign up with order",
       "branchId": 31669
     }
     KiotViet.add_customer(payload, token_kiot)
-  end
-
-  def code_kiot
-    return "KHW#{DateTime.now.to_i}"
   end
 
   def response_params

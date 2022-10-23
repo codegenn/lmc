@@ -49,7 +49,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_up_path_for(resource)
-    resource.update(kiot_id: code_kiot)
     sync_customer_kiot(resource)
     edit_user_registration_path(resource)
   end
@@ -87,16 +86,12 @@ class RegistrationsController < Devise::RegistrationsController
       "code": data.kiot_id,
       "name": data.username,
       "gender": false,
-      "contactNumber": data.phone,
+      "contactNumber": "0#{data.phone}",
       "address": "",
       "email": data.email,
       "comments": "Login form",
       "branchId": 31669
     }
     KiotViet.add_customer(payload, token_kiot)
-  end
-
-  def code_kiot
-    "KHW#{DateTime.now.to_i}"
   end
 end

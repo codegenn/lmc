@@ -1,15 +1,15 @@
-# def token
-#   KiotViet.configure do |config|
-#     config.client_id = ENV['KIOT_CLIENT_ID']
-#     config.client_secret = ENV['KIOT_CLIENT_SECRET']
-#   end
+def token
+  KiotViet.configure do |config|
+    config.client_id = ENV['KIOT_CLIENT_ID']
+    config.client_secret = ENV['KIOT_CLIENT_SECRET']
+  end
 
-#   respon = KiotViet.get_token
+  respon = KiotViet.get_token
 
-#   token = respon["access_token"]
+  token = respon["access_token"]
 
-#   return "Bearer ".concat(token)
-# end
+  return "Bearer ".concat(token)
+end
 
 
 
@@ -132,43 +132,41 @@
 
 
 # def sync_order_kiot
-#   payload = {
-#     "isApplyVoucher": true,
-#     "purchaseDate": DateTime.now,
-#     "branchId": 31669,
-#     "discount": 5,
-#     "description": "test",
-#     "method": "COD",
-#     "totalPayment": 150000,
-#     "orderDetails": [{
-#       "productId": 288,
-#       "productCode": "SP000086",
-#       "productName": "Hộp quà đính nơ",
-#       "quantity": 2,
-#       "price": 50000,
-#       "note": "test"
-#     }],
-#     "customer": {
-#       "id": 123,
-#       "code": "KH007894",
-#       "name": "cam",
-#       "contactNumber": "0981792327",
-#       "address": "Ha Noi",
-#       "wardName": "Ha Noi",
-#       "email": "camnhepu@gmail.com",
-#       "comments": "test"
-#     },
-#     "Payments": [{
-#       "Method": "Voucher", 
-#       "MethodStr": "Voucher",
-#       "Amount": 50000,
-#       "VoucherId": 30996,
-#       "VoucherCampaignId": 30087
-#     }]
-#   }
+  # payload = {
+  #   "isApplyVoucher": true,
+  #   "purchaseDate": "10-19-2022",
+  #   "branchId": 31669,
+  #   "discount": 5,
+  #   "description": "test",
+  #   "method": "COD",
+  #   "totalPayment": 150000,
+  #   "orderDetails": [{
+  #     "productCode": "HWF00072",
+  #     "productName": "Áo mặc nhà nữ cổ tròn LMcation Mary - Trắng kem",
+  #     "quantity": 2,
+  #     "price": 50000,
+  #     "note": "test"
+  #   }],
+  #   "customer": {
+  #     "code": "KHW1666091632",
+  #     "name": "cam",
+  #     "contactNumber": "0981792327",
+  #     "address": "Ha Noi",
+  #     "wardName": "Ha Noi",
+  #     "email": "camnhepu@gmail.com",
+  #     "comments": "test"
+  #   },
+  #   "Payments": [{
+  #     "Method": "Voucher", 
+  #     "MethodStr": "Voucher",
+  #     "Amount": 50000,
+  #     "VoucherId": 30996,
+  #     "VoucherCampaignId": 30087
+  #   }]
+  # }
 
 #   KiotViet.add_order(payload, token)
 # end
 
 
-# # rails generate migration add_kiot_id_to_users kiot_id:string
+# # rails generate migration add_status_kiot_to_orders sync_kiot:boolean

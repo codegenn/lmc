@@ -77,6 +77,11 @@ module KiotViet
       pay_put_add(uri, payload, token)
     end
 
+    def add_order(payload = {}, token)
+      uri = "orders"
+      pay_post_add(uri, payload, token)
+    end
+
     private
 
     # POST

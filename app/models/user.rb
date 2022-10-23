@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   has_many :orders
   has_one :favorite
 
+  after_create :update_kiot_id
+
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first
@@ -65,7 +67,7 @@ class User < ActiveRecord::Base
       "code": data.kiot_id,
       "name": data.username,
       "gender": false,
-      "contactNumber": data.phone,
+      "contactNumber": "0#{data.phone}",
       "address": "",
       "email": data.email,
       "comments": "login #{access_token.provider}",
@@ -74,7 +76,9 @@ class User < ActiveRecord::Base
     KiotViet.add_customer(payload, token_kiot)
   end
 
-  def self.code_kiot
-    "KHW#{DateTime.now.to_i}"
+  
+  def update_kiot_id
+    self.kiot_id = "LMWEB#{self.id}"
+    self.save
   end
 end
