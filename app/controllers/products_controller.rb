@@ -24,12 +24,14 @@ class ProductsController < ApplicationController
       @check = true
     elsif query
         @at = []
-        Product.translation_class.where('title LIKE :search_name OR description LIKE :search_description OR short_description = :short_description',
-                                  search_name: "%#{query}%", search_description: "%#{query}%", short_description: "%#{query}%").all.each do |t|
+        Product.translation_class.where('LOWER(title) LIKE LOWER(:search_name)',
+                                  search_name: "%#{query}%").all.each do |t|
           @at << t.product_id
         end
       if @at.present?
-        @products = Product.where(id: @at).main_page
+        cp = CategoryProduct.where(product_id: @at)
+        cat = Category.where(id: cp.pluck(:category_id)).as_json
+        @products = Product.where(id: @at).main_page_search cat, @at
       else
         @products = Product.main_page
         flash[:success] = I18n.t('controllers.search.no_re')
