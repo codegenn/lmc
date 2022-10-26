@@ -248,16 +248,17 @@ class OrdersController < ApplicationController
       @order.update(user_id: user.id)
       sync_add_customer_kiot(user)
     end
-    res = @order.sync_order_kiot
-    @order.update(sync_kiot: (res.code == 200))
+    # res = @order.sync_order_kiot
+    # @order.update(sync_kiot: (res.code == 200))
   end
 
   def sync_update_customer_kiot(data)
+    address = "#{@order.address} #{@order.district} #{@order.city}"
     payload = {
       "name": data.username,
       "gender": false,
       "contactNumber": data.phone,
-      "address": "",
+      "address": address,
       "email": data.email,
       "comments": "Sign up with order",
       "branchId": 31669
@@ -266,12 +267,13 @@ class OrdersController < ApplicationController
   end
 
   def sync_add_customer_kiot(data)
+    address = "#{@order.address} #{@order.district} #{@order.city}"
     payload = {
       "code": data.kiot_id,
       "name": data.username,
       "gender": false,
       "contactNumber": "0#{data.phone}",
-      "address": "",
+      "address": address,
       "email": data.email,
       "comments": "Sign up with order",
       "branchId": 31669
