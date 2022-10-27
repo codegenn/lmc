@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
           last_name: data["name"].split(" ").first,
           avatar: data["image"],
           phone_number: "",
-          kiot_id: code_kiot
+          phone: 0
         )
         user.save(:validate => false)
       else
@@ -45,8 +45,8 @@ class User < ActiveRecord::Base
             first_name: data["first_name"],
             last_name: data["last_name"],
             avatar: data["image"],
+            phone: 0,
             phone_number: "",
-            kiot_id: code_kiot
         )
         user.save(:validate => false)
       end

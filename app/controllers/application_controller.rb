@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: permits)
   end
 
+  def after_sign_in_path_for(resource)
+    edit_user_registration_path(resource)
+  end
+
   private
   def set_cart
     cart_code = session[:cart_code]

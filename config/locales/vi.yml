@@ -355,6 +355,9 @@ vi:
     messages:
       not_saved: 'Vui lòng sửa những lỗi sau:'
   devise:
+    omniauth_callbacks:
+      user:
+        success: "Bạn đã đăng nhập thành công."
     registrations:
       user:
         updated: "Cập nhật thành công"
@@ -400,7 +403,7 @@ vi:
             phone_number:
               not_a_number: ' Điện Thoại chỉ được là số'
               too_short: ' Điện Thoại quá ngắn'
-              taken: "dã tồn tại!"
+              taken: "đã tồn tại! "
             current_password:
               blank: 'Vui lòng điền mật khẩu'
             password_confirmation:
