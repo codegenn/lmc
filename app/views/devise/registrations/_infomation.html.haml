@@ -13,9 +13,10 @@
       .col-sm-9
         = f.text_field :username, class: 'form-control', value: current_user.username.present? ? current_user.username : ""
     .form-group
-      = f.label :phone, I18n.t("user.phone"), class: 'col-sm-3 control-label text-bold text-bold'
+      = f.label :phone_number, I18n.t("user.phone"), class: 'col-sm-3 control-label text-bold text-bold'
       .col-sm-9
-        = f.text_field :phone, class: 'form-control', value: current_user.phone
+        = f.text_field :phone_number, class: 'form-control', value: current_user.phone_number
+    = f.hidden_field :phone, value: 0
     .form-group
       = f.label :address, I18n.t("address"), class: 'col-sm-3 control-label text-bold text-bold'
       .col-sm-9

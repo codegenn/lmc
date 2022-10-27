@@ -37,9 +37,9 @@ module KiotViet
       pay_get(uri, payload, token)
     end
 
-    def get_customers(payload = {}, token)
+    def get_all_customers(payload = {}, token, query)
       uri = "customers"
-      pay_get(uri, payload, token)
+      pay_get_query(uri, payload, token, query)
     end
 
     def get_customers(payload = {}, token, id)
@@ -125,6 +125,19 @@ module KiotViet
       }
       url = "#{PUB_HOST}/#{uri}"
       HTTParty.put(url, { headers: headers, body: payload.to_json })
+    end
+
+    def pay_get_query(uri, payload = {}, token, query)
+      headers = {
+        "Authorization": token,
+        "Retailer": "lmcation"
+      }
+      url = "#{PUB_HOST}/#{uri}"
+      if payload.present?
+        HTTParty.get(url, { headers: headers, body: payload.to_json, query: query })
+      else
+        HTTParty.get(url, { headers: headers, query: query })
+      end
     end
   end
 end

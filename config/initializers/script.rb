@@ -10,6 +10,60 @@ def token
 
   return "Bearer ".concat(token)
 end
+# {"id"=>11526952, "code"=>"KH007897", "name"=>"Hà Đặng Thị Thanh", "contactNumber"=>"0397821773", 
+# "address"=>"118B CMT 8 - KP 7- TT. Dầu Tiếng - H. Dầu Tiếng - Bình Dương", "retailerId"=>603483, "branchId"=>31669, 
+# "locationName"=>"Bình Dương - Huyện Dầu Tiếng", "wardName"=>"Thị trấn Dầu Tiếng", "modifiedDate"=>"2022-10-12T16:54:06.3100000", 
+# "createdDate"=>"2022-10-12T16:25:40.7030000", "type"=>0, "organization"=>"", "groups"=>"", "debt"=>0.0, "rewardPoint"=>270} 
+def craw_data
+  i = 0
+  flag = 1
+
+  while flag == 1
+    query = { 
+      "pageSize": 100,
+      "currentItem": i
+    }
+    puts query
+    res = KiotViet.get_all_customers(token, query)
+    datas = JSON.parse(res.body)
+    if res.code == 200 && datas["data"].present?
+      datas["data"].each_with_index do |data, index|
+        check_data = User.find_by(phone: data["contactNumber"].to_i)
+        if check_data.present?
+          if check_data.address.nil?
+            check_data.update(
+              address: data["address"],
+              kiot_id: data["code"],
+              username: data["name"],
+              phone_number: data["contactNumber"]
+            )
+          else
+            check_data.update(
+              kiot_id: data["code"],
+              username: data["name"],
+              phone_number: data["contactNumber"]
+            )
+          end
+        else
+          puts "#{data}/#{index}  \n===========\n"
+          u = User.new(
+            email: "#{data["code"]}@gmail.com",
+            password: Devise.friendly_token[0,20],
+            username: data["name"],
+            phone_number: data["contactNumber"],
+            kiot_id: data["code"],
+            phone: 0,
+            address: data["address"]
+          )
+          u.save
+        end
+      end
+      i += 101
+    else
+      flag = 0
+    end
+  end
+end
 
 
 
@@ -169,4 +223,4 @@ end
 # end
 
 
-# # rails generate migration add_status_kiot_to_orders sync_kiot:boolean
+# # rails generate migration add_phone_number_to_user phone_number:string

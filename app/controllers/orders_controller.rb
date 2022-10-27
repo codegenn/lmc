@@ -236,13 +236,18 @@ class OrdersController < ApplicationController
     elsif User.find_by(email: @order.email).present?
       user = User.find_by(email: @order.email)
       @order.update(user_id: user.id)
+      user.update(phone_number: @order.phone)
+    elsif User.find_by(phone_number:  @order.phone)
+      user = User.find_by(phone_number: @order.phone)
+      @order.update(user_id: user.id)
+      user.update(email: @order.email)
     elsif !user_signed_in?
       user_name = "#{@order.first_name} #{@order.last_name}"
       user = User.new(username: user_name,
             email: @order.email,
             first_name: @order.first_name,
             last_name: @order.last_name,
-            phone: @order.phone,
+            phone_number: @order.phone,
       )
       user.save(:validate => false)
       @order.update(user_id: user.id)

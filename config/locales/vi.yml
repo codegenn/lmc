@@ -397,9 +397,10 @@ vi:
               blank: 'Tên không được để trống'
             last_name:
               blank: 'Họ không được để trống'
-            phone:
+            phone_number:
               not_a_number: ' Điện Thoại chỉ được là số'
               too_short: ' Điện Thoại quá ngắn'
+              taken: "dã tồn tại!"
             current_password:
               blank: 'Vui lòng điền mật khẩu'
             password_confirmation:

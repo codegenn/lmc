@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2, :facebook]
   # validates :first_name, presence: true
   # validates :last_name, presence: true
+  validates :phone_number,
+    uniqueness: true
+
   # validates :phone,
   #           :presence => {:message => 'Only positive number without spaces are allowed'},
   #           :numericality => true,
@@ -29,7 +32,7 @@ class User < ActiveRecord::Base
           first_name: data["name"].split(" ").last,
           last_name: data["name"].split(" ").first,
           avatar: data["image"],
-          phone: 0,
+          phone_number: "",
           kiot_id: code_kiot
         )
         user.save(:validate => false)
@@ -42,7 +45,7 @@ class User < ActiveRecord::Base
             first_name: data["first_name"],
             last_name: data["last_name"],
             avatar: data["image"],
-            phone: 0,
+            phone_number: "",
             kiot_id: code_kiot
         )
         user.save(:validate => false)
@@ -78,7 +81,9 @@ class User < ActiveRecord::Base
 
   
   def update_kiot_id
-    self.kiot_id = "LMWEB#{self.id}"
-    self.save
+    unless self.kiot_id.present?
+      self.kiot_id = "LMWEB#{self.id}"
+      self.save
+    end
   end
 end

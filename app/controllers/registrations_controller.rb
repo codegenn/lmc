@@ -64,7 +64,7 @@ class RegistrationsController < Devise::RegistrationsController
   private
 
   def account_update_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation, :phone, :current_password, :address)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :phone_number, :current_password, :address)
   end
 
   def set_order
