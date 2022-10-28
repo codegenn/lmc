@@ -5,9 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2, :facebook]
   # validates :first_name, presence: true
   # validates :last_name, presence: true
-  validates :phone_number,
-    uniqueness: true
-
+  # validates :phone_number,
+  #   uniqueness: true
   # validates :phone,
   #           :presence => {:message => 'Only positive number without spaces are allowed'},
   #           :numericality => true,
