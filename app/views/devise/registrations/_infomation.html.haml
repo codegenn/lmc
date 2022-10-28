@@ -18,7 +18,7 @@
         = f.text_field :phone_number, class: 'form-control', value: current_user.phone_number
     = f.hidden_field :phone, value: 0
     .form-group
-      = f.label :address, I18n.t("address"), class: 'col-sm-3 control-label text-bold text-bold'
+      = f.label :address, I18n.t("user.address"), class: 'col-sm-3 control-label text-bold text-bold'
       .col-sm-9
         = f.text_field :address, class: 'form-control'
     - unless current_user.uid.present?

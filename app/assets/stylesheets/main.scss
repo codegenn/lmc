@@ -3568,6 +3568,18 @@ input.num-product::-webkit-inner-spin-button {
   margin-right: auto;
 }
 
+@media (max-width: 990px) {
+  .description {
+    top: 120%;
+  }
+}
+
+@media (min-width: 991px) and (max-width: 999px){
+  .description {
+    top: 120%;
+  }
+}
+
 @media (min-width: 991px) {
   .about {
     margin-top: 120px;
