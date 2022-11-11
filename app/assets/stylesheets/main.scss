@@ -3491,7 +3491,7 @@ input.num-product::-webkit-inner-spin-button {
   margin: 50px auto 0 auto;
 }
 @media (max-width: 767px) {
-  .partner-img {
+  .partner-img, .partner-img-logo {
     width: 45%;
     margin: 0 2%;
   }
@@ -3499,6 +3499,10 @@ input.num-product::-webkit-inner-spin-button {
 @media (min-width: 767px){
   .partner-img {
     width: 15.4%;
+    margin: 0 2%;
+  }
+  .partner-img-logo {
+    width: 9%;
     margin: 0 2%;
   }
 }
