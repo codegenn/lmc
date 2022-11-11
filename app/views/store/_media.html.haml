@@ -1,5 +1,5 @@
 .row.align-items-center
   - Medium.all.order(:id).each do |medium|
-    .col-2
+    .col-md-2.col-sm-4.col-4
       = link_to medium.url, target: "_blank" do
         = cl_image_tag  "#{medium.media_image.url}", class: "partner-image partner-mobile", loading:"lazy",  alt: "#{medium.alt}", style: "width: 100%;"
