@@ -124,7 +124,7 @@ ActiveAdmin.register Product do
   controller do
     before_action :upload_product_image, only: [:create, :update]
     after_action :add_kiot, only: [:create]
-    after_action :update_kiot, only: [:update]
+    # after_action :update_kiot, only: [:update]
 
     def upload_product_image
       image_attrs = params[:product][:product_images_attributes]
