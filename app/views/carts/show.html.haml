@@ -157,7 +157,7 @@
                                 = I18n.t("page.cart.fundiin_note_event_1").html_safe
                               %div
                                 = I18n.t("page.cart.fundiin_note").html_safe
-                            - else
+                            - elsif @body.present?
                               .row
                                 .col-12
                                   = @body["title_text"]

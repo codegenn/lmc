@@ -247,6 +247,7 @@ class OrdersController < ApplicationController
             email: @order.email,
             first_name: @order.first_name,
             last_name: @order.last_name,
+            phone: 0,
             phone_number: @order.phone,
       )
       user.save(:validate => false)
