@@ -111,6 +111,8 @@ en:
       subscribe: 'SUBSCRIBE'
     about_us:
       about_us: 'About Us'
+      about_head1: "LMcation is inspired by the words “Love Moments Through Vacation & Staycation”, to empower women of all shapes, sizes and color, every single day, by different fashion collections. It isn’t just a Vietnamese SLEEPwear, ACTIVEwear and SWIMwear maker, it’s a lifestyle fashion brand with a focus on empowering women."
+      about_head2: "The LMcation woman is 100% in touch with herself. She is fun. She is positive. And she lives her life to the fullest. She values her “me time” and has no problem treating herself to the best that life has to offer. She is bold. She is creative. She is fearless. She wants to change the world, and she’ll look damn sexy doing it."
       vision: 'Vision'
       vision_content:
         content: 'To inspire and empower women of all shapes, sizes and color, every single day.'
@@ -118,7 +120,7 @@ en:
       mission_content:
         content: 'Made for women, by women, we celebrate the extraordinary sexiness of real bodies with our range of chic, versatile and affordable lingerie, swim and activewear.'
         content_1: ''
-      value: 'Value'
+      value: 'Core Values'
       value_content:
         content1: 'We believe in the natural beauty of women, in the power of sisterhood, and in our ability to shake up the status quo.'
         content2: 'The four values below underlie who we are, what we stand for and define the way we work. They’re the bedrock of our brand and they guide us in all that we do.'
@@ -132,6 +134,14 @@ en:
         content6: 'We keep an eye on our expenses and make smart, sustainable choices. By controlling our costs, we can make a line that’s more accessible.'
         content7: ''
         content8: ''
+      culture: "Culture"
+      culture_content:
+        content1: "We are a female-centric business. We believe women can do more than they think and that they’re stronger than they think. And so:"
+        content2: "- We create jobs for women, so they can help themselves and be independent."
+        content3: "- We mentor women, giving them support and sharing our life experiences – both good and bad – to color their lives."
+        content4: "- We share stories of aspiring female business owners – their struggles and their successes - with the community as an inspiration for others."
+        content5: "- We organize gatherings to build authentic relationships offline and empower one other face to face."
+        content6: "- We train and grow female-owned small businesses to support the community."
     find_us:
       send_msg: 'Send Us A Message'
       email_field: 'Your Email Address'

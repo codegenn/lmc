@@ -116,6 +116,14 @@ vi:
         content6: ' Chúng tôi cam kết quản lý chi phí chặt chẽ và luôn chọn những chất liệu phù hợp, thân thiện với môi trường với mức giá thành tốt nhất. LMcation luôn hướng đến phương án tối ưu hóa chi phí sản xuất để khách hàng dễ dàng tiếp cận sản phẩm LMcation với giá cả hợp lý nhất.'
         content7: 'Tại LMcation, những giá trị cốt lõi nêu trên là kim chỉ nam cho hoạt động kinh doanh của chúng tôi. '
         content8: 'LMcation tin rằng chúng tôi sẽ từng bước xây dựng bền vững và phát triển một cộng đồng phụ nữ tự tin, hiện đại và độc lập với sự giúp sức của khách hàng trong một tương lai gần nhất.'
+      culture: ""
+      culture_content:
+        content1: ""
+        content2: ""
+        content3: ""
+        content4: ""
+        content5: ""
+        content6: ""
     find_us:
       send_msg: 'Gửi Tin Nhắn'
       submit: 'Gửi'
