@@ -9,11 +9,12 @@
 .sec-banner.bg0.p-t-50.p-b-50
   .container
     .row.p-b-70
-      %p.p-l-15.p-b-10.font-weight-bold
-        = I18n.t "page.about_us.about_head1"
-        %br
-        %br
-        = I18n.t "page.about_us.about_head2"
+      - unless I18n.t("page.about_us.about_head1").empty?
+        %p.p-l-15.p-b-10.font-weight-bold
+          = I18n.t "page.about_us.about_head1"
+          %br
+          %br
+          = I18n.t "page.about_us.about_head2"
       .col-md-7.col-lg-9
         .p-t-7.p-r-85.p-r-15-lg.p-r-0-md.vision
           %h3.mtext-111.cl2.p-b-16

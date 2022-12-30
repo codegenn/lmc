@@ -94,6 +94,8 @@ vi:
       newsletter: 'ĐĂNG KÝ NHẬN TIN'
       subscribe: 'GỬI'
     about_us:
+      about_head1: ""
+      about_head2: ""
       about_us: 'LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ '
       vision: 'TẦM NHÌN'
       vision_content:
