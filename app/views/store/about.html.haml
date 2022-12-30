@@ -31,10 +31,10 @@
           - unless I18n.t("page.about_us.culture").empty?
             %h3.mtext-111.cl2.p-b-16
               = I18n.t "page.about_us.culture"
-            %p.stext-113.cl6.p-b-26
+            %p.stext-113.cl6.p-b-10
               = I18n.t "page.about_us.culture_content.content1"
             - (2..6).each do |data|
-              %p
+              %p.stext-113.cl6
                 = I18n.t "page.about_us.culture_content.content#{data}"
       .col-11.col-md-5.col-lg-3.m-lr-auto.m-t-30
         .how-bor1
