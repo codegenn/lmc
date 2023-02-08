@@ -40,6 +40,29 @@
       justify-content: center;
     }
   }
+  .discount-amount {
+    position: absolute;
+    top: 35%;
+    left: 34%;
+    width: 15%;
+    height: 25%;
+    text-align: end;
+    font-size: 7rem;
+    line-height: 50%;
+    color: #041d44;
+  }
+
+  .discount-amount-pc {
+    position: absolute;
+    top: 35%;
+    left: 34%;
+    width: 15%;
+    height: 25%;
+    text-align: end;
+    font-size: 7rem;
+    line-height: 40%;
+    color: #041d44;
+  }
   .wrapper-discount {
     display none;
     height: 303px;
@@ -47,7 +70,6 @@
     position: relative;
     border: 2px solid #343a40;
     border-left: 40px solid #343a40;
-    padding: 15px;
     color: rgba(0, 0, 0, 0.5);
     font-size: small;
     display: inline-block;
@@ -56,7 +78,7 @@
     background-image: url(#{image_path "discount-pc.jpg"})
   }
   .discount-banner {
-    display:none;
+    -# display:none;
     position: fixed;
     bottom: 30%;
     right: 0;
@@ -134,7 +156,40 @@
     margin: 0 2%;
   }
 
+  .discount-percent-mobile {
+    position: absolute;
+    top: 37%;
+    left: 75%;
+    font-size: 60px;
+  }
+
+  @media only screen and (max-width: 991px) {
+    .button-discount {
+      bottom: 25% !important;
+      left: 64% !important;
+      right: 3px;
+      height: 32px;
+      font-size: 9px;
+      min-width: 100px;
+    }
+
+    .input-discount {
+      bottom: 25%;
+      right: 37%;
+      height: 32px;
+      width: 50%;
+      font-size: 10px;
+    }
+  }
+
   @media only screen and (max-width: 775px) {
+    .discount-percent-mobile {
+      position: absolute;
+      top: 35%;
+      left: 75%;
+      font-size: 35px;
+    }
+
     .parner-title {
       font-size: 17px;
     }
@@ -145,6 +200,7 @@
     }
 
     .wrapper-discount {
+      display none;
       background-image: url(#{image_path "discount-mobile.jpg"});
       height: 261px;
     }
@@ -218,11 +274,14 @@
 %form{:action => "/subscribers", :method => "post"}
   .discount-banner.discount-banner-content-hide
     .wrapper-discount
+      = image_tag "", loading: "lazy", style: "max-width: 100%; image-rendering: -webkit-optimize-contrast;"
       .wrapper-text-outside
-        Giảm giá 10%
+        = "Giảm giá #{@amount}%"
+      %span.discount-amount
+        = @amount
       %button.button-discount{:type => "submit"}
         Đăng ký
-      %input.input-discount{:placeholder => "NHẬP ĐỊA CHỈ EMAIL CỦA BẠN", :name => "email"}
+      %input.input-discount{:placeholder => @text, :name => "email"}
     
 / Banner
 .sec-banner.bg0.p-t-80.p-b-50.main-page
@@ -383,7 +442,10 @@
   }
 
 :javascript
-  
+  $(document).ready(function() {
+    if($(window).width() < 991) $('#promotion-new').modal('show')
+    $(".wrapper-text-outside").click();
+  });
 
   $(".wrapper-text-outside").click(function() {
     let parent = $(this).closest('.discount-banner')
