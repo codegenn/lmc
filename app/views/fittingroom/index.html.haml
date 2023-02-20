@@ -16,6 +16,9 @@
   }
 :javascript
   $( document ).ready(function() {
+    var logo = document.getElementById("canvas_wearfits_logo");
+    //logo.style.display = "none"; if want to hide
+    logo.src = "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png"
     if(localStorage.getItem("login-demo") == "ok") {
       $("#login").modal('hide');
     } else {
