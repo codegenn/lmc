@@ -79,3 +79,4 @@ gem 'paperclip' # file attachment syntax and callbacks
 gem 'aws-sdk'
 # gem "passenger"
 gem 'dalli'
+gem 'cancancan'

@@ -21,6 +21,12 @@ ActiveAdmin.register AdminUser do
       f.input :email
       f.input :password
       f.input :password_confirmation
+      f.input :name
+      f.input :phone
+      f.input :address
+      f.input :commission
+      f.check_box :status
+      f.input :permission
     end
     f.actions
   end

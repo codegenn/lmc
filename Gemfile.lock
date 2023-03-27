@@ -985,6 +985,7 @@ GEM
     breadcrumbs_on_rails (3.0.1)
     builder (3.2.4)
     byebug (11.1.1)
+    cancancan (3.5.0)
     canonical-rails (0.2.11)
       rails (>= 4.1, < 6.2)
     climate_control (0.2.0)
@@ -1297,6 +1298,7 @@ DEPENDENCIES
   aws-sdk
   breadcrumbs_on_rails
   byebug
+  cancancan
   canonical-rails
   cloudinary
   coffee-rails (~> 4.1.0)
