@@ -1,10 +1,10 @@
 ActiveAdmin.register Product do
 
-  permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :is_hidden, :out_of_stock, :promotion_price, :price, :sort_order,
-                :has_promotion, :measurement_image_url, :measurement_image, :slug_url, category_ids: [],
-                stocks_attributes: [:id, :_destroy, :size, :color, :product_code, :quantity], bottom_stocks_attributes: [:id, :_destroy, :size, :quantity],
-                product_images_attributes: [:id, :_destroy, :url, :pimage], color_images_attributes: [:id, :_destroy, :image_url, :color_name, :color_image],
-                translations_attributes: [:id, :locale, :title, :description, :promotion, :short_description, :measurement_description, :_destroy]
+  # permit_params :is_best_seller, :is_promotion, :is_new_arrival, :image_url, :is_hidden, :out_of_stock, :promotion_price, :price, :sort_order,
+  #               :has_promotion, :measurement_image_url, :measurement_image, :slug_url, category_ids: [],
+  #               stocks_attributes: [:id, :_destroy, :size, :color, :product_code, :quantity], bottom_stocks_attributes: [:id, :_destroy, :size, :quantity],
+  #               product_images_attributes: [:id, :_destroy, :url, :pimage], color_images_attributes: [:id, :_destroy, :image_url, :color_name, :color_image],
+  #               translations_attributes: [:id, :locale, :title, :description, :promotion, :short_description, :measurement_description, :_destroy]
 
   index do
     selectable_column
@@ -122,9 +122,21 @@ ActiveAdmin.register Product do
   end
 
   controller do
+    def scoped_collection
+      if current_admin_user.permission == 2
+        super
+      else
+        super.where(admin_user_id: current_admin_user.id)
+      end
+    end
+
     before_action :upload_product_image, only: [:create, :update]
     after_action :add_kiot, only: [:create]
     # after_action :update_kiot, only: [:update]
+
+    # def index
+    #   @products.where(admin_user_id: current_admin_user.id)
+    # end
 
     def upload_product_image
       image_attrs = params[:product][:product_images_attributes]

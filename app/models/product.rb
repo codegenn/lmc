@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug_url, use: :slugged
+  belongs_to :admin_user
   # include PgSearch
   # pg_search_scope :search, against: [:title, :short_description]
 
