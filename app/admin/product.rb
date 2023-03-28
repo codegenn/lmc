@@ -132,11 +132,6 @@ ActiveAdmin.register Product do
 
     before_action :upload_product_image, only: [:create, :update]
     after_action :add_kiot, only: [:create]
-    # after_action :update_kiot, only: [:update]
-
-    # def index
-    #   @products.where(admin_user_id: current_admin_user.id)
-    # end
 
     def upload_product_image
       image_attrs = params[:product][:product_images_attributes]

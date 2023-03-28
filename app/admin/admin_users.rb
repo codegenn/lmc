@@ -5,8 +5,7 @@ ActiveAdmin.register AdminUser do
     selectable_column
     id_column
     column :email
-    column :current_sign_in_at
-    column :sign_in_count
+    column :updated_at
     column :created_at
     actions
   end
@@ -25,8 +24,10 @@ ActiveAdmin.register AdminUser do
       f.input :phone
       f.input :address
       f.input :commission
-      f.check_box :status
-      f.input :permission
+      f.inputs 'Status' do
+        f.input :status, as: :boolean, label: 'Active'
+      end
+      f.input :permission, :as => :select, collection: [['Partner', 1], ['Admin', 2], ['Default', 0]], checked: current_admin_user.permission
     end
     f.actions
   end
