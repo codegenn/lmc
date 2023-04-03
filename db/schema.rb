@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20221027075401) do
+ActiveRecord::Schema.define(version: 20230328073629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,12 @@ ActiveRecord::Schema.define(version: 20221027075401) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "phone"
+    t.string   "name"
+    t.string   "address"
+    t.string   "commission"
+    t.boolean  "status"
+    t.integer  "permission",             default: 0
   end
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
@@ -326,8 +332,10 @@ ActiveRecord::Schema.define(version: 20221027075401) do
     t.datetime "measurement_image_updated_at"
     t.boolean  "is_hidden",                                default: false
     t.integer  "stock"
+    t.integer  "admin_user_id"
   end
 
+  add_index "products", ["admin_user_id"], name: "index_products_on_admin_user_id", using: :btree
   add_index "products", ["slug"], name: "index_products_on_slug", unique: true, using: :btree
 
   create_table "stocks", force: :cascade do |t|
@@ -375,4 +383,5 @@ ActiveRecord::Schema.define(version: 20221027075401) do
     t.boolean "one_time_use", default: false
   end
 
+  add_foreign_key "products", "admin_users"
 end

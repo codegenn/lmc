@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug_url, use: :slugged
+  belongs_to :admin_user
   # include PgSearch
   # pg_search_scope :search, against: [:title, :short_description]
 
@@ -33,6 +34,9 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :color_images, :allow_destroy => true
   accepts_nested_attributes_for :stocks, :allow_destroy => true
   accepts_nested_attributes_for :bottom_stocks, :allow_destroy => true
+  
+  PRICE_ON_ORDER = 3000000000
+  COMMISSION = 0.25
 
   def should_generate_new_friendly_id?
     slug.blank? || self.slug_url_changed?
@@ -44,6 +48,36 @@ class Product < ActiveRecord::Base
     else
       self.measurement_image.url
     end
+  end
+
+  def quantity_sell
+    stock_ids = stocks.ids
+    line_item_ids = LineItem.where(stock_id: stock_ids).where.not(order_id: nil)
+    quantity = line_item_ids.map(&:quantity).inject(0, &:+)
+  end
+
+  def total_products
+    stocks.map(&:quantity).inject(0, &:+)
+  end
+
+  def total_sell
+    quantity_sell * PRICE_ON_ORDER
+  end
+
+  def inventory
+    total_products - quantity_sell
+  end
+
+  def list_size
+    stocks.map(&:size).join(", ")
+  end
+
+  def fees_paid_sell
+    quantity_sell * PRICE_ON_ORDER * COMMISSION
+  end
+
+  def revenue_sell
+    total_sell - fees_paid_sell
   end
 
   def self.main_page(cats = [])

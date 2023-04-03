@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  def access_denied(exception)
+    redirect_to admin_dashboard_path, alert: exception.message
+  end
+
   protected
   def configure_permitted_parameters
     permits = [:phone, :email, :username]
