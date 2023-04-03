@@ -23,7 +23,11 @@ class PartnersController < ApplicationController
   end
 
   def admin
-    @products = Product.limit(3)
+    if current_user.status == 1
+      @products = Product.limit(3)
+    else
+      redirect_to partners_path
+    end
   end
 
   private
