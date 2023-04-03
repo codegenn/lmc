@@ -40,12 +40,15 @@ Rails.application.routes.draw do
     get 'store/ping'
     get 'privacy', to:"store#privacy"
     root 'store#index', as: 'store'
+    get 'partners/sign-in', to: "partners#sign_in"
+    get 'partners/sign-up', to: "partners#sign_up"
+    get 'partners/admin', to: "partners#admin"
     resources :products, only: [:index, :show]
     resources :subscribers, only: [:create]
     resources :foundations, only: [:index, :show]
     resources :jobs, only: [:index, :show]
     resources :applications, only: [:create]
-    resources :partners, only: [:create]
+    resources :partners, only: [:index, :create]
     resources :messages, only: [:create]
     resources :carts, only: [:show, :update]
     resources :line_items, only: [:create, :update, :destroy]

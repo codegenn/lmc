@@ -22,7 +22,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    store_path
+    if resource.status
+      partners_admin_path
+    else
+      store_path
+    end
     # edit_user_registration_path(resource)
   end
 

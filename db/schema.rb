@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20230328073629) do
+ActiveRecord::Schema.define(version: 20230403140040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20230328073629) do
     t.string   "commission"
     t.boolean  "status"
     t.integer  "permission",             default: 0
+    t.string   "code"
   end
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
@@ -371,6 +372,9 @@ ActiveRecord::Schema.define(version: 20230328073629) do
     t.string   "kiot_id"
     t.string   "address"
     t.string   "phone_number"
+    t.string   "code"
+    t.integer  "role"
+    t.integer  "status",                 default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

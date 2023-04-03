@@ -17,11 +17,25 @@ ActiveAdmin.register User do
     form do |f|
       f.inputs do
         f.input :email
-        f.input :password
-        f.input :password_confirmation
+        f.inputs 'Status' do
+          f.input :status, as: :boolean, label: 'Active'
+        end
       end
       f.actions
     end
-  
+  controller do
+    def update
+      # Skip password validation during update
+      if params[:user][:password].blank? && params[:user][:password_confirmation].blank?
+        params[:user].delete(:password)
+        params[:user].delete(:password_confirmation)
+        @user = User.find(params[:id])
+        @user.update(status: 1)
+        redirect_to admin_users_path, notice: "User updated successfully."
+      else
+        super
+      end
+    end
   end
+end
   

@@ -18,14 +18,18 @@
             nữa.
           %p
             Hãy cùng nhau bắt đầu hành trình ngay nào.
+          = link_to(I18n.t("user.signup"), partners_sign_up_path, class: "flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 partner-btn")
+          %p.partner-sign-in
+            Bạn đã đăng ký?
+            = link_to(I18n.t("user.signin"), partners_sign_in_path)
         .col-sm-12.col-lg-6
           %img{:src => "#{cdn_url}/partner/doi_tac_LMcation.png", width: "100%"}
-  .container
+  .container.partner-container-2
     .row
       .col-sm-12.col-lg-4
         %div
           %img{src: "#{cdn_url}/partner/loi_ich.jpg", width: "100%"}
-          %h3{style: "font-weight: 500; padding-top: 100px;"}
+          %h3
             Lợi ích khi tham gia làm đối tác sản xuất LMcation:
           %br
           %ul{style: "margin-left: 30px;"}
@@ -34,9 +38,9 @@
             %li{style: "list-style-type: disc;"}
               Được hỗ trợ quảng bá sản phẩm và phân phối sản phẩm đến tay người tiêu dùng từ a đến z.
       .col-sm-12.col-lg-4
-        %div{style: "padding-top: 50%"}
+        %div.partner-box1
           %img{src: "#{cdn_url}/partner/dieu_kien.jpg", width: "100%"}
-          %h3{style: "font-weight: 500; padding-top: 100px;"}
+          %h3
             Điều kiện trở thành đối tác sản xuất LMcation:
           %br
           %ul{style: "margin-left: 30px;"}
@@ -47,9 +51,9 @@
             %li{style: "list-style-type: disc;"}
               Tuân thủ theo các điều khoản bảo mật thông tin và chống phá giá như ký kết giữa đôi bên.
       .col-sm-12.col-lg-4
-        %div{style: "padding-top: 100%"}
+        %div.partner-box2
           %img{src: "#{cdn_url}/partner/lien_he.jpg", width: "100%"}
-          %h3{style: "font-weight: 500; padding-top: 100px;"}
+          %h3
             Hỗ trợ nhanh chóng và liên tục
           %br
           %ul{style: "margin-left: 30px;"}
@@ -59,3 +63,51 @@
               để được giải đáp thắc mắc và thông tin chi tiết để trở thành đối tác sản xuất LMcation.
             %li{style: "list-style-type: disc;"}
               Email sẽ được phản hồi trong vòng 24-48 tiếng tất cả các ngày trong tuần.
+  -# .container{style: "margin-top: 200px;"}
+  -#   .policy
+  -#     .col-md-12.col-xl-12.p-b-30.policy-box
+  -#       %h4.ltext-107.txt-center
+  -#         = I18n.t("jobs.work")
+  -#       %br
+  -#       - @jobs.each do |job|
+  -#         .job-p
+  -#           %h4.ltext-108
+  -#             = link_to job_path(job.id), class: ".mtext-101 cl2 hov-cl1 trans-04" do
+  -#               = job.title
+  -#           %p.stext-108.cl6
+  -#             = job.short_description
+:css
+  .partner-btn {
+    margin: 100px 0 20px 0;
+    width: 50%;
+  }
+  .partner-container-2 {
+    margin-top: 200px
+  }
+  .partner-container-2 h3, {
+    font-weight: 500; padding-top: 100px;
+  }
+  .partner-box1 {
+    padding-top: 50%
+  }
+  .partner-box2 {
+    padding-top: 100%
+  }
+  @media (max-width: 575px) {
+    .partner-btn {
+      width: 100%;
+      margin: 30px 0 20px 0;
+    }
+    .partner-sign-in {
+      margin-bottom: 30px;
+    }
+    .partner-container-2 {
+      margin-top: 20px
+    }
+    .partner-container-2 h3, {
+      padding-top: 30px;
+    }
+    .partner-box1, .partner-box2 {
+      padding-top: 10%
+    }
+  }

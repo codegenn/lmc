@@ -325,6 +325,7 @@ en:
     city: 'CITY'
     phone: 'PHONE'
     note: 'NOTE'
+    code: "Sản phẩm thời trang bạn muốn hợp tác sản xuất là gì?"
     pass_note: "*(6 characters minimum)"
     current_pass: "Current password"
     update: "Update"

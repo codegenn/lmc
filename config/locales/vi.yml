@@ -332,6 +332,7 @@ vi:
     city: 'THÀNH PHỐ'
     phone: 'ĐIỆN THOẠI'
     note: 'GHI CHÚ'
+    code: "Sản phẩm thời trang bạn muốn hợp tác sản xuất là gì?"
     pass_note: "Mật khẩu cần ít nhất 6 ký tự."
     current_pass: "Mật Khẩu hiện tại"
     update: "Cập nhật thông tin"
