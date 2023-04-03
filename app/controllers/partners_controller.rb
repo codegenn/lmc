@@ -26,6 +26,7 @@ class PartnersController < ApplicationController
     if current_user.status == 1
       @products = Product.limit(3)
     else
+      flash[:success] = "Quý khách đã đăng nhập"
       redirect_to partners_path
     end
   end
