@@ -15,7 +15,7 @@ class PartnersController < ApplicationController
     @partner = User.new(partner_params)
 
     if @partner.save
-      flash[:success] = 'Thank you for your contact. We will check and contact to you soon'
+      flash[:success] = 'Cảm ơn bạn đã gửi thông tin. Bộ phận phụ trách sẽ liên hệ bạn trong vòng 24-48h làm việc.'
     else
       flash[:danger] = @partner.errors.full_messages.to_sentence
     end
