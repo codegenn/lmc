@@ -13,31 +13,20 @@ RUN sed -i -e "s/deb.debian.org/cloudfront.debian.net/g" /etc/apt/sources.list \
     &&  apt-get clean \
     &&  gem install bundler -v ${BUNDLER_VERSION}
 
-RUN apt-get update && apt-get install -y \
-    curl \
-    build-essential \
-    libpq-dev &&\
-    curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
-    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-    apt-get update && apt-get install -y nodejs yarn
-
-RUN echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections \
-    && echo "postfix postfix/mailname string \$myhostname" | debconf-set-selections \
-    && apt-get install postfix -y
+RUN apt-get update -qq && \
+    apt-get install -y nodejs
 
 # bundle install
 WORKDIR ${RAILS_ROOT}
 COPY ./Gemfile ./Gemfile.lock ./
 
-RUN --mount=type=cache,target=.cache/bundle,id=lmcation-bundle \
-    cp -arT .cache/bundle $(gem environment gemdir) \
-    &&  bundle install --jobs=3 --retry=5 \
-    &&  bundle clean --force \
-    &&  cp -arT $(gem environment gemdir) .cache/bundle
+RUN bundle install --jobs 4 --retry 3
 
-COPY ./ .
+COPY . /.
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
 
-RUN /bin/bash -c bundle exec rake assets:precompile -e production
+EXPOSE 3000
 
-EXPOSE 8080
+CMD ["rails", "server", "-b", "0.0.0.0"]
