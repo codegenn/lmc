@@ -78,6 +78,8 @@ en:
       return: '30 DAYS RETURNS'
       delivery: 'FREE SHIPPING'
       shop_now: 'SHOP NOW'
+      members: 'MEMBERS'
+      member_link: '#'
       more: 'MORE'
     foundation:
       inspiration: 'INSPIRATION'

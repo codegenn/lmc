@@ -219,7 +219,6 @@ ActiveAdmin.register Product do
         "weight": 0,
         "unit": "VND",
         "conversionValue": 1,
-        "description": "",
         "modifiedDate": "#{Time.now}",
         "isActive": true,
         "description": @product.description,

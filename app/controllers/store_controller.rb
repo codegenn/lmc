@@ -3,6 +3,7 @@ class StoreController < ApplicationController
   def index
     # Rails.cache.fetch(cache_key("store")) do
       @menu = 'store'
+      @member_ads = MemberAd.all
       expires_in 3.days, :public => true
       meta_data(
         "lmcation.com, lmcation",
