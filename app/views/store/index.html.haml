@@ -134,105 +134,6 @@
     margin: 0 2%;
   }
 
-  .member-slider {
-    justify-content: center;
-  }
-
-  .direction button {
-    background-color: #a19c9c40;
-    border-style: solid;
-    border-width: 3px;
-    display: inline-block;
-    font-family: Inter;
-    font-weight: 300;
-    line-height: 16px;
-    margin: 0px 5px;
-    text-align: center;
-    width: 40px;
-    height: 6px;
-  }
-
-  .direction button:hover {
-    background-color: #ffffff;
-  }
-
-  #formList {
-    width: 100%;
-    overflow: hidden;
-    margin: 10px auto;
-    scroll-behavior: smooth;
-    display: flex;
-    justify-content: center;
-  }
-
-  #formList::-webkit-scrollbar {
-    display: none;
-  }
-
-  #list {
-    display: flex;
-    width: max-content;
-  }
-
-  .item {
-    display: flex;
-    flex-direction: column;
-    width: 246px;
-    overflow: hidden;
-    transition: 0.5s;
-    margin: 45px;
-  }
-
-  .item .avatar {
-    display: block;
-    margin-bottom: 10px;
-    width: 246px;
-    height: 246px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-
-  .item .content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .item .content div {
-    padding: 10px 0;
-    text-align: center;
-    color: #b29655;
-    display: inline;
-    letter-spacing: 0.8px;
-  }
-
-  .item .content .name {
-    font-weight: 500;
-    line-height: 20.8px;
-    text-transform: uppercase;
-  }
-
-  .item .content .role {
-    font-size: 12.8px;
-    font-weight: 300;
-    line-height: 16.64px;
-    text-transform: uppercase;
-  }
-
-  .item .content .desc {
-    color: #212529;
-    font-size: 14.4px;
-    font-weight: 300;
-    line-height: 23.04px;
-    margin: 1.44px 0px;
-  }
-
-  @media screen and (max-width: 1024px) {
-    .item {
-      width: calc(33.3vw - 40px);
-    }
-  }
 
   @media only screen and (max-width: 775px) {
     .parner-title {
@@ -309,10 +210,6 @@
 
     .wrapper-text-outside {
       bottom: -30px;
-    }
-
-    .item {
-      width: calc(50vw - 20px);
     }
   }
   
@@ -461,27 +358,8 @@
         - else
           = render 'partner_a'
 
-  .container
-    .row.isotope-grid
-      .block1-txt-child1.flex-col-l.center.m-t-5.m-b-15
-        %span.block1-name.ltext-108.trans-04.p-b-8.parner-title
-          = I18n.t "page.index.members"
-    .row.d-flex.member-slider
-      #formList
-        #list
-          - @member_ads.each do |member|
-            .item 
-              = image_tag "#{member['avatar']}", class: "avatar", loading:"lazy",  alt: "member avatar"
-              .content 
-                .name 
-                  = member['name']
-                .role 
-                  = member['role']
-                .desc 
-                  = member['description']
-      .direction 
-        %button#prev
-        %button#next
+  - if @member_ads.present?
+    = render 'member_slider'
       
 
 #susimg.modal.fade{:role => "dialog"}

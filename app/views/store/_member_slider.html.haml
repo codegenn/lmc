@@ -1,0 +1,144 @@
+:css 
+  .member-slider {
+    justify-content: center;
+  }
+
+  .direction button {
+    background-color: #bfbfa4;
+    border-style: solid;
+    border: none;
+    border-width: 3px;
+    display: inline-block;
+    font-family: Inter;
+    font-weight: 300;
+    line-height: 16px;
+    margin: 0px 5px;
+    text-align: center;
+    width: 40px;
+    height: 6px;
+  }
+
+  .direction button:hover {
+    background-color: #363535;
+  }
+
+  #formList {
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    margin: 10px auto;
+    scroll-behavior: smooth;
+  }
+
+  #formList::-webkit-scrollbar {
+    display: none;
+  }
+
+  #list {
+    display: flex;
+    width: max-content;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: 0.5s;
+    margin: 0px 45px;
+    justify-content: center;
+    min-width: 200px;
+    width: 200px;
+  }
+
+  .item .avatar {
+    display: block;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid;
+    align-self: center;
+  }
+
+  .item .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item .content div {
+    padding: 10px 0;
+    text-align: center;
+    color: #b29655;
+    display: inline;
+    letter-spacing: 0.8px;
+  }
+
+  .item .content .name {
+    font-weight: 500;
+    line-height: 20.8px;
+    text-transform: uppercase;
+  }
+
+  .item .content .role {
+    font-size: 12.8px;
+    font-weight: 300;
+    line-height: 16.64px;
+    text-transform: uppercase;
+  }
+
+  .item .content .desc {
+    color: #212529;
+    font-size: 14.4px;
+    font-weight: 300;
+    line-height: 23.04px;
+    margin: 1.44px 0px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .item {
+      width: calc(33.3vw - 90px)
+    }
+  }
+
+  @media only screen and (max-width: 775px) {
+    .item {
+      width: calc(50vw - 90px);
+    }
+  }
+
+
+.container
+  .row.isotope-grid
+    .block1-txt-child1.flex-col-l.center.m-t-5.m-b-15
+      %span.block1-name.ltext-108.trans-04.p-b-8.parner-title
+        = I18n.t "page.index.members"
+  .row.d-flex.member-slider
+    #formList
+      #list
+        - @member_ads.each do |member|
+          .item 
+            = image_tag "#{member['avatar']}", class: "avatar", loading:"lazy"
+            .content 
+              .name 
+                = member['name']
+              .role 
+                = member['role']
+              .desc 
+                = member['description']
+    .direction 
+      %button#prev
+      %button#next
+
+
+:javascript
+  $("#next").click(function() {
+    const widthItem = document.querySelector('.item').offsetWidth;
+    document.getElementById('formList').scrollLeft += document.documentElement.clientWidth;
+  })
+  $("#prev").click(function() {
+    const widthItem = document.querySelector('.item').offsetWidth;
+    document.getElementById('formList').scrollLeft -= document.documentElement.clientWidth;
+  })
