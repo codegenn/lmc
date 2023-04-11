@@ -1,7 +1,5 @@
 ActiveAdmin.register MemberAd do
 
-  permit_params :name, :role, :description, :status, :avatar
-
   index do
     selectable_column
     id_column
@@ -38,7 +36,7 @@ ActiveAdmin.register MemberAd do
     end
 
     def create 
-      @member_ads = MemberAd.new(permitted_params[:member_ad])
+      @member_ads = MemberAd.new(params_data)
 
       if @member_ads.save 
         redirect_to admin_member_ads_path, notice: "User updated successfully."
@@ -48,13 +46,32 @@ ActiveAdmin.register MemberAd do
     end
 
     def update 
-      params[:member_ad].update(permitted_params[:member_ad])
+      @member = MemberAd.find_by(id: params[:id])
+      if @member.present?
+        @member.update(params_data)
+      end
+      
       redirect_to admin_member_ads_path, notice: "User updated successfully."
     end
 
     def destroy 
-      params[:member_ad].destroy!
+      @member = MemberAd.find_by(id: params[:id])
+      if @member.present?
+        @member.destroy!
+      end
+
       redirect_to admin_member_ads_path, notice: "User delete successfully."
+    end
+
+    private 
+    def params_data
+      {
+        :name => params[:member_ad][:name],
+        :role => params[:member_ad][:role],
+        :description => params[:member_ad][:description],
+        :avatar => params[:member_ad][:avatar],
+        :status => params[:member_ad][:status]
+      }
     end
   end
 end

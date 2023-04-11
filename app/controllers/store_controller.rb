@@ -3,8 +3,8 @@ class StoreController < ApplicationController
   def index
     # Rails.cache.fetch(cache_key("store")) do
       @menu = 'store'
-      @member_ads = MemberAd.all
-      list_video = MasterDatum.where(type_name: 'homepage_video')
+      @member_ads = MemberAd.where(status: true)
+      list_video = MasterDatum.where(type_name: 'homepage_video', status: true)
       if list_video.present?
         @embed_links = list_video.map do |video|
           link = video.value
