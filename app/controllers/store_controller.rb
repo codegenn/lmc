@@ -4,6 +4,14 @@ class StoreController < ApplicationController
     # Rails.cache.fetch(cache_key("store")) do
       @menu = 'store'
       @member_ads = MemberAd.all
+      list_video = MasterDatum.where(type_name: 'homepage_video')
+      if list_video.present?
+        @embed_links = list_video.map do |video|
+          link = video.value
+          id = link.split("v=")&.last&.split("&")&.first
+          "https://www.youtube.com/embed/#{id}"
+        end 
+      end
       expires_in 3.days, :public => true
       meta_data(
         "lmcation.com, lmcation",

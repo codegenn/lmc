@@ -81,6 +81,8 @@ en:
       members: 'MEMBERS'
       member_link: '#'
       more: 'MORE'
+      video: 'VIDEO'
+      video_desc: 'Our activity video'
     foundation:
       inspiration: 'INSPIRATION'
       empowerment: 'EMPOWERMENT'

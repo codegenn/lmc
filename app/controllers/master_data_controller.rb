@@ -1,0 +1,2 @@
+class MasterDataController < ApplicationController
+end

@@ -360,7 +360,10 @@
 
   - if @member_ads.present?
     = render 'member_slider'
-      
+
+  - if @embed_links.present?
+    = render 'video'  
+    
 
 #susimg.modal.fade{:role => "dialog"}
   .modal-dialog

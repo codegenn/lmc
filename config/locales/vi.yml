@@ -64,6 +64,8 @@ vi:
       shop_now: 'MUA NGAY'
       members: 'THÀNH VIÊN'
       member_link: '#'
+      video: 'VIDEO'
+      video_desc: 'Video hoạt động của chúng tôi'
       more: 'XEM THÊM'
     foundation:
       inspiration: 'CẢM HỨNG CỦA LMCATION'
