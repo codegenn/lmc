@@ -400,14 +400,3 @@
       $(parent).addClass("discount-banner-content-hide")
     }
   })
-
-
-:javascript
-  $("#next").click(function() {
-    const widthItem = document.querySelector('.item').offsetWidth;
-    document.getElementById('formList').scrollLeft += document.documentElement.clientWidth;
-  })
-  $("#prev").click(function() {
-    const widthItem = document.querySelector('.item').offsetWidth;
-    document.getElementById('formList').scrollLeft -= document.documentElement.clientWidth;
-  })
