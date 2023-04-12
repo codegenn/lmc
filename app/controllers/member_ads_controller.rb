@@ -1,0 +1,2 @@
+class MemberAdsController < ApplicationController
+end

@@ -59,6 +59,7 @@ Rails.application.routes.draw do
     resources :stocks, only: [] do
       get :show, on: :collection
     end
+    get 'home-test', to:"store#index_test"
   end
 end
 

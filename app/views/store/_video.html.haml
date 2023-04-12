@@ -1,0 +1,41 @@
+:css 
+  .area {
+    margin-top: 50px;
+  }
+  .video-area {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .video-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgb(235, 241, 246);
+    margin: 30px 400px;
+    min-width: 100px;
+  }
+
+  .video-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .video-item {
+    margin: 20px;
+    width: 550px;
+    height: 350px;
+  }
+
+.container.area
+  .row.isotope-grid
+    .block1-txt-child1.flex-col-l.center.m-t-5.m-b-15
+      %span.block1-name.ltext-108.trans-04.p-b-8.parner-title
+        = I18n.t "page.index.video"
+  .row.video-area
+    .video-description
+      = I18n.t "page.index.video_desc"
+    .video-divider
+    .video-list
+      - @embed_links.each do |video|
+        %iframe.video-item{:src=> "#{video}"}
