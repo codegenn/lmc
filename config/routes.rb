@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   # devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   devise_for :users,
     controllers: { registrations: 'registrations', omniauth_callbacks: "users/omniauth_callbacks"}
-  # devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :partner_users,
+    controllers: { registrations: 'partner_users/registrations', sessions: 'partner_users/sessions'}
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get "sitemap.xml" => "sitemaps#index", :format => "xml", :as => :sitemap

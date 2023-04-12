@@ -11,7 +11,7 @@
           <% end %>
         <div>
         <div>
-          Giá bán: <%= product.price %>
+          Giá bán: <%= number_to_currency(product.price, unit: "đ",  format: "%n %u") %>
         <div>
         <div>
           Kích thước: <%= product.list_size %>

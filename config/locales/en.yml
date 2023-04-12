@@ -309,6 +309,7 @@ en:
     signup: 'Not a Member yet? Sign Up'
     signup_btn: 'Sign Up'
     password: 'Password'
+    remember: 'Remember me'
     password_confirmation: 'Password Confirmation'
     submit: 'Submit'
     post_orders: 'MY ORDER'

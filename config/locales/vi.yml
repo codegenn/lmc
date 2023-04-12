@@ -316,6 +316,7 @@ vi:
     signup: 'ĐĂNG KÝ'
     signup_btn: 'Đăng Ký'
     password: 'Mật khẩu'
+    remember: "Ghi nhớ mật khẩu"
     password_confirmation: 'Lặp lại mật khẩu'
     submit: 'Gửi'
     post_orders: 'THEO DÕI ĐƠN HÀNG'
