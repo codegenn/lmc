@@ -121,7 +121,7 @@
       #list
         - @member_ads.each do |member|
           .item 
-            = image_tag "#{member['avatar']}", class: "avatar", loading:"lazy"
+            = cl_image_tag "#{member.avatar.url}", class: "avatar", loading:"lazy",  alt: "team member"
             .content 
               .name 
                 = member['name']

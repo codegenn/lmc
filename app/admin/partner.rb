@@ -35,7 +35,7 @@ ActiveAdmin.register Partner do
     before_action :upload_partner_image, only: [:create, :update]
 
     def upload_partner_image
-
+      
       image_attrs = params[:partner][:product_images_attributes]
       if image_attrs.present?
         params[:product][:product_images_attributes].each do |key, image_params|
