@@ -62,6 +62,10 @@ vi:
       return: '30 NGÀY ĐỔI TRẢ'
       delivery: 'MIỄN PHÍ VẬN CHUYỂN'
       shop_now: 'MUA NGAY'
+      members: 'THÀNH VIÊN'
+      member_link: '#'
+      video: 'VIDEO'
+      video_desc: 'Video hoạt động của chúng tôi'
       more: 'XEM THÊM'
     foundation:
       inspiration: 'CẢM HỨNG CỦA LMCATION'
@@ -359,6 +363,8 @@ vi:
       success: 'Cảm ơn bạn đã đặt hàng, đơn hàng của bạn sẽ được xử lý trong vòng 48 tiếng đồng hồ. Vui lòng gọi 0777 12 12 99 nếu bạn có những yêu cầu khác.'
     search:
       no_re: 'Không tìm thấy sản phẩm với từ khoá'
+    member_ad:
+      success: 'Tạo thành công'
   order:
     payment_method: 'PHƯƠNG THỨC THANH TOÁN'
 
