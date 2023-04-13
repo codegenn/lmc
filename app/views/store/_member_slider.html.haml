@@ -1,6 +1,14 @@
 :css 
   .member-slider {
     justify-content: center;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slide-content  {
+    display: flex;
+    max-width: 100%;
   }
 
   .direction button {
@@ -22,12 +30,35 @@
     background-color: #363535;
   }
 
+  .arrow-direction {
+    color: #bfbfa4;
+    border: none;
+    font-weight: 600;
+    font-size: 40px;
+    top: 0;
+    bottom: 0;
+    position: sticky;
+  }
+
+  .arrow-direction:hover {
+    color: #363535;
+  }
+
+  #arrow-prev {
+    left: 10px;
+  }
+
+  #arrow-next {
+    right: 10;
+  }
+
   #formList {
-    width: 100%;
     max-width: 100%;
     overflow: auto;
     margin: 10px auto;
     scroll-behavior: smooth;
+    position: relative;
+    display: flex;
   }
 
   #formList::-webkit-scrollbar {
@@ -45,7 +76,7 @@
     flex-direction: column;
     overflow: hidden;
     transition: 0.5s;
-    margin: 0px 45px;
+    margin: 0px 25px;
     justify-content: center;
     min-width: 200px;
     width: 200px;
@@ -54,8 +85,8 @@
   .item .avatar {
     display: block;
     margin-bottom: 10px;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 50%;
     border: 5px solid;
@@ -70,9 +101,9 @@
   }
 
   .item .content div {
-    padding: 10px 0;
+    -# padding: 10px 0;
     text-align: center;
-    color: #b29655;
+    color: #717fe0;
     display: inline;
     letter-spacing: 0.8px;
   }
@@ -81,6 +112,7 @@
     font-weight: 500;
     line-height: 20.8px;
     text-transform: uppercase;
+    margin-bottom: 5px;
   }
 
   .item .content .role {
@@ -88,6 +120,7 @@
     font-weight: 300;
     line-height: 16.64px;
     text-transform: uppercase;
+     margin-bottom: 10px;
   }
 
   .item .content .desc {
@@ -95,7 +128,7 @@
     font-size: 14.4px;
     font-weight: 300;
     line-height: 23.04px;
-    margin: 1.44px 0px;
+    -# margin: 1.44px 0px;
   }
 
   @media screen and (max-width: 1024px) {
@@ -111,24 +144,29 @@
   }
 
 
-.container
+.container.area
   .row.isotope-grid
     .block1-txt-child1.flex-col-l.center.m-t-5.m-b-15
       %span.block1-name.ltext-108.trans-04.p-b-8.parner-title
         = I18n.t "page.index.members"
   .row.d-flex.member-slider
-    #formList
-      #list
-        - @member_ads.each do |member|
-          .item 
-            = cl_image_tag "#{member.avatar.url}", class: "avatar", loading:"lazy",  alt: "team member"
-            .content 
-              .name 
-                = member['name']
-              .role 
-                = member['role']
-              .desc 
-                = member['description']
+    .slide-content  
+      %button#arrow-prev.arrow-direction
+        <
+      #formList
+        #list
+          - @member_ads.each do |member|
+            .item 
+              = cl_image_tag "#{member.avatar.url}", class: "avatar", loading:"lazy",  alt: "team member"
+              .content 
+                .name 
+                  = member['name']
+                .role 
+                  = member['role']
+                .desc 
+                  = member['description']
+      %button#arrow-next.arrow-direction
+        >
     .direction 
       %button#prev
       %button#next
@@ -140,6 +178,14 @@
     document.getElementById('formList').scrollLeft += document.documentElement.clientWidth;
   })
   $("#prev").click(function() {
+    const widthItem = document.querySelector('.item').offsetWidth;
+    document.getElementById('formList').scrollLeft -= document.documentElement.clientWidth;
+  })
+  $("#arrow-next").click(function() {
+    const widthItem = document.querySelector('.item').offsetWidth;
+    document.getElementById('formList').scrollLeft += document.documentElement.clientWidth;
+  })
+  $("#arrow-prev").click(function() {
     const widthItem = document.querySelector('.item').offsetWidth;
     document.getElementById('formList').scrollLeft -= document.documentElement.clientWidth;
   })
