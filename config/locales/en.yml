@@ -388,3 +388,19 @@ en:
   prom_3: "GET 10% OFF VOUCHER"
   prom_4: "BEAUTY CARE BENEFITS UP TO 3 MILLION VND"
   success_sign_up: "Thank you, you have already signed up successfully"
+  partners:
+    header: "BECOME AN LMCATION PRODUCTION PARTNER"
+    description: "Become an LMcation partner to empower your livelihood, get trainings, improve your skills and more.</br>Let's get started on this journey together."
+    section_1:
+      header: "Benefits as a production partner of LMcation:"
+      des_1: "Get advice, improve skills, and assistance in sourcing materials to improve product quality."
+      des_2: "Get support to promote products and distribute products to customers from A to Z."
+    section_2:
+      header: "Conditions to become an LMcation production partner:"
+      des_1: "Be a business entity (e.g., production house, personal entity, company) producing fashion products in Vietnam."
+      des_2: "Comply with the sales policy and the entire sales process of LMcation."
+      des_3: "Comply with the terms of information security and anti-dumping as signed by both parties."
+    section_3:
+      header: "We are always at your service"
+      des_1: 'Please contact %a{href: "mailto:order@lmcation.com"} order@lmcation.com for inquiries and further details to become an LMcation production partner.'
+      des_2: "Emails will be responded to within 24-48 hours, 7 days/ week."

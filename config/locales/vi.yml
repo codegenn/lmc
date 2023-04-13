@@ -451,3 +451,19 @@ vi:
   prom_3: "GIẢM 10% CHO ĐƠN HÀNG ĐẦU TIÊN"
   prom_4: "QUYỀN LỢI LÀM ĐẸP LÊN TỚI 3 TRIỆU ĐỒNG"
   success_sign_up: "Bạn đã đăng ký thành công"
+  partners:
+    header: "TRỞ THÀNH ĐỐI TÁC SẢN XUẤT CỦA LMCATION"
+    description: "Trở thành Đối tác của LMcation để làm chủ cuộc sống của mình, được hỗ trợ đào tạo và nâng cao tay nghề, quảng bá sản phẩm, kiếm thêm thu nhập và hơn thế nữa.Hãy cùng nhau bắt đầu hành trình ngay nào."
+    section_1:
+      header: "Lợi ích khi tham gia làm đối tác sản xuất LMcation:"
+      des_1: "Được tư vấn, hỗ trợ kỹ năng, nguồn nguyên liệu số lượng lớn... để nâng cao chất lượng sản phẩm."
+      des_2: "Được hỗ trợ quảng bá sản phẩm và phân phối sản phẩm đến tay người tiêu dùng từ a đến z."
+    section_2:
+      header: "Điều kiện trở thành đối tác sản xuất LMcation:"
+      des_1: "Là đơn vị kinh doanh (xưởng, công ty, hợp tác xã,..) sản xuất các sản phẩm thời trang tại Việt Nam."
+      des_2: "Tuân thủ theo chính sách bán hàng và toàn bộ quy trình bán hàng của LMcation."
+      des_3: "Tuân thủ theo các điều khoản bảo mật thông tin và chống phá giá như ký kết giữa đôi bên."
+    section_3:
+      header: "Hỗ trợ nhanh chóng và liên tục"
+      des_1: 'Vui lòng liên hệ %a{href: "mailto:order@lmcation.com"} order@lmcation.com để được giải đáp thắc mắc và thông tin chi tiết để trở thành đối tác sản xuất LMcation.'
+      des_2: "Email sẽ được phản hồi trong vòng 24-48 tiếng tất cả các ngày trong tuần."
