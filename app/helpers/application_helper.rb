@@ -71,5 +71,6 @@ module ApplicationHelper
       iframe = "<iframe class='iframe-youtube' src='#{youtube_embed_url}' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
       content.gsub!(match[0], iframe)
     end
+    content
   end
 end
