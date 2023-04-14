@@ -1,3 +1,5 @@
+- flash.each do |key, value|
+  = content_tag :div, value, class: "alert alert-#{key} alert-danger" unless key == 'pixel'
 = form_for PartnerUser.new, url: partner_user_registration_path do |f|
   = render "devise/shared/error_messages", resource: resource
   .field
@@ -6,9 +8,8 @@
       = f.email_field :email, autofocus: true, autocomplete: "email", class: 'stext-111 cl2 plh3 size-116 p-l-20'
   .field
     = f.label :password, I18n.t("user.password").upcase
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
+    %em
+      = I18n.t("user.pass_note")
     .bor8.m-b-20.how-pos4-parent
       = f.password_field :password, autocomplete: "new-password", class: 'stext-111 cl2 plh3 size-116 p-l-20'
   .field

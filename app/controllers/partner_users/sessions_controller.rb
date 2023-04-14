@@ -6,6 +6,7 @@ class PartnerUsers::SessionsController < Devise::SessionsController
   # GET /resource/sign_in
   def new
     super
+    flash.now[:error] = I18n.t("partner.signin_error")
   end
 
   # POST /resource/sign_in

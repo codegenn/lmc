@@ -7,18 +7,21 @@ class PartnerUsers::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     super
-    redirect_to new_partner_user_registration_path
   end
 
   # POST /resource
   def create
     super do |resource|
       if resource.errors.any?
-        # Redirect to your URL here
+        flash["danger"] = I18n.t("parner_signup")
         redirect_to new_partner_user_registration_path
         return
       end
     end
+  end
+
+  def sign_up_params
+    params.require(:partner_user).permit(:email, :password, :password_confirmation, :name, :address, :info, :phone)
   end
 
   # GET /resource/edit
@@ -45,8 +48,12 @@ class PartnerUsers::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
+  def after_sign_up_error_path_for(resource)
+    flash[:error] = resource.errors.full_messages.join(", ")
+    render 'signup_failure'
+  end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
