@@ -1,3 +1,14 @@
+:css
+  .iframe-youtube {
+      width: 100%;
+      height: 500px;
+    }
+  @media (max-width: 576px) {
+    .iframe-youtube {
+      height: 300px;
+    }
+  }
+
 = content_for :title do
   = @product.title
 %section.sec-product-detail.bg0.p-t-65.p-b-60.main-page
@@ -98,7 +109,7 @@
         #nav-tabContent.tab-content
           #nav-home.tab-pane.fade.show.active{"aria-labelledby" => "nav-home-tab", :role => "tabpanel"}
             .how-pos2.p-lr-15-md
-              = raw @product.description
+              = raw convert_link(@product.description)
           #nav-profile.tab-pane.fade{"aria-labelledby" => "nav-profile-tab", :role => "tabpanel"}
             .how-pos2.p-lr-15-md
               .product-measurement-image
