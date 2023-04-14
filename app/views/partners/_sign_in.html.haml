@@ -1,5 +1,5 @@
 - flash.each do |key, value|
-  = content_tag :div, value, class: "alert alert-#{key}" unless key == 'pixel'
+  = content_tag :div, value, class: "alert alert-#{key} alert-danger" unless key == 'pixel'
 = form_for resource, as: resource_name, url: partner_user_session_path() do |f|
   .field
     = f.label :email, I18n.t("user.email")

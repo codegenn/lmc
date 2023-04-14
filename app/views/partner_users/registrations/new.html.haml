@@ -1,0 +1,20 @@
+.main-page.bg-img1.txt-center.p-tb-92.banner-bg
+  = cl_image_tag "#{cdn_url}/systems/lmcation+banner+5.jpg"
+  %h1.ltext-105.cl0.txt-center.title
+    = I18n.t "user.user_header"
+  .mtext-105.cl0.txt-center.description
+    = I18n.t "user.signin_description"
+%section.bg0.p-t-104.p-b-116.session-top
+  .container
+    .size-210.bor10.p-lr-70.p-t-55.p-b-70.p-lr-15-lg.w-full-md{style: "margin: 0 auto;"}
+      %h2.ltext-102.text-center.title-sign
+        = I18n.t "user.signup"
+      %br
+      = render "partners/sign_up"
+:css
+  @media (max-width: 400px) {
+    .title-sign {
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+  }
