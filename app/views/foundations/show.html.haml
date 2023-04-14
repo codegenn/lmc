@@ -18,4 +18,14 @@
               %h1.ltext-109.cl2.p-b-28
                 = @blog.title
               %p.stext-117.cl6.p-b-26
-                = raw @blog.content
+                = raw convert_link(@blog.content)
+:css
+  .iframe-youtube {
+      width: 100%;
+      height: 500px;
+    }
+  @media (max-width: 576px) {
+    .iframe-youtube {
+      height: 300px;
+    }
+  }
