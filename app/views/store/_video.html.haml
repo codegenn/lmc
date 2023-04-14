@@ -28,12 +28,16 @@
   }
 
   .video-item {
-    margin: 20px;
-    width: 550px;
-    height: 350px;
+    width: 100%;
+    height: 500px;
+  }
+  @media (max-width: 576px) {
+    .video-item {
+      height: 350px;
+    }
   }
 
-.container.area
+.container
   .row.isotope-grid
     .block1-txt-child1.flex-col-l.center.m-t-5.m-b-15
       %span.block1-name.ltext-108.trans-04.p-b-8.parner-title
@@ -41,7 +45,8 @@
   .row.video-area
     .video-description
       = I18n.t "page.index.video_desc"
-    .video-divider
-    .video-list
-      - @embed_links.each do |video|
-        %iframe.video-item{:src=> "#{video}"}
+  .video-divider
+  .row
+    - @embed_links.each do |video|
+      .col-md-6.col-xl-6.p-b-30.m-lr-auto
+        %iframe.video-item{:src=> "#{video}"} 
