@@ -1,4 +1,6 @@
-= form_for User.new, url: partners_path do |f|
+- flash.each do |key, value|
+  = content_tag :div, value, class: "alert alert-#{key} alert-danger" unless key == 'pixel'
+= form_for PartnerUser.new, url: partner_user_registration_path do |f|
   = render "devise/shared/error_messages", resource: resource
   .field
     = f.label :email, I18n.t("user.email")
@@ -6,9 +8,8 @@
       = f.email_field :email, autofocus: true, autocomplete: "email", class: 'stext-111 cl2 plh3 size-116 p-l-20'
   .field
     = f.label :password, I18n.t("user.password").upcase
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
+    %em
+      = I18n.t("user.pass_note")
     .bor8.m-b-20.how-pos4-parent
       = f.password_field :password, autocomplete: "new-password", class: 'stext-111 cl2 plh3 size-116 p-l-20'
   .field
@@ -18,7 +19,7 @@
   .field
     = f.label :name, I18n.t("user.user_name")
     .bor8.m-b-20.how-pos4-parent
-      = f.text_field :username, class: 'stext-111 cl2 plh3 size-116 p-l-20'
+      = f.text_field :name, class: 'stext-111 cl2 plh3 size-116 p-l-20'
   .field
     = f.label :phone, I18n.t("user.phone")
     .bor8.m-b-20.how-pos4-parent
@@ -28,8 +29,8 @@
     .bor8.m-b-20.how-pos4-parent
       = f.text_field :address, class: 'stext-111 cl2 plh3 size-116 p-l-20'
   .field
-    = f.label :code, I18n.t("user.code")
+    = f.label :info, I18n.t("user.code")
     .bor8.m-b-20.how-pos4-parent
-      = f.text_field :code, class: 'stext-111 cl2 plh3 size-116 p-l-20'
+      = f.text_field :info, class: 'stext-111 cl2 plh3 size-116 p-l-20'
   .actions
     = f.submit I18n.t("user.signup_btn"), class: 'flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer'

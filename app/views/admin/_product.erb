@@ -2,8 +2,8 @@
   <td><%= render "admin/product_detail", product: product %></td>
   <td><%= product.total_products %></td>
   <td><%= product.quantity_sell %></td>
-  <td><%= product.total_sell %></td>
-  <td><%= product.fees_paid_sell %></td>
-  <td><%= product.revenue_sell %></td>
+  <td><%= number_to_currency(product.total_sell, unit: "đ",  format: "%n %u") %></td>
+  <td><%= number_to_currency(product.fees_paid_sell, unit: "đ",  format: "%n %u") %></td>
+  <td><%= number_to_currency(product.revenue_sell, unit: "đ",  format: "%n %u") %></td>
   <td><%= product.inventory %></td>
 </tr>

@@ -10,7 +10,7 @@ class Ability
     elsif user.permission == 2 && user.status?
       can :manage, [ AdminUser, User, Foundation, 
         Category, Partner, Product, Message,
-        Order, Subscriber, Job, Voucher, MemberAd, MasterDatum]
+        Order, Subscriber, Job, Voucher, MemberAd, MasterDatum, PartnerUser, Medium]
     else
       can :read, ActiveAdmin::Page, name: "Dashboard", namespace_name: "admin"
     end

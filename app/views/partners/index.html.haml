@@ -10,17 +10,15 @@
       .row
         .col-sm-12.col-lg-6
           %h1
-            TRỞ THÀNH ĐỐI TÁC SẢN XUẤT CỦA LMCATION
+            = I18n.t("partners.header")
           %br
           %p
-            Trở thành Đối tác của LMcation để làm chủ cuộc sống của mình, được hỗ trợ đào
-            tạo và nâng cao tay nghề, quảng bá sản phẩm, kiếm thêm thu nhập và hơn thế
-            nữa.
+            = I18n.t("partners.description")
           %p
-            Hãy cùng nhau bắt đầu hành trình ngay nào.
+            = I18n.t("partners.description_1")
           = link_to(I18n.t("user.signup"), partners_sign_up_path, class: "flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 partner-btn")
           %p.partner-sign-in
-            Bạn đã đăng ký?
+            = I18n.t("partners.sign-in")
             = link_to(I18n.t("user.signin"), partners_sign_in_path)
         .col-sm-12.col-lg-6
           %img{:src => "#{cdn_url}/partner/doi_tac_LMcation.png", width: "100%"}
@@ -31,41 +29,41 @@
           %img{src: "#{cdn_url}/partner/loi_ich.jpg", width: "100%"}
           %div
             %h3
-              Lợi ích khi tham gia làm đối tác sản xuất LMcation:
+              = I18n.t("partners.section_1.header")
             %br
             %ul{style: "margin-left: 30px;"}
               %li{style: "list-style-type: disc;"}
-                Được tư vấn, hỗ trợ kỹ năng, nguồn nguyên liệu số lượng lớn... để nâng cao chất lượng sản phẩm.
+                = I18n.t("partners.section_1.des_1")
               %li{style: "list-style-type: disc;"}
-                Được hỗ trợ quảng bá sản phẩm và phân phối sản phẩm đến tay người tiêu dùng từ a đến z.
+                = I18n.t("partners.section_1.des_2")
       .col-sm-12.col-lg-4
         %div.partner-box1.reverse
           %img{src: "#{cdn_url}/partner/dieu_kien.jpg", width: "100%"}
           %div
             %h3
-              Điều kiện trở thành đối tác sản xuất LMcation:
+              = I18n.t("partners.section_2.header")
             %br
             %ul{style: "margin-left: 30px;"}
               %li{style: "list-style-type: disc;"}
-                Là đơn vị kinh doanh (xưởng, công ty, hợp tác xã,..) sản xuất các sản phẩm thời trang tại Việt Nam.
+                = I18n.t("partners.section_2.des_1")
               %li{style: "list-style-type: disc;"}
-                Tuân thủ theo chính sách bán hàng và toàn bộ quy trình bán hàng của LMcation.
+                = I18n.t("partners.section_2.des_2")
               %li{style: "list-style-type: disc;"}
-                Tuân thủ theo các điều khoản bảo mật thông tin và chống phá giá như ký kết giữa đôi bên.
+                = I18n.t("partners.section_2.des_3")
       .col-sm-12.col-lg-4
         %div.partner-box2.reverse
           %img{src: "#{cdn_url}/partner/lien_he.jpg", width: "100%"}
           %div
             %h3
-              Hỗ trợ nhanh chóng và liên tục
+              = I18n.t("partners.section_3.header")
             %br
             %ul{style: "margin-left: 30px;"}
               %li{style: "list-style-type: disc;"}
-                Vui lòng liên hệ
-                %a{href: "mailto:order@lmcation.com"} order@lmcation.com
-                để được giải đáp thắc mắc và thông tin chi tiết để trở thành đối tác sản xuất LMcation.
+                = I18n.t("partners.section_3.des_1.first")
+                %a{href: "mailto:order@lmcation.com"} order@lmcation.com 
+                = I18n.t("partners.section_3.des_1.sec")
               %li{style: "list-style-type: disc;"}
-                Email sẽ được phản hồi trong vòng 24-48 tiếng tất cả các ngày trong tuần.
+                = I18n.t("partners.section_3.des_2")
   -# .container{style: "margin-top: 200px;"}
   -#   .policy
   -#     .col-md-12.col-xl-12.p-b-30.policy-box
@@ -87,8 +85,9 @@
   .partner-container-2 {
     margin-top: 100px
   }
-  .partner-container-2 h3, {
-    font-weight: 500; padding-top: 100px;
+  .partner-container-2 h3 {
+    font-weight: 500; 
+    padding-top: 100px;
   }
   .partner-box1 {
     padding-top: 50%

@@ -31,8 +31,8 @@ ActiveAdmin.register_page "Dashboard" do
   #   # end
   # end # content
 
-  content do
-    products = Product.limit(3)
-    render 'admin/dashbroad', products: products
-  end
+  # content do
+  #   products = Product.limit(3)
+  #   render 'admin/dashbroad', products: products
+  # end
 end
