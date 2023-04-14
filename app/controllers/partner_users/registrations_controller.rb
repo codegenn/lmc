@@ -7,13 +7,18 @@ class PartnerUsers::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     super
+    redirect_to new_partner_user_registration_path
   end
 
   # POST /resource
   def create
-    super
-    flash[:success] = 'Cảm ơn bạn đã gửi thông tin. Bộ phận phụ trách sẽ liên hệ bạn trong vòng 24-48h làm việc.'
-    redirect_to partners_path and return
+    super do |resource|
+      if resource.errors.any?
+        # Redirect to your URL here
+        redirect_to new_partner_user_registration_path
+        return
+      end
+    end
   end
 
   # GET /resource/edit
@@ -53,9 +58,9 @@ class PartnerUsers::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    partners_path
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

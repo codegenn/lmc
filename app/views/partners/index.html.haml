@@ -13,12 +13,12 @@
             = I18n.t("partners.header")
           %br
           %p
-            = I18n.t("partners.description").html_safe
+            = I18n.t("partners.description")
           %p
-            Hãy cùng nhau bắt đầu hành trình ngay nào.
+            = I18n.t("partners.description_1")
           = link_to(I18n.t("user.signup"), partners_sign_up_path, class: "flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 partner-btn")
           %p.partner-sign-in
-            Bạn đã đăng ký?
+            = I18n.t("partners.sign-in")
             = link_to(I18n.t("user.signin"), partners_sign_in_path)
         .col-sm-12.col-lg-6
           %img{:src => "#{cdn_url}/partner/doi_tac_LMcation.png", width: "100%"}
@@ -59,7 +59,9 @@
             %br
             %ul{style: "margin-left: 30px;"}
               %li{style: "list-style-type: disc;"}
-                = I18n.t("partners.section_3.des_1")
+                = I18n.t("partners.section_3.des_1.first")
+                %a{href: "mailto:order@lmcation.com"} order@lmcation.com 
+                = I18n.t("partners.section_3.des_1.sec")
               %li{style: "list-style-type: disc;"}
                 = I18n.t("partners.section_3.des_2")
   -# .container{style: "margin-top: 200px;"}

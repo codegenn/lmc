@@ -26,11 +26,15 @@ en:
         updated: "Update successfully"
         signed_up: "You have signed up successfully"
         signed_in: "You have logged in successfully"
+      partner_user:
+        signed_up: "Thank you for submitting the information. The responsible department will contact you within 24-48 working hours."
     failure:
       user:
         not_found_in_database: 'Not Found User'
         invalid: 'Not Found User'
         unauthenticated: "Not Found User"
+      partner_user:
+        already_authenticated: "Already authenticated"
     omniauth_callbacks:
       user:
         success: "You have logged in successfully."
@@ -383,8 +387,10 @@ en:
   prom_4: "BEAUTY CARE BENEFITS UP TO 3 MILLION VND"
   success_sign_up: "Thank you, you have already signed up successfully"
   partners:
+    sign-in: "Already applied?"
     header: "BECOME AN LMCATION PRODUCTION PARTNER"
-    description: "Become an LMcation partner to empower your livelihood, get trainings, improve your skills and more.</br>Let's get started on this journey together."
+    description: "Become an LMcation partner to empower your livelihood, get trainings, improve your skills and more."
+    description_1: "Let's get started on this journey together."
     section_1:
       header: "Benefits as a production partner of LMcation:"
       des_1: "Get advice, improve skills, and assistance in sourcing materials to improve product quality."
@@ -396,5 +402,7 @@ en:
       des_3: "Comply with the terms of information security and anti-dumping as signed by both parties."
     section_3:
       header: "We are always at your service"
-      des_1: 'Please contact %a{href: "mailto:order@lmcation.com"} order@lmcation.com for inquiries and further details to become an LMcation production partner.'
+      des_1:
+        first: 'Please contact '
+        sec: " for inquiries and further details to become an LMcation production partner."
       des_2: "Emails will be responded to within 24-48 hours, 7 days/ week."
