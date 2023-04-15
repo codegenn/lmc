@@ -26,11 +26,17 @@ en:
         updated: "Update successfully"
         signed_up: "You have signed up successfully"
         signed_in: "You have logged in successfully"
+      partner_user:
+        signed_up: "Thank you for submitting the information. The responsible department will contact you within 24-48 working hours."
     failure:
       user:
         not_found_in_database: 'Not Found User'
         invalid: 'Not Found User'
         unauthenticated: "Not Found User"
+      partner_user:
+        already_authenticated: "Already authenticated"
+        invalid: "Invalid email or password."
+        not_found_in_database: "not found in database"
     omniauth_callbacks:
       user:
         success: "You have logged in successfully."
@@ -78,7 +84,7 @@ en:
       return: '30 DAYS RETURNS'
       delivery: 'FREE SHIPPING'
       shop_now: 'SHOP NOW'
-      members: 'MEMBERS'
+      members: 'OUR TEAM'
       member_link: '#'
       more: 'MORE'
       video: 'VIDEO'
@@ -313,6 +319,7 @@ en:
     signup: 'Not a Member yet? Sign Up'
     signup_btn: 'Sign Up'
     password: 'Password'
+    remember: 'Remember me'
     password_confirmation: 'Password Confirmation'
     submit: 'Submit'
     post_orders: 'MY ORDER'
@@ -329,7 +336,7 @@ en:
     city: 'CITY'
     phone: 'PHONE'
     note: 'NOTE'
-    code: "Sản phẩm thời trang bạn muốn hợp tác sản xuất là gì?"
+    code: "What is the fashion product you want to collaborate on producing?"
     pass_note: "*(6 characters minimum)"
     current_pass: "Current password"
     update: "Update"
@@ -345,6 +352,14 @@ en:
               taken: "already exists"
             phone_number:
               taken: "already exists!"
+          partner_user:
+            attributes:
+              email:
+                blank: 'is not empty'
+                invalid: 'invalid'
+                taken: "already exists"
+              phone_number:
+                taken: "already exists!"
         header:
           one:   "1 error prohibited this %{model} from being saved"
           other: "%{count} errors prohibited this %{model} from being saved"
@@ -387,3 +402,24 @@ en:
   prom_3: "GET 10% OFF VOUCHER"
   prom_4: "BEAUTY CARE BENEFITS UP TO 3 MILLION VND"
   success_sign_up: "Thank you, you have already signed up successfully"
+  partners:
+    sign-in: "Already applied?"
+    header: "BECOME AN LMCATION PRODUCTION PARTNER"
+    description: "Become an LMcation partner to empower your livelihood, get trainings, improve your skills and more."
+    description_1: "Let's get started on this journey together."
+    section_1:
+      header: "Benefits as a production partner of LMcation:"
+      des_1: "Get advice, improve skills, and assistance in sourcing materials to improve product quality."
+      des_2: "Get support to promote products and distribute products to customers from A to Z."
+    section_2:
+      header: "Conditions to become an LMcation production partner:"
+      des_1: "Be a business entity (e.g., production house, personal entity, company) producing fashion products in Vietnam."
+      des_2: "Comply with the sales policy and the entire sales process of LMcation."
+      des_3: "Comply with the terms of information security and anti-dumping as signed by both parties."
+    section_3:
+      header: "We are always at your service"
+      des_1:
+        first: 'Please contact '
+        sec: " for inquiries and further details to become an LMcation production partner."
+      des_2: "Emails will be responded to within 24-48 hours, 7 days/ week."
+  parner_signup: "Email and password can't be blank."

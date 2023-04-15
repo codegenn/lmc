@@ -23,4 +23,10 @@ class UserMailer < ApplicationMailer
       return 'Thẻ ATM, VISA, MASTER'
     end
   end
+
+  def partner(user)
+    @message = message
+    subj = 'Đăng ký trở thành đối tác sản xuất của LMcation'
+    mail(to: 'info@lmcation.com', subject: subj, from: Rails.application.secrets.gmail_email)
+  end
 end
