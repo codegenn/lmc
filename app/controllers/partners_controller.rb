@@ -1,5 +1,5 @@
 class PartnersController < ApplicationController
-  before_filter :authenticate_partner_user!, except: [ :index, :sign_up, :sign_in]
+  before_filter :authenticate_partner_user!, except: [ :index, :sign_up, :sign_in, :check_info]
 
   def index
     @jobs = Job.all
@@ -24,6 +24,15 @@ class PartnersController < ApplicationController
 
   def admin
     @products = Product.limit(3)
+  end
+
+  def check_info
+    if params[:tracking].present? || params[:commit].present?
+      @partner_user = PartnerUser.find_by(tracking: params[:tracking])
+    else
+      flash[:danger] = 'Invalid User'
+      redirect_to partners_path
+    end
   end
 
   private

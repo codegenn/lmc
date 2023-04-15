@@ -27,7 +27,7 @@
                     %span.cl4
                       on
                     %span.cl5
-                      = blog.created_at
+                      = blog.created_at.to_date
                 %h4.p-b-12
                   = link_to foundation_path(id: blog.slug), class: ".mtext-101 cl2 hov-cl1 trans-04" do
                     = blog.title
@@ -57,7 +57,7 @@
                       %span.cl4
                         on
                       %span.cl5
-                        = blog.created_at
+                        = blog.created_at.to_date
                   %h4.p-b-12
                     = link_to foundation_path(blog.slug), class: ".mtext-101 cl2 hov-cl1 trans-04" do
                       = blog.title

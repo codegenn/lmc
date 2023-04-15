@@ -62,7 +62,7 @@ vi:
       return: '30 NGÀY ĐỔI TRẢ'
       delivery: 'MIỄN PHÍ VẬN CHUYỂN'
       shop_now: 'MUA NGAY'
-      members: 'THÀNH VIÊN'
+      members: 'ĐỘI NGŨ'
       member_link: '#'
       video: 'VIDEO'
       video_desc: 'Video hoạt động của chúng tôi'
@@ -151,6 +151,14 @@ vi:
       order_tracking_number: 'Mã Đơn Hàng Của Bạn'
       order_status: 'Tình Trạng Đơn Hàng'
       search_empty: 'Vui lòng nhập mã đơn hàng và tìm kiếm'
+      info_partner: "THÔNG TIN ĐỐI TÁC"
+      search_partner: 'TÌM KIẾM ĐỐI TÁC'
+      order_id_partner: 'Vui lòng nhập mã đối tác và tìm kiếm'
+      partner_tracking_number: 'Mã đối tác của bạn'
+      email: "Email"
+      phone: "Điện thoại"
+      address: "Địa chỉ"
+      name: "Họ và Tên"
     privacy:
       privacy: 'CHÍNH SÁCH BẢO MẬT'
       header_1: 'I. MỤC ĐÍCH VÀ PHẠM VI THU THẬP THÔNG TIN CÁ NHÂN'

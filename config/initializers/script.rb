@@ -151,23 +151,23 @@ end
 # #   KiotViet.add_product(payload, token)
 # # end
 
-# # def create_voucher
-# #   file = '/home/nguyenhongcam/Desktop/job/lmc/config/initializers/test.csv'
-# #   CSV.open( file, 'w' ) do |writer|
-# #     (1..500).each do |i|
-# #       code = SecureRandom.hex(3).upcase
-# #       Voucher.transaction do
-# #         a = Voucher.create(
-# #           code: code,
-# #           voucher_type: "50 off",
-# #           active: true,
-# #           one_time_use: true
-# #         )
-# #         writer << [a.code]
-# #       end
-# #     end
-# #   end
-# # end
+# def create_voucher
+#   file = '/home/nguyenhongcam/Desktop/job/lmc/config/initializers/test.csv'
+#   CSV.open( file, 'w' ) do |writer|
+#     (1..10000).each do |i|
+#       code = SecureRandom.hex(3).upcase
+#       Voucher.transaction do
+#         a = Voucher.create(
+#           code: code,
+#           voucher_type: "55 off",
+#           active: true,
+#           one_time_use: true
+#         )
+#         writer << [a.code]
+#       end
+#     end
+#   end
+# end
 
 
 # # a = (1..2).map do |v|

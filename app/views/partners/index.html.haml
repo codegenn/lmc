@@ -64,19 +64,7 @@
                 = I18n.t("partners.section_3.des_1.sec")
               %li{style: "list-style-type: disc;"}
                 = I18n.t("partners.section_3.des_2")
-  -# .container{style: "margin-top: 200px;"}
-  -#   .policy
-  -#     .col-md-12.col-xl-12.p-b-30.policy-box
-  -#       %h4.ltext-107.txt-center
-  -#         = I18n.t("jobs.work")
-  -#       %br
-  -#       - @jobs.each do |job|
-  -#         .job-p
-  -#           %h4.ltext-108
-  -#             = link_to job_path(job.id), class: ".mtext-101 cl2 hov-cl1 trans-04" do
-  -#               = job.title
-  -#           %p.stext-108.cl6
-  -#             = job.short_description
+  = render "partners/job"
 :css
   .partner-btn {
     margin: 100px 0 20px 0;

@@ -169,10 +169,20 @@ en:
       tracking: 'TRACK ORDER'
       info: 'ORDER INFORMATION'
       search: 'SEARCH YOUR ORDER'
+      partner_search: "SEARCH YOUR PARNER"
       order_id: 'Your Order Tracking Number'
       order_tracking_number: 'Your Order Tracking Number'
       order_status: 'Your Order Status'
       search_empty: 'Please input your tracking ID and click on search'
+      partner_tracking_number: 'Your partner Tracking Number'
+      partner_status: 'Your Partner Status'
+      info_partner: "PARTNER INFORMATION"
+      search_partner: 'SEARCH YOUR PARTNER'
+      order_id_partner: 'Your Partner Tracking Number'
+      email: "Email"
+      phone: "Phone"
+      address: "Address"
+      name: "Name"
     privacy:
       privacy: 'CHÍNH SÁCH BẢO MẬT'
       header_1: 'I. MỤC ĐÍCH VÀ PHẠM VI THU THẬP THÔNG TIN CÁ NHÂN'

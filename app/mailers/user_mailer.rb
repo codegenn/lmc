@@ -25,8 +25,8 @@ class UserMailer < ApplicationMailer
   end
 
   def partner(user)
-    @message = message
+    @partner_user = user
     subj = 'Đăng ký trở thành đối tác sản xuất của LMcation'
-    mail(to: 'info@lmcation.com', subject: subj, from: Rails.application.secrets.gmail_email)
+    mail(to: @partner_user.email, bcc: 'info@lmcation.com', subject: subj, from: Rails.application.secrets.gmail_email)
   end
 end

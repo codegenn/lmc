@@ -61,6 +61,7 @@ Rails.application.routes.draw do
       get :show, on: :collection
     end
     get 'home-test', to:"store#index_test"
+    get "tracking-partner", to: "partners#check_info"
   end
 end
 

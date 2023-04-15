@@ -66,6 +66,9 @@ class PartnerUsers::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
+    resource.tracking = "#{DateTime::now().to_time.to_i}#{resource.id}"
+    resource.save
+    UserMailer.partner(resource).deliver_now if Rails.env.production?
     partners_path
   end
 
