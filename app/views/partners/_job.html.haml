@@ -5,8 +5,9 @@
         .col-sm-4.col-md-4.p-b-40
           .blog-item
             .hov-img0
-              = link_to job_path(job.id) do
-                = cl_image_tag job&.avatar&.url
+              - if job.avatar.present?
+                = link_to job_path(job.id) do
+                  = cl_image_tag job&.avatar&.url
             .p-t-15
               .stext-107.flex-w.p-b-14
                 %span
