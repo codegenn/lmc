@@ -19,16 +19,17 @@
           %center
             .col-sm-6
               = submit_tag I18n.t("jobs.partner_btn"), class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
-  .container
-    .policy
-      .col-md-12.col-xl-12.p-b-30.policy-box
-        %h4.ltext-107.txt-center
-          = I18n.t("jobs.work")
-        %br
-        - @jobs.each do |job|
-          .job-p
-            %h4.ltext-108
-              = link_to job_path(job.id), class: ".mtext-101 cl2 hov-cl1 trans-04" do
-                = job.title
-            %p.stext-108.cl6
-              = job.short_description
+  -# .container
+  -#   .policy
+  -#     .col-md-12.col-xl-12.p-b-30.policy-box
+  -#       %h4.ltext-107.txt-center
+  -#         = I18n.t("jobs.work")
+  -#       %br
+  -#       - @jobs.each do |job|
+  -#         .job-p
+  -#           %h4.ltext-108
+  -#             = link_to job_path(job.id), class: ".mtext-101 cl2 hov-cl1 trans-04" do
+  -#               = job.title
+  -#           %p.stext-108.cl6
+  -#             = job.short_description
+  = render "partners/job"
