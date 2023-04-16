@@ -9,15 +9,15 @@
           <%= link_to admin_products_path(product.id) do %>
             <%= product.title %>
           <% end %>
-        <div>
+        </div>
         <div>
           <%= I18n.t("partner.price") %>
           <%= number_to_currency(product.price, unit: "đ",  format: "%n %u") %>
-        <div>
+        </div>
         <div>
           <%= I18n.t("partner.size") %>
           <%= product.list_size %>
-        <div>
+        </div>
       </td>
     </tr>
   </tbody>

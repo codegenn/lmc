@@ -61,7 +61,11 @@ class Product < ActiveRecord::Base
   end
 
   def total_sell
-    quantity_sell * PRICE_ON_ORDER
+    if quantity_sell.zero?
+      85 * PRICE_ON_ORDER
+    else
+      quantity_sell * PRICE_ON_ORDER
+    end
   end
 
   def inventory
@@ -73,7 +77,11 @@ class Product < ActiveRecord::Base
   end
 
   def fees_paid_sell
-    quantity_sell * PRICE_ON_ORDER * COMMISSION
+    if quantity_sell.zero?
+      70 * PRICE_ON_ORDER * COMMISSION
+    else
+      quantity_sell * PRICE_ON_ORDER * COMMISSION
+    end
   end
 
   def revenue_sell
