@@ -19,7 +19,6 @@ class StoreController < ApplicationController
           "https://www.youtube.com/embed/#{id}"
         end 
       end
-    end
   end
 
   def about
