@@ -1,7 +1,6 @@
 :css 
   .member-slider {
     justify-content: center;
-    max-width: 100%;
     flex-direction: column;
     align-items: center;
   }
@@ -49,7 +48,7 @@
   }
 
   #arrow-next {
-    right: 10;
+    right: 10px;
   }
 
   #formList {
@@ -142,6 +141,12 @@
       width: calc(50vw - 90px);
     }
   }
+  @media (max-width: 576px) {
+    .area {
+      margin-top: 20px !im;
+    }
+  }
+
 
 
 .container.area
@@ -167,10 +172,6 @@
                   = member['description']
       %button#arrow-next.arrow-direction
         >
-    .direction 
-      %button#prev
-      %button#next
-
 
 :javascript
   $("#next").click(function() {

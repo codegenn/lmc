@@ -36,7 +36,7 @@
                   = cl_image_tag product.product_images.second.try(:image_url), class: 'img-top', loading:"lazy", alt: "#{product.title}", title: "#{product.title}"
               .block2-txt.flex-w.flex-t.p-t-14
                 .block2-txt-child1.flex-col-l
-                  = link_to product_path(product.slug), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6" do
+                  = link_to product_path(product.slug), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6 title-product" do
                     = product.title
                   %span.mtext-102.cl3
                     - if product.promotion_price.present?
@@ -84,7 +84,7 @@
                     = cl_image_tag product['second_img_url'], class: 'img-top', loading:"lazy", alt: "#{product['title']}", title: "#{product['title']}"
                 .block2-txt.flex-w.flex-t.p-t-14
                   .block2-txt-child1.flex-col-l
-                    = link_to product_path(product['slug']), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6" do
+                    = link_to product_path(product['slug']), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6 title-product" do
                       = product['title']
                     %span.mtext-102.cl3
                       - if product['promotion_price'].present?
@@ -138,5 +138,5 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     height: 50px;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
   }
