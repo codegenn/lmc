@@ -11,10 +11,12 @@
           <% end %>
         <div>
         <div>
-          Giá bán: <%= number_to_currency(product.price, unit: "đ",  format: "%n %u") %>
+          <%= I18n.t("partner.price") %>
+          <%= number_to_currency(product.price, unit: "đ",  format: "%n %u") %>
         <div>
         <div>
-          Kích thước: <%= product.list_size %>
+          <%= I18n.t("partner.size") %>
+          <%= product.list_size %>
         <div>
       </td>
     </tr>

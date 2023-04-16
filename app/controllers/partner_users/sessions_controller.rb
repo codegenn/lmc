@@ -25,4 +25,8 @@ class PartnerUsers::SessionsController < Devise::SessionsController
   def configure_sign_in_params
     devise_parameter_sanitizer.permit(:sign_in, keys: [:name, :address, :info])
   end
+
+  def after_sign_in_path_for(resource)
+    partners_admin_path
+  end
 end

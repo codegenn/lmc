@@ -69,7 +69,7 @@ class PartnerUsers::RegistrationsController < Devise::RegistrationsController
     resource.tracking = "#{DateTime::now().to_time.to_i}#{resource.id}"
     resource.save
     UserMailer.partner(resource).deliver_now if Rails.env.production?
-    partners_path
+    partners_admin_path
   end
 
   # The path used after sign up for inactive accounts.

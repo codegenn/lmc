@@ -433,3 +433,13 @@ en:
         sec: " for inquiries and further details to become an LMcation production partner."
       des_2: "Emails will be responded to within 24-48 hours, 7 days/ week."
   parner_signup: "Email and password can't be blank."
+  partner:
+    product: "Product"
+    quantity: "Quantity"
+    sold_product: "Sold product"
+    revenue_sold: "Revenue of sold product"
+    fee: "LMcation fee (25-35%)"
+    revenue: "Revenue"
+    inventory: "Inventory"
+    size: "Size:"
+    price: "Price:"

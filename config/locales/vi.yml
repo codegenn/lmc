@@ -494,3 +494,13 @@ vi:
         sec: " để được giải đáp thắc mắc và thông tin chi tiết để trở thành đối tác sản xuất LMcation."
       des_2: "Email sẽ được phản hồi trong vòng 24-48 tiếng tất cả các ngày trong tuần."
   parner_signup: "Email và mật khẩu không được để trống."
+  partner:
+    product: "Sản phẩm "
+    quantity: "Tổng số lượng"
+    sold_product: "Sản phẩm đã bán"
+    revenue_sold: "Tổng giá trị bán"
+    fee: "Phí trả LMcation (25-35%)"
+    revenue: "Doanh thu"
+    inventory: "Tồn kho"
+    size: "Kích thước:"
+    price: "Giá bán:"
