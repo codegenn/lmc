@@ -1,3 +1,7 @@
+:css
+  .text-content{
+    line-height: 32px;
+  }
 .sec-banner.bg0.p-t-80.p-b-50.main-page
   .container
     .bg0.p-t-75.p-b-85
@@ -9,7 +13,7 @@
                 .flex-w.flex-sb-m.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
                   .ltext-109.cl2.p-b-28
                     = @job.title
-                .flex-w.flex-sb-m.p-t-18.p-b-15.p-lr-40.p-lr-15-sm
+                .flex-w.flex-sb-m.p-t-18.p-b-15.p-lr-40.p-lr-15-sm.text-content
                   = @job.content
             .m-l-25.m-r--38.m-lr-0-xl.shopping-cart-table
               = form_for(@application) do |f|
