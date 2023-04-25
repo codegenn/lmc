@@ -9,6 +9,7 @@ class PartnersController < ApplicationController
   end
 
   def sign_in
+    @partner_user ||= PartnerUser.new
   end
 
   # def create
