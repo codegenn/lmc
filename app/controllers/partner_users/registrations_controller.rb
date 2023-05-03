@@ -66,6 +66,7 @@ class PartnerUsers::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
+    flash[:success] = 'Cảm ơn bạn đã gửi thông tin. Bộ phận phụ trách sẽ liên hệ bạn trong vòng 24-48h làm việc.'
     resource.tracking = "#{DateTime::now().to_time.to_i}#{resource.id}"
     resource.save
     UserMailer.partner(resource).deliver_now if Rails.env.production?

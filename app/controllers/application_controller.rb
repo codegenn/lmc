@@ -22,12 +22,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    # binding.pry
-    # if resource.status
-    #   partners_admin_path
-    # else
+    if admin_user_signed_in?
+      admin_dashboard_url
+    else
       store_path
-    # end
+    end
     # edit_user_registration_path(resource)
   end
 
