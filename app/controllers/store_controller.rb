@@ -96,8 +96,8 @@ class StoreController < ApplicationController
       "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png",
       "https://www.lmcation.com/#{I18n.locale.to_s}"
     )
-    @member_ads = MemberAd.where(status: true)
-    list_video = MasterDatum.where(type_name: 'homepage_video', status: true)
+    @member_ads = MemberAd.where(status: true).order(number: :ASC)
+    list_video = MasterDatum.all
     if list_video.present?
       @embed_links = list_video.map do |video|
         link = video.value
