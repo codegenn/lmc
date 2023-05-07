@@ -1,4 +1,4 @@
-en:
+vi:
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
@@ -29,3 +29,6 @@ en:
       user:
         failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
         success: "Bạn đã đăng nhập thành công."
+    sessions:
+      admin_user:
+        signed_in: "Bạn đã đăng nhập thành công."

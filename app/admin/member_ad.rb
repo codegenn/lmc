@@ -1,5 +1,5 @@
 ActiveAdmin.register MemberAd do
-  permit_params :name, :role, :description, :avatar, :status
+  permit_params :name, :role, :description, :avatar, :status, :number
 
   index do
     selectable_column
@@ -25,6 +25,7 @@ ActiveAdmin.register MemberAd do
       f.input :name
       f.input :role
       f.input :description
+      f.input :number
       f.input :avatar, as: :file, hint: f.object.try(:avatar) ? cl_image_tag(f.object.try(:avatar), width: 200) : image_tag(f.object.avatar, width: 200)
       f.input :status
     end
