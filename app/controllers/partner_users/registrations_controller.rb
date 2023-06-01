@@ -13,7 +13,7 @@ class PartnerUsers::RegistrationsController < Devise::RegistrationsController
   def create
     super do |resource|
       if resource.errors.any?
-        flash["danger"] = I18n.t("parner_signup")
+        flash["danger"] = flash['danger'].to_a.concat resource.errors.full_messages
         redirect_to new_partner_user_registration_path
         return
       end

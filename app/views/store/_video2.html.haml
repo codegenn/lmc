@@ -7,7 +7,7 @@
 
   .slide-content  {
     display: flex;
-    max-width: 100%;
+    width: 100%;
   }
 
   .direction button {
@@ -52,7 +52,6 @@
   }
 
   #formList_video {
-    max-width: 100%;
     overflow: auto;
     margin: 10px auto;
     scroll-behavior: smooth;
@@ -66,8 +65,9 @@
 
   #list-video {
     display: flex;
-    width: max-content;
+    -# width: max-content;
     margin: auto;
+    width:100%;
   }
 
   .item1 {
@@ -100,6 +100,12 @@
     }
   }
 
+  @media screen and (min-width: 775px) {
+    #formList_video {
+      width: 100%;
+    }
+  }
+
   @media screen and (max-width: 1024px) {
     .item1 {
       width: calc(33.3vw - 90px)
@@ -121,6 +127,7 @@
     }
     #formList_video {
       position: static;
+      max-width: 100%;
     }
   }
 

@@ -1,5 +1,5 @@
 - flash.each do |key, value|
-  = content_tag :div, value, class: "alert alert-#{key} alert-danger" unless key == 'pixel'
+  = content_tag :div, value.join(", "), class: "alert alert-#{key} alert-danger" unless key == 'pixel'
 = form_for PartnerUser.new, url: partner_user_registration_path do |f|
   = render "devise/shared/error_messages", resource: resource
   .field
