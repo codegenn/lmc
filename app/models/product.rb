@@ -34,7 +34,7 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :color_images, :allow_destroy => true
   accepts_nested_attributes_for :stocks, :allow_destroy => true
   accepts_nested_attributes_for :bottom_stocks, :allow_destroy => true
-  
+
   PRICE_ON_ORDER = 3000000000
   COMMISSION = 0.25
 
@@ -76,16 +76,17 @@ class Product < ActiveRecord::Base
     stocks.map(&:size).join(", ")
   end
 
-  def fees_paid_sell
+  def fees_paid_sell(commission)
+    commission = commission.nil? ? COMMISSION : commission
     if quantity_sell.zero?
-      70 * PRICE_ON_ORDER * COMMISSION
+      70 * PRICE_ON_ORDER * commission
     else
-      quantity_sell * PRICE_ON_ORDER * COMMISSION
+      quantity_sell * PRICE_ON_ORDER * commission
     end
   end
 
-  def revenue_sell
-    total_sell - fees_paid_sell
+  def revenue_sell(commission)
+    total_sell - fees_paid_sell(commission)
   end
 
   def self.main_page(cats = [])
