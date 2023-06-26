@@ -36,7 +36,7 @@ en:
       partner_user:
         already_authenticated: "Already authenticated"
         invalid: "Invalid email or password."
-        not_found_in_database: "not found in database"
+        not_found_in_database: "Your email address does not exist, please register a new account."
     omniauth_callbacks:
       user:
         success: "You have logged in successfully."
@@ -48,7 +48,8 @@ en:
       about_us: 'About Us'
       find_us: 'Find Us'
       tracking: 'Order'
-      join_us: 'Join Us'
+      join_us: 'Be Our Partner'
+      career: 'Career'
       help: 'Help & FAQs'
       my_account: 'LOG IN/ SIGN UP'
       active_wear: 'Active Wear'
@@ -444,3 +445,4 @@ en:
     inventory: "Inventory"
     size: "Size:"
     price: "Price:"
+    empty: "Your product list is still empty. Please contact <a href='order@lmcation.com'>order@lmcation.com</a> for further inquiries and assistance."

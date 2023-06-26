@@ -2,6 +2,7 @@ class PartnersController < ApplicationController
   before_filter :authenticate_partner_user!, except: [ :index, :sign_up, :sign_in, :check_info]
 
   def index
+    @menu = 'joinus'
     @jobs = Job.all
   end
 

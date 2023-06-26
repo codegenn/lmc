@@ -1,20 +1,26 @@
 <div class="sec-banner bg0 p-t-80 p-b-50 main-page">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col" rowspan="3"><%= I18n.t("partner.product") %></th>
-        <th scope="col" rowspan="3"><%= I18n.t("partner.quantity") %></th>
-        <th scope="col" rowspan="3"><%= I18n.t("partner.sold_product") %></th>
-        <th scope="col" rowspan="3"><%= I18n.t("partner.revenue_sold") %></th>
-        <th scope="col" rowspan="3"><%= I18n.t("partner.fee") %></th>
-        <th scope="col" rowspan="3"><%= I18n.t("partner.revenue") %></th>
-        <th scope="col" rowspan="3"><%= I18n.t("partner.inventory") %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @products&.each do |p| %>
-          <%= render "admin/product", product: p %>
-      <% end %>
-    </tbody>
-  </table>
+  <% if @products %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" rowspan="3"><%= I18n.t("partner.product") %></th>
+          <th scope="col" rowspan="3"><%= I18n.t("partner.quantity") %></th>
+          <th scope="col" rowspan="3"><%= I18n.t("partner.sold_product") %></th>
+          <th scope="col" rowspan="3"><%= I18n.t("partner.revenue_sold") %></th>
+          <th scope="col" rowspan="3"><%= I18n.t("partner.fee") %></th>
+          <th scope="col" rowspan="3"><%= I18n.t("partner.revenue") %></th>
+          <th scope="col" rowspan="3"><%= I18n.t("partner.inventory") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products&.each do |p| %>
+            <%= render "admin/product", product: p %>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <div class="alert alert-success" role="alert">
+      <%= I18n.t("partner.empty").html_safe %>
+    </div>
+  <% end %>
 </div>

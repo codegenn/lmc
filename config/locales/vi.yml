@@ -31,6 +31,7 @@ vi:
       tracking: 'Đơn Hàng'
       join_us: 'Hợp Tác'
       help: 'Hỏi Đáp'
+      career: 'Tuyển Dụng'
       my_account: 'ĐĂNG NHẬP/ ĐĂNG KÝ'
       partners: 'QUÝ ĐỐI TÁC & KHÁCH HÀNG'
       medias: "MỌI NGƯỜI NÓI GÌ VỀ CHÚNG TÔI"
@@ -399,7 +400,7 @@ vi:
       partner_user:
         already_authenticated: "Đã xác thực thành công."
         invalid: "Email hoặc mật khẩu không hợp lệ."
-        not_found_in_database: "không tìm thấy trong cơ sở dữ liệu"
+        not_found_in_database: "Không tìm thấy thông tin đăng nhập, bạn vui lòng đăng ký mới."
     sessions:
       user:
         signed_in: 'Quý khách đã đăng nhập'
@@ -505,3 +506,4 @@ vi:
     inventory: "Tồn kho"
     size: "Kích thước:"
     price: "Giá bán:"
+    empty: "Bạn hiện chưa có sản phẩm được bán. Vui lòng liên hệ <a href='order@lmcation.com'>order@lmcation.com</a> để được hỗ trợ."
