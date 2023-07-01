@@ -26,7 +26,7 @@ class PartnersController < ApplicationController
 
   def admin
     admin_user = ["adminlm@example.com", "thu.nguyen@lmcation.com"]
-    if admin_user.include?(current_partner_user)
+    if admin_user.include?(current_partner_user.email)
       @products = Product.limit(3)
     end
   end
