@@ -23,6 +23,7 @@ class Product < ActiveRecord::Base
   has_many :color_images
   has_many :stocks
   has_many :bottom_stocks
+  # has_many :parner_orders
   belongs_to :favorite
   has_attached_file :measurement_image
   # Validate the attached image is image/jpg, image/png, etc
@@ -62,9 +63,9 @@ class Product < ActiveRecord::Base
 
   def total_sell
     if quantity_sell.zero?
-      85 * PRICE_ON_ORDER
+      0
     else
-      quantity_sell * PRICE_ON_ORDER
+      quantity_sell * price
     end
   end
 
@@ -77,11 +78,10 @@ class Product < ActiveRecord::Base
   end
 
   def fees_paid_sell(commission)
-    commission = commission.nil? ? COMMISSION : commission
     if quantity_sell.zero?
-      70 * PRICE_ON_ORDER * commission
+      0
     else
-      quantity_sell * PRICE_ON_ORDER * commission
+      total_sell * commission
     end
   end
 

@@ -2,7 +2,7 @@
   <tbody>
     <tr>
       <td style="width: 50px">
-        <%= image_tag product.product_images.first.try(:image_url), width: "100px" %>
+        <%= image_tag product&.product_images.first.try(:image_url), width: "100px" %>
       </td>
       <td style="width: 250px">
         <div>

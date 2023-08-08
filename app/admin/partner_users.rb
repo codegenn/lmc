@@ -7,8 +7,9 @@ ActiveAdmin.register PartnerUser do
     column :email
     column :updated_at
     column :created_at
-    column :commision
-    actions
+    actions defaults: true do |partner_user|
+      link_to "View User Orders", new_admin_partner_order_path(user_id: partner_user.id)
+    end
   end
 
   filter :email
