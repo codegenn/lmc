@@ -25,9 +25,9 @@ class PartnersController < ApplicationController
   # end
 
   def admin
-    admin_user = ["adminlm@example.com", "thu.nguyen@lmcation.com"]
-    if admin_user.include?(current_partner_user.email)
-      @products = Product.limit(3)
+    partner_orders = PartnerOrder.where(user_id: current_partner_user.id)
+    if partner_orders
+      @products = partner_orders
     end
   end
 
