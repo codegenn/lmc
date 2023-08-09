@@ -1,0 +1,44 @@
+.fitting
+  = render "fittingroom/fittin"
+%section.sec-product-detail.bg0.p-t-65.p-b-60.main-page
+  .container.login-page-demo
+    = render "fittingroom/login"
+
+:css
+  .inactive {
+    display: none;
+  }
+  .active {
+    display: block;
+  }
+  .modal-backdrop {
+    opacity: 1 !important;
+  }
+:javascript
+  $( document ).ready(function() {
+    var logo = document.getElementById("canvas_wearfits_logo");
+    //logo.style.display = "none"; if want to hide
+    logo.src = "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png"
+    if(localStorage.getItem("login-demo") == "ok") {
+      $("#login").modal('hide');
+    } else {
+      $("#login").modal(
+        'show',
+        {
+          backdrop: 'static',
+          keyboard: false
+        }
+      );
+    }
+
+    $('#form-demo').submit(function() {
+      var un = $(".username").val();
+      var x = document.getElementById("myPsw").value;
+      if(un == "lmcation-demo@gmail.com" && x == "LM2324") {
+        localStorage.setItem("login-demo", "ok");
+        $("#login").modal('hide');
+      }
+
+      return false;
+    });
+  });

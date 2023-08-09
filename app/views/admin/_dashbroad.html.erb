@@ -1,0 +1,18 @@
+<table class="table ">
+  <thead>
+    <tr>
+      <th scope="col" rowspan="3">Sản phẩm</th>
+      <th scope="col" rowspan="3">Tổng số lượng</th>
+      <th scope="col" rowspan="3">Sản phẩm đã bán</th>
+      <th scope="col" rowspan="3">Tổng giá trị bán</th>
+      <th scope="col" rowspan="3">Phí trả LMcation (25% - 35%)</th>
+      <th scope="col" rowspan="3">Doanh thu</th>
+      <th scope="col" rowspan="3">Tồn kho</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% products.each do |p| %>
+        <%= render "admin/product", product: p %>
+    <% end %>
+  </tbody>
+</table>

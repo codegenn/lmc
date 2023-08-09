@@ -1,3 +1,11 @@
 <% if @selected_stock.try(:product_code) %>
   $('.stock_code').html("<%= @selected_stock.product_code %>")
 <% end %>
+
+<% @stocks&.each do |s| %>
+  <% if s.quantity == 0 %>
+    $(".<%= s.color %>").addClass('unclicked');
+  <% else %>
+    $(".<%= s.color %>").removeClass('unclicked');
+  <% end %>
+<% end %>

@@ -1,3 +1,14 @@
+:css
+  .iframe-youtube {
+      width: 100%;
+      height: 500px;
+    }
+  @media (max-width: 576px) {
+    .iframe-youtube {
+      height: 350px;
+    }
+  }
+
 = content_for :title do
   = @product.title
 %section.sec-product-detail.bg0.p-t-65.p-b-60.main-page
@@ -30,6 +41,9 @@
                 = "#{number_with_delimiter(@product.promotion_price.to_i, :delimiter => '.')} VND"
             - else
               = "#{number_with_delimiter(@product.price.to_i, :delimiter => '.')} VND"
+            %div.stext-103.cl3
+              = I18n.t("page.product.fundiin", price: number_with_delimiter(@product.price.to_i/3, :delimiter => '.') ).html_safe
+              %span{"data-target" => "#myModal", "data-toggle" => "modal", :style => "cursor: help;"} Tìm hiểu (?)
           %p.stext-103.cl3.p-t-23
             = @product.short_description
           /
@@ -66,7 +80,7 @@
                   = I18n.t("page.product.color")
                 .size-204.respon6-nextp
                   = select_tag :color, options_for_select(@color_images.map{ |i| [i.color_name, i.color_name,
-                    { 'data-img-src'=>cl_image_path(i.color_image_url, :width => 60, :height => 60, :crop => :fill), 'data-img-class'=>"#{i.color_name} size-color" }] }),
+                    { 'data-img-src'=>cl_image_path(i.color_image_url, :width => 60, :height => 60, :crop => :fill), 'data-img-class'=>"#{i.color_name} size-color #{"unclicked" if Stock.find_by(color: i.color_name)&.quantity == 0}" }] }),
                     class: 'image-picker show-html', include_blank: true
               .flex-w.flex-r-m.p-b-10
                 .size-203.flex-c-m.respon6.text-left
@@ -95,7 +109,7 @@
         #nav-tabContent.tab-content
           #nav-home.tab-pane.fade.show.active{"aria-labelledby" => "nav-home-tab", :role => "tabpanel"}
             .how-pos2.p-lr-15-md
-              = raw @product.description
+              = raw convert_link(@product.description)
           #nav-profile.tab-pane.fade{"aria-labelledby" => "nav-profile-tab", :role => "tabpanel"}
             .how-pos2.p-lr-15-md
               .product-measurement-image
@@ -198,46 +212,75 @@
       checkStockCode();
     });
   });
-%script{type: "application/ld+json"}
-  :plain
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "#{@product.title}",
-      "image": [
-          "#{@product.product_images.last.image_url}"
-       ],
-      "description": "#{@product.description.gsub(/<\/?[^>]+>/, '')}",
-      "sku": "0446310786",
-      "mpn": "925872",
-      "brand": {
-        "@type": "Brand",
-        "name": "lmcation"
-      },
-      "review": {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "4",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",  
+- if Rails.env.production?
+  %script{type: "application/ld+json"}
+    :plain
+      {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "#{@product.title}",
+        "image": [
+            "#{@product.product_images.last.image_url}"
+        ],
+        "description": "#{@product.description.gsub(/<\/?[^>]+>/, '')}",
+        "sku": "0446310786",
+        "mpn": "925872",
+        "brand": {
+          "@type": "Brand",
           "name": "lmcation"
+        },
+        "review": {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "4",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",  
+            "name": "lmcation"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.4",
+          "reviewCount": "89"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.lmcation.com/vi/products/#{@product.slug}",
+          "priceCurrency": "VND",
+          "price": "#{number_with_delimiter(@product.price.to_i, :delimiter => '.')}",
+          "itemCondition": "https://www.lmcation.com/vi/products/#{@product.slug}",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2021-01-01"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.4",
-        "reviewCount": "89"
-      },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://www.lmcation.com/vi/products/#{@product.slug}",
-        "priceCurrency": "VND",
-        "price": "#{number_with_delimiter(@product.price.to_i, :delimiter => '.')}",
-        "itemCondition": "https://www.lmcation.com/vi/products/#{@product.slug}",
-        "availability": "https://schema.org/InStock",
-        "priceValidUntil": "2021-01-01"
       }
-    }
+#myModal.modal.fade{:role => "dialog"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"} ×
+      .modal-body
+        .fundiinModal-wrapper-30D.text-center{:style => "background-color: #fff; margin-top: 10px; border-radius: 24px;"}
+          %img.fundiinModal-logo-3Mc.text-center{:alt => "logo", :src => "https://fundiin.vn/wp-content/themes/education-lms/images/logo-kCB.svg"}/
+          %p.fundiinModal-title-37a.p-t-10 SHOPPING TRẢ SAU - LUÔN LUÔN MIỄN LÃI
+          %p.fundiinModal-title-37a.p-t-10{:style => "font-size: 17px;"} LỢI ÍCH KHÁC BIỆT
+          %p.text-center.text-dark.p-t-10
+            %b.fundiin-bold Không
+            lãi suất
+          %p.text-center.text-dark.p-t-10
+            %b.fundiin-bold Không
+            chênh lệch giá
+          %p.text-center.text-dark.p-t-10
+            %b.fundiin-bold Không
+            thủ tục phức tạp
+          %p.text-center.text-dark.p-t-10
+            %b.fundiin-bold Không
+            mất phí hồ sơ
+          %p.text-center.text-dark.p-t-10
+            %b.fundiin-bold Không
+            cần thẻ tín dụng
+          %p.fundiinModal-title-37a.text-center.p-t-10{:style => "font-size: 17px;"} CÁC BƯỚC MUA SẮM SAU 5 GIÂY
+          %img.text-center.p-t-10{:alt => "steps", :src => "https://fundiin.vn/wp-content/themes/education-lms/images/steps-nc8.png", :style => "max-width: 260px; margin: 0 auto; margin-bottom: 24px;"}/
+          %p.fundiinModal-description-yRU.p-t-10 Bạn cần phải trên 18 tuổi, là công dân Việt Nam, sở hữu số điện thoại chính chủ từ các nhà mạng Viettel, Mobifone, Vinaphone, và một số tiêu chí khác để được duyệt.

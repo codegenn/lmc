@@ -1,0 +1,45 @@
+.how-pos2.p-lr-15-md
+  - if @orders
+    #accordionExample.accordion
+      - @orders.each do |order|
+        .card
+          #headingOne.card-header
+            %h2.mb-0
+              %button.order-header.btn.btn-link{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-target" => "#collapse#{order.id}", "data-toggle" => "collapse", :type => "button"}
+                = "On #{order.created_at}"
+                %br
+                = " total: #{number_with_delimiter(order.grand_total.to_i, :delimiter => '.')} VND"
+          .collapse{"aria-labelledby" => "headingOne", "data-parent" => "#accordionExample", id: "collapse#{order.id}"}
+            .card-body
+              .order-number
+                = "Order Tracking Number: #{order.tracking}"
+              .order-number
+                = "Order Status: #{order.status}"
+              .order-number
+                = " total: #{number_with_delimiter(order.total_price.to_i, :delimiter => '.')} VND"
+              .order-number
+                = "voucher: #{order.voucher_code}"
+              %br
+              .wrap-table-shopping-cart
+                %table.table-shopping-cart
+                  %tr.table_head
+                    %th.column-1 Product
+                    %th.column-2
+                    %th.column-3 Price
+                    %th.column-4 Quantity
+                    %th.column-5 Total
+                  - order.line_items.includes(:stock).each do |line_item|
+                    %tr.table_row
+                      %td.column-1
+                        .how-itemcart1
+                          = cl_image_tag line_item.stock.try(:product).try(:product_images).try(:first).try(:image_url)
+                      %td.column-2
+                        - path = line_item.stock.try(:product).try(:slug) ? product_path(line_item.stock.try(:product).try(:slug)) : products_path
+                        = link_to path, :"data-no-turbolink" => 'false', class: "stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" do
+                          = line_item.stock.try(:product).try(:title)
+                      %td.column-3
+                        = "#{number_with_delimiter(line_item.price.to_i, :delimiter => '.')} VND"
+                      %td.column-4
+                        = line_item.quantity
+                      %td.column-5
+                        = line_item.total_price

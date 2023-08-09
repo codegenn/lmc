@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <td style="width: 50px">
+        <%= image_tag product&.product_images.first.try(:image_url), width: "100px" %>
+      </td>
+      <td style="width: 250px">
+        <div>
+          <%= link_to admin_products_path(product.id) do %>
+            <%= product.title %>
+          <% end %>
+        </div>
+        <div>
+          <%= I18n.t("partner.price") %>
+          <%= number_to_currency(product.price, unit: "đ",  format: "%n %u") %>
+        </div>
+        <div>
+          <%= I18n.t("partner.size") %>
+          <%= product.list_size %>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

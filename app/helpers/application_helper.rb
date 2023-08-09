@@ -49,4 +49,40 @@ module ApplicationHelper
       "itemListElement": list_items
     }.to_json
   end
+
+  def cdn_url
+    "https://d1monvl96vvqbd.cloudfront.net"
+  end
+
+  def avatar_url(user)
+    if user.image
+      user.image
+    else
+      gravatar_id = Digest::MD5::hexdigest(user.email).downcase
+      "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?d=identical&s=150"
+    end
+  end
+
+  def convert_link(content)
+    regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=|embed\/)([a-zA-Z0-9_-]{11})/
+    match = content.match(regex)
+    if match.present?
+      youtube_embed_url = "https://www.youtube.com/embed/#{match[1]}"
+      iframe = "<iframe class='iframe-youtube' src='#{youtube_embed_url}' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+      content.gsub!(match[0], iframe)
+    end
+    content
+  end
+
+  def convert_link_all_link(content)
+    regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/v\/)([a-zA-Z0-9_-]{11})/
+    content.gsub!(regex) do |match|
+      youtube_embed_url = "https://www.youtube.com/embed/#{$1}"
+      iframe = "<iframe class='iframe-youtube' src='#{youtube_embed_url}' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+      iframe
+    end
+    content
+  end
+  
+
 end

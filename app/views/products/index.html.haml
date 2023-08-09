@@ -23,7 +23,7 @@
     - if @category || @check
       .row.isotope-grid
         - @products.each do |product|
-          .col-sm-6.col-md-4.col-lg-3.p-b-35.isotope-item.women
+          .col-6.col-sm-4.col-md-4.col-lg-3.p-b-35.isotope-item.women
             / Block2
             .block2
               - if product.stocks.empty? || product.out_of_stock?
@@ -36,7 +36,7 @@
                   = cl_image_tag product.product_images.second.try(:image_url), class: 'img-top', loading:"lazy", alt: "#{product.title}", title: "#{product.title}"
               .block2-txt.flex-w.flex-t.p-t-14
                 .block2-txt-child1.flex-col-l
-                  = link_to product_path(product.slug), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6 text-split" do
+                  = link_to product_path(product.slug), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6 title-product" do
                     = product.title
                   %span.mtext-102.cl3
                     - if product.promotion_price.present?
@@ -56,8 +56,8 @@
                   - pro_ids = @favorite.try(:product_ids) || []
                   = link_to favorite_path(product.id), method: :put, remote: true,
                     class: "#{'js-addedwish-b2' if pro_ids.include?(product.id)} wishlist-#{product.id} btn-addwish-b2 dis-block pos-relative js-addwish-b2" do
-                    = image_tag "icons/icon-heart-01.png", class: "icon-heart1 dis-block trans-04", alt: 'ICON', loading:"lazy"
-                    = image_tag "icons/icon-heart-02.png", class: "icon-heart2 dis-block trans-04 ab-t-l", alt: 'ICON', loading:"lazy"
+                    = cl_image_tag "https://lmcation.s3.ap-southeast-1.amazonaws.com/icons/icon-heart-01.png", class: "icon-heart1 dis-block trans-04", alt: 'ICON', loading:"lazy"
+                    = cl_image_tag "https://lmcation.s3.ap-southeast-1.amazonaws.com/icons/icon-heart-02.png", class: "icon-heart2 dis-block trans-04 ab-t-l", alt: 'ICON', loading:"lazy"
                 - if product.has_promotion
                   .block2-txt-promo.flex-col-l.bor10
                     %span.mtext-103.cl3.promotion
@@ -71,7 +71,7 @@
                 = cats['name']
         .row.isotope-grid
           - cats['products']&.each do |product|
-            .col-sm-6.col-md-4.col-lg-3.p-b-35.isotope-item.women
+            .col-6.col-sm-4.col-md-4.col-lg-3.p-b-35.isotope-item.women
               / Block2
               .block2
                 - if product['stocks_count']&.to_i<1 || product['out_of_stock'] == 't'
@@ -84,7 +84,7 @@
                     = cl_image_tag product['second_img_url'], class: 'img-top', loading:"lazy", alt: "#{product['title']}", title: "#{product['title']}"
                 .block2-txt.flex-w.flex-t.p-t-14
                   .block2-txt-child1.flex-col-l
-                    = link_to product_path(product['slug']), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6 text-split" do
+                    = link_to product_path(product['slug']), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6 title-product" do
                       = product['title']
                     %span.mtext-102.cl3
                       - if product['promotion_price'].present?
@@ -104,8 +104,8 @@
                     - pro_ids = @favorite.try(:product_ids) || []
                     = link_to favorite_path(product['id']), method: :put, remote: true,
                       class: "#{'js-addedwish-b2' if pro_ids.include?(product['id'])} wishlist-#{product['id']} btn-addwish-b2 dis-block pos-relative js-addwish-b2" do
-                      = image_tag "icons/icon-heart-01.png", class: "icon-heart1 dis-block trans-04", alt: 'ICON', loading:"lazy"
-                      = image_tag "icons/icon-heart-02.png", class: "icon-heart2 dis-block trans-04 ab-t-l", alt: 'ICON', loading:"lazy"
+                      = cl_image_tag "https://lmcation.s3.ap-southeast-1.amazonaws.com/icons/icon-heart-01.png", class: "icon-heart1 dis-block trans-04", alt: 'ICON', loading:"lazy"
+                      = cl_image_tag "https://lmcation.s3.ap-southeast-1.amazonaws.com/icons/icon-heart-02.png", class: "icon-heart2 dis-block trans-04 ab-t-l", alt: 'ICON', loading:"lazy"
                   - if product['has_promotion'] == 't'
                     .block2-txt-promo.flex-col-l.bor10
                       %span.mtext-103.cl3.promotion
@@ -117,3 +117,28 @@
               = link_to I18n.t("page.foundation.more"), products_path(category: cats['slug']), class: 'flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10'
           .col-sm-6.col-md-4.p-b-40
 = render "layouts/seo_bread", datas: @datas
+:css
+  @media only screen and (max-width: 576px) {
+    .block2-txt-child1 > a, .block2-txt-child1 > span {
+      font-size: 12px;
+    }
+    .title-product {
+      font-size: 9px !important;
+      font-weight: 800;
+      display: initial !important;
+    }
+
+  }
+  @media only screen and (max-width: 767px) {
+    .title-product {
+      font-size: 10px !important;
+      font-weight: 800;
+    }
+  }
+  .title-product {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 50px;
+    -webkit-line-clamp: 2;
+  }

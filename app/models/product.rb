@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug_url, use: :slugged
+  belongs_to :admin_user
   # include PgSearch
   # pg_search_scope :search, against: [:title, :short_description]
 
@@ -22,6 +23,7 @@ class Product < ActiveRecord::Base
   has_many :color_images
   has_many :stocks
   has_many :bottom_stocks
+  # has_many :parner_orders
   belongs_to :favorite
   has_attached_file :measurement_image
   # Validate the attached image is image/jpg, image/png, etc
@@ -33,6 +35,9 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :color_images, :allow_destroy => true
   accepts_nested_attributes_for :stocks, :allow_destroy => true
   accepts_nested_attributes_for :bottom_stocks, :allow_destroy => true
+
+  PRICE_ON_ORDER = 3000000000
+  COMMISSION = 0.25
 
   def should_generate_new_friendly_id?
     slug.blank? || self.slug_url_changed?
@@ -46,35 +51,104 @@ class Product < ActiveRecord::Base
     end
   end
 
+  def quantity_sell
+    stock_ids = stocks.ids
+    line_item_ids = LineItem.where(stock_id: stock_ids).where.not(order_id: nil)
+    quantity = line_item_ids.map(&:quantity).inject(0, &:+)
+  end
+
+  def total_products
+    stocks.map(&:quantity).inject(0, &:+)
+  end
+
+  def total_sell
+    if quantity_sell.zero?
+      0
+    else
+      quantity_sell * price
+    end
+  end
+
+  def inventory
+    total_products - quantity_sell
+  end
+
+  def list_size
+    stocks.map(&:size).join(", ")
+  end
+
+  def fees_paid_sell(commission)
+    if quantity_sell.zero?
+      0
+    else
+      total_sell * commission
+    end
+  end
+
+  def revenue_sell(commission)
+    total_sell - fees_paid_sell(commission)
+  end
+
   def self.main_page(cats = [])
-    # product_hash = {}
-    # Category.all.each do |category|
-    #   product_hash["#{category.name},#{category.slug}"] = category.products.active.order(out_of_stock: :asc, sort_order: :desc, created_at: :desc).first(4)
-    # end
-    # product_hash
     cats.map do |category|
       products = ActiveRecord::Base.connection.execute(<<-QS
-SELECT
-  (
-    SELECT CONCAT('["', pi.id, '", "', pi.pimage_file_name, '"]')
-    FROM product_images pi WHERE pi.product_id=p.id LIMIT 1 OFFSET 0
-  ) as first_img,
-  (
-    SELECT CONCAT('["', pi.id, '", "', pi.pimage_file_name, '"]')
-    FROM product_images pi WHERE pi.product_id=p.id LIMIT 1 OFFSET 1
-  ) as second_img,
-  (SELECT COUNT(DISTINCT(s.size)) FROM stocks s WHERE s.product_id = p.id) as stocks_count,
-  p.id, p.out_of_stock, p.slug,
-  pt.title, p.promotion_price, p.price, p.has_promotion, p.promotion
-FROM products p
-LEFT JOIN category_products cp ON p.id = cp.product_id
-LEFT JOIN product_translations pt ON pt.product_id = p.id AND pt.locale='#{I18n.locale.to_s}'
-WHERE cp.category_id = #{category['id']}
-  AND p.is_hidden = false
-ORDER BY p.out_of_stock ASC, p.sort_order DESC, p.created_at DESC
-LIMIT 4
-      QS
-      ).as_json
+        SELECT
+          (
+            SELECT CONCAT('["', pi.id, '", "', pi.pimage_file_name, '"]')
+            FROM product_images pi WHERE pi.product_id=p.id LIMIT 1 OFFSET 0
+          ) as first_img,
+          (
+            SELECT CONCAT('["', pi.id, '", "', pi.pimage_file_name, '"]')
+            FROM product_images pi WHERE pi.product_id=p.id LIMIT 1 OFFSET 1
+          ) as second_img,
+          (SELECT COUNT(DISTINCT(s.size)) FROM stocks s WHERE s.product_id = p.id) as stocks_count,
+          p.id, p.out_of_stock, p.slug,
+          pt.title, p.promotion_price, p.price, p.has_promotion, p.promotion
+        FROM products p
+        LEFT JOIN category_products cp ON p.id = cp.product_id
+        LEFT JOIN product_translations pt ON pt.product_id = p.id AND pt.locale='#{I18n.locale.to_s}'
+        WHERE cp.category_id = #{category['id']}
+          AND p.is_hidden = false
+        ORDER BY p.out_of_stock ASC, p.sort_order DESC, p.created_at DESC
+        LIMIT 4
+              QS
+              ).as_json
+      category['products'] = products&.map do |product|
+        product['first_img_url'] = Product.parse_product_image product['first_img']
+        product['second_img_url'] = Product.parse_product_image product['second_img']
+        product
+      end
+      category
+    end
+  end
+
+  def self.main_page_search(cats = [], id = [])
+    query = ""
+    id.each {|i| query += i.to_s + ","}
+    query.chop!
+    cats.map do |category|
+      products = ActiveRecord::Base.connection.execute(<<-QS
+        SELECT
+          (
+            SELECT CONCAT('["', pi.id, '", "', pi.pimage_file_name, '"]')
+            FROM product_images pi WHERE pi.product_id=p.id LIMIT 1 OFFSET 0
+          ) as first_img,
+          (
+            SELECT CONCAT('["', pi.id, '", "', pi.pimage_file_name, '"]')
+            FROM product_images pi WHERE pi.product_id=p.id LIMIT 1 OFFSET 1
+          ) as second_img,
+          (SELECT COUNT(DISTINCT(s.size)) FROM stocks s WHERE s.product_id = p.id) as stocks_count,
+          p.id, p.out_of_stock, p.slug,
+          pt.title, p.promotion_price, p.price, p.has_promotion, p.promotion
+        FROM products p
+        LEFT JOIN category_products cp ON p.id = cp.product_id
+        LEFT JOIN product_translations pt ON pt.product_id = p.id AND pt.locale='#{I18n.locale.to_s}'
+        WHERE cp.category_id = #{category['id']}
+          AND p.is_hidden = false AND p.id in (#{query})
+        ORDER BY p.out_of_stock ASC, p.sort_order DESC, p.created_at DESC
+        LIMIT 4
+              QS
+              ).as_json
       category['products'] = products&.map do |product|
         product['first_img_url'] = Product.parse_product_image product['first_img']
         product['second_img_url'] = Product.parse_product_image product['second_img']

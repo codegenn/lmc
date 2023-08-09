@@ -2,6 +2,7 @@ class Order < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
   belongs_to :user
 
+
   validates :first_name, :last_name, :phone, :city, :district, :address, :email, presence: true
   validates_format_of :email,:with => Devise::email_regexp
 
@@ -29,6 +30,72 @@ class Order < ActiveRecord::Base
 
   def total_products
     calculator.total_products
+  end
+
+  def order_detail
+    self.line_items.map do |item|
+      {
+        "productCode": item.stock.product_code,
+        "productName": item.stock.product.title,
+        "quantity": item.quantity,
+        "price": item.price,
+        "note": self.note
+      }
+    end
+  end
+
+  def order_customer
+    customer = self.user
+    {
+      "code": customer.kiot_id,
+      "name": customer.username,
+      "contactNumber": self.phone,
+      "address": self.address,
+      "wardName": "#{self.district} #{self.city}" ,
+      "email": customer.email,
+      "comments": self.note
+    }
+  end
+
+  def order_payment
+    v = Voucher.where(code: self.voucher_code).first
+    {
+      "Method": "Voucher", 
+      "MethodStr": "Voucher",
+      "Amount": self.sub_total_price - self.grand_total,
+      "VoucherId": 30996,
+      "VoucherCampaignId": 30087
+    }
+  end
+
+  def sync_order_kiot
+    payload = {
+      "isApplyVoucher": self.voucher_code.present?,
+      "purchaseDate": DateTime.now().strftime("%Y-%m-%d"),
+      "branchId": 31669,
+      "description": self.note,
+      "method": self.payment_method,
+      "totalPayment": self.sub_total_price,
+      "orderDetails": order_detail,
+      "customer": order_customer,
+      "Payments":[
+        self.voucher_code.present? ? order_payment : {}
+      ]
+    }
+    KiotViet.add_order(payload, token)
+  end
+
+  def token
+    KiotViet.configure do |config|
+      config.client_id = ENV['KIOT_CLIENT_ID']
+      config.client_secret = ENV['KIOT_CLIENT_SECRET']
+    end
+  
+    respon = KiotViet.get_token
+  
+    token = respon["access_token"]
+  
+    return "Bearer ".concat(token)
   end
 
   private

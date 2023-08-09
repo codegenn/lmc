@@ -1,0 +1,404 @@
+:css
+  @media only screen and (max-width: 775px) {
+    .ltext-102 {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .ab-t-l {
+      top: -20px;
+    }
+  }
+  .modal-body {
+    font-weight: bold;
+  }
+  .susgoal-body .susgoal {
+    font-family: Gotham-Medium !important;
+    font-size: 26px !important;
+    line-height: 1.3846;
+    color: #4f8ca8;
+  }
+
+  .susgoal a {
+    color: #4f8ca8 !important;
+  }
+
+  @media (max-width: 575px) {
+    .susgoal-body .susgoal {
+      font-family: Gotham-Medium !important;
+      font-size: 17px !important;
+    }
+
+    .sus-image {
+      width: 28%;
+      margin: 0px 1%;
+    }
+
+    .sus-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  .wrapper-discount {
+    display none;
+    height: 303px;
+    width: 100%;
+    position: relative;
+    border: 2px solid #343a40;
+    border-left: 40px solid #343a40;
+    padding: 15px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: small;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(#{image_path "discount-pc.jpg"})
+  }
+  .discount-banner {
+    display:none;
+    position: fixed;
+    bottom: 30%;
+    right: 0;
+    height: 300px;
+    width: 650px;
+    z-index: 9999;
+    transition: transform 1s;
+  }
+
+  .wrapper-text-outside {
+    font-size: 20px;
+    width: 270px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: absolute;
+    bottom: 0;
+    left: -6px;
+    margin-left: -30px;
+    transform: rotate(270deg);
+    transform-origin: 0 0;
+    font-weight: 800;
+  }
+  .discount-banner-content-hide {
+    transform: translateX(612px);
+  }
+  .button-discount {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    background-color: rgb(248, 168, 149);
+    color: rgb(255, 255, 255);
+    border-radius: 0;
+    border: 1px solid #f08679;
+    height: 36px;
+    font-size: 12px;
+    font-weight: 700;
+    min-width: 144px;
+    line-height: 34px;
+    padding: 0 16px;
+    user-select: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: 0;
+    letter-spacing: 3px;
+  }
+
+  .input-discount {
+    position: absolute;
+    bottom: 50px;
+    right: 230px;
+    height: 36px;
+    width: 320px;
+    color: rgb(45, 45, 45);
+    padding: 0 12px;
+    outline: 0;
+    background-color: rgb(255, 255, 255);
+  }
+
+  
+  .p-left {
+    margin-left: 45px;
+  }
+  .p-top-last{
+    margin-top: -13px
+  }
+  .btn-close-m {
+    top: 0px;
+    right: 3px;
+    left: auto !important;
+  }
+  .partner-mobile{
+    width: 15,4%;
+    margin: 0 2%;
+  }
+
+
+  @media only screen and (max-width: 775px) {
+    .parner-title {
+      font-size: 17px;
+    }
+
+    .partner-mobile{
+      width: 25%;
+      margin: 0 10px;
+    }
+
+    .wrapper-discount {
+      background-image: url(#{image_path "discount-mobile.jpg"});
+      height: 261px;
+    }
+
+    .discount-banner {
+      width: 300px;
+    }
+
+    .discount-banner-content-hide {
+      transform: translateX(260px);
+    }
+
+    .button-discount {
+      bottom: 64px;
+      right: 3px;
+      height: 32px;
+      font-size: 9px;
+      min-width: 100px;
+    }
+
+    .input-discount {
+      bottom: 64px;
+      right: 107px;
+      height: 32px;
+      width: 130px;
+      font-size: 10px;
+    }
+
+    .wrapper-text-outside {
+      bottom: -30px;
+    }
+
+    .wrapper-discount {
+      background-image: url(#{image_path "discount-mobile.jpg"});
+      height: 261px;
+    }
+
+    .discount-banner {
+      display: none;
+      width: 300px;
+    }
+
+    .discount-banner-content-hide {
+      transform: translateX(260px);
+    }
+
+    .button-discount {
+      bottom: 64px;
+      right: 3px;
+      height: 32px;
+      font-size: 9px;
+      min-width: 100px;
+    }
+
+    .input-discount {
+      bottom: 64px;
+      right: 107px;
+      height: 32px;
+      width: 130px;
+      font-size: 10px;
+    }
+
+    .wrapper-text-outside {
+      bottom: -30px;
+    }
+  }
+  
+= content_for :title do
+  LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ
+/ Discount
+%form{:action => "/subscribers", :method => "post"}
+  .discount-banner.discount-banner-content-hide
+    .wrapper-discount
+      .wrapper-text-outside
+        Giảm giá 10%
+      %button.button-discount{:type => "submit"}
+        Đăng ký
+      %input.input-discount{:placeholder => "NHẬP ĐỊA CHỈ EMAIL CỦA BẠN", :name => "email"}
+    
+/ Banner
+.sec-banner.bg0.p-t-80.p-b-50.main-page
+  .container
+    .row
+      .col-md-3.col-xl-2.p-b-30
+        %i.zmdi.zmdi-rotate-left
+        %a.policy-text{:href => policy_path, hreflang: "#{I18n.locale}"}
+          = I18n.t "page.index.return"
+      .col-md-3.col-xl-3
+        %i.zmdi.zmdi-car-taxi
+        %a.policy-text{:href => shipping_path, hreflang: "#{I18n.locale}"}
+          = I18n.t "page.index.delivery"
+      .col-md-4.col-xl-4.p-b-30.m-lr-auto
+      .col-md-4.col-xl-4.p-b-30.m-lr-auto
+    .row
+      .col-md-4.col-xl-4.p-b-30.m-lr-auto
+        / Block1
+        .block1.wrap-pic-w.img-height
+          = cl_image_tag Rails.application.secrets.best_seller_link, loading:"lazy", alt: "best seller"
+          = link_to products_path(check: 'best_sellers'), class: "block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" do
+            .block1-txt-child1.flex-col-l
+              %span.block1-name.ltext-102.trans-04.p-b-8
+                = I18n.t "page.index.best_seller"
+              .block1-txt-child2.p-b-4.trans-05
+                .block1-link.stext-101.cl0.trans-09
+                  = I18n.t "page.index.best_seller"
+            .block1-txt-child2.p-b-4.trans-05
+              .block1-link.stext-101.cl0.trans-09
+                = I18n.t "page.index.shop_now"
+      .col-md-4.col-xl-4.p-b-30.m-lr-auto
+        / Block1
+        .block1.wrap-pic-w.img-height
+          = cl_image_tag Rails.application.secrets.promotion_link, loading:"lazy", alt: "promotion"
+          = link_to products_path(check: 'promotion'), class: "block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" do
+            .block1-txt-child1.flex-col-l
+              %span.block1-name.ltext-102.trans-04.p-b-8
+                = I18n.t "page.index.promotion"
+              .block1-txt-child2.p-b-4.trans-05
+                .block1-link.stext-101.cl0.trans-09
+                  = I18n.t "page.index.promotion_description"
+            .block1-txt-child2.p-b-4.trans-05
+              .block1-link.stext-101.cl0.trans-09
+                = I18n.t "page.index.shop_now"
+      .col-md-4.col-xl-4.p-b-30.m-lr-auto
+        / Block1
+        .block1.wrap-pic-w.img-height
+          = cl_image_tag Rails.application.secrets.new_arrival_link, loading:"lazy", alt: "new arrival"
+          = link_to products_path(check: 'new_arrivals'), class: "block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" do
+            .block1-txt-child1.flex-col-l
+              %span.block1-name.ltext-102.trans-04.p-b-8
+                = I18n.t "page.index.new_arrivals"
+              .block1-txt-child2.p-b-4.trans-05
+                .block1-link.stext-101.cl0.trans-09
+                  = I18n.t "page.index.new_arrivals_description"
+            .block1-txt-child2.p-b-4.trans-05
+              .block1-link.stext-101.cl0.trans-09
+                = I18n.t "page.index.shop_now"
+  - if Medium.all.count > 0
+    .container
+      .row.isotope-grid
+        .block1-txt-child1.flex-col-l.center.m-t-0
+          %span.block1-name.ltext-108.trans-04.p-b-8.parner-title
+            = I18n.t "page.menu.medias"
+      .row.d-flex
+        .col-md-12.p-b-30.m-lr-auto
+          = render 'media'
+  .container
+    .row
+      - @cats.each do |cat|
+        .col-md-4.col-xl-4.p-b-30.m-lr-auto
+          / Block1
+          .block1.wrap-pic-w.img-height
+            = cl_image_tag cat['cate_image_url'], loading:"lazy", alt: "#{cat['name']}"
+            = link_to products_path(category: cat['slug']), class: "block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" do
+              .block1-txt-child1.flex-col-l
+                %span.block1-name.ltext-102.trans-04.p-b-8
+                  = cat['name']
+                .block1-txt-child2.p-b-4.trans-05
+                  .block1-link.stext-101.cl0.trans-09
+                    = cat['description']
+              .block1-txt-child2.p-b-4.trans-05
+                .block1-link.stext-101.cl0.trans-09
+                  = I18n.t "page.index.shop_now"
+  .container
+    .row.isotope-grid.susgoal-body
+      .block1-txt-child1.flex-col-l.center.m-t-5.m-b-15
+        %span.block1-name.trans-04.p-b-8.susgoal
+          = link_to I18n.t("page.menu.susgoallink"),class: "" do 
+            = I18n.t "page.menu.susgoal"
+    .row.d-flex
+      .col-md-12.p-b-30.m-lr-auto.sus-container
+        = image_tag  "#{I18n.t "page.menu.susgoalimg-1"}", class: "partner-img sus-image", loading:"lazy",  alt: "lmcation logo", :onClick => "suspopup('#{I18n.t "page.menu.susgoal1-title"}', '#{I18n.t "page.menu.susgoal1"}')".html_safe
+        = image_tag  "#{I18n.t "page.menu.susgoalimg-2"}", class: "partner-img sus-image", loading:"lazy",  alt: "lmcation logo", :onClick => "suspopup('#{I18n.t "page.menu.susgoal2-title"}', '#{I18n.t "page.menu.susgoal2"}')".html_safe
+        = image_tag  "#{I18n.t "page.menu.susgoalimg-3"}", class: "partner-img sus-image", loading:"lazy",  alt: "lmcation logo", :onClick => "suspopup('#{I18n.t "page.menu.susgoal3-title"}', '#{I18n.t "page.menu.susgoal3"}')".html_safe
+        = image_tag  "#{I18n.t "page.menu.susgoalimg-4"}", class: "partner-img sus-image", loading:"lazy",  alt: "lmcation logo", :onClick => "suspopup('#{I18n.t "page.menu.susgoal4-title"}', '#{I18n.t "page.menu.susgoal4"}')".html_safe
+        = image_tag  "#{I18n.t "page.menu.susgoalimg-5"}", class: "partner-img sus-image", loading:"lazy",  alt: "lmcation logo", :onClick => "suspopup('#{I18n.t "page.menu.susgoal5-title"}', '#{I18n.t "page.menu.susgoal5"}')".html_safe
+
+  .container
+    .row
+      .col-md-6.p-b-30.m-lr-auto
+        / Block1
+        .block1.wrap-pic-w.img-height
+          = cl_image_tag Rails.application.secrets.inspiration_link, loading:"lazy", alt: "inspiration"
+          = link_to foundations_path(category: "inspiration"), class: "block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" do
+            .block1-txt-child1.flex-col-l
+              %span.block1-name.ltext-102.trans-04.p-b-8
+                = I18n.t "page.foundation.inspiration"
+            .block1-txt-child2.p-b-4.trans-05
+              .block1-link.stext-101.cl0.trans-09
+                = I18n.t "page.index.more"
+      .col-md-6.p-b-30.m-lr-auto
+        / Block1
+        .block1.wrap-pic-w.img-height
+          = cl_image_tag Rails.application.secrets.empowerment_link, loading:"lazy", alt: "empowerment"
+          = link_to foundations_path(category: "empowerment"), class: "block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" do
+            .block1-txt-child1.flex-col-l
+              %span.block1-name.ltext-102.trans-04.p-b-8
+                = I18n.t "page.foundation.empowerment"
+            .block1-txt-child2.p-b-4.trans-05
+              .block1-link.stext-101.cl0.trans-09
+                = I18n.t "page.index.more"
+  .container
+    .row.isotope-grid
+      .block1-txt-child1.flex-col-l.center.m-t-0
+        %span.block1-name.ltext-108.trans-04.p-b-8.parner-title
+          = I18n.t "page.menu.partners"
+    .row.d-flex
+      .col-md-12.p-b-30.m-lr-auto
+        - if Partner.all.count > 1
+          = render 'partner_b'
+        - else
+          = render 'partner_a'
+
+  - if @embed_links.present?
+    = render 'video2'  
+    
+  - if @member_ads.present?
+    = render 'member_slider'
+
+#susimg.modal.fade{:role => "dialog"}
+  .modal-dialog
+    .modal-content{:style => "background-color: white;"}
+      .modal-header{:style => "justify-content: center;"}
+        %h5.modal-title Modal title
+        %button.close.btn-close-m{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        SDG #1. LMcation helps to eliminate poverty.
+        We provide work to the poor and marginalized. We give our partners access to a sustainable income, boosting their chances at a better future.
+%div
+  = image_tag  "discount-pc.jpg", loading:"lazy", style: "display: none", class: "dicount-image-src-pc"
+:javascript
+  $(".susimg1").click(function() {
+    $('#susimg1').modal('show');
+    console.log('#{I18n.t("page.foundation.empowerment")}')
+  })
+  function suspopup(title, content) {
+    let modal = $("#susimg")
+    let header = $(modal).find(".modal-title")
+    let body = $(modal).find(".modal-body")
+    $(header).text(title)
+    $(body).text(content)
+    $('#susimg').modal('show');
+  }
+
+:javascript
+  
+
+  $(".wrapper-text-outside").click(function() {
+    let parent = $(this).closest('.discount-banner')
+    console.log(parent[0])
+    if($(parent).hasClass('discount-banner-content-hide')) {
+      $(parent).removeClass('discount-banner-content-hide')
+    } else {
+      $(parent).addClass("discount-banner-content-hide")
+    }
+  })

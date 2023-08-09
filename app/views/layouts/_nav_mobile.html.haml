@@ -1,0 +1,30 @@
+.menu-mobile
+  %ul.topbar-mobile
+    %li
+      .right-top-bar.flex-w.h-full
+        - if user_signed_in?
+          = link_to edit_user_registration_path, class: "flex-c-m trans-04 p-lr-10 zmdi zmdi-account" do
+            .zmdi.zmdi-account.zmdi-hc-2x
+        - else
+          = link_to I18n.t("page.menu.my_account"), new_user_session_path, class: "flex-c-m trans-04 p-lr-10"
+        = link_to_unless I18n.locale == :vi, "VI", { locale: :vi }, { class: 'flex-c-m trans-04 p-lr-25' } if I18n.locale == :en
+        = link_to_unless I18n.locale == :en, "EN", { locale: :en }, { class: 'flex-c-m trans-04 p-lr-25' } if I18n.locale == :vi
+  %ul.main-menu-m
+    %li
+      = link_to I18n.t("page.menu.home"), store_path
+    %li
+      = link_to I18n.t("page.menu.shop"), products_path
+      %span.arrow-main-menu-m
+        %i.fa.fa-angle-right{"aria-hidden" => "true"}
+      %ul.sub-menu-m
+        - @cats.each do |cat|
+          %li
+            = link_to cat['name'], products_path(category: cat['slug'])
+    %li
+      = link_to I18n.t("page.menu.foundation"), foundations_path
+    %li
+      = link_to I18n.t("page.menu.about_us"), thoi_trang_ton_vinh_phu_nu_path
+    %li
+      = link_to I18n.t("page.menu.career"), jobs_path
+    %li
+      = link_to I18n.t("page.menu.join_us"), partners_path

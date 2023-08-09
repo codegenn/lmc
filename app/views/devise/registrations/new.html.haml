@@ -1,5 +1,5 @@
 .main-page.bg-img1.txt-center.p-tb-92.banner-bg
-  = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/lmcation+banner+7.jpg'
+  = cl_image_tag "#{cdn_url}/systems/lmcation+banner+5.jpg"
   %h1.ltext-105.cl0.txt-center.title
     = I18n.t "user.signup"
 %section.bg0.p-t-104.p-b-116.session-top
@@ -17,7 +17,7 @@
             = f.label :password, I18n.t("user.password").upcase
             - if @minimum_password_length
               %em
-                (#{@minimum_password_length} characters minimum)
+                = I18n.t("user.pass_note")
             .bor8.m-b-20.how-pos4-parent
               = f.password_field :password, autocomplete: "new-password", class: 'stext-111 cl2 plh3 size-116 p-l-20'
           .field
@@ -33,13 +33,13 @@
             .bor8.m-b-20.how-pos4-parent
               = f.text_field :last_name, class: 'stext-111 cl2 plh3 size-116 p-l-20'
           .field
-            = f.label :phone, I18n.t("user.phone")
+            = f.label :phone_number, I18n.t("user.phone")
             .bor8.m-b-20.how-pos4-parent
-              = f.text_field :phone, class: 'stext-111 cl2 plh3 size-116 p-l-20'
+              = f.text_field :phone_number, class: 'stext-111 cl2 plh3 size-116 p-l-20'
+          = f.hidden_field :phone, value: 0
           .actions
             = f.submit I18n.t("user.signup_btn"), class: 'flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer'
-        = render "devise/shared/links"
-
-
-
-
+          .line.mt-35.text-center
+            %span
+              = I18n.t("or")
+          = render "layouts/social"

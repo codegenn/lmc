@@ -1,0 +1,20 @@
+.sec-banner.bg0.p-t-81.p-b-50
+  .container
+    .row
+      - @jobs.each do |job|
+        .col-sm-4.col-md-4.p-b-40
+          .blog-item
+            .hov-img0
+              - if job.avatar.present?
+                = link_to job_path(job.id) do
+                  = cl_image_tag job&.avatar&.url
+            .p-t-15
+              .stext-107.flex-w.p-b-14
+                %span
+                  %span.cl5
+                    = job.created_at.to_date
+              %h4.p-b-12
+                = link_to job_path(job.id), class: ".mtext-101 cl2 hov-cl1 trans-04" do
+                  = job.title
+              %p.stext-108.cl6
+                = job.short_description

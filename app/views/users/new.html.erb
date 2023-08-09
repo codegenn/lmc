@@ -1,0 +1,6 @@
+<%= render "new_#{User.to_s_of_user_type(@user_type)}",
+			countries: @user_form_options.countries,
+			country: @country,
+			user_type: @user_type,
+			url: users_confirm_path
+  %>

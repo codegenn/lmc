@@ -1,0 +1,35 @@
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :email, I18n.t("user.email")
+    .bor8.m-b-20.how-pos4-parent
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'stext-111 cl2 plh3 size-116 p-l-20'
+  .field
+    = f.label :password, I18n.t("user.password").upcase
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length} characters minimum)
+    .bor8.m-b-20.how-pos4-parent
+      = f.password_field :password, autocomplete: "new-password", class: 'stext-111 cl2 plh3 size-116 p-l-20'
+  .field
+    = f.label :password_confirmation, I18n.t("user.password_confirmation").upcase
+    .bor8.m-b-20.how-pos4-parent
+      = f.password_field :password_confirmation, autocomplete: "new-password", class: 'stext-111 cl2 plh3 size-116 p-l-20'
+  .field
+    = f.label :username, I18n.t("user.user_name")
+    .bor8.m-b-20.how-pos4-parent
+      = f.text_field :username, class: 'stext-111 cl2 plh3 size-116 p-l-20'
+  .field
+    = f.label :phone_number, I18n.t("user.phone")
+    .bor8.m-b-20.how-pos4-parent
+      = f.text_field :phone_number, class: 'stext-111 cl2 plh3 size-116 p-l-20'
+  .actions
+    = f.submit I18n.t("user.signup_btn"), class: 'flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer'
+  .field.term-margin-20.text-blue.text-center
+    = I18n.t("prom_1")
+  .field.term-margin-20.text-blue.text-center
+    = I18n.t("prom_2")
+  .field.term-margin-20.text-blue.text-center
+    = I18n.t("prom_3")
+  .field.term-margin-20.text-blue.text-center
+    = I18n.t("prom_4")

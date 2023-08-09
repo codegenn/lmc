@@ -1,0 +1,110 @@
+= content_for :title do
+  Hợp Tác
+/ Banner
+.sec-banner.bg0.p-t-80.p-b-50.main-page
+  .container
+    -# = render_breadcrumbs :separator => ' / '
+    .alert
+      - flash.each do |key, value|
+        = content_tag :div, value, class: "alert alert-#{key}" unless key == 'pixel'
+      .row
+        .col-sm-12.col-lg-6
+          %h1
+            = I18n.t("partners.header")
+          %br
+          %p
+            = I18n.t("partners.description")
+          %p
+            = I18n.t("partners.description_1")
+          = link_to(I18n.t("user.signup"), partners_sign_up_path, class: "flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 partner-btn")
+          %p.partner-sign-in
+            = I18n.t("partners.sign-in")
+            = link_to(I18n.t("user.signin"), partners_sign_in_path)
+        .col-sm-12.col-lg-6
+          %img{:src => "#{cdn_url}/partner/doi_tac_LMcation.png", width: "100%"}
+  .container.partner-container-2
+    .row
+      .col-sm-12.col-lg-4
+        %div.reverse
+          %img{src: "#{cdn_url}/partner/loi_ich.jpg", width: "100%"}
+          %div
+            %h3
+              = I18n.t("partners.section_1.header")
+            %br
+            %ul{style: "margin-left: 30px;"}
+              %li{style: "list-style-type: disc;"}
+                = I18n.t("partners.section_1.des_1")
+              %li{style: "list-style-type: disc;"}
+                = I18n.t("partners.section_1.des_2")
+      .col-sm-12.col-lg-4
+        %div.partner-box1.reverse
+          %img{src: "#{cdn_url}/partner/dieu_kien.jpg", width: "100%"}
+          %div
+            %h3
+              = I18n.t("partners.section_2.header")
+            %br
+            %ul{style: "margin-left: 30px;"}
+              %li{style: "list-style-type: disc;"}
+                = I18n.t("partners.section_2.des_1")
+              %li{style: "list-style-type: disc;"}
+                = I18n.t("partners.section_2.des_2")
+              %li{style: "list-style-type: disc;"}
+                = I18n.t("partners.section_2.des_3")
+      .col-sm-12.col-lg-4
+        %div.partner-box2.reverse
+          %img{src: "#{cdn_url}/partner/lien_he.jpg", width: "100%"}
+          %div
+            %h3
+              = I18n.t("partners.section_3.header")
+            %br
+            %ul{style: "margin-left: 30px;"}
+              %li{style: "list-style-type: disc;"}
+                = I18n.t("partners.section_3.des_1.first")
+                %a{href: "mailto:order@lmcation.com"} order@lmcation.com 
+                = I18n.t("partners.section_3.des_1.sec")
+              %li{style: "list-style-type: disc;"}
+                = I18n.t("partners.section_3.des_2")
+  -# = render "partners/job"
+:css
+  .partner-btn {
+    margin: 100px 0 20px 0;
+    width: 50%;
+  }
+  .partner-container-2 {
+    margin-top: 100px
+  }
+  .partner-container-2 h3 {
+    font-weight: 500; 
+    padding-top: 100px;
+  }
+  .partner-box1 {
+    padding-top: 50%
+  }
+  .partner-box2 {
+    padding-top: 100%
+  }
+  @media (max-width: 575px) {
+    .partner-btn {
+      width: 100%;
+      margin: 30px 0 20px 0;
+    }
+    .partner-sign-in {
+      margin-bottom: 30px;
+    }
+    .partner-container-2 {
+      margin-top: 20px
+    }
+    .partner-container-2 h3 {
+      padding-top: 0px;
+    }
+    .partner-box1, .partner-box2 {
+      padding-top: 10%
+    }
+    .reverse {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .reverse img {
+      padding: 15px;
+    }
+  }

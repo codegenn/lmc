@@ -1,0 +1,52 @@
+:css 
+  .area {
+    margin-top: 40px;
+  }
+
+  .video-area {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    margin-top:
+  }
+
+  .video-divider {
+    max-width: 100%;
+    height: 1px;
+    background-color: rgb(235, 241, 246);
+    margin: 20px 0;
+    width: 40%;
+  }
+
+  .video-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .video-item {
+    width: 100%;
+    height: 270px;
+  }
+  @media (max-width: 576px) {
+    .video-item {
+      height: 270px;
+    }
+  }
+
+.container
+  .row.isotope-grid
+    .block1-txt-child1.flex-col-l.center.m-t-5.m-b-15
+      %span.block1-name.ltext-108.trans-04.p-b-8.parner-title
+        = I18n.t "page.index.video"
+  -# .row.video-area
+  -#   .video-description
+  -#     = I18n.t "page.index.video_desc"
+  -# .video-divider
+  .row
+    - @embed_links.each do |video|
+      .col-md-4.col-xl-4.p-b-30.m-lr-auto
+        %iframe.video-item{:src=> "#{video}"}

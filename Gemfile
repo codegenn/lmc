@@ -23,18 +23,22 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml-rails'
-gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '3543363026121ee28d98dfce4cb6366980c055ee'
+gem 'mimemagic', '0.3.8'
 gem 'redis-rails'
 gem "breadcrumbs_on_rails"
 gem 'canonical-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'httparty'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'dotenv-rails'
+gem 'jbuilder', "~> 2.0"
+
+gem 'jwt'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,7 +53,7 @@ group :development, :test do
 end
 
 gem 'rack-mini-profiler'
-
+gem "s3"
 group :production do
   gem 'rails_12factor'
 end
@@ -57,14 +61,22 @@ gem 'activeadmin'
 gem 'devise'
 gem 'cloudinary'
 gem "paperclip"
+gem 'unicorn'
+gem "omniauth"
+gem "omniauth-google-oauth2"
+gem "omniauth-facebook"
+gem "omniauth-rails_csrf_protection"
 
 ruby "2.6.0"
 gem 'globalize'
 gem 'image-picker-rails'
 gem "activeadmin-globalize"
-gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
+gem 'active_admin_editor'
 gem 'friendly_id', '~> 5.2.4'
 gem 'delayed_job_active_record'
 
 gem 'paperclip' # file attachment syntax and callbacks
 gem 'aws-sdk'
+# gem "passenger"
+gem 'dalli'
+gem 'cancancan'

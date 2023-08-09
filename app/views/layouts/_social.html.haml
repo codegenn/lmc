@@ -1,0 +1,16 @@
+.field
+  = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "btn-social btn-google" do
+    .icon-container
+      %img.sns-icon{src: "https://s.pimg.jp/pixta/assets/modal_banner/new-google-icon-32-f0f7a0b39d494daa9232cec7dd70459e482dfc573bd9b837dc80053b85c6c713.png"}
+    %span.sns-sign-up
+      = I18n.t("label_gg")
+-# .field.term-margin-20
+-#   = link_to user_facebook_omniauth_authorize_path, method: :post, class: "btn-social btn-facebook" do
+-#     .icon-container
+-#       %i.fa.fa-facebook-official.sns-icon.facebook-icon
+-#     %span.sns-sign-up
+      = I18n.t("label_fb")
+.field.term-margin-50
+  = I18n.t("term").html_safe
+.field.term-margin-20.text-center.text-red
+  = I18n.t("gift")

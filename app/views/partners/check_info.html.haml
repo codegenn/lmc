@@ -1,0 +1,50 @@
+.main-page.bg-img1.txt-center.p-lr-15.p-tb-92.banner-bg
+  = cl_image_tag "#{cdn_url}/systems/lmcation+banner+6.jpg"
+  %h1.ltext-105.cl0.txt-center.title
+    = I18n.t "page.tracking.info_partner"
+%section.bg0.p-t-104.p-b-116.session-top
+  .container
+    .alert
+      - flash.each do |key, value|
+        = content_tag :div, value, class: "alert alert-#{key}" unless key == 'pixel'
+    .policy.partner
+      .col-md-12.col-xl-10.p-b-30.m-lr-auto.policy-box
+        %h4.ltext-107.txt-center
+          = I18n.t "page.tracking.search_partner"
+        %br
+        = form_tag(tracking_partner_path, method: "get") do
+          .bor8.m-b-20.how-pos4-parent
+            = text_field_tag :tracking, '', autofocus: true, class: 'stext-111 cl2 plh3 size-116 p-l-62 p-r-30', :name => "tracking", :placeholder => I18n.t("page.tracking.order_id_partner"), :type => "text"
+          %center
+            .col-sm-6
+              = submit_tag I18n.t("page.tracking.search_partner"), class: 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
+        %br
+        - if @partner_user
+          .accordion
+            .card-body
+              .order-number
+                = "#{I18n.t("page.tracking.partner_tracking_number")}: #{@partner_user.tracking}"
+              %br
+              .wrap-table-shopping-cart
+                %table.table-shopping-cart
+                  %tr.table_head
+                    %th.column-1= I18n.t("page.tracking.email")
+                    %th.column-2
+                    %th.column-3= I18n.t("page.tracking.name")
+                    %th.column-4= I18n.t("page.tracking.phone")
+                    %th.column-5= I18n.t("page.tracking.address")
+                    %tr.table_row
+                      %td.column-1
+                        = @partner_user.email
+                      %td.column-2
+                      %td.column-3
+                        = @partner_user.name
+                      %td.column-4
+                        = @partner_user.phone
+                      %td.column-5
+                        = @partner_user.address
+        - else
+          .accordion
+            .card-body
+              .order-numbersearch_empty
+                = I18n.t("page.tracking.search_empty")

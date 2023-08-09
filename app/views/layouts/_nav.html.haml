@@ -1,0 +1,66 @@
+:css
+  .logo {
+    height: 100%;
+    left: 0;
+    position: inherit;
+  }
+  .logo img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .main-menu > li {
+    padding: 0;
+  }
+
+.wrap-menu-desktop
+  %nav.limiter-menu-desktop.container
+    / Menu desktop
+    .menu-desktop.col-11
+      %ul.main-menu
+        %li{:class => ('active-menu' if @menu == 'store')}
+          = link_to I18n.t("page.menu.home"), store_path, onclick: "dataLayer.push({'ga_event_category': 'trang-chu', 'ga_event_action': 'link', 'ga_event_label': 'menu', 'event': 'ga_event'});"
+        %li{:class => ('active-menu' if @menu == 'product')}
+          = link_to I18n.t("page.menu.shop"), products_path, onclick:"dataLayer.push({'ga_event_category': 'mua-hang', 'ga_event_action': 'link', 'ga_event_label': 'menu', 'event': 'ga_event'});"
+          %ul.sub-menu
+            - @cats.each do |cat|
+              %li
+                = link_to cat['name'], products_path(category: cat['slug'])
+        %li{:class => ('active-menu' if @menu == 'foundation')}
+          = link_to I18n.t("page.menu.foundation"), foundations_path, onclick:"dataLayer.push({'ga_event_category': 'nen-tang', 'ga_event_action': 'link', 'ga_event_label': 'menu', 'event': 'ga_event'});"
+          %ul.sub-menu
+            %li
+              = link_to I18n.t("page.foundation.inspiration"), foundations_path(category: "inspiration")
+            %li
+              = link_to I18n.t("page.foundation.empowerment"), foundations_path(category: "empowerment")
+            %li
+              = link_to I18n.t("page.foundation.news"), foundations_path(category: "news")
+        %li{:class => ('active-menu' if @menu == 'about')}
+          = link_to I18n.t("page.menu.about_us"), thoi_trang_ton_vinh_phu_nu_path, onclick: "dataLayer.push({'ga_event_category': 'gioi-thieu', 'ga_event_action': 'link', 'ga_event_label': 'menu', 'event': 'ga_event'});"
+        %li{:class => ('active-menu' if @menu == 'findus')}
+          = link_to I18n.t("page.menu.find_us"), lien_he_path, onclick: "dataLayer.push({'ga_event_category': 'lien-he', 'ga_event_action': 'link', 'ga_event_label': 'menu', 'event': 'ga_event'});"
+        %li{:class => ('active-menu' if @menu == 'career')}
+          = link_to I18n.t("page.menu.career"), jobs_path, onclick: "dataLayer.push({'ga_event_category': 'hop-tac', 'ga_event_action': 'link', 'ga_event_label': 'menu', 'event': 'ga_event'});"
+        %li{style: "width: 15%;"}
+          = link_to store_path, class: 'logo' do
+            = cl_image_tag 'https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png', alt:"lmcation logo"
+        %li{:class => ('active-menu' if @menu == 'joinus')}
+          = link_to I18n.t("page.menu.join_us"), partners_path, onclick: "dataLayer.push({'ga_event_category': 'hop-tac', 'ga_event_action': 'link', 'ga_event_label': 'menu', 'event': 'ga_event'});"
+        %li
+          .slogan.flex-w.flex-r-m
+            Create love moments everyday
+    / Icon header
+    .wrap-icon-header.flex-w.col-1.p-0
+      .icon-cart.p-r-15
+        = render 'carts/icon', total_products: @cart_total
+      .icon-wishlist
+        = render 'favorites/icon', total_products: @favorite_total
+:javascript
+  $(window).on('scroll',function(){
+    if($(this).scrollTop() > $('.top-bar').height()) {
+      $('.logo img').css('width', '50%');
+    }
+    else {
+      $('.logo img').css('width', '100%');
+    }
+  });

@@ -1,5 +1,5 @@
 .main-page.bg-img1.txt-center.p-tb-92.banner-bg
-  = cl_image_tag 'https://lmcation.s3-ap-southeast-1.amazonaws.com/systems/lmcation+banner+7.jpg'
+  = cl_image_tag "#{cdn_url}/systems/lmcation+banner+5.jpg"
   %h1.ltext-105.cl0.txt-center.title
     = I18n.t "user.user_header"
   .mtext-105.cl0.txt-center.description
@@ -8,58 +8,19 @@
   .container
     .flex-w.flex-tr
       .size-210.bor10.p-lr-70.p-t-55.p-b-70.p-lr-15-lg.w-full-md
-        %h2.ltext-102
+        %h2.ltext-102.text-center.title-sign
           = I18n.t "user.signin"
         %br
-        - flash.each do |key, value|
-          = content_tag :div, value, class: "alert alert-#{key}" unless key == 'pixel'
-        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-          .field
-            = f.label :email, I18n.t("user.email")
-            .bor8.m-b-20.how-pos4-parent
-              = f.email_field :email, autofocus: true, autocomplete: "email", class: 'stext-111 cl2 plh3 size-116 p-l-20'
-          .field
-            = f.label :password, I18n.t("user.password").upcase
-            .bor8.m-b-20.how-pos4-parent
-              = f.password_field :password, autocomplete: "current-password", class: 'stext-111 cl2 plh3 size-116 p-l-20'
-          - if devise_mapping.rememberable?
-            .field
-              = f.check_box :remember_me
-              = f.label :remember_me
-          .actions
-            = submit_tag I18n.t("user.submit"), class: 'flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer'
+        = render "layouts/sign_in"
       .size-210.bor10.p-lr-70.p-t-55.p-b-70.p-lr-15-lg.w-full-md
-        %h2.ltext-102
+        %h2.ltext-102.text-center.title-sign
           = I18n.t "user.signup"
         %br
-        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-          = render "devise/shared/error_messages", resource: resource
-          .field
-            = f.label :email, I18n.t("user.email")
-            .bor8.m-b-20.how-pos4-parent
-              = f.email_field :email, autofocus: true, autocomplete: "email", class: 'stext-111 cl2 plh3 size-116 p-l-20'
-          .field
-            = f.label :password, I18n.t("user.password").upcase
-            - if @minimum_password_length
-              %em
-                (#{@minimum_password_length} characters minimum)
-            .bor8.m-b-20.how-pos4-parent
-              = f.password_field :password, autocomplete: "new-password", class: 'stext-111 cl2 plh3 size-116 p-l-20'
-          .field
-            = f.label :password_confirmation, I18n.t("user.password_confirmation").upcase
-            .bor8.m-b-20.how-pos4-parent
-              = f.password_field :password_confirmation, autocomplete: "new-password", class: 'stext-111 cl2 plh3 size-116 p-l-20'
-          .field
-            = f.label :first_name, I18n.t("user.first_name")
-            .bor8.m-b-20.how-pos4-parent
-              = f.text_field :first_name, class: 'stext-111 cl2 plh3 size-116 p-l-20'
-          .field
-            = f.label :last_name, I18n.t("user.last_name")
-            .bor8.m-b-20.how-pos4-parent
-              = f.text_field :last_name, class: 'stext-111 cl2 plh3 size-116 p-l-20'
-          .field
-            = f.label :phone, I18n.t("user.phone")
-            .bor8.m-b-20.how-pos4-parent
-              = f.text_field :phone, class: 'stext-111 cl2 plh3 size-116 p-l-20'
-          .actions
-            = f.submit I18n.t("user.signup_btn"), class: 'flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer'
+        = render "layouts/sign_up"
+:css
+  @media (max-width: 400px) {
+    .title-sign {
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+  }

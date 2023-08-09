@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+# Dotenv::Railtie.load
+
 module LmcationProject
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -22,11 +24,13 @@ module LmcationProject
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.paths << Rails.root.join("app", "assets", "font")
     I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
     config.i18n.available_locales = [:en, :vi]
     config.i18n.default_locale = :vi
-    config.active_job.queue_adapter = :delayed_job
+    config.active_job.queue_adapter = :delayed_job 
     config.exceptions_app = self.routes
+    config.autoload_paths << Rails.root.join('lib')
   end
 end
+

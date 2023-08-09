@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210317101807) do
+ActiveRecord::Schema.define(version: 20230618093712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(version: 20210317101807) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "phone"
+    t.string   "name"
+    t.string   "address"
+    t.string   "commission"
+    t.boolean  "status"
+    t.integer  "permission",             default: 0
+    t.string   "code"
   end
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
@@ -59,18 +66,10 @@ ActiveRecord::Schema.define(version: 20210317101807) do
 
   add_index "applications", ["job_id"], name: "index_applications_on_job_id", using: :btree
 
-  create_table "assets", force: :cascade do |t|
-    t.string   "storage_uid"
-    t.string   "storage_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "storage_width"
-    t.integer  "storage_height"
-    t.float    "storage_aspect_ratio"
-    t.integer  "storage_depth"
-    t.string   "storage_format"
-    t.string   "storage_mime_type"
-    t.string   "storage_size"
+  create_table "ar_internal_metadata", primary_key: "key", force: :cascade do |t|
+    t.string   "value"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "bottom_stocks", force: :cascade do |t|
@@ -196,8 +195,14 @@ ActiveRecord::Schema.define(version: 20210317101807) do
     t.string   "title"
     t.text     "short_description"
     t.text     "content"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "image"
+    t.string   "avatar"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size",    limit: 8
+    t.datetime "avatar_updated_at"
   end
 
   create_table "line_items", force: :cascade do |t|
@@ -216,6 +221,26 @@ ActiveRecord::Schema.define(version: 20210317101807) do
   add_index "line_items", ["order_id"], name: "index_line_items_on_order_id", using: :btree
   add_index "line_items", ["stock_id"], name: "index_line_items_on_stock_id", using: :btree
 
+  create_table "master_data", force: :cascade do |t|
+    t.string   "type_name"
+    t.string   "key"
+    t.string   "value"
+    t.boolean  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mautic_connections", force: :cascade do |t|
+    t.string   "type"
+    t.string   "url"
+    t.string   "client_id"
+    t.string   "secret"
+    t.string   "token"
+    t.string   "refresh_token"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "measurements", force: :cascade do |t|
     t.integer "category_id"
     t.string  "size"
@@ -224,6 +249,31 @@ ActiveRecord::Schema.define(version: 20210317101807) do
     t.boolean "length"
     t.boolean "sleeve_length"
     t.boolean "sleeve_circumference"
+  end
+
+  create_table "media", force: :cascade do |t|
+    t.string   "media_image_content_type"
+    t.string   "url"
+    t.string   "media_image_file_name"
+    t.string   "alt"
+    t.string   "media_image"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "member_ads", force: :cascade do |t|
+    t.string   "name"
+    t.string   "role"
+    t.text     "description"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "avatar"
+    t.boolean  "status"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size",    limit: 8
+    t.datetime "avatar_updated_at"
+    t.integer  "number"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -251,14 +301,40 @@ ActiveRecord::Schema.define(version: 20210317101807) do
     t.float    "sub_total_price"
     t.float    "grand_total"
     t.string   "voucher_code"
+    t.string   "payment_status"
+    t.boolean  "sync_kiot"
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
+  create_table "partner_users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "address"
+    t.string   "phone"
+    t.string   "name"
+    t.string   "info"
+    t.string   "tracking"
+    t.float    "commision"
+  end
+
+  add_index "partner_users", ["email"], name: "index_partner_users_on_email", unique: true, using: :btree
+  add_index "partner_users", ["reset_password_token"], name: "index_partner_users_on_reset_password_token", unique: true, using: :btree
+
   create_table "partners", force: :cascade do |t|
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "alt"
+    t.string   "url"
+    t.string   "partner_image"
+    t.string   "partner_image_file_name"
+    t.string   "partner_image_content_type"
   end
 
   create_table "product_images", force: :cascade do |t|
@@ -305,8 +381,11 @@ ActiveRecord::Schema.define(version: 20210317101807) do
     t.integer  "measurement_image_file_size",    limit: 8
     t.datetime "measurement_image_updated_at"
     t.boolean  "is_hidden",                                default: false
+    t.integer  "stock"
+    t.integer  "admin_user_id"
   end
 
+  add_index "products", ["admin_user_id"], name: "index_products_on_admin_user_id", using: :btree
   add_index "products", ["slug"], name: "index_products_on_slug", unique: true, using: :btree
 
   create_table "stocks", force: :cascade do |t|
@@ -315,6 +394,7 @@ ActiveRecord::Schema.define(version: 20210317101807) do
     t.string  "color"
     t.boolean "in_stock"
     t.string  "product_code"
+    t.integer "quantity"
   end
 
   create_table "subscribers", force: :cascade do |t|
@@ -332,6 +412,18 @@ ActiveRecord::Schema.define(version: 20210317101807) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "username"
+    t.string   "avatar"
+    t.datetime "dob"
+    t.integer  "code_kiot"
+    t.string   "kiot_id"
+    t.string   "address"
+    t.string   "phone_number"
+    t.string   "code"
+    t.integer  "role"
+    t.integer  "status",                 default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -344,4 +436,5 @@ ActiveRecord::Schema.define(version: 20210317101807) do
     t.boolean "one_time_use", default: false
   end
 
+  add_foreign_key "products", "admin_users"
 end
