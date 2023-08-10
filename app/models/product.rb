@@ -51,42 +51,43 @@ class Product < ActiveRecord::Base
     end
   end
 
-  def quantity_sell
-    stock_ids = stocks.ids
-    line_item_ids = LineItem.where(stock_id: stock_ids).where.not(order_id: nil)
-    quantity = line_item_ids.map(&:quantity).inject(0, &:+)
+  def quantity_sell(stock_item)
+    po = PartnerOrder.find_by(stock_item: stock_item)
+    return 0 unless po
+
+    po.total_sell
   end
 
   def total_products
     stocks.map(&:quantity).inject(0, &:+)
   end
 
-  def total_sell
-    if quantity_sell.zero?
+  def total_sell(stock_item)
+    if !quantity_sell(stock_item) || quantity_sell(stock_item).zero?
       0
     else
-      quantity_sell * price
+      quantity_sell(stock_item) * price
     end
   end
 
-  def inventory
-    total_products - quantity_sell
+  def inventory(stock_item)
+    total_products - quantity_sell(stock_item)
   end
 
   def list_size
     stocks.map(&:size).join(", ")
   end
 
-  def fees_paid_sell(commission)
-    if quantity_sell.zero?
+  def fees_paid_sell(commission, stock_item)
+    if !quantity_sell(stock_item) || quantity_sell(stock_item).zero?
       0
     else
-      total_sell * commission
+      total_sell(stock_item) * commission
     end
   end
 
-  def revenue_sell(commission)
-    total_sell - fees_paid_sell(commission)
+  def revenue_sell(commission, stock_item)
+    total_sell(stock_item) - fees_paid_sell(commission, stock_item)
   end
 
   def self.main_page(cats = [])
