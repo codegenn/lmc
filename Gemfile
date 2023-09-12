@@ -80,3 +80,14 @@ gem 'aws-sdk'
 # gem "passenger"
 gem 'dalli'
 gem 'cancancan'
+
+gem "capistrano"
+gem "capistrano3-puma"
+gem "capistrano-rails", require: false
+gem 'capistrano-passenger'
+gem "capistrano-yarn"
+gem "capistrano-bundler", require: false
+gem "capistrano-rvm"
+
+gem "bcrypt_pbkdf", require: false
+gem "ed25519", require: false
