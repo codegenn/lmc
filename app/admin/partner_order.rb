@@ -7,12 +7,12 @@ ActiveAdmin.register PartnerOrder do
     column :product do |product_code|
       Product.find(Stock.find_by(product_code: product_code.stock_item)&.product_id)&.title
     end
-    column :stock_item
+    column "Product SKU", :stock_item
     column :total_products
     column :inventory
     column :fee
-    column :total_sell
-    
+    column "Total sales", :total_sell
+
     actions
   end
 
@@ -24,21 +24,21 @@ ActiveAdmin.register PartnerOrder do
       row :product do |product_code|
         Product.find(Stock.find_by(product_code: product_code.stock_item)&.product_id)&.title
       end
-      row :stock_item
+      row "Product SKU", &:stock_item
       row :total_products
       row :inventory
       row :fee
-      row :total_sell
+      row "Total sales", &:total_sell
     end
   end
 
   form do |f|
     inputs do
-      input :stock_item, as: :select, collection: Stock.where(product_id: Product.active.pluck(:id)).pluck('stocks.product_code')
+      input :stock_item, as: :select, collection: Stock.where(product_id: Product.active.pluck(:id)).pluck('stocks.product_code'), label: "Product SKU"
       input :total_products
       input :inventory
       input :fee
-      input :total_sell
+      input :total_sell, label: "Total sales"
       input :user_id, as: :select, collection: PartnerUser.all.map { |user| [user.email, user.id] }
       actions
     end

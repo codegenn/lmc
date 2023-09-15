@@ -3,8 +3,8 @@
   <td><%= render "admin/product_detail", product: p %></td>
   <td><%= product.total_products %></td>
   <td><%= product.total_sell || 0 %></td>
-  <td><%= number_to_currency(p.total_sell(product.stock_item), unit: "đ",  format: "%n %u", precision: 0) %></td>
-  <td><%= number_to_currency(p.fees_paid_sell(product.fee, product.stock_item), unit: "đ",  format: "%n %u", precision: 0) %></td>
-  <td><%= number_to_currency(p.revenue_sell(product.fee, product.stock_item), unit: "đ",  format: "%n %u", precision: 0) %></td>
+  <td><%= number_to_currency(p.total_sell(product.stock_item), unit: "VND",  format: "%n %u", precision: 0) %></td>
+  <td><%= number_to_currency(p.fees_paid_sell(product.fee, product.stock_item), unit: "VND",  format: "%n %u", precision: 0) %></td>
+  <td><%= number_to_currency(p.revenue_sell(product.fee, product.stock_item), unit: "VND",  format: "%n %u", precision: 0) %></td>
   <td><%= product.inventory %></td>
 </tr>
