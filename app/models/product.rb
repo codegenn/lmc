@@ -160,7 +160,7 @@ class Product < ActiveRecord::Base
   end
 
   def self.parse_product_image(product_img_str)
-    product_img = JSON.parse product_img_str
+    product_img = JSON.parse product_img_str if product_img_str
     product_img_url = ''
     if product_img.present? && product_img.length == 2
       pi = ProductImage.new id: product_img[0]&.to_i, :pimage_file_name => product_img[1]
