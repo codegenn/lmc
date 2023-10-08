@@ -80,3 +80,4 @@ gem 'aws-sdk'
 # gem "passenger"
 gem 'dalli'
 gem 'cancancan'
+gem "whenever"

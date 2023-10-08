@@ -54,6 +54,7 @@ class OrdersController < ApplicationController
         vnp_url = create_url_vnpay(@order.grand_total, @order.id)
         redirect_to vnp_url
       when params["order"]["payment_method"].include?("momo")
+        flash[:success] = I18n.t('controllers.order.success')
         render 'carts/momo_qrcode'
       else
         noti_success(@order)
