@@ -1,5 +1,8 @@
 .sec-banner.bg0.p-t-80.p-b-50.main-page
   .container
+    .alert
+      - flash.each do |key, value|
+        = content_tag :div, value, class: "alert alert-#{key} text-dark" unless key == 'pixel'
     %table.invoice
       %tbody
         %tr
