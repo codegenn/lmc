@@ -65,24 +65,39 @@ def craw_data
   end
 end
 
+def update_quantity(product, token)
+  id = product.product_code.split[0]
+  puts "======================id: #{id} \n"
+  repo = KiotViet.get_product(token, id)
+  if repo.code == 200
+    data = JSON.parse(repo.body)
+    id = data["inventories"].last["productId"]
+    quantity = data["inventories"].last["onHand"]
+    puts "======================kiot: #{quantity} \n"
+    puts "======================store #{product.quantity} \n"
+    if quantity.present? && quantity != product.quantity
+      Stock.transaction do
+        product.update(quantity: quantity)
+        product.save
+      end
+    end
+  end
+end
 
+def update_kiot
+  Stock.all.each do |v|
+    update_quantity(v, token)
+  end
+end
 
-# def update_quantity(product, token)
-#   repo = KiotViet.get_product(token, product.product_code.delete(' '))
-#   if repo.code == 200
-#     data = JSON.parse(repo.body)
-#     id = data["inventories"].last["productId"]
-#     quantity = data["inventories"].last["onHand"]
-#     puts "====================== #{quantity} \n"
-#     if quantity.present?
-#       Stock.transaction do
-#         product.update(quantity: quantity)
-#         product.save
-#       end
-#     end
-#   end
-# end
+SWM00046
 
+p = Product.find 223
+Stock.where(product_code: "SWM00046")
+repo = KiotViet.get_product(token, "SWM00046")
+data = JSON.parse(repo.body)
+
+quantity = data["inventories"].last["onHand"]
 # # KiotViet.get_categories(token)
 # KiotViet.get_customers(token, "KHW1665220292")
 # # KiotViet.get_products(token)
