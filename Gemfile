@@ -35,7 +35,7 @@ gem 'httparty'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dotenv-rails'
 gem 'jbuilder', "~> 2.0"
 
 gem 'jwt'
@@ -62,6 +62,10 @@ gem 'devise'
 gem 'cloudinary'
 gem "paperclip"
 gem 'unicorn'
+gem "omniauth"
+gem "omniauth-google-oauth2"
+gem "omniauth-facebook"
+gem "omniauth-rails_csrf_protection"
 
 ruby "2.6.0"
 gem 'globalize'
@@ -73,3 +77,6 @@ gem 'delayed_job_active_record'
 
 gem 'paperclip' # file attachment syntax and callbacks
 gem 'aws-sdk'
+# gem "passenger"
+gem 'dalli'
+gem 'cancancan'

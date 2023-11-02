@@ -7,6 +7,7 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:content => "width=device-width", :name => "viewport"}/
     %meta{:content => "h8jh9wwwef15r45wi9vm9h2wmnoqu4", :name => "facebook-domain-verification"}/
+    %meta{name:"google-site-verification", content:"UvsQEUqfxUmtKXahuEW2NzB6yIij8hH1EJAPhoqHxpY"}/
     %meta{property: "og:title", content: @title.present? ? @title : "LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ" }/
     %meta{property: "og:description", content: @description.present? ? @description : "Đồ Mặc Nhà - Đồ Ngủ, Gym-to-Swim, Đồ Bơi, Đồ Thể Thao" }/
     %meta{property: "og:image", content: @image.present? ? @image : "https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png" }/
@@ -24,15 +25,19 @@
     %meta{name: "keywords", content: @keyword.present? ? @keyword : (I18n.t("keyword") << "," << I18n.t("keyword_sport")) }/
     %meta{name: "turbolinks-visit-control", content:"reload"}
     %meta{name:"google-site-verification", content:"g-fEOaiTrFmMKnfAztaLVsayhtwOaK9dHM892NBYip4"}
+    %meta{name:"google-site-verification", content:"SKcG_CWpMPAFjUpcn59WUN3ODw3QMQXf2puADx773Gs"}
     %link{link: "https://www.lmcation.com/", rel:"canonical", as:"canonical"}
     = csrf_meta_tags
-    %link{href: "https://d2r4f7zaymmsnl.cloudfront.net/assets/css/application-bcd932506f532e24a3bee3cba383f9d0f3a872b49eb43af0f376990fdbce430c.css", rel:"stylesheet", media: "all", data_turbolinks_track: "reload"}
-    -# = stylesheet_link_tag "application", media: "all", data_turbolinks_track: "reload"
-    %script{src: "https://d2r4f7zaymmsnl.cloudfront.net/assets/css/application-db0e1e14fb6f8a6d1913cf6e39e1f49ff968eea3e52c5cc00f43048dcda9d3ff.js", data_turbolinks_track: "reload"}
-    -# = javascript_include_tag "application", data_turbolinks_track: "reload"
+    -# %link{href: "https://d2r4f7zaymmsnl.cloudfront.net/assets/css/application-bcd932506f532e24a3bee3cba383f9d0f3a872b49eb43af0f376990fdbce430c.css", rel:"stylesheet", media: "all", data_turbolinks_track: "reload"}
+    = stylesheet_link_tag "application", media: "all"
+    -# %script{src: "https://d2r4f7zaymmsnl.cloudfront.net/assets/css/application-db0e1e14fb6f8a6d1913cf6e39e1f49ff968eea3e52c5cc00f43048dcda9d3ff.js", data_turbolinks_track: "reload"}
+    = javascript_include_tag "application"
     = canonical_tag
     / Facebook Pixel Code
     :javascript
+      $(document).ready(function() {
+        $(this).scrollTop(0);
+      });
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -88,7 +93,8 @@
             .right-top-bar.flex-w.h-full
               -#= link_to I18n.t("page.footer.help"), store_path, class: "flex-c-m trans-04 p-lr-25"
               - if user_signed_in?
-                = link_to I18n.t("page.menu.my_account"), edit_user_registration_path, class: "flex-c-m trans-04 p-lr-25"
+                = link_to edit_user_registration_path, class: "flex-c-m trans-04 p-lr-25" do
+                  .zmdi.zmdi-account.zmdi-hc-2x
               - else
                 = link_to I18n.t("page.menu.my_account"), new_user_session_path, class: "flex-c-m trans-04 p-lr-25"
               = link_to_unless I18n.locale == :vi, "VI", { locale: :vi }, { class: 'flex-c-m trans-04 p-lr-25' } if I18n.locale == :en
@@ -156,7 +162,8 @@
           %li
             .right-top-bar.flex-w.h-full
               - if user_signed_in?
-                = link_to I18n.t("page.menu.my_account"), edit_user_registration_path, class: "flex-c-m trans-04 p-lr-10"
+                = link_to edit_user_registration_path, class: "flex-c-m trans-04 p-lr-10 zmdi zmdi-account" do
+                  .zmdi.zmdi-account.zmdi-hc-2x
               - else
                 = link_to I18n.t("page.menu.my_account"), new_user_session_path, class: "flex-c-m trans-04 p-lr-10"
               = link_to_unless I18n.locale == :vi, "VI", { locale: :vi }, { class: 'flex-c-m trans-04 p-lr-25' } if I18n.locale == :en
@@ -259,17 +266,7 @@
     #myBtn.btn-back-to-top
       %span.symbol-btn-back-to-top
         %i.zmdi.zmdi-chevron-up
-    #promotion.modal.fade{:role => "dialog"}
-      .modal-dialog
-        / Modal content
-        .modal-content-desktop
-          %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          %a{href: "https://fb.watch/8-4K-FIPYP", target: "_blank"}
-            = image_tag "desktop.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
-        .modal-content-mobile
-          %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          %a{href: "https://fb.watch/8-4K-FIPYP", target: "_blank"}
-            = image_tag "mobile.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "Payment method"
+    = render "layouts/banner"
     / Global site tag (gtag.js) - Google Analytics
     %script{src:"https://scripts.sirv.com/sirv.js", defer: :true}
     %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-164577749-1", defer: :true}

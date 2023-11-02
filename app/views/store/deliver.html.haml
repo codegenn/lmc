@@ -1,0 +1,67 @@
+:css
+  .shipping-title {
+    font-size: 25px;
+  }
+  @media only screen and (max-width: 775px) {
+    .shipping-title {
+      font-size: 16px !important;
+    }
+  }
+.main-page.bg-img1.txt-center.p-lr-15.p-tb-92.banner-bg
+  = cl_image_tag "#{cdn_url}/systems/lmcation+banner+5.jpg"
+  %h1.ltext-105.cl0.txt-center.title.shipping-title
+    = (I18n.t "page.delivery.title").html_safe
+.container
+  = render_breadcrumbs :separator => ' / '
+.sec-banner.bg0.p-b-50
+  .container
+    .row.p-b-148
+      .col-md-12.col-lg-12
+        .p-t-7.p-r-85.p-r-15-lg.p-r-0-md.vision
+          %p.stext-113.cl6.p-b-26
+            %h3.mtext-112.cl2.p-b-16
+              = I18n.t "page.delivery.title_1"
+            %ul.disc
+              %li
+                = I18n.t("page.delivery.content_1-1").html_safe
+              %li
+                = I18n.t("page.delivery.content_1-2").html_safe
+              %li
+                = I18n.t("page.delivery.content_1-3").html_safe
+          %p.stext-113.cl6.p-b-26
+            %h3.mtext-112.cl2.p-b-16
+              = I18n.t "page.delivery.title_2"
+            %ul.disc
+              %li
+                = I18n.t("page.delivery.content_2-1").html_safe
+              %li
+                = I18n.t("page.delivery.content_2-2").html_safe
+              %li
+                = I18n.t("page.delivery.content_2-3").html_safe
+          %p.stext-113.cl6.p-b-26
+            %h3.mtext-112.cl2.p-b-16
+              = I18n.t "page.delivery.title_3"
+            %ul.disc
+              %li
+                = I18n.t("page.delivery.content_3-1").html_safe
+              %li
+                = I18n.t("page.delivery.content_3-2").html_safe
+          %p.stext-113.cl6.p-b-26
+            %h3.mtext-112.cl2.p-b-16
+              = I18n.t "page.delivery.title_4"
+            %ul.disc
+              %li
+                = I18n.t("page.delivery.content_4-1").html_safe
+              %li
+                = I18n.t("page.delivery.content_4-2").html_safe
+                %ul.disc
+                  %li
+                    = I18n.t("page.delivery.content_4-2-1").html_safe
+                  %li
+                    = I18n.t("page.delivery.content_4-2-2").html_safe
+              %li
+                = I18n.t("page.delivery.content_4-3").html_safe
+              - if I18n.t("page.delivery.content_4-4").present?
+                %li
+                  = I18n.t("page.delivery.content_4-4").html_safe
+= render "layouts/seo_bread", datas: @datas

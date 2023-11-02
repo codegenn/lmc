@@ -41,32 +41,32 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 @font-face {
   font-family: Elkwood;
-  src: font_url('https://lmcationfont.s3.ap-southeast-1.amazonaws.com/font/barkentina/Barkentinanew.ttf') format("opentype");
+  src: font_url('barkentina/Barkentinanew.ttf') format("opentype");
   font-display: swap;
 }
 
 @font-face {
   font-display: swap;
   font-family: Gotham-Book;
-  src: font_url('https://lmcationfont.s3.ap-southeast-1.amazonaws.com/font/barkentina/Barkentinanew.ttf') format("opentype");
+  src: font_url('barkentina/Barkentinanew.ttf') format("opentype");
 }
 
 @font-face {
   font-display: swap;
   font-family: Gotham-Light;
-  src: font_url('https://lmcationfont.s3.ap-southeast-1.amazonaws.com/font/barkentina/Barkentinanew.ttf') format("opentype");
+  src: font_url('barkentina/Barkentinanew.ttf') format("opentype");
 }
 
 @font-face {
   font-display: swap;
   font-family: Gotham-Medium;
-  src: font_url('https://lmcationfont.s3.ap-southeast-1.amazonaws.com/font/barkentina/Barkentinanew.ttf') format("opentype");
+  src: font_url('barkentina/Barkentinanew.ttf') format("opentype");
 }
 
 @font-face {
   font-display: swap;
   font-family: vacation;
-  src: font_url('https://lmcationfont.s3.ap-southeast-1.amazonaws.com/font/Gotham/vacation.ttf') format("opentype");
+  src: font_url('Gotham/vacation.ttf') format("opentype");
 }
 
 /*---------------------------------------------*/
@@ -103,9 +103,6 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*------------------------------------------------------------------
 [ Slick2 ]*/
 .slick-slide {outline: none !important;}
-
-
-
 
 
 /*//////////////////////////////////////////////////////////////////
@@ -581,6 +578,10 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
   .wrap-search-header {
     height: 90px;
+  }
+
+  .shipping-title {
+    font-size: 18px !important;
   }
 }
 
@@ -1686,6 +1687,15 @@ button.mfp-close {
   align-items: center;
   border: none;
 }
+@media (max-width: 575px) {
+  .user-nav-tab {
+    display: grid !important;
+    text-align: center;
+  }
+  .tab01 .nav-tabs .nav-item {
+    margin: 5px 15px !important;
+  }
+}
 
 .tab01 .nav-tabs .nav-item {
   margin: 0px 15px;
@@ -2504,7 +2514,6 @@ input.num-product::-webkit-inner-spin-button {
   font-size: 28px;
   line-height: 1.2857;
 }
-
 
 
 
@@ -3482,7 +3491,7 @@ input.num-product::-webkit-inner-spin-button {
   margin: 50px auto 0 auto;
 }
 @media (max-width: 767px) {
-  .partner-img {
+  .partner-img, .partner-img-logo {
     width: 45%;
     margin: 0 2%;
   }
@@ -3490,6 +3499,10 @@ input.num-product::-webkit-inner-spin-button {
 @media (min-width: 767px){
   .partner-img {
     width: 15.4%;
+    margin: 0 2%;
+  }
+  .partner-img-logo {
+    width: 9%;
     margin: 0 2%;
   }
 }
@@ -3514,7 +3527,7 @@ input.num-product::-webkit-inner-spin-button {
 
 .description {
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #333;
@@ -3557,6 +3570,18 @@ input.num-product::-webkit-inner-spin-button {
 .center-blog {
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (max-width: 990px) {
+  .description {
+    top: 120%;
+  }
+}
+
+@media (min-width: 991px) and (max-width: 999px){
+  .description {
+    top: 120%;
+  }
 }
 
 @media (min-width: 991px) {

@@ -69,7 +69,7 @@
                   = I18n.t("page.product.color")
                 .size-204.respon6-nextp
                   = select_tag :color, options_for_select(@color_images.map{ |i| [i.color_name, i.color_name,
-                    { 'data-img-src'=>cl_image_path(i.color_image_url, :width => 60, :height => 60, :crop => :fill), 'data-img-class'=>"#{i.color_name} size-color" }] }),
+                    { 'data-img-src'=>cl_image_path(i.color_image_url, :width => 60, :height => 60, :crop => :fill), 'data-img-class'=>"#{i.color_name} size-color #{"unclicked" if Stock.find_by(color: i.color_name)&.quantity == 0}" }] }),
                     class: 'image-picker show-html', include_blank: true
               .flex-w.flex-r-m.p-b-10
                 .size-203.flex-c-m.respon6.text-left

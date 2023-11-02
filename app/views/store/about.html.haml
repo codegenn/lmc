@@ -1,14 +1,20 @@
 = content_for :title do
-  Giới Thiệu
+  = I18n.t "page.about_us.about_us"
 .main-page.bg-img1.txt-center.p-lr-15.p-tb-92.banner-bg
-  = cl_image_tag "#{cdn_url}/systems/lmcation+banner+5.jpg", alt: "Giới Thiệu"
+  = cl_image_tag "#{cdn_url}/systems/lmcation+banner+5.jpg", alt: "#{I18n.t "page.about_us.about_us"}"
   %h1.ltext-105.cl0.txt-center.title.about-header
     = I18n.t "page.about_us.about_us"
 .container
   = render_breadcrumbs :separator => ' / '
-.sec-banner.bg0.p-t-81.p-b-50
+.sec-banner.bg0.p-t-50.p-b-50
   .container
     .row.p-b-70
+      - unless I18n.t("page.about_us.about_head1").empty?
+        %p.p-l-15.p-b-10.font-weight-bold
+          = I18n.t "page.about_us.about_head1"
+          %br
+          %br
+          = I18n.t "page.about_us.about_head2"
       .col-md-7.col-lg-9
         .p-t-7.p-r-85.p-r-15-lg.p-r-0-md.vision
           %h3.mtext-111.cl2.p-b-16
@@ -19,9 +25,18 @@
             = I18n.t "page.about_us.mission"
           %p.stext-113.cl6.p-b-26
             = I18n.t "page.about_us.mission_content.content"
-          %p.stext-113.cl6.p-b-26
-            = I18n.t "page.about_us.mission_content.content_1"
-      .col-11.col-md-5.col-lg-3.m-lr-auto
+          - unless I18n.t("page.about_us.mission_content.content_1").empty?
+            %p.stext-113.cl6.p-b-26
+              = I18n.t "page.about_us.mission_content.content_1"
+          - unless I18n.t("page.about_us.culture").empty?
+            %h3.mtext-111.cl2.p-b-16
+              = I18n.t "page.about_us.culture"
+            %p.stext-113.cl6.p-b-10
+              = I18n.t "page.about_us.culture_content.content1"
+            - (2..6).each do |data|
+              %p.stext-113.cl6
+                = I18n.t "page.about_us.culture_content.content#{data}"
+      .col-11.col-md-5.col-lg-3.m-lr-auto.m-t-30
         .how-bor1
           .about-img1
             = cl_image_tag "#{cdn_url}/systems/Promotion.jpg", width: '250px'

@@ -20,6 +20,20 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  devise:
+    registrations:
+      user:
+        updated: "Update successfully"
+        signed_up: "You have signed up successfully"
+        signed_in: "You have logged in successfully"
+    failure:
+      user:
+        not_found_in_database: 'Not Found User'
+        invalid: 'Not Found User'
+        unauthenticated: "Not Found User"
+    omniauth_callbacks:
+      user:
+        success: "You have logged in successfully."
   page:
     menu:
       home: 'Home'
@@ -35,16 +49,34 @@ en:
       swim_separates: 'Swim Separates'
       lingeries: 'Lingeries'
       partners: 'PARTNERS'
+      medias: "MEDIA"
+      susgoal: 'SUSTAINABLE DEVELOPMENT GOALS'
+      susgoallink: 'https://www.lmcation.com/vi/foundations/the-positive-impact-of-lmcation'
+      susgoalimg-1: 'icons/Icon -01.png'
+      susgoalimg-2: 'icons/Icon -04.png'
+      susgoalimg-3: 'icons/Icon -02.png'
+      susgoalimg-4: 'icons/Icon -05.png'
+      susgoalimg-5: 'icons/Icon -03.png'
+      susgoal1: 'We provide work to the poor and marginalized. We give our partners access to a sustainable income, boosting their chances at a better future.'
+      susgoal2: 'We purposefully work with underprivileged women: those who raise children on their own, those who are disabled, and those who didn’t get far in school. We give these women the fabric and the know-how, so they can earn a living for themselves and their families like men.'
+      susgoal3: 'We provide jobs in humane working conditions that pay fair wages. We offer training to our employees so they can further develop their expertise and expand their skillset, as well as improve products to serve customers and contribute for economic growth.'
+      susgoal4: 'We work with disadvantaged, disabled, and female populations. Each LMcation garment is cut and stitched locally in Vietnam by our small suppliers, from single mothers to the underserved and disabled. We help these marginalized populations become self-subsisting.'
+      susgoal5: 'At our store, we pack our products in paper, canvas, and tote bags and recycled nylon bags. At our factory, we store most products using paper and carton boxes. '
+      susgoal1-title: 'LMcation helps to eliminate poverty.'
+      susgoal2-title: 'LMcation promotes gender equality.'
+      susgoal3-title: 'LMcation provides decent work and economic growth.'
+      susgoal4-title: 'LMcation reduces inequality.'
+      susgoal5-title: 'LMcation produces responsibly.'
     index:
       policy: 'RETURNS & EXCHANGES POLICY'
       best_seller: 'OUR BEST SELLERS'
       promotion: 'PROMOTION'
-      new_arrivals: 'NEW ARRIVALS & ACCESSORIES'
+      new_arrivals: 'NEW ARRIVALS'
       best_seller_description: 'The crowd favorite'
       promotion_description: 'Get it while it’s hot'
       new_arrivals_description: 'Our latest release'
       return: '30 DAYS RETURNS'
-      delivery: 'FREE DELIVERY'
+      delivery: 'FREE SHIPPING'
       shop_now: 'SHOP NOW'
       more: 'MORE'
     foundation:
@@ -79,6 +111,8 @@ en:
       subscribe: 'SUBSCRIBE'
     about_us:
       about_us: 'About Us'
+      about_head1: "LMcation is inspired by the words “Love Moments Through Vacation & Staycation”, to empower women of all shapes, sizes and color, every single day, by different fashion collections. It isn’t just a Vietnamese SLEEPwear, ACTIVEwear and SWIMwear maker, it’s a lifestyle fashion brand with a focus on empowering women."
+      about_head2: "The LMcation woman is 100% in touch with herself. She is fun. She is positive. And she lives her life to the fullest. She values her “me time” and has no problem treating herself to the best that life has to offer. She is bold. She is creative. She is fearless. She wants to change the world, and she’ll look damn sexy doing it."
       vision: 'Vision'
       vision_content:
         content: 'To inspire and empower women of all shapes, sizes and color, every single day.'
@@ -86,7 +120,7 @@ en:
       mission_content:
         content: 'Made for women, by women, we celebrate the extraordinary sexiness of real bodies with our range of chic, versatile and affordable lingerie, swim and activewear.'
         content_1: ''
-      value: 'Value'
+      value: 'Core Values'
       value_content:
         content1: 'We believe in the natural beauty of women, in the power of sisterhood, and in our ability to shake up the status quo.'
         content2: 'The four values below underlie who we are, what we stand for and define the way we work. They’re the bedrock of our brand and they guide us in all that we do.'
@@ -100,6 +134,14 @@ en:
         content6: 'We keep an eye on our expenses and make smart, sustainable choices. By controlling our costs, we can make a line that’s more accessible.'
         content7: ''
         content8: ''
+      culture: "Culture"
+      culture_content:
+        content1: "We are a female-centric business. We believe women can do more than they think and that they’re stronger than they think. And so:"
+        content2: "- We create jobs for women, so they can help themselves and be independent."
+        content3: "- We mentor women, giving them support and sharing our life experiences – both good and bad – to color their lives."
+        content4: "- We share stories of aspiring female business owners – their struggles and their successes - with the community as an inspiration for others."
+        content5: "- We organize gatherings to build authentic relationships offline and empower one other face to face."
+        content6: "- We train and grow female-owned small businesses to support the community."
     find_us:
       send_msg: 'Send Us A Message'
       email_field: 'Your Email Address'
@@ -167,6 +209,26 @@ en:
       content_10_3: ''
       content_10_4: ''
       content_11: ''
+    delivery:
+      title: FREE SHIPPING NATIONWIDE & FREE EXCHANGE AT HOME
+      title_1: "1. Free shipping nationwide:"
+      content_1-1: "Applicable to all fashion products purchased directly from LMcation (e.g., website, social media, Zalo, or in the store). Not applicable to orders on e-commerce platforms."
+      content_1-2: "Free delivery time is applied according to the company's policy: 1-3 days in Ho Chi Minh city; other provinces from 3-5 days. Not applicable for orders that need urgent or express delivery."
+      content_1-3: "In case customers need urgent or express delivery, the company will support customers with appropriate fees, depending on the area."
+      title_2: "2.  Free shipping nationwide:"
+      content_2-1: "Customers will return and receive new products at home without paying extra shipping costs. Applied once per bill."
+      content_2-2: "Applicable to all fashion products purchased directly from LMcation (e.g., website, social media, Zalo, or in the store). Not applicable to accessories."
+      content_2-3: "For orders on e-commerce platforms, if customers need to return, they must comply with the regulations of each e-commerce platform. LMcation will still support exchanges and shipping costs depending on the region."
+      title_3: "3. Product return within 30 days:"
+      content_3-1: "Applicable to all fashion products purchased directly from LMcation (e.g., website, social media, Zalo, or in the store). Not applicable to accessories."
+      content_3-2: "For orders on e-commerce platforms, if customers need to return, they must comply with the regulations of each e-commerce platform. LMcation will still support exchanges and shipping costs depending on the region."
+      title_4: "4. Lifetime warranty:"
+      content_4-1: "Applies to all fashion products produced by LMcation. This does not apply to accessories."
+      content_4-2: "Lifetime warranty or product modification does not apply in the following cases: "
+      content_4-2-1: "The product is torn or punctured after long time use."
+      content_4-2-2: "Adjusting the structure of the design or design according to the individual wishes of the customer."
+      content_4-3: "For products that are worn and degraded after a long time of use, and need to replace new accessories on the product, LMcation will support replacement of the accessories on the product with a charge from 30,000 to 70,000 VND per product, depending on request."
+      content_4-4: ""
     product:
       color: 'Color'
       size: 'Size'
@@ -246,17 +308,16 @@ en:
     signin: 'Already a Member? Sign in'
     signup: 'Not a Member yet? Sign Up'
     signup_btn: 'Sign Up'
-    email: 'Email'
     password: 'Password'
     password_confirmation: 'Password Confirmation'
     submit: 'Submit'
-    phone: 'Phone Number'
-    first_name: 'First Name'
-    last_name: 'Last Name'
-    post_orders: 'Post Orders'
-    information: 'User Information'
+    post_orders: 'MY ORDER'
+    reward: "REWARD POINTS"
+    sign_out: "SIGN OUT"
+    information: 'MY PROFILE'
     no_order: 'You dont have any order'
     first_name: 'FIRST NAME'
+    user_name: "USER NAME"
     last_name: 'LAST NAME'
     email: 'EMAIL'
     address: 'ADDRESS'
@@ -264,9 +325,21 @@ en:
     city: 'CITY'
     phone: 'PHONE'
     note: 'NOTE'
+    pass_note: "*(6 characters minimum)"
+    current_pass: "Current password"
+    update: "Update"
   activerecord:
     errors:
       template:
+        models:
+          user:
+          attributes:
+            email:
+              blank: 'is not empty'
+              invalid: 'invalid'
+              taken: "already exists"
+            phone_number:
+              taken: "already exists!"
         header:
           one:   "1 error prohibited this %{model} from being saved"
           other: "%{count} errors prohibited this %{model} from being saved"
@@ -291,3 +364,19 @@ en:
   keyword: "bộ mặc nhà, đồ bộ mặc nhà cao cấp, bộ đồ mặc nhà, bộ mặc nhà đẹp, bộ lụa mặc nhà, đồ bộ nữ mặc nhà, thời trang mặc nhà, pijama nữ, đồ lanh mặc nhà, đồ mặc ở nhà, đồ bộ mặc nhà cao cấp hàn quốc, đồ mặc nhà cao cấp, quần áo ngủ nữ mùa hè, đồ bộ mặc ở nhà, các kiểu đồ bộ mặc ở nhà đẹp, đồ bộ mặc nhà đẹp, bộ mặc nhà cao cấp, đồ bộ đẹp mặc nhà, do bo dep, đồ bộ thun cotton mặc nhà cao cấp, đồ mặc nhà đẹp, bộ đồ mặc nhà mùa hè cotton, bộ đũi mặc nhà, đồ bộ thun mặc nhà, bộ cotton mặc nhà, đồ mặc ở nhà cho nữ, bộ mặc nhà mùa hè, thoi trang mac nha, đồ lửng mặc nhà, mua đồ bộ mặc nhà, bộ đồ mặc nhà đẹp nhất, đồ bộ mặc nhà dễ thương, đồ bộ pijama nữ lụa cao cấp, đồ bộ mặc nhà pijama, đồ bộ ở nhà, đồ lụa mặc nhà, đồ bộ lanh mặc nhà, đồ bộ mặc nhà nữ, bộ đồ mặc nhà mùa hè, bộ mặc ở nhà, đồ bộ mặc nhà cotton, bộ lụa mặc nhà cao cấp, hình ảnh đồ bộ kiểu, bộ lửng mặc nhà, đồ bộ ở nhà đẹp, do mac nha, do bo cao cap, đồ bộ mặc nhà bằng vải thun, đồ ở nhà nữ, do bo mac nha, đồ bộ mặc nhà giá rẻ, đồ bộ tole mặc nhà, đồ bộ ngắn mặc nhà, mẫu đồ bộ mặc nhà đẹp, đồ bộ mặc nhà de thương, đồ thun mặc nhà, bộ lụa pijama, đồ bộ lung mặc ở nhà, đồ bộ nữ mặc nhà dễ thương, đồ bộ tole nữ, đồ lụa mặc nhà cao cấp, bộ thun mặc nhà, đồ bộ đũi mặc nhà, đồ bộ lửng mặc nhà, đồ bộ mặc nhà vải lụa, những kiểu đồ bộ dễ thương, shop đồ bộ mặc nhà, đồ mặc nhà lụa, đồ bộ lụa mặc nhà, đồ bộ lửng đẹp, bộ mặc nhà trung niên, đồ bộ kate mặc nhà cao cấp, đồ bộ ở nhà nữ, đồ bộ thun cotton mặc nhà, kiểu may đồ bộ mặc ở nhà, thương hiệu đồ ngủ cao cấp, bộ đồ mặc nhà đẹp, đồ bộ mặc nhà vải tole, bộ đồ ở nhà, bộ đồ 2 dây mặc nhà, bộ đồ lanh lửng mặc nhà, bộ đồ lụa mặc nhà cao cấp, bộ mặc ở nhà đẹp, đồ bộ dài mặc nhà, đồ bộ mặc nhà trung niên, đồ bộ thun lửng mặc nhà, đồ bộ thun mặc nhà cao cấp, đồ mặc ở nhà cao cấp, đồ ngủ mặc nhà, thời trang mặc nhà cao cấp, bộ đồ lụa mặc nhà, bộ quần áo mặc ở nhà, đồ bộ mặc nhà bằng vải tole, đồ bộ pijama lửng, do mac o nha, thời trang ở nhà cho nữ, đồ mặc nhà cotton, bộ quần áo lanh mặc ở nhà, đồ bộ quần ống rộng mặc nhà, bộ 2 dây mặc nhà, bộ đồ mặc ở nhà, bộ đùi mặc nhà, bộ lanh 2 dây mặc nhà, đồ bộ cao cấp mặc nhà, đồ bộ mặc nhà big size, đồ bộ mặc nhà lụa, đồ bộ mặc ở nhà nữ đẹp, đồ bộ quần dài mặc nhà, đồ mặc ngủ, đồ mặc nhà lụa cao cấp, đồ mặc ở nhà cho nữ đẹp, kiểu đồ bộ mặc ở nhà, shop đồ mặc nhà, thiết kế đồ bộ mặc nhà, bộ mặc ở nhà mùa hè, đồ bộ nữ mặc nhà cao cấp, thương hiệu đồ bộ mặc nhà, bộ đồ mặc nhà mùa hè đẹp, bộ đồ cotton mặc ở nhà, bộ lanh mặc nhà đẹp, bộ lanh mặc ở nhà, bộ mặc nhà nữ, bộ ngủ mặc nhà, bộ quần áo ngủ nữ mùa hè, các thương hiệu đồ bộ mặc nhà, đồ bộ caro mặc ở nhà, do bo kieu dep, đồ bộ mặc ngủ nữ, đồ bộ mặc nhà kiểu đẹp, đồ bộ mặc nhà người lớn tuổi, đồ bộ mặc nhà quần ống rộng, đồ bộ mặc nhà thun cotton, đồ bộ mặc ở nhà vải tôn, đồ bộ pijama lụa, đồ bộ thun mặc nhà de thương, đồ mặc ở nhà đẹp, đồ nữ mặc ở nhà, đồ thun nữ mặc nhà, kiểu đồ mặc nhà đẹp, may đồ bộ mặc nhà, mua đồ mặc ở nhà, pijama mặc nhà, pijama nữ lụa, shop bán đồ bộ đẹp, shop đồ bộ cao cấp, bộ mặc nhà lụa, bộ mặc nhà paltal, đồ bộ cotton mặc nhà, đồ bộ mặc nhà cho người trung niên, đồ bộ mặc nhà mùa hè, đồ bộ mặc ở nhà đẹp, đồ bộ nữ mặc ở nhà, đồ bộ pijama nữ lụa, đồ mặc nhà trung niên, quan ao mac nha, vải may đồ bộ mặc nhà, thời trang đồ bộ mặc nhà, áo mặc nhà, bộ đồ chấm bi mặc nhà, bộ đồ cotton dài tay mặc nhà, bộ đồ kẻ mặc nhà mùa hè, bộ đồ lanh mặc nhà mùa hè, bộ đồ mặc nhà bằng vải lanh, bộ đồ mặc nhà cao cấp, bộ đồ mặc nhà mùa hè cao cấp, bộ đồ mặc nhà nữ, bộ đồ mặc nhà trung niên, bộ đồ nữ mặc nhà, bộ đồ ở nhà đẹp, bộ đũi mặc ở nhà, bo mac o nha, bộ pijama mặc nhà, bộ quần áo mặc ở nhà cho nữ, các kiểu đồ bộ mặc nhà, đồ bộ caro kiểu, đồ bộ dài tay mặc nhà, đồ bộ kiểu mặc ở nhà, đồ bộ lanh đẹp, đồ bộ lanh nữ, đồ bộ lửng cotton, đồ bộ lửng mặc ở nhà vải kate, đồ bộ mặc nhà quần dài, đồ bộ mặc nhà tuổi trung niên, đồ bộ mặc nhà vải đũi, đồ bộ nhà, đồ bộ short mặc nhà, đồ bộ thun lạnh mặc nhà, đồ bộ thun nữ mặc nhà, đồ mặc nhà lụa satin, đồ mặc nhà pijama, đồ mặc nhà sunfly, đồ ngắn mặc ở nhà, đồ ngủ mặc ở nhà, đồ ngủ ở nhà, đồ phi bóng mặc ở nhà, đồ phi lụa mặc nhà, kiểu đồ bộ mặc nhà, những kiểu đồ bộ mặc nhà đẹp, bộ đồ mặc nhà mùa hè cho nữ, bộ mặc nhà thu đông, bộ quần áo lụa mặc nhà, đồ bộ cotton nữ đẹp, đồ bộ mặc nhà vải cotton, do bo nu mac nha"
   keyword_sport: "đồ bộ mặc nhà vải cotton, do bo nu mac nha, đồ bơi nữ, đồ bơi nữ đẹp, đồ thể thao nữ, áo thể thao nữ, đồ bơi nữ kín đáo, áo bóng rổ nữ, đồ bộ thể thao nữ, quần bơi nữ, áo bơi nữ, đồ bơi cho nữ, đồ chạy bộ nữ, áo tắm đẹp, đồ bơi nữ tay dài, mua đồ bơi nữ, quần áo bơi nữ, bikini nu, bộ đồ thể thao nữ, do boi dep, đồ bơi nữ dạng quần, đồ bơi nữ liền thân dài tay, đồ tắm biển nữ, đồ bơi dài tay nữ, bikini nữ, bộ đồ tắm biển nữ, đồ bơi tay dài cho nữ, áo tắm 1 mảnh, đồ bơi nữ cao cấp, áo bra tập yoga, áo lót thể thao nữ, bộ thể thao nữ cộc tay, đồ bộ the thao nữ quần ngắn, đồ bơi nữ dạng quần dài, đồ bơi nữ tay dài quần lửng, đồ tập thể dục nữ, mẫu áo thể thao nữ đẹp, quần áo tắm biển nữ kín đáo, áo tắm một mảnh, đồ bơi nữ dài tay, đồ bộ the thao nữ dài, áo bơi tay dài nữ, áo tắm nữ, đồ bộ thể thao nữ dài, đồ bộ thể thao nữ hàn quốc, đồ bộ thể thao nữ quần ngắn, đồ bơi đẹp cho nữ, đồ bơi nữ tay dài giá rẻ, đồ tắm biển nữ đẹp, đồ tắm nữ, đồ tập yoga big size, quan ao the thao nu, quan boi nu, set đồ bộ the thao nữ, bộ bơi nữ kín đáo, bộ đồ bơi nữ liền thân, đồ bơi nu, áo bơi dài tay nữ, áo thể dục nữ, bộ bơi dài tay nữ, bộ đồ bơi nữ, bộ đồ bơi nữ đẹp, bộ đồ the thao nữ hàng hiệu, bộ quần áo bơi dài tay nữ, các kiểu đồ bơi nữ đẹp, do bo the thao nu, đồ bộ the thao nữ ngắn, đồ bộ thể thao nữ ngắn, đồ bộ thun thể thao nữ, đồ bơi cao cấp nữ, đồ bơi dài nữ, đồ bơi dài tay cho nữ, đồ bơi kín đáo cho nữ, đồ bơi nữ 1 mảnh, đồ bơi quần dài cho nữ, đồ bơi tay dài quần dài nữ, do boi tre em nu, đồ học bơi nữ, đồ tập gym big size, đồ tập gym nữ big size, đồ thể thao nữ nike, đồ thể thao nữ tập gym, đồ thể thao tập gym nữ, quần áo bơi dài tay nữ, bộ thể thao nữ mùa đông, đồ bơi nữ quần dài, đồ thể thao chạy bộ nữ, mua đồ thể thao nữ, shop đồ thể thao nữ, bikini hai mảnh, đồ bộ thể thao nữ đẹp"
   footer: "COPYRIGHT © 2020 LMCATION"
+  date:
+    order:
+      default: ! '%d/%m/%Y'
+  term: "By signing in your account, you agree to our <a href='https://lmcation.com/vi/privacy'>Privacy & Cookie Policy and Terms & Conditions</a>"
+  gift: "SIGN IN TO RECEIVE MORE VOUCHER & FREE GIFTS"
+  label_gg: "SIGN IN WITH GOOGLE"
+  label_fb: "SIGN IN WITH FACEBOOK"
+  or: "Or"
+  pass_noti: "Leave blank if you don't want to change it"
+  address: "address"
+  pass_confirm_noti: "We need your current password to confirm your changes"
+  prom_1: "FOLLOWING PRODUCT LIFETIME WARRANTY"
+  prom_2: "LOYALTY PROGRAM POINTS & FREE GIFTS"
+  prom_3: "GET 10% OFF VOUCHER"
+  prom_4: "BEAUTY CARE BENEFITS UP TO 3 MILLION VND"
+  success_sign_up: "Thank you, you have already signed up successfully"

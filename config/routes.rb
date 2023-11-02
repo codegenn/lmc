@@ -12,7 +12,12 @@ Rails.application.routes.draw do
       get "product", to: "api#product"
     end
   end
-  devise_for :users, controllers: { registrations: 'registrations' }
+  get '/health_check', to: proc { [200, {}, ['success']] }
+  root to: "store#index"
+  # devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  devise_for :users,
+    controllers: { registrations: 'registrations', omniauth_callbacks: "users/omniauth_callbacks"}
+  # devise_for :users, controllers: { registrations: 'registrations' }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get "sitemap.xml" => "sitemaps#index", :format => "xml", :as => :sitemap
@@ -22,6 +27,8 @@ Rails.application.routes.draw do
   match "/500", to: "errors#internal_server_error", via: :all
   post 'destroy_item/:id', to: "line_items#destroy_item"
   scope "(:locale)", :locale => /en|vi/ do
+    get "demo-fittingroom", to: "fittingroom#index"
+    post "demo-login", to: "fittingroom#login"
     get 'vnpay-fallback', to: "orders#fallback"
     get 'store/index'
     get 'thoi-trang-ton-vinh-phu-nu', to: "store#about"
@@ -29,6 +36,7 @@ Rails.application.routes.draw do
     get 'policy', to:"store#policy"
     get "huong-dan-mua-hang", to: "store#privacy_buy"
     get "quy-dinh-thanh-toan-va-van-chuyen", to: "store#privacy_payment"
+    get "shipping", to: "store#deliver"
     get 'store/ping'
     get 'privacy', to:"store#privacy"
     root 'store#index', as: 'store'

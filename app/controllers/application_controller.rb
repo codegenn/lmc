@@ -10,11 +10,20 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  def access_denied(exception)
+    redirect_to admin_dashboard_path, alert: exception.message
+  end
+
   protected
   def configure_permitted_parameters
-    permits = [:first_name, :phone, :last_name]
+    permits = [:phone, :email, :username]
     devise_parameter_sanitizer.permit(:sign_up, keys: permits)
     devise_parameter_sanitizer.permit(:account_update, keys: permits)
+  end
+
+  def after_sign_in_path_for(resource)
+    store_path
+    # edit_user_registration_path(resource)
   end
 
   private
