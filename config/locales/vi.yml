@@ -507,3 +507,7 @@ vi:
     size: "Kích thước:"
     price: "Giá bán:"
     empty: "Bạn hiện chưa có sản phẩm được bán. Vui lòng liên hệ <a href='order@lmcation.com'>order@lmcation.com</a> để được hỗ trợ."
+  voucher:
+    v200: "VUI LÒNG MUA ĐƠN HÀNG TỐI THIỂU LÀ 400K ĐỂ ĐƯỢC GIẢM GIÁ 200K"
+    v500: "VUI LÒNG MUA ĐƠN HÀNG TỐI THIỂU LÀ 900K ĐỂ ĐƯỢC GIẢM GIÁ 500K"
+    freeship: "VUI LÒNG MUA ĐƠN HÀNG TỐI THIỂU LÀ 99K ĐỂ NHẬN MIỄN PHÍ VẬN CHUYỂN"
