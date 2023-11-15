@@ -12,6 +12,16 @@ class CartsController < ApplicationController
   end
 
   def update
+    if params[:cart][:voucher_code].present?
+      if !validate_voucher(params[:cart][:voucher_code], @cart.total_price, "v200", 400000, 899000) && !(@cart.total_price >= 400000 || @cart.total_price >= 899000)
+        flash[:danger] = I18n.t('voucher.v200')
+        return redirect_to cart_path(@cart.code)
+      elsif !validate_voucher(params[:cart][:voucher_code], @cart.total_price, "v500", 900000) && !(@cart.total_price >= 900000)
+        flash[:danger] = I18n.t('voucher.v500')
+        return redirect_to cart_path(@cart.code)
+      end
+    end
+
     if @cart.update(cart_params)
       flash[:success] = I18n.t('controllers.line_items.success_update')
     else
@@ -53,5 +63,15 @@ class CartsController < ApplicationController
   def fundiin_cart
     data = HTTParty.get("https://fundiin-asset.s3.ap-southeast-1.amazonaws.com/merchant/payment_item.json")
     @body = JSON.parse(data.body)
+  end
+
+  def validate_voucher(voucher_code, total_price, discount_price, min_price, max_price = nil)
+    voucher = Voucher.find_by(code: voucher_code)
+
+    if max_price.nil?
+      return voucher && voucher.voucher_type.include?(discount_price) && total_price >= min_price
+    else
+      return voucher && voucher.voucher_type.include?(discount_price) && (total_price >= min_price && total_price < max_price)
+    end
   end
 end

@@ -64,6 +64,10 @@ class Order
         elsif discount.voucher_type == '299k'
           
           total = cart.line_items.sum('line_items.quantity') * 299000
+        elsif discount.voucher_type == 'v500'
+          total = cart.total_price
+          total = total - 500000
+          total = 0 if total < 0
         elsif discount.voucher_type == 'v200'
           total = cart.total_price
           total = total - 200000
