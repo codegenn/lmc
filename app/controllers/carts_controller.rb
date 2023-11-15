@@ -16,7 +16,7 @@ class CartsController < ApplicationController
       voucher_code = params[:cart][:voucher_code]
       total_price = @cart.total_price
 
-      if valid_voucher?(voucher_code, "200k mbs 400k") && !validate_voucher(voucher_code, total_price, "200k mbs 400k", 400000, 900000)
+      if valid_voucher?(voucher_code, "200k mbs 400k") && !validate_voucher(voucher_code, total_price, "200k mbs 400k", 400000)
         flash[:danger] = I18n.t('voucher.v200')
         return redirect_to cart_path(@cart.code)
       elsif valid_voucher?(voucher_code, "500k mbs 900k") && !validate_voucher(voucher_code, total_price, "500k mbs 900k", 900000)
@@ -29,7 +29,7 @@ class CartsController < ApplicationController
       if params[:cart][:voucher_code].present?
         voucher_code = params[:cart][:voucher_code]
         total_price = @cart.total_price
-        if valid_voucher?(voucher_code, "200k mbs 400k") && !validate_voucher(voucher_code, total_price, "200k mbs 400k", 400000, 900000)
+        if valid_voucher?(voucher_code, "200k mbs 400k") && !validate_voucher(voucher_code, total_price, "200k mbs 400k", 400000)
           flash[:danger] = I18n.t('voucher.v200')
           @cart.update(voucher_code: nil)
           return redirect_to cart_path(@cart.code)
