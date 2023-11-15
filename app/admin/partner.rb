@@ -11,7 +11,6 @@ ActiveAdmin.register Partner do
     f.inputs "Partner Details" do
       f.input :alt
       f.input :url
-      f.input :commission
       f.input :partner_image, as: :file, hint: f.object.try(:partner_image) ? cl_image_tag(f.object.try(:partner_image), width: 200) : image_tag(f.object.partner_image, width: 200)
     end
     f.actions
