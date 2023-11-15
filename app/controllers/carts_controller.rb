@@ -13,10 +13,13 @@ class CartsController < ApplicationController
 
   def update
     if params[:cart][:voucher_code].present?
-      if !validate_voucher(params[:cart][:voucher_code], @cart.total_price, "v200", 400000, 899000) && !(@cart.total_price >= 400000 || @cart.total_price >= 899000)
+      voucher_code = params[:cart][:voucher_code]
+      total_price = @cart.total_price
+
+      if valid_voucher?(voucher_code, "v200") && !validate_voucher(voucher_code, total_price, "v200", 400000, 900000)
         flash[:danger] = I18n.t('voucher.v200')
         return redirect_to cart_path(@cart.code)
-      elsif !validate_voucher(params[:cart][:voucher_code], @cart.total_price, "v500", 900000) && !(@cart.total_price >= 900000)
+      elsif valid_voucher?(voucher_code, "v500") && !validate_voucher(voucher_code, total_price, "v500", 900000)
         flash[:danger] = I18n.t('voucher.v500')
         return redirect_to cart_path(@cart.code)
       end
@@ -73,5 +76,10 @@ class CartsController < ApplicationController
     else
       return voucher && voucher.voucher_type.include?(discount_price) && (total_price >= min_price && total_price < max_price)
     end
+  end
+
+  def valid_voucher?(code, voucher_type)
+    voucher = Voucher.find_by(code: code)
+    voucher&.voucher_type&.include?(voucher_type)
   end
 end
