@@ -3,7 +3,6 @@
   %head
     %title<
       = content_for?(:title) ? yield(:title) : 'LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ'
-
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:content => "width=device-width", :name => "viewport"}/
     %meta{:content => "h8jh9wwwef15r45wi9vm9h2wmnoqu4", :name => "facebook-domain-verification"}/
@@ -66,6 +65,13 @@
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-NVRLJ6V');
+    / Google tag (gtag.js)
+    %script{async: true, src: "https://www.googletagmanager.com/gtag/js?id=G-GK62TS0LHD"}
+    :javascript
+      |   window.dataLayer = window.dataLayer || [];
+      |   function gtag(){dataLayer.push(arguments);}
+      |   gtag('js', new Date());
+      |   gtag('config', 'G-GK62TS0LHD');
     = yield :header
   %body{data: {turbolinks: 'false'}}
     / Load Facebook SDK for JavaScript
