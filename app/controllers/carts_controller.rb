@@ -79,7 +79,11 @@ class CartsController < ApplicationController
 
   def fundiin_cart
     data = HTTParty.get("https://fundiin-asset.s3.ap-southeast-1.amazonaws.com/merchant/payment_item.json")
-    @body = JSON.parse(data.body)
+    @body =  if response.code == 200
+      JSON.parse(data.body) if response.code == 200
+    else
+      nil
+    end
   end
 
   def validate_voucher(voucher_code, total_price, discount_price, min_price, max_price = nil)
