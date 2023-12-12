@@ -12,7 +12,34 @@ class CartsController < ApplicationController
   end
 
   def update
+    if params[:cart][:voucher_code].present?
+      voucher_code = params[:cart][:voucher_code]
+      total_price = @cart.total_price
+
+      if valid_voucher?(voucher_code, "200k mbs 400k") && !validate_voucher(voucher_code, total_price, "200k mbs 400k", 400000)
+        flash[:danger] = I18n.t('voucher.v200')
+        return redirect_to cart_path(@cart.code)
+      elsif valid_voucher?(voucher_code, "500k mbs 900k") && !validate_voucher(voucher_code, total_price, "500k mbs 900k", 900000)
+        flash[:danger] = I18n.t('voucher.v500')
+        return redirect_to cart_path(@cart.code)
+      end
+    end
+
     if @cart.update(cart_params)
+      if params[:cart][:voucher_code].present?
+        voucher_code = params[:cart][:voucher_code]
+        total_price = @cart.total_price
+        if valid_voucher?(voucher_code, "200k mbs 400k") && !validate_voucher(voucher_code, total_price, "200k mbs 400k", 400000)
+          flash[:danger] = I18n.t('voucher.v200')
+          @cart.update(voucher_code: nil)
+          return redirect_to cart_path(@cart.code)
+        elsif valid_voucher?(voucher_code, "500k mbs 900k") && !validate_voucher(voucher_code, total_price, "500k mbs 900k", 900000)
+          flash[:danger] = I18n.t('voucher.v500')
+          @cart.update(voucher_code: nil)
+          return redirect_to cart_path(@cart.code)
+        end
+      end
+
       flash[:success] = I18n.t('controllers.line_items.success_update')
     else
       flash[:danger] = @cart.errors.full_messages.to_sentence
@@ -52,6 +79,25 @@ class CartsController < ApplicationController
 
   def fundiin_cart
     data = HTTParty.get("https://fundiin-asset.s3.ap-southeast-1.amazonaws.com/merchant/payment_item.json")
-    @body = JSON.parse(data.body)
+    @body =  if response.code == 200
+      JSON.parse(data.body) if response.code == 200
+    else
+      nil
+    end
+  end
+
+  def validate_voucher(voucher_code, total_price, discount_price, min_price, max_price = nil)
+    voucher = Voucher.find_by(code: voucher_code)
+
+    if max_price.nil?
+      return voucher && voucher.voucher_type.include?(discount_price) && total_price >= min_price
+    else
+      return voucher && voucher.voucher_type.include?(discount_price) && (total_price >= min_price && total_price < max_price)
+    end
+  end
+
+  def valid_voucher?(code, voucher_type)
+    voucher = Voucher.find_by(code: code)
+    voucher&.voucher_type&.include?(voucher_type)
   end
 end

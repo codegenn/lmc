@@ -12,7 +12,7 @@
         </div>
         <div>
           <%= I18n.t("partner.price") %>
-          <%= number_to_currency(product.price, unit: "đ",  format: "%n %u") %>
+          <%= number_to_currency(product.price, unit: "VND",  format: "%n %u", precision: 0) %>
         </div>
         <div>
           <%= I18n.t("partner.size") %>

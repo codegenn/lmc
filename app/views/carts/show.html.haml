@@ -1,11 +1,13 @@
 .sec-banner.bg0.p-t-80.p-b-50.main-page
   .container
     - if @cart.line_items.present?
-      .bg0.p-t-75.p-b-85
+      .bg0.p-t-30.p-b-85
         .container
           .row
             .col-lg-10.col-xl-7.m-lr-auto
               .m-l-25.m-r--38.m-lr-0-xl.shopping-cart-table
+                - if @cart.calculate_grand_total.to_i < 99000
+                  = content_tag :div, I18n.t('voucher.freeship'), class: "alert alert-success"
                 = form_for(@cart, method: :put) do |f|
                   .wrap-table-shopping-cart
                     %table.table-shopping-cart
