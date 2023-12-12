@@ -1,3 +1,5 @@
-- Partner.all.order(:id).each do |partner|
-  = link_to partner.url, target: "_blank" do
-    = cl_image_tag "#{partner.partner_image.url}", class: "partner-img partner-mobile", loading:"lazy",  alt: "partner.alt"
+.row.align-items-center
+  - Partner.all.order(:id).each do |partner|
+    .col-md-2.col-sm-4.col-4
+      = link_to partner.url, target: "_blank" do
+        = cl_image_tag "#{partner.partner_image.url}", class: "partner-img partner-mobile", loading:"lazy",  alt: "#{partner.alt.present? ? partner.alt : 'partner lmcation'}", style: "width: 70%;"

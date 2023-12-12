@@ -156,7 +156,7 @@ class OrdersController < ApplicationController
     secret_key = check_device.include?("mobile") ? ENV["SPP_SECRET_KEY_MOBILE"] : ENV["SPP_SECRET_KEY"]
     total_amout = Rails.env.production? ? amount*100 : 1000
     order_id = Rails.env.production? ? order_id : "a#{order_id}"
-    expried_at = (Time.now + 15.days).to_i
+    expried_at = (Time.now + 1.hour).to_i
     body = {
       "request_id": order_id.to_s,
       "store_ext_id": ENV["SPP_STORE_EXT_ID"],
