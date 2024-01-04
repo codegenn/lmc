@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20230618093712) do
+ActiveRecord::Schema.define(version: 20240109162037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -132,6 +132,14 @@ ActiveRecord::Schema.define(version: 20230618093712) do
     t.string   "color_image_content_type"
     t.integer  "color_image_file_size",    limit: 8
     t.datetime "color_image_updated_at"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "review_id"
+    t.string   "author_name"
+    t.text     "content"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "delayed_jobs", force: :cascade do |t|
@@ -307,6 +315,18 @@ ActiveRecord::Schema.define(version: 20230618093712) do
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
+  create_table "partner_orders", force: :cascade do |t|
+    t.decimal  "fee"
+    t.integer  "product_id"
+    t.integer  "total_products"
+    t.integer  "inventory"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "user_id"
+    t.integer  "total_sell"
+    t.string   "stock_item"
+  end
+
   create_table "partner_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -345,6 +365,15 @@ ActiveRecord::Schema.define(version: 20230618093712) do
     t.integer  "pimage_file_size",    limit: 8
     t.datetime "pimage_updated_at"
   end
+
+  create_table "product_solds", force: :cascade do |t|
+    t.string   "sold"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "product_solds", ["product_id"], name: "index_product_solds_on_product_id", using: :btree
 
   create_table "product_translations", force: :cascade do |t|
     t.integer  "product_id",              null: false
@@ -387,6 +416,26 @@ ActiveRecord::Schema.define(version: 20230618093712) do
 
   add_index "products", ["admin_user_id"], name: "index_products_on_admin_user_id", using: :btree
   add_index "products", ["slug"], name: "index_products_on_slug", unique: true, using: :btree
+
+  create_table "review_images", force: :cascade do |t|
+    t.integer "review_id"
+    t.string  "pimage"
+    t.string  "url"
+    t.string  "pimage_file_name"
+    t.string  "pimage_content_type"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "customer_name"
+    t.text     "content"
+    t.integer  "star_rating"
+    t.boolean  "status"
+    t.integer  "product_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "reviews", ["product_id"], name: "index_reviews_on_product_id", using: :btree
 
   create_table "stocks", force: :cascade do |t|
     t.integer "product_id"
@@ -436,5 +485,8 @@ ActiveRecord::Schema.define(version: 20230618093712) do
     t.boolean "one_time_use", default: false
   end
 
+  add_foreign_key "comments", "reviews", on_delete: :cascade
+  add_foreign_key "product_solds", "products"
   add_foreign_key "products", "admin_users"
+  add_foreign_key "reviews", "products"
 end

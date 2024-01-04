@@ -38,6 +38,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
+@import "review";
 
 @font-face {
   font-family: Elkwood;
@@ -2524,6 +2525,10 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ Size ]*/
+.size-1010 {
+  min-width: 190px;
+  height: 46px;
+}
 .size-101 {
   min-width: 161px;
   height: 46px;

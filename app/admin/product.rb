@@ -60,6 +60,10 @@ ActiveAdmin.register Product do
     f.actions
   end
 
+  action_item :create_review, only: [:show] do
+    link_to 'Create Review', new_admin_review_path(product_id: resource.id), method: :get
+  end
+
   show do |product|
     attributes_table do
       row :title

@@ -9,3 +9,18 @@ class Partner < ActiveRecord::Base
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :partner_image, :content_type => /image/
 end
+
+# == Schema Information
+#
+# Table name: partners
+#
+#  id                         :integer          not null, primary key
+#  email                      :string
+#  created_at                 :datetime         not null
+#  updated_at                 :datetime         not null
+#  alt                        :string
+#  url                        :string
+#  partner_image              :string
+#  partner_image_file_name    :string
+#  partner_image_content_type :string
+#

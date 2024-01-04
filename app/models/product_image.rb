@@ -25,3 +25,16 @@ class ProductImage < ActiveRecord::Base
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: product_images
+#
+#  id                  :integer          not null, primary key
+#  product_id          :integer
+#  url                 :string
+#  pimage_file_name    :string
+#  pimage_content_type :string
+#  pimage_file_size    :bigint
+#  pimage_updated_at   :datetime
+#

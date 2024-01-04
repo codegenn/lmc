@@ -11,7 +11,7 @@
 
 = content_for :title do
   = @product.title
-%section.sec-product-detail.bg0.p-t-65.p-b-60.main-page
+%section.sec-product-detail.bg0.p-t-65.main-page.mb-5
   .container
     = render_breadcrumbs :separator => ' / '
     .alert
@@ -30,9 +30,11 @@
         .p-r-50.p-t-5.p-lr-0-lg
           %h4.mtext-105.cl2.js-name-detail.p-b-14
             = @product.title
-            .stext-103.cl2.js-name-detail.p-b-14
-              = "#{I18n.t("page.product.code") }: "
-              .stock_code
+          .stext-103.cl2.js-name-detail.p-b-14
+            = "#{I18n.t("page.product.code") }: "
+            .stock_code
+          %div.stext-103.cl2.mb-2.review
+            = render "layouts/star", review: @product.star_rating, sold: @product.product_sold&.sold
           %span.mtext-105.cl2
             - if @product.promotion_price.present?
               .promotion-price
@@ -116,40 +118,18 @@
                 = cl_image_tag @product.measurement_url, alt: "#{@product.title}", title: "#{@product.title}"
             .how-pos2.p-lr-15-md
               = raw @product.measurement_description
-    .bor10.m-t-50.p-t-43.p-b-40
+    .p-t-43
       %center
         %h4.mtext-105.cl2.js-name-detail.p-b-14
           = I18n.t "page.product.related_product"
       .tab01
         .row.related
           - @related_products.each do |product|
-            .col-sm-6.col-md-4.col-lg-3.p-b-35.isotope-item.women
-              .block2
-                .block2-pic.hov-img0
-                  = link_to product_path(product.slug) do
-                    = cl_image_tag product.product_images.first.try(:image_url), alt: "#{product.title}", title: "#{product.title}"
-                .block2-txt.flex-w.flex-t.p-t-14
-                  .block2-txt-child1.flex-col-l
-                    = link_to product_path(product.slug), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6" do
-                      = product.title
-                    %span.mtext-102.cl3
-                      - if product.promotion_price.present?
-                        .promotion-price
-                          = "#{number_with_delimiter(product.price.to_i, :delimiter => '.')} VND"
-                        %b
-                          = "#{number_with_delimiter(product.promotion_price.to_i, :delimiter => '.')} VND"
-                      - else
-                        = "#{number_with_delimiter(product.price.to_i, :delimiter => '.')} VND"
-                    %span.stext-105.cl3
-                      - count = product.stocks.map(&:color).uniq.count
-                      - if count == 1
-                        = I18n.t("page.product.single_colour")
-                      - else
-                        = I18n.t("page.product.other_colour_count", count: count)
-                  - if product.has_promotion
-                    .block2-txt-promo.flex-col-l.bor10
-                      %span.mtext-103.cl3.promotion
-                        = product.promotion
+            = render "product_related", product: product
+    .tab01
+      .row.related
+        = render "layouts/comment", datas: @product.star_rating unless @product.star_rating[:total].to_f.zero?
+
 = render "layouts/seo_bread", datas: @datas              
 :javascript
   function checkcolor(){

@@ -43,3 +43,34 @@ class Category < ActiveRecord::Base
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: categories
+#
+#  id                             :integer          not null, primary key
+#  sort_order                     :integer
+#  measurement_image_url          :string
+#  image_url                      :string
+#  banner_url                     :string
+#  slug                           :string
+#  slug_url                       :string
+#  measurement_image_file_name    :string
+#  measurement_image_content_type :string
+#  measurement_image_file_size    :bigint
+#  measurement_image_updated_at   :datetime
+#  category_image_file_name       :string
+#  category_image_content_type    :string
+#  category_image_file_size       :bigint
+#  category_image_updated_at      :datetime
+#  banner_file_name               :string
+#  banner_content_type            :string
+#  banner_file_size               :bigint
+#  banner_updated_at              :datetime
+#  name                           :string
+#  description                    :string
+#
+# Indexes
+#
+#  index_categories_on_slug  (slug) UNIQUE
+#

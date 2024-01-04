@@ -40,3 +40,14 @@ class Cart < ActiveRecord::Base
     self.code = Devise.friendly_token
   end
 end
+
+# == Schema Information
+#
+# Table name: carts
+#
+#  id           :integer          not null, primary key
+#  code         :string
+#  created_at   :datetime
+#  updated_at   :datetime
+#  voucher_code :string
+#

@@ -103,3 +103,33 @@ class Order < ActiveRecord::Base
     @calculator ||= Calculator.new(line_items: line_items, voucher_code: voucher_code)
   end
 end
+
+# == Schema Information
+#
+# Table name: orders
+#
+#  id              :integer          not null, primary key
+#  user_id         :integer
+#  first_name      :string
+#  last_name       :string
+#  email           :string
+#  phone           :string
+#  city            :string
+#  district        :string
+#  note            :string
+#  address         :text
+#  created_at      :datetime
+#  updated_at      :datetime
+#  tracking        :string
+#  status          :string
+#  payment_method  :string
+#  sub_total_price :float
+#  grand_total     :float
+#  voucher_code    :string
+#  payment_status  :string
+#  sync_kiot       :boolean
+#
+# Indexes
+#
+#  index_orders_on_user_id  (user_id)
+#

@@ -1,0 +1,161 @@
+.review {
+  a {
+    text-decoration: none !important;
+    color: inherit;
+  }
+  
+  a:hover {
+    color: #455A64;
+  }
+  
+  .card {
+    border-radius: 5px;
+    background-color: #fff;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .rating-box {
+    width: 130px;
+    height: 130px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #FBC02D;
+    color: #fff;
+  }
+  
+  .rating-label {
+    font-weight: bold;
+  }
+  
+  /* Rating bar width */
+  .rating-bar {
+    width: 300px;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  
+  /* The bar container */
+  .bar-container {
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 5px;
+  }
+  
+  /* Individual bars */
+  .bar-review {
+    height: 13px;
+    background-color: #FBC02D; 
+    border-radius: 20px;
+  }
+  .bar-10 {
+    width: 100%;
+  }
+  .bar-9 {
+    width: 90%;
+  }
+  .bar-8 {
+    width: 80%;
+  }
+  .bar-7 {
+    width: 70%;
+  }
+  .bar-6 {
+    width: 60%;
+  }
+  .bar-5 {
+    width: 50%;
+  }
+  .bar-4 {
+    width: 40%;
+  }
+  .bar-3 {
+    width: 30%;
+  }
+  .bar-2 {
+    width: 20%;
+  }
+  .bar-1 {
+    width: 10%;
+  }
+  .bar-0 {
+    width: 0%;
+  }
+  
+  td {
+    padding-bottom: 10px;
+  }
+  
+  .star-active {
+    color: #FBC02D;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .star-active:hover {
+    color: #F9A825;
+    cursor: pointer;
+  }
+  
+  .star-inactive {
+    color: #CFD8DC;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .blue-text {
+    color: #0091EA;
+  }
+  
+  .content {
+    font-size: 18px;
+  }
+  
+  .profile-pic {
+    width: 90px;
+    height: 80px;
+    border-radius: 100%;
+    margin-right: 30px;
+  }
+   
+  .pic {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+  }
+}
+
+.review-comment-img {
+  .float-left {
+    float: left;
+    margin-right: 15px;
+  }
+
+  /* Style the list */
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  .img-w-10 {
+    width: 10%;
+  }
+
+  /* Ensure images are responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

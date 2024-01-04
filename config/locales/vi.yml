@@ -511,3 +511,10 @@ vi:
     v200: "VUI LÒNG MUA ĐƠN HÀNG TỐI THIỂU LÀ 400K ĐỂ ĐƯỢC GIẢM GIÁ 200K"
     v500: "VUI LÒNG MUA ĐƠN HÀNG TỐI THIỂU LÀ 900K ĐỂ ĐƯỢC GIẢM GIÁ 500K"
     freeship: "VUI LÒNG MUA ĐƠN HÀNG TỐI THIỂU LÀ 99K ĐỂ ĐƯỢC MIỄN PHÍ VẬN CHUYỂN"
+  sold: "Đã Bán"
+  star_ratings:
+    terrible: 'Rất kém'
+    poor: 'Kém'
+    average: 'Trung bình'
+    good: 'Tốt'
+    excellent: 'Xuất sắc'

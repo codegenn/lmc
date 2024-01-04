@@ -8,3 +8,17 @@ class Medium < ActiveRecord::Base
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :media_image, :content_type => /image/
 end
+
+# == Schema Information
+#
+# Table name: media
+#
+#  id                       :integer          not null, primary key
+#  media_image_content_type :string
+#  url                      :string
+#  media_image_file_name    :string
+#  alt                      :string
+#  media_image              :string
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#

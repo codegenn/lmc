@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/ejholmes/active_admin_editor.git
+  revision: 86f964be3071cd938c3cd17ad00df94ece3a50c0
+  specs:
+    active_admin_editor (1.1.0)
+      activeadmin (>= 0.4.0)
+      ejs
+      rails (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -20,10 +29,6 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    active_admin_editor (1.1.0)
-      activeadmin (>= 0.4.0)
-      ejs
-      rails (>= 3.0.0)
     activeadmin (1.1.0)
       arbre (>= 1.1.1)
       coffee-rails
@@ -56,6 +61,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    annotate (3.2.0)
+      activerecord (>= 3.2, < 8.0)
+      rake (>= 10.4, < 14.0)
     arbre (1.2.1)
       activesupport (>= 3.0.0)
     arel (6.0.4)
@@ -1290,9 +1298,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_admin_editor
+  active_admin_editor!
   activeadmin
   activeadmin-globalize
+  annotate
   aws-sdk
   breadcrumbs_on_rails
   byebug
