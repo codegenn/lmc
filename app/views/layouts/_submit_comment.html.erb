@@ -20,12 +20,12 @@
   </div>
 
   <div class="mb-3 text-left">
-    <%= form.label :content, class: 'form-label' %>
+    <%= form.label I18n.t("review"), class: 'form-label' %>
     <%= form.text_area :content, class: 'form-control', required: true %>
   </div>
   <%= form.hidden_field :product_id, value: @product.id %>
 
   <div class="mb-3 text-left">
-    <%= form.submit "Submit", class: 'btn bg1 cl0 w-100' %>
+    <%= form.submit I18n.t("submit"), class: 'btn bg1 cl0 w-100' %>
   </div>
 <% end %>

@@ -39,16 +39,15 @@
         <img class="w-25" src="<%= comment[:product_img] %>" alt="Product Image">
     </div>
     <div class="w-75 text-center">
-        <div><%= comment[:product_title] %></div>
+      <div><%= comment[:product_title] %></div>
 
-        <div class="center mt-2">
-          <div class="size-204 flex-w flex-m respon6-next">
-            <%= button_tag(disabled: ("disabled" if @product.out_of_stock?), class: "flex-c-m stext-101 cl0 size-1010 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail") do %>
-              <%= @product.out_of_stock? ? I18n.t("page.product.out_of_stock") : I18n.t("page.product.add_to_cart") %>
-            <% end %>
-          </div>
+      <div class="center mt-2">
+        <div class="size-204 flex-w flex-m respon6-next">
+          <%= button_tag(disabled: ("disabled" if @product.out_of_stock?), class: "flex-c-m stext-101 cl0 size-1010 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail") do %>
+            <%= @product.out_of_stock? ? I18n.t("page.product.out_of_stock") : I18n.t("page.product.add_to_cart") %>
+          <% end %>
         </div>
-
+      </div>
     </div>
   </div>
 </div>

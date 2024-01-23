@@ -7,6 +7,13 @@
     - else
       %span{ class: "fa fa-star star-inactive" }
   = "(#{review[:total]})"
+  - if review_count.present?
+    %span.ml-2
+      = "|"
+    %a.ml-1{:href => "#review-page"}
+      = "#{ I18n.t('review') }"
+      %span.text-decoration-underline
+        = review[:total]
   - if sold.present?
     %span.ml-2
       = "|"

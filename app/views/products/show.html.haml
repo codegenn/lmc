@@ -31,10 +31,10 @@
           %h4.mtext-105.cl2.js-name-detail.p-b-14
             = @product.title
           .stext-103.cl2.js-name-detail.p-b-14
-            = "#{I18n.t("page.product.code") }: "
+            = "#{I18n.t("page.product.code") }: #{@product.stocks.last&.product_code}"
             .stock_code
           %div.stext-103.cl2.mb-2.review
-            = render "layouts/star", review: @product.star_rating, sold: @product.product_sold&.sold
+            = render "layouts/star", review: @product.star_rating, sold: @product.product_sold&.sold, review_count: "2.1k"
           %span.mtext-105.cl2
             - if @product.promotion_price.present?
               .promotion-price
@@ -108,6 +108,8 @@
               = I18n.t("page.product.description")
             %a#nav-profile-tab.nav-item.nav-link{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-profile", :role => "tab"}
               = I18n.t("page.product.measurement")
+            %a#nav-profile-tab.nav-item.nav-link{:href => "#review-page"}
+              = I18n.t("review")
         #nav-tabContent.tab-content
           #nav-home.tab-pane.fade.show.active{"aria-labelledby" => "nav-home-tab", :role => "tabpanel"}
             .how-pos2.p-lr-15-md

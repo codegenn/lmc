@@ -54,12 +54,12 @@
                           = I18n.t("page.product.single_colour")
                         - else
                           = I18n.t("page.product.other_colour_count", count: count)
-                    %div{class: ("col-6" if product.product_sold&.sold.present?)}
+                    %div{class: ("col-6 pr-0" if product.product_sold&.sold.present?)}
                       - if product.product_sold&.sold.present?
                         .text-right.font-weight-bold
                           = "#{ I18n.t("sold") } #{ product.product_sold.sold }"
                   %span.stext-105.cl3.review
-                    = render "layouts/star", review: product.star_rating, sold: nil
+                    = render "layouts/star", review: product.star_rating, sold: nil, review_count: nil
                 .block2-txt-child2.flex-r.p-t-3
                   - pro_ids = @favorite.try(:product_ids) || []
                   = link_to favorite_path(product.id), method: :put, remote: true,
@@ -110,12 +110,12 @@
                             = I18n.t("page.product.single_colour")
                           - else
                             = I18n.t("page.product.other_colour_count", count: count)
-                      %div{class: ("col-6" if Product.find(product["id"].to_i).product_sold&.sold.present?)}
+                      %div{class: ("col-6 pr-0" if Product.find(product["id"].to_i).product_sold&.sold.present?)}
                         - if Product.find(product["id"].to_i).product_sold&.sold.present?
                           .text-right.font-weight-bold
                             = "#{ I18n.t("sold") } #{ Product.find(product["id"].to_i).product_sold.sold }"
                     %span.stext-105.cl3.review
-                      = render "layouts/star", review: Product.find(product["id"].to_i).star_rating, sold: nil
+                      = render "layouts/star", review: Product.find(product["id"].to_i).star_rating, sold: nil, review_count: nil
                   .block2-txt-child2.flex-r.p-t-3
                     - pro_ids = @favorite.try(:product_ids) || []
                     = link_to favorite_path(product['id']), method: :put, remote: true,
