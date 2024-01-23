@@ -42,8 +42,8 @@ class Product < ActiveRecord::Base
   COMMISSION = 0.25
 
   def star_rating
-    avg = reviews.average(:star_rating) || 0
-    total = reviews.count || 0
+    avg = reviews.active.average(:star_rating) || 0
+    total = reviews.active.count || 0
     star_ratings_counts = calculate_star_ratings_counts
 
     rate = reviews.active.map do |review|

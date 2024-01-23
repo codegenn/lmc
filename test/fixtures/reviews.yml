@@ -1,0 +1,11 @@
+one:
+  customer_name: MyString
+  content: MyText
+  star_rating: 1
+  product_id: 
+
+two:
+  customer_name: MyString
+  content: MyText
+  star_rating: 1
+  product_id: 

@@ -1,0 +1,11 @@
+one:
+  fee: 9.99
+  product_id: 1
+  total_products: 1
+  inventory: 1
+
+two:
+  fee: 9.99
+  product_id: 1
+  total_products: 1
+  inventory: 1

@@ -19,3 +19,7 @@
       = "|"
     %span.ml-1
       = "#{ I18n.t('sold') } #{sold}"
+- else
+  - if sold.present?
+    %span
+      = "#{ I18n.t('sold') } #{sold}"
