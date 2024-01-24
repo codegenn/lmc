@@ -5,3 +5,14 @@ class Voucher < ActiveRecord::Base
                   '200k mbs 400k', '500k mbs 900k'
                 ]
 end
+
+# == Schema Information
+#
+# Table name: vouchers
+#
+#  id           :integer          not null, primary key
+#  code         :string
+#  voucher_type :string
+#  active       :boolean
+#  one_time_use :boolean          default(FALSE)
+#

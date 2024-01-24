@@ -450,3 +450,12 @@ en:
     freeship: "PLEASE PURCHASE A MINIMUM ORDER OF 99K TO RECEIVE FREE SHIPPING"
     v200: "PLEASE PURCHASE A MINIMUM ORDER OF 400K TO GET DISCOUNT OF 200K"
     v500: "PLEASE PURCHASE A MINIMUM ORDER OF 900K TO GET DISCOUNT OF 500K"
+  sold: "SOLD"
+  star_ratings:
+    terrible: 'Terrible'
+    poor: 'Poor'
+    average: 'Average'
+    good: 'Good'
+    excellent: 'Excellent'
+  review: Review
+  submit: Send

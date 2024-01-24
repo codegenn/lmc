@@ -23,9 +23,11 @@ class Product < ActiveRecord::Base
   has_many :color_images
   has_many :stocks
   has_many :bottom_stocks
+  has_many :reviews
   # has_many :parner_orders
   belongs_to :favorite
   has_attached_file :measurement_image
+  has_one :product_sold
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :measurement_image, :content_type => /image/
   validates :title, :description, :short_description, :price, presence: true
@@ -38,6 +40,46 @@ class Product < ActiveRecord::Base
 
   PRICE_ON_ORDER = 3000000000
   COMMISSION = 0.25
+
+  def star_rating
+    avg = reviews.active.average(:star_rating) || 0
+    total = reviews.active.count || 0
+    star_ratings_counts = calculate_star_ratings_counts
+
+    rate = reviews.active.map do |review|
+      {
+        customer_name: review.customer_name,
+        content: review.content,
+        star_rating: review.star_rating,
+        product_img: product_images.first&.image_url, # Assuming product_images is a collection related to the product
+        review_img: review.review_images.map { |image| image.pimage.url if image.pimage.present? }.compact, # Map review images and remove nil values
+        product_title: title, # Assuming title is defined somewhere
+        product_slug: slug, # Assuming slug is defined somewhere
+        reply: review.comments.map do |comment|
+          {
+            author_name: "Phản hồi từ người bán",
+            content: comment.content,
+            status: comment.content.present?
+          }
+        end
+      }
+    end
+
+    {
+      star_ratings_counts: star_ratings_counts,
+      avg: avg,
+      review: rate,
+      total: total
+    }
+  end
+
+  def calculate_star_ratings_counts
+    star_ratings_counts = {}
+    (1..5).each do |rating|
+      star_ratings_counts["count_#{rating}_star"] = reviews.active.where(star_rating: rating).count || 0
+    end
+    star_ratings_counts
+  end
 
   def should_generate_new_friendly_id?
     slug.blank? || self.slug_url_changed?
@@ -170,3 +212,41 @@ class Product < ActiveRecord::Base
     product_img_url
   end
 end
+
+# == Schema Information
+#
+# Table name: products
+#
+#  id                             :integer          not null, primary key
+#  price                          :float
+#  created_at                     :datetime
+#  updated_at                     :datetime
+#  is_best_seller                 :boolean          default(FALSE)
+#  is_promotion                   :boolean          default(FALSE)
+#  is_new_arrival                 :boolean          default(FALSE)
+#  has_promotion                  :boolean          default(FALSE)
+#  promotion                      :string
+#  measurement_image_url          :string
+#  slug                           :string
+#  slug_url                       :string
+#  out_of_stock                   :boolean          default(FALSE)
+#  promotion_price                :float
+#  sort_order                     :integer          default(0)
+#  measurement_image_file_name    :string
+#  measurement_image_content_type :string
+#  measurement_image_file_size    :bigint
+#  measurement_image_updated_at   :datetime
+#  is_hidden                      :boolean          default(FALSE)
+#  stock                          :integer
+#  admin_user_id                  :integer
+#  title                          :string
+#  short_description              :text
+#  description                    :text
+#  promotion                      :string
+#  measurement_description        :text
+#
+# Indexes
+#
+#  index_products_on_admin_user_id  (admin_user_id)
+#  index_products_on_slug           (slug) UNIQUE
+#

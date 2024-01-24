@@ -1,0 +1,84 @@
+<div class="px-1 mx-auto review" id="review-page">
+	<div class="justify-content-center">
+		<div class="col-12 text-center mb-5">
+			<div class="card pl-3 pr-3">
+				<div class="row justify-content-left d-flex">
+					<div class="col-md-4 d-flex flex-column">
+						<div class="rating-box">
+							<h1 class="pt-4"><%= datas[:avg].to_f %></h1>
+							<p class="">out of 5</p>
+						</div>
+						<div>
+              <% (1..5).each do |i| %>
+                <% if i <= datas[:avg].floor %>
+                  <span class="fa fa-star star-active ml-2"></span>
+                <% elsif i == datas[:avg].ceil && datas[:avg] % 1 != 0 %>
+                  <span class="fa fa-star-half-o star-active ml-2"></span>
+                <% else %>
+                  <span class="fa fa-star star-inactive ml-2"></span>
+                <% end %>
+              <% end %>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="rating-bar0 justify-content-center">
+							<table class="text-left mx-auto">
+								<tr>
+									<td class="rating-label"><%= I18n.t("star_ratings.excellent") %></td>
+									<td class="rating-bar">
+										<div class="bar-container">
+                      <div class="bar-review bar-<%= (((datas[:star_ratings_counts]["count_5_star"].to_f / datas[:total].to_f)*100)/10).round(1).to_i  %>"></div>
+                    </div>
+									</td>
+									<td class="text-right"><%= datas[:star_ratings_counts]["count_5_star"] %></td>
+								</tr>
+								<tr>
+									<td class="rating-label"><%= I18n.t("star_ratings.good") %></td>
+									<td class="rating-bar">
+										<div class="bar-container">
+									    <div class="bar-review bar-<%= (((datas[:star_ratings_counts]["count_4_star"].to_f / datas[:total].to_f)*100)/10).round(1).to_i %>"></div>
+                    </div>
+									</td>
+									<td class="text-right"><%= datas[:star_ratings_counts]["count_4_star"] %></td>
+								</tr>
+								<tr>
+									<td class="rating-label"><%= I18n.t("star_ratings.average") %></td>
+									<td class="rating-bar">
+										<div class="bar-container">
+                      <div class="bar-review bar-<%= (((datas[:star_ratings_counts]["count_3_star"].to_f / datas[:total].to_f)*100)/10).round(1).to_i %>"></div>
+                    </div>
+									</td>
+									<td class="text-right"><%= datas[:star_ratings_counts]["count_3_star"] %></td>
+								</tr>
+								<tr>
+									<td class="rating-label"><%= I18n.t("star_ratings.poor") %></td>
+									<td class="rating-bar">
+										<div class="bar-container">
+                      <div class="bar-review bar-<%= (((datas[:star_ratings_counts]["count_2_star"].to_f / datas[:total].to_f)*100)/10).round(1).to_i %>"></div>
+                    </div>
+									</td>
+									<td class="text-right"><%= datas[:star_ratings_counts]["count_2_star"] %></td>
+								</tr>
+								<tr>
+									<td class="rating-label"><%= I18n.t("star_ratings.terrible") %></td>
+									<td class="rating-bar">
+										<div class="bar-container">
+                      <div class="bar-review bar-<%= (((datas[:star_ratings_counts]["count_1_star"].to_f / datas[:total].to_f)*100)/10).round(1).to_i %>"></div>
+                    </div>
+									</td>
+									<td class="text-right"><%= datas[:star_ratings_counts]["count_1_star"] %></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+      <%= render "layouts/submit_comment" if current_user %>
+
+      <% datas[:review].each do |data| %>
+			  <%= render "layouts/comment_card", comment: data, datas: datas  %>
+      <% end %>
+		</div>
+	</div>
+</div>

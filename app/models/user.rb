@@ -86,3 +86,37 @@ class User < ActiveRecord::Base
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  email                  :string           default(""), not null
+#  first_name             :string           default(""), not null
+#  last_name              :string           default(""), not null
+#  phone                  :integer          not null
+#  encrypted_password     :string           default(""), not null
+#  reset_password_token   :string
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  provider               :string
+#  uid                    :string
+#  username               :string
+#  avatar                 :string
+#  dob                    :datetime
+#  code_kiot              :integer
+#  kiot_id                :string
+#  address                :string
+#  phone_number           :string
+#  code                   :string
+#  role                   :integer
+#  status                 :integer          default(0)
+#
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#

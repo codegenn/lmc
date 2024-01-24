@@ -6,3 +6,19 @@ class PartnerOrder < ActiveRecord::Base
 
   # belongs_to :partner_user
 end
+
+# == Schema Information
+#
+# Table name: partner_orders
+#
+#  id             :integer          not null, primary key
+#  fee            :decimal(, )
+#  product_id     :integer
+#  total_products :integer
+#  inventory      :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  user_id        :integer
+#  total_sell     :integer
+#  stock_item     :string
+#

@@ -23,3 +23,28 @@ class Foundation < ActiveRecord::Base
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: foundations
+#
+#  id                            :integer          not null, primary key
+#  author                        :string
+#  title                         :string
+#  short_description             :text
+#  content                       :text
+#  image                         :string
+#  category                      :string
+#  created_at                    :datetime         not null
+#  updated_at                    :datetime         not null
+#  slug                          :string
+#  slug_url                      :string
+#  foundation_image_file_name    :string
+#  foundation_image_content_type :string
+#  foundation_image_file_size    :bigint
+#  foundation_image_updated_at   :datetime
+#
+# Indexes
+#
+#  index_foundations_on_slug  (slug) UNIQUE
+#

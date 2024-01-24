@@ -1,0 +1,31 @@
+<%= form_for Review.new, remote: true, html: { class: 'needs-validation card pl-4 pr-4' } do |form| %>
+  <div class="mb-3 text-left">
+    <%#= form.label :star_rating, class: 'form-label' %>
+    <div class="star-rating">
+      <% ratings_labels = ['Terrible', 'Poor', 'Average', 'Good', 'Excellent'] %>
+      <% (5).downto(1).each do |rating| %>
+        <label class="rating-item d-flex">
+          <%= form.radio_button :star_rating, rating, id: "star#{rating}", class: 'mr-2' %>
+          <% (1..5).each_with_index do |i, index| %>
+            <% if i <= rating %>
+              <span class="fa fa-star star-active <%= 'ml-2' if index > 0 %>"></span>
+            <% else %>
+              <span class="fa fa-star star-inactive <%= 'ml-2' if index > 0 %>"></span>
+            <% end %>
+          <% end %>
+          <span class="rating-label ml-2"><%= I18n.t("star_ratings.#{ratings_labels[rating-1].downcase}") %></span>
+        </label>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="mb-3 text-left">
+    <%= form.label I18n.t("review"), class: 'form-label' %>
+    <%= form.text_area :content, class: 'form-control', required: true %>
+  </div>
+  <%= form.hidden_field :product_id, value: @product.id %>
+
+  <div class="mb-3 text-left">
+    <%= form.submit I18n.t("submit"), class: 'btn bg1 cl0 w-100' %>
+  </div>
+<% end %>

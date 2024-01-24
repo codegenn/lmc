@@ -39,3 +39,16 @@ class Stock < ActiveRecord::Base
     "Bearer ".concat(token)
   end
 end
+
+# == Schema Information
+#
+# Table name: stocks
+#
+#  id           :integer          not null, primary key
+#  product_id   :integer
+#  size         :string
+#  color        :string
+#  in_stock     :boolean
+#  product_code :string
+#  quantity     :integer
+#

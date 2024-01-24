@@ -9,3 +9,12 @@ class Favorite < ActiveRecord::Base
     self.code = Devise.friendly_token
   end
 end
+
+# == Schema Information
+#
+# Table name: favorites
+#
+#  id      :integer          not null, primary key
+#  code    :string
+#  user_id :integer
+#

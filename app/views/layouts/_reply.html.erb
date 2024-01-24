@@ -1,0 +1,10 @@
+<% replys.each_with_index do |reply, index| %>
+  <% if reply[:status] %>
+    <div class="bg-light p-2 text-left  <%= 'mt-4' if index == 0 %>">
+      <div class="font-weight-bold">
+        <%= reply[:author_name] %>
+      </div>
+      <div><%= reply[:content] %></div>
+    </div>
+  <% end %>
+<% end %>

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby "2.6.6"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
@@ -71,7 +71,7 @@ ruby "2.6.0"
 gem 'globalize'
 gem 'image-picker-rails'
 gem "activeadmin-globalize"
-gem 'active_admin_editor'
+gem 'active_admin_editor', git: 'https://github.com/ejholmes/active_admin_editor.git'
 gem 'friendly_id', '~> 5.2.4'
 gem 'delayed_job_active_record'
 
@@ -81,3 +81,4 @@ gem 'aws-sdk'
 gem 'dalli'
 gem 'cancancan'
 gem "whenever"
+gem 'annotate'

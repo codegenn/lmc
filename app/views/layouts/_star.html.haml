@@ -1,0 +1,25 @@
+- if review[:avg].to_i != 0
+  - (1..5).each do |i|
+    - if i <= review[:avg].floor
+      %span{ class: "fa fa-star star-active" }
+    - elsif i == review[:avg].ceil && review[:avg] % 1 != 0
+      %span{ class: "fa fa-star-half-o star-active" }
+    - else
+      %span{ class: "fa fa-star star-inactive" }
+  = "(#{review[:total]})"
+  - if review_count.present?
+    %span.ml-2
+      = "|"
+    %a.ml-1{:href => "#review-page"}
+      = "#{ I18n.t('review') }"
+      %span.text-decoration-underline
+        = review[:total]
+  - if sold.present?
+    %span.ml-2
+      = "|"
+    %span.ml-1
+      = "#{ I18n.t('sold') } #{sold}"
+- else
+  - if sold.present?
+    %span
+      = "#{ I18n.t('sold') } #{sold}"

@@ -17,3 +17,17 @@ class ColorImage < ActiveRecord::Base
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: color_images
+#
+#  id                       :integer          not null, primary key
+#  product_id               :integer
+#  image_url                :string
+#  color_name               :string
+#  color_image_file_name    :string
+#  color_image_content_type :string
+#  color_image_file_size    :bigint
+#  color_image_updated_at   :datetime
+#
