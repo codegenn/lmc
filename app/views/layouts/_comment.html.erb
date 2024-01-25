@@ -1,4 +1,6 @@
-<div class="px-1 mx-auto review" id="review-page">
+<% total = datas[:total].to_f > 0 ? datas[:total].to_f : 1 %>
+
+<div class="px-1 w-100 review" id="review-page">
 	<div class="justify-content-center">
 		<div class="col-12 text-center mb-5">
 			<div class="card pl-3 pr-3">
@@ -27,7 +29,7 @@
 									<td class="rating-label"><%= I18n.t("star_ratings.excellent") %></td>
 									<td class="rating-bar">
 										<div class="bar-container">
-                      <div class="bar-review bar-<%= (((datas[:star_ratings_counts]["count_5_star"].to_f / datas[:total].to_f)*100)/10).round(1).to_i  %>"></div>
+                      <div class="bar-review bar-<%= (((datas[:star_ratings_counts]["count_5_star"].to_f / total)*100)/10).round(1).to_i || 0 %>"></div>
                     </div>
 									</td>
 									<td class="text-right"><%= datas[:star_ratings_counts]["count_5_star"] %></td>
@@ -36,7 +38,7 @@
 									<td class="rating-label"><%= I18n.t("star_ratings.good") %></td>
 									<td class="rating-bar">
 										<div class="bar-container">
-									    <div class="bar-review bar-<%= (((datas[:star_ratings_counts]["count_4_star"].to_f / datas[:total].to_f)*100)/10).round(1).to_i %>"></div>
+									    <div class="bar-review bar-<%= (((datas[:star_ratings_counts]["count_4_star"].to_f / total)*100)/10).round(1).to_i || 0 %>"></div>
                     </div>
 									</td>
 									<td class="text-right"><%= datas[:star_ratings_counts]["count_4_star"] %></td>
@@ -45,7 +47,7 @@
 									<td class="rating-label"><%= I18n.t("star_ratings.average") %></td>
 									<td class="rating-bar">
 										<div class="bar-container">
-                      <div class="bar-review bar-<%= (((datas[:star_ratings_counts]["count_3_star"].to_f / datas[:total].to_f)*100)/10).round(1).to_i %>"></div>
+                      <div class="bar-review bar-<%= (((datas[:star_ratings_counts]["count_3_star"].to_f / total)*100)/10).round(1).to_i || 0 %>"></div>
                     </div>
 									</td>
 									<td class="text-right"><%= datas[:star_ratings_counts]["count_3_star"] %></td>
@@ -54,7 +56,7 @@
 									<td class="rating-label"><%= I18n.t("star_ratings.poor") %></td>
 									<td class="rating-bar">
 										<div class="bar-container">
-                      <div class="bar-review bar-<%= (((datas[:star_ratings_counts]["count_2_star"].to_f / datas[:total].to_f)*100)/10).round(1).to_i %>"></div>
+                      <div class="bar-review bar-<%= (((datas[:star_ratings_counts]["count_2_star"].to_f / total)*100)/10).round(1).to_i|| 0 %>"></div>
                     </div>
 									</td>
 									<td class="text-right"><%= datas[:star_ratings_counts]["count_2_star"] %></td>
@@ -63,7 +65,7 @@
 									<td class="rating-label"><%= I18n.t("star_ratings.terrible") %></td>
 									<td class="rating-bar">
 										<div class="bar-container">
-                      <div class="bar-review bar-<%= (((datas[:star_ratings_counts]["count_1_star"].to_f / datas[:total].to_f)*100)/10).round(1).to_i %>"></div>
+                      <div class="bar-review bar-<%= (((datas[:star_ratings_counts]["count_1_star"].to_f / total)*100)/10).round(1).to_i || 0 %>"></div>
                     </div>
 									</td>
 									<td class="text-right"><%= datas[:star_ratings_counts]["count_1_star"] %></td>
@@ -74,7 +76,7 @@
 				</div>
 			</div>
 
-      <%= render "layouts/submit_comment" if current_user %>
+      <%= render "layouts/submit_comment" %>
 
       <% datas[:review].each do |data| %>
 			  <%= render "layouts/comment_card", comment: data, datas: datas  %>
