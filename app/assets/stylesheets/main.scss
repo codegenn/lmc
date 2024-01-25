@@ -3749,3 +3749,13 @@ ul.disc {
 .partner-btn {
   width: 50%;
 }
+
+.card-title {
+  height: 120px; /* Adjust the height as needed */
+}
+
+@media (max-width: 575px) { 
+  .card-body .card-title {
+    height: 80px; /* Adjust the height as needed */
+  }
+}

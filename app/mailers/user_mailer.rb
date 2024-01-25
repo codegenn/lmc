@@ -29,4 +29,10 @@ class UserMailer < ApplicationMailer
     subj = 'Đăng ký trở thành đối tác sản xuất của LMcation'
     mail(to: @partner_user.email, bcc: 'info@lmcation.com', subject: subj, from: Rails.application.secrets.gmail_email)
   end
+
+  def user_review(review)
+    @review = review
+    subj = 'New user review'
+    mail(to: 'camnhepu@gmail.com', subject: subj, from: Rails.application.secrets.gmail_email)
+  end
 end

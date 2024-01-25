@@ -130,7 +130,7 @@
             = render "product_related", product: product
     .tab01
       .row.related
-        = render "layouts/comment", datas: @product.star_rating unless @product.star_rating[:total].to_f.zero?
+        = render "layouts/comment", datas: @product.star_rating
 
 = render "layouts/seo_bread", datas: @datas              
 :javascript
