@@ -33,6 +33,6 @@ class UserMailer < ApplicationMailer
   def user_review(review)
     @review = review
     subj = 'New user review'
-    mail(to: 'camnhepu@gmail.com', subject: subj, from: Rails.application.secrets.gmail_email)
+    mail(to: 'info@lmcation.com', subject: subj, from: Rails.application.secrets.gmail_email)
   end
 end
