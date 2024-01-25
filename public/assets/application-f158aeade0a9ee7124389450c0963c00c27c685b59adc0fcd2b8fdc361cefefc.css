@@ -8941,26 +8941,21 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 /* line 1, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
-.review-checked {
-  color: orange;
-}
-
-/* line 4, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review {
   /* Rating bar width */
   /* The bar container */
   /* Individual bars */
 }
-/* line 5, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 2, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review a {
   text-decoration: none !important;
   color: inherit;
 }
-/* line 10, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 7, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review a:hover {
   color: #455A64;
 }
-/* line 14, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 11, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .card {
   border-radius: 5px;
   background-color: #fff;
@@ -8970,7 +8965,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   padding-top: 30px;
   padding-bottom: 30px;
 }
-/* line 24, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 21, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .rating-box {
   width: 130px;
   height: 130px;
@@ -8979,17 +8974,17 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   background-color: #FBC02D;
   color: #fff;
 }
-/* line 33, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 30, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .rating-label {
   font-weight: bold;
 }
-/* line 38, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 35, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .rating-bar {
   width: 300px;
   padding: 8px;
   border-radius: 5px;
 }
-/* line 45, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 42, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .bar-container {
   width: 100%;
   background-color: #f1f1f1;
@@ -8999,101 +8994,128 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   cursor: pointer;
   margin-bottom: 5px;
 }
-/* line 56, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 53, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .bar-review {
   height: 13px;
   background-color: #FBC02D;
   border-radius: 20px;
 }
-/* line 61, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 58, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .bar-10 {
   width: 100%;
 }
-/* line 64, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 61, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .bar-9 {
   width: 90%;
 }
-/* line 67, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 64, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .bar-8 {
   width: 80%;
 }
-/* line 70, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 67, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .bar-7 {
   width: 70%;
 }
-/* line 73, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 70, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .bar-6 {
   width: 60%;
 }
-/* line 76, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 73, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .bar-5 {
   width: 50%;
 }
-/* line 79, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 76, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .bar-4 {
   width: 40%;
 }
-/* line 82, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 79, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .bar-3 {
   width: 30%;
 }
-/* line 85, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 82, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .bar-2 {
   width: 20%;
 }
-/* line 88, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 85, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .bar-1 {
   width: 10%;
 }
-/* line 91, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 88, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .bar-0 {
   width: 0%;
 }
-/* line 95, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 92, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review td {
   padding-bottom: 10px;
 }
-/* line 99, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 96, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .star-active {
   color: #FBC02D;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 105, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 102, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .star-active:hover {
   color: #F9A825;
   cursor: pointer;
 }
-/* line 110, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 107, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .star-inactive {
   color: #CFD8DC;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 116, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 113, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .blue-text {
   color: #0091EA;
 }
-/* line 120, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 117, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .content {
   font-size: 18px;
 }
-/* line 124, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 121, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .profile-pic {
   width: 90px;
   height: 80px;
   border-radius: 100%;
   margin-right: 30px;
 }
-/* line 131, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+/* line 128, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
 .review .pic {
   width: 80px;
   height: 80px;
   margin-right: 10px;
 }
+
+/* line 135, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+.review-comment-img {
+  /* Style the list */
+  /* Ensure images are responsive */
+}
 /* line 136, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
-.review .review-img {
-  width: 15%;
+.review-comment-img .float-left {
+  float: left;
+  margin-right: 15px;
+}
+/* line 142, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+.review-comment-img ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  /* Remove default margin */
+}
+/* line 148, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+.review-comment-img li {
+  margin-bottom: 10px;
+}
+/* line 152, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+.review-comment-img .img-w-10 {
+  width: 10%;
+}
+/* line 157, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/review.scss */
+.review-comment-img img {
+  max-width: 100%;
+  height: auto;
 }
 
 @font-face {
@@ -11904,156 +11926,162 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ Size ]*/
 /* line 2529, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+.size-1010 {
+  min-width: 190px;
+  height: 46px;
+}
+
+/* line 2533, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-101 {
   min-width: 161px;
   height: 46px;
 }
 
-/* line 2534, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2538, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-102 {
   min-width: 139px;
   height: 40px;
 }
 
-/* line 2539, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2543, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-103 {
   min-width: 179px;
   height: 46px;
 }
 
-/* line 2544, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2548, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-104 {
   min-width: 94px;
   height: 40px;
 }
 
-/* line 2549, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2553, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-105 {
   min-width: 111px;
   height: 40px;
 }
 
-/* line 2554, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2558, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-106 {
   width: 88px;
   height: 100%;
 }
 
-/* line 2559, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2563, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-107 {
   min-width: 145px;
   height: 40px;
 }
 
-/* line 2564, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2568, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-108 {
   width: 40px;
   height: 40px;
 }
 
-/* line 2569, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2573, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-109 {
   width: 60px;
   height: 60px;
 }
 
-/* line 2574, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2578, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-110 {
   width: 100%;
   min-height: 100px;
 }
 
-/* line 2579, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2583, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-111 {
   width: 100%;
   height: 40px;
 }
 
-/* line 2584, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2588, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-112 {
   min-width: 134px;
   height: 43px;
 }
 
-/* line 2589, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2593, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-113 {
   width: 38px;
   height: 60px;
 }
 
-/* line 2594, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2598, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-114 {
   width: calc(100% - 38px);
   height: 60px;
 }
 
-/* line 2599, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2603, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-115 {
   min-width: 185px;
   height: 45px;
 }
 
-/* line 2604, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2608, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-116 {
   width: 100%;
   height: 50px;
 }
 
-/* line 2609, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2613, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-117 {
   width: 220px;
   height: 45px;
 }
 
-/* line 2614, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2618, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-118 {
   min-width: 163px;
   height: 45px;
 }
 
-/* line 2619, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2623, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-119 {
   min-width: 156px;
   height: 45px;
 }
 
-/* line 2624, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2628, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-120 {
   width: 100%;
   min-height: 199px;
 }
 
-/* line 2629, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2633, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-121 {
   width: 100%;
   height: 46px;
 }
 
-/* line 2634, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2638, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-122 {
   width: 55px;
   height: 100%;
 }
 
-/* line 2639, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2643, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-123 {
   width: 70px;
   min-height: 70px;
 }
 
-/* line 2644, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2648, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-124 {
   width: 100%;
   min-height: 150px;
 }
 
-/* line 2649, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2653, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-125 {
   min-width: 180px;
   height: 40px;
 }
 
-/* line 2654, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2658, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-126 {
   width: 70%;
   height: 50px;
@@ -12064,7 +12092,7 @@ input.num-product::-webkit-inner-spin-button {
   margin-bottom: 15px;
 }
 
-/* line 2664, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2668, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-100 {
   width: 90%;
   height: 50px;
@@ -12077,109 +12105,109 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ Width ]*/
-/* line 2676, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2680, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-201 {
   max-width: 270px;
 }
 
-/* line 2680, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2684, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-202 {
   width: calc(100% / 3);
 }
 
-/* line 2684, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2688, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-203 {
   width: 105px;
 }
 
-/* line 2688, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2692, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-204 {
   width: calc(100% - 105px);
 }
 
-/* line 2692, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2696, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-205 {
   width: 145px;
 }
 
-/* line 2696, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2700, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-206 {
   width: calc(100% - 145px);
 }
 
-/* line 2700, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2704, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-207 {
   width: calc(100% - 78px);
 }
 
-/* line 2704, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2708, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-208 {
   width: 34.5%;
 }
 
-/* line 2708, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2712, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-209 {
   width: 65.5%;
 }
 
-/* line 2712, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2716, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-210 {
   width: 50%;
 }
 
-/* line 2716, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2720, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-211 {
   width: 60px;
 }
 
-/* line 2720, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2724, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-212 {
   width: calc(100% - 60px);
 }
 
-/* line 2724, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2728, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-213 {
   max-width: 245px;
 }
 
-/* line 2728, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2732, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-214 {
   width: 90px;
 }
 
-/* line 2732, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2736, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-215 {
   width: calc(100% - 110px);
 }
 
-/* line 2736, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2740, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-216 {
   width: 55px;
 }
 
-/* line 2740, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2744, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-217 {
   width: calc(100% - 55px);
 }
 
-/* line 2744, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2748, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-218 {
   max-width: 286px;
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ Height ]*/
-/* line 2752, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2756, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-301 {
   min-height: 30px;
 }
 
-/* line 2756, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2760, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-302 {
   min-height: 80px;
 }
 
-/* line 2760, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2764, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-303 {
   height: 390px;
 }
@@ -12187,58 +12215,58 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
    BACKGROUND BACKGROUND BACKGROUND BACKGROUND BACKGROUND BACKGROUND
 ==================================================================*/
-/* line 2768, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2772, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bg-none {
   background-color: transparent;
 }
 
-/* line 2769, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2773, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bg0 {
   background-color: #fff;
 }
 
-/* line 2770, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2774, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bg1 {
   background-color: #717fe0;
 }
 
-/* line 2771, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2775, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bg2 {
   background-color: #e6e6e6;
 }
 
-/* line 2772, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2776, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bg3 {
   background-color: #222;
 }
 
-/* line 2773, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2777, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bg5 {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 2774, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2778, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bg6 {
   background-color: #f2f2f2;
 }
 
-/* line 2775, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2779, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bg7 {
   background-color: #333;
 }
 
-/* line 2776, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2780, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bg8 {
   background-color: #f3f3f3;
 }
 
-/* line 2777, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2781, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bg9 {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
 /*---------------------------------------------*/
-/* line 2780, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2784, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bg-overlay1::before {
   content: "";
   position: absolute;
@@ -12253,7 +12281,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2794, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2798, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bg-img1 {
   background-size: cover;
   background-position: center center;
@@ -12263,117 +12291,117 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
        BORDER BORDER  BORDER  BORDER  BORDER  BORDER  BORDER  BORDER
 ==================================================================*/
-/* line 2806, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2810, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor0 {
   border-radius: 50%;
 }
 
-/* line 2808, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2812, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor1 {
   border-radius: 23px;
 }
 
-/* line 2812, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2816, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor2 {
   border-radius: 20px;
 }
 
-/* line 2816, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2820, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor3 {
   border-bottom: 1px solid transparent;
 }
 
-/* line 2820, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2824, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor4 {
   border: 1px solid #e6e6e6;
   border-radius: 3px;
 }
 
-/* line 2825, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2829, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor5 {
   border-left: 1px solid #e5e5e5;
   border-right: 1px solid #e5e5e5;
 }
 
-/* line 2830, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2834, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor6 {
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* line 2832, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2836, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor7 {
   border: 1px solid #ccc;
   border-radius: 15px;
 }
 
-/* line 2837, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2841, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor8 {
   border: 1px solid #e6e6e6;
   border-radius: 2px;
 }
 
-/* line 2842, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2846, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor9 {
   border-right: 1px solid #e6e6e6;
 }
 
-/* line 2846, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2850, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor10 {
   border: 1px solid #e6e6e6;
 }
 
-/* line 2850, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2854, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor11 {
   border-radius: 21px;
 }
 
-/* line 2854, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2858, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor12 {
   border-bottom: 1px dashed #d9d9d9;
 }
 
-/* line 2858, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2862, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor13 {
   border: 1px solid #e6e6e6;
   border-radius: 22px;
 }
 
-/* line 2863, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2867, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor14 {
   border-radius: 25px;
 }
 
-/* line 2867, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2871, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor15 {
   border-left: 1px solid #e6e6e6;
   border-right: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
 }
 
-/* line 2873, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2877, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor16 {
   border-left: 3px solid #e6e6e6;
 }
 
-/* line 2877, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2881, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor17 {
   border: 1px solid #e6e6e6;
   border-radius: 25px;
 }
 
 /*---------------------------------------------*/
-/* line 2883, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2887, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor18 {
   border-top: 1px solid #e6e6e6;
 }
 
-/* line 2887, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2891, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor18:last-child {
   border-bottom: 1px solid #e6e6e6;
 }
 
 /*---------------------------------------------*/
-/* line 2892, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2896, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .bor19 {
   border: 1px solid #d9d9d9;
   border-radius: 2px;
@@ -12382,119 +12410,119 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
  HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW
 ==================================================================*/
-/* line 2901, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2905, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh0::-webkit-input-placeholder {
   color: #999999;
 }
 
-/* line 2902, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2906, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh0:-moz-placeholder {
   color: #999999;
 }
 
-/* line 2903, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2907, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh0::-moz-placeholder {
   color: #999999;
 }
 
-/* line 2904, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2908, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh0:-ms-input-placeholder {
   color: #999999;
 }
 
-/* line 2906, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2910, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh1::-webkit-input-placeholder {
   color: #b2b2b2;
 }
 
-/* line 2907, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2911, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh1:-moz-placeholder {
   color: #b2b2b2;
 }
 
-/* line 2908, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2912, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh1::-moz-placeholder {
   color: #b2b2b2;
 }
 
-/* line 2909, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2913, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh1:-ms-input-placeholder {
   color: #b2b2b2;
 }
 
-/* line 2911, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2915, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh2::-webkit-input-placeholder {
   color: #333;
 }
 
-/* line 2912, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2916, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh2:-moz-placeholder {
   color: #333;
 }
 
-/* line 2913, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2917, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh2::-moz-placeholder {
   color: #333;
 }
 
-/* line 2914, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2918, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh2:-ms-input-placeholder {
   color: #333;
 }
 
-/* line 2916, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2920, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh3::-webkit-input-placeholder {
   color: #555;
 }
 
-/* line 2917, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2921, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh3:-moz-placeholder {
   color: #555;
 }
 
-/* line 2918, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2922, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh3::-moz-placeholder {
   color: #555;
 }
 
-/* line 2919, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2923, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh3:-ms-input-placeholder {
   color: #555;
 }
 
-/* line 2921, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2925, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh4::-webkit-input-placeholder {
   color: #888;
 }
 
-/* line 2922, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2926, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh4:-moz-placeholder {
   color: #888;
 }
 
-/* line 2923, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2927, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh4::-moz-placeholder {
   color: #888;
 }
 
-/* line 2924, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2928, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .plh4:-ms-input-placeholder {
   color: #888;
 }
 
 /*---------------------------------------------*/
-/* line 2927, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2931, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .js-addedwish-detail {
   color: #6c7ae0;
 }
 
 /*---------------------------------------------*/
-/* line 2932, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2936, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .label1 {
   position: relative;
 }
 
-/* line 2936, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2940, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .label1::after {
   content: attr(data-label1);
   font-family: Gotham-Book;
@@ -12514,7 +12542,7 @@ input.num-product::-webkit-inner-spin-button {
   background-color: #f74877;
 }
 
-/* line 2956, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2960, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .label1.rs1::after {
   top: calc(50% - 8px);
   right: auto;
@@ -12522,26 +12550,26 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 2963, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2967, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-active1 {
   color: #333;
   border-color: #797979;
 }
 
 /*---------------------------------------------*/
-/* line 2970, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2974, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .wrap-input1 {
   position: relative;
   border-bottom: 2px solid rgba(204, 204, 204, 0.1);
 }
 
-/* line 2975, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2979, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .input1 {
   background-color: transparent;
   width: 100%;
 }
 
-/* line 2980, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2984, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .focus-input1 {
   position: absolute;
   width: 0%;
@@ -12551,13 +12579,13 @@ input.num-product::-webkit-inner-spin-button {
   bottom: -2px;
 }
 
-/* line 2989, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2993, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .input1:focus + .focus-input1 {
   width: 100%;
 }
 
 /*---------------------------------------------*/
-/* line 2995, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 2999, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-pagination1 {
   font-family: Gotham-Book;
   font-size: 14px;
@@ -12568,14 +12596,14 @@ input.num-product::-webkit-inner-spin-button {
   border: 1px solid #e6e6e6;
 }
 
-/* line 3006, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3010, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-pagination1:hover {
   background-color: #999;
   border-color: #999;
   color: #fff;
 }
 
-/* line 3012, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3016, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .active-pagination1 {
   background-color: #999;
   border-color: #999;
@@ -12583,7 +12611,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3019, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3023, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-shadow1 {
   box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
@@ -12593,7 +12621,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3028, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3032, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-pos1 {
   position: absolute;
   top: 10px;
@@ -12601,7 +12629,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3035, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3039, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-pos2 {
   padding-top: 20px;
   padding-left: 10.7%;
@@ -12609,19 +12637,19 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 @media (max-width: 991px) {
-  /* line 3042, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3046, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .how-pos2 {
     padding-left: 8%;
     padding-right: 8%;
   }
 }
 /*---------------------------------------------*/
-/* line 3049, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3053, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-pos3-parent {
   position: relative;
 }
 
-/* line 3053, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3057, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-pos3 {
   position: absolute;
   top: -35px;
@@ -12629,12 +12657,12 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3060, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3064, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-pos4-parent {
   position: relative;
 }
 
-/* line 3064, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3068, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-pos4 {
   position: absolute;
   top: calc(50% - 9px);
@@ -12642,12 +12670,12 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3071, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3075, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-pos5-parent {
   position: relative;
 }
 
-/* line 3075, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3079, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-pos5 {
   position: absolute;
   top: 15px;
@@ -12655,7 +12683,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3084, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3088, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-itemcart1 {
   width: 60px;
   position: relative;
@@ -12663,12 +12691,12 @@ input.num-product::-webkit-inner-spin-button {
   cursor: pointer;
 }
 
-/* line 3091, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3095, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-itemcart1 img {
   width: 100%;
 }
 
-/* line 3095, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3099, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-itemcart1::after {
   content: '\e870';
   font-family: Linearicons-Free;
@@ -12694,20 +12722,20 @@ input.num-product::-webkit-inner-spin-button {
   opacity: 0;
 }
 
-/* line 3120, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3124, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-itemcart1:hover:after {
   opacity: 1;
 }
 
 /*---------------------------------------------*/
-/* line 3125, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3129, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-bor2,
 .how-bor1 {
   position: relative;
   z-index: 1;
 }
 
-/* line 3131, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3135, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-bor2::before,
 .how-bor1::before {
   content: "";
@@ -12719,21 +12747,21 @@ input.num-product::-webkit-inner-spin-button {
   border: 3px solid #ccc;
 }
 
-/* line 3142, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3146, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-bor1::before {
   bottom: -21px;
   left: -21px;
 }
 
 @media (max-width: 767px) {
-  /* line 3148, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3152, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .how-bor1::before {
     bottom: -21px;
     right: -21px;
     left: auto;
   }
 }
-/* line 3155, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3159, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .how-bor2::before {
   bottom: -21px;
   right: -21px;
@@ -12744,56 +12772,56 @@ input.num-product::-webkit-inner-spin-button {
 ==================================================================*/
 /*//////////////////////////////////////////////////////////////////
 [ Focus ]*/
-/* line 3168, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3172, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .focus-in0:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-/* line 3169, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3173, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .focus-in0:focus:-moz-placeholder {
   color: transparent;
 }
 
-/* line 3170, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3174, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .focus-in0:focus::-moz-placeholder {
   color: transparent;
 }
 
-/* line 3171, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3175, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .focus-in0:focus:-ms-input-placeholder {
   color: transparent;
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ Hover ]*/
-/* line 3179, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3183, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-cl0:hover {
   color: #fff;
 }
 
-/* line 3180, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3184, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-bg0:hover {
   background-color: #fff;
 }
 
-/* line 3181, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3185, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-cl1:hover {
   color: #717fe0;
 }
 
-/* line 3182, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3186, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-bg1:hover {
   background-color: #717fe0;
 }
 
 /*---------------------------------------------*/
-/* line 3185, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3189, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-img0 {
   display: block;
   overflow: hidden;
 }
 
-/* line 3190, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3194, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .about-img1 {
   width: 250px;
   -webkit-transition: transform 0.9s ease;
@@ -12802,7 +12830,7 @@ input.num-product::-webkit-inner-spin-button {
   transition: transform 0.9s ease;
 }
 
-/* line 3198, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3202, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-img0 img {
   width: 100%;
   -webkit-transition: transform 0.9s ease;
@@ -12811,7 +12839,7 @@ input.num-product::-webkit-inner-spin-button {
   transition: transform 0.9s ease;
 }
 
-/* line 3206, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3210, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-img0:hover img {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -12820,7 +12848,7 @@ input.num-product::-webkit-inner-spin-button {
   transform: scale(1.1);
 }
 
-/* line 3214, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3218, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-change-img .img-top {
   display: none;
   position: absolute;
@@ -12829,13 +12857,13 @@ input.num-product::-webkit-inner-spin-button {
   z-index: 99;
 }
 
-/* line 3222, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3226, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-change-img:hover .img-top {
   display: inline;
   position: absolute;
 }
 
-/* line 3227, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3231, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .slogan {
   flex-grow: 3;
   font-family: vacation;
@@ -12843,20 +12871,20 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3234, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3238, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-btn1:hover {
   border-color: #222;
   background-color: #222;
   color: #fff;
 }
 
-/* line 3240, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3244, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-btn1:hover i {
   color: #fff;
 }
 
 /*---------------------------------------------*/
-/* line 3245, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3249, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-btn2:hover {
   border-color: #fff;
   background-color: #fff;
@@ -12864,32 +12892,32 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-/* line 3252, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3256, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-btn3:hover {
   border-color: #717fe0;
   background-color: #717fe0;
   color: #fff;
 }
 
-/* line 3258, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3262, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-btn3:hover i {
   color: #fff;
 }
 
 /*---------------------------------------------*/
-/* line 3263, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3267, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-tag1:hover {
   color: #717fe0;
   border-color: #717fe0;
 }
 
 /*---------------------------------------------*/
-/* line 3270, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3274, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-ovelay1 {
   position: relative;
 }
 
-/* line 3274, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3278, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-ovelay1::after {
   content: "";
   display: block;
@@ -12906,31 +12934,31 @@ input.num-product::-webkit-inner-spin-button {
   -moz-transition: all 0.3s;
 }
 
-/* line 3290, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3294, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov-ovelay1:hover:after {
   opacity: 1;
 }
 
 /*---------------------------------------------*/
-/* line 3296, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3300, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov1:hover {
   color: #333;
   border-color: #797979;
 }
 
 /*---------------------------------------------*/
-/* line 3302, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3306, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov2:hover {
   background-color: #f2f2f2;
 }
 
 /*---------------------------------------------*/
-/* line 3307, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3311, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov3 {
   opacity: 0.6;
 }
 
-/* line 3311, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3315, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .hov3:hover {
   opacity: 1;
 }
@@ -12941,81 +12969,81 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ XL ]*/
 @media (max-width: 1199px) {
-  /* line 3325, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3329, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-0-xl {
     margin: 0;
   }
 
-  /* line 3326, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3330, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-lr-0-xl {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 3327, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3331, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-lr-15-xl {
     margin-left: 15px;
     margin-right: 15px;
   }
 
-  /* line 3328, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3332, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-l-0-xl {
     margin-left: 0;
   }
 
-  /* line 3329, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3333, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-r-0-xl {
     margin-right: 0;
   }
 
-  /* line 3330, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3334, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-l-15-xl {
     margin-left: 15px;
   }
 
-  /* line 3331, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3335, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-r-15-xl {
     margin-right: 15px;
   }
 
-  /* line 3333, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3337, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-0-xl {
     padding: 0;
   }
 
-  /* line 3334, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3338, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-lr-0-xl {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 3335, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3339, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-lr-15-xl {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 3336, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3340, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-l-0-xl {
     padding-left: 0;
   }
 
-  /* line 3337, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3341, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-r-0-xl {
     padding-right: 0;
   }
 
-  /* line 3338, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3342, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-l-15-xl {
     padding-left: 15px;
   }
 
-  /* line 3339, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3343, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-r-15-xl {
     padding-right: 15px;
   }
 
-  /* line 3341, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3345, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .w-full-xl {
     width: 100%;
   }
@@ -13025,93 +13053,93 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ LG ]*/
 @media (max-width: 991px) {
-  /* line 3351, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3355, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-0-lg {
     margin: 0;
   }
 
-  /* line 3352, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3356, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-lr-0-lg {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 3353, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3357, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-lr-15-lg {
     margin-left: 15px;
     margin-right: 15px;
   }
 
-  /* line 3354, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3358, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-l-0-lg {
     margin-left: 0;
   }
 
-  /* line 3355, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3359, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-r-0-lg {
     margin-right: 0;
   }
 
-  /* line 3356, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3360, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-l-15-lg {
     margin-left: 15px;
   }
 
-  /* line 3357, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3361, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-r-15-lg {
     margin-right: 15px;
   }
 
-  /* line 3359, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3363, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-0-lg {
     padding: 0;
   }
 
-  /* line 3360, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3364, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-lr-0-lg {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 3361, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3365, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-lr-15-lg {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 3362, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3366, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-l-0-lg {
     padding-left: 0;
   }
 
-  /* line 3363, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3367, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-r-0-lg {
     padding-right: 0;
   }
 
-  /* line 3364, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3368, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-l-15-lg {
     padding-left: 15px;
   }
 
-  /* line 3365, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3369, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-r-15-lg {
     padding-right: 15px;
   }
 
-  /* line 3367, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3371, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .w-full-lg {
     width: 100%;
   }
 
   /*---------------------------------------------*/
-  /* line 3370, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3374, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .respon4 {
     width: 50%;
   }
 
   /*---------------------------------------------*/
-  /* line 3375, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3379, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .respon5 {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -13120,87 +13148,87 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ MD ]*/
 @media (max-width: 767px) {
-  /* line 3385, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3389, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-0-md {
     margin: 0;
   }
 
-  /* line 3386, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3390, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-lr-0-md {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 3387, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3391, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-lr-15-md {
     margin-left: 15px;
     margin-right: 15px;
   }
 
-  /* line 3388, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3392, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-l-0-md {
     margin-left: 0;
   }
 
-  /* line 3389, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3393, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-r-0-md {
     margin-right: 0;
   }
 
-  /* line 3390, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3394, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-l-15-md {
     margin-left: 15px;
   }
 
-  /* line 3391, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3395, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-r-15-md {
     margin-right: 15px;
   }
 
-  /* line 3393, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3397, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-0-md {
     padding: 0;
   }
 
-  /* line 3394, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3398, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-lr-0-md {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 3395, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3399, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-lr-15-md {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 3396, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3400, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-l-0-md {
     padding-left: 0;
   }
 
-  /* line 3397, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3401, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-r-0-md {
     padding-right: 0;
   }
 
-  /* line 3398, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3402, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-l-15-md {
     padding-left: 15px;
   }
 
-  /* line 3399, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3403, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-r-15-md {
     padding-right: 15px;
   }
 
-  /* line 3401, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3405, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .w-full-md {
     width: 100%;
   }
 
   /*---------------------------------------------*/
-  /* line 3404, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3408, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .respon4 {
     width: 100%;
   }
@@ -13208,110 +13236,110 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ SM ]*/
 @media (max-width: 575px) {
-  /* line 3414, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3418, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-0-sm {
     margin: 0;
   }
 
-  /* line 3415, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3419, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-lr-0-sm {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 3416, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3420, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-lr-15-sm {
     margin-left: 15px;
     margin-right: 15px;
   }
 
-  /* line 3417, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3421, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-l-0-sm {
     margin-left: 0;
   }
 
-  /* line 3418, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3422, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-r-0-sm {
     margin-right: 0;
   }
 
-  /* line 3419, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3423, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-l-15-sm {
     margin-left: 15px;
   }
 
-  /* line 3420, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3424, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-r-15-sm {
     margin-right: 15px;
   }
 
-  /* line 3422, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3426, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-0-sm {
     padding: 0;
   }
 
-  /* line 3423, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3427, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-lr-0-sm {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 3424, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3428, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-lr-15-sm {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 3425, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3429, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-l-0-sm {
     padding-left: 0;
   }
 
-  /* line 3426, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3430, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-r-0-sm {
     padding-right: 0;
   }
 
-  /* line 3427, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3431, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-l-15-sm {
     padding-left: 15px;
   }
 
-  /* line 3428, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3432, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-r-15-sm {
     padding-right: 15px;
   }
 
-  /* line 3430, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3434, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .w-full-sm {
     width: 100%;
   }
 
   /*---------------------------------------------*/
-  /* line 3433, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3437, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .respon1 {
     font-size: 40px;
   }
 
   /*---------------------------------------------*/
-  /* line 3438, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3442, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .respon2 {
     font-size: 20px;
   }
 
   /*---------------------------------------------*/
-  /* line 3443, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3447, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .respon6 {
     width: 105px;
   }
 
-  /* line 3447, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3451, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .respon6-next {
     width: calc(100% - 65px);
   }
 
   /*---------------------------------------------*/
-  /* line 3452, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3456, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .respon7 {
     padding-left: 60px;
   }
@@ -13319,136 +13347,136 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ SSM ]*/
 @media (max-width: 480px) {
-  /* line 3463, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3467, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-0-ssm {
     margin: 0;
   }
 
-  /* line 3464, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3468, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-lr-0-ssm {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 3465, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3469, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-lr-15-ssm {
     margin-left: 15px;
     margin-right: 15px;
   }
 
-  /* line 3466, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3470, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-l-0-ssm {
     margin-left: 0;
   }
 
-  /* line 3467, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3471, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-r-0-ssm {
     margin-right: 0;
   }
 
-  /* line 3468, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3472, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-l-15-ssm {
     margin-left: 15px;
   }
 
-  /* line 3469, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3473, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .m-r-15-ssm {
     margin-right: 15px;
   }
 
-  /* line 3471, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3475, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-0-ssm {
     padding: 0;
   }
 
-  /* line 3472, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3476, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-lr-0-ssm {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 3473, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3477, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-lr-15-ssm {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 3474, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3478, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-l-0-ssm {
     padding-left: 0;
   }
 
-  /* line 3475, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3479, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-r-0-ssm {
     padding-right: 0;
   }
 
-  /* line 3476, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3480, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-l-15-ssm {
     padding-left: 15px;
   }
 
-  /* line 3477, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3481, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .p-r-15-ssm {
     padding-right: 15px;
   }
 
-  /* line 3479, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3483, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .w-full-ssm {
     width: 100%;
   }
 
   /*---------------------------------------------*/
-  /* line 3482, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3486, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .respon3 {
     padding: 20px;
   }
 }
 @media (min-width: 991px) {
-  /* line 3487, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3491, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .main-page {
     margin-top: 110px;
   }
 }
-/* line 3491, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3495, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .center {
   display: table;
   margin: 50px auto 0 auto;
 }
 
 @media (max-width: 767px) {
-  /* line 3496, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3500, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .partner-img, .partner-img-logo {
     width: 45%;
     margin: 0 2%;
   }
 }
 @media (min-width: 767px) {
-  /* line 3502, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3506, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .partner-img {
     width: 15.4%;
     margin: 0 2%;
   }
 
-  /* line 3506, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3510, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .partner-img-logo {
     width: 9%;
     margin: 0 2%;
   }
 }
-/* line 3512, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3516, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .banner-bg {
   padding: 10px 0 25px 0 !important;
   position: relative;
   text-align: center;
 }
-/* line 3516, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3520, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .banner-bg img {
   opacity: 0.5;
   max-width: 100%;
 }
 
-/* line 3522, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3526, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .title {
   position: absolute;
   top: 40%;
@@ -13457,7 +13485,7 @@ input.num-product::-webkit-inner-spin-button {
   color: #333;
 }
 
-/* line 3530, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3534, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .description {
   position: absolute;
   top: 70%;
@@ -13466,17 +13494,17 @@ input.num-product::-webkit-inner-spin-button {
   color: #333;
 }
 
-/* line 3538, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3542, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .product-index {
   padding-top: 0px !important;
 }
 
-/* line 3542, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3546, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .lm_foundation {
   background-image: url(/images/banner-2.jpg);
 }
 
-/* line 3545, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3549, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .search-string {
   border: 1px solid #e6e6e6;
   padding-right: 0px;
@@ -13484,64 +13512,64 @@ input.num-product::-webkit-inner-spin-button {
   margin-right: -70px;
 }
 
-/* line 3551, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3555, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .policy {
   border: 1px solid #e6e6e6;
   margin-bottom: 30px;
 }
-/* line 3554, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3558, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .policy .policy-box {
   margin-top: 30px;
   margin-bottom: -30px;
 }
 
-/* line 3560, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3564, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .job-p {
   margin-bottom: 40px;
   border-top: 1px solid #e6e6e6;
 }
 
-/* line 3565, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3569, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .partner {
   padding-bottom: 10px;
 }
 
-/* line 3569, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3573, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .field_with_errors {
   display: contents;
 }
 
-/* line 3572, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3576, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .center-blog {
   margin-left: auto;
   margin-right: auto;
 }
 
 @media (max-width: 990px) {
-  /* line 3578, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3582, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .description {
     top: 120%;
   }
 }
 @media (min-width: 991px) and (max-width: 999px) {
-  /* line 3584, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3588, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .description {
     top: 120%;
   }
 }
 @media (min-width: 991px) {
-  /* line 3590, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3594, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .about {
     margin-top: 120px;
   }
 
-  /* line 3594, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3598, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .lm_foundation {
     margin-top: 120px;
   }
 }
 @media (max-width: 1130px) {
-  /* line 3600, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3604, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   .main-menu > li {
     display: block;
     position: relative;
@@ -13549,19 +13577,19 @@ input.num-product::-webkit-inner-spin-button {
     margin: 0px 1px 0px 14px;
   }
 }
-/* line 3608, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3612, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .value {
   padding-left: 40px;
   text-align: justify;
 }
 
-/* line 3613, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3617, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .vision {
   padding-right: 40px;
   text-align: justify;
 }
 
-/* line 3618, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3622, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .input-checkout {
   display: block;
   margin-right: auto;
@@ -13570,56 +13598,56 @@ input.num-product::-webkit-inner-spin-button {
   height: 50px;
 }
 
-/* line 3626, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3630, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .promotion {
   padding: 6px;
   align-self: center;
 }
 
-/* line 3631, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3635, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .unclicked {
   pointer-events: none;
   opacity: 0.5;
 }
 
-/* line 3636, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3640, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .product-measurement-image img {
   width: 100%;
 }
 
-/* line 3640, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3644, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .related {
   padding: 10px;
 }
 
-/* line 3644, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3648, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .text-left {
   justify-content: initial !important;
 }
 
-/* line 3648, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3652, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .policy-text {
   color: #333;
 }
 
-/* line 3652, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3656, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .stock_code {
   display: contents;
 }
 
-/* line 3656, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3660, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .payment_method {
   align-self: self-start;
 }
 
-/* line 3660, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3664, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .radio-payment {
   float: left;
   clear: none;
   margin: 6px 8px 0 2px;
 }
 
-/* line 3666, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3670, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .radio-payment-label {
   loat: left;
   clear: none;
@@ -13627,54 +13655,54 @@ input.num-product::-webkit-inner-spin-button {
   padding: 0px 1em 0px 8px;
 }
 
-/* line 3674, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3678, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .size-color img {
   width: 47px;
 }
 
-/* line 3679, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3683, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 ul.disc {
   list-style-position: outside;
 }
-/* line 3682, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3686, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 ul.disc li {
   margin-left: 50px;
   list-style-type: circle;
 }
 
-/* line 3688, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3692, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .modal-dialog {
   margin-top: 10%;
   max-width: 1000px !important;
 }
-/* line 3691, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3695, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .modal-dialog .close {
   font-size: 1.8rem !important;
 }
-/* line 3694, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3698, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .modal-dialog button {
   position: absolute;
   left: 1%;
 }
 
-/* line 3699, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3703, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .img-responsive {
   width: 100%;
 }
 
-/* line 3703, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3707, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .order-header {
   text-align: left;
 }
 
-/* line 3707, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3711, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .oos {
   z-index: 100;
   position: absolute;
   top: 5px;
   left: 14px;
 }
-/* line 3713, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3717, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .oos .out-of-stock {
   padding: 6px;
   border: 1px solid #e6e6e6;
@@ -13682,38 +13710,52 @@ ul.disc li {
   color: #fff;
 }
 
-/* line 3721, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3725, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .promotion-price {
   text-decoration: line-through;
   display: initial;
   margin-right: 6px;
 }
 
-/* line 3727, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3731, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .line-out {
   text-decoration: line-through;
   color: gray;
 }
 
-/* line 3732, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3736, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 #canvas {
   margin-left: -43px;
 }
 
 @media (min-width: 991px) {
-  /* line 3737, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  /* line 3741, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
   #canvasbtn {
     margin-left: -7%;
   }
 }
-/* line 3742, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3746, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 #bigButton:disabled {
   background: #dddddd;
 }
 
-/* line 3746, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+/* line 3750, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
 .partner-btn {
   width: 50%;
+}
+
+/* line 3754, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+.card-title {
+  height: 120px;
+  /* Adjust the height as needed */
+}
+
+@media (max-width: 575px) {
+  /* line 3759, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/main.scss */
+  .card-body .card-title {
+    height: 80px;
+    /* Adjust the height as needed */
+  }
 }
 /*
 Linearicons Free v1.0.0 - https://linearicons.com/free
