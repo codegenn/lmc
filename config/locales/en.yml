@@ -458,4 +458,6 @@ en:
     good: 'Good'
     excellent: 'Excellent'
   review: Review
+  customer_name: Customer Name
+  review_images: Review Images
   submit: Send

@@ -3750,12 +3750,19 @@ ul.disc {
   width: 50%;
 }
 
-.card-title {
-  height: 120px; /* Adjust the height as needed */
-}
+// .card-title {
+//   height: 90px; /* Adjust the height as needed */
+// }
 
-@media (max-width: 575px) { 
-  .card-body .card-title {
-    height: 80px; /* Adjust the height as needed */
-  }
+// @media (max-width: 575px) { 
+//   .card-body .card-title {
+//     height: 50px; /* Adjust the height as needed */
+//   }
+// }
+
+.truncate-2-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
