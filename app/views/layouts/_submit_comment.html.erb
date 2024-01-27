@@ -1,5 +1,17 @@
 <%= form_for Review.new, remote: true, html: { class: 'needs-validation card pl-4 pr-4' } do |form| %>
-  <%= csrf_meta_tags %>
+  <!-- <%= csrf_meta_tags %> -->
+  <!-- <%= form.hidden_field :authenticity_token, value: form_authenticity_token %> -->
+
+  <div class="mb-3 text-left">
+    <%= form.label I18n.t("customer_name"), class: 'form-label' %>
+    <%= form.text_field :customer_name, class: 'form-control', required: true %>
+  </div>
+
+  <div class="mb-3 text-left">
+    <%= form.label :email, class: 'form-label' %>
+    <%= form.email_field :email, class: 'form-control', required: true %>
+  </div>
+
   <div class="mb-3 text-left">
     <%#= form.label :star_rating, class: 'form-label' %>
     <div class="star-rating">
@@ -24,6 +36,12 @@
     <%= form.label I18n.t("review"), class: 'form-label' %>
     <%= form.text_area :content, class: 'form-control', required: true %>
   </div>
+
+  <div class="mb-3 text-left">
+    <%= form.label I18n.t("review_images"), class: 'form-label' %>
+    <%= form.file_field :review_images, multiple: true, class: 'form-control', accept: 'image/*' %>
+  </div>
+
   <%= form.hidden_field :product_id, value: @product.id %>
 
   <div class="mb-3 text-left">

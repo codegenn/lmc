@@ -31,7 +31,7 @@
           %h4.mtext-105.cl2.js-name-detail.p-b-14
             = @product.title
           .stext-103.cl2.js-name-detail.p-b-14
-            = "#{I18n.t("page.product.code") }: #{@product.stocks.last&.product_code}"
+            = "#{I18n.t("page.product.code") }"
             .stock_code
           %div.stext-103.cl2.mb-2.review
             = render "layouts/star", review: @product.star_rating, sold: @product.product_sold&.sold, review_count: "2.1k"
