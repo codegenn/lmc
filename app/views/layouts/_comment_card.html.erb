@@ -1,7 +1,7 @@
 <div class="card pl-3 pr-3">
   <div class="d-flex">
     <div class="">
-      <img class="profile-pic" src="https://res.cloudinary.com/dbysq36qu/image/upload/v1622280133/main-logo-sm.png">
+      <%= image_tag("User-Profile.png", class: "profile-pic") %>
     </div>
     <div class="d-flex flex-column">
       <h3 class="mt-2 mb-0"><%= comment[:customer_name] %></h3>
@@ -36,16 +36,25 @@
   
   <div class="d-flex align-items-center bg-light p-2">
     <div class="w-25">
-        <img class="w-25" src="<%= comment[:product_img] %>" alt="Product Image">
+        <img class="img-buy" src="<%= comment[:product_img] %>" alt="Product Image">
     </div>
     <div class="w-75 text-center">
       <div><%= comment[:product_title] %></div>
 
       <div class="center mt-2">
         <div class="size-204 flex-w flex-m respon6-next">
-          <%= button_tag(disabled: ("disabled" if @product.out_of_stock?), class: "flex-c-m stext-101 cl0 size-1010 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail") do %>
-            <%= @product.out_of_stock? ? I18n.t("page.product.out_of_stock") : I18n.t("page.product.add_to_cart") %>
+          <%= form_tag line_items_path, method: :post, remote: true do %>
+          <div class="p-t-33 stext-103">
+            <%= hidden_field_tag :size, @product.stocks.last.size %>
+            <%= hidden_field_tag :color, @product.color_images.last.color_name %>
+            <%= hidden_field_tag :quantity, "1", id: "quantity" %>
+            <%= hidden_field_tag :product_id, @product.id %>
+          </div>
+            <%= button_tag(disabled: ("disabled" if @product.out_of_stock?), class: "flex-c-m stext-101 cl0 size-1010 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail") do %>
+              <%= @product.out_of_stock? ? I18n.t("page.product.out_of_stock") : I18n.t("page.product.add_to_cart") %>
+            <% end %>
           <% end %>
+
         </div>
       </div>
     </div>
