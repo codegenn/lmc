@@ -159,3 +159,13 @@
     height: auto;
   }
 }
+
+.img-buy {
+  width: 25%;
+}
+
+@media (max-width: 575px) {
+  .img-buy {
+    width: 100%;
+  }
+}
