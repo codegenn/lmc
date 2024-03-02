@@ -76,6 +76,10 @@ class Order
           total = cart.total_price
           total = total - 200000
           total = 0 if total < 0
+        elsif discount.voucher_type == '500k mbs 700k'
+          total = cart.total_price
+          total = total - 500000
+          total = 0 if total < 0
         elsif discount.voucher_type == 'v100'
           total = cart.total_price
           total = total - 100000
