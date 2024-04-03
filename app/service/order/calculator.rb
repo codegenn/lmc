@@ -66,10 +66,16 @@ class Order
             obj.stock.product_promotion_price.present? ? -obj.stock.product_promotion_price : -obj.stock.product_price
           end.map do |line|
             line.quantity.times do
-              if counting % 2 == 1
-                total += line.stock.product_promotion_price.present? ? line.stock.product_promotion_price : line.stock.product_price
+              if line.quantity <= 2
+                if counting % 2 == 1
+                  total += line.stock.product_promotion_price.present? ? line.stock.product_promotion_price : line.stock.product_price
+                elsif counting % 2 == 0 && counting == 2
+                  total += 1000
+                end
+                counting += 1
+              else
+                total += line.stock.product_price
               end
-              counting += 1
             end
           end
         elsif discount.voucher_type == '199k'
