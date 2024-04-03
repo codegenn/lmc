@@ -6,7 +6,7 @@
           .row
             .col-lg-10.col-xl-7.m-lr-auto
               .m-l-25.m-r--38.m-lr-0-xl.shopping-cart-table
-                - if @cart.calculate_grand_total.to_i < 99000
+                - if @cart.calculate_grand_total.to_i < 99000 && @cart.voucher_code.include?('1M') && @cart.voucher_code.include?('2M') && @cart.voucher_code.include?('3M')
                   = content_tag :div, I18n.t('voucher.freeship'), class: "alert alert-success"
                 = form_for(@cart, method: :put) do |f|
                   .wrap-table-shopping-cart

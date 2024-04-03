@@ -39,7 +39,7 @@
                   = link_to product_path(product.slug), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6 title-product" do
                     = product.title
                   %div{class: ("row w-100" if product.product_sold&.sold.present?)}
-                    %div{class: ("col-6" if product.product_sold&.sold.present?)}
+                    %div{class: ("col-xl-6 col-12 pr-0" if product.product_sold&.sold.present?)}
                       %span.mtext-102.cl3
                         - if product.promotion_price.present?
                           .promotion-price
@@ -54,9 +54,9 @@
                           = I18n.t("page.product.single_colour")
                         - else
                           = I18n.t("page.product.other_colour_count", count: count)
-                    %div{class: ("col-6 pr-0" if product.product_sold&.sold.present?)}
+                    %div{class: ("col-xl-6 col-0 px-xl-0" if product.product_sold&.sold.present?)}
                       - if product.product_sold&.sold.present?
-                        .text-right.font-weight-bold
+                        .text-lg-right.font-weight-bold
                           = "#{ I18n.t("sold") } #{ product.product_sold.sold }"
                   %span.stext-105.cl3.review
                     = render "layouts/star", review: product.star_rating, sold: nil, review_count: nil
@@ -95,7 +95,7 @@
                     = link_to product_path(product['slug']), :"data-no-turbolink" => 'false', class: "stext-301 cl2 hov-cl1 trans-04 js-name-b2 p-b-6 title-product" do
                       = product['title']
                     %div{class: ("row w-100" if Product.find(product["id"].to_i).product_sold&.sold.present?)}
-                      %div{class: ("col-6" if Product.find(product["id"].to_i).product_sold&.sold.present?)}
+                      %div{class: ("col-xl-6 col-12 pr-0" if Product.find(product["id"].to_i).product_sold&.sold.present?)}
                         %span.mtext-102.cl3
                           - if product['promotion_price'].present?
                             .promotion-price
@@ -110,9 +110,9 @@
                             = I18n.t("page.product.single_colour")
                           - else
                             = I18n.t("page.product.other_colour_count", count: count)
-                      %div{class: ("col-6 pr-0" if Product.find(product["id"].to_i).product_sold&.sold.present?)}
+                      %div{class: ("col-xl-6 col-0 px-xl-0" if Product.find(product["id"].to_i).product_sold&.sold.present?)}
                         - if Product.find(product["id"].to_i).product_sold&.sold.present?
-                          .text-right.font-weight-bold
+                          .text-lg-right.font-weight-bold
                             = "#{ I18n.t("sold") } #{ Product.find(product["id"].to_i).product_sold.sold }"
                     %span.stext-105.cl3.review
                       = render "layouts/star", review: Product.find(product["id"].to_i).star_rating, sold: nil, review_count: nil

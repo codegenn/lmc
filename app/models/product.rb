@@ -50,7 +50,7 @@ class Product < ActiveRecord::Base
       {
         customer_name: review.customer_name,
         content: review.content,
-        star_rating: review.star_rating,
+        star_rating: review.star_rating || 0,
         product_img: product_images.first&.image_url, # Assuming product_images is a collection related to the product
         review_img: review.review_images.map { |image| image.pimage.url if image.pimage.present? }.compact, # Map review images and remove nil values
         product_title: title, # Assuming title is defined somewhere

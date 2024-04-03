@@ -59,6 +59,19 @@ class Order
               counting += 1
             end
           end
+        elsif discount.voucher_type == 'Buy 1 get 1 1k'
+          total = 0
+          counting = 1
+          cart.line_items.joins(:stock).sort_by do |obj|
+            obj.stock.product_promotion_price.present? ? -obj.stock.product_promotion_price : -obj.stock.product_price
+          end.map do |line|
+            line.quantity.times do
+              if counting % 2 == 1
+                total += line.stock.product_promotion_price.present? ? line.stock.product_promotion_price : line.stock.product_price
+              end
+              counting += 1
+            end
+          end
         elsif discount.voucher_type == '199k'
           total = cart.line_items.sum('line_items.quantity') * 199000
         elsif discount.voucher_type == '299k'
@@ -87,6 +100,18 @@ class Order
         elsif discount.voucher_type == 'v40'
           total = cart.total_price
           total = total - 40000
+          total = 0 if total < 0
+        elsif discount.voucher_type == '1M'
+          total = cart.total_price
+          total = total - 1000000
+          total = 0 if total < 0
+        elsif discount.voucher_type == '2M'
+          total = cart.total_price
+          total = total - 2000000
+          total = 0 if total < 0
+        elsif discount.voucher_type == '3M'
+          total = cart.total_price
+          total = total - 3000000
           total = 0 if total < 0
         elsif discount.voucher_type == '99k'
           total = cart.line_items.sum('line_items.quantity') * 99000
