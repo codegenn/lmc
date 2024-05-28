@@ -75,14 +75,16 @@ module ApplicationHelper
   end
 
   def convert_link_all_link(content)
-    regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/v\/)([a-zA-Z0-9_-]{11})/
+    # Regular expression to match various YouTube URL patterns, including YouTube Shorts
+    regex = %r{(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/v\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})}
+    
+    # Replace matched URLs with an embedded iframe
     content.gsub!(regex) do |match|
       youtube_embed_url = "https://www.youtube.com/embed/#{$1}"
       iframe = "<iframe class='iframe-youtube' src='#{youtube_embed_url}' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
       iframe
     end
+    
     content
   end
-  
-
 end
