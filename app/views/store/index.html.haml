@@ -41,7 +41,7 @@
     }
   }
   .wrapper-discount {
-    display none;
+    display: block;
     height: 303px;
     width: 100%;
     position: relative;
@@ -56,7 +56,7 @@
     background-image: url(#{image_path "discount-pc.jpg"})
   }
   .discount-banner {
-    display:none;
+    display:block;
     position: fixed;
     bottom: 30%;
     right: 0;
@@ -133,7 +133,29 @@
     width: 15,4%;
     margin: 0 2%;
   }
+  .discount-amount {
+    position: absolute;
+    top: 35%;
+    left: 34%;
+    width: 15%;
+    height: 25%;
+    text-align: end;
+    font-size: 7rem;
+    line-height: 50%;
+    color: #041d44;
+  }
 
+  .discount-amount-pc {
+    position: absolute;
+    top: 35%;
+    left: 34%;
+    width: 15%;
+    height: 25%;
+    text-align: end;
+    font-size: 7rem;
+    line-height: 40%;
+    color: #041d44;
+  }
 
   @media only screen and (max-width: 775px) {
     .parner-title {
@@ -178,13 +200,8 @@
       bottom: -30px;
     }
 
-    .wrapper-discount {
-      background-image: url(#{image_path "discount-mobile.jpg"});
-      height: 261px;
-    }
-
     .discount-banner {
-      display: none;
+      display: block;
       width: 300px;
     }
 
@@ -211,6 +228,18 @@
     .wrapper-text-outside {
       bottom: -30px;
     }
+
+    .discount-amount {
+      position: absolute;
+      top: 40%;
+      left: 47%;
+      width: 26%;
+      height: 21%;
+      text-align: end;
+      font-size: 18vw;
+      line-height: 55%;
+      color: #041d44;
+    }
   }
   
 = content_for :title do
@@ -220,10 +249,12 @@
   .discount-banner.discount-banner-content-hide
     .wrapper-discount
       .wrapper-text-outside
-        Giảm giá 10%
+        = "Giảm giá #{@amount}%"
+      %span.discount-amount
+        = @amount
       %button.button-discount{:type => "submit"}
         Đăng ký
-      %input.input-discount{:placeholder => "NHẬP ĐỊA CHỈ EMAIL CỦA BẠN", :name => "email"}
+      %input.input-discount{:placeholder => @text, :name => "email"}
     
 / Banner
 .sec-banner.bg0.p-t-80.p-b-50.main-page
