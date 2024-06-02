@@ -169,3 +169,12 @@
     width: 100%;
   }
 }
+
+@media (max-width: 575px) {
+  // .convert-link-youtube {
+    .ytp-title-text, .ytp-shorts-title-channel {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  // }
+}

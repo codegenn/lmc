@@ -1,0 +1,6 @@
+@media (max-width: 575px) {
+  /* line 3, /Users/cam/Desktop/job/lmc/app/assets/stylesheets/product.scss */
+  .convert-link-youtube .ytp-title-text, .convert-link-youtube .ytp-shorts-title-channel {
+    display: none !important;
+  }
+}
