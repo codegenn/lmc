@@ -1,11 +1,10 @@
 class SubscribersController < ApplicationController
   skip_before_action :verify_authenticity_token
   def create
-    logger.debug params[:email]
     sub = Subscriber.new
     sub.email = params[:email]
     if sub.save!
-      flash[:success] = 'Thank you for your subscriber'
+      flash[:success] = I18n.t('subscribe_success')
       flash[:pixel] = 'Subscribe'
       redirect_to products_path
     else

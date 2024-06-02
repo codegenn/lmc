@@ -4,6 +4,11 @@ class StoreController < ApplicationController
     # Rails.cache.fetch(cache_key("store")) do
       @menu = 'store'
       expires_in 3.days, :public => true
+      file = File.open("app/assets/file/discount_config.txt")
+      file_data = file.read
+      data = JSON.parse(file_data)
+      @text = data["text"]
+      @amount = data["discount"]
       meta_data(
         "lmcation.com, lmcation",
         "Đồ Mặc Nhà - Đồ Ngủ, Gym-to-Swim, Đồ Bơi, Đồ Thể Thao",
