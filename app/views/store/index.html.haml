@@ -46,20 +46,20 @@
     width: 100%;
     position: relative;
     border: 2px solid #343a40;
-    border-left: 40px solid #343a40;
+    -# border-left: 40px solid #343a40;
     padding: 15px;
     color: rgba(0, 0, 0, 0.5);
     font-size: small;
     display: inline-block;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url(#{image_path "discount-pc.jpg"})
+    background-image: url(#{image_path "discount-pc.jpeg"})
   }
   .discount-banner {
     display:block;
     position: fixed;
     bottom: 30%;
-    right: 0;
+    right: -3px;
     height: 300px;
     width: 650px;
     z-index: 9999;
@@ -81,9 +81,11 @@
     transform-origin: 0 0;
     font-weight: 800;
   }
+
   .discount-banner-content-hide {
     transform: translateX(612px);
   }
+
   .button-discount {
     position: absolute;
     bottom: 50px;
@@ -116,7 +118,6 @@
     outline: 0;
     background-color: rgb(255, 255, 255);
   }
-
   
   .p-left {
     margin-left: 45px;
@@ -201,7 +202,7 @@
     }
 
     .discount-banner {
-      display: block;
+      display: none;
       width: 300px;
     }
 
@@ -245,16 +246,16 @@
 = content_for :title do
   LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ
 / Discount
--# %form{:action => "/subscribers", :method => "post"}
--#   .discount-banner.discount-banner-content-hide
--#     .wrapper-discount
--#       .wrapper-text-outside
--#         = "Giảm giá #{@amount}%"
--#       %span.discount-amount
--#         = @amount
--#       %button.button-discount{:type => "submit"}
--#         Đăng ký
--#       %input.input-discount{:placeholder => @text, :name => "email"}
+%form{:action => "/subscribers", :method => "post"}
+  .discount-banner.discount-banner-content-hide
+    .wrapper-discount
+      %span.wrapper-text-outside
+      -#   = "Giảm giá #{@amount}%"
+      -# %span.discount-amount
+      -#   = @amount
+      %button.button-discount{:type => "submit"}
+        Đăng ký
+      %input.input-discount{:placeholder => @text, :name => "email"}
     
 / Banner
 .sec-banner.bg0.p-t-80.p-b-50.main-page
@@ -422,9 +423,7 @@
   }
 
 :javascript
-  
-
-  $(".wrapper-text-outside").click(function() {
+  $(".wrapper-discount").click(function() {
     let parent = $(this).closest('.discount-banner')
     console.log(parent[0])
     if($(parent).hasClass('discount-banner-content-hide')) {
