@@ -245,16 +245,16 @@
 = content_for :title do
   LMCATION - THỜI TRANG TÔN VINH PHỤ NỮ
 / Discount
-%form{:action => "/subscribers", :method => "post"}
-  .discount-banner.discount-banner-content-hide
-    .wrapper-discount
-      .wrapper-text-outside
-        = "Giảm giá #{@amount}%"
-      %span.discount-amount
-        = @amount
-      %button.button-discount{:type => "submit"}
-        Đăng ký
-      %input.input-discount{:placeholder => @text, :name => "email"}
+-# %form{:action => "/subscribers", :method => "post"}
+-#   .discount-banner.discount-banner-content-hide
+-#     .wrapper-discount
+-#       .wrapper-text-outside
+-#         = "Giảm giá #{@amount}%"
+-#       %span.discount-amount
+-#         = @amount
+-#       %button.button-discount{:type => "submit"}
+-#         Đăng ký
+-#       %input.input-discount{:placeholder => @text, :name => "email"}
     
 / Banner
 .sec-banner.bg0.p-t-80.p-b-50.main-page
