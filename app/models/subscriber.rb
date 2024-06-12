@@ -8,4 +8,5 @@ end
 #
 #  id    :integer          not null, primary key
 #  email :string
+#  phone :string
 #
