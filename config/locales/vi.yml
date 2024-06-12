@@ -320,7 +320,7 @@ vi:
       delete: 'BỎ CHỌN'
       delete_confirm: 'Bạn muốn bỏ chọn sản phẩm này?'
       voucher: 'Mã giảm giá'
-  voucher:
+  voucher_error:
     invalid: "Mã giảm giá không tồn tại"
   user:
     user_header: 'ĐĂNG NHẬP/ĐĂNG KÝ'
@@ -524,3 +524,4 @@ vi:
   customer_name: 'Họ và Tên'
   review_images: 'Hình ảnh Sản Phẩm'
   subscribe_success: "Cảm ơn bạn đã đăng ký"
+  phone_submit: "Số điện thoại"
