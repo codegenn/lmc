@@ -86,39 +86,43 @@ class Order
         elsif discount.voucher_type == '500k mbs 900k'
           total = cart.total_price
           total = total - 500000
-          total = 0 if total < 0
+          total = total if total < 0
         elsif discount.voucher_type == 'v200'
           total = cart.total_price
           total = total - 200000
-          total = 0 if total < 0
+          total = total if total < 0
         elsif discount.voucher_type == '200k mbs 400k'
           total = cart.total_price
           total = total - 200000
-          total = 0 if total < 0
+          total = total if total < 0
         elsif discount.voucher_type == '500k mbs 700k'
           total = cart.total_price
           total = total - 500000
-          total = 0 if total < 0
+          total = total if total < 0
         elsif discount.voucher_type == 'v100'
           total = cart.total_price
           total = total - 100000
-          total = 0 if total < 0
+          total = total if total < 0
         elsif discount.voucher_type == 'v40'
           total = cart.total_price
           total = total - 40000
-          total = 0 if total < 0
+          total = total if total < 0
+        elsif discount.voucher_type == 'v500'
+          total = cart.total_price
+          total = total - 500000
+          total = total if total < 0
         elsif discount.voucher_type == '1M'
           total = cart.total_price
           total = total - 1000000
-          total = 0 if total < 0
+          total = total if total < 0
         elsif discount.voucher_type == '2M'
           total = cart.total_price
           total = total - 2000000
-          total = 0 if total < 0
+          total = total if total < 0
         elsif discount.voucher_type == '3M'
           total = cart.total_price
           total = total - 3000000
-          total = 0 if total < 0
+          total = total if total < 0
         elsif discount.voucher_type == '99k'
           total = cart.line_items.sum('line_items.quantity') * 99000
         end
