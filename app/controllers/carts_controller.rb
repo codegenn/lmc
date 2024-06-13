@@ -15,9 +15,11 @@ class CartsController < ApplicationController
     if params[:cart][:voucher_code].present?
       voucher_code = params[:cart][:voucher_code]
       total_price = @cart.total_price
-
       if valid_voucher?(voucher_code, "200k mbs 400k") && !validate_voucher(voucher_code, total_price, "200k mbs 400k", 400000)
         flash[:danger] = I18n.t('voucher.v200')
+        return redirect_to cart_path(@cart.code)
+      elsif valid_voucher?(voucher_code, "v500") && !validate_voucher(voucher_code, total_price, "v500", 20000)
+        flash[:danger] = I18n.t('voucher.v500msb700')
         return redirect_to cart_path(@cart.code)
       elsif valid_voucher?(voucher_code, "500k mbs 700k") && !validate_voucher(voucher_code, total_price, "500k mbs 700k", 700000)
         flash[:danger] = I18n.t('voucher.v500msb700')
@@ -36,18 +38,20 @@ class CartsController < ApplicationController
           flash[:danger] = I18n.t('voucher.v200')
           @cart.update(voucher_code: nil)
           return redirect_to cart_path(@cart.code)
-          if valid_voucher?(voucher_code, "500k mbs 700k") && !validate_voucher(voucher_code, total_price, "500k mbs 700k", 700000)
-            flash[:danger] = I18n.t('voucher.v500msb700')
-            @cart.update(voucher_code: nil)
-            return redirect_to cart_path(@cart.code)
-          elsif valid_voucher?(voucher_code, "500k mbs 900k") && !validate_voucher(voucher_code, total_price, "500k mbs 900k", 900000)
-            flash[:danger] = I18n.t('voucher.v500')
-            @cart.update(voucher_code: nil)
-            return redirect_to cart_path(@cart.code)
-          end
+        elsif valid_voucher?(voucher_code, "v500") && !validate_voucher(voucher_code, total_price, "v500", 20000)
+          flash[:danger] = I18n.t('voucher.v500msb700')
+          @cart.update(voucher_code: nil)
+          return redirect_to cart_path(@cart.code)
+        elsif valid_voucher?(voucher_code, "500k mbs 700k") && !validate_voucher(voucher_code, total_price, "500k mbs 700k", 700000)
+          flash[:danger] = I18n.t('voucher.v500msb700')
+          @cart.update(voucher_code: nil)
+          return redirect_to cart_path(@cart.code)
+        elsif valid_voucher?(voucher_code, "500k mbs 900k") && !validate_voucher(voucher_code, total_price, "500k mbs 900k", 900000)
+          flash[:danger] = I18n.t('voucher.v500')
+          @cart.update(voucher_code: nil)
+          return redirect_to cart_path(@cart.code)
         end
       end
-
       flash[:success] = I18n.t('controllers.line_items.success_update')
     else
       flash[:danger] = @cart.errors.full_messages.to_sentence
