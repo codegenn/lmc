@@ -44,6 +44,7 @@ Rails.application.routes.draw do
     get 'partners/sign-in', to: "partners#sign_in"
     get 'partners/sign-up', to: "partners#sign_up"
     get 'partners/admin', to: "partners#admin"
+    post "subcribers-user", to: "subscribers#create_phone"
     resources :products, only: [:index, :show]
     resources :subscribers, only: [:create]
     resources :foundations, only: [:index, :show]
