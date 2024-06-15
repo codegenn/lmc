@@ -17,6 +17,7 @@ class SubscribersController < ApplicationController
 
   def create_phone
     sub = Subscriber.new
+    sub.phone = params["phone"]
     if PHONE_REGEX.match?(sub.phone)
       sub.save
 
