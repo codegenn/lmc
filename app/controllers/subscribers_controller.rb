@@ -17,7 +17,7 @@ class SubscribersController < ApplicationController
     sub = Subscriber.new
     sub.phone = params[:phone]
     if sub.save!
-      flash[:success] = I18n.t('subscribe_success')
+      flash[:success] = I18n.t('subscribe_success_phone')
       flash[:pixel] = 'Subscribe'
       redirect_to products_path
     else

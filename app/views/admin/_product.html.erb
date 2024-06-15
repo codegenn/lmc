@@ -1,10 +1,29 @@
-<tr>
+<style>
+  .font-bold {
+    font-weight: bold;
+  }
+</style>
+<div class="mb-3">
   <% p = Product.find(Stock.find_by(product_code: product.stock_item).product_id) %>
   <td><%= render "admin/product_detail", product: p %></td>
-  <td><%= product.total_products %></td>
-  <td><%= product.total_sell || 0 %></td>
-  <td><%= number_to_currency(p.total_sell(product.stock_item), unit: "VND",  format: "%n %u", precision: 0) %></td>
-  <td><%= number_to_currency(p.fees_paid_sell(product.fee, product.stock_item), unit: "VND",  format: "%n %u", precision: 0) %></td>
-  <td><%= number_to_currency(p.revenue_sell(product.fee, product.stock_item), unit: "VND",  format: "%n %u", precision: 0) %></td>
-  <td><%= product.inventory %></td>
-</tr>
+  <table class="table">
+    <tr>
+      <th scope="row" scope="col"><%= I18n.t("partner.quantity") %></th>
+      <td><%= product.total_products %></td>
+      <th class="font-bold"><%= I18n.t("partner.sold_product") %></th>
+      <td><%= product.total_sell || 0 %></td>
+    </tr>
+    <tr>
+      <th class="font-bold"><%= I18n.t("partner.revenue_sold") %></th>
+      <td><%= number_to_currency(p.total_sell(product.stock_item), unit: "VND",  format: "%n %u", precision: 0) %></td>
+      <th class="font-bold"><%= I18n.t("partner.fee") %></th>
+      <td><%= number_to_currency(p.fees_paid_sell(product.fee, product.stock_item), unit: "VND",  format: "%n %u", precision: 0) %></td>
+    </tr>
+    <tr>
+      <th class="font-bold"><%= I18n.t("partner.revenue") %></th>
+      <td><%= number_to_currency(p.revenue_sell(product.fee, product.stock_item), unit: "VND",  format: "%n %u", precision: 0) %></td>
+      <th class="font-bold"><%= I18n.t("partner.inventory") %></th>
+      <td><%= product.inventory %></td>
+    </tr>
+  </table>
+</div>
