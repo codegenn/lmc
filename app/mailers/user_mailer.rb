@@ -12,6 +12,12 @@ class UserMailer < ApplicationMailer
     mail(to: 'info@lmcation.com', subject: subj, from: Rails.application.secrets.gmail_email)
   end
 
+  def message_for_admin_phone(message)
+    @message = message
+    subj = 'You have a new message'
+    mail(to: 'info@lmcation.com', subject: subj, from: Rails.application.secrets.gmail_email)
+  end
+
   def payment_method(order)
     if order.payment_method == 'COD'
       return 'Thanh toán khi giao hàng (COD)'

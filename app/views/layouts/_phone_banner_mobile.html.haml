@@ -1,5 +1,5 @@
-%form{:action => "/subscribers", :method => "post"}
+%form{:action => "/subcribers-user", :method => "post"}
   %button.button-discount{:type => "submit"}
     = I18n.t "user.signup_btn"
-  %input.input-discount{:placeholder => I18n.t("phone_submit"), :name => "email"}
+  %input.input-discount{:placeholder => I18n.t("phone_submit"), :name => "phone"}
   = image_tag "phone_banner_mobile.jpeg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "lmcation banner"

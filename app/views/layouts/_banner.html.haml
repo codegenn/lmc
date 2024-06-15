@@ -1,4 +1,15 @@
-#promotion.modal.fade{:role => "dialog"}
+:css
+  .modal-login {
+    width: 30%;
+  }
+
+  @media (max-width: 991px) {
+    .modal-login {
+      width: 95%;
+    }
+  }
+
+#promotion.modal.fade#modal-show-banner{:role => "dialog"}
   .modal-dialog{:class => ("modal-login" if user_signed_in?)}
     / Modal content
     .modal-content-desktop
@@ -17,14 +28,16 @@
       -# - else
       -#   %a{href: "https://www.facebook.com/LMcation/photos/a.215586923143724/850292606339816/?gidzl=2CtJ2PXQ_duCsziEdqVvS0xGtmA56_yW5OsFLz8KedLFs8DItKBsS1xRX0NO4FPsI8pN1pEbhnH6d5J_Um", target: "_blank"}
       -#     = image_tag "https://d2r4f7zaymmsnl.cloudfront.net/banner/banner/mobile.jpg", class: 'img-responsive Sirv', loading: "lazy", alt: "LMCATION - #{I18n.t("page.menu.home")}", title: "lmcation banner"
-
       = render 'layouts/phone_banner_mobile'
-:css
-  .modal-login {
-    width: 30%;
-  }
-  @media (max-width: 991px){
-    .modal-login {
-      width: 95%;
+
+:javascript
+  document.addEventListener('DOMContentLoaded', function() {
+    const currentPath = window.location.pathname;
+    // Check if current path is '/vi' or '/en'
+    if (currentPath === '/vi' || currentPath === '/en' || currentPath === '/') {
+      if (window.innerWidth <= 991) {
+        $('#modal-show-banner').modal('show');
+      }
     }
-  }
+  });
+

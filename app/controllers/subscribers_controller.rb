@@ -3,27 +3,33 @@ class SubscribersController < ApplicationController
   def create
     sub = Subscriber.new
     sub.email = params[:email]
-    if sub.save!
+    if sub.valid? && sub.save!
       flash[:success] = I18n.t('subscribe_success')
       flash[:pixel] = 'Subscribe'
       redirect_to products_path
     else
-      flash[:danger] = @subscriber.errors.full_messages.to_sentence
+      flash[:success] = I18n.t('subscribe_success')
       redirect_to products_path
     end
   end
 
+  PHONE_REGEX = /\A\d{9,11}\z/
+
   def create_phone
     sub = Subscriber.new
-    sub.phone = params[:phone]
-    if sub.save!
+    if PHONE_REGEX.match?(sub.phone)
+      sub.save
+
+      if Rails.env.production?
+        UserMailer.message_for_admin_phone(sub.phone).deliver_now
+      end
+
       flash[:success] = I18n.t('subscribe_success_phone')
       flash[:pixel] = 'Subscribe'
-      redirect_to products_path
     else
-      flash[:danger] = @subscriber.errors.full_messages.to_sentence
-      redirect_to products_path
+      flash[:success] = I18n.t('subscribe_success_phone')
     end
+    redirect_to products_path
   end
 
   private
