@@ -34,7 +34,7 @@
   document.addEventListener('DOMContentLoaded', function() {
     const currentPath = window.location.pathname;
     // Check if current path is '/vi' or '/en'
-    if (currentPath === '/vi' || currentPath === '/en' || currentPath === '/') {
+    if (currentPath === '/vi' || currentPath === '/en' || currentPath === '/' || currentPath === '/vi/' || currentPath === '/en/') {
       if (window.innerWidth <= 991) {
         $('#modal-show-banner').modal('show');
       }
