@@ -7,10 +7,16 @@ class FoundationsController < ApplicationController
     category = params[:category]
     if category.present?
       @cat = true
-      @blogs = Foundation.where(category: category)
+      @blogs = Foundation.where(category: category).order(created_at: :desc)
     else
       @cat = false
-      @blogs = Foundation.main_page.flatten.compact.group_by { |d| d[:category] }
+      grouped_data = Foundation.main_page.flatten.compact.group_by { |d| d[:category] }
+
+      ordered_data = grouped_data.transform_values do |array|
+        array.sort_by { |d| d[:created_at] }.reverse
+      end
+
+      @blogs = ordered_data
     end
   end
 
