@@ -385,6 +385,7 @@ en:
       success_remove: 'Remove successfully'
       cart_not_present: 'Cart is not present'
       select_sc: 'Please select size and color'
+      insufficient_stock: 'The current quantity is not available, please select a smaller amount. If you want to place a large order, please contact order@lmcation.com or 0777.12.12.99 for instructions on the pre-order process.'
     order:
       success: 'Thank you for your order. We will process the order for you within 48 hours. If you have any other requests, please call us at 0777 12 12 99.'
     search:

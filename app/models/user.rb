@@ -15,6 +15,11 @@ class User < ActiveRecord::Base
   has_one :favorite
 
   after_create :update_kiot_id
+  before_save :update_default_phone
+
+  def update_default_phone
+    self.phone = 01234
+  end
 
   def self.from_omniauth(access_token)
     data = access_token.info
