@@ -367,6 +367,7 @@ vi:
       success_remove: 'Xoá thành công'
       cart_not_present: 'Cart is not present'
       select_sc: 'Vui lòng chọn kích thước và màu sắc.'
+      insufficient_stock: 'Số lượng hiện tại không khả dụng, vui lòng chọn số lượng ít hơn. Nếu bạn muốn đặt hàng số lượng lớn, vui lòng liên hệ với chúng tôi qua email order@lmcation.com hoặc số điện thoại 0777.12.12.99 để được hướng dẫn quy trình đặt hàng trước (Pre-order).'
     message:
       success: 'Cảm ơn bạn đã liên hệ LMcation. Chị em LMcation sẽ phản hồi cho bạn ngay thôi. Để được hỗ trợ nhanh, vui lòng gọi 0777 12 12 99; để biết thêm thông tin, vui lòng truy cập <a href="https://www.facebook.com/LMcation/">https://www.facebook.com/LMcation/</a>'
     order:
