@@ -6,6 +6,7 @@
 <div class="mb-3">
   <% p = Product.find(Stock.find_by(product_code: product.stock_item).product_id) %>
   <td><%= render "admin/product_detail", product: p %></td>
+  <td><%= render "admin/product_stocks", product: p %></td>
   <table class="table">
     <tr>
       <th scope="row" scope="col"><%= I18n.t("partner.quantity") %></th>

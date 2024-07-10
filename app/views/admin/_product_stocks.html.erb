@@ -1,0 +1,31 @@
+<% # Define a custom order for sizes based on your needs %>
+<% size_order = ["S", "M", "L", "XL", "XXL"] %>
+
+<% # Sort product.stocks based on size_order %>
+<% sorted_stocks = product.stocks.sort_by { |stock| size_order.index(stock.size) } %>
+
+<% sorted_stocks.each do |stock| %>
+  <div class="border px-2">
+    <div class="py-2">
+      <%= stock.product_code %>
+      <span class="ml-1 mr-1"><%= stock.size %></span>
+      <span><%= stock.color %></span>
+    </div>
+
+    <div>
+      <div class="d-flex mb-3">
+        <div style="width: 45%">
+          <label for="quantity" class="form-label"><%= I18n.t("partner.price") %></label>
+          <input type="text" class="form-control p-2 me-2"  value="<%= product.price %>">
+        </div>
+
+        <div style="width: 10%"></div>
+
+        <div style="width: 45%">
+          <label for="quantity" class="form-label"><%= I18n.t("partner.inventory") %></label>
+          <input type="text" class="form-control p-2 me-2" value="<%= stock.quantity %>">
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
