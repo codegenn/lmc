@@ -507,6 +507,10 @@ vi:
     inventory: "Tồn kho"
     size: "Kích thước:"
     price: "Giá bán:"
+    ma: "Mã sản phẩm:"
+    time: "Thời gian"
+    note: "Ghi chú"
+    status: "Thanh toán cho đối tác"
     empty: "Bạn hiện chưa có sản phẩm được bán. Vui lòng liên hệ <a href='order@lmcation.com'>order@lmcation.com</a> để được hỗ trợ."
   voucher:
     v200: "VUI LÒNG MUA ĐƠN HÀNG TỐI THIỂU LÀ 400K ĐỂ ĐƯỢC GIẢM GIÁ 200K"

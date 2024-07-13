@@ -3,28 +3,74 @@
     font-weight: bold;
   }
 </style>
-<div class="mb-3">
-  <% p = Product.find(Stock.find_by(product_code: product.stock_item).product_id) %>
-  <td><%= render "admin/product_detail", product: p %></td>
-  <td><%= render "admin/product_stocks", product: p %></td>
-  <table class="table">
-    <tr>
-      <th scope="row" scope="col"><%= I18n.t("partner.quantity") %></th>
-      <td><%= product.total_products %></td>
-      <th class="font-bold"><%= I18n.t("partner.sold_product") %></th>
-      <td><%= product.total_sell || 0 %></td>
-    </tr>
-    <tr>
-      <th class="font-bold"><%= I18n.t("partner.revenue_sold") %></th>
-      <td><%= number_to_currency(p.total_sell(product.stock_item), unit: "VND",  format: "%n %u", precision: 0) %></td>
-      <th class="font-bold"><%= I18n.t("partner.fee") %></th>
-      <td><%= number_to_currency(p.fees_paid_sell(product.fee, product.stock_item), unit: "VND",  format: "%n %u", precision: 0) %></td>
-    </tr>
-    <tr>
-      <th class="font-bold"><%= I18n.t("partner.revenue") %></th>
-      <td><%= number_to_currency(p.revenue_sell(product.fee, product.stock_item), unit: "VND",  format: "%n %u", precision: 0) %></td>
-      <th class="font-bold"><%= I18n.t("partner.inventory") %></th>
-      <td><%= product.inventory %></td>
-    </tr>
+<% p = Product.find(Stock.find_by(product_code: product.stock_item).product_id) %>
+<% stock_codes = p.stocks.map { |stock| stock.product_code }%>
+<td><%= render "admin/product_detail", product: p %></td>
+<div class="table-responsive mb-3">
+  <table class="table table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col"><%= I18n.t("partner.time") %></th>
+        <th scope="col"><%= I18n.t("partner.sold_product") %></th>
+        <th scope="col"><%= I18n.t("partner.revenue") %></th>
+        <th scope="col"><%= I18n.t("partner.fee") %></th>
+        <th scope="col"><%= I18n.t("partner.status") %></th>
+        <th scope="col"><%= I18n.t("partner.note") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% product.partner_managers.each do |manage| %>
+          <td scope="row">
+            <%= manage.start_time.strftime('%Y-%m-%d') %> - <%= manage.end_time.strftime('%Y-%m-%d') %>
+          </td>
+          <td>
+            <a href="#" data-toggle="modal" data-target="#productModal<%= manage.id %>">
+              <%= manage.product_sold %>
+            </a>
+          </td>
+          <td><%= manage.revenue %></td>
+          <td><%= manage.fee %></td>
+          <td><%= manage.pay_for_partner %></td>
+          <td><%= manage.note %></td>
+        </tr>
+
+        <!-- Modal -->
+        <div class="modal fade" id="productModal<%= manage.id %>" tabindex="-1" role="dialog" aria-labelledby="productModal<%= manage.id %>Title" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <%= manage.start_time.strftime('%Y-%m-%d') %> - <%= manage.end_time.strftime('%Y-%m-%d') %>
+              </div>
+              <div class="modal-body">
+                <% size_order = ["S", "M", "L", "XL", "XXL"] %>
+                <% # Sort product.stocks based on size_order %>
+                <% details = manage.partner_managers_details.sort_by { |stock| size_order.index(stock.size) } %>
+                <% details.each do |detai| %>
+                  <div class="border px-2 mb-3 pb-2">
+                    <div class="row gx-3">
+                      <div class="col-md-4">
+                        <label for="size" class="form-label"><%= I18n.t("partner.size") %></label>
+                        <input type="text" class="form-control" value="<%= detai.size %>" disabled>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="product_code" class="form-label"><%= I18n.t("partner.ma") %></label>
+                        <input type="text" class="form-control" value="<%= Stock.find(detai.stock).product_code %>" disabled>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="quantity" class="form-label"><%= I18n.t("partner.inventory") %></label>
+                        <input type="text" class="form-control" value="<%= detai.sold_product %>" disabled>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <div class="modal-footer py-4">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </tbody>
   </table>
 </div>

@@ -1,24 +1,15 @@
-<table class="table table-striped">
-  <tbody>
-    <tr>
-      <td style="width: 50px">
-        <%= image_tag product&.product_images.first.try(:image_url), width: "100px" %>
-      </td>
-      <td style="width: 250px">
-        <div>
-          <%= link_to admin_products_path(product.id) do %>
-            <%= product.title %>
-          <% end %>
-        </div>
-        <div>
-          <%= I18n.t("partner.price") %>
-          <%= number_to_currency(product.price, unit: "VND",  format: "%n %u", precision: 0) %>
-        </div>
-        <div>
-          <%= I18n.t("partner.size") %>
-          <%= product.list_size %>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div style="display: flex; align-items: center; border: 1px solid #ccc; padding: 10px; margin-bottom: 15px;">
+  <div style="width: 100px; margin-right: 20px;">
+    <%= image_tag product&.product_images.first.try(:image_url), width: "100px" %>
+  </div>
+  <div style="flex: 1;">
+    <div style="margin-bottom: 10px;">
+      <%= link_to admin_products_path(product.id), style: "font-weight: bold; color: #333;" do %>
+        <%= product.title %> - <%= product.price %>
+      <% end %>
+    </div>
+    <div>
+      <%= render "admin/product_stocks", product: product %>
+    </div>
+  </div>
+</div>

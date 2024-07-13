@@ -446,6 +446,10 @@ en:
     inventory: "Inventory"
     size: "Size:"
     price: "Price:"
+    ma: "Product code:"
+    time: "Time"
+    note: "Note"
+    status: "Payment for partner"
     empty: "Your product list is still empty. Please contact <a href='order@lmcation.com'>order@lmcation.com</a> for further inquiries and assistance."
   voucher:
     freeship: "PLEASE PURCHASE A MINIMUM ORDER OF 99K TO RECEIVE FREE SHIPPING"

@@ -10,7 +10,7 @@ class Ability
         Category, Partner, Product, Message,
         Order, Subscriber, Job, Voucher, MemberAd,
         MasterDatum, PartnerUser, Medium, PartnerOrder,
-        Review, ProductSold
+        Review, ProductSold, PartnerManager
       ]
       can :manage, ActiveAdmin::Page, name: "Discount"
     else

@@ -1,6 +1,6 @@
 class PartnerOrder < ActiveRecord::Base
   # belongs_to :product
-
+  has_many :partner_managers, dependent: :destroy
   # validates :fee, :total_products, :inventory, presence: true
   # validates :fee, :total_products, :inventory, numericality: { greater_than_or_equal_to: 0 }
 
