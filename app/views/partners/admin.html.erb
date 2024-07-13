@@ -6,11 +6,9 @@
 </style>
 <div class="sec-banner bg0 p-t-80 p-b-50 main-page">
   <% if @products.length > 0 %>
-    <% @products&.each do |p| %>
-      <div class="container">
-        <%= render "admin/product", product: p %>
-      </div>
-    <% end %>
+    <div class="container">
+      <%= render "admin/product", products: @products %>
+    </div>
   <% else %>
     <div class="container">
       <div class="row">

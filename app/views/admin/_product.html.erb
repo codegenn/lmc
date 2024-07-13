@@ -2,29 +2,86 @@
   .font-bold {
     font-weight: bold;
   }
+
+  @media (min-width: 768px) {
+    .fixed-input-height {
+      height: calc(1.5em + 0.75rem + 2px); /* Adjust this value to match your design */
+    }
+    .height-class {
+      height: 150px;
+    }
+    .fixed-label-height {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .height-class {
+      height: 465px;
+    }
+  }
 </style>
-<div class="mb-3">
-  <% p = Product.find(Stock.find_by(product_code: product.stock_item).product_id) %>
-  <td><%= render "admin/product_detail", product: p %></td>
-  <td><%= render "admin/product_stocks", product: p %></td>
-  <table class="table">
-    <tr>
-      <th scope="row" scope="col"><%= I18n.t("partner.quantity") %></th>
-      <td><%= product.total_products %></td>
-      <th class="font-bold"><%= I18n.t("partner.sold_product") %></th>
-      <td><%= product.total_sell || 0 %></td>
-    </tr>
-    <tr>
-      <th class="font-bold"><%= I18n.t("partner.revenue_sold") %></th>
-      <td><%= number_to_currency(p.total_sell(product.stock_item), unit: "VND",  format: "%n %u", precision: 0) %></td>
-      <th class="font-bold"><%= I18n.t("partner.fee") %></th>
-      <td><%= number_to_currency(p.fees_paid_sell(product.fee, product.stock_item), unit: "VND",  format: "%n %u", precision: 0) %></td>
-    </tr>
-    <tr>
-      <th class="font-bold"><%= I18n.t("partner.revenue") %></th>
-      <td><%= number_to_currency(p.revenue_sell(product.fee, product.stock_item), unit: "VND",  format: "%n %u", precision: 0) %></td>
-      <th class="font-bold"><%= I18n.t("partner.inventory") %></th>
-      <td><%= product.inventory %></td>
-    </tr>
+<div class="table-responsive mb-3">
+  <table class="table table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col"><%= I18n.t("partner.time") %></th>
+        <th scope="col"><%= I18n.t("partner.sold_product") %></th>
+        <th scope="col"><%= I18n.t("partner.revenue") %></th>
+        <th scope="col"><%= I18n.t("partner.fee") %></th>
+        <th scope="col"><%= I18n.t("partner.status") %></th>
+        <th scope="col"><%= I18n.t("partner.time_pay") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% products&.each do |p| %>
+        <% manages = p.partner_managers %>
+        <% total_revenue = manages.map { |pm| pm[:revenue] }.compact.sum %>
+        <% total_fee = manages.map { |pm| pm[:fee] }.compact.sum %>
+        <% updated_revenue = total_revenue %>
+        <% payforPartner = manages.map { |pm| pm[:pay_for_partner] }.compact.sum%>
+        <tr>
+          <td scope="row">
+            <%= p&.start_time&.strftime('%Y-%m-%d') %> - <%= p&.end_time&.strftime('%Y-%m-%d') %>
+          </td>
+          <td>
+            <a href="#" data-toggle="modal" data-target="#productModal<%= p.id %>">
+              <%= manages.map { |pm| pm[:product_sold] }.compact.sum %>
+            </a>
+          </td>
+          <td><%= "#{number_with_delimiter(updated_revenue.to_i, :delimiter => '.')} vnd" %></td>
+          <td><%= "#{number_with_delimiter(total_fee.to_i, :delimiter => '.')} vnd" %></td>
+          <td><%= "#{number_with_delimiter(payforPartner.to_i, :delimiter => '.')} vnd" %></td>
+          <td scope="row">
+            <%= p&.time_pay_partner&.strftime('%Y-%m-%d') %>
+          </td>
+        </tr>
+
+        <!-- Modal -->
+        <div class="modal fade" id="productModal<%= p.id %>" tabindex="-1" role="dialog" aria-labelledby="productModal<%= p.id %>Title" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <%= p&.start_time&.strftime('%Y-%m-%d') %> - <%= p&.end_time&.strftime('%Y-%m-%d') %>
+              </div>
+              <% manages.each do |manage| %>
+                <div class="modal-body">
+                  <% size_order = ["S", "M", "L", "XL", "XXL"] %>
+                  <% # Sort product.stocks based on size_order %>
+                  <% details = manage.partner_managers_details.sort_by { |stock| size_order.index(stock.size) } %>
+                  <% products = Product.find(manage.product_id) %>
+                  <%= render "admin/product_detail", product: products, details: details %>
+                </div>
+              <% end %>
+              <div class="modal-footer py-4">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </tbody>
   </table>
 </div>

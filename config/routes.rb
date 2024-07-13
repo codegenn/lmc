@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     end
     namespace :v2 do
       get "product", to: "api#product"
+      get "products/:id", to: "product#show"
     end
   end
   get '/health_check', to: proc { [200, {}, ['success']] }
