@@ -27,8 +27,8 @@ ActiveAdmin.register PartnerOrder do
       
       row "Partner Managers" do |partner_order|
         table_for partner_order.partner_managers do
-          column :product do |partner_order|
-            Product.find_by(id: partner_order.product_id)&.title || "Product not found"
+          column :product_id do |partner_order|
+            Stock.find_by(id: partner_order.product_id).product_code || "Product not found"
           end
           column "Quantity Entered", :quantity_entered
           column "Product Sold", :product_sold
@@ -36,14 +36,6 @@ ActiveAdmin.register PartnerOrder do
           column :fee
           column "Pay For Partner", :pay_for_partner
           column :note
-          
-          column "Partner Manager Details" do |manager|
-            table_for manager.partner_managers_details do
-              column :size
-              column "Quantity In", :quantity_in
-              column "Quantity Sold", :quantity_sold
-            end
-          end
         end
       end
     end
@@ -58,19 +50,19 @@ ActiveAdmin.register PartnerOrder do
     end
   
     f.has_many :partner_managers, allow_destroy: true, new_record: true do |detail|
-      detail.input :product_id, as: :select, collection: Product.active.limit(2).map { |product| [product.title, product.id] }, label: "Product", input_html: { class: 'product_select' }
+      detail.input :product_id, 
+      as: :select, 
+      collection: Stock.distinct.order(product_code: :ASC).map { |stock|
+        [stock.product_code, stock.id] 
+      },
+      label: "Product", 
+      input_html: { class: 'product_select' }
       detail.input :quantity_entered, label: "Sản phẩm nhập", input_html: { class: 'quantity_entered' }
       detail.input :product_sold, label: "Sản phẩm đã bán", input_html: { class: 'product_sold' }
       detail.input :revenue, label: "Doanh thu", input_html: { readonly: true, class: 'revenue' }
       detail.input :fee, label: "Phí", input_html: { class: 'fee' }
       detail.input :pay_for_partner, label: "Thanh toán cho đối tác", input_html: { readonly: true, class: 'pay_for_partner' }
       detail.input :note, label: "Ghi chú"
-  
-      detail.has_many :partner_managers_details, allow_destroy: true, new_record: true, class: 'auto_mapping' do |pm_detail|
-        pm_detail.input :size, label: "Size"
-        pm_detail.input :quantity_in, label: "Số lượng nhập"
-        pm_detail.input :quantity_sold, label: "Sản phẩm đã bán"
-      end
     end
   
     f.actions

@@ -68,11 +68,10 @@
               </div>
               <% manages.each do |manage| %>
                 <div class="modal-body">
-                  <% size_order = ["S", "M", "L", "XL", "XXL"] %>
                   <% # Sort product.stocks based on size_order %>
-                  <% details = manage.partner_managers_details.sort_by { |stock| size_order.index(stock.size) } %>
-                  <% products = Product.find(manage.product_id) %>
-                  <%= render "admin/product_detail", product: products, details: details %>
+                  <% stock = Stock.find(manage.product_id) %>
+                  <% products = Product.find(stock.product_id) %>
+                  <%= render "admin/product_detail", product: products, detail: manage %>
                 </div>
               <% end %>
               <div class="modal-footer py-4">
