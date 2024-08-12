@@ -36,4 +36,5 @@ end
 #  user_id          :integer
 #  quantity_entered :integer
 #  product_id       :integer
+#  inventory        :integer
 #

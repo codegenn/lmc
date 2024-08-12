@@ -38,22 +38,18 @@
     <tbody>
       <% products&.each do |p| %>
         <% manages = p.partner_managers %>
-        <% total_revenue = manages.map { |pm| pm[:revenue] }.compact.sum %>
-        <% total_fee = manages.map { |pm| pm[:fee] }.compact.sum %>
-        <% updated_revenue = total_revenue %>
-        <% payforPartner = manages.map { |pm| pm[:pay_for_partner] }.compact.sum%>
         <tr>
           <td scope="row">
             <%= p&.start_time&.strftime('%Y-%m-%d') %> - <%= p&.end_time&.strftime('%Y-%m-%d') %>
           </td>
           <td>
             <a href="#" data-toggle="modal" data-target="#productModal<%= p.id %>">
-              <%= manages.map { |pm| pm[:product_sold] }.compact.sum %>
+              <%= p.total_sell %>
             </a>
           </td>
-          <td><%= "#{number_with_delimiter(updated_revenue.to_i, :delimiter => '.')} vnd" %></td>
-          <td><%= "#{number_with_delimiter(total_fee.to_i, :delimiter => '.')} vnd" %></td>
-          <td><%= "#{number_with_delimiter(payforPartner.to_i, :delimiter => '.')} vnd" %></td>
+          <td><%= "#{number_with_delimiter(p.revenue.to_i, :delimiter => '.')} vnd" %></td>
+          <td><%= "#{number_with_delimiter(p.fee.to_i, :delimiter => '.')} vnd" %></td>
+          <td><%= "#{number_with_delimiter(p.time_pay.to_i, :delimiter => '.')} vnd" %></td>
           <td scope="row">
             <%= p&.time_pay_partner&.strftime('%Y-%m-%d') %>
           </td>

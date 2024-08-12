@@ -26,4 +26,5 @@ end
 #  end_time         :datetime
 #  time_pay         :decimal(, )
 #  time_pay_partner :datetime
+#  revenue          :decimal(, )
 #

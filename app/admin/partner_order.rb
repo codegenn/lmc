@@ -1,6 +1,6 @@
 ActiveAdmin.register PartnerOrder do
   permit_params :user_id, :stock_item, :total_products, :inventory, :fee, :total_sell, 
-                partner_managers_attributes: [:id, :start_time, :end_time, :quantity_entered, :product_sold, :revenue, :note, :_destroy, 
+                partner_managers_attributes: [:id, :start_time, :end_time, :quantity_entered, :product_sold, :revenue, :note, :_destroy,
                 partner_managers_details_attributes: [:id, :size, :stock, :sold_product, :_destroy]]
 
   index do
@@ -13,6 +13,16 @@ ActiveAdmin.register PartnerOrder do
     column :start_time
     column :end_time
     column :time_pay_partner
+    column :fee do |partner_order|
+      "#{number_with_delimiter(partner_order.fee.to_i, delimiter: '.')} VND"
+    end
+    column :total_sell
+    column :revenue do |partner_order|
+      "#{number_with_delimiter(partner_order.revenue.to_i, delimiter: '.')} VND"
+    end
+    column :time_pay do |partner_order|
+      "#{number_with_delimiter(partner_order.time_pay.to_i, delimiter: '.')} VND"
+    end
     actions
   end
 
@@ -24,6 +34,16 @@ ActiveAdmin.register PartnerOrder do
       row :start_time
       row :end_time
       row :time_pay_partner
+      row :fee do |partner_order|
+        "#{number_with_delimiter(partner_order.fee.to_i, delimiter: '.')} VND"
+      end
+      row :total_sell
+      row :revenue do |partner_order|
+        "#{number_with_delimiter(partner_order.revenue.to_i, delimiter: '.')} VND"
+      end
+      row :time_pay do |partner_order|
+        "#{number_with_delimiter(partner_order.time_pay.to_i, delimiter: '.')} VND"
+      end
       
       row "Partner Managers" do |partner_order|
         table_for partner_order.partner_managers do
@@ -32,9 +52,9 @@ ActiveAdmin.register PartnerOrder do
           end
           column "Quantity Entered", :quantity_entered
           column "Product Sold", :product_sold
-          column :revenue
-          column :fee
-          column "Pay For Partner", :pay_for_partner
+          column :revenue do |partner_order|
+            "#{number_with_delimiter(partner_order.revenue.to_i, delimiter: '.')} VND"
+          end
           column :note
         end
       end
@@ -47,6 +67,10 @@ ActiveAdmin.register PartnerOrder do
       f.input :start_time, as: :datetime_picker
       f.input :end_time, as: :datetime_picker
       f.input :time_pay_partner, as: :datetime_picker
+      f.input :fee, input_html: { readonly: true, class: 'total_fee' }
+      f.input :total_sell, input_html: { readonly: true, class: 'total_sell' }
+      f.input :revenue, input_html: { readonly: true, class: 'total_revenue' }
+      f.input :time_pay, label: "Trả đối tác", input_html: { readonly: true, class: 'total_pay_for_partner' }
     end
   
     f.has_many :partner_managers, allow_destroy: true, new_record: true do |detail|
@@ -59,9 +83,8 @@ ActiveAdmin.register PartnerOrder do
       input_html: { class: 'product_select' }
       detail.input :quantity_entered, label: "Sản phẩm nhập", input_html: { class: 'quantity_entered' }
       detail.input :product_sold, label: "Sản phẩm đã bán", input_html: { class: 'product_sold' }
+      detail.input :inventory, label: "Tồn kho", input_html: { readonly: true, class: 'inventory' }
       detail.input :revenue, label: "Doanh thu", input_html: { readonly: true, class: 'revenue' }
-      detail.input :fee, label: "Phí", input_html: { class: 'fee' }
-      detail.input :pay_for_partner, label: "Thanh toán cho đối tác", input_html: { readonly: true, class: 'pay_for_partner' }
       detail.input :note, label: "Ghi chú"
     end
   
@@ -88,8 +111,8 @@ ActiveAdmin.register PartnerOrder do
     end
     
     def permitted_params
-      params.permit(partner_order: [:user_id, :end_time, :start_time, :time_pay_partner,
-                                    partner_managers_attributes: [:id, :product_id,:revenue , :fee, :quantity_entered, :product_sold, :revenue, :pay_for_partner, :note, :_destroy, 
+      params.permit(partner_order: [:user_id, :end_time, :start_time, :time_pay_partner, :revenue, :total_sell, :fee, :time_pay,
+                                    partner_managers_attributes: [:id, :product_id, :revenue , :inventory, :quantity_entered, :product_sold, :pay_for_partner, :note, :_destroy, 
                                     partner_managers_details_attributes: [:id, :size, :stock, :quantity_sold, :quantity_in ,:_destroy]]])
     end
   end
