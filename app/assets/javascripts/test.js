@@ -64,7 +64,7 @@ $(document).ready(function() {
 
     totalFee = totalRevenue * 0.35;
 
-    $('.total_fee').val(formatCurrency(totalFee.toFixed(2)));
+    $('.total_fee').val(totalFee.toFixed(2));
     $('.total_sell').val(totalSell.toFixed(2));
     $('.total_revenue').val(totalRevenue.toFixed(2));
     $('.total_pay_for_partner').val((totalRevenue-totalFee).toFixed(2));
