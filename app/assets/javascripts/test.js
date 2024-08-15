@@ -45,33 +45,32 @@ $(document).ready(function() {
   }
 
   function updateTotalValues() {
-    var totalFee = 0;
+    var totalFee = parseFloat($('.total_fee').val()) || 0;
     var totalSell = 0;
     var totalRevenue = 0;
     var totalPayForPartner = 0;
-
+  
     $(".product_sold").each(function() {
       totalSell += parseFloat($(this).val()) || 0;
     });
-
+  
     $(".revenue").each(function() {
       totalRevenue += parseFloat($(this).val()) || 0;
     });
-
+  
     $(".pay_for_partner").each(function() {
       totalPayForPartner += parseFloat($(this).val()) || 0;
     });
-
-    totalFee = totalRevenue * 0.35;
-
-    $('.total_fee').val(totalFee.toFixed(2));
+    var feePercentage = totalFee / 100;
+    var totalRevenueAfterFee = totalRevenue * (1 - feePercentage);
+  
     $('.total_sell').val(totalSell.toFixed(2));
     $('.total_revenue').val(totalRevenue.toFixed(2));
-    $('.total_pay_for_partner').val((totalRevenue-totalFee).toFixed(2));
+    $('.total_pay_for_partner').val((totalRevenueAfterFee - totalFee).toFixed(2));
   }
 
   function addEventListeners() {
-    $(document).on('change', '.quantity_entered, .product_sold, .product_select, .fee', function() {
+    $(document).on('change', '.quantity_entered, .product_sold, .product_select, .fee, #partner_order_fee', function() {
       var partnerManagerIndex = $(this).closest('fieldset').find('.product_select').attr('id').match(/\d+/)[0];
       updateInventory(partnerManagerIndex);
       updateRevenue(partnerManagerIndex);

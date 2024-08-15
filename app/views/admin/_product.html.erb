@@ -33,6 +33,7 @@
         <th scope="col"><%= I18n.t("partner.fee") %></th>
         <th scope="col"><%= I18n.t("partner.status") %></th>
         <th scope="col"><%= I18n.t("partner.time_pay") %></th>
+        <th scope="col"><%= I18n.t("partner.note") %></th>
       </tr>
     </thead>
     <tbody>
@@ -48,10 +49,13 @@
             </a>
           </td>
           <td><%= "#{number_with_delimiter(p.revenue.to_i, :delimiter => '.')} vnd" %></td>
-          <td><%= "#{number_with_delimiter(p.fee.to_i, :delimiter => '.')} vnd" %></td>
+          <td><%= "#{number_with_delimiter(p.fee.to_i, :delimiter => '.')}%" %></td>
           <td><%= "#{number_with_delimiter(p.time_pay.to_i, :delimiter => '.')} vnd" %></td>
           <td scope="row">
             <%= p&.time_pay_partner&.strftime('%Y-%m-%d') %>
+          </td>
+          <td scope="row">
+            <%= p&.note %>
           </td>
         </tr>
 

@@ -14,7 +14,7 @@ ActiveAdmin.register PartnerOrder do
     column :end_time
     column :time_pay_partner
     column :fee do |partner_order|
-      "#{number_with_delimiter(partner_order.fee.to_i, delimiter: '.')} VND"
+      "#{number_with_delimiter(partner_order.fee.to_i, delimiter: '.')} %"
     end
     column :total_sell
     column :revenue do |partner_order|
@@ -23,6 +23,8 @@ ActiveAdmin.register PartnerOrder do
     column :time_pay do |partner_order|
       "#{number_with_delimiter(partner_order.time_pay.to_i, delimiter: '.')} VND"
     end
+
+    column :note
     actions
   end
 
@@ -35,7 +37,7 @@ ActiveAdmin.register PartnerOrder do
       row :end_time
       row :time_pay_partner
       row :fee do |partner_order|
-        "#{number_with_delimiter(partner_order.fee.to_i, delimiter: '.')} VND"
+        "#{number_with_delimiter(partner_order.fee.to_i, delimiter: '.')} %"
       end
       row :total_sell
       row :revenue do |partner_order|
@@ -44,6 +46,7 @@ ActiveAdmin.register PartnerOrder do
       row :time_pay do |partner_order|
         "#{number_with_delimiter(partner_order.time_pay.to_i, delimiter: '.')} VND"
       end
+      row :note
       
       row "Partner Managers" do |partner_order|
         table_for partner_order.partner_managers do
@@ -55,7 +58,6 @@ ActiveAdmin.register PartnerOrder do
           column :revenue do |partner_order|
             "#{number_with_delimiter(partner_order.revenue.to_i, delimiter: '.')} VND"
           end
-          column :note
         end
       end
     end
@@ -67,10 +69,11 @@ ActiveAdmin.register PartnerOrder do
       f.input :start_time, as: :datetime_picker
       f.input :end_time, as: :datetime_picker
       f.input :time_pay_partner, as: :datetime_picker
-      f.input :fee, input_html: { readonly: true, class: 'total_fee' }
+      f.input :fee, input_html: { class: 'total_fee' }
       f.input :total_sell, input_html: { readonly: true, class: 'total_sell' }
       f.input :revenue, input_html: { readonly: true, class: 'total_revenue' }
       f.input :time_pay, label: "Trả đối tác", input_html: { readonly: true, class: 'total_pay_for_partner' }
+      f.input :note
     end
   
     f.has_many :partner_managers, allow_destroy: true, new_record: true do |detail|
@@ -85,7 +88,6 @@ ActiveAdmin.register PartnerOrder do
       detail.input :product_sold, label: "Sản phẩm đã bán", input_html: { class: 'product_sold' }
       detail.input :inventory, label: "Tồn kho", input_html: { readonly: true, class: 'inventory' }
       detail.input :revenue, label: "Doanh thu", input_html: { readonly: true, class: 'revenue' }
-      detail.input :note, label: "Ghi chú"
     end
   
     f.actions
@@ -111,7 +113,7 @@ ActiveAdmin.register PartnerOrder do
     end
     
     def permitted_params
-      params.permit(partner_order: [:user_id, :end_time, :start_time, :time_pay_partner, :revenue, :total_sell, :fee, :time_pay,
+      params.permit(partner_order: [:user_id, :end_time, :start_time, :time_pay_partner, :revenue, :total_sell, :fee, :time_pay, :note,
                                     partner_managers_attributes: [:id, :product_id, :revenue , :inventory, :quantity_entered, :product_sold, :pay_for_partner, :note, :_destroy, 
                                     partner_managers_details_attributes: [:id, :size, :stock, :quantity_sold, :quantity_in ,:_destroy]]])
     end

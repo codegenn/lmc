@@ -27,4 +27,5 @@ end
 #  time_pay         :decimal(, )
 #  time_pay_partner :datetime
 #  revenue          :decimal(, )
+#  note             :string
 #
