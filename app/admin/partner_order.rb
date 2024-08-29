@@ -12,15 +12,15 @@ ActiveAdmin.register PartnerOrder do
     end
     column :start_time
     column :end_time
-    column :time_pay_partner
-    column :fee do |partner_order|
+    column 'Thời gian thanh toán', :time_pay_partner
+    column 'Phí trả LMcation (25-35%)' do |partner_order|
       "#{number_with_delimiter(partner_order.fee.to_i, delimiter: '.')} %"
     end
-    column :total_sell
-    column :revenue do |partner_order|
+    column 'Tổng sản phẩm đã bán', :total_sell
+    column 'Tổng doanh thu' do |partner_order|
       "#{number_with_delimiter(partner_order.revenue.to_i, delimiter: '.')} VND"
     end
-    column :time_pay do |partner_order|
+    column 'Thanh toán cho đối tác' do |partner_order|
       "#{number_with_delimiter(partner_order.time_pay.to_i, delimiter: '.')} VND"
     end
 
@@ -35,15 +35,19 @@ ActiveAdmin.register PartnerOrder do
       end
       row :start_time
       row :end_time
-      row :time_pay_partner
-      row :fee do |partner_order|
+      row 'Thời gian thanh toán' do |po|
+        po.time_pay_partner
+      end
+      row 'Phí trả LMcation (25-35%)' do |partner_order|
         "#{number_with_delimiter(partner_order.fee.to_i, delimiter: '.')} %"
       end
-      row :total_sell
-      row :revenue do |partner_order|
+      row 'Tổng sản phẩm đã bán' do |po|
+        po.total_sell
+      end
+      row 'Tổng doanh thu' do |partner_order|
         "#{number_with_delimiter(partner_order.revenue.to_i, delimiter: '.')} VND"
       end
-      row :time_pay do |partner_order|
+      row 'Thanh toán cho đối tác' do |partner_order|
         "#{number_with_delimiter(partner_order.time_pay.to_i, delimiter: '.')} VND"
       end
       row :note
@@ -53,9 +57,10 @@ ActiveAdmin.register PartnerOrder do
           column :product_id do |partner_order|
             Stock.find_by(id: partner_order.product_id).product_code || "Product not found"
           end
-          column "Quantity Entered", :quantity_entered
-          column "Product Sold", :product_sold
-          column :revenue do |partner_order|
+          column "Số lượng nhập", :quantity_entered
+          column "Số lượng bán", :product_sold
+          column "Tồn kho", :inventory
+          column 'Doanh thu' do |partner_order|
             "#{number_with_delimiter(partner_order.revenue.to_i, delimiter: '.')} VND"
           end
         end
@@ -68,11 +73,11 @@ ActiveAdmin.register PartnerOrder do
       f.input :user_id, as: :select, collection: PartnerUser.all.map { |user| [user.email, user.id] }
       f.input :start_time, as: :datetime_picker
       f.input :end_time, as: :datetime_picker
-      f.input :time_pay_partner, as: :datetime_picker
-      f.input :fee, input_html: { class: 'total_fee' }
-      f.input :total_sell, input_html: { readonly: true, class: 'total_sell' }
-      f.input :revenue, input_html: { readonly: true, class: 'total_revenue' }
-      f.input :time_pay, label: "Trả đối tác", input_html: { readonly: true, class: 'total_pay_for_partner' }
+      f.input :time_pay_partner, as: :datetime_picker, label: 'Thời gian thanh toán'
+      f.input :fee, input_html: { class: 'total_fee' }, label: 'Phí trả LMcation (25-35%)'
+      f.input :total_sell, input_html: { readonly: true, class: 'total_sell' }, label: 'Tổng sản phẩm đã bán'
+      f.input :revenue, input_html: { readonly: true, class: 'total_revenue' }, label: 'Tổng doanh thu'
+      f.input :time_pay, label: "Thanh toán cho đối tác", input_html: { readonly: true, class: 'total_pay_for_partner' }
       f.input :note
     end
   
@@ -84,8 +89,8 @@ ActiveAdmin.register PartnerOrder do
       },
       label: "Product", 
       input_html: { class: 'product_select' }
-      detail.input :quantity_entered, label: "Sản phẩm nhập", input_html: { class: 'quantity_entered' }
-      detail.input :product_sold, label: "Sản phẩm đã bán", input_html: { class: 'product_sold' }
+      detail.input :quantity_entered, label: "Số lượng nhập", input_html: { class: 'quantity_entered' }
+      detail.input :product_sold, label: "Số lượng bán", input_html: { class: 'product_sold' }
       detail.input :inventory, label: "Tồn kho", input_html: { readonly: true, class: 'inventory' }
       detail.input :revenue, label: "Doanh thu", input_html: { readonly: true, class: 'revenue' }
     end
