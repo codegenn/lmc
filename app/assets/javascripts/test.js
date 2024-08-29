@@ -70,10 +70,14 @@ $(document).ready(function() {
   }
 
   function addEventListeners() {
-    $(document).on('change', '.quantity_entered, .product_sold, .product_select, .fee, #partner_order_fee', function() {
+    $(document).on('change', '.quantity_entered, .product_sold, .product_select, .fee', function() {
       var partnerManagerIndex = $(this).closest('fieldset').find('.product_select').attr('id').match(/\d+/)[0];
       updateInventory(partnerManagerIndex);
       updateRevenue(partnerManagerIndex);
+    });
+    
+    $(document).on('change', '#partner_order_fee', function() {
+      updateTotalValues()
     });
   }
 
