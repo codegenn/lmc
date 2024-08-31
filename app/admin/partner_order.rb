@@ -75,9 +75,9 @@ ActiveAdmin.register PartnerOrder do
       f.input :end_time, as: :datetime_picker
       f.input :time_pay_partner, as: :datetime_picker, label: 'Thời gian thanh toán'
       f.input :fee, input_html: { class: 'total_fee' }, label: 'Phí trả LMcation (25-35%)'
-      f.input :total_sell, input_html: { readonly: true, class: 'total_sell' }, label: 'Tổng sản phẩm đã bán'
-      f.input :revenue, input_html: { readonly: true, class: 'total_revenue' }, label: 'Tổng doanh thu'
-      f.input :time_pay, label: "Thanh toán cho đối tác", input_html: { readonly: true, class: 'total_pay_for_partner' }
+      f.input :total_sell, input_html: { disabled: true, style: 'color: gray; background-color: lightgray;', class: 'total_sell' }, label: 'Tổng sản phẩm đã bán'
+      f.input :revenue, input_html: { readonly: true, style: 'color: gray; background-color: lightgray;',class: 'total_revenue' }, label: 'Tổng doanh thu (VND)'
+      f.input :time_pay, label: "Thanh toán cho đối tác (VND)", input_html: { readonly: true, class: 'total_pay_for_partner', style: 'color: gray; background-color: lightgray;' }
       f.input :note
     end
   
@@ -92,7 +92,7 @@ ActiveAdmin.register PartnerOrder do
       detail.input :quantity_entered, label: "Số lượng nhập", input_html: { class: 'quantity_entered' }
       detail.input :product_sold, label: "Số lượng bán", input_html: { class: 'product_sold' }
       detail.input :inventory, label: "Tồn kho", input_html: { readonly: true, class: 'inventory' }
-      detail.input :revenue, label: "Doanh thu", input_html: { readonly: true, class: 'revenue' }
+      detail.input :revenue, label: "Doanh thu (VND)", input_html: { readonly: true, class: 'revenue' }
     end
   
     f.actions

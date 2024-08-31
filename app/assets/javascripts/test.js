@@ -22,10 +22,10 @@ $(document).ready(function() {
         success: function(data) {
           var productPrice = data.price;
           var revenue = productSold * productPrice;
-          $container.find(".revenue").val(revenue.toFixed(2));
+          $container.find(".revenue").val(revenue.toFixed(0));
           
           var payForPartner = revenue - fee;
-          $container.find(".pay_for_partner").val(payForPartner.toFixed(2));
+          $container.find(".pay_for_partner").val(payForPartner.toFixed(0));
 
           updateTotalValues();
         },
@@ -64,9 +64,9 @@ $(document).ready(function() {
     var feePercentage = totalFee / 100;
     var totalRevenueAfterFee = totalRevenue * (1 - feePercentage);
   
-    $('.total_sell').val(totalSell.toFixed(2));
-    $('.total_revenue').val(totalRevenue.toFixed(2));
-    $('.total_pay_for_partner').val((totalRevenueAfterFee - totalFee).toFixed(2));
+    $('.total_sell').val(totalSell.toFixed(0));
+    $('.total_revenue').val(totalRevenue.toFixed(0));
+    $('.total_pay_for_partner').val((totalRevenueAfterFee - totalFee).toFixed(0));
   }
 
   function addEventListeners() {
