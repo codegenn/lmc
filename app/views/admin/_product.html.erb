@@ -1,34 +1,66 @@
 <style>
+  .table-responsive {
+    overflow-x: auto;
+  }
+  .table {
+      width: 100%;
+      border-collapse: collapse;
+  }
+  .table th, .table td {
+      padding: 8px;
+      border: 1px solid #ddd;
+  }
   .font-bold {
-    font-weight: bold;
-    background-color: lightgray;
+      font-weight: bold;
+      background-color: lightgray;
   }
-
-  @media (min-width: 768px) {
-    .fixed-input-height {
-      height: calc(1.5em + 0.75rem + 2px); /* Adjust this value to match your design */
-    }
-    .height-class {
-      height: 150px;
-    }
-    .fixed-label-height {
-      display: flex;
-      align-items: center;
-      height: 100%;
-    }
-  }
-
   @media (max-width: 768px) {
-    .height-class {
-      height: 465px;
-    }
+      .table, .table thead, .table tbody, .table th, .table td, .table tr {
+          display: block;
+      }
+      .table thead tr {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+      }
+      .table tr {
+          border: 1px solid #ccc;
+          margin-bottom: 10px;
+      }
+      .table td {
+          border: none;
+          position: relative;
+          padding-left: 50%;
+          text-align: right;
+      }
+      .table td:before {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          width: 45%;
+          padding-right: 10px;
+          white-space: nowrap;
+          content: attr(data-label);
+          font-weight: bold;
+      }
+      .modal-dialog {
+          margin: 10px;
+          width: calc(100% - 20px);
+      }
+      .modal-content {
+          border-radius: 0;
+      }
+
+      .table-bordered {
+        border: 0;
+      }
   }
 </style>
 <div class="table-responsive mb-3">
   <table class="table table-bordered">
     <thead class="thead-light">
       <tr>
-        <th scope="col" class="font-bold font-weight-bold text-center"><%= I18n.t("partner.time") %></th>
+        <th scope="col" class="font-bold text-center"><%= I18n.t("partner.time") %></th>
         <th scope="col" class="font-bold text-center"><%= I18n.t("partner.sold_product") %></th>
         <th scope="col" class="font-bold text-center"><%= I18n.t("partner.revenue") %></th>
         <th scope="col" class="font-bold text-center"><%= I18n.t("partner.fee") %></th>
@@ -39,50 +71,53 @@
     </thead>
     <tbody>
       <% products&.each do |p| %>
-        <% manages = p.partner_managers %>
         <tr>
-          <td scope="row" class="text-right">
-            <%= p&.start_time&.strftime('%d-%m-%Y') %> - <%= p&.end_time&.strftime('%d-%m-%Y') %>
+          <td data-label="<%= I18n.t("partner.time") %>">
+              <%= p&.start_time&.strftime('%d-%m-%Y') %> - <%= p&.end_time&.strftime('%d-%m-%Y') %>
           </td>
-          <td class="text-right">
-            <a href="#" data-toggle="modal" data-target="#productModal<%= p.id %>">
-              <%= p.total_sell %>
-            </a>
+          <td data-label="<%= I18n.t("partner.sold_product") %>" class="text-right">
+              <a href="#" data-toggle="modal" data-target="#productModal<%= p.id %>">
+                  <%= p.total_sell %>
+              </a>
           </td>
-          <td class="text-right"><%= "#{number_with_delimiter(p.revenue.to_i, :delimiter => '.')} VND" %></td>
-          <td class="text-right"><%= "#{number_with_delimiter(p.fee.to_i, :delimiter => '.')}%" %></td>
-          <td class="text-right"><%= "#{number_with_delimiter(p.time_pay.to_i, :delimiter => '.')} VND" %></td>
-          <td scope="row" class="text-right">
-            <%= p&.time_pay_partner&.strftime('%d-%m-%Y') %>
+          <td data-label="<%= I18n.t("partner.revenue") %>" class="text-right">
+              <%= "#{number_with_delimiter(p.revenue.to_i, :delimiter => '.')} VND" %>
           </td>
-          <td scope="row" class="text-right">
-            <%= p&.note %>
+          <td data-label="<%= I18n.t("partner.fee") %>" class="text-right">
+              <%= "#{number_with_delimiter(p.fee.to_i, :delimiter => '.')}%" %>
+          </td>
+          <td data-label="<%= I18n.t("partner.status") %>" class="text-right">
+              <%= "#{number_with_delimiter(p.time_pay.to_i, :delimiter => '.')} VND" %>
+          </td>
+          <td data-label="<%= I18n.t("partner.time_pay") %>" class="text-right">
+              <%= p&.time_pay_partner&.strftime('%d-%m-%Y') %>
+          </td>
+          <td data-label="<%= I18n.t("partner.note") %>" class="text-right">
+              <%= p&.note.present? ? p&.note : content_tag(:div, 'Không có ghi chú', class: 'text-muted') %>
           </td>
         </tr>
 
-        <!-- Modal -->
+          <!-- Modal -->
         <div class="modal fade" id="productModal<%= p.id %>" tabindex="-1" role="dialog" aria-labelledby="productModal<%= p.id %>Title" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <%= p&.start_time&.strftime('%d-%m-%Y') %> - <%= p&.end_time&.strftime('%d-%m-%Y') %>
-              </div>
-              <% manages.each do |manage| %>
-                <div class="modal-body">
-                  <% # Sort product.stocks based on size_order %>
-                  <% stock = Stock.find(manage.product_id) %>
-                  <% products = Product.find(stock.product_id) %>
-                  <%= render "admin/product_detail", product: products, detail: manage %>
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <%= p&.start_time&.strftime('%d-%m-%Y') %> - <%= p&.end_time&.strftime('%d-%m-%Y') %>
+                    </div>
+                    <% p.partner_managers.each do |manage| %>
+                        <div class="modal-body">
+                            <% stock = Stock.find(manage.product_id) %>
+                            <% product = Product.find(stock.product_id) %>
+                            <%= render "admin/product_detail", product: product, detail: manage %>
+                        </div>
+                    <% end %>
+                    <div class="modal-footer py-4">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
-              <% end %>
-              <div class="modal-footer py-4">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              </div>
             </div>
-          </div>
         </div>
       <% end %>
     </tbody>
   </table>
-
 </div>
