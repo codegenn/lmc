@@ -8,6 +8,7 @@ module Api
       end
 
       def current_user
+        binding.pry
         if auth_present?
           user = AdminUser.find_by_email(auth["user"])
           if user

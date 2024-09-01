@@ -1,0 +1,32 @@
+<% stock = Stock.find(detail.product_id) %>
+<div class="border p-3">
+  <div class="row gx-3 align-items-center">
+    <div class="col-md-1">
+      <%= image_tag(product&.product_images.first&.image_url, width: "100px", class: "img-fluid") %>
+    </div>
+    <div class="col-md-2">
+      <label for="product_code" class="form-label"><%= I18n.t("partner.ma") %></label>
+      <input type="text" class="form-control" value="<%=  stock.product_code %>" disabled>
+    </div>
+    <div class="col-md-1">
+      <label for="size" class="form-label">Size</label>
+      <input type="text" class="form-control" value="<%= stock.size.include?("Freesize") ? "FS" : stock.size %>" disabled>
+    </div>
+    <div class="col-md-2">
+      <label for="quantity_in" class="form-label"><%= I18n.t("partner.in") %></label>
+      <input type="text" class="form-control" value="<%= detail.quantity_entered %>" disabled>
+    </div>
+    <div class="col-md-2">
+      <label for="quantity_sold" class="form-label"><%= I18n.t("partner.sold") %></label>
+      <input type="text" class="form-control" value="<%= detail.product_sold %>" disabled>
+    </div>
+    <div class="col-md-2">
+      <label for="quantity_remaining" class="form-label"><%= I18n.t("partner.inventory") %></label>
+      <input type="text" class="form-control" value="<%= [detail.quantity_entered - detail.product_sold, 0].max %>" disabled>
+    </div>
+    <div class="col-md-2">
+      <label for="revenue" class="form-label"><%= I18n.t("partner.revenue") %></label>
+      <input type="text" class="form-control text-right" value="<%= "#{number_with_delimiter((product.price * detail.product_sold).to_i, :delimiter => '.')} VND" %>" disabled>
+    </div>
+  </div>
+</div>

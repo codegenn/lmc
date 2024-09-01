@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20240612151007) do
+ActiveRecord::Schema.define(version: 20240815145319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -199,6 +199,17 @@ ActiveRecord::Schema.define(version: 20240612151007) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id", using: :btree
 
+  create_table "haves", force: :cascade do |t|
+    t.datetime "time"
+    t.integer  "product_sold"
+    t.decimal  "revenue"
+    t.decimal  "pay_for_partner"
+    t.text     "note"
+    t.decimal  "fee"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
     t.text     "short_description"
@@ -315,16 +326,51 @@ ActiveRecord::Schema.define(version: 20240612151007) do
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
+  create_table "partner_managers", force: :cascade do |t|
+    t.datetime "time"
+    t.integer  "product_sold"
+    t.decimal  "revenue"
+    t.decimal  "pay_for_partner"
+    t.text     "note"
+    t.decimal  "fee"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "partner_order_id"
+    t.integer  "user_id"
+    t.integer  "quantity_entered"
+    t.integer  "product_id"
+    t.integer  "inventory"
+  end
+
+  create_table "partner_managers_details", force: :cascade do |t|
+    t.string  "size"
+    t.integer "stock"
+    t.integer "sold_product"
+    t.integer "partner_manager_id"
+    t.integer "quantity_in"
+    t.integer "quantity_sold"
+  end
+
+  add_index "partner_managers_details", ["partner_manager_id"], name: "index_partner_managers_details_on_partner_manager_id", using: :btree
+
   create_table "partner_orders", force: :cascade do |t|
     t.decimal  "fee"
     t.integer  "product_id"
     t.integer  "total_products"
     t.integer  "inventory"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.integer  "user_id"
     t.integer  "total_sell"
     t.string   "stock_item"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.decimal  "time_pay"
+    t.datetime "time_pay_partner"
+    t.decimal  "revenue"
+    t.string   "note"
   end
 
   create_table "partner_users", force: :cascade do |t|
@@ -452,6 +498,32 @@ ActiveRecord::Schema.define(version: 20240612151007) do
     t.string "phone"
   end
 
+  create_table "transaction_details", force: :cascade do |t|
+    t.integer  "transaction_id"
+    t.integer  "product_id"
+    t.integer  "quantity_imported"
+    t.integer  "quantity_sold"
+    t.integer  "stock"
+    t.decimal  "revenue"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "transaction_details", ["product_id"], name: "index_transaction_details_on_product_id", using: :btree
+  add_index "transaction_details", ["transaction_id"], name: "index_transaction_details_on_transaction_id", using: :btree
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer  "partner_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.decimal  "fee_rate"
+    t.text     "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "transactions", ["partner_id"], name: "index_transactions_on_partner_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "first_name",             default: "", null: false
@@ -488,7 +560,11 @@ ActiveRecord::Schema.define(version: 20240612151007) do
   end
 
   add_foreign_key "comments", "reviews", on_delete: :cascade
+  add_foreign_key "partner_managers_details", "partner_managers"
   add_foreign_key "product_solds", "products"
   add_foreign_key "products", "admin_users"
   add_foreign_key "reviews", "products"
+  add_foreign_key "transaction_details", "products"
+  add_foreign_key "transaction_details", "transactions"
+  add_foreign_key "transactions", "partners"
 end

@@ -3,7 +3,7 @@ class PartnerUser < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  # has_many :partner_orders
+  has_many :partner_orders, foreign_key: 'user_id'
 end
 
 # == Schema Information
