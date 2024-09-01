@@ -10,7 +10,7 @@
     </div>
     <div class="col-md-1">
       <label for="size" class="form-label">Size</label>
-      <input type="text" class="form-control" value="<%= stock.size %>" disabled>
+      <input type="text" class="form-control" value="<%= stock.size.include?("Freesize") ? "FS" : stock.size %>" disabled>
     </div>
     <div class="col-md-2">
       <label for="quantity_in" class="form-label"><%= I18n.t("partner.in") %></label>
@@ -26,7 +26,7 @@
     </div>
     <div class="col-md-2">
       <label for="revenue" class="form-label"><%= I18n.t("partner.revenue") %></label>
-      <input type="text" class="form-control" value="<%= "#{number_with_delimiter((product.price * detail.product_sold).to_i, :delimiter => '.')} vnd" %>" disabled>
+      <input type="text" class="form-control text-right" value="<%= "#{number_with_delimiter((product.price * detail.product_sold).to_i, :delimiter => '.')} VND" %>" disabled>
     </div>
   </div>
 </div>

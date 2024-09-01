@@ -28,23 +28,23 @@
   <table class="table table-bordered">
     <thead class="thead-light">
       <tr>
-        <th scope="col" class="font-bold font-weight-bold text-left"><%= I18n.t("partner.time") %></th>
-        <th scope="col" class="font-bold text-left"><%= I18n.t("partner.sold_product") %></th>
-        <th scope="col" class="font-bold text-right"><%= I18n.t("partner.revenue") %></th>
-        <th scope="col" class="font-bold text-right"><%= I18n.t("partner.fee") %></th>
-        <th scope="col" class="font-bold text-right"><%= I18n.t("partner.status") %></th>
-        <th scope="col" class="font-bold text-right"><%= I18n.t("partner.time_pay") %></th>
-        <th scope="col" class="font-bold text-left"><%= I18n.t("partner.note") %></th>
+        <th scope="col" class="font-bold font-weight-bold text-center"><%= I18n.t("partner.time") %></th>
+        <th scope="col" class="font-bold text-center"><%= I18n.t("partner.sold_product") %></th>
+        <th scope="col" class="font-bold text-center"><%= I18n.t("partner.revenue") %></th>
+        <th scope="col" class="font-bold text-center"><%= I18n.t("partner.fee") %></th>
+        <th scope="col" class="font-bold text-center"><%= I18n.t("partner.status") %></th>
+        <th scope="col" class="font-bold text-center"><%= I18n.t("partner.time_pay") %></th>
+        <th scope="col" class="font-bold text-center"><%= I18n.t("partner.note") %></th>
       </tr>
     </thead>
     <tbody>
       <% products&.each do |p| %>
         <% manages = p.partner_managers %>
         <tr>
-          <td scope="row" class="text-left">
+          <td scope="row" class="text-right">
             <%= p&.start_time&.strftime('%d-%m-%Y') %> - <%= p&.end_time&.strftime('%d-%m-%Y') %>
           </td>
-          <td class="text-left">
+          <td class="text-right">
             <a href="#" data-toggle="modal" data-target="#productModal<%= p.id %>">
               <%= p.total_sell %>
             </a>
@@ -52,10 +52,10 @@
           <td class="text-right"><%= "#{number_with_delimiter(p.revenue.to_i, :delimiter => '.')} VND" %></td>
           <td class="text-right"><%= "#{number_with_delimiter(p.fee.to_i, :delimiter => '.')}%" %></td>
           <td class="text-right"><%= "#{number_with_delimiter(p.time_pay.to_i, :delimiter => '.')} VND" %></td>
-          <td scope="row" class="text-left">
+          <td scope="row" class="text-right">
             <%= p&.time_pay_partner&.strftime('%d-%m-%Y') %>
           </td>
-          <td scope="row" class="text-left">
+          <td scope="row" class="text-right">
             <%= p&.note %>
           </td>
         </tr>
